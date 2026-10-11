@@ -59,8 +59,9 @@ function movement(dt){const ballPos={x:bx,y:by};for(const p of players){p.cool=M
 function capture(p,why){if(owner&&owner.t!==p.t)turnovers++;owner=p;flight=null;bx=p.x;by=p.y;decision=.3+Math.random()*.35;p.driveX=p.x;p.driveY=p.y;report((p.t?'Rojo':'Azul')+' #'+p.n+' '+why);}
 function update(dt){elapsed+=dt;decision-=dt;
  if(owner){bx=owner.x;by=owner.y;if(decision<=0)chooseAction(owner);
- const rivals=opp(owner.t).filter(p=>p.n!==1&&p.cool===0);const nearestR=nearest(owner,rivals);
- if(nearestR&&d(owner,nearestR)<2.8&&Math.random()<dt*(d(owner,nearestR)<1.7?.70:.27)){capture(nearestR,'recupera');}}
+ // Un pase o tiro deja el balón en vuelo y owner pasa a null.
+ if(owner){const rivals=opp(owner.t).filter(p=>p.n!==1&&p.cool===0);const nearestR=nearest(owner,rivals);
+ if(nearestR&&d(owner,nearestR)<2.8&&Math.random()<dt*(d(owner,nearestR)<1.7?.70:.27)){capture(nearestR,'recupera');}}}
  movement(dt);
  if(flight){const f=flight;f.age+=dt;const a=clamp(f.age/f.duration,0,1);const old={x:bx,y:by};bx=f.x+(f.tx-f.x)*a;by=f.y+(f.ty-f.y)*a;
  // Intercepción: proximidad al segmento recorrido durante este frame.
@@ -91,3 +92,4 @@ $('speed').onchange=e=>speed=Number(e.target.value);
 report('Simulación iniciada');render();requestAnimationFrame(frame);
 })();
 </script></body></html>
+

@@ -1,0 +1,67 @@
+# MANAGER-FASE — Hoja de ruta
+Actualizada: 13 de octubre de 2026. Base publicada: 0.8.
+
+## Prioridad y alcance
+Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.
+Completar los procesos actuales del modelo de espacios de fase antes de desarrollar el modo entrenamiento. Mantener al usuario como responsable de las decisiones tácticas.
+La simulación debe ejecutar esas decisiones con comportamientos plausibles y resultados inciertos, no buscar un juego perfecto.
+
+## Incidencias observadas por el usuario
+- Algunos patrones de movimiento no resultan habituales del fútbol.
+- En simulación libre algunos compañeros no acompañan.
+- Al progresar desde mediocampo hacia la portería rival, el poseedor pierde opciones y termina volviendo atrás reiteradamente.
+Estas incidencias están registradas; este turno no reproduce ni corrige sus causas.
+Un pase atrás puede ser una decisión válida. El objetivo es evitar que sea una obligación sistemática causada por el motor.
+Que todos los jugadores se muevan no demuestra por sí solo que exista coordinación táctica.
+
+## 1. Dinámicas de partidos reales con tracking
+Objetivo solicitado: usar movimientos ya registrados en partidos reales para incorporar dinámicas parecidas.
+Fuentes preliminares verificadas, todavía sin importar ni analizar:
+- Metrica Sports: https://github.com/metrica-sports/sample-data
+  Ofrece tracking y eventos sincronizados; partidos de muestra anonimizados.
+- SkillCorner: https://github.com/SkillCorner/opendata
+  Ofrece diez partidos de tracking de retransmisiones y eventos dinámicos.
+  Distingue posiciones detectadas de extrapoladas mediante is_detected.
+
+Trabajo propuesto:
+1. Verificar condiciones de uso y atribución para la integración prevista.
+2. Importar una muestra, normalizar dimensiones, orientación de ataque, coordenadas y tiempo.
+3. Filtrar errores de identidad, saltos y datos extrapolados de baja confianza. No tratar estimaciones como observaciones exactas.
+4. Extraer secuencias de progresión, apoyos, rupturas, ocupación del área, circulación, pérdidas y reorganización.
+5. Medir distancias relativas, dirección y momento de los apoyos, anchura, profundidad, opciones disponibles y reacción al desplazamiento del balón.
+6. Interpretar esas secuencias con el marco del usuario: criterios conformadores, interacción/apoyo mutuo/cooperación, ventajas, conductas y ciclo del juego.
+7. Calibrar reglas o modelos de movimiento y probar situaciones no utilizadas para el ajuste.
+
+No copiar trayectorias de forma rígida: la jugada debe responder a la decisión del usuario y a la oposición.
+No equiparar automáticamente las etiquetas de fases del proveedor con los espacios de fase del proyecto.
+Las coordenadas por sí solas no permiten inferir con certeza intención, perfilación corporal, ocho áreas de individualidad o resonancia empática.
+Los ejemplos profesionales no deben convertirse automáticamente en el nivel perfecto ni en el único estilo posible.
+
+## 2. Errores plausibles
+Requisito: los futbolistas deben cometer errores ocasionalmente.
+Propuesta: errores contextuales de ejecución, percepción y sincronización, asociados a dificultad, presión, capacidades y, cuando estén modeladas, fatiga y compenetración.
+Separar variabilidad individual de fallos del programa: inmovilidad, bloqueos, falta estructural de apoyos y resultados predeterminados no son errores humanos aceptables.
+Mantener semillas reproducibles para comparar decisiones bajo condiciones equivalentes.
+No fijar todavía porcentajes de error sin calibración y validación.
+
+## 3. Futuro modo entrenamiento
+Objetivo solicitado: entrenar las situaciones que necesitan mejorar para que los futbolistas virtuales aprendan y mejoren.
+Flujo propuesto:
+1. Marcar y guardar una situación del partido con su estado completo y versión del motor.
+2. Seleccionar el problema y el objetivo de entrenamiento.
+3. Repetir con variantes de posiciones, rivales, presión, espacio y tiempo.
+4. Guardar cambios específicos por jugador y grupo, con límites y diferencias individuales.
+5. Evaluar retención y transferencia a situaciones nuevas de partido.
+
+Ejemplo de tarea: acompañar la progresión desde mediocampo mediante apoyos a diferentes alturas, manteniendo amplitud y opciones de profundidad.
+Evaluar disponibilidad y oportunidad de los apoyos, progresión, pérdidas y equilibrio tras pérdida; no solo goles o posesión.
+El entrenamiento no debe producir perfección automática ni una bonificación general desconectada de lo practicado.
+Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.8 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
+
+## Criterios de aceptación futuros
+- Las dinámicas se contrastan con secuencias reales identificables.
+- En simulación libre y guiada existen opciones coherentes al progresar, condicionadas por el rival.
+- Los jugadores pueden conservar una posición útil; no se premia moverse por moverse.
+- Se mantiene incertidumbre y posibilidad de error sin bloqueos del motor.
+- Las mejoras entrenadas persisten y se evalúan frente a una línea base y en situaciones no ensayadas.
+- Se preservan el diseño, los controles y la capacidad de comparar decisiones.

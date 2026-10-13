@@ -1,9 +1,9 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.7</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.7 · Acciones técnicas situacionales</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. La representación de los espacios de interacción, apoyo mutuo y cooperación está pendiente de incorporar.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática de demostración. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.8</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.8 · Apoyos en movimiento</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. La representación de los espacios de interacción, apoyo mutuo y cooperación está pendiente de incorporar.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática de demostración. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
 <rect width="1000" height="650" fill="#153c2a"/><rect x="45" y="34" width="91" height="582.4" fill="#236b40"/><rect x="136" y="34" width="91" height="582.4" fill="#267447"/><rect x="227" y="34" width="91" height="582.4" fill="#236b40"/><rect x="318" y="34" width="91" height="582.4" fill="#267447"/><rect x="409" y="34" width="91" height="582.4" fill="#236b40"/><rect x="500" y="34" width="91" height="582.4" fill="#267447"/><rect x="591" y="34" width="91" height="582.4" fill="#236b40"/><rect x="682" y="34" width="91" height="582.4" fill="#267447"/><rect x="773" y="34" width="91" height="582.4" fill="#236b40"/><rect x="864" y="34" width="91" height="582.4" fill="#267447"/>
 <g fill="none" stroke="#f5fff7" stroke-width="2.5"><rect x="45" y="34" width="910" height="582.4"/><path d="M500 34V616.4"/><circle cx="500" cy="325.2" r="83.3"/><rect x="45" y="143.2" width="150.2" height="364"/><rect x="804.8" y="143.2" width="150.2" height="364"/><rect x="45" y="241.5" width="50" height="167.4"/><rect x="905" y="241.5" width="50" height="167.4"/><path d="M45 291H29V359H45 M955 291H971V359H955"/></g>
 <g fill="white"><circle cx="500" cy="325.2" r="3.5"/><circle cx="145" cy="325.2" r="3.5"/><circle cx="855" cy="325.2" r="3.5"/></g>
 <g id="players"><g class="player" id="p0-1" transform="translate(99.6 325.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">1</text></g><g class="player" id="p0-2" transform="translate(236.1 125.0)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">2</text></g><g class="player" id="p0-3" transform="translate(236.1 252.4)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">3</text></g><g class="player" id="p0-4" transform="translate(236.1 398.0)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">4</text></g><g class="player" id="p0-5" transform="translate(236.1 525.4)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">5</text></g><g class="player" id="p0-6" transform="translate(409.0 179.6)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">6</text></g><g class="player" id="p0-7" transform="translate(390.8 325.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">7</text></g><g class="player" id="p0-8" transform="translate(409.0 470.8)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">8</text></g><g class="player" id="p0-9" transform="translate(618.3 143.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">9</text></g><g class="player" id="p0-10" transform="translate(618.3 325.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">10</text></g><g class="player" id="p0-11" transform="translate(618.3 507.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">11</text></g><g class="player" id="p1-1" transform="translate(900.4 325.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">1</text></g><g class="player" id="p1-2" transform="translate(763.9 525.4)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">2</text></g><g class="player" id="p1-3" transform="translate(763.9 398.0)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">3</text></g><g class="player" id="p1-4" transform="translate(763.9 252.4)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">4</text></g><g class="player" id="p1-5" transform="translate(763.9 125.0)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">5</text></g><g class="player" id="p1-6" transform="translate(591.0 470.8)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">6</text></g><g class="player" id="p1-7" transform="translate(609.2 325.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">7</text></g><g class="player" id="p1-8" transform="translate(591.0 179.6)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">8</text></g><g class="player" id="p1-9" transform="translate(381.7 507.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">9</text></g><g class="player" id="p1-10" transform="translate(381.7 325.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">10</text></g><g class="player" id="p1-11" transform="translate(381.7 143.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">11</text></g></g><circle id="ball" cx="500" cy="325" r="6.5" fill="white" stroke="#17202a" stroke-width="2"/>
-</svg><p id="status">Jugadores visibles. Iniciando simulación…</p><small>Versión experimental 0.7: apoyos, pases, conducciones, presión, interceptaciones y tiros. Tú decides las intenciones del azul en modo guiado. La respuesta rival y la ejecución se simulan mediante reglas. El balón parte controlado en el suelo; cabeceos, voleas y controles aéreos específicos están pendientes de modelar.</small></main><script>
+</svg><p id="status">Jugadores visibles. Iniciando simulación…</p><small>Versión experimental 0.8: apoyos, pases, conducciones, presión, interceptaciones y tiros. Tú decides las intenciones del azul en modo guiado. La respuesta rival y la ejecución se simulan mediante reglas. El balón parte controlado en el suelo; cabeceos, voleas y controles aéreos específicos están pendientes de modelar.</small></main><script>
 (()=>{
 'use strict';
 const $=id=>document.getElementById(id), ball=$('ball'), status=$('status'),clockEl=$('clock'),scoreEl=$('score');
@@ -181,37 +181,75 @@ function chooseAction(p){const rivals=opp(p.t),mates=team(p.t).filter(q=>q!==p&&
  p.driveX=clamp(p.x+dir*(pressure<8?3.5:7),3,97);p.driveY=clamp(p.y+(32-p.y)*.12,4,60);
  report((p.t?'Rojo':'Azul')+' #'+p.n+' conduce');
 }
-function movement(dt){const ballPos={x:bx,y:by};for(const p of players){p.cool=Math.max(0,p.cool-dt);let tx=p.hx,ty=p.hy;
- const attacking=owner?owner.t:(flight?flight.t:null);
- const dir=direction(p.t);
- if(loose&&p===nearest(ballPos,players)){tx=bx;ty=by;}
- else if(p===owner){tx=p.driveX??p.x;ty=p.driveY??p.y;}
- else if(p.n===1){tx=p.hx;ty=clamp(by,23,41);}
- else if(attacking===p.t){const progress=(bx-50)*.32;
- tx=clamp(p.hx+progress+dir*(p.n>=9?4:1),5,95);
- ty=clamp(p.hy+(by-32)*.24,5,59);
- if(owner&&p!==owner){const sep=d(p,owner);if(sep<13){tx+=dir*(p.n%2?7:-6);ty+=p.n%2?7:-7;}}
- if(flight&&flight.target===p){tx=flight.tx;ty=flight.ty;}
- }else{
- const chasers=team(p.t).filter(q=>q.n!==1).sort((a,b)=>d(a,ballPos)-d(b,ballPos));
- const index=chasers.indexOf(p);
- if(index===0){tx=bx-dir*2;ty=by;}
- else if(index===1){tx=bx+dir*7;ty=by+(p.y<by?-7:7);}
- else{tx=clamp(p.hx+(bx-50)*.40,5,95);ty=clamp(p.hy+(by-32)*.35,5,59);
- const opponent=nearest(p,team(1-p.t).filter(q=>q.n!==1));if(opponent&&d(p,opponent)<16){tx=tx*.65+opponent.x*.35;ty=ty*.65+opponent.y*.35;}}
+// Recalcula las relaciones de apoyo desde el estado actual, no congela al equipo.
+function attackingTargets(t,ballPos){
+ const dir=direction(t),mates=team(t),rivals=opp(t),out=new Map();
+ const focus=owner&&owner.t===t?owner:flight&&flight.t===t?flight.target:null;
+ const origin=guided&&selected&&t===0?{x:selected.x,y:selected.y}:{x:50,y:32};
+ const ranked=mates.filter(p=>p!==focus&&p.n!==1&&p.n!==2&&p.n!==5&&p.n!==9&&p.n!==11)
+  .sort((a,b)=>d(a,ballPos)-d(b,ballPos)||a.n-b.n).slice(0,2);
+ const upper=ranked.length===2?(ranked[0].y<=ranked[1].y?ranked[0]:ranked[1]):ranked[0];
+ for(const p of mates){
+  if(p===owner)continue;
+  if(p.n===1){out.set(p,{x:p.hx,y:clamp(ballPos.y,23,41)});continue;}
+  const base=guided&&selected&&t===0?{x:p.sx,y:p.sy}:{x:p.hx,y:p.hy};
+  let tx=base.x+(ballPos.x-origin.x)*.65,ty=base.y+(ballPos.y-origin.y)*.28;
+  const support=ranked.includes(p),wide=[2,5,9,11].includes(p.n);
+  if(support){
+   // Un apoyo de continuidad y otro a distinta altura, en lados complementarios.
+   const side=p===upper?-1:1;
+   tx=ballPos.x+dir*(ranked.indexOf(p)===0?-7:4);ty=ballPos.y+side*9;
+  }else if(wide){
+   const top=p.hy<32;ty=top?Math.min(ty,12):Math.max(ty,52);
+   if(p.n>=9)tx=Math.max(tx*dir,(ballPos.x+dir*9)*dir)*dir;
+  }else if(p.n>=9){tx=Math.max(tx*dir,(ballPos.x+dir*13)*dir)*dir;}
+  else{tx=Math.min(tx*dir,(ballPos.x-dir*13)*dir)*dir;}
+  tx=clamp(tx,4,96);ty=clamp(ty,4,60);
+  // Evitar colocarse en la misma línea tapada o encima de otro compañero.
+  let best={x:tx,y:ty},bestScore=-Infinity;
+  for(const offset of [0,-4,4]){
+   const q={x:tx,y:clamp(ty+offset,wide&&p.hy>32?48:4,wide&&p.hy<32?16:60)};
+   const pressure=d(q,nearest(q,rivals));
+   let crowded=0;for(const m of mates)if(m!==p){const gap=d(q,m);if(gap<5)crowded+=(5-gap)*2;}
+   const score=Math.min(pressure,9)-crowded-Math.abs(offset)*.35-(support?passLane(ballPos,q,rivals)*.8:0);
+   if(score>bestScore){bestScore=score;best=q;}
+  }
+  out.set(p,best);
  }
- // En esta primera secuencia los apoyos sostienen su posición; el receptor ataca el pase.
- if(guided&&p.t===0&&p!==owner){
- if(selected&&selected.defense&&p.n!==1){
- const ordered=team(0).filter(q=>q.n!==1).sort((a,b)=>d(a,ballPos)-d(b,ballPos)),rank=ordered.indexOf(p);
- if(selected.defense==='press'){if(rank===0){tx=bx-1;ty=by;}else if(rank===1){tx=bx-6;ty=by+(p.y<by?-4:4);}else{tx=clamp(p.sx+(bx-50)*.12,4,90);ty=p.sy+(by-p.sy)*.12;}}
- else if(selected.defense==='contain'){if(rank===0){tx=bx-5;ty=by;}else{tx=Math.min(p.sx,bx-9);ty=p.sy+(by-p.sy)*.15;}}
- else{tx=clamp(p.sx-8,5,85);ty=32+(p.sy-32)*.72;}
- }else if(!selected||!selected.defense){tx=p.sx;ty=p.sy;if(flight&&flight.target===p){tx=flight.tx;ty=flight.ty;}if(techAction&&techAction.kind==='wall'&&p===techAction.actor){tx=techAction.runX;ty=techAction.runY;}}
- if(loose&&p===nearest(ballPos,players)){tx=bx;ty=by;}
+ return out;
+}
+function movement(dt){
+ const ballPos={x:bx,y:by},attacking=owner?owner.t:flight?flight.t:null;
+ const targets=attacking===null?new Map():attackingTargets(attacking,ballPos);
+ const chasers=[0,1].map(t=>team(t).filter(p=>p.n!==1).sort((a,b)=>d(a,ballPos)-d(b,ballPos)||a.n-b.n));
+ const recoverer=loose?nearest(ballPos,players):null,moves=[];
+ // Calcular todos los destinos antes de mover: no depender del orden del array.
+ for(const p of players){
+  p.cool=Math.max(0,p.cool-dt);let tx=p.hx,ty=p.hy;const dir=direction(p.t);
+  if(p===owner){tx=p.driveX??p.x;ty=p.driveY??p.y;}
+  else if(p.n===1){tx=p.hx;ty=clamp(by,23,41);}
+  else if(attacking===p.t){const q=targets.get(p);tx=q.x;ty=q.y;}
+  else{
+   const index=chasers[p.t].indexOf(p);
+   if(index===0){tx=bx-dir*2;ty=by;}
+   else if(index===1){tx=bx+dir*7;ty=by+(p.y<by?-7:7);}
+   else{tx=clamp(p.hx+(bx-50)*.40,5,95);ty=clamp(p.hy+(by-32)*.35,5,59);
+    const rival=nearest(p,opp(p.t).filter(q=>q.n!==1));if(rival&&d(p,rival)<16){tx=tx*.65+rival.x*.35;ty=ty*.65+rival.y*.35;}}
+  }
+  if(guided&&p.t===0&&p!==owner&&p.n!==1&&selected&&selected.defense&&attacking!==0){
+   const rank=chasers[0].indexOf(p);
+   if(selected.defense==='press'){if(rank===0){tx=bx-1;ty=by;}else if(rank===1){tx=bx-6;ty=by+(p.y<by?-4:4);}else{tx=clamp(p.sx+(bx-50)*.12,4,90);ty=p.sy+(by-p.sy)*.12;}}
+   else if(selected.defense==='contain'){if(rank===0){tx=bx-5;ty=by;}else{tx=Math.min(p.sx,bx-9);ty=p.sy+(by-p.sy)*.15;}}
+   else{tx=clamp(p.sx-8,5,85);ty=32+(p.sy-32)*.72;}
+  }
+  // El destino elegido del pase y la carrera de la pared tienen prioridad.
+  if(flight&&flight.target===p){tx=flight.tx;ty=flight.ty;}
+  if(techAction&&techAction.kind==='wall'&&p===techAction.actor&&p!==owner){tx=techAction.runX;ty=techAction.runY;}
+  if(p===recoverer){tx=bx;ty=by;}
+  moves.push({p,tx,ty});
  }
- const dx=tx-p.x,dy=ty-p.y,dd=Math.hypot(dx,dy);if(dd>.08){const step=Math.min(dd,p.speed*dt);p.x=clamp(p.x+dx/dd*step,2,98);p.y=clamp(p.y+dy/dd*step,2,62);}
- }}
+ for(const {p,tx,ty} of moves){const dx=tx-p.x,dy=ty-p.y,dd=Math.hypot(dx,dy);if(dd>.08){const step=Math.min(dd,p.speed*dt);p.x=clamp(p.x+dx/dd*step,2,98);p.y=clamp(p.y+dy/dd*step,2,62);}}
+}
 function capture(p,why){if((owner?owner.t:flight?flight.t:lastTouchTeam)!==p.t)turnovers++;lastTouchTeam=p.t;owner=p;flight=null;loose=false;ballHeight=0;bx=p.x;by=p.y;decision=.3+random()*.35;p.driveX=p.x;p.driveY=p.y;report((p.t?'Rojo':'Azul')+' #'+p.n+' '+why);if(guided&&stage==='resolve')resolution=why;}
 function update(dt){elapsed+=dt;decision-=dt;if(guided)trialTime+=dt;
  if(owner){bx=owner.x;by=owner.y;if(decision<=0&&(!guided||(owner.t===1&&trialTime<2)))chooseAction(owner);

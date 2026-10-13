@@ -1,5 +1,5 @@
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 13 de octubre de 2026. Base publicada: 0.8.
+Actualizada: 13 de octubre de 2026. Base de esta actualización: 0.12.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.
@@ -10,20 +10,34 @@ La simulación debe ejecutar esas decisiones con comportamientos plausibles y re
 - Algunos patrones de movimiento no resultan habituales del fútbol.
 - En simulación libre algunos compañeros no acompañan.
 - Al progresar desde mediocampo hacia la portería rival, el poseedor pierde opciones y termina volviendo atrás reiteradamente.
-Estas incidencias están registradas; este turno no reproduce ni corrige sus causas.
+Las versiones 0.9–0.11 introdujeron progresión contextual, apoyos reactivos y espacios variables. Su realismo todavía debe contrastarse con tracking.
 Un pase atrás puede ser una decisión válida. El objetivo es evitar que sea una obligación sistemática causada por el motor.
 Que todos los jugadores se muevan no demuestra por sí solo que exista coordinación táctica.
 
 ## 1. Dinámicas de partidos reales con tracking
 Objetivo solicitado: usar movimientos ya registrados en partidos reales para incorporar dinámicas parecidas.
-Fuentes preliminares verificadas, todavía sin importar ni analizar:
+Fuentes de referencia:
 - Metrica Sports: https://github.com/metrica-sports/sample-data
   Ofrece tracking y eventos sincronizados; partidos de muestra anonimizados.
 - SkillCorner: https://github.com/SkillCorner/opendata
   Ofrece diez partidos de tracking de retransmisiones y eventos dinámicos.
   Distingue posiciones detectadas de extrapoladas mediante is_detected.
 
-Trabajo propuesto:
+Avance completado en 0.12:
+- Cambio de simulación libre a decisiones sin reiniciar posiciones, reloj, marcador ni estadísticas. El retorno a libre también conserva el partido.
+- Si el balón está en vuelo o suelto, se conserva ese estado; el usuario reanuda hasta un control antes de elegir la siguiente acción.
+- Primera muestra Metrica importada: Sample Game 1, periodo 1, fotogramas 1–501 (0,04–20,04 s), 101 instantes de visualización a 5 Hz.
+- Importador reproducible en scripts/import_metrica.py. Coordenadas fuente 0–1 en campo de 105 × 68 m transformadas a 100 × 64 unidades. Se conservan tiempo, periodo, fotograma e identidad.
+- Comprobación de sincronía entre equipos, coordenadas no finitas o fuera del campo y saltos de velocidad >14 m/s (umbral provisional de calidad). No se rellenan datos ausentes. El roster original incluye suplentes sin posición: esos huecos no se equiparan a fallos del tracking.
+- Orientación del fragmento inferida a partir de los porteros: Home #11 a la izquierda y Away #25 a la derecha. No generalizar a otros periodos.
+- Visor independiente con reproducción, selección de instante y anchura/profundidad de ambos equipos, incluidos porteros. No altera las posiciones ni los parámetros del motor.
+- Atribución visible a Metrica Sports. README revisado el 13-10-2026: solicita reconocimiento de la fuente para uso público; no se ha identificado una licencia estándar en ese README ni se ha asumido una autorización comercial general.
+- Fuentes: https://github.com/metrica-sports/sample-data y los dos CSV Home/Away de data/Sample_Game_1. Metadatos y enlaces guardados en data/metrica-sample.json.
+- Muestra de 20 s = prueba del proceso de importación y observación; no demuestra patrones típicos ni permite calibrar errores o aprendizaje.
+
+Siguiente paso pendiente: importar y seleccionar más secuencias sincronizadas con eventos; medir apoyos, desmarques y respuestas al desplazamiento del balón, distinguiendo observaciones de inferencias. Después contrastar y calibrar el motor con secuencias distintas a las utilizadas para el ajuste.
+
+Trabajo completo de referencia (puntos 1–3 iniciados con la muestra; 4–7 pendientes):
 1. Verificar condiciones de uso y atribución para la integración prevista.
 2. Importar una muestra, normalizar dimensiones, orientación de ataque, coordenadas y tiempo.
 3. Filtrar errores de identidad, saltos y datos extrapolados de baja confianza. No tratar estimaciones como observaciones exactas.
@@ -56,7 +70,7 @@ Flujo propuesto:
 Ejemplo de tarea: acompañar la progresión desde mediocampo mediante apoyos a diferentes alturas, manteniendo amplitud y opciones de profundidad.
 Evaluar disponibilidad y oportunidad de los apoyos, progresión, pérdidas y equilibrio tras pérdida; no solo goles o posesión.
 El entrenamiento no debe producir perfección automática ni una bonificación general desconectada de lo practicado.
-Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.8 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
+Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.12 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
 
 ## Criterios de aceptación futuros
 - Las dinámicas se contrastan con secuencias reales identificables.

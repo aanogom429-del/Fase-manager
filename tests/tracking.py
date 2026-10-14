@@ -29,7 +29,7 @@ class TrackingTests(unittest.TestCase):
 
     def test_real_source_alignment_and_quality(self):
         data = json.loads((ROOT / "data/metrica-analysis.json").read_text())
-        self.assertEqual(len(data["clips"]), 8)
+        self.assertEqual(len(data["clips"]), 10)
         self.assertEqual(sum(c["reserved"] for c in data["clips"]), 1)
         for c in data["clips"]:
             frames = c["frames"]
@@ -45,7 +45,10 @@ class TrackingTests(unittest.TestCase):
                 self.assertAlmostEqual(f["time"], e["start"])
                 if e["type"] != "PASS":
                     continue
-                sender = next(p for p in f["players"] if p[:2] == [e["team"], e["sender"]])
+                sender = next((p for p in f["players"] if p[:2] == [e["team"], e["sender"]]), None)
+                if sender is None:
+                    self.assertIsNone(e["candidateSupports"])
+                    continue
                 error = math.hypot((sender[2] - e["from"][0]) * 1.05, (sender[3] - e["from"][1]) * 68 / 64)
                 self.assertLess(error, 1, "Event origin must agree with tracked sender")
                 self.assertEqual(e["candidateSupports"], support_candidates(f["players"], e["team"], e["sender"]))

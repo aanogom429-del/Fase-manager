@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "baselineGain": 0.65,
+  "selectedGain": 0.35,
+  "selectionMetric": "Equal-weight mean of per-clip time-weighted positional error (metres), on two development clips only",
+  "limitations": [
+    "Four selected clips from one anonymized match; no population validity",
+    "Controlled replay imposes observed ball, opponents and players with recorded touches",
+    "Jersey-to-role mapping is a provisional lineup approximation",
+    "Continuous forcing interpolates between valid observed samples; no interpolation across missing data",
+    "Incomplete circulation/loss clip excluded from fitting and trajectory benchmark",
+    "No free-match realism or learning claim"
+  ],
+  "candidates": [
+    {
+      "gain": 0.35,
+      "meanPositionMAEM": 8.934857747144182,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 11.218222759760458,
+          "endpointMAEM": 20.242755197687245,
+          "forwardMAEM": 15.353307667923465
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 6.651492734527907,
+          "endpointMAEM": 8.057956679266754,
+          "forwardMAEM": 2.069700028379564
+        }
+      ]
+    },
+    {
+      "gain": 0.5,
+      "meanPositionMAEM": 8.93562753196992,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 10.939517226805108,
+          "endpointMAEM": 19.202131393838652,
+          "forwardMAEM": 13.713404469756341
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 6.931737837134734,
+          "endpointMAEM": 8.405623003032927,
+          "forwardMAEM": 2.969036206474598
+        }
+      ]
+    },
+    {
+      "gain": 0.65,
+      "meanPositionMAEM": 9.119529606582086,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 10.96902845834021,
+          "endpointMAEM": 18.548653860157664,
+          "forwardMAEM": 11.952708890031836
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 7.270030754823962,
+          "endpointMAEM": 8.864350727081955,
+          "forwardMAEM": 4.389355826576949
+        }
+      ]
+    },
+    {
+      "gain": 0.8,
+      "meanPositionMAEM": 9.595006534388354,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 11.549107353271049,
+          "endpointMAEM": 18.583712623996387,
+          "forwardMAEM": 10.024849917316091
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 7.6409057155056574,
+          "endpointMAEM": 10.153686040387784,
+          "forwardMAEM": 5.897721799312911
+        }
+      ]
+    },
+    {
+      "gain": 1,
+      "meanPositionMAEM": 10.118537617037305,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 12.453323356256593,
+          "endpointMAEM": 17.581784199564915,
+          "forwardMAEM": 9.97929134954017
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 7.783751877818015,
+          "endpointMAEM": 11.023057250944142,
+          "forwardMAEM": 7.861590401917479
+        }
+      ]
+    },
+    {
+      "gain": 1.2,
+      "meanPositionMAEM": 11.113288368620514,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 14.009927689831462,
+          "endpointMAEM": 18.47778627201604,
+          "forwardMAEM": 10.421941986558581
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 8.216649047409566,
+          "endpointMAEM": 12.242130006987635,
+          "forwardMAEM": 9.791869468700988
+        }
+      ]
+    },
+    {
+      "gain": 1.4,
+      "meanPositionMAEM": 12.002080500079119,
+      "results": [
+        {
+          "id": "away-progress",
+          "players": 5,
+          "positionMAEM": 15.608730793362524,
+          "endpointMAEM": 20.18843218380445,
+          "forwardMAEM": 13.74582437809217
+        },
+        {
+          "id": "home-progress",
+          "players": 6,
+          "positionMAEM": 8.395430206795714,
+          "endpointMAEM": 13.18558612083446,
+          "forwardMAEM": 11.18987794701035
+        }
+      ]
+    }
+  ],
+  "developmentImprovementPercent": 2.0250151861409114,
+  "contrast": {
+    "baseline": {
+      "id": "contrast-progress",
+      "players": 4,
+      "positionMAEM": 12.747708327845896,
+      "endpointMAEM": 16.550786202353983,
+      "forwardMAEM": 15.6912509455857
+    },
+    "adjusted": {
+      "id": "contrast-progress",
+      "players": 4,
+      "positionMAEM": 10.503890275493331,
+      "endpointMAEM": 12.307860639704016,
+      "forwardMAEM": 10.243584285031737
+    }
+  }
+}

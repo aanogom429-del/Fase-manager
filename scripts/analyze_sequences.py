@@ -87,6 +87,8 @@ def build(home_path, away_path, events_path):
         ("home-progress", "Progresión azul", 0, 45.36, 50.64, False),
         ("circulation-loss", "Circulación y pérdida roja", 1, .04, 15.20, False),
         ("contrast-progress", "Progresión roja · reserva de contraste", 1, 463.44, 476.72, True),
+        ("transition-blue", "Azul tras pérdida · 5 segundos", 0, 288.12, 293.12, False),
+        ("transition-red", "Rojo tras pérdida · 5 segundos", 1, 374.16, 379.16, False),
     ]
     clips = []
     for ident, title, team, start, end, reserved in definitions:
@@ -109,11 +111,12 @@ def build(home_path, away_path, events_path):
                 e["candidateSupports"] = support_candidates(frame["players"], e["team"], e["sender"]) if frame else None
         clips.append({"id": ident, "title": title, "team": team, "start": start, "end": end,
                       "reserved": reserved, "frames": frames, "events": selected_events,
-                      "summary": summarize(frames, selected_events, team)})
+                      "summary": summarize(frames, selected_events, team),
+                      "transition": {"defendingTeam": team, "anchor": start, "anchorEvent": "RECOVERY"} if ident.startswith("transition-") else None})
     return {"schemaVersion": 2, "provider": "Metrica Sports", "match": "Sample Game 1",
             "source": ROOT, "eventsSource": ROOT + "/blob/master/data/Sample_Game_1/Sample_Game_1_RawEventsData.csv",
             "sourceWindowSeconds": [0.04, 600.04], "sourcePitchMeters": [105, 68], "modelPitch": [100, 64],
-            "selection": "Three descriptive examples plus one temporally separate clip reserved for later contrast; not representative sampling.",
+            "selection": "Three offensive examples, one reserved contrast clip and two five-second windows after opponent RECOVERY events; not representative sampling.",
             "quality": {"home": hq, "away": aq}, "clips": clips,
             "definitions": {"supports": "At PASS onset: teammate excluding goalkeeper and sender, 3–30 m away; no rival within 2 m of the interior 8–95% of the segment. Geometric indicator, not a guaranteed pass.",
                             "offBall": "No From/To entry for that player in any selected event. Unrecorded touches cannot be excluded.",

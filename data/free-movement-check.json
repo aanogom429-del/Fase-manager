@@ -1,0 +1,81 @@
+{
+  "durationSeconds": 90,
+  "seeds": [
+    {
+      "seed": 73,
+      "baseline": {
+        "passes": 55,
+        "shots": 10,
+        "turnovers": 31,
+        "backward": 6,
+        "score": [
+          1,
+          2
+        ],
+        "elapsed": 90.00000000001769
+      },
+      "adjusted": {
+        "passes": 68,
+        "shots": 8,
+        "turnovers": 36,
+        "backward": 7,
+        "score": [
+          2,
+          2
+        ],
+        "elapsed": 90.00000000001769
+      }
+    },
+    {
+      "seed": 101,
+      "baseline": {
+        "passes": 63,
+        "shots": 7,
+        "turnovers": 31,
+        "backward": 11,
+        "score": [
+          1,
+          0
+        ],
+        "elapsed": 90.00000000001769
+      },
+      "adjusted": {
+        "passes": 70,
+        "shots": 6,
+        "turnovers": 40,
+        "backward": 11,
+        "score": [
+          1,
+          2
+        ],
+        "elapsed": 90.00000000001769
+      }
+    },
+    {
+      "seed": 211,
+      "baseline": {
+        "passes": 74,
+        "shots": 4,
+        "turnovers": 37,
+        "backward": 12,
+        "score": [
+          1,
+          0
+        ],
+        "elapsed": 90.00000000001769
+      },
+      "adjusted": {
+        "passes": 57,
+        "shots": 11,
+        "turnovers": 25,
+        "backward": 7,
+        "score": [
+          2,
+          5
+        ],
+        "elapsed": 90.00000000001769
+      }
+    }
+  ],
+  "note": "Regression smoke check, not validation of football realism."
+}

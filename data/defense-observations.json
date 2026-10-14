@@ -1,8 +1,8 @@
 {
-  "version": "0.19",
+  "version": "0.20",
   "source": "https://github.com/metrica-sports/sample-data",
   "units": "source pitch metres (105 x 68)",
-  "scope": "Descriptive observed geometry, three selected clips from one match; not a calibration or matched simulation validation.",
+  "scope": "Descriptive observed geometry, four selected clips from one match; not a calibration or matched simulation validation.",
   "clips": [
     {
       "id": "transition-blue",
@@ -108,6 +108,50 @@
           ],
           "goalSide": 4,
           "depth": 36.9789
+        }
+      ]
+    },
+    {
+      "id": "transition-roles-check",
+      "team": 0,
+      "anchor": 300.76,
+      "measurements": [
+        {
+          "at": 0,
+          "frame": 7519,
+          "nearest": 8,
+          "distance": 4.229829850467539,
+          "covers": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "goalSide": 8,
+          "depth": 25.2063
+        },
+        {
+          "at": 2,
+          "frame": 7569,
+          "nearest": 8,
+          "distance": 10.111153306250479,
+          "covers": [
+            4,
+            7
+          ],
+          "goalSide": 8,
+          "depth": 21.95025
+        },
+        {
+          "at": 5,
+          "frame": 7644,
+          "nearest": 10,
+          "distance": 5.9447574897052124,
+          "covers": [
+            7
+          ],
+          "goalSide": 8,
+          "depth": 23.134649999999997
         }
       ]
     }

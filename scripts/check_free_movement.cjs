@@ -17,7 +17,6 @@ function run(seed,gain){
  const c={document:{head:new E(),getElementById:id=>nodes[id]||(nodes[id]=new E()),createElement:()=>new E()},console,Math:math,requestAnimationFrame:()=>{}};
  vm.createContext(c);vm.runInContext(script,c);return c.runFree(gain);
 }
-const results=[73,101,211].map(seed=>({seed,baseline:run(seed,.65),adjusted:run(seed,.35)}));
-for(const row of results){assert(row.adjusted.elapsed>89);assert(row.adjusted.passes>0);assert(row.adjusted.shots>0);}
+const results=[73,101,211].map(seed=>{const row={seed,baseline:process.argv.includes('--final-only')?null:run(seed,.65),adjusted:run(seed,.35)};console.log(JSON.stringify(row));return row;});
 fs.writeFileSync(path.join(root,process.argv[2]||'data/free-movement-check.json'),JSON.stringify({durationSeconds:90,seeds:results,note:'Regression smoke check, not validation of football realism.'},null,2)+'\n');
-console.log(JSON.stringify(results));
+for(const row of results){assert(row.adjusted.elapsed>89);assert(row.adjusted.passes>0);assert(row.adjusted.shots>0);}

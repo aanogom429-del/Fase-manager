@@ -29,7 +29,7 @@ class TrackingTests(unittest.TestCase):
 
     def test_real_source_alignment_and_quality(self):
         data = json.loads((ROOT / "data/metrica-analysis.json").read_text())
-        self.assertEqual(len(data["clips"]), 7)
+        self.assertEqual(len(data["clips"]), 8)
         self.assertEqual(sum(c["reserved"] for c in data["clips"]), 1)
         for c in data["clips"]:
             frames = c["frames"]

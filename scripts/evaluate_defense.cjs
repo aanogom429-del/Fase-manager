@@ -1,14 +1,22 @@
 // Controlled five-second defensive rollout; observations are never treated as intent.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..'),data=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
-const source=fs.readFileSync(process.env.FASE_ENGINE_SOURCE||path.join(root,'index.html'),'utf8').match(/<script>([\s\S]*?)<\/script>/)[1];
-const injected=source.replace('startSituation();requestAnimationFrame(frame);',`globalThis.replay={
- init:(ps,point)=>{guided=true;selected=null;elapsed=0;loose=false;techAction=null;owner=null;flight={t:1,target:null};bx=point[0];by=point[1];
+const html=fs.readFileSync(process.env.FASE_ENGINE_SOURCE||path.join(root,'index.html'),'utf8'),engineVersion=html.match(/FASE MANAGER · ([0-9.]+)/)[1];
+const source=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const injected=source.replace('startSituation();requestAnimationFrame(frame);',`let lastPress=null,lastCover=null,pressChanges=0,coverChanges=0;globalThis.replay={
+ init:(ps,point)=>{lastPress=lastCover=null;pressChanges=coverChanges=0;guided=true;selected=null;elapsed=0;loose=false;techAction=null;owner=null;flight={t:1,target:null};bx=point[0];by=point[1];
   for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];delete p.intentAt;}
  },
  step:(ps,point,dt)=>{for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);if(p.t===1||p.n===1){p.x=q[2];p.y=q[3];}}
-  bx=point[0];by=point[1];elapsed+=dt;movement(dt);return players.filter(p=>p.t===0&&p.n!==1).map(p=>[p.n,p.x,p.y]);
- }
+  bx=point[0];by=point[1];elapsed+=dt;
+  const before=players.filter(p=>p.t===0&&p.n!==1).sort((a,b)=>d(a,{x:bx,y:by})-d(b,{x:bx,y:by})||a.n-b.n);
+  movement(dt);
+  const press=players.find(p=>p.t===0&&p.defDuty==='press')||before[0],cover=players.find(p=>p.t===0&&p.defDuty==='cover')||before[1];
+  if(lastPress!==null&&lastPress!==press.n)pressChanges++;if(lastCover!==null&&lastCover!==cover.n)coverChanges++;
+  lastPress=press.n;lastCover=cover.n;
+  return players.filter(p=>p.t===0&&p.n!==1).map(p=>[p.n,p.x,p.y]);
+ },
+ assignments:()=>({pressChanges,coverChanges})
 };`);
 function environment(){
  const nodes={};class E{constructor(){this.style={};this.dataset={};this.children=[];}setAttribute(){}append(...x){this.children.push(...x);}appendChild(x){this.append(x);}replaceChildren(...x){this.children=x;}querySelectorAll(){return this.children;}insertAdjacentElement(){}insertAdjacentHTML(){}}
@@ -45,13 +53,13 @@ function evaluate(c){
   errorIntegral+=(frames[i-1].meanErrorM+f.meanErrorM)*.5*dt;
   stationaryIntegral+=(frames[i-1].stationaryErrorM+f.stationaryErrorM)*.5*dt;
  }
- return {id:c.id,team:t,start:c.start,end:c.end,meanErrorM:errorIntegral/(c.end-c.start),stationaryErrorM:stationaryIntegral/(c.end-c.start),endpointErrorM:frames.at(-1).meanErrorM,frames};
+ return {id:c.id,team:t,start:c.start,end:c.end,meanErrorM:errorIntegral/(c.end-c.start),stationaryErrorM:stationaryIntegral/(c.end-c.start),endpointErrorM:frames.at(-1).meanErrorM,assignments:model.assignments(),frames};
 }
 function run(){
  const clips=data.clips.filter(c=>c.transition).map(evaluate);
- const priorPath=path.join(root,'data/defense-baseline-v018.json');
- if(!process.env.FASE_ENGINE_SOURCE&&fs.existsSync(priorPath)){const prior=JSON.parse(fs.readFileSync(priorPath,'utf8'));for(const c of clips){const b=prior.clips.find(b=>b.id===c.id);if(b){c.previousMeanErrorM=b.meanErrorM;c.improvementPercent=100*(b.meanErrorM-c.meanErrorM)/b.meanErrorM;}}}
- const report={schemaVersion:1,engineVersion:process.env.FASE_ENGINE_SOURCE?'0.18':'0.19',source:data.source,method:'All 10 outfield defenders simulated from observed starting positions. Observed ball, attackers and goalkeeper prescribed. Fixed steps <=1/120 s with linear interpolation only between complete samples. No fitted parameters.',limitations:['Three selected five-second windows from one match; transition-check evaluated after the correction was fixed, not used to choose it; neither free-play nor population validation','Roles are approximated from shirt numbers; speed, body orientation and intention are not measured','Position error is a trajectory discrepancy, not a tactical success score','Stationary reference keeps every defender at the initial position; it is a simple error baseline, not a tactical alternative'],clips};
+ const priorPath=path.join(root,'data/defense-baseline-v019.json');
+ if(!process.env.FASE_ENGINE_SOURCE&&fs.existsSync(priorPath)){const prior=JSON.parse(fs.readFileSync(priorPath,'utf8'));for(const c of clips){const b=prior.clips.find(b=>b.id===c.id);if(b){c.previousEngineVersion=prior.engineVersion;c.previousAssignments=b.assignments;c.previousMeanErrorM=b.meanErrorM;c.improvementPercent=100*(b.meanErrorM-c.meanErrorM)/b.meanErrorM;}}}
+ const report={schemaVersion:1,engineVersion,source:data.source,method:'All 10 outfield defenders simulated from observed starting positions. Observed ball, attackers and goalkeeper prescribed. Fixed steps <=1/120 s with linear interpolation only between complete samples. No fitted parameters.',limitations:['Four selected five-second windows from one match; transition-roles-check evaluated after the role rule was fixed, not used to choose it; neither free-play nor population validation','Roles are approximated from shirt numbers; speed, body orientation and intention are not measured','Position error is a trajectory discrepancy, not a tactical success score','Stationary reference keeps every defender at the initial position; it is a simple error baseline, not a tactical alternative'],clips};
  fs.writeFileSync(process.env.FASE_DEFENSE_OUT||path.join(root,'data/defense-validation.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(clips.map(({frames,...c})=>c)));return report;
 }

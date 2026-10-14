@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const sample=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',
- 'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,get:()=>({players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
+ 'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,beginMeasurement,measurementValues,supportCandidates,get:()=>({measurement,players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
 function env(){
  const nodes={};
  class E{
@@ -35,6 +35,7 @@ async function main(){
   e.t.playChoice('support');resolve(e);assert.equal(signature(e),result,'retry must reproduce result');
   const current=signature(e);e.t.enterFreeMode();assert.equal(signature(e),current,'return to free mode must preserve state');
  }
+ const measured=env(), unchanged=signature(measured);measured.t.beginMeasurement();assert.equal(signature(measured),unchanged);assert.equal(measured.t.measurementValues().seconds,0);assert.equal(measured.t.measurementValues().block,0);measured.t.restorePosition();assert.equal(measured.t.get().measurement,null);
  const air=env();air.t.enterFreeMode();air.t.scenario({time:110,team:0});
  const s=air.t.get(),target=s.players.find(p=>p.t===0&&p.n===8);air.t.kickTo(s.owner,target.x,target.y,'pass',target);
  air.t.get().flight.loft=5;air.t.update(.08);air.nodes.pause.onclick();

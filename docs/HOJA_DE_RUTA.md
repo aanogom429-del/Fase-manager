@@ -1,3 +1,15 @@
+# Actualizaciones completadas · 14 de octubre de 2026
+
+- **0.14 — Medición y acompañamiento.** Panel para medir avance del balón, avance medio del bloque, jugadores sin intervención que avanzan al menos 2 m y candidatos geométricos a apoyo. Cierre tras pérdida; comparar o reiniciar limpia la medición. Primer ajuste longitudinal de 0,65 a 0,35, seleccionado con dos secuencias de Metrica y evaluado posteriormente con otra secuencia reservada. Error de posición: −2,0 % en ajuste y −17,6 % en contraste, bajo balón y oposición prescritos. Roles aproximados y una muestra de un solo partido: no equivale a validar el fútbol libre completo. Informes reproducibles en data/movement-validation.json y data/free-movement-check.json; corresponden al motor 0.14.
+- **0.15 — Presión, cobertura y reorganización.** Corrección del lado de la segunda cobertura para ambos equipos; presión cercana, cobertura a mayor profundidad y recuperación del resto del bloque hacia portería propia. Conserva demoras individuales y las decisiones explícitas de presionar, temporizar y replegar. Pruebas de orientación para ambos equipos y continuidad del estado.
+- **0.16 — Errores de pase contextuales.** Desviación continua según distancia, proximidad rival y precisión individual provisional; la recepción y oposición determinan la consecuencia. Semilla reproducible en modo guiado y panel del último pase. Se comprueba mayor dispersión con presión/distancia y repetición exacta de una misma decisión. No incluye todavía aprendizaje, fatiga, percepción o errores de todas las técnicas. Prueba de funcionamiento del motor final en data/runtime-regression-v016.json.
+
+Las medidas de apoyo son geométricas, no sustituyen la interpretación de los espacios de fase. Los contornos relacionales amplios y la continuidad entre simulación libre y decisiones se mantienen.
+
+**Siguiente etapa:** ampliar el contraste a más secuencias y partidos, evaluar la reorganización defensiva con datos observados y calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
+
+---
+
 # MANAGER-FASE — Hoja de ruta
 Actualizada: 14 de octubre de 2026. Base de esta actualización: 0.13.
 
@@ -48,7 +60,7 @@ Avance completado en 0.13 (14 de octubre de 2026):
 - Implementación reproducible: scripts/analyze_sequences.py; resultados: data/metrica-analysis.json; pruebas: tests/tracking.py y tests/continuity.cjs.
 - No hay aprendizaje automático ni ajuste de parámetros del motor en esta versión. Se trata de ejemplos seleccionados, no de una muestra representativa ni de validación independiente por partido.
 
-Siguiente paso pendiente: instrumentar el motor con medidas comparables de apoyo y acompañamiento, evaluar discrepancias sobre escenarios equivalentes y ajustar una primera regla de movimiento. Contrastar el cambio con secuencias no usadas para el ajuste y mantener errores y decisiones del usuario. Ampliar después el análisis a más partidos, rupturas, remates y reorganizaciones.
+Etapa iniciada en 0.14 (ampliar validación): instrumentar el motor con medidas comparables de apoyo y acompañamiento, evaluar discrepancias sobre escenarios equivalentes y ajustar una primera regla de movimiento. Contrastar el cambio con secuencias no usadas para el ajuste y mantener errores y decisiones del usuario. Ampliar después el análisis a más partidos, rupturas, remates y reorganizaciones.
 
 Trabajo completo de referencia (puntos 1–5 iniciados; ampliar muestras e interpretación antes de calibración):
 1. Verificar condiciones de uso y atribución para la integración prevista.
@@ -83,7 +95,7 @@ Flujo propuesto:
 Ejemplo de tarea: acompañar la progresión desde mediocampo mediante apoyos a diferentes alturas, manteniendo amplitud y opciones de profundidad.
 Evaluar disponibilidad y oportunidad de los apoyos, progresión, pérdidas y equilibrio tras pérdida; no solo goles o posesión.
 El entrenamiento no debe producir perfección automática ni una bonificación general desconectada de lo practicado.
-Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.13 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
+Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.16 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
 
 ## Criterios de aceptación futuros
 - Las dinámicas se contrastan con secuencias reales identificables.

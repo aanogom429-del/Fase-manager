@@ -18,7 +18,7 @@ SOURCES = {
 }
 
 
-def read_team(path, team):
+def read_team(path, team, max_time=20.04):
     with open(path, newline="", encoding="utf-8-sig") as stream:
         rows = list(csv.reader(stream))
     headers = rows[2]
@@ -42,7 +42,7 @@ def read_team(path, team):
         if not row:
             continue
         period, frame, time = int(row[0]), int(row[1]), float(row[2])
-        if period != 1 or time > 20.04:
+        if period != 1 or time > max_time:
             break
         if (period, frame) in frames:
             raise ValueError("Duplicate frame")

@@ -19,5 +19,5 @@ function run(seed,gain){
 }
 const results=[73,101,211].map(seed=>({seed,baseline:run(seed,.65),adjusted:run(seed,.35)}));
 for(const row of results){assert(row.adjusted.elapsed>89);assert(row.adjusted.passes>0);assert(row.adjusted.shots>0);}
-fs.writeFileSync(path.join(root,'data/free-movement-check.json'),JSON.stringify({durationSeconds:90,seeds:results,note:'Regression smoke check, not validation of football realism.'},null,2)+'\n');
+fs.writeFileSync(path.join(root,process.argv[2]||'data/free-movement-check.json'),JSON.stringify({durationSeconds:90,seeds:results,note:'Regression smoke check, not validation of football realism.'},null,2)+'\n');
 console.log(JSON.stringify(results));

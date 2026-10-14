@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const sample=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',
- 'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,beginMeasurement,measurementValues,supportCandidates,defendingTarget,passExecution,movement,defensiveMetrics,startLossTrace,sampleLossTrace,capture,get:()=>({lossTrace,measurement,players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
+ 'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,beginMeasurement,measurementValues,supportCandidates,defendingTarget,passExecution,defensiveOrder,movement,defensiveMetrics,startLossTrace,sampleLossTrace,capture,get:()=>({lossTrace,measurement,players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
 function env(){
  const nodes={};
  class E{

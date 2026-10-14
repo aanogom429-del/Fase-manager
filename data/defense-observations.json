@@ -1,0 +1,78 @@
+{
+  "version": "0.17",
+  "source": "https://github.com/metrica-sports/sample-data",
+  "units": "source pitch metres (105 x 68)",
+  "scope": "Descriptive observed geometry, two selected clips from one match; not a calibration or matched simulation validation.",
+  "clips": [
+    {
+      "id": "transition-blue",
+      "team": 0,
+      "anchor": 288.12,
+      "measurements": [
+        {
+          "at": 0,
+          "frame": 7203,
+          "nearest": 4,
+          "distance": 2.764991989654142,
+          "covers": [],
+          "goalSide": 5,
+          "depth": 35.423849999999995
+        },
+        {
+          "at": 2,
+          "frame": 7253,
+          "nearest": 4,
+          "distance": 1.8469887053936107,
+          "covers": [],
+          "goalSide": 5,
+          "depth": 31.952550000000002
+        },
+        {
+          "at": 5,
+          "frame": 7328,
+          "nearest": 4,
+          "distance": 3.644338496901734,
+          "covers": [],
+          "goalSide": 6,
+          "depth": 29.794800000000002
+        }
+      ]
+    },
+    {
+      "id": "transition-red",
+      "team": 1,
+      "anchor": 374.16,
+      "measurements": [
+        {
+          "at": 0,
+          "frame": 9354,
+          "nearest": 19,
+          "distance": 2.7264954848497833,
+          "covers": [
+            20
+          ],
+          "goalSide": 6,
+          "depth": 34.314
+        },
+        {
+          "at": 2,
+          "frame": 9404,
+          "nearest": 20,
+          "distance": 3.1927538117587457,
+          "covers": [],
+          "goalSide": 4,
+          "depth": 35.874300000000005
+        },
+        {
+          "at": 5,
+          "frame": 9479,
+          "nearest": 16,
+          "distance": 7.3065896330919164,
+          "covers": [],
+          "goalSide": 1,
+          "depth": 43.34925
+        }
+      ]
+    }
+  ]
+}

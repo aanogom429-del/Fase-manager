@@ -14,7 +14,7 @@ e.t.restorePosition();assert.equal(e.t.get().lossTrace,null);
 e.t.startSituation();let s=e.t.get();e.t.capture(s.players.find(p=>p.t===0&&p.n===6),'recibe');assert.equal(e.t.get().lossTrace,null);
 e.t.capture(s.players.find(p=>p.t===1&&p.n===6),'intercepta');assert.equal(e.t.get().lossTrace.team,0);assert.equal(e.t.get().lossTrace.samples[0].at,0);
 const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/metrica-analysis.json'),'utf8'));
-const clips=data.clips.filter(c=>c.transition);assert.equal(clips.length,3);
+const clips=data.clips.filter(c=>c.transition);assert.equal(clips.length,4);
 const report=clips.map(c=>{
  assert(c.events.some(e=>e.type==='RECOVERY'&&e.team!==c.team&&e.start===c.start));
  return {id:c.id,team:c.team,anchor:c.start,measurements:[0,2,5].map(at=>{
@@ -25,11 +25,11 @@ const report=clips.map(c=>{
 });
 async function checkUI(){
  e.nodes['real-reference'].open=true;await e.nodes['real-reference'].ontoggle();
- for(let i=4;i<7;i++){e.nodes['reference-sequence'].onchange({target:{value:String(i)}});assert.equal(e.nodes['transition-jumps'].hidden,false);
+ for(let i=4;i<8;i++){e.nodes['reference-sequence'].onchange({target:{value:String(i)}});assert.equal(e.nodes['transition-jumps'].hidden,false);
   for(const [id,at] of [['transition-zero',0],['transition-two',2],['transition-five',5]]){e.nodes[id].onclick();assert(e.nodes['reference-clock'].textContent.includes((data.clips[i].start+at).toFixed(2)));}
  }
  e.nodes['reference-sequence'].onchange({target:{value:'0'}});assert.equal(e.nodes['transition-jumps'].hidden,true);
- fs.writeFileSync(path.join(__dirname,'../data/defense-observations.json'),JSON.stringify({version:'0.19',source:data.source,units:'source pitch metres (105 x 68)',scope:'Descriptive observed geometry, three selected clips from one match; not a calibration or matched simulation validation.',clips:report},null,2)+'\n');
+ fs.writeFileSync(path.join(__dirname,'../data/defense-observations.json'),JSON.stringify({version:'0.20',source:data.source,units:'source pitch metres (105 x 68)',scope:'Descriptive observed geometry, four selected clips from one match; not a calibration or matched simulation validation.',clips:report},null,2)+'\n');
  console.log('PASS: mirrored defense, missing data, passive observation, game-time sampling, loss identity, reset and event-aligned UI');console.log(JSON.stringify(report));
 }
 checkUI().catch(e=>{console.error(e);process.exitCode=1;});

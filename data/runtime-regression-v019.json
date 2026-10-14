@@ -1,0 +1,51 @@
+{
+  "durationSeconds": 90,
+  "seeds": [
+    {
+      "seed": 73,
+      "baseline": null,
+      "adjusted": {
+        "passes": 73,
+        "shots": 1,
+        "turnovers": 35,
+        "backward": 14,
+        "score": [
+          0,
+          0
+        ],
+        "elapsed": 90.00000000001769
+      }
+    },
+    {
+      "seed": 101,
+      "baseline": null,
+      "adjusted": {
+        "passes": 78,
+        "shots": 5,
+        "turnovers": 35,
+        "backward": 16,
+        "score": [
+          0,
+          2
+        ],
+        "elapsed": 90.00000000001769
+      }
+    },
+    {
+      "seed": 211,
+      "baseline": null,
+      "adjusted": {
+        "passes": 83,
+        "shots": 4,
+        "turnovers": 32,
+        "backward": 14,
+        "score": [
+          1,
+          1
+        ],
+        "elapsed": 90.00000000001769
+      }
+    }
+  ],
+  "note": "Regression smoke check, not validation of football realism."
+}

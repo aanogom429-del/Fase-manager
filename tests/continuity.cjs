@@ -14,7 +14,7 @@ function env(){
  let seed=101;
  const context={document:{head:new E(),getElementById:id=>nodes[id]||(nodes[id]=new E()),createElement:()=>new E()},
   Math:Object.assign(Object.create(Math),{random:()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;}}),
-  requestAnimationFrame:()=>{},fetch:async()=>({ok:true,json:async()=>sample}),console:{error:(...e)=>{throw new Error(e.join(' '));}}};
+  requestAnimationFrame:()=>{},fetch:async url=>({ok:true,json:async()=>url.includes('defense-validation')?JSON.parse(fs.readFileSync(path.join(root,'data/defense-validation.json'),'utf8')):sample}),console:{error:(...e)=>{throw new Error(e.join(' '));}}};
  vm.createContext(context);vm.runInContext(script,context);let now=100;
  return {t:context.test,nodes,tick:()=>context.test.frame(now+=1000/60)};
 }

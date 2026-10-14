@@ -59,7 +59,7 @@ function evaluate(clip,gain){
 }
 function mean(rows,key){return rows.reduce((s,r)=>s+r[key],0)/rows.length;}
 function run(){
- const development=dataset.clips.filter(c=>!c.reserved&&c.id!=='circulation-loss');
+ const development=dataset.clips.filter(c=>['away-progress','home-progress'].includes(c.id));
  const gains=[.35,.5,.65,.8,1,1.2,1.4];
  const candidates=gains.map(gain=>{const results=development.map(c=>evaluate(c,gain));return {gain,meanPositionMAEM:mean(results,'positionMAEM'),results};});
  const baseline=candidates.find(c=>c.gain===.65);

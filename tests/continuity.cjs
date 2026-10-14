@@ -1,6 +1,6 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
 const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const sample=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-sample.json'),'utf8'));
+const sample=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',
  'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,get:()=>({players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
 function env(){
@@ -47,8 +47,16 @@ async function main(){
  without.t.update(.01);if(!without.t.get().owner){const before=signature(without);without.t.enterDecisionMode();assert.equal(signature(without),before);without.nodes['resume-ball'].onclick();resolve(without);}
  const e=env();e.t.enterFreeMode();e.t.scenario({time:85,team:0});const before=signature(e);
  e.nodes['real-reference'].open=true;await e.nodes['real-reference'].ontoggle();assert.equal(signature(e),before);assert.equal(e.t.get().running,false);
- e.nodes['reference-time'].oninput({target:{value:'50'}});assert(e.nodes['reference-clock'].textContent.includes('10.04'));
- e.nodes['reference-play'].onclick();e.t.tickReference(100);e.t.tickReference(1000);assert(e.nodes['reference-clock'].textContent.includes('10.84'));
+ e.nodes['reference-time'].oninput({target:{value:'5'}});assert(e.nodes['reference-clock'].textContent.includes(sample.clips[0].frames[5].time.toFixed(2)));
+ e.nodes['reference-play'].onclick();e.t.tickReference(100);e.t.tickReference(1000);const targetTime=sample.clips[0].frames[5].time+.9;const expected=sample.clips[0].frames.filter(f=>f.time<=targetTime).at(-1);assert(e.nodes['reference-clock'].textContent.includes(expected.time.toFixed(2)));
+ for(let i=0;i<sample.clips.length;i++){
+  e.nodes['reference-sequence'].onchange({target:{value:String(i)}});
+  e.nodes['reference-event-select'].onchange({target:{value:'0'}});
+  assert(e.nodes['reference-clock'].textContent.includes(sample.clips[i].events[0].start.toFixed(2)));
+  e.nodes['reference-trails'].checked=true;
+  e.nodes['reference-time'].oninput({target:{value:String(sample.clips[i].frames.length-1)}});
+  assert(!e.nodes['reference-pitch'].innerHTML.includes('NaN'));
+ }
  assert.equal(signature(e),before,'reference viewer must not change simulation');
  e.t.startSituation();assert.equal(e.t.get().elapsed,0);assert.equal(e.t.get().score.join(','),'0,0');
  console.log('PASS: possession for both teams, frozen flight, loose ball, clock/score, pause, retry, both mode directions, reference isolation/playback, explicit restart');

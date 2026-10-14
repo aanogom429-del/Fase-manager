@@ -1,5 +1,9 @@
 # Actualizaciones completadas · 14 de octubre de 2026
 
+- **0.18 — Contraste defensivo controlado.** Reproducción del motor con los diez defensores de campo libres y el balón, atacantes y portero prescritos por el tracking. Mismas posiciones iniciales, paso máximo 1/120 s, interpolación únicamente entre muestras completas; sin ajustar parámetros. Superposición amarilla activable y error de posición visible en las dos referencias de transición. Resultado temporal: azul 10,87 m frente a 3,91 m manteniendo las posiciones iniciales; rojo 8,52 frente a 8,03 m. El motor no supera esta referencia simple en ninguna de las dos ventanas. Son discrepancias de trayectoria, no una nota táctica; no justifican inmovilizar jugadores ni afirmar que todas las defensas son incorrectas. Roles y velocidades no están medidos y la muestra procede de un solo partido. Informe: data/defense-validation.json; reproducir con node scripts/evaluate_defense.cjs. Tests: node tests/defense_replay.cjs. Se mantiene la dinámica de juego 0.16; las versiones 0.17 y 0.18 añaden observación y contraste.
+
+La selección de las dos secuencias originales del banco de pruebas ofensivo ahora se hace por identificadores explícitos: las referencias defensivas nuevas no entran accidentalmente en su ajuste.
+
 - **0.17 — Observación de la transición defensiva.** Dos nuevas ventanas de cinco segundos desde RECOVERY rival en Metrica Sample Game 1 (288,12 y 374,16 s), con los 22 jugadores y balón presentes en todos los fotogramas seleccionados. Botones 0/+2/+5 s; medidas compartidas con el motor: distancia del más próximo al balón, candidatos geométricos a cobertura, jugadores hacia portería propia respecto al balón y profundidad sin porteros. Registro automático de la última pérdida simulada en esos tres instantes; pausa conserva el registro, comparar/reiniciar lo limpia y una nueva pérdida lo sustituye. Informe reproducible: data/defense-observations.json, generado con node tests/defense.cjs. Una cobertura candidata no demuestra eficacia. La versión incorpora observación y contraste descriptivo; no ajusta las reglas defensivas ni entrena jugadores.
 
 En los ejemplos observados, la profundidad azul pasa de 35,4 a 29,8 m y la roja de 34,3 a 43,3 m. Estas respuestas diferentes no constituyen objetivos numéricos para el motor. La muestra continúa siendo de un único partido.
@@ -10,7 +14,7 @@ En los ejemplos observados, la profundidad azul pasa de 35,4 a 29,8 m y la roja 
 
 Las medidas de apoyo son geométricas, no sustituyen la interpretación de los espacios de fase. Los contornos relacionales amplios y la continuidad entre simulación libre y decisiones se mantienen.
 
-**Siguiente etapa:** ampliar el contraste a más partidos y construir pruebas equivalentes de reorganización (mismo estado inicial, balón y oposición prescritos) antes de ajustar reglas defensivas; calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
+**Siguiente etapa:** localizar qué reglas defensivas provocan las discrepancias (desplazamientos del bloque, asignación de presión/cobertura y velocidades), contrastar un cambio acotado con secuencias no utilizadas para elegirlo y ampliar a más partidos. Evitar optimizar solo para una trayectoria o premiar la inmovilidad. Calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
 
 ---
 

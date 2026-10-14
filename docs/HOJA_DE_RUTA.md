@@ -1,5 +1,5 @@
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 13 de octubre de 2026. Base de esta actualización: 0.12.
+Actualizada: 14 de octubre de 2026. Base de esta actualización: 0.13.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.
@@ -35,9 +35,22 @@ Avance completado en 0.12:
 - Fuentes: https://github.com/metrica-sports/sample-data y los dos CSV Home/Away de data/Sample_Game_1. Metadatos y enlaces guardados en data/metrica-sample.json.
 - Muestra de 20 s = prueba del proceso de importación y observación; no demuestra patrones típicos ni permite calibrar errores o aprendizaje.
 
-Siguiente paso pendiente: importar y seleccionar más secuencias sincronizadas con eventos; medir apoyos, desmarques y respuestas al desplazamiento del balón, distinguiendo observaciones de inferencias. Después contrastar y calibrar el motor con secuencias distintas a las utilizadas para el ajuste.
+Avance completado en 0.13 (14 de octubre de 2026):
+- Importados diez minutos del primer periodo de Sample Game 1 y sus eventos. Seleccionadas cuatro secuencias identificables por tiempo, fotograma y equipo:
+  - Progresión Away 30,52–40,40 s: cuatro pases, +10,5 m entre el origen del primero y el destino del último.
+  - Progresión Home 45,36–50,64 s: tres pases, +25,2 m.
+  - Circulación y pérdida Away 0,04–15,20 s: seis pases y pérdida/recuperación anotadas; avance de la cadena de pases −4,2 m (no incluye la trayectoria posterior de la pérdida).
+  - Progresión Away 463,44–476,72 s: seis pases, +48,3 m; reservada para contraste posterior.
+- Visor con selector de secuencia, salto al inicio de cada evento, tiempos originales y trazas de los jugadores sin intervención anotada.
+- Medidos avance medio del bloque, desplazamiento individual y número de jugadores sin intervención anotada que avanzan al menos 2 m. La ausencia de un evento From/To no garantiza ausencia de todos los contactos.
+- Candidatos geométricos a apoyo calculados en el fotograma exacto de inicio de cada pase. Umbrales descriptivos: 3–30 m, sin rival a menos de 2 m de la parte interior del segmento. No son probabilidades de éxito ni una identificación completa del espacio de ayuda mutua.
+- Conservados los huecos y las identidades; excluidas estimaciones de líneas de apoyo si falta algún rival. Eventos y posiciones del pasador se contrastan en tests: discrepancia <1 m en los pases seleccionados.
+- Implementación reproducible: scripts/analyze_sequences.py; resultados: data/metrica-analysis.json; pruebas: tests/tracking.py y tests/continuity.cjs.
+- No hay aprendizaje automático ni ajuste de parámetros del motor en esta versión. Se trata de ejemplos seleccionados, no de una muestra representativa ni de validación independiente por partido.
 
-Trabajo completo de referencia (puntos 1–3 iniciados con la muestra; 4–7 pendientes):
+Siguiente paso pendiente: instrumentar el motor con medidas comparables de apoyo y acompañamiento, evaluar discrepancias sobre escenarios equivalentes y ajustar una primera regla de movimiento. Contrastar el cambio con secuencias no usadas para el ajuste y mantener errores y decisiones del usuario. Ampliar después el análisis a más partidos, rupturas, remates y reorganizaciones.
+
+Trabajo completo de referencia (puntos 1–5 iniciados; ampliar muestras e interpretación antes de calibración):
 1. Verificar condiciones de uso y atribución para la integración prevista.
 2. Importar una muestra, normalizar dimensiones, orientación de ataque, coordenadas y tiempo.
 3. Filtrar errores de identidad, saltos y datos extrapolados de baja confianza. No tratar estimaciones como observaciones exactas.
@@ -70,7 +83,7 @@ Flujo propuesto:
 Ejemplo de tarea: acompañar la progresión desde mediocampo mediante apoyos a diferentes alturas, manteniendo amplitud y opciones de profundidad.
 Evaluar disponibilidad y oportunidad de los apoyos, progresión, pérdidas y equilibrio tras pérdida; no solo goles o posesión.
 El entrenamiento no debe producir perfección automática ni una bonificación general desconectada de lo practicado.
-Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.12 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
+Decisión técnica pendiente: progresión mediante parámetros adaptativos o aprendizaje automático. La versión 0.13 no aprende de la práctica; ambas alternativas deben explicarse con precisión.
 
 ## Criterios de aceptación futuros
 - Las dinámicas se contrastan con secuencias reales identificables.
@@ -79,3 +92,4 @@ Decisión técnica pendiente: progresión mediante parámetros adaptativos o apr
 - Se mantiene incertidumbre y posibilidad de error sin bloqueos del motor.
 - Las mejoras entrenadas persisten y se evalúan frente a una línea base y en situaciones no ensayadas.
 - Se preservan el diseño, los controles y la capacidad de comparar decisiones.
+

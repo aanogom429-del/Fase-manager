@@ -7,7 +7,8 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituati
   update(1/120);
   if(passes>lastPass&&flight&&flight.kind==='pass'&&(flight.tx-flight.x)*direction(flight.t)<-1)backward++;
   lastPass=passes;
-  for(const p of players)if(!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<2||p.x>98||p.y<2||p.y>62)throw Error('Invalid position');
+  // Los ejecutores pueden situarse sobre las líneas durante banda y esquina.
+  for(const p of players)if(!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.x>100||p.y<0||p.y>64)throw Error('Invalid position');
  }
  return {passes,shots,turnovers,backward,score,elapsed};
  };`);

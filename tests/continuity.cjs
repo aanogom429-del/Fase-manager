@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const sample=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',
- 'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,beginMeasurement,measurementValues,supportCandidates,get:()=>({measurement,players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
+ 'globalThis.test={enterDecisionMode,enterFreeMode,playChoice,restorePosition,startSituation,frame,update,kickTo,renderPhase,tickReference,beginMeasurement,measurementValues,supportCandidates,defendingTarget,passExecution,get:()=>({measurement,players,owner,flight,bx,by,elapsed,score,passes,shots,turnovers,running,stage,ballHeight,loose,trialSeed}),select:g=>{technique=g;renderChoices();syncControls();},scenario:(s)=>{elapsed=s.time;score=[2,1];owner=players.find(p=>p.t===s.team&&p.n===6);bx=owner.x;by=owner.y;decision=.5;}};startSituation();requestAnimationFrame(frame);');
 function env(){
  const nodes={};
  class E{
@@ -35,6 +35,10 @@ async function main(){
   e.t.playChoice('support');resolve(e);assert.equal(signature(e),result,'retry must reproduce result');
   const current=signature(e);e.t.enterFreeMode();assert.equal(signature(e),current,'return to free mode must preserve state');
  }
+ function executionMean(pressure,length){const e=env(),s=e.t.get(),p=s.owner;p.x=30;p.y=32;for(const q of s.players.filter(q=>q.t!==p.t)){q.x=90;q.y=60;}if(pressure){const q=s.players.find(q=>q.t!==p.t);q.x=30.5;q.y=32;}let sum=0;for(let i=0;i<500;i++){const r=e.t.passExecution(p,30+length,32);assert(Number.isFinite(r.tx)&&r.tx>=2&&r.tx<=98&&r.ty>=2&&r.ty<=62);sum+=r.error;}return sum/500;}
+ const low=executionMean(false,10),high=executionMean(true,10),long=executionMean(false,40);assert(low>0&&high>low&&long>low,'pressure and length increase execution dispersion');
+ console.log('Execution dispersion:',JSON.stringify({low,high,long}));
+ const defense=env();for(const t of [0,1]){const p=defense.t.get().players.find(p=>p.t===t&&p.n===6),dir=t===0?1:-1;for(const rank of [0,1,2,6]){const q=defense.t.defendingTarget(p,rank,{x:50,y:32});assert((q.x-50)*dir<0,"defender protects own-goal side");}}
  const measured=env(), unchanged=signature(measured);measured.t.beginMeasurement();assert.equal(signature(measured),unchanged);assert.equal(measured.t.measurementValues().seconds,0);assert.equal(measured.t.measurementValues().block,0);measured.t.restorePosition();assert.equal(measured.t.get().measurement,null);
  const air=env();air.t.enterFreeMode();air.t.scenario({time:110,team:0});
  const s=air.t.get(),target=s.players.find(p=>p.t===0&&p.n===8);air.t.kickTo(s.owner,target.x,target.y,'pass',target);

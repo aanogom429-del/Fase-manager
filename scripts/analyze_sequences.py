@@ -90,6 +90,7 @@ def build(home_path, away_path, events_path):
         ("transition-blue", "Azul tras pérdida · 5 segundos", 0, 288.12, 293.12, False),
         ("transition-red", "Rojo tras pérdida · 5 segundos", 1, 374.16, 379.16, False),
         ("transition-check", "Contraste nuevo · Azul tras pérdida", 0, 215.40, 220.40, False),
+        ("transition-roles-check", "Contraste de roles · Azul tras pérdida", 0, 300.76, 305.76, False),
     ]
     clips = []
     for ident, title, team, start, end, reserved in definitions:
@@ -117,7 +118,7 @@ def build(home_path, away_path, events_path):
     return {"schemaVersion": 2, "provider": "Metrica Sports", "match": "Sample Game 1",
             "source": ROOT, "eventsSource": ROOT + "/blob/master/data/Sample_Game_1/Sample_Game_1_RawEventsData.csv",
             "sourceWindowSeconds": [0.04, 600.04], "sourcePitchMeters": [105, 68], "modelPitch": [100, 64],
-            "selection": "Three offensive examples, one reserved contrast clip and three five-second windows after opponent RECOVERY events; not representative sampling.",
+            "selection": "Three offensive examples, one reserved contrast clip and four five-second windows after opponent RECOVERY events; not representative sampling.",
             "quality": {"home": hq, "away": aq}, "clips": clips,
             "definitions": {"supports": "At PASS onset: teammate excluding goalkeeper and sender, 3–30 m away; no rival within 2 m of the interior 8–95% of the segment. Geometric indicator, not a guaranteed pass.",
                             "offBall": "No From/To entry for that player in any selected event. Unrecorded touches cannot be excluded.",

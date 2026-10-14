@@ -370,7 +370,7 @@ function defendingTarget(p,rank,ballPos){
  const rival=nearest(p,opp(p.t).filter(q=>q.n!==1));
  if(rival&&d(p,rival)<16){x=x*.65+(rival.x-dir*2)*.35;y=y*.65+rival.y*.35;}
  // Los jugadores superados recuperan profundidad; los más próximos presionan y cubren.
- if((x-ballPos.x)*dir> -4)x=ballPos.x-dir*4;
+ if((p.x-ballPos.x)*dir>8)x=x*.6+(ballPos.x-dir*6)*.4;
  return {x:clamp(x,2,98),y:clamp(y,2,62)};
 }
 function movement(dt){

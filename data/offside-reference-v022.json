@@ -1,0 +1,298 @@
+{
+  "source": "https://github.com/metrica-sports/sample-data",
+  "engineVersion": "0.22",
+  "method": "Complete-frame player/ball centre geometry at annotated PASS onset; field and direction normalized by source import. No body-part, active-involvement, restart-exemption or referee adjudication inference.",
+  "rows": [
+    {
+      "clip": "away-progress",
+      "match": "Sample Game 1",
+      "time": 30.52,
+      "sender": 16,
+      "receiver": 19,
+      "complete": true,
+      "referenceX": 32.19,
+      "ahead": []
+    },
+    {
+      "clip": "away-progress",
+      "match": "Sample Game 1",
+      "time": 31.36,
+      "sender": 19,
+      "receiver": 20,
+      "complete": true,
+      "referenceX": 32.875,
+      "ahead": []
+    },
+    {
+      "clip": "away-progress",
+      "match": "Sample Game 1",
+      "time": 33.36,
+      "sender": 20,
+      "receiver": 22,
+      "complete": true,
+      "referenceX": 34.036,
+      "ahead": []
+    },
+    {
+      "clip": "away-progress",
+      "match": "Sample Game 1",
+      "time": 39.04,
+      "sender": 22,
+      "receiver": 17,
+      "complete": true,
+      "referenceX": 18.437,
+      "ahead": [
+        21
+      ]
+    },
+    {
+      "clip": "home-progress",
+      "match": "Sample Game 1",
+      "time": 45.36,
+      "sender": 5,
+      "receiver": 6,
+      "complete": true,
+      "referenceX": 53.375,
+      "ahead": []
+    },
+    {
+      "clip": "home-progress",
+      "match": "Sample Game 1",
+      "time": 46.16,
+      "sender": 6,
+      "receiver": 10,
+      "complete": true,
+      "referenceX": 52.567,
+      "ahead": []
+    },
+    {
+      "clip": "home-progress",
+      "match": "Sample Game 1",
+      "time": 49.04,
+      "sender": 10,
+      "receiver": 8,
+      "complete": true,
+      "referenceX": 58.372,
+      "ahead": []
+    },
+    {
+      "clip": "circulation-loss",
+      "match": "Sample Game 1",
+      "time": 0.04,
+      "sender": 19,
+      "receiver": 21,
+      "complete": true,
+      "referenceX": 30.927,
+      "ahead": []
+    },
+    {
+      "clip": "circulation-loss",
+      "match": "Sample Game 1",
+      "time": 0.12,
+      "sender": 21,
+      "receiver": 15,
+      "complete": true,
+      "referenceX": 30.927,
+      "ahead": []
+    },
+    {
+      "clip": "circulation-loss",
+      "match": "Sample Game 1",
+      "time": 1.8,
+      "sender": 15,
+      "receiver": 19,
+      "complete": false
+    },
+    {
+      "clip": "circulation-loss",
+      "match": "Sample Game 1",
+      "time": 3.08,
+      "sender": 19,
+      "receiver": 21,
+      "complete": true,
+      "referenceX": 30.988,
+      "ahead": []
+    },
+    {
+      "clip": "circulation-loss",
+      "match": "Sample Game 1",
+      "time": 7.64,
+      "sender": 21,
+      "receiver": 22,
+      "complete": true,
+      "referenceX": 25.092,
+      "ahead": []
+    },
+    {
+      "clip": "circulation-loss",
+      "match": "Sample Game 1",
+      "time": 11.16,
+      "sender": 22,
+      "receiver": 17,
+      "complete": true,
+      "referenceX": 22.611,
+      "ahead": []
+    },
+    {
+      "clip": "contrast-progress",
+      "match": "Sample Game 1",
+      "time": 463.44,
+      "sender": 25,
+      "receiver": 17,
+      "complete": true,
+      "referenceX": 38.333,
+      "ahead": [
+        23,
+        24
+      ]
+    },
+    {
+      "clip": "contrast-progress",
+      "match": "Sample Game 1",
+      "time": 466.96,
+      "sender": 17,
+      "receiver": 22,
+      "complete": true,
+      "referenceX": 36.73,
+      "ahead": []
+    },
+    {
+      "clip": "contrast-progress",
+      "match": "Sample Game 1",
+      "time": 469.08,
+      "sender": 22,
+      "receiver": 20,
+      "complete": true,
+      "referenceX": 34.688,
+      "ahead": []
+    },
+    {
+      "clip": "contrast-progress",
+      "match": "Sample Game 1",
+      "time": 471.52,
+      "sender": 20,
+      "receiver": 19,
+      "complete": true,
+      "referenceX": 33.989,
+      "ahead": []
+    },
+    {
+      "clip": "contrast-progress",
+      "match": "Sample Game 1",
+      "time": 473.24,
+      "sender": 19,
+      "receiver": 24,
+      "complete": true,
+      "referenceX": 30.721,
+      "ahead": []
+    },
+    {
+      "clip": "contrast-progress",
+      "match": "Sample Game 1",
+      "time": 475.28,
+      "sender": 24,
+      "receiver": 18,
+      "complete": true,
+      "referenceX": 25.819,
+      "ahead": [
+        23
+      ]
+    },
+    {
+      "clip": "transition-blue",
+      "match": "Sample Game 1",
+      "time": 288.12,
+      "sender": 18,
+      "receiver": 21,
+      "complete": true,
+      "referenceX": 10.453,
+      "ahead": [
+        24
+      ]
+    },
+    {
+      "clip": "transition-blue",
+      "match": "Sample Game 1",
+      "time": 290.64,
+      "sender": 21,
+      "receiver": 18,
+      "complete": true,
+      "referenceX": 14.13,
+      "ahead": []
+    },
+    {
+      "clip": "transition-red",
+      "match": "Sample Game 1",
+      "time": 375.6,
+      "sender": 6,
+      "receiver": 10,
+      "complete": true,
+      "referenceX": 50,
+      "ahead": []
+    },
+    {
+      "clip": "transition-check",
+      "match": "Sample Game 1",
+      "time": 215.4,
+      "sender": 17,
+      "receiver": 20,
+      "complete": true,
+      "referenceX": 27.15,
+      "ahead": [
+        23
+      ]
+    },
+    {
+      "clip": "transition-check",
+      "match": "Sample Game 1",
+      "time": 217.24,
+      "sender": 20,
+      "receiver": 18,
+      "complete": true,
+      "referenceX": 33.2,
+      "ahead": [
+        23
+      ]
+    },
+    {
+      "clip": "transition-roles-check",
+      "match": "Sample Game 1",
+      "time": 300.76,
+      "sender": 19,
+      "receiver": 18,
+      "complete": true,
+      "referenceX": 13.965,
+      "ahead": [
+        24
+      ]
+    },
+    {
+      "clip": "transition-roles-check",
+      "match": "Sample Game 1",
+      "time": 304.12,
+      "sender": 18,
+      "receiver": 19,
+      "complete": true,
+      "referenceX": 14.27,
+      "ahead": []
+    },
+    {
+      "clip": "game2-throw",
+      "match": "Sample Game 2",
+      "time": 26.88,
+      "sender": 15,
+      "receiver": 16,
+      "complete": false
+    },
+    {
+      "clip": "game2-throw",
+      "match": "Sample Game 2",
+      "time": 30.72,
+      "sender": 16,
+      "receiver": 17,
+      "complete": true,
+      "referenceX": 32.961,
+      "ahead": []
+    }
+  ]
+}

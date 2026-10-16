@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "engineVersion": "0.24",
+  "engineVersion": "0.25",
   "source": "https://github.com/metrica-sports/sample-data",
   "method": "All 10 outfield defenders simulated from observed starting positions. Observed ball, attackers and goalkeeper prescribed. Fixed steps <=1/120 s with linear interpolation only between complete samples. No fitted parameters.",
   "limitations": [

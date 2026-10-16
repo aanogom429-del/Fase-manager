@@ -1,4 +1,14 @@
-# Actualizaciones completadas · 15 de octubre de 2026
+# Actualizaciones completadas · 16 de octubre de 2026
+
+- **0.23 — Primer modelo de entradas, faltas y penaltis.** Una disputa seleccionada puede recuperar legalmente, fallar sin contacto o producir una entrada tardía con contacto imprudente. Solo este último caso detiene el juego. Se concede libre directo donde sucede o penalti dentro del área propia, incluidas sus líneas. No se deduce una falta de la proximidad por sí sola. Se conserva la distribución de campo y decisiones en dos columnas y el requisito pendiente de decisiones en apoyo mutuo y cooperación.
+
+Modelo provisional: episodio de entrada a menos de 2,8 m, contacto simplificado hasta 1,2 m y umbral de fallo de sincronización 0,14 (0,24 frente a protección), con 0,65 s entre intentos. Son parámetros del prototipo, no porcentajes observados de faltas. No representa anatomía, intensidad ni todas las infracciones. Detiene siempre ante la falta; ventaja, temeridad, fuerza excesiva y sanciones disciplinarias —incluidas reiteración, ataque prometedor y ocasión manifiesta— siguen pendientes. No se afirma cumplimiento completo de la Regla 12.
+
+Penalti automático desde 11 m: guardameta en la línea, otros jugadores detrás del punto, fuera del área y a 9,15 m; lanzamiento hacia delante con dispersión provisional, sin gol garantizado. Se conservan segundo toque, continuidad, pausa y repetición. Los libres directos se ejecutan mediante pase automático; barreras organizadas, invasiones y faltas técnicas del lanzamiento no están modeladas. Se registra autor, lugar, instante, tipo de reanudación y contador de faltas por equipo.
+
+Verificación: `tests/fouls.cjs` cubre entradas legales, intentos sin contacto, ambos equipos, fronteras del área, colocación de penaltis/libres, gol directo, segundo toque, pausa, repetición y el recorrido real de actualización hasta la siguiente decisión guiada. Pasan continuidad, reglas, fuera de juego y contraste defensivo. Tres regresiones libres de 90 s: 67/72/74 pases, 7/8/13 tiros, ninguna falta ni fuera de juego sancionados y sin posiciones inválidas (`data/runtime-regression-v023.json`). Por tanto, no se valida frecuencia de faltas o penaltis. El contraste defensivo de las cuatro ventanas conserva sus resultados; no prueba el modelo de contacto. No se añaden partidos ni se atribuyen contactos físicos a los centros del tracking.
+
+Referencia complementaria consultada el 16-10-2026: IFAB 2026/27, Reglas 12 y 14, https://www.theifab.com/laws/latest/fouls-and-misconduct/ y https://www.theifab.com/laws/latest/the-penalty-kick/. La copia local del PDF no pudo extraerse en esta sesión; se contrastó este bloque con la publicación oficial.
 
 - **0.22 — Fuera de juego por intervención con balón.** Referencia al golpeo, penúltimo adversario, balón y medio campo; no se sanciona solo la posición. Se aplica libre indirecto al toque/recepción, incluso tras regresar a campo propio. Se respetan igualdad de altura y recepciones directas de banda, meta y esquina. La referencia y el historial reglamentario sobreviven a pausa/cambio de modo y se restauran al comparar decisiones. Línea magenta, aviso en los pases y contador de sanciones. Sigue siendo un modelo puntual: no incluye partes corporales, interferencias sin tocar, rebotes o salvadas con rechazo.
 
@@ -40,12 +50,12 @@ En los ejemplos observados, la profundidad azul pasa de 35,4 a 29,8 m y la roja 
 
 Las medidas de apoyo son geométricas, no sustituyen la interpretación de los espacios de fase. Los contornos relacionales amplios y la continuidad entre simulación libre y decisiones se mantienen.
 
-**Siguiente etapa:** faltas con criterios explícitos de contacto, ventaja, tarjetas y penaltis. Completar interferencias sin tocar el balón y rebotes/salvadas de la Regla 11 cuando se modelen esas conductas: proximidad no equivale a interferencia. En paralelo, contrastar velocidades contextuales y transiciones prolongadas en más partidos, usando la segunda muestra ya incorporada sin optimizar solo para ella. Completar tiempos reglamentarios, portero con manos y los procedimientos 2026/27 antes de afirmar cobertura reglamentaria completa. La referencia espacial de la pérdida y la continuidad de asignaciones ya están implementadas, pero su realismo general sigue pendiente de validar. Calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
+**Siguiente etapa:** ventaja y sanciones disciplinarias sobre el primer modelo de contacto de 0.23; ampliar los tipos de falta y los procedimientos de libres/penaltis. Completar interferencias sin tocar el balón y rebotes/salvadas de la Regla 11 cuando se modelen esas conductas: proximidad no equivale a interferencia. En paralelo, contrastar velocidades contextuales y transiciones prolongadas en más partidos, usando la segunda muestra ya incorporada sin optimizar solo para ella. Completar tiempos reglamentarios, portero con manos y los procedimientos 2026/27 antes de afirmar cobertura reglamentaria completa. La referencia espacial de la pérdida y la continuidad de asignaciones ya están implementadas, pero su realismo general sigue pendiente de validar. Calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
 
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 16 de octubre de 2026. Estado del motor publicado: 0.22.
+Actualizada: 16 de octubre de 2026. Estado del motor: 0.23.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

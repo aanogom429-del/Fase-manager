@@ -5,7 +5,7 @@ function setup(t,x=50,y=32,gap=.8){
 }
 for(const t of [0,1]){
  for(const [x,y,kind] of [[50,32,'direct'],[t===0?90:10,32,'penalty'],[t===0?83.5:16.5,11.84,'penalty'],[t===0?83.49:16.51,32,'direct'],[t===0?90:10,11.83,'direct']]){
-  const {e,a,b}=setup(t,x,y);assert.equal(e.t.resolveChallenge(b,a,0),'foul');
+  const {e,a,b}=setup(t,x,y);const blocker=e.t.get().players.find(p=>p.t!==t&&p.n===8);blocker.x=x+(t===0?4:-4);blocker.y=y;assert.equal(e.t.resolveChallenge(b,a,0),'foul');
   let s=e.t.get();assert.equal(s.restart.kind,kind);assert.equal(s.restart.t,t);assert.equal(s.foulCalls[1-t],1);assert.equal(s.lastFoul.x,x);assert.equal(s.owner,null);
   const frozen=JSON.stringify(s.restart);e.t.enterFreeMode();e.nodes.pause.onclick();e.t.enterDecisionMode();assert.equal(JSON.stringify(e.t.get().restart),frozen);
   for(let i=0;i<5000&&e.t.get().restart;i++)e.t.advanceRestart(1/120);

@@ -19,4 +19,31 @@ const cancel=env();cancel.t.queueOffBall(index(cancel,11),'width');cancel.nodes[
 const sent=env();sent.t.showCard(player(sent,11),'red','test');assert(!sent.t.queueOffBall(index(sent,11),'hold'));sent.t.prepareDecision();assert.equal(sent.t.get().stage,'choose','initial choice survives absent predefined support');
 const onside=env();onside.t.queueOffBall(index(onside,10),'depth');const plan=onside.t.get().offBallPlans[0],q=onside.t.offBallTarget(plan);assert(q.x<=onside.t.offsideLine(0,onside.t.get().owner.x)-.7+.001);
 onside.t.startSituation();assert.equal(onside.t.get().offBallPlans.length,0);assert.equal(onside.t.get().offBallOrders.length,0);
-console.log('PASS: multiple contextual plans, no preparation movement, bounded execution, reaction delay, no forced pass, pause/modes/retry, expiry, possession/reception/restart cancellation, defense, sent-off exclusion and onside target');
+// 0.27: coordination is pure, deterministic and independent of order insertion.
+const coordinated=env(),cs=coordinated.t.get();
+for(const q of cs.players){if(q!==cs.owner){q.x=q.t?90:5;q.y=5;}}
+player(coordinated,10).x=40;player(coordinated,10).y=44;
+player(coordinated,11).x=42;player(coordinated,11).y=44;
+coordinated.t.queueOffBall(index(coordinated,10),'support');coordinated.t.queueOffBall(index(coordinated,11),'support');
+const plans=coordinated.t.get().offBallPlans,before=JSON.stringify(cs.players.map(p=>[p.x,p.y]));
+const targets=coordinated.t.coordinatedOffBallTargets(plans),a=targets.get(index(coordinated,10)),b=targets.get(index(coordinated,11));
+assert(Math.hypot(a.x-b.x,a.y-b.y)>=4,'same-side support orders should separate destinations');
+assert.equal(JSON.stringify([...targets]),JSON.stringify([...coordinated.t.coordinatedOffBallTargets([...plans].reverse())]),'insertion order must not change assignments');
+assert.equal(JSON.stringify(cs.players.map(p=>[p.x,p.y])),before,'preview is read-only');
+const single=[plans[0]],base=coordinated.t.offBallTarget(single[0]);
+const blocker=cs.players.find(p=>p.t===1);blocker.x=(cs.bx+base.x)/2;blocker.y=(cs.by+base.y)/2;
+const avoid=coordinated.t.coordinatedOffBallTargets(single).get(single[0].i);
+assert(Math.hypot(avoid.x-base.x,avoid.y-base.y)>1,'blocked support line prompts a different destination');
+coordinated.t.queueOffBall(index(coordinated,10),'balance');
+const balance=coordinated.t.coordinatedOffBallTargets(coordinated.t.get().offBallPlans).get(index(coordinated,10));
+assert(balance.x<cs.bx-8,'balance remains behind the ball');
+coordinated.t.queueOffBall(index(coordinated,11),'hold');
+const held=coordinated.t.coordinatedOffBallTargets(coordinated.t.get().offBallPlans).get(index(coordinated,11));
+assert.equal(held.x,player(coordinated,11).x);assert.equal(held.y,player(coordinated,11).y);
+// Repeating a coordinated decision must reproduce the actual trajectories.
+coordinated.t.prepareDecision();
+coordinated.t.playChoice('support');for(let k=0;k<100;k++)coordinated.t.update(1/120);
+const outcome=JSON.stringify(coordinated.t.get().players.map(p=>[p.x,p.y]));
+coordinated.t.restorePosition();coordinated.t.playChoice('support');for(let k=0;k<100;k++)coordinated.t.update(1/120);
+assert.equal(JSON.stringify(coordinated.t.get().players.map(p=>[p.x,p.y])),outcome);
+console.log('PASS: off-ball lifecycle, bounded movement, coordination, blocked line adaptation, balance, held positions and deterministic replay');

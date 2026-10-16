@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 16 de octubre de 2026
 
+- **0.24 — Ventaja y continuidad.** Primer modelo conservador para entradas imprudentes fuera del área. Con posesión a partir de 60 unidades de avance y espacio en los siguientes 5 m, se observa durante un máximo provisional de 2,5 s. Se concreta con 3 m de progresión controlada sin adversario a menos de 2 m, ocasión de tiro próxima sin presión inmediata o gol. Estos umbrales son hipótesis computacionales, no criterios numéricos de IFAB ni parámetros calibrados.
+
+Si el beneficio no llega, hay recuperación rival, salida del balón o recepción en fuera de juego, se vuelve a la falta original sin rebobinar el reloj ni contar otra falta. Una oportunidad ya concretada no da derecho a recuperar el libre si después se pierde el balón o se falla el tiro. Una segunda falta detiene la observación y prioriza penalti o el punto más avanzado entre los dos, criterio espacial simplificado. Los penaltis iniciales se señalan inmediatamente; todavía no hay ventaja en el área, sanciones pendientes, lesiones o ventaja en reanudaciones incorrectas.
+
+El estado pendiente y su historial se conservan al pausar/cambiar de modo y se restauran al comparar decisiones. La resolución guiada no termina automáticamente mientras se observa la ventaja. Panel con estado y tiempo restante. Pruebas en `tests/advantage.cjs`: ambos sentidos, pérdida, tiempo, ubicación original, salida, gol, tiro fallado tras oportunidad, fuera de juego posterior, segunda falta, pausa, modos y repetición. Referencia: Regla 5.3 IFAB 2026/27, https://www.theifab.com/laws/latest/the-referee/, consultada el 16-10-2026. No hay plazo reglamentario fijo de 2,5 s.
+
+Regresión libre: tres semillas de 90 s, sin faltas en esas ventanas; los casos controlados verifican la ventaja, no su frecuencia en partidos. No se añaden partidos ni se atribuye una decisión arbitral a las trayectorias de tracking. Próximo bloque: criterios disciplinarios y consecuencias sobre jugadores/equipos; el control de apoyo mutuo y cooperación continúa pendiente.
+
 - **0.23 — Primer modelo de entradas, faltas y penaltis.** Una disputa seleccionada puede recuperar legalmente, fallar sin contacto o producir una entrada tardía con contacto imprudente. Solo este último caso detiene el juego. Se concede libre directo donde sucede o penalti dentro del área propia, incluidas sus líneas. No se deduce una falta de la proximidad por sí sola. Se conserva la distribución de campo y decisiones en dos columnas y el requisito pendiente de decisiones en apoyo mutuo y cooperación.
 
 Modelo provisional: episodio de entrada a menos de 2,8 m, contacto simplificado hasta 1,2 m y umbral de fallo de sincronización 0,14 (0,24 frente a protección), con 0,65 s entre intentos. Son parámetros del prototipo, no porcentajes observados de faltas. No representa anatomía, intensidad ni todas las infracciones. Detiene siempre ante la falta; ventaja, temeridad, fuerza excesiva y sanciones disciplinarias —incluidas reiteración, ataque prometedor y ocasión manifiesta— siguen pendientes. No se afirma cumplimiento completo de la Regla 12.
@@ -55,7 +63,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 16 de octubre de 2026. Estado del motor: 0.23.
+Actualizada: 16 de octubre de 2026. Estado del motor: 0.24.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

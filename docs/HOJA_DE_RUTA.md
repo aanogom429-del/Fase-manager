@@ -1,4 +1,14 @@
-# Actualizaciones completadas · 16 de octubre de 2026
+# Actualizaciones completadas · 17 de octubre de 2026
+
+- **0.27 — Coordinación contextual de órdenes sin balón.** Nuevo apoyo por detrás para conservar equilibrio. Los destinos de las órdenes ofensivas consideran proximidad de compañeros, destinos reservados por otras órdenes, rivales próximos y, en apoyo cercano/por detrás, obstrucción geométrica del segmento hacia el balón. Mantener posición reserva su destino sin desplazarlo; las órdenes defensivas conservan sus referencias. Las trazas de preparación incluyen las órdenes ya activas, sustituyendo la del mismo jugador cuando se prepara otra.
+
+Se evalúan alternativas locales y se asignan por número de jugador para obtener resultados reproducibles independientes del orden de clic. Es una prioridad determinista provisional, no una jerarquía táctica validada. La lectura del destino pasa por la demora individual ya existente; se conservan límites de velocidad, prioridad de recepción/disputa, caducidad, pausa y repetición. No se garantiza una línea abierta ni una separación mínima cuando el espacio está ocupado. La selección no predice intercepciones ni trayectorias futuras.
+
+Parámetros provisionales: alternativas longitudinales hasta ±3 unidades y laterales hasta ±8 (±3 para amplitud), penalización de compañeros a menos de 5 y rivales a menos de 3; corredor de apoyo de 2 unidades en la parte interior del segmento (10–90 %). Pesos de desplazamiento/recorrido 0,18/0,025; congestión 3, rival 2 y línea 5. No son criterios de los espacios de fase ni tasas obtenidas de tracking. Solo se aplica a órdenes explícitas azules; la simulación automática sin órdenes no cambia.
+
+Verificación: `tests/offball.cjs` añade separación de dos apoyos del mismo lado, independencia del orden de preparación, lectura sin modificar posiciones, adaptación ante línea bloqueada, apoyo por detrás, posición mantenida y repetición de trayectorias. Pasan las regresiones de continuidad, reglas, fuera de juego, faltas, ventaja, disciplina y reproducción defensiva. `data/runtime-regression-v027.json` conserva los resultados de las tres partidas automáticas de 90 s; el contraste defensivo conserva sus valores. No se incorporan nuevos partidos ni se afirma una mejora validada de realismo o aprendizaje.
+
+Siguiente bloque pendiente: ampliar el contraste de acompañamiento y transiciones con las referencias del segundo partido, documentando discrepancias antes de calibrar. Continúan pendientes las conductas reglamentarias físicas, portero con manos y tiempos; el entrenamiento se mantiene después de completar los procesos actuales.
 
 - **0.26 — Primer control de apoyo mutuo y cooperación.** El modo guiado permite seleccionar compañeros azules de campo mediante la lista o la ficha del campo, ver su relación estimada actual y preparar varias intenciones sin balón. Ataque: apoyo cercano, amplitud, profundidad y mantener posición. Defensa: cobertura, presión, repliegue y mantener posición. No son categorías exclusivas de un espacio: se ofrecen según posesión, con la relación del jugador visible. Cada jugador tiene como máximo una orden preparada; se puede sustituir, quitar o cancelar el conjunto.
 
@@ -76,12 +86,12 @@ En los ejemplos observados, la profundidad azul pasa de 35,4 a 29,8 m y la roja 
 
 Las medidas de apoyo son geométricas, no sustituyen la interpretación de los espacios de fase. Los contornos relacionales amplios y la continuidad entre simulación libre y decisiones se mantienen.
 
-**Siguiente etapa:** ventaja y sanciones disciplinarias sobre el primer modelo de contacto de 0.23; ampliar los tipos de falta y los procedimientos de libres/penaltis. Completar interferencias sin tocar el balón y rebotes/salvadas de la Regla 11 cuando se modelen esas conductas: proximidad no equivale a interferencia. En paralelo, contrastar velocidades contextuales y transiciones prolongadas en más partidos, usando la segunda muestra ya incorporada sin optimizar solo para ella. Completar tiempos reglamentarios, portero con manos y los procedimientos 2026/27 antes de afirmar cobertura reglamentaria completa. La referencia espacial de la pérdida y la continuidad de asignaciones ya están implementadas, pero su realismo general sigue pendiente de validar. Calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
+**Siguiente etapa:** contrastar acompañamiento y transiciones con el segundo partido tras el control sin balón de 0.26–0.27. La ventaja y las primeras sanciones tácticas ya están implementadas (0.24–0.25); ampliar los tipos de falta y los procedimientos de libres/penaltis. Completar interferencias sin tocar el balón y rebotes/salvadas de la Regla 11 cuando se modelen esas conductas: proximidad no equivale a interferencia. En paralelo, contrastar velocidades contextuales y transiciones prolongadas en más partidos, usando la segunda muestra ya incorporada sin optimizar solo para ella. Completar tiempos reglamentarios, portero con manos y los procedimientos 2026/27 antes de afirmar cobertura reglamentaria completa. La referencia espacial de la pérdida y la continuidad de asignaciones ya están implementadas, pero su realismo general sigue pendiente de validar. Calibrar errores de ejecución antes de atribuirles tasas reales. El modo entrenamiento continúa en la hoja de ruta: guardar situaciones, practicar objetivos concretos y evaluar transferencia sin perfección automática.
 
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 16 de octubre de 2026. Estado del motor: 0.26.
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.27.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

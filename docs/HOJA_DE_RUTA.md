@@ -1,5 +1,15 @@
 # Actualizaciones completadas · 16 de octubre de 2026
 
+- **0.25 — Tarjetas tácticas e inferioridad numérica.** Primer clasificador contextual de ataque prometedor y ocasión manifiesta en la entrada imprudente ya modelada. Requiere intención de avance del poseedor; usa posición, control y rivales interpuestos. Amarilla por ataque prometedor interrumpido fuera del área; roja por ocasión manifiesta fuera del área, reducida a amarilla al conceder penalti por esta disputa del balón. No se aplica la reducción a otras faltas no modeladas. No se sortea una tarjeta independientemente de la conducta.
+
+Segunda amarilla implica expulsión. El expulsado se excluye del movimiento, pases, recepción, disputas, ejecutores, fuera de juego y espacios de relación. Presión y cobertura se reasignan entre los jugadores restantes, sin garantizar una adaptación táctica óptima. Se oculta su ficha y se muestra el registro disciplinario y número de jugadores. Menos de siete interrumpe el motor sin inventar un resultado administrativo. Se preservan tarjetas al cambiar de modo o tras gol, se restauran al comparar y se limpian al reiniciar. Los datos de tracking de referencia no se alteran.
+
+Ventaja: si un ataque prometedor continúa con beneficio no se amonesta por interrumpirlo; si se vuelve a la falta se aplica la amarilla correspondiente. El modelo detiene conservadoramente ante la ocasión manifiesta: todavía no representa su ventaja excepcional ni sanciones diferidas por temeridad. Umbrales provisionales: avance previsto >0,1; ataque prometedor desde 55 unidades y hasta tres rivales interpuestos; ocasión manifiesta desde 75, desplazamiento lateral <=18 y hasta un rival interpuesto en corredor de 12. No son reglas numéricas IFAB ni una clasificación validada. Temeridad, fuerza excesiva, reiteración, protestas, manos y expulsión del portero siguen pendientes.
+
+Pruebas: `tests/discipline.cjs`, continuidad, faltas, ventaja, fuera de juego y reanudaciones. Casos reflejados para ambos equipos, segunda amarilla, exclusión efectiva, pausa, repetición, mínimos y reinicio. Regresión libre: `data/runtime-regression-v025.json`; no valida frecuencias de tarjetas. Referencias IFAB 2026/27: Reglas 3.1 y 12, https://www.theifab.com/laws/latest/the-players/ y https://www.theifab.com/laws/latest/fouls-and-misconduct/, consultadas el 16-10-2026. Sin nuevos partidos ni calibración arbitral en esta entrega.
+
+Siguiente trabajo del bloque: mejorar y contrastar la clasificación táctica y completar conductas disciplinarias físicas; mantener en la secuencia el control de jugadores en apoyo mutuo y cooperación antes del modo entrenamiento.
+
 - **0.24 — Ventaja y continuidad.** Primer modelo conservador para entradas imprudentes fuera del área. Con posesión a partir de 60 unidades de avance y espacio en los siguientes 5 m, se observa durante un máximo provisional de 2,5 s. Se concreta con 3 m de progresión controlada sin adversario a menos de 2 m, ocasión de tiro próxima sin presión inmediata o gol. Estos umbrales son hipótesis computacionales, no criterios numéricos de IFAB ni parámetros calibrados.
 
 Si el beneficio no llega, hay recuperación rival, salida del balón o recepción en fuera de juego, se vuelve a la falta original sin rebobinar el reloj ni contar otra falta. Una oportunidad ya concretada no da derecho a recuperar el libre si después se pierde el balón o se falla el tiro. Una segunda falta detiene la observación y prioriza penalti o el punto más avanzado entre los dos, criterio espacial simplificado. Los penaltis iniciales se señalan inmediatamente; todavía no hay ventaja en el área, sanciones pendientes, lesiones o ventaja en reanudaciones incorrectas.
@@ -63,7 +73,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 16 de octubre de 2026. Estado del motor: 0.24.
+Actualizada: 16 de octubre de 2026. Estado del motor: 0.25.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

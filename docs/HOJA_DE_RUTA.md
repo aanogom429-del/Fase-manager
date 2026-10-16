@@ -45,7 +45,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 14 de octubre de 2026. Base de esta actualización: 0.13.
+Actualizada: 16 de octubre de 2026. Estado del motor publicado: 0.22.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.
@@ -116,6 +116,22 @@ Propuesta: errores contextuales de ejecución, percepción y sincronización, as
 Separar variabilidad individual de fallos del programa: inmovilidad, bloqueos, falta estructural de apoyos y resultados predeterminados no son errores humanos aceptables.
 Mantener semillas reproducibles para comparar decisiones bajo condiciones equivalentes.
 No fijar todavía porcentajes de error sin calibración y validación.
+
+## 2 bis. Decisiones en interacción, apoyo mutuo y cooperación
+Requisito incorporado el 16 de octubre de 2026 a petición del usuario. **Pendiente de implementar; forma parte del motor táctico, antes del modo entrenamiento.** Ampliar el control guiado para decidir también las conductas de los compañeros sin balón en apoyo mutuo y cooperación, además de las acciones del poseedor. El espacio de interacción no equivale exclusivamente al poseedor: puede incluir participantes directos en la disputa.
+
+Alcance previsto:
+- Seleccionar un jugador en el campo y mostrar su relación actual con la situación: interacción, apoyo mutuo o cooperación. La clasificación será dinámica y relacional, no una asignación fija por puesto o por distancia al balón.
+- Ofrecer intenciones contextualizadas. En apoyo mutuo: acercarse para ofrecer línea de pase, apoyar por detrás o a otra altura, desmarcarse, dar continuidad o, sin posesión, cubrir y ayudar al compañero que interviene. En cooperación: mantener o ajustar amplitud y profundidad, ocupar un espacio útil, coordinar una ruptura, equilibrar detrás del balón o reorganizarse defensivamente. Son ejemplos de conductas por concretar; no un catálogo exclusivo de cada espacio ni acciones siempre disponibles.
+- Permitir preparar decisiones de varios jugadores desde una misma pausa y ejecutarlas conjuntamente con la decisión sobre el balón. Las órdenes sin balón no obligarán al poseedor a pasar ni garantizarán la recepción. Los jugadores sin orden seguirán respondiendo al nuevo espacio de fase.
+- Representar el jugador elegido, la intención y su destino o referencia antes de confirmar. Integrar los controles junto al campo y permitir modificar o cancelar órdenes sin avanzar el reloj.
+- Definir duración, prioridades y finalización de las órdenes. Revisarlas al cambiar la posesión o la relación espacial, evitando órdenes incompatibles, carreras perpetuas y que el automatismo anule de inmediato una decisión del usuario.
+- Ejecutar mediante desplazamientos continuos y con reacción, oposición, restricciones reglamentarias y posibilidad de errores. Una posición útil puede mantenerse; no se exigirá movimiento constante ni ejecución perfecta.
+- Conservar órdenes pendientes y en curso al pausar o cambiar entre simulación libre y guiada. Comparar otra decisión restaurará el estado completo, incluidas órdenes, posiciones, balón, reloj y semilla.
+
+Secuencia de implementación: selección y decisión individual sin balón → coordinación de varias decisiones simultáneas → integración en situaciones guardadas del futuro entrenamiento. Coordinar este bloque con la continuidad del motor y los procedimientos reglamentarios en curso; no darlo por realizado al añadir únicamente botones.
+
+Aceptación: poder comparar, desde la misma situación, un pase con distintas conductas de apoyo y cooperación; comprobar que los compañeros responden a la jugada y a la oposición, que las órdenes producen efectos observables sin teletransporte y que se conserva la continuidad al pausar, repetir o cambiar de modo. Cubrir ambos sentidos de ataque y las transiciones de posesión. Contrastar después las dinámicas resultantes con referencias reales, sin confundir la orden del usuario con una intención demostrada por el tracking.
 
 ## 3. Futuro modo entrenamiento
 Objetivo solicitado: entrenar las situaciones que necesitan mejorar para que los futbolistas virtuales aprendan y mejoren.

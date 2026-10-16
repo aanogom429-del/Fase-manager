@@ -1,5 +1,15 @@
 # Reglas de Juego 2026/27 en FASE MANAGER
 
+## Ventaja en 0.24
+
+Actualización del alcance descrito para 0.23 más abajo: en ciertas entradas imprudentes fuera del área, el motor permite continuar y observa si se materializa un beneficio. No basta conservar la posesión. Se confirma mediante progresión controlada con espacio, oportunidad de tiro sin presión inmediata o gol. Si antes se pierde el balón, sale del campo, se incurre en fuera de juego al recibir o vence la ventana sin beneficio, se concede el libre en el lugar de la primera falta sin rebobinar el tiempo. La ventaja ya concretada no se revoca por un fallo posterior.
+
+Ventana de 2,5 s, inicio desde 60 unidades de avance, espacio proyectado 5 m, progresión 3 m, separación rival 2 m y tiro desde un máximo de 25 m longitudinales y 18 m laterales: umbrales provisionales del prototipo, no prescripciones IFAB. Se conserva el estado al pausar o comparar. Una segunda falta prioriza el penalti o el punto más avanzado, aproximación espacial pendiente de valoración táctica más completa. Los penaltis iniciales siguen señalándose inmediatamente.
+
+Pendiente: ventaja en el área y en reanudaciones, lesiones, sanciones diferidas, ataques prometedores, ocasiones manifiestas y otras circunstancias disciplinarias. Se mantiene el alcance de entradas imprudentes simplificadas; no es arbitraje completo. Fuente: Regla 5.3 IFAB 2026/27, https://www.theifab.com/laws/latest/the-referee/, consultada el 16-10-2026. IFAB indica beneficio inmediato o en unos segundos, no un plazo universal de 2,5 s.
+
+Verificación: `node tests/advantage.cjs`, más continuidad, faltas, fuera de juego y reanudaciones. `data/runtime-regression-v024.json` documenta funcionamiento libre, no validación de frecuencias. No se incorporaron nuevos partidos ni se calibró este modelo con decisiones arbitrales reales.
+
 Fuente normativa: PDF «Reglas de Juego 2026_27_paginas dobles.pdf» aportado por el usuario el 14 de octubre de 2026. Se consultan especialmente las páginas impresas 105–109, 111, 117–120, 139, 153–159 y 161–163. No se redistribuye el PDF. Esta matriz describe el alcance del prototipo 0.23, no una implementación completa de las reglas.
 
 ## Entradas, contacto y penaltis en 0.23

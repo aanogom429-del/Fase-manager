@@ -10,7 +10,7 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituati
   // Los ejecutores pueden situarse sobre las líneas durante banda y esquina.
   for(const p of players)if(!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.x>100||p.y<0||p.y>64)throw Error('Invalid position');
  }
- return {passes,shots,turnovers,backward,score,elapsed,offsideCalls:[...offsideCalls],pendingRestart:restart?restart.kind:null};
+ return {passes,shots,turnovers,backward,score,elapsed,offsideCalls:[...offsideCalls],foulCalls:[...foulCalls],pendingRestart:restart?restart.kind:null};
  };`);
 function run(seed,gain){
  const nodes={};class E{constructor(){this.style={};this.dataset={};this.children=[];}setAttribute(){}append(...x){this.children.push(...x);}appendChild(x){this.append(x);}replaceChildren(...x){this.children=x;}querySelectorAll(){return this.children;}insertAdjacentElement(){}insertAdjacentHTML(){}}

@@ -1,5 +1,15 @@
 # Reglas de Juego 2026/27 en FASE MANAGER
 
+## Disciplina e inferioridad en 0.25
+
+Actualización del alcance histórico descrito más abajo: se añaden tarjetas por ataque prometedor y ocasión manifiesta de gol únicamente en las entradas imprudentes ya representadas. Clasificador provisional por control, dirección prevista hacia delante, distancia y defensores en un corredor. No equivale a un dictamen arbitral validado ni infiere infracciones de una coordenada aislada. Ataque prometedor: amarilla fuera del área si no se concreta la ventaja. Ocasión manifiesta: roja fuera del área, amarilla al conceder penalti por la disputa del balón modelada. No extender esta reducción a agarres, empujones o manos no representados.
+
+Segunda amarilla expulsa; la ficha sale de todas las interacciones físicas y de las referencias del motor. Se conservan identidades para el historial y para restaurar decisiones. Los roles defensivos se asignan entre los que quedan; no se afirma una reorganización óptima. El mínimo de siete se comprueba tras expulsar: por debajo, el juego se interrumpe sin resultado administrativo. Tarjetas y efectivos sobreviven a pausa, modos y goles, y se restauran al comparar. Reiniciar limpia el estado.
+
+Se detiene conservadoramente el juego en los casos clasificados como ocasión manifiesta. La ventaja por ataque prometedor exime esa amarilla al concretarse; al volver a la falta se aplica. No se generan aún temeridad, fuerza excesiva, reiteración, protestas, sanciones diferidas, expulsión del portero o sustituciones. Por tanto, no hay cobertura disciplinaria completa.
+
+Pruebas: `node tests/discipline.cjs`, más faltas, ventaja, fuera de juego, reanudaciones y continuidad. Regresión `data/runtime-regression-v025.json`; no estima tasas reales. No se añadieron partidos para calibrar este clasificador. Referencias consultadas el 16-10-2026: https://www.theifab.com/laws/latest/the-players/ (3.1) y https://www.theifab.com/laws/latest/fouls-and-misconduct/ (12).
+
 ## Ventaja en 0.24
 
 Actualización del alcance descrito para 0.23 más abajo: en ciertas entradas imprudentes fuera del área, el motor permite continuar y observa si se materializa un beneficio. No basta conservar la posesión. Se confirma mediante progresión controlada con espacio, oportunidad de tiro sin presión inmediata o gol. Si antes se pierde el balón, sale del campo, se incurre en fuera de juego al recibir o vence la ventana sin beneficio, se concede el libre en el lugar de la primera falta sin rebobinar el tiempo. La ventaja ya concretada no se revoca por un fallo posterior.

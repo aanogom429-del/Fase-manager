@@ -18,6 +18,37 @@ const direction=t=>t===0?1:-1;
 // Relaciones compartidas por la lectura visual y la elección de apoyos.
 let phaseVisible=true,phaseSignature='';
 const phaseStyle=document.createElement('style');
+const layoutStyle=document.createElement('style');
+layoutStyle.textContent=`
+*{box-sizing:border-box}
+main{max-width:1600px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,400px);gap:14px 18px;align-items:start}
+main>*{grid-column:1/-1;min-width:0}
+main>h1{grid-row:1;margin:0;font-size:21px}
+main>.bar{grid-row:2;margin:0}
+main>#pitch{grid-column:1;grid-row:3;position:sticky;top:16px}
+main>section.decision-panel{grid-column:2;grid-row:3;margin:0;padding:14px;max-height:calc(100dvh - 128px);overflow-y:auto;scrollbar-gutter:stable}
+main>.phase-panel{grid-row:4;margin:0}
+main>section.decision-panel .bar{gap:8px;margin:0 0 10px}
+main>section.decision-panel h2{font-size:17px;margin:0}
+main>section.decision-panel p{font-size:14px;line-height:1.4;margin:8px 0}
+main>section.decision-panel button,main>section.decision-panel select{font-size:14px;padding:8px;min-height:40px}
+.action-tools{gap:8px;margin:10px 0;display:grid;grid-template-columns:1fr}
+.action-tools label{font-size:13px;min-width:0}
+.action-tools select{width:100%;min-width:0}
+.choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.choices small{font-size:12px}
+@media(min-width:1000px){main>#pitch{max-height:calc(100dvh - 128px)}}
+@media(max-width:999px){
+ main{grid-template-columns:minmax(0,1fr);padding:10px;gap:10px}
+ main>#pitch{grid-column:1;grid-row:3;position:static}
+ main>section.decision-panel{grid-column:1;grid-row:4;max-height:none;overflow:visible}
+ main>.phase-panel{grid-row:5}
+ .action-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+ main>h1{font-size:18px}main>h1 small{font-size:12px}
+ main>.bar{gap:6px}main>.bar button,main>.bar select,.pill{font-size:13px;padding:8px}
+}
+`;
+document.head.appendChild(layoutStyle);
 phaseStyle.textContent='.phase-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:12px;margin:12px 0}.phase-panel h2{font-size:17px;margin:0}.phase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.phase-card{padding:10px;border-left:3px solid #b9c9e0;line-height:1.5}.phase-card:first-child{border-color:#ffd166}.phase-card:nth-child(2){border-color:#58dfd6;border-left-style:dashed}.phase-card strong,.phase-card span{display:block}.phase-blue{color:#91caff}.phase-red{color:#ffb4b6}.phase-panel p{line-height:1.45;margin:8px 0}@media(max-width:600px){.phase-grid{grid-template-columns:1fr}.phase-card{padding:6px 10px}}';
 document.head.appendChild(phaseStyle);
 const resumeBall=document.createElement('button');resumeBall.id='resume-ball';resumeBall.textContent='Reanudar hasta el control del balón';resumeBall.hidden=true;

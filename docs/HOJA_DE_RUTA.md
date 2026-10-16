@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 16 de octubre de 2026
 
+- **0.26 — Primer control de apoyo mutuo y cooperación.** El modo guiado permite seleccionar compañeros azules de campo mediante la lista o la ficha del campo, ver su relación estimada actual y preparar varias intenciones sin balón. Ataque: apoyo cercano, amplitud, profundidad y mantener posición. Defensa: cobertura, presión, repliegue y mantener posición. No son categorías exclusivas de un espacio: se ofrecen según posesión, con la relación del jugador visible. Cada jugador tiene como máximo una orden preparada; se puede sustituir, quitar o cancelar el conjunto.
+
+Las órdenes se ejecutan junto con la acción principal, sin forzar su destinatario ni alterar posiciones al prepararlas. Trazas cian muestran destinos orientativos. El resto del equipo conserva su comportamiento autónomo. Se mantiene la demora individual (0,18–0,45 s), velocidad máxima y tentativa de mantenerse habilitado antes del pase. Las recepciones previstas, paredes y disputa inmediata tienen prioridad. Destinos relativos al balón se actualizan durante la jugada; mantener posición conserva su punto inicial.
+
+Duración provisional máxima de seis segundos de juego, pausada con el reloj. Las órdenes finalizan para quien recibe, al cambiar posesión, al expulsar al jugador, al detenerse el juego o al caducar. Estado preparado y en ejecución se conserva al cambiar de modo mientras el contexto siga vigente, y se restaura al comparar decisiones. Una reanudación cancela las órdenes de juego abierto. No hay aprendizaje, control del equipo rojo, órdenes del portero, trayectorias dibujadas libres ni validación del realismo de estos destinos. La oposición y los errores técnicos existentes siguen condicionando el resultado; no se añaden tasas empíricas de error sin balón.
+
+Verificación en `tests/offball.cjs`: varias órdenes, sustitución/cancelación, ausencia de desplazamiento al preparar, movimiento acotado, demora, destinatario independiente, pausa, modos, repetición, caducidad, pérdida, recepción, reanudación, defensa, exclusión de expulsados y destino habilitado. Pasan las regresiones previas. Informe libre `data/runtime-regression-v026.json` sin órdenes explícitas: comprueba que se conserva la simulación automática, no valida la eficacia de las nuevas decisiones. No se incorporan partidos nuevos ni se ajustan estos destinos a tracking en esta entrega. También se corrigen las opciones iniciales cuando falta por expulsión un compañero antes predefinido.
+
 - **0.25 — Tarjetas tácticas e inferioridad numérica.** Primer clasificador contextual de ataque prometedor y ocasión manifiesta en la entrada imprudente ya modelada. Requiere intención de avance del poseedor; usa posición, control y rivales interpuestos. Amarilla por ataque prometedor interrumpido fuera del área; roja por ocasión manifiesta fuera del área, reducida a amarilla al conceder penalti por esta disputa del balón. No se aplica la reducción a otras faltas no modeladas. No se sortea una tarjeta independientemente de la conducta.
 
 Segunda amarilla implica expulsión. El expulsado se excluye del movimiento, pases, recepción, disputas, ejecutores, fuera de juego y espacios de relación. Presión y cobertura se reasignan entre los jugadores restantes, sin garantizar una adaptación táctica óptima. Se oculta su ficha y se muestra el registro disciplinario y número de jugadores. Menos de siete interrumpe el motor sin inventar un resultado administrativo. Se preservan tarjetas al cambiar de modo o tras gol, se restauran al comparar y se limpian al reiniciar. Los datos de tracking de referencia no se alteran.
@@ -73,7 +81,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 16 de octubre de 2026. Estado del motor: 0.25.
+Actualizada: 16 de octubre de 2026. Estado del motor: 0.26.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.
@@ -146,7 +154,7 @@ Mantener semillas reproducibles para comparar decisiones bajo condiciones equiva
 No fijar todavía porcentajes de error sin calibración y validación.
 
 ## 2 bis. Decisiones en interacción, apoyo mutuo y cooperación
-Requisito incorporado el 16 de octubre de 2026 a petición del usuario. **Pendiente de implementar; forma parte del motor táctico, antes del modo entrenamiento.** Ampliar el control guiado para decidir también las conductas de los compañeros sin balón en apoyo mutuo y cooperación, además de las acciones del poseedor. El espacio de interacción no equivale exclusivamente al poseedor: puede incluir participantes directos en la disputa.
+Requisito incorporado el 16 de octubre de 2026 a petición del usuario. **Primera implementación en 0.26 para jugadores azules de campo; ampliación y contraste pendientes, antes del modo entrenamiento.** El control guiado permite decidir también conductas de compañeros sin balón en apoyo mutuo y cooperación, además de las acciones del poseedor. El espacio de interacción no equivale exclusivamente al poseedor: puede incluir participantes directos en la disputa.
 
 Alcance previsto:
 - Seleccionar un jugador en el campo y mostrar su relación actual con la situación: interacción, apoyo mutuo o cooperación. La clasificación será dinámica y relacional, no una asignación fija por puesto o por distancia al balón.

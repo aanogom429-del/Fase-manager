@@ -1,6 +1,20 @@
 # Reglas de Juego 2026/27 en FASE MANAGER
 
-Fuente normativa: PDF «Reglas de Juego 2026_27_paginas dobles.pdf» aportado por el usuario el 14 de octubre de 2026. Se consultan especialmente las páginas impresas 105–109, 111, 117–120, 139, 153–159 y 161–163. No se redistribuye el PDF. Esta matriz describe el alcance del prototipo 0.22, no una implementación completa de las reglas.
+Fuente normativa: PDF «Reglas de Juego 2026_27_paginas dobles.pdf» aportado por el usuario el 14 de octubre de 2026. Se consultan especialmente las páginas impresas 105–109, 111, 117–120, 139, 153–159 y 161–163. No se redistribuye el PDF. Esta matriz describe el alcance del prototipo 0.23, no una implementación completa de las reglas.
+
+## Entradas, contacto y penaltis en 0.23
+
+Primer modelo de entrada baja: una disputa explícita puede resolver en recuperación legal, intento fallido sin contacto o entrada tardía con contacto imprudente. La falta requiere el episodio de entrada, fallo de sincronización y contacto simplificado (centros a un máximo de 1,2 m); no basta estar cerca. No hay anatomía, fuerza ni lesiones. El umbral de fallo 0,14 (0,24 frente a protección) y el intervalo entre intentos de 0,65 s son hipótesis sin calibración.
+
+Se detiene el juego y se concede libre directo en el punto del contacto, o penalti si está dentro del área propia del infractor, incluidas las líneas. Los penaltis se ejecutan automáticamente desde 11 m, con guardameta en la línea de meta y los demás jugadores fuera del área, detrás del punto y a 9,15 m. El balón se lanza hacia delante, con dispersión provisional y resultado resuelto por el vuelo, intervención rival o cruce de la meta. No se garantiza gol ni una tasa de acierto realista. Los directos se ejecutan como pase automático y admiten gol directo; se mantiene la restricción de segundo toque.
+
+El registro de faltas conserva autor, lugar, instante y reanudación; se mantiene al pausar/cambiar de modo, se restaura al comparar y se borra al reiniciar. No hay ventaja, barrera organizada, infracciones de ejecución del penalti, temeridad, fuerza excesiva ni sanciones disciplinarias. Una entrada imprudente también puede requerir tarjeta por ataque prometedor, ocasión manifiesta o reiteración: estas circunstancias NO están arbitradas todavía; no se afirma que toda entrada imprudente quede reglamentariamente exenta de tarjeta.
+
+Referencia complementaria: IFAB 2026/27, Reglas 12 y 14, consultadas el 16-10-2026:
+- https://www.theifab.com/laws/latest/fouls-and-misconduct/
+- https://www.theifab.com/laws/latest/the-penalty-kick/
+
+Pruebas: `node tests/fouls.cjs`, reglas, fuera de juego y continuidad. La regresión de tres semillas y 90 s no produjo faltas: las situaciones controladas verifican la ejecución, no una frecuencia naturalista. Informe `data/runtime-regression-v023.json`. No se han observado nuevos partidos para calibrar el contacto en esta actualización.
 
 ## Fuera de juego en 0.22
 
@@ -39,8 +53,8 @@ Las técnicas corporales del saque no están animadas ni arbitradas. No se gener
 | 8: inicio y reanudación | Centro tras gol o reinicio libre | Inicio reglamentario completo, sorteo y balón a tierra |
 | 9–10: juego y gol | Cruce completo, gol y excepciones de saques modelados | Contacto arbitral, agente externo y desempates |
 | 11: fuera de juego | Posición al golpeo, intervención por toque/recepción, excepciones directas y libre indirecto | Interferencias sin tocar, rebotes/salvadas, partes corporales y salidas/reentradas |
-| 12: faltas y conducta | Recuperaciones simplificadas sin faltas | Contacto, manos, ventaja, sanciones y control del portero; no equiparar proximidad a falta |
-| 13–14: libres y penal | Indirecto por segundo toque; penal pendiente | Directos/indirectos contextuales, barreras, penaltis e infracciones de ejecución |
+| 12: faltas y conducta | Entrada imprudente simplificada, libre directo/penalti y registro | Otras faltas, manos, ventaja, sanciones y control del portero; no equiparar proximidad a falta |
+| 13–14: libres y penal | Indirecto por segundo toque/fuera de juego; directo por contacto y penalti automático | Barreras, decisiones del ejecutor e infracciones de ejecución |
 | 15–17: banda/meta/esquina | Concesión, colocación, distancia y restricciones principales | Técnica corporal, obstrucción, cuentas atrás y sanciones; ocho segundos del portero al modelar manos |
 
 El documento 2026/27 incluye cuentas atrás para demoras injustificadas en banda y meta, y remite a su protocolo. No se aplica una sanción automática a cualquier preparación que dure cinco segundos: primero se necesita modelar la demora y la señal arbitral correspondiente. Tampoco se sancionan ocho segundos al portero mientras el motor no represente control con manos.

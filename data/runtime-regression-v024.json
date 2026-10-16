@@ -1,0 +1,78 @@
+{
+  "durationSeconds": 90,
+  "seeds": [
+    {
+      "seed": 73,
+      "baseline": null,
+      "adjusted": {
+        "passes": 67,
+        "shots": 7,
+        "turnovers": 32,
+        "backward": 12,
+        "score": [
+          0,
+          0
+        ],
+        "elapsed": 90.00000000001769,
+        "offsideCalls": [
+          0,
+          0
+        ],
+        "foulCalls": [
+          0,
+          0
+        ],
+        "pendingRestart": null
+      }
+    },
+    {
+      "seed": 101,
+      "baseline": null,
+      "adjusted": {
+        "passes": 72,
+        "shots": 8,
+        "turnovers": 29,
+        "backward": 17,
+        "score": [
+          1,
+          1
+        ],
+        "elapsed": 90.00000000001769,
+        "offsideCalls": [
+          0,
+          0
+        ],
+        "foulCalls": [
+          0,
+          0
+        ],
+        "pendingRestart": null
+      }
+    },
+    {
+      "seed": 211,
+      "baseline": null,
+      "adjusted": {
+        "passes": 74,
+        "shots": 13,
+        "turnovers": 41,
+        "backward": 11,
+        "score": [
+          1,
+          0
+        ],
+        "elapsed": 90.00000000001769,
+        "offsideCalls": [
+          0,
+          0
+        ],
+        "foulCalls": [
+          0,
+          0
+        ],
+        "pendingRestart": null
+      }
+    }
+  ],
+  "note": "Regression smoke check, not validation of football realism."
+}

@@ -1,0 +1,67 @@
+{
+  "engineVersion": "0.29",
+  "baselineVersion": "0.28",
+  "gain": 0.35,
+  "method": "Same three original Game 1 windows and existing controlled replay metric; fixed gain, no search. Current positions and ball anchored together at initial time.",
+  "limitations": [
+    "Approximate shirt-to-role mapping",
+    "Observed ball, opponents and recorded actors prescribed",
+    "Not free-play validity; Game 2 metrics use a different integration method and are not pooled with these"
+  ],
+  "clips": [
+    {
+      "id": "away-progress",
+      "before": {
+        "id": "away-progress",
+        "players": 5,
+        "positionMAEM": 11.218222759760458,
+        "endpointMAEM": 20.242755197687245,
+        "forwardMAEM": 15.353307667923465
+      },
+      "after": {
+        "id": "away-progress",
+        "players": 5,
+        "positionMAEM": 11.218222759760458,
+        "endpointMAEM": 20.242755197687245,
+        "forwardMAEM": 15.353307667923465
+      },
+      "improvementPercent": 0
+    },
+    {
+      "id": "home-progress",
+      "before": {
+        "id": "home-progress",
+        "players": 6,
+        "positionMAEM": 6.651492734527907,
+        "endpointMAEM": 8.057956679266754,
+        "forwardMAEM": 2.069700028379564
+      },
+      "after": {
+        "id": "home-progress",
+        "players": 6,
+        "positionMAEM": 6.651492734527907,
+        "endpointMAEM": 8.057956679266754,
+        "forwardMAEM": 2.069700028379564
+      },
+      "improvementPercent": 0
+    },
+    {
+      "id": "contrast-progress",
+      "before": {
+        "id": "contrast-progress",
+        "players": 4,
+        "positionMAEM": 10.503890275493331,
+        "endpointMAEM": 12.307860639704016,
+        "forwardMAEM": 10.243584285031737
+      },
+      "after": {
+        "id": "contrast-progress",
+        "players": 4,
+        "positionMAEM": 10.503890275493331,
+        "endpointMAEM": 12.307860639704016,
+        "forwardMAEM": 10.243584285031737
+      },
+      "improvementPercent": 0
+    }
+  ]
+}

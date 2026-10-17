@@ -1,14 +1,19 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.30</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.30 · Correcciones de auditoría y contraste</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. Consulta la guía visual de interacción, apoyo mutuo y cooperación junto al campo.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática: el poseedor valora conducir, pasar, centrar o tirar; sus compañeros ofrecen continuidad y llegada. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.31</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.31 · Roles independientes del dorsal</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. Consulta la guía visual de interacción, apoyo mutuo y cooperación junto al campo.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática: el poseedor valora conducir, pasar, centrar o tirar; sus compañeros ofrecen continuidad y llegada. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
 <rect width="1000" height="650" fill="#153c2a"/><rect x="45" y="34" width="91" height="582.4" fill="#236b40"/><rect x="136" y="34" width="91" height="582.4" fill="#267447"/><rect x="227" y="34" width="91" height="582.4" fill="#236b40"/><rect x="318" y="34" width="91" height="582.4" fill="#267447"/><rect x="409" y="34" width="91" height="582.4" fill="#236b40"/><rect x="500" y="34" width="91" height="582.4" fill="#267447"/><rect x="591" y="34" width="91" height="582.4" fill="#236b40"/><rect x="682" y="34" width="91" height="582.4" fill="#267447"/><rect x="773" y="34" width="91" height="582.4" fill="#236b40"/><rect x="864" y="34" width="91" height="582.4" fill="#267447"/>
 <g fill="none" stroke="#f5fff7" stroke-width="2.5"><rect x="45" y="34" width="910" height="582.4"/><path d="M500 34V616.4"/><circle cx="500" cy="325.2" r="83.3"/><rect x="45" y="143.2" width="150.2" height="364"/><rect x="804.8" y="143.2" width="150.2" height="364"/><rect x="45" y="241.5" width="50" height="167.4"/><rect x="905" y="241.5" width="50" height="167.4"/><path d="M45 291H29V359H45 M955 291H971V359H955"/></g>
 <g fill="white"><circle cx="500" cy="325.2" r="3.5"/><circle cx="145" cy="325.2" r="3.5"/><circle cx="855" cy="325.2" r="3.5"/></g>
 <g id="players"><g class="player" id="p0-1" transform="translate(99.6 325.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">1</text></g><g class="player" id="p0-2" transform="translate(236.1 125.0)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">2</text></g><g class="player" id="p0-3" transform="translate(236.1 252.4)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">3</text></g><g class="player" id="p0-4" transform="translate(236.1 398.0)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">4</text></g><g class="player" id="p0-5" transform="translate(236.1 525.4)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">5</text></g><g class="player" id="p0-6" transform="translate(409.0 179.6)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">6</text></g><g class="player" id="p0-7" transform="translate(390.8 325.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">7</text></g><g class="player" id="p0-8" transform="translate(409.0 470.8)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">8</text></g><g class="player" id="p0-9" transform="translate(618.3 143.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">9</text></g><g class="player" id="p0-10" transform="translate(618.3 325.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">10</text></g><g class="player" id="p0-11" transform="translate(618.3 507.2)"><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">11</text></g><g class="player" id="p1-1" transform="translate(900.4 325.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">1</text></g><g class="player" id="p1-2" transform="translate(763.9 525.4)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">2</text></g><g class="player" id="p1-3" transform="translate(763.9 398.0)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">3</text></g><g class="player" id="p1-4" transform="translate(763.9 252.4)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">4</text></g><g class="player" id="p1-5" transform="translate(763.9 125.0)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">5</text></g><g class="player" id="p1-6" transform="translate(591.0 470.8)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">6</text></g><g class="player" id="p1-7" transform="translate(609.2 325.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">7</text></g><g class="player" id="p1-8" transform="translate(591.0 179.6)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">8</text></g><g class="player" id="p1-9" transform="translate(381.7 507.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">9</text></g><g class="player" id="p1-10" transform="translate(381.7 325.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">10</text></g><g class="player" id="p1-11" transform="translate(381.7 143.2)"><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">11</text></g></g><circle id="ball" cx="500" cy="325" r="6.5" fill="white" stroke="#17202a" stroke-width="2"/>
-</svg><p id="status">Jugadores visibles. Iniciando simulación…</p><small>Versión experimental 0.30: apoyos, pases, conducciones, presión, interceptaciones y tiros. Tú decides las intenciones del azul en modo guiado. La respuesta rival y la ejecución se simulan mediante reglas. El balón parte controlado en el suelo; cabeceos, voleas y controles aéreos específicos están pendientes de modelar.</small></main><script>
+</svg><p id="status">Jugadores visibles. Iniciando simulación…</p><small>Versión experimental 0.31: apoyos, pases, conducciones, presión, interceptaciones y tiros. Tú decides las intenciones del azul en modo guiado. La respuesta rival y la ejecución se simulan mediante reglas. El balón parte controlado en el suelo; cabeceos, voleas y controles aéreos específicos están pendientes de modelar.</small></main><script>
 (()=>{
 'use strict';
 const $=id=>document.getElementById(id), ball=$('ball'), status=$('status'),clockEl=$('clock'),scoreEl=$('score');
 const homes=[[0,1,6,32],[0,2,21,10],[0,3,21,24],[0,4,21,40],[0,5,21,54],[0,6,40,16],[0,7,38,32],[0,8,40,48],[0,9,63,12],[0,10,63,32],[0,11,63,52],[1,1,94,32],[1,2,79,54],[1,3,79,40],[1,4,79,24],[1,5,79,10],[1,6,60,48],[1,7,62,32],[1,8,60,16],[1,9,37,52],[1,10,37,32],[1,11,37,12]];
-const players=homes.map(([t,n,x,y])=>({t,n,x,y,hx:x,hy:y,el:$('p'+t+'-'+n),speed:n===1?6.0:7.5+(n%4)*.45,cool:0}));
+// Funciones y capacidades de la plantilla: independientes del dorsal mostrado.
+// Se conserva la configuración anterior; no son perfiles inferidos del tracking.
+const squadRoles=['keeper','fullback','centreBack','centreBack','fullback','midfielder','midfielder','midfielder','winger','striker','winger'];
+const roleLabels={keeper:'portero',fullback:'lateral',centreBack:'central',midfielder:'centrocampista',winger:'extremo',striker:'delantero central'};
+const players=homes.map(([t,n,x,y],id)=>{const slot=id%11,profile=slot+1;return {id,t,n,role:squadRoles[slot],reactionDelay:.18+(profile%4)*.09,passPrecision:.78+(profile%5)*.035,x,y,hx:x,hy:y,el:$('p'+t+'-'+n),speed:slot===0?6.0:7.5+(profile%4)*.45,cool:0};});
+const isKeeper=p=>p.role==='keeper',isWide=p=>['fullback','winger'].includes(p.role),isForward=p=>['winger','striker'].includes(p.role);
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const d=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const activePlayers=()=>players.filter(p=>!p.sentOff);
@@ -149,7 +154,7 @@ function offBallTarget(order){
  return {x:clamp(x,2,98),y:clamp(y,2,62)};
 }
 function coordinatedOffBallTargets(orders){
- const result=new Map(),reserved=[],ordered=[...orders].sort((a,b)=>players[a.i].n-players[b.i].n);
+ const result=new Map(),reserved=[],ordered=[...orders].sort((a,b)=>players[a.i].id-players[b.i].id);
  const indices=new Set(ordered.map(o=>o.i));
  const stationary=team(0).filter(p=>!indices.has(players.indexOf(p)));
  // Las posiciones mantenidas reservan espacio antes de distribuir los desmarques.
@@ -180,12 +185,12 @@ function coordinatedOffBallTargets(orders){
  return result;
 }
 function queueOffBall(i,kind){
- const p=players[i];if(!guided||stage!=='choose'||!owner||!p||p.t!==0||p.n===1||p.sentOff||p===owner||!offBallKinds().includes(kind))return false;
+ const p=players[i];if(!guided||stage!=='choose'||!owner||!p||p.t!==0||isKeeper(p)||p.sentOff||p===owner||!offBallKinds().includes(kind))return false;
  offBallPlans=[...offBallPlans.filter(o=>o.i!==i),{i,kind,x:p.x,y:p.y,possession:owner.t}];renderOffBall();return true;
 }
 function commitOffBall(){
  const valid=offBallPlans.filter(o=>!players[o.i].sentOff&&players[o.i]!==owner&&o.possession===owner.t);
- offBallOrders=[...offBallOrders.filter(o=>!valid.some(v=>v.i===o.i)),...valid.map(o=>({...o,readyAt:elapsed+.18+(players[o.i].n%4)*.09,until:elapsed+6}))];
+ offBallOrders=[...offBallOrders.filter(o=>!valid.some(v=>v.i===o.i)),...valid.map(o=>({...o,readyAt:elapsed+players[o.i].reactionDelay,until:elapsed+6}))];
  offBallPlans=[];
 }
 function pruneOffBall(){
@@ -194,9 +199,9 @@ function pruneOffBall(){
  offBallPlans=offBallPlans.filter(o=>!players[o.i].sentOff&&players[o.i]!==owner&&o.possession===possession);
 }
 function renderOffBallChoices(){
- const eligible=team(0).filter(p=>p!==owner&&p.n!==1),roles=phaseRelations(activePlayers(),{x:bx,y:by},owner,flight);
+ const eligible=team(0).filter(p=>p!==owner&&!isKeeper(p)),roles=phaseRelations(activePlayers(),{x:bx,y:by},owner,flight);
  if(!eligible.some(p=>players.indexOf(p)===offBallPlayer))offBallPlayer=eligible.length?players.indexOf(eligible[0]):null;
- $('offball-player').innerHTML=eligible.map(p=>'<option value="'+players.indexOf(p)+'">#'+p.n+' · '+({i:'interacción',a:'apoyo mutuo',c:'cooperación'}[roles.get(p).key])+'</option>').join('');
+ $('offball-player').innerHTML=eligible.map(p=>'<option value="'+players.indexOf(p)+'">#'+p.n+' · '+roleLabels[p.role]+' · '+({i:'interacción',a:'apoyo mutuo',c:'cooperación'}[roles.get(p).key])+'</option>').join('');
  $('offball-player').value=String(offBallPlayer);
  $('offball-intent').innerHTML=offBallKinds().map(k=>'<option value="'+k+'">'+offBallLabels[k]+'</option>').join('');
  renderOffBall();
@@ -339,7 +344,7 @@ function beginRestart(kind,t,x,y,reason){
   if((t===0?x>94.5:x<5.5)&&Math.abs(y-32)<9.16)x=t===0?94.5:5.5;
  }
  bx=x;by=y;
- const taker=kind==='goalKick'?team(t).find(p=>p.n===1):nearest({x,y},team(t).filter(p=>p.n!==1));
+ const taker=kind==='goalKick'?team(t).find(p=>isKeeper(p)):nearest({x,y},team(t).filter(p=>!isKeeper(p)));
  restart={kind,t,x,y,taker:players.indexOf(taker),age:0};
  for(const p of players){delete p.driveX;delete p.driveY;delete p.intentAt;delete p.attackOrigin;delete p.defOrigin;delete p.defDuty;}
  lastRuling=(reason?reason+' · ':'')+restartName(kind)+' '+(t?'rojo':'azul');report(lastRuling);
@@ -367,7 +372,7 @@ function restartTarget(p,r){
  if(p===taker)return {x:r.x,y:r.y};
  if(r.kind==='penalty'){
   const dir=direction(r.t);
-  if(rival&&p.n===1)return {x:r.t===0?100:0,y:32};
+  if(rival&&isKeeper(p))return {x:r.t===0?100:0,y:32};
   // Todos salvo ejecutor y guardameta: detrás, fuera del área y a 9,15 m.
   x=dir===1?Math.min(x,83.3):Math.max(x,16.7);
   if(Math.hypot(x-r.x,y-r.y)<9.15)x=r.x-dir*9.35;
@@ -402,7 +407,7 @@ function advanceRestart(dt){
  }
  const p=players[r.taker],mates=team(r.t).filter(q=>q!==p);
  // Reanudación automática válida; las decisiones del usuario llegan tras la recepción.
- const target=mates.sort((a,b)=>d(p,a)-d(p,b)||a.n-b.n)[0];
+ const target=mates.sort((a,b)=>d(p,a)-d(p,b)||a.id-b.id)[0];
  restart=null;kickTo(p,target.x,target.y,'pass',target,r.kind);
  if(r.kind==='throw')flight.loft=2;
  restartGuard={kind:r.kind,t:r.t,taker:r.taker};
@@ -416,15 +421,15 @@ function prepareDecision(){
  stage='choose';running=false;resolution=null;selected=null;techAction=null;loose=false;ballHeight=0;trialTime=0;last=0;accumulator=0;
  for(const p of players){p.sx=p.x;p.sy=p.y;}
  if(owner.t===0){
- const candidates=team(0).filter(p=>p!==owner&&p.n!==1),used=new Set();
+ const candidates=team(0).filter(p=>p!==owner&&!isKeeper(p)),used=new Set();
  const pick=rank=>{const p=candidates.filter(p=>!used.has(p)).sort((a,b)=>rank(b)-rank(a))[0];used.add(p);return p;};
  let support,progress,width;
- if(turnNumber===1&&[6,10,11].every(n=>candidates.some(p=>p.n===n))){support=team(0).find(p=>p.n===6);progress=team(0).find(p=>p.n===10);width=team(0).find(p=>p.n===11);}
+ if(turnNumber===1&&[5,9,10].every(id=>candidates.some(p=>p.id===id))){support=team(0).find(p=>p.id===5);progress=team(0).find(p=>p.id===9);width=team(0).find(p=>p.id===10);}
  else{support=pick(p=>-Math.abs(d(owner,p)-16)-Math.max(0,p.x-owner.x)*3);progress=pick(p=>p.x-owner.x-Math.abs(p.y-owner.y)*.25);width=pick(p=>Math.abs(p.y-owner.y)-d(owner,p)*.15);}
  options={support:{n:support.n,title:support.x<owner.x?'Conservar con apoyo retrasado':'Dar continuidad con un apoyo',detail:'Conectar con el #'+support.n+'. Observa su distancia y la presión rival.',tradeoff:'Has priorizado un apoyo para dar continuidad; conservar depende también de la trayectoria y de la presión.'},progress:{n:progress.n,title:progress.x>owner.x?'Buscar progresión':'Buscar otra conexión',detail:'Conectar con el #'+progress.n+'. Valora si el pase permite avanzar.',tradeoff:'Una conexión adelantada puede ganar profundidad, pero necesita una trayectoria disponible.'},width:{n:width.n,title:'Desplazar el foco del juego',detail:'Conectar con el #'+width.n+' en otra altura lateral.',tradeoff:'Desplazar el foco cambia las relaciones de apoyo y obliga a reajustar la defensa; no garantiza una ventaja.'}};
  $('observation').textContent='Decisión '+turnNumber+' · Azul ataca →. Balón en el #'+owner.n+'. Observa la presión, las líneas de pase y los apoyos resaltados.';
  }else{
- const nearestBlue=nearest(owner,team(0).filter(p=>p.n!==1));
+ const nearestBlue=nearest(owner,team(0).filter(p=>!isKeeper(p)));
  options={support:{defense:'press',title:'Presionar con cobertura',detail:'El presionante asignado se acerca al balón y otro compañero le cubre.',tradeoff:'Acercarse al poseedor reduce su tiempo, pero puede abrir espacio a la espalda.'},progress:{defense:'contain',title:'Temporizar',detail:'El más cercano protege el avance hacia portería y el bloque acompaña.',tradeoff:'Temporizar busca retrasar la progresión y ganar tiempo para organizarse; permite al rival conservar.'},width:{defense:'retreat',title:'Replegar y proteger el centro',detail:'El bloque retrocede hacia su portería y reduce su anchura.',tradeoff:'El repliegue protege espacios interiores más retrasados a cambio de ceder terreno.'}};
  $('observation').textContent='Decisión '+turnNumber+' · Rojo tiene el balón en el #'+owner.n+' y ataca ←. Tú sigues controlando al azul: elige su respuesta defensiva.';
  }
@@ -440,8 +445,8 @@ function startSituation(){offBallPlans=[];offBallOrders=[];offBallPlayer=null;ca
  elapsed=0;score=[0,0];passes=shots=turnovers=0;decision=.35;last=0;
  for(const p of players){p.x=p.hx;p.y=p.hy;p.cool=0;p.yellow=0;p.sentOff=false;delete p.intentAt;delete p.intentX;delete p.intentY;delete p.attackOrigin;delete p.defOrigin;delete p.defDuty;p.driveX=p.x;p.driveY=p.y;}
  const positions={'0-6':[34,20],'0-7':[44,32],'0-10':[62,32],'0-11':[52,55],'1-7':[50,29],'1-8':[57,33],'1-6':[62,44],'1-9':[31,52],'1-10':[32,36],'1-11':[31,11]};
- for(const p of players){const pos=positions[p.t+'-'+p.n];if(pos){[p.x,p.y]=pos;p.driveX=p.x;p.driveY=p.y;}}
- lastTouchTeam=0;owner=team(0).find(p=>p.n===7);bx=owner.x;by=owner.y;
+ for(const p of players){const pos=positions[p.t+'-'+(p.id%11+1)];if(pos){[p.x,p.y]=pos;p.driveX=p.x;p.driveY=p.y;}}
+ lastTouchTeam=0;owner=team(0).find(p=>p.id===6);bx=owner.x;by=owner.y;
  $('mode').textContent='Ver simulación libre';$('guided-content').hidden=false;$('free-description').hidden=true;status.style.color='';report('Observa y decide · Azul ataca →');prepareDecision();
 }
 function playChoice(key){if(matchStopped)return;
@@ -486,7 +491,7 @@ function renderChoices(){renderOffBallChoices();
   const mates=team(0).filter(p=>p!==owner);
   if(!mates.some(p=>p.n===targetNumber))targetNumber=nearest(owner,mates).n;
   $('target-player').replaceChildren();
-  for(const p of mates){const o=document.createElement('option');o.value=p.n;o.textContent='#'+p.n+(p.n===1?' · portero':'')+' · distancia '+d(owner,p).toFixed(1);$('target-player').appendChild(o);}
+  for(const p of mates){const o=document.createElement('option');o.value=p.n;o.textContent='#'+p.n+(isKeeper(p)?' · portero':'')+' · distancia '+d(owner,p).toFixed(1);$('target-player').appendChild(o);}
   $('target-player').value=String(targetNumber);$('technique').value=technique;$('target-label').hidden=technique!=='pass';
   options=technicalOptions();
  }
@@ -499,7 +504,7 @@ function renderChoices(){renderOffBallChoices();
 }
 function technicalOptions(){
  const p=owner,r=nearest(p,opp(0)),pressure=d(p,r),goalDist=100-p.x;
- const candidates=team(0).filter(q=>q!==p&&q.n!==1),used=new Set();
+ const candidates=team(0).filter(q=>q!==p&&!isKeeper(q)),used=new Set();
  const pick=rank=>{const q=candidates.filter(q=>!used.has(q)).sort((a,b)=>rank(b)-rank(a))[0];used.add(q);return q;};
  const support=pick(q=>-Math.abs(d(p,q)-16)-Math.max(0,q.x-p.x)*3),progress=pick(q=>q.x-p.x-Math.abs(q.y-p.y)*.25),width=pick(q=>Math.abs(q.y-p.y)-d(p,q)*.15);
  const make=(kind,title,detail,extra={})=>({kind,title,detail,tradeoff:'La ejecución depende del espacio, de la presión y de la respuesta rival.',...extra});
@@ -538,7 +543,7 @@ function executeTechnique(o){
  }else if(kind==='shot'){
   const error=(random()-.5)*(4+(100-p.x)*.25);kickTo(p,102,32+error,'shot');
  }else if(kind==='cross'){
-  const q=team(0).filter(q=>q!==p&&q.n!==1).sort((a,b)=>(Math.abs(a.x-88)+Math.abs(a.y-32))-(Math.abs(b.x-88)+Math.abs(b.y-32)))[0];
+  const q=team(0).filter(q=>q!==p&&!isKeeper(q)).sort((a,b)=>(Math.abs(a.x-88)+Math.abs(a.y-32))-(Math.abs(b.x-88)+Math.abs(b.y-32)))[0];
   kickTo(p,clamp(Math.max(80,q.x),3,97),clamp(q.y,22,42),'pass',q);flight.loft=6;
  }else if(kind==='clearance'){
   kickTo(p,clamp(p.x+40,3,97),clamp(p.y+(random()-.5)*22,3,61),'pass');flight.loft=8;
@@ -575,7 +580,7 @@ function passLane(a,b,rivals){let risk=0;for(const r of rivals){const vx=b.x-a.x
 function passExecution(p,x,y){
  const length=Math.hypot(x-p.x,y-p.y),rival=nearest(p,opp(p.t));
  const pressure=clamp(1-(rival?d(p,rival):10)/7,0,1);
- const precision=.78+(p.n%5)*.035;
+ const precision=p.passPrecision;
  const radius=(.25+length*.018+pressure*1.8)*(1.2-precision);
  const angle=random()*Math.PI*2,amount=Math.sqrt(random())*radius;
  const tx=x+Math.cos(angle)*amount,ty=y+Math.sin(angle)*amount;
@@ -589,7 +594,7 @@ function chooseAction(p){
  if(goalDist<25&&lateral<17&&random()<(pressure>4?.65:.38)){
   kickTo(p,p.t?-2:102,32+(random()-.5)*(5+goalDist*.3),'shot');return;
  }
- const boxTargets=mates.filter(q=>q.n!==1&&(q.t?q.x:100-q.x)<23&&Math.abs(q.y-32)<14);
+ const boxTargets=mates.filter(q=>!isKeeper(q)&&(q.t?q.x:100-q.x)<23&&Math.abs(q.y-32)<14);
  if(goalDist<29&&lateral>17&&boxTargets.length&&random()<.6){
   const target=boxTargets.sort((a,b)=>d(a,nearest(a,rivals))-d(b,nearest(b,rivals))).pop();
   kickTo(p,target.x,target.y,'pass',target);flight.loft=4;report((p.t?'Rojo':'Azul')+' #'+p.n+' centra hacia #'+target.n);return;
@@ -637,21 +642,21 @@ function attackingTargets(t,ballPos){
  const relations=phaseRelations(players,ballPos,owner,flight);
  // Cualquier jugador de campo puede apoyar; se conserva una referencia profunda.
  const supportValue=p=>relations.get(p).value+(relations.get(p).key==='a'?6:0)
-  -Math.max(0,(p.x-ballPos.x)*dir-12)*.35-([2,5,9,11].includes(p.n)?2:0)-(p.n===10?6:0);
- const ranked=mates.filter(p=>p!==focus&&p.n!==1)
-  .sort((a,b)=>supportValue(b)-supportValue(a)||a.n-b.n).slice(0,2);
+  -Math.max(0,(p.x-ballPos.x)*dir-12)*.35-(isWide(p)?2:0)-(p.role==='striker'?6:0);
+ const ranked=mates.filter(p=>p!==focus&&!isKeeper(p))
+  .sort((a,b)=>supportValue(b)-supportValue(a)||a.id-b.id).slice(0,2);
  const progress=t===0?ballPos.x:100-ballPos.x,finalThird=progress>65,flank=Math.abs(ballPos.y-32)>15;
  const upper=ranked.length===2?(ranked[0].y<=ranked[1].y?ranked[0]:ranked[1]):ranked[0];
  for(const p of mates){
   if(p===owner)continue;
-  if(p.n===1){out.set(p,{x:p.hx,y:clamp(ballPos.y,23,41)});continue;}
+  if(isKeeper(p)){out.set(p,{x:p.hx,y:clamp(ballPos.y,23,41)});continue;}
   const base=p.attackOrigin;
   let tx=base.x+(ballPos.x-base.bx)*movementModel.followGain,ty=base.y+(ballPos.y-base.by)*.28;
-  const support=ranked.includes(p);let wide=[2,5,9,11].includes(p.n);
+  const support=ranked.includes(p);let wide=isWide(p);
   const relative=x=>t===0?x:100-x,absolute=u=>t===0?u:100-u;
-  if(finalThird&&p.n>=9&&!support){
+  if(finalThird&&isForward(p)&&!support){
    // Delantero central y extremo alejado ofrecen remate; el cercano sostiene amplitud.
-   if(p.n===10){tx=absolute(clamp(progress+9,80,92));ty=32+(ballPos.y-32)*.14;wide=false;}
+   if(p.role==='striker'){tx=absolute(clamp(progress+9,80,92));ty=32+(ballPos.y-32)*.14;wide=false;}
    else{const sameSide=(p.hy<32)===(ballPos.y<32);
     if(flank&&!sameSide){tx=absolute(clamp(progress+6,78,89));ty=ballPos.y<32?40:24;wide=false;}
     else{tx=absolute(clamp(progress+5,72,90));ty=p.hy<32?13:51;}
@@ -662,12 +667,12 @@ function attackingTargets(t,ballPos){
    tx=ballPos.x+dir*(ranked.indexOf(p)===0?-8:(finalThird?-1:4));ty=ballPos.y+side*9;
   }else if(wide){
    const top=p.hy<32;ty=top?Math.min(ty,12):Math.max(ty,52);
-   if(p.n>=9)tx=Math.max(tx*dir,(ballPos.x+dir*9)*dir)*dir;
-  }else if(p.n>=9){tx=Math.max(tx*dir,(ballPos.x+dir*13)*dir)*dir;}
+   if(isForward(p))tx=Math.max(tx*dir,(ballPos.x+dir*9)*dir)*dir;
+  }else if(isForward(p)){tx=Math.max(tx*dir,(ballPos.x+dir*13)*dir)*dir;}
   else{tx=Math.min(tx*dir,(ballPos.x-dir*13)*dir)*dir;}
   // El resto del bloque acompaña: escalones de seguridad detrás del balón.
-  if(finalThird&&!support&&p.n<9){
-   const gap=p.n<=5?25:15;tx=absolute(clamp(Math.max(relative(tx),progress-gap),6,80));
+  if(finalThird&&!support&&!isForward(p)){
+   const gap=['fullback','centreBack'].includes(p.role)?25:15;tx=absolute(clamp(Math.max(relative(tx),progress-gap),6,80));
   }
   // Preparar el desmarque desde posición habilitada, sin corregir posiciones al instante.
   // Tras el golpeo se permite correr más allá de la línea: importa el instante del pase.
@@ -693,7 +698,7 @@ function defendingTarget(p,rank,ballPos){
  if(rank===1)return {x:ballPos.x-dir*7,y:clamp(ballPos.y+(p.y<ballPos.y?-5:5),5,59)};
  const origin=p.defOrigin||{x:p.x,y:p.y,bx:ballPos.x,by:ballPos.y};
  let x=clamp(origin.x+(ballPos.x-origin.bx)*.40,5,95),y=clamp(origin.y+(ballPos.y-origin.by)*.35,5,59);
- const rival=nearest(p,opp(p.t).filter(q=>q.n!==1));
+ const rival=nearest(p,opp(p.t).filter(q=>!isKeeper(q)));
  if(rival&&d(p,rival)<16){x=x*.65+(rival.x-dir*2)*.35;y=y*.65+rival.y*.35;}
  // Los jugadores superados recuperan profundidad; los más próximos presionan y cubren.
  if((p.x-ballPos.x)*dir>8)x=x*.6+(ballPos.x-dir*6)*.4;
@@ -701,34 +706,34 @@ function defendingTarget(p,rank,ballPos){
 }
 // Asignaciones estables: no cambiar de presionante por una diferencia mínima.
 function defensiveOrder(t,ballPos){
- const ps=team(t).filter(p=>p.n!==1),dir=direction(t);
+ const ps=team(t).filter(p=>!isKeeper(p)),dir=direction(t);
  const arrival=p=>d(p,ballPos)/p.speed;
  const choose=(list,cost,duty)=>{
-  const sorted=[...list].sort((a,b)=>cost(a)-cost(b)||a.n-b.n),best=sorted[0],current=list.find(p=>p.defDuty===duty);
+  const sorted=[...list].sort((a,b)=>cost(a)-cost(b)||a.id-b.id),best=sorted[0],current=list.find(p=>p.defDuty===duty);
   return current&&cost(best)>=cost(current)*.8-.15?current:best;
  };
  const press=choose(ps,arrival,'press');
  const coverCost=p=>Math.hypot(p.x-(ballPos.x-dir*7),p.y-(ballPos.y+(p.y<ballPos.y?-5:5)))/p.speed+((p.x-press.x)*dir>0?.6:0);
  const cover=choose(ps.filter(p=>p!==press),coverCost,'cover');
  for(const p of ps)p.defDuty=p===press?'press':p===cover?'cover':null;
- return [press,cover,...ps.filter(p=>p!==press&&p!==cover).sort((a,b)=>d(a,ballPos)-d(b,ballPos)||a.n-b.n)];
+ return [press,cover,...ps.filter(p=>p!==press&&p!==cover).sort((a,b)=>d(a,ballPos)-d(b,ballPos)||a.id-b.id)];
 }
 function movement(dt){if(matchStopped)return;pruneOffBall();
  const offBallDestinations=coordinatedOffBallTargets(offBallOrders);
  const ballPos={x:bx,y:by},attacking=owner?owner.t:flight?flight.t:null;
  const targets=attacking===null?new Map():attackingTargets(attacking,ballPos);
- const chasers=[0,1].map(t=>attacking===t?team(t).filter(p=>p.n!==1):defensiveOrder(t,ballPos));
+ const chasers=[0,1].map(t=>attacking===t?team(t).filter(p=>!isKeeper(p)):defensiveOrder(t,ballPos));
  const recoverer=loose?nearest(ballPos,activePlayers()):null,moves=[];
  // Calcular todos los destinos antes de mover: no depender del orden del array.
  for(const p of activePlayers()){
   if(attacking===p.t){delete p.defOrigin;delete p.defDuty;}else if(attacking!==null){delete p.attackOrigin;if(!p.defOrigin)p.defOrigin={x:p.x,y:p.y,bx,by};}
   p.cool=Math.max(0,p.cool-dt);let tx=p.hx,ty=p.hy;const dir=direction(p.t);
   if(p===owner){tx=p.driveX??p.x;ty=p.driveY??p.y;}
-  else if(p.n===1){tx=p.hx;ty=clamp(by,23,41);}
+  else if(isKeeper(p)){tx=p.hx;ty=clamp(by,23,41);}
   else if(attacking===p.t){const q=targets.get(p);tx=q.x;ty=q.y;}
   else{const q=defendingTarget(p,chasers[p.t].indexOf(p),ballPos);tx=q.x;ty=q.y;}
 
-  if(guided&&p.t===0&&p!==owner&&p.n!==1&&selected&&selected.defense&&attacking!==0){
+  if(guided&&p.t===0&&p!==owner&&!isKeeper(p)&&selected&&selected.defense&&attacking!==0){
    const rank=chasers[0].indexOf(p);
    if(selected.defense==='press'){if(rank===0){tx=bx-1;ty=by;}else if(rank===1){tx=bx-6;ty=by+(p.y<by?-4:4);}else{tx=clamp(p.sx+(bx-selected.x)*.12,4,90);ty=p.sy+(by-p.sy)*.12;}}
    else if(selected.defense==='contain'){if(rank===0){tx=bx-5;ty=by;}else{tx=Math.min(p.sx,bx-9);ty=p.sy+(by-p.sy)*.15;}}
@@ -738,9 +743,9 @@ function movement(dt){if(matchStopped)return;pruneOffBall();
   if(order&&p!==owner){const q=offBallDestinations.get(order.i);tx=q.x;ty=q.y;}
   // Cada jugador actualiza su lectura con una pequeña demora individual.
   // Se guarda en el estado para que comparar decisiones siga siendo reproducible.
-  if(p!==owner&&p.n!==1){
+  if(p!==owner&&!isKeeper(p)){
    if(p.intentAt===undefined||elapsed>=p.intentAt||elapsed<p.intentAt-1){
-    p.intentX=tx;p.intentY=ty;p.intentAt=elapsed+.18+(p.n%4)*.09;
+    p.intentX=tx;p.intentY=ty;p.intentAt=elapsed+p.reactionDelay;
    }
    tx=p.intentX;ty=p.intentY;
   }
@@ -768,7 +773,7 @@ function update(dt){if(matchStopped){running=false;syncControls();return;}elapse
  assessAdvantage();if(restart)return;
  if(owner){bx=owner.x;by=owner.y;if(decision<=0&&(!guided||(owner.t===1&&trialTime<2)))chooseAction(owner);
  // Un pase o tiro deja el balón en vuelo y owner pasa a null.
- if(owner){const rivals=opp(owner.t).filter(p=>p.n!==1&&p.cool===0);const nearestR=nearest(owner,rivals);
+ if(owner){const rivals=opp(owner.t).filter(p=>!isKeeper(p)&&p.cool===0);const nearestR=nearest(owner,rivals);
  if(nearestR&&d(owner,nearestR)<2.8&&random()<dt*(d(owner,nearestR)<1.7?.70:.27)*(techAction&&techAction.actor===owner&&techAction.kind==='protect'?.4:1)){resolveChallenge(nearestR,owner);}}}
  if(restart)return;
  advanceTechnique(dt);
@@ -785,7 +790,7 @@ function update(dt){if(matchStopped){running=false;syncControls();return;}elapse
   const vx=bx-old.x,vy=by-old.y,ll=vx*vx+vy*vy||1,u=clamp(((p.x-old.x)*vx+(p.y-old.y)*vy)/ll,0,1);
   return {p,u,gap:Math.hypot(p.x-old.x-u*vx,p.y-old.y-u*vy),z:old.z+(ballHeight-old.z)*u};
  }).filter(c=>c.z<=1.4&&c.gap<(c.p.t===f.t?2.2:1.65)).sort((a,b)=>a.u-b.u||a.gap-b.gap);
- if(touches.length){const p=touches[0].p;capture(p,p.n===1&&f.kind==='shot'?'detiene el remate':p.t===f.t?'recibe':'intercepta');}
+ if(touches.length){const p=touches[0].p;capture(p,isKeeper(p)&&f.kind==='shot'?'detiene el remate':p.t===f.t?'recibe':'intercepta');}
  if(flight&&hit){adjudicateExit(hit);return;}
  if(flight&&a>=1){flight=null;loose=true;ballHeight=0;report('Balón suelto: disputa por la recepción');}
  }
@@ -871,7 +876,7 @@ let measurement=null;
 function supportCandidates(carrier,list=activePlayers()){
  if(!carrier)return [];
  const rivals=list.filter(p=>p.t!==carrier.t);
- return list.filter(p=>p.t===carrier.t&&p!==carrier&&p.n!==1).filter(p=>{
+ return list.filter(p=>p.t===carrier.t&&p!==carrier&&!isKeeper(p)).filter(p=>{
   const dx=p.x-carrier.x,dy=p.y-carrier.y,length=Math.hypot(dx,dy);
   if(length<3||length>30)return false;
   return !rivals.some(r=>{const u=((r.x-carrier.x)*dx+(r.y-carrier.y)*dy)/(length*length);return u>.08&&u<.95&&Math.hypot(r.x-carrier.x-u*dx,r.y-carrier.y-u*dy)<2;});
@@ -879,7 +884,7 @@ function supportCandidates(carrier,list=activePlayers()){
 }
 function beginMeasurement(){
  if(!owner)return;
- measurement={time:elapsed,t:owner.t,bx,starts:team(owner.t).filter(p=>p.n!==1).map(p=>({n:p.n,x:p.x,y:p.y})),touched:new Set([owner.n]),end:null};
+ measurement={time:elapsed,t:owner.t,bx,starts:team(owner.t).filter(p=>!isKeeper(p)).map(p=>({n:p.n,x:p.x,y:p.y})),touched:new Set([owner.n]),end:null};
  renderMeasurement();
 }
 function measurementValues(){
@@ -932,11 +937,11 @@ function selectReference(index){
  const priorContrast=contrast&&game2Comparison.baseline&&game2Comparison.baseline.clips.find(row=>row.id===c.id);
  $('reference-game2').hidden=!c.restartObservation;
  $('reference-game2').textContent=contrast?'Contraste controlado · '+contrast.start.toFixed(2)+'–'+contrast.end.toFixed(2)+' s · '+contrast.players+' jugadores. Error medio: motor '+contrast.meanErrorM.toFixed(2)+' m; referencia inmóvil '+contrast.stationaryErrorM.toFixed(2)+' m. Desplazamiento longitudinal medio: observado '+contrast.observedAdvanceM.toFixed(2)+' m; simulado '+contrast.simulatedAdvanceM.toFixed(2)+' m. '+(contrast.attacking?'Acompañamiento sin intervención anotada.':'Respuesta defensiva tras recuperación rival y durante el balón que acaba fuera; no demuestra posesión rival continua.')+' En ambos tramos el error del motor supera la referencia inmóvil. No recomienda inmovilizar jugadores: indica discrepancias pendientes. Sin calibrar coeficientes, reconstruir huecos ni validar órdenes explícitas sin balón.':'Contraste del segundo partido no disponible. La referencia observada sigue accesible.';
-if(priorContrast)$('reference-game2').textContent+=' Comparación 0.28 → 0.30: error '+priorContrast.meanErrorM.toFixed(2)+' → '+contrast.meanErrorM.toFixed(2)+' m; desplazamiento simulado '+priorContrast.simulatedAdvanceM.toFixed(2)+' → '+contrast.simulatedAdvanceM.toFixed(2)+' m. Las tres secuencias ofensivas del partido 1 conservan sus errores anteriores. Corrección parcial, sin validación general.';
+if(priorContrast)$('reference-game2').textContent+=' Comparación 0.28 → 0.31: error '+priorContrast.meanErrorM.toFixed(2)+' → '+contrast.meanErrorM.toFixed(2)+' m; desplazamiento simulado '+priorContrast.simulatedAdvanceM.toFixed(2)+' → '+contrast.simulatedAdvanceM.toFixed(2)+' m. Las tres secuencias ofensivas del partido 1 conservan sus errores anteriores. Corrección parcial, sin validación general.';
  if(c.auditCheck){
   const row=auditComparison&&auditComparison.clips.find(r=>r.id===c.id);
   $('reference-game2').hidden=false;
-  $('reference-game2').textContent=row&&!row.excluded?'Auditoría 0.30 · ventana fijada antes de inspeccionar trayectorias. Error medio '+row.meanErrorM.toFixed(2)+' m; referencia inmóvil '+row.stationaryErrorM.toFixed(2)+' m. Avance medio observado '+row.observedAdvanceM.toFixed(2)+' m; simulado '+row.simulatedAdvanceM.toFixed(2)+' m. Los arreglos de continuidad no corrigen las alturas tácticas. Dos tramos de la misma posesión y partido: no son validaciones independientes por partido. Sin ajuste de parámetros ni órdenes explícitas.':'Contraste de auditoría no disponible o excluido por datos incompletos.';
+  $('reference-game2').textContent=row&&!row.excluded?'Auditoría 0.31 · ventana fijada antes de inspeccionar trayectorias. Error medio '+row.meanErrorM.toFixed(2)+' m; referencia inmóvil '+row.stationaryErrorM.toFixed(2)+' m. Avance medio observado '+row.observedAdvanceM.toFixed(2)+' m; simulado '+row.simulatedAdvanceM.toFixed(2)+' m. Los arreglos de continuidad no corrigen las alturas tácticas. Dos tramos de la misma posesión y partido: no son validaciones independientes por partido. Sin ajuste de parámetros ni órdenes explícitas.':'Contraste de auditoría no disponible o excluido por datos incompletos.';
  }
  renderReference();
 }
@@ -1004,8 +1009,8 @@ referencePanel.ontoggle=async()=>{
   const response=await fetch('data/metrica-analysis.json');if(!response.ok)throw new Error('No se ha podido descargar la muestra');
   const data=await response.json();if(data.schemaVersion!==2||!Array.isArray(data.clips)||data.clips.length<1)throw new Error('Formato de referencia no válido');
   referenceData=data;$('reference-sequence').replaceChildren();
-  try{const windows=await (await fetch('data/audit-windows.json')).json(),audit=await (await fetch('data/audit-validation.json')).json();if(windows.schemaVersion!==1||audit.engineVersion!=='0.30'||!Array.isArray(windows.clips)||!Array.isArray(audit.clips))throw Error('Schema');auditComparison=audit;data.clips.push(...windows.clips.map(c=>({...c,auditCheck:true})));}catch(err){auditComparison=null;}
-  try{const result=await fetch('data/game2-validation.json');if(!result.ok)throw Error('Download');const report=await result.json();if(report.schemaVersion!==1||report.engineVersion!=='0.30'||!Array.isArray(report.clips))throw Error('Schema');game2Comparison=report;}catch(err){game2Comparison=null;}
+  try{const windows=await (await fetch('data/audit-windows.json')).json(),audit=await (await fetch('data/audit-validation.json')).json();if(windows.schemaVersion!==1||audit.engineVersion!=='0.31'||!Array.isArray(windows.clips)||!Array.isArray(audit.clips))throw Error('Schema');auditComparison=audit;data.clips.push(...windows.clips.map(c=>({...c,auditCheck:true})));}catch(err){auditComparison=null;}
+  try{const result=await fetch('data/game2-validation.json');if(!result.ok)throw Error('Download');const report=await result.json();if(report.schemaVersion!==1||report.engineVersion!=='0.31'||!Array.isArray(report.clips))throw Error('Schema');game2Comparison=report;}catch(err){game2Comparison=null;}
   data.clips.forEach((c,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=c.title;$('reference-sequence').appendChild(o);});
   for(const id of ['reference-time','reference-play','reference-sequence','reference-event-select'])$(id).disabled=false;
   selectReference(0);
@@ -1025,7 +1030,7 @@ $('reference-time').oninput=e=>{stopReference();referenceIndex=Number(e.target.v
 $('defense-overlay').onchange=async()=>{
  if(!$('defense-overlay').checked||defenseComparison){renderReference();return;}
  if(defenseComparisonLoading)return;defenseComparisonLoading=true;defenseComparisonFailed=false;renderReference();
- try{const response=await fetch('data/defense-validation.json');if(!response.ok)throw Error('Download');const data=await response.json();if(data.schemaVersion!==1||data.engineVersion!=='0.30'||!Array.isArray(data.clips))throw Error('Schema');defenseComparison=data;}
+ try{const response=await fetch('data/defense-validation.json');if(!response.ok)throw Error('Download');const data=await response.json();if(data.schemaVersion!==1||data.engineVersion!=='0.31'||!Array.isArray(data.clips))throw Error('Schema');defenseComparison=data;}
  catch(err){defenseComparisonFailed=true;}
  finally{defenseComparisonLoading=false;renderReference();}
 };
@@ -1038,7 +1043,7 @@ $('offball-player').onchange=()=>{offBallPlayer=Number($('offball-player').value
 $('offball-add').onclick=()=>queueOffBall(Number($('offball-player').value),$('offball-intent').value);
 $('offball-remove').onclick=()=>{if(stage!=='choose')return;const i=Number($('offball-player').value);offBallPlans=offBallPlans.filter(o=>o.i!==i);offBallOrders=offBallOrders.filter(o=>o.i!==i);renderOffBall();};
 $('offball-clear').onclick=()=>{if(stage!=='choose')return;offBallPlans=[];offBallOrders=[];renderOffBall();};
-for(const p of players)p.el.onclick=()=>{if(guided&&stage==='choose'&&p.t===0&&p.n!==1&&!p.sentOff&&p!==owner){offBallPlayer=players.indexOf(p);$('offball-player').value=String(offBallPlayer);offBallPanel.open=true;renderOffBall();}};
+for(const p of players)p.el.onclick=()=>{if(guided&&stage==='choose'&&p.t===0&&!isKeeper(p)&&!p.sentOff&&p!==owner){offBallPlayer=players.indexOf(p);$('offball-player').value=String(offBallPlayer);offBallPanel.open=true;renderOffBall();}};
 startSituation();requestAnimationFrame(frame);
 })();
 </script></body></html>

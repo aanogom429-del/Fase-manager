@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 17 de octubre de 2026
 
+- **0.31 — Roles y capacidades independientes del dorsal.** La plantilla declara portero, lateral, central, centrocampista, extremo o delantero central como función explícita. Amplitud, profundidad, apoyos y alturas consultan esa función; portería y exclusiones reglamentarias del motor dejan de consultar el dorsal 1. Identificador estable para desempates; precisión y demora individual se guardan como atributos del jugador. El dorsal permanece como etiqueta y selección de destinatario, no como capacidad. La función se muestra al preparar decisiones sin balón y se conserva al comparar alternativas.
+
+Se mantiene la plantilla inicial y todos los parámetros anteriores: no se ha corregido todavía el exceso de retroceso ni se ha añadido un editor de roles. Las funciones no equivalen a los espacios de interacción, apoyo mutuo o cooperación, que siguen recalculándose según la jugada. La asignación de jugadores observados a la plantilla de referencia sigue siendo aproximada; esta refactorización no infiere puestos reales del tracking.
+
+`tests/player_roles.cjs` compara ambos equipos tras renumerar jugadores, incluyendo delantero con dorsal 1 y portero con 99: destinos, diez segundos de juego libre, precisión, demoras de órdenes y ejecutores de reanudaciones. También comprueba restauración y efecto de un cambio explícito de rol. Los contrastes ofensivos y defensivos de ambos partidos conservan exactamente las métricas de 0.30. No se añaden muestras ni se mejora el realismo por este cambio estructural.
+
+Siguiente paso: diagnosticar y revisar las alturas detrás del balón con roles ya explícitos, atendiendo a opciones de progresión y equilibrio, con regresión separada y sin ajustar a una única secuencia.
+
 - **0.30 — Correcciones de auditoría y contraste reservado.** Corregidos el salto de posición al salir de una reanudación junto a la línea y la recuperación indebida de órdenes canceladas al repetir una decisión. El margen interior limita ahora el destino, no desplaza instantáneamente al jugador. El punto de comparación conserva las órdenes activas después de su cancelación individual o conjunta.
 
 Dos ventanas nuevas de Sample Game 2, 77,44–83,16 s y 87,96–92,80 s, seleccionadas por eventos antes de inspeccionar sus trayectorias, cuentan con 32 y 28 muestras completas. Se conservan en `data/audit-windows.json`, con línea base 0.29 y resultados 0.30 reproducibles. Son tramos de una misma posesión y partido, no partidos independientes. No se ajustaron parámetros a estos datos. Error medio actual: 8,85 y 12,20 m, frente a 7,37 y 3,55 m de referencia inmóvil. En el segundo tramo, avance observado +0,11 m frente a −8,83 m simulado: persiste el exceso de retroceso.
@@ -119,7 +127,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 17 de octubre de 2026. Estado del motor: 0.30.
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.31.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

@@ -9,7 +9,7 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituati
  `globalThis.replay={
  init:(positions,ballPoint,gain)=>{
   movementModel.followGain=gain;guided=true;selected={x:ballPoint[0],y:ballPoint[1]};elapsed=0;loose=false;techAction=null;
-  for(const q of positions){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];delete p.intentAt;}
+  for(const q of positions){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];p.attackOrigin={x:p.x,y:p.y,bx:ballPoint[0],by:ballPoint[1]};delete p.intentAt;}
   bx=ballPoint[0];by=ballPoint[1];
  },
  step:(positions,ballPoint,freeIds,dt)=>{

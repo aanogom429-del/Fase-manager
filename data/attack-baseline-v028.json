@@ -1,0 +1,27 @@
+{
+  "engineVersion": "0.28",
+  "gain": 0.35,
+  "clips": [
+    {
+      "id": "away-progress",
+      "players": 5,
+      "positionMAEM": 11.218222759760458,
+      "endpointMAEM": 20.242755197687245,
+      "forwardMAEM": 15.353307667923465
+    },
+    {
+      "id": "home-progress",
+      "players": 6,
+      "positionMAEM": 6.651492734527907,
+      "endpointMAEM": 8.057956679266754,
+      "forwardMAEM": 2.069700028379564
+    },
+    {
+      "id": "contrast-progress",
+      "players": 4,
+      "positionMAEM": 10.503890275493331,
+      "endpointMAEM": 12.307860639704016,
+      "forwardMAEM": 10.243584285031737
+    }
+  ]
+}

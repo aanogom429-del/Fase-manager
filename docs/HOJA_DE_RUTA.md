@@ -1,5 +1,15 @@
 # Actualizaciones completadas · 17 de octubre de 2026
 
+- **0.29 — Referencia ofensiva al comienzo de la posesión.** Causa identificada: fuera de la decisión azul guiada, el acompañamiento sumaba a la formación un desplazamiento del balón respecto al centro del campo, aunque las posiciones iniciales de esa fase ya estuvieran desplazadas. Se introduce una referencia conjunta e inmutable de posiciones y balón al entrar en ataque, válida para ambos equipos y ambos modos. Los pases entre compañeros la conservan; pérdida, reanudación o reinicio la invalidan. Comparar decisiones la restaura. No se cambia el coeficiente 0,35 ni las reglas de amplitud, alturas o velocidad.
+
+Contraste tras banda del partido 2: error medio 11,4297 → 10,1292 m (reducción aproximada del 11,4 %); retroceso medio simulado 18,6214 → 14,8552 m, frente a 6,5073 m observado. La referencia inmóvil conserva 4,7251 m: la corrección no resuelve la discrepancia ni valida el realismo. El tramo defensivo tras córner conserva 5,8486 m de error y 12,2311 m de retroceso. Las tres secuencias ofensivas del partido 1 conservan exactamente sus resultados anteriores: ese banco ya utilizaba posiciones y balón iniciales como referencia guiada. Las cuatro ventanas defensivas del partido 1 tampoco cambian.
+
+Líneas base conservadas en `data/game2-baseline-v028.json` y `data/attack-baseline-v028.json`; informe `data/attack-comparison.json`, reproducible con `scripts/compare_attack.cjs`, sin búsqueda de parámetros. Los inicializadores del contraste fijan explícitamente la nueva referencia en el primer instante observado, antes de interpolar. `data/game2-validation.json` conserva los resultados previos junto a los actuales; comparación visible en el visor. No se añaden partidos ni se infieren órdenes del usuario del tracking.
+
+Pruebas: `tests/attack_origin.cjs` verifica ambos equipos, independencia del modo, referencia fija durante la posesión, recepción del mismo equipo, pérdida, reanudación, repetición y reinicio. Pasan continuidad, órdenes sin balón, fuera de juego, reanudaciones, faltas, ventaja, disciplina y contrastes de ambos partidos. Regresión libre de tres semillas y 90 s en `data/runtime-regression-v029.json`, sin posiciones inválidas. No acredita frecuencias realistas de acciones.
+
+Siguiente diagnóstico: reglas que obligan a ocupar alturas detrás del balón y asignación aproximada de roles, antes de modificar distancias por ajuste a una sola jugada. El retroceso defensivo es un problema separado y permanece pendiente.
+
 - **0.28 — Contraste controlado con el segundo partido.** Se amplía la evaluación de las referencias existentes de Metrica Sample Game 2 sin añadir partidos, cambiar parámetros ni generar órdenes del entrenador a partir del tracking. Tras banda: 28,28–32,32 s, desde la primera muestra completa hasta la recepción del segundo pase; siete compañeros sin intervención anotada en la ventana original. Tras córner: 420,24–424,32 s, desde la recuperación rival hasta la última muestra completa anterior a la salida; diez defensores de campo. El vuelo que acaba fuera no acredita posesión rival continua: se utiliza como prueba acotada de respuesta defensiva.
 
 Se prescriben balón, oposición, portero y, en ataque, jugadores con intervención anotada. Se conservan posiciones iniciales; pasos de hasta 1/120 s e interpolación solo entre muestras completas contiguas. Asignación explícita de dorsales presentes a roles del motor, con portero identificado, sin aplicar la fórmula de dorsales del partido 1. La identidad se conserva; el rol táctico sigue aproximado. No se reconstruyen las muestras incompletas ni se evalúa la ejecución reglamentaria de la banda/córner.
@@ -101,7 +111,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 17 de octubre de 2026. Estado del motor: 0.28.
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.29.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

@@ -1020,10 +1020,10 @@ referencePanel.ontoggle=async()=>{
   const response=await fetch('data/metrica-analysis.json');if(!response.ok)throw new Error('No se ha podido descargar la muestra');
   const data=await response.json();if(data.schemaVersion!==2||!Array.isArray(data.clips)||data.clips.length<1)throw new Error('Formato de referencia no válido');
   referenceData=data;$('reference-sequence').replaceChildren();
-  try{const report=await (await fetch('data/support-diagnosis.json')).json();if(report.engineVersion!=='0.33'||!Array.isArray(report.clips))throw Error('Schema');supportDiagnosis=report;}catch(err){supportDiagnosis=null;}
-  try{const report=await (await fetch('data/heights-comparison.json')).json();if(report.engineVersion!=='0.33'||!Array.isArray(report.clips))throw Error('Schema');heightsComparison=report;}catch(err){heightsComparison=null;}
-  try{const windows=await (await fetch('data/audit-windows.json')).json(),audit=await (await fetch('data/audit-validation.json')).json();if(windows.schemaVersion!==1||audit.engineVersion!=='0.33'||!Array.isArray(windows.clips)||!Array.isArray(audit.clips))throw Error('Schema');auditComparison=audit;data.clips.push(...windows.clips.map(c=>({...c,auditCheck:true})));}catch(err){auditComparison=null;}
-  try{const result=await fetch('data/game2-validation.json');if(!result.ok)throw Error('Download');const report=await result.json();if(report.schemaVersion!==1||report.engineVersion!=='0.33'||!Array.isArray(report.clips))throw Error('Schema');game2Comparison=report;}catch(err){game2Comparison=null;}
+  try{const report=await (await fetch('data/support-diagnosis.json?v=0.33')).json();if(report.engineVersion!=='0.33'||!Array.isArray(report.clips))throw Error('Schema');supportDiagnosis=report;}catch(err){supportDiagnosis=null;}
+  try{const report=await (await fetch('data/heights-comparison.json?v=0.33')).json();if(report.engineVersion!=='0.33'||!Array.isArray(report.clips))throw Error('Schema');heightsComparison=report;}catch(err){heightsComparison=null;}
+  try{const windows=await (await fetch('data/audit-windows.json')).json(),audit=await (await fetch('data/audit-validation.json?v=0.33')).json();if(windows.schemaVersion!==1||audit.engineVersion!=='0.33'||!Array.isArray(windows.clips)||!Array.isArray(audit.clips))throw Error('Schema');auditComparison=audit;data.clips.push(...windows.clips.map(c=>({...c,auditCheck:true})));}catch(err){auditComparison=null;}
+  try{const result=await fetch('data/game2-validation.json?v=0.33');if(!result.ok)throw Error('Download');const report=await result.json();if(report.schemaVersion!==1||report.engineVersion!=='0.33'||!Array.isArray(report.clips))throw Error('Schema');game2Comparison=report;}catch(err){game2Comparison=null;}
   data.clips.forEach((c,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=c.title;$('reference-sequence').appendChild(o);});
   for(const id of ['reference-time','reference-play','reference-sequence','reference-event-select'])$(id).disabled=false;
   selectReference(0);
@@ -1043,7 +1043,7 @@ $('reference-time').oninput=e=>{stopReference();referenceIndex=Number(e.target.v
 $('defense-overlay').onchange=async()=>{
  if(!$('defense-overlay').checked||defenseComparison){renderReference();return;}
  if(defenseComparisonLoading)return;defenseComparisonLoading=true;defenseComparisonFailed=false;renderReference();
- try{const response=await fetch('data/defense-validation.json');if(!response.ok)throw Error('Download');const data=await response.json();if(data.schemaVersion!==1||data.engineVersion!=='0.33'||!Array.isArray(data.clips))throw Error('Schema');defenseComparison=data;}
+ try{const response=await fetch('data/defense-validation.json?v=0.33');if(!response.ok)throw Error('Download');const data=await response.json();if(data.schemaVersion!==1||data.engineVersion!=='0.33'||!Array.isArray(data.clips))throw Error('Schema');defenseComparison=data;}
  catch(err){defenseComparisonFailed=true;}
  finally{defenseComparisonLoading=false;renderReference();}
 };

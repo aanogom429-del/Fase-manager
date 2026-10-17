@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "engineVersion": "0.31",
+  "engineVersion": "0.32",
   "match": "Metrica Sample Game 2",
   "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
   "method": "Fixed complete subwindows; same initial positions, ball/opposition/keeper and recorded attackers prescribed; other players use the unchanged motor. <=1/120 s steps; trapezoidal time-weighted position error in source metres. No parameter search.",
@@ -307,7 +307,7 @@
     ]
   },
   "firstMatchComparison": {
-    "engineVersion": "0.31",
+    "engineVersion": "0.32",
     "baselineVersion": "0.28",
     "gain": 0.35,
     "method": "Same three original Game 1 windows and existing controlled replay metric; fixed gain, no search. Current positions and ball anchored together at initial time.",
@@ -329,11 +329,11 @@
         "after": {
           "id": "away-progress",
           "players": 5,
-          "positionMAEM": 11.218222759760458,
-          "endpointMAEM": 20.242755197687245,
-          "forwardMAEM": 15.353307667923465
+          "positionMAEM": 9.901040576692402,
+          "endpointMAEM": 19.009890809911447,
+          "forwardMAEM": 14.241226505014087
         },
-        "improvementPercent": 0
+        "improvementPercent": 11.741451487242363
       },
       {
         "id": "home-progress",
@@ -347,11 +347,11 @@
         "after": {
           "id": "home-progress",
           "players": 6,
-          "positionMAEM": 6.651492734527907,
-          "endpointMAEM": 8.057956679266754,
-          "forwardMAEM": 2.069700028379564
+          "positionMAEM": 7.648812789148924,
+          "endpointMAEM": 9.562054978455203,
+          "forwardMAEM": 2.978360261955551
         },
-        "improvementPercent": 0
+        "improvementPercent": -14.993928346999878
       },
       {
         "id": "contrast-progress",
@@ -365,11 +365,11 @@
         "after": {
           "id": "contrast-progress",
           "players": 4,
-          "positionMAEM": 10.503890275493331,
-          "endpointMAEM": 12.307860639704016,
-          "forwardMAEM": 10.243584285031737
+          "positionMAEM": 8.88194782733371,
+          "endpointMAEM": 9.466361852232538,
+          "forwardMAEM": 5.52242021916966
         },
-        "improvementPercent": 0
+        "improvementPercent": 15.441349877233414
       }
     ]
   },
@@ -504,11 +504,11 @@
           "role": 11
         }
       ],
-      "meanErrorM": 10.129217143246045,
+      "meanErrorM": 8.200791810380286,
       "stationaryErrorM": 4.72513313172551,
-      "endpointErrorM": 16.001699992933542,
+      "endpointErrorM": 12.573444285443344,
       "observedAdvanceM": -6.507299999999999,
-      "simulatedAdvanceM": -14.855213058372707
+      "simulatedAdvanceM": -11.213964443044517
     },
     {
       "id": "game2-corner",

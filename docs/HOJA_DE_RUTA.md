@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 17 de octubre de 2026
 
+- **0.32 — Alturas de progresión y equilibrio distribuido.** Se elimina la obligación de que todo jugador no abierto ni delantero y no seleccionado como apoyo se sitúe al menos 13 unidades detrás del balón. Ahora esa responsabilidad recae en los dos compañeros elegibles más retrasados (sin portero, delanteros, apoyos seleccionados ni receptor previsto). Los restantes conservan su referencia de posesión y acompañamiento. No equivale a inmovilizar jugadores ni impedir retrocesos: permanecen los apoyos cercanos, las referencias móviles, el fuera de juego, las órdenes explícitas y la respuesta a la pérdida. Se conserva el margen 13, las alturas de último tercio, la velocidad y la demora; no se ajustaron parámetros buscando encajar las muestras. La elección de dos jugadores sigue siendo una heurística provisional, no una ley táctica.
+
+Contraste 0.31 → 0.32, error de posición en metros: partido 1, progresión roja 11,22 → 9,90; progresión azul 6,65 → 7,65 (empeora aproximadamente 15 %); contraste rojo 10,50 → 8,88. Partido 2, tras banda 10,13 → 8,20; ventana 77,44–83,16 s, 8,85 → 6,68; ventana 87,96–92,80 s, 12,20 → 7,16. En esta última el retroceso simulado pasa de 8,83 a 1,21 m frente a avance observado +0,11 m; todavía supera el error de la referencia inmóvil (3,55 m). Mejoran cinco de seis secuencias ofensivas, no todas. Las métricas de los dos partidos no se agrupan por usar integración distinta. El tramo defensivo tras córner y las cuatro ventanas defensivas del partido 1 permanecen exactamente iguales.
+
+Son secuencias ya examinadas en el diagnóstico, no una nueva validación independiente. Se conserva la línea base en `data/heights-baseline-v031.json`, comparación reproducible en `data/heights-comparison.json` y `scripts/compare_heights.cjs`. El visor muestra antes/después, incluida la regresión. No se añaden partidos ni se infieren intenciones reales.
+
+Pruebas nuevas: alturas avanzadas preservadas en ambos sentidos cuando hay equilibrio, recuperación de dos jugadores cuando faltan alturas retrasadas, independencia del orden del array, exclusión de expulsados, límites de velocidad y comparación de decisiones. Pruebas del visor verifican que se informa del empeoramiento. Pasan las 19 suites JavaScript y las tres pruebas Python de tracking. Regresión libre de tres semillas y 90 s en `data/runtime-regression-v032.json`, sin posiciones inválidas; no acredita frecuencias realistas de acciones. Próximo diagnóstico: estudiar la secuencia azul que empeora y la asignación/estabilidad de apoyos; después contrastar con ventanas nuevas fijadas de antemano. Sigue pendiente el retroceso defensivo. No se introduce aprendizaje.
+
 - **0.31 — Roles y capacidades independientes del dorsal.** La plantilla declara portero, lateral, central, centrocampista, extremo o delantero central como función explícita. Amplitud, profundidad, apoyos y alturas consultan esa función; portería y exclusiones reglamentarias del motor dejan de consultar el dorsal 1. Identificador estable para desempates; precisión y demora individual se guardan como atributos del jugador. El dorsal permanece como etiqueta y selección de destinatario, no como capacidad. La función se muestra al preparar decisiones sin balón y se conserva al comparar alternativas.
 
 Se mantiene la plantilla inicial y todos los parámetros anteriores: no se ha corregido todavía el exceso de retroceso ni se ha añadido un editor de roles. Las funciones no equivalen a los espacios de interacción, apoyo mutuo o cooperación, que siguen recalculándose según la jugada. La asignación de jugadores observados a la plantilla de referencia sigue siendo aproximada; esta refactorización no infiere puestos reales del tracking.
@@ -127,7 +135,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 17 de octubre de 2026. Estado del motor: 0.31.
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.32.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

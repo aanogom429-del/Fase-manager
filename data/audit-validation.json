@@ -1,5 +1,5 @@
 {
-  "engineVersion": "0.31",
+  "engineVersion": "0.32",
   "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
   "selection": "Two Away pass chains selected before tracking inspection; same possession and match, not independent matches. No tuning or replacement based on results.",
   "method": "Same controlled Game 2 replay; no missing samples reconstructed, no fitting. Whole fixed window excluded if integrity checks fail.",
@@ -134,11 +134,11 @@
           "role": 11
         }
       ],
-      "meanErrorM": 8.850267460644037,
+      "meanErrorM": 6.6820520723301176,
       "stationaryErrorM": 7.366815329887085,
-      "endpointErrorM": 17.478442086617985,
+      "endpointErrorM": 12.74284839476427,
       "observedAdvanceM": -10.2144,
-      "simulatedAdvanceM": -20.4497785851216
+      "simulatedAdvanceM": -14.368014331135331
     },
     {
       "id": "audit-game2-b",
@@ -270,11 +270,11 @@
           "role": 11
         }
       ],
-      "meanErrorM": 12.201201319727735,
+      "meanErrorM": 7.164621541919985,
       "stationaryErrorM": 3.5450819582786557,
-      "endpointErrorM": 15.577922735345402,
+      "endpointErrorM": 8.36045435170338,
       "observedAdvanceM": 0.10500000000000018,
-      "simulatedAdvanceM": -8.832084385472372
+      "simulatedAdvanceM": -1.206162336120509
     }
   ],
   "baseline": {

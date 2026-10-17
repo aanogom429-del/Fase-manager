@@ -1,0 +1,280 @@
+{
+  "engineVersion": "0.29",
+  "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
+  "selection": "Two Away pass chains selected before tracking inspection; same possession and match, not independent matches. No tuning or replacement based on results.",
+  "method": "Same controlled Game 2 replay; no missing samples reconstructed, no fitting. Whole fixed window excluded if integrity checks fail.",
+  "clips": [
+    {
+      "id": "audit-game2-a",
+      "start": 77.44,
+      "end": 83.16,
+      "attacking": true,
+      "team": 1,
+      "players": 7,
+      "jerseys": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "samples": 32,
+      "originalSamples": 32,
+      "roleMapping": [
+        {
+          "team": 0,
+          "jersey": 11,
+          "role": 1
+        },
+        {
+          "team": 0,
+          "jersey": 1,
+          "role": 2
+        },
+        {
+          "team": 0,
+          "jersey": 2,
+          "role": 3
+        },
+        {
+          "team": 0,
+          "jersey": 3,
+          "role": 4
+        },
+        {
+          "team": 0,
+          "jersey": 4,
+          "role": 5
+        },
+        {
+          "team": 0,
+          "jersey": 5,
+          "role": 6
+        },
+        {
+          "team": 0,
+          "jersey": 6,
+          "role": 7
+        },
+        {
+          "team": 0,
+          "jersey": 7,
+          "role": 8
+        },
+        {
+          "team": 0,
+          "jersey": 8,
+          "role": 9
+        },
+        {
+          "team": 0,
+          "jersey": 9,
+          "role": 10
+        },
+        {
+          "team": 0,
+          "jersey": 10,
+          "role": 11
+        },
+        {
+          "team": 1,
+          "jersey": 25,
+          "role": 1
+        },
+        {
+          "team": 1,
+          "jersey": 15,
+          "role": 2
+        },
+        {
+          "team": 1,
+          "jersey": 16,
+          "role": 3
+        },
+        {
+          "team": 1,
+          "jersey": 17,
+          "role": 4
+        },
+        {
+          "team": 1,
+          "jersey": 18,
+          "role": 5
+        },
+        {
+          "team": 1,
+          "jersey": 19,
+          "role": 6
+        },
+        {
+          "team": 1,
+          "jersey": 20,
+          "role": 7
+        },
+        {
+          "team": 1,
+          "jersey": 21,
+          "role": 8
+        },
+        {
+          "team": 1,
+          "jersey": 22,
+          "role": 9
+        },
+        {
+          "team": 1,
+          "jersey": 23,
+          "role": 10
+        },
+        {
+          "team": 1,
+          "jersey": 24,
+          "role": 11
+        }
+      ],
+      "meanErrorM": 8.850267460644037,
+      "stationaryErrorM": 7.366815329887085,
+      "endpointErrorM": 17.478442086617985,
+      "observedAdvanceM": -10.2144,
+      "simulatedAdvanceM": -20.4497785851216
+    },
+    {
+      "id": "audit-game2-b",
+      "start": 87.96,
+      "end": 92.8,
+      "attacking": true,
+      "team": 1,
+      "players": 7,
+      "jerseys": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "samples": 28,
+      "originalSamples": 28,
+      "roleMapping": [
+        {
+          "team": 0,
+          "jersey": 11,
+          "role": 1
+        },
+        {
+          "team": 0,
+          "jersey": 1,
+          "role": 2
+        },
+        {
+          "team": 0,
+          "jersey": 2,
+          "role": 3
+        },
+        {
+          "team": 0,
+          "jersey": 3,
+          "role": 4
+        },
+        {
+          "team": 0,
+          "jersey": 4,
+          "role": 5
+        },
+        {
+          "team": 0,
+          "jersey": 5,
+          "role": 6
+        },
+        {
+          "team": 0,
+          "jersey": 6,
+          "role": 7
+        },
+        {
+          "team": 0,
+          "jersey": 7,
+          "role": 8
+        },
+        {
+          "team": 0,
+          "jersey": 8,
+          "role": 9
+        },
+        {
+          "team": 0,
+          "jersey": 9,
+          "role": 10
+        },
+        {
+          "team": 0,
+          "jersey": 10,
+          "role": 11
+        },
+        {
+          "team": 1,
+          "jersey": 25,
+          "role": 1
+        },
+        {
+          "team": 1,
+          "jersey": 15,
+          "role": 2
+        },
+        {
+          "team": 1,
+          "jersey": 16,
+          "role": 3
+        },
+        {
+          "team": 1,
+          "jersey": 17,
+          "role": 4
+        },
+        {
+          "team": 1,
+          "jersey": 18,
+          "role": 5
+        },
+        {
+          "team": 1,
+          "jersey": 19,
+          "role": 6
+        },
+        {
+          "team": 1,
+          "jersey": 20,
+          "role": 7
+        },
+        {
+          "team": 1,
+          "jersey": 21,
+          "role": 8
+        },
+        {
+          "team": 1,
+          "jersey": 22,
+          "role": 9
+        },
+        {
+          "team": 1,
+          "jersey": 23,
+          "role": 10
+        },
+        {
+          "team": 1,
+          "jersey": 24,
+          "role": 11
+        }
+      ],
+      "meanErrorM": 12.204029959785675,
+      "stationaryErrorM": 3.5450819582786557,
+      "endpointErrorM": 15.577923948600505,
+      "observedAdvanceM": 0.10500000000000018,
+      "simulatedAdvanceM": -8.83208348332809
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "engineVersion": "0.34",
+  "baselineVersion": "0.33",
+  "selection": "Fixed from Game 2 event timestamps before importing these trajectories or calculating model results. Home pass chains spanning 100.44–109.36 and 140.36–148.72 seconds, and Away goalkeeper recovery plus next pass at 198.24 seconds. No replacement after exclusion. Three possessions in one previously used match, not independent matches or a representative sample.",
+  "windows": [
+    {"id":"support-holdout-a","team":0,"start":100.44,"end":109.36},
+    {"id":"support-holdout-b","team":0,"start":140.36,"end":148.72},
+    {"id":"support-holdout-c","team":1,"start":198.24,"end":204.08}
+  ]
+}

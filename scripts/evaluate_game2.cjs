@@ -5,8 +5,10 @@ const html=fs.readFileSync(process.env.FASE_ENGINE_SOURCE||path.join(root,'index
 const engineVersion=html.match(/FASE MANAGER · ([0-9.]+)/)[1];
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const definitions=[{id:'game2-throw',start:28.28,end:32.32,attacking:true},{id:'game2-corner',start:420.24,end:424.32,attacking:false}];
-function environment(){
- const source=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',`globalThis.replay={
+function environment(options={}){
+ let engine=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+ if(options.statelessSupports){assert(engine.includes('const ranked=selectAttackSupports(mates,focus,supportValue);'));engine=engine.replace('const ranked=selectAttackSupports(mates,focus,supportValue);','const ranked=mates.filter(p=>p!==focus&&!isKeeper(p)).sort((a,b)=>supportValue(b)-supportValue(a)||a.id-b.id).slice(0,2);');}
+ const source=engine.replace('startSituation();requestAnimationFrame(frame);',`globalThis.replay={
  init:(ps,point,attacking)=>{guided=true;selected=null;elapsed=0;owner=null;loose=false;techAction=null;flight={t:attacking?0:1,target:null};bx=point[0];by=point[1];
  for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];p.attackOrigin={x:p.x,y:p.y,bx:point[0],by:point[1]};delete p.intentAt;delete p.defOrigin;delete p.defDuty;}},
  step:(ps,point,ids,dt)=>{for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);if(p.t!==0||!ids.includes(p.n)){p.x=q[2];p.y=q[3];}}
@@ -16,14 +18,14 @@ function environment(){
  const c={document:{head:new E(),getElementById:id=>nodes[id]||(nodes[id]=new E()),createElement:()=>new E()},console,requestAnimationFrame:()=>{}};
  vm.createContext(c);vm.runInContext(source,c);return c.replay;
 }
-function evaluate(clip,definition){
+function evaluate(clip,definition,options={}){
  const frames=clip.frames.filter(f=>f.time>=definition.start-.00001&&f.time<=definition.end+.00001);
  assert(frames.length>1);assert.equal(frames[0].time,definition.start);assert.equal(frames.at(-1).time,definition.end);
  const keepers=[11,25],rosters=[0,1].map(t=>frames[0].players.filter(p=>p[0]===t).map(p=>p[1]).sort((a,b)=>a-b));
  for(let t=0;t<2;t++){assert.equal(rosters[t].length,11);assert(rosters[t].includes(keepers[t]));}
  const roles=[0,1].map(t=>new Map([[keepers[t],1],...rosters[t].filter(n=>n!==keepers[t]).map((n,i)=>[n,i+2])]));
  for(let i=0;i<frames.length;i++){
-  const f=frames[i];assert(f.ball&&f.ball.every(Number.isFinite),'missing ball');assert.equal(f.players.length,22);
+  const f=frames[i];assert(f.ball&&f.ball.every(Number.isFinite),'missing ball');assert.equal(f.players.length,22,'incomplete player positions');
   assert.equal(new Set(f.players.map(p=>p[0]+':'+p[1])).size,22,'duplicate identities');
   for(const p of f.players)assert(roles[p[0]].has(p[1])&&p.slice(2).every(Number.isFinite),'missing or changed identities');
   if(i)assert(f.time>frames[i-1].time&&f.time-frames[i-1].time<=.201,'tracking gap');
@@ -34,7 +36,7 @@ function evaluate(clip,definition){
  // Conservative exclusion uses all recorded actors in the original ten-second clip.
  const touched=new Set(clip.events.filter(e=>e.team===team).flatMap(e=>[e.sender,e.receiver]).filter(n=>n!==null));
  const free=rosters[team].filter(n=>n!==keepers[team]&&(!definition.attacking||!touched.has(n)));
- assert(free.length>0);const ids=free.map(n=>roles[team].get(n)),initial=frames[0].players.map(orient),model=environment();
+ assert(free.length>0);const ids=free.map(n=>roles[team].get(n)),initial=frames[0].players.map(orient),model=environment(options);
  model.init(initial,ball(frames[0].ball),definition.attacking);
  let integral=0,stationaryIntegral=0,prevError=0,prevStationary=0,predicted;
  for(let i=1;i<frames.length;i++){

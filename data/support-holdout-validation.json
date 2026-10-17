@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "0.34",
+  "baselineVersion": "0.33",
+  "selection": "Fixed from Game 2 event timestamps before importing these trajectories or calculating model results. Home pass chains spanning 100.44–109.36 and 140.36–148.72 seconds, and Away goalkeeper recovery plus next pass at 198.24 seconds. No replacement after exclusion. Three possessions in one previously used match, not independent matches or a representative sample.",
+  "method": "Frozen windows; identical controlled replay, only support persistence disabled for baseline. No parameter fitting. Whole incomplete windows excluded without replacement.",
+  "limitations": [
+    "Same previously used match, not independent match validation",
+    "Approximate shirt-to-role mapping",
+    "Position error is not tactical quality; stationary baseline is not a playing policy",
+    "Recorded ball and actors prescribed; not free simulation or learning"
+  ],
+  "clips": [
+    {
+      "id": "support-holdout-a",
+      "before": {
+        "id": "support-holdout-a",
+        "start": 100.44,
+        "end": 109.36,
+        "attacking": true,
+        "team": 0,
+        "players": 6,
+        "jerseys": [
+          2,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "samples": 48,
+        "originalSamples": 48,
+        "roleMapping": [
+          {
+            "team": 0,
+            "jersey": 11,
+            "role": 1
+          },
+          {
+            "team": 0,
+            "jersey": 1,
+            "role": 2
+          },
+          {
+            "team": 0,
+            "jersey": 2,
+            "role": 3
+          },
+          {
+            "team": 0,
+            "jersey": 3,
+            "role": 4
+          },
+          {
+            "team": 0,
+            "jersey": 4,
+            "role": 5
+          },
+          {
+            "team": 0,
+            "jersey": 5,
+            "role": 6
+          },
+          {
+            "team": 0,
+            "jersey": 6,
+            "role": 7
+          },
+          {
+            "team": 0,
+            "jersey": 7,
+            "role": 8
+          },
+          {
+            "team": 0,
+            "jersey": 8,
+            "role": 9
+          },
+          {
+            "team": 0,
+            "jersey": 9,
+            "role": 10
+          },
+          {
+            "team": 0,
+            "jersey": 10,
+            "role": 11
+          },
+          {
+            "team": 1,
+            "jersey": 25,
+            "role": 1
+          },
+          {
+            "team": 1,
+            "jersey": 15,
+            "role": 2
+          },
+          {
+            "team": 1,
+            "jersey": 16,
+            "role": 3
+          },
+          {
+            "team": 1,
+            "jersey": 17,
+            "role": 4
+          },
+          {
+            "team": 1,
+            "jersey": 18,
+            "role": 5
+          },
+          {
+            "team": 1,
+            "jersey": 19,
+            "role": 6
+          },
+          {
+            "team": 1,
+            "jersey": 20,
+            "role": 7
+          },
+          {
+            "team": 1,
+            "jersey": 21,
+            "role": 8
+          },
+          {
+            "team": 1,
+            "jersey": 22,
+            "role": 9
+          },
+          {
+            "team": 1,
+            "jersey": 23,
+            "role": 10
+          },
+          {
+            "team": 1,
+            "jersey": 24,
+            "role": 11
+          }
+        ],
+        "meanErrorM": 9.327272005412096,
+        "stationaryErrorM": 7.287420214392283,
+        "endpointErrorM": 11.260908268387197,
+        "observedAdvanceM": 5.865474999999999,
+        "simulatedAdvanceM": 2.6495656046667775
+      },
+      "after": {
+        "id": "support-holdout-a",
+        "start": 100.44,
+        "end": 109.36,
+        "attacking": true,
+        "team": 0,
+        "players": 6,
+        "jerseys": [
+          2,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "samples": 48,
+        "originalSamples": 48,
+        "roleMapping": [
+          {
+            "team": 0,
+            "jersey": 11,
+            "role": 1
+          },
+          {
+            "team": 0,
+            "jersey": 1,
+            "role": 2
+          },
+          {
+            "team": 0,
+            "jersey": 2,
+            "role": 3
+          },
+          {
+            "team": 0,
+            "jersey": 3,
+            "role": 4
+          },
+          {
+            "team": 0,
+            "jersey": 4,
+            "role": 5
+          },
+          {
+            "team": 0,
+            "jersey": 5,
+            "role": 6
+          },
+          {
+            "team": 0,
+            "jersey": 6,
+            "role": 7
+          },
+          {
+            "team": 0,
+            "jersey": 7,
+            "role": 8
+          },
+          {
+            "team": 0,
+            "jersey": 8,
+            "role": 9
+          },
+          {
+            "team": 0,
+            "jersey": 9,
+            "role": 10
+          },
+          {
+            "team": 0,
+            "jersey": 10,
+            "role": 11
+          },
+          {
+            "team": 1,
+            "jersey": 25,
+            "role": 1
+          },
+          {
+            "team": 1,
+            "jersey": 15,
+            "role": 2
+          },
+          {
+            "team": 1,
+            "jersey": 16,
+            "role": 3
+          },
+          {
+            "team": 1,
+            "jersey": 17,
+            "role": 4
+          },
+          {
+            "team": 1,
+            "jersey": 18,
+            "role": 5
+          },
+          {
+            "team": 1,
+            "jersey": 19,
+            "role": 6
+          },
+          {
+            "team": 1,
+            "jersey": 20,
+            "role": 7
+          },
+          {
+            "team": 1,
+            "jersey": 21,
+            "role": 8
+          },
+          {
+            "team": 1,
+            "jersey": 22,
+            "role": 9
+          },
+          {
+            "team": 1,
+            "jersey": 23,
+            "role": 10
+          },
+          {
+            "team": 1,
+            "jersey": 24,
+            "role": 11
+          }
+        ],
+        "meanErrorM": 9.036010267316849,
+        "stationaryErrorM": 7.287420214392283,
+        "endpointErrorM": 11.774972936000163,
+        "observedAdvanceM": 5.865474999999999,
+        "simulatedAdvanceM": 1.284398046911039
+      }
+    },
+    {
+      "id": "support-holdout-b",
+      "excluded": true,
+      "reason": "incomplete player positions\n\n21 !== 22\n"
+    },
+    {
+      "id": "support-holdout-c",
+      "before": {
+        "id": "support-holdout-c",
+        "start": 198.24,
+        "end": 204.08,
+        "attacking": true,
+        "team": 1,
+        "players": 8,
+        "jerseys": [
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          24
+        ],
+        "samples": 32,
+        "originalSamples": 32,
+        "roleMapping": [
+          {
+            "team": 0,
+            "jersey": 11,
+            "role": 1
+          },
+          {
+            "team": 0,
+            "jersey": 1,
+            "role": 2
+          },
+          {
+            "team": 0,
+            "jersey": 2,
+            "role": 3
+          },
+          {
+            "team": 0,
+            "jersey": 3,
+            "role": 4
+          },
+          {
+            "team": 0,
+            "jersey": 4,
+            "role": 5
+          },
+          {
+            "team": 0,
+            "jersey": 5,
+            "role": 6
+          },
+          {
+            "team": 0,
+            "jersey": 6,
+            "role": 7
+          },
+          {
+            "team": 0,
+            "jersey": 7,
+            "role": 8
+          },
+          {
+            "team": 0,
+            "jersey": 8,
+            "role": 9
+          },
+          {
+            "team": 0,
+            "jersey": 9,
+            "role": 10
+          },
+          {
+            "team": 0,
+            "jersey": 10,
+            "role": 11
+          },
+          {
+            "team": 1,
+            "jersey": 25,
+            "role": 1
+          },
+          {
+            "team": 1,
+            "jersey": 15,
+            "role": 2
+          },
+          {
+            "team": 1,
+            "jersey": 16,
+            "role": 3
+          },
+          {
+            "team": 1,
+            "jersey": 17,
+            "role": 4
+          },
+          {
+            "team": 1,
+            "jersey": 18,
+            "role": 5
+          },
+          {
+            "team": 1,
+            "jersey": 19,
+            "role": 6
+          },
+          {
+            "team": 1,
+            "jersey": 20,
+            "role": 7
+          },
+          {
+            "team": 1,
+            "jersey": 21,
+            "role": 8
+          },
+          {
+            "team": 1,
+            "jersey": 22,
+            "role": 9
+          },
+          {
+            "team": 1,
+            "jersey": 23,
+            "role": 10
+          },
+          {
+            "team": 1,
+            "jersey": 24,
+            "role": 11
+          }
+        ],
+        "meanErrorM": 9.353843885647388,
+        "stationaryErrorM": 4.415734892106644,
+        "endpointErrorM": 11.43643189592223,
+        "observedAdvanceM": 3.7643812499999987,
+        "simulatedAdvanceM": 8.414555999338315
+      },
+      "after": {
+        "id": "support-holdout-c",
+        "start": 198.24,
+        "end": 204.08,
+        "attacking": true,
+        "team": 1,
+        "players": 8,
+        "jerseys": [
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          24
+        ],
+        "samples": 32,
+        "originalSamples": 32,
+        "roleMapping": [
+          {
+            "team": 0,
+            "jersey": 11,
+            "role": 1
+          },
+          {
+            "team": 0,
+            "jersey": 1,
+            "role": 2
+          },
+          {
+            "team": 0,
+            "jersey": 2,
+            "role": 3
+          },
+          {
+            "team": 0,
+            "jersey": 3,
+            "role": 4
+          },
+          {
+            "team": 0,
+            "jersey": 4,
+            "role": 5
+          },
+          {
+            "team": 0,
+            "jersey": 5,
+            "role": 6
+          },
+          {
+            "team": 0,
+            "jersey": 6,
+            "role": 7
+          },
+          {
+            "team": 0,
+            "jersey": 7,
+            "role": 8
+          },
+          {
+            "team": 0,
+            "jersey": 8,
+            "role": 9
+          },
+          {
+            "team": 0,
+            "jersey": 9,
+            "role": 10
+          },
+          {
+            "team": 0,
+            "jersey": 10,
+            "role": 11
+          },
+          {
+            "team": 1,
+            "jersey": 25,
+            "role": 1
+          },
+          {
+            "team": 1,
+            "jersey": 15,
+            "role": 2
+          },
+          {
+            "team": 1,
+            "jersey": 16,
+            "role": 3
+          },
+          {
+            "team": 1,
+            "jersey": 17,
+            "role": 4
+          },
+          {
+            "team": 1,
+            "jersey": 18,
+            "role": 5
+          },
+          {
+            "team": 1,
+            "jersey": 19,
+            "role": 6
+          },
+          {
+            "team": 1,
+            "jersey": 20,
+            "role": 7
+          },
+          {
+            "team": 1,
+            "jersey": 21,
+            "role": 8
+          },
+          {
+            "team": 1,
+            "jersey": 22,
+            "role": 9
+          },
+          {
+            "team": 1,
+            "jersey": 23,
+            "role": 10
+          },
+          {
+            "team": 1,
+            "jersey": 24,
+            "role": 11
+          }
+        ],
+        "meanErrorM": 9.461504437620897,
+        "stationaryErrorM": 4.415734892106644,
+        "endpointErrorM": 11.901783889830533,
+        "observedAdvanceM": 3.7643812499999987,
+        "simulatedAdvanceM": 9.231028967892916
+      }
+    }
+  ],
+  "regressions": [
+    {
+      "id": "away-progress",
+      "beforeErrorM": 9.901040576692402,
+      "afterErrorM": 10.107853286750426,
+      "perPlayer": [
+        {
+          "jersey": 15,
+          "beforeErrorM": 9.674064754509715,
+          "afterErrorM": 9.674064754509715,
+          "contributionM": 0,
+          "observedAdvanceM": 18.639600000000005,
+          "beforeAdvanceM": 4.843786867271642,
+          "afterAdvanceM": 4.843786867271642
+        },
+        {
+          "jersey": 18,
+          "beforeErrorM": 5.03776665365631,
+          "afterErrorM": 5.03776665365631,
+          "contributionM": 0,
+          "observedAdvanceM": 17.138099999999998,
+          "beforeAdvanceM": 4.348159052601973,
+          "afterAdvanceM": 4.348159052601973
+        },
+        {
+          "jersey": 21,
+          "beforeErrorM": 14.450566036333253,
+          "afterErrorM": 15.484629586623377,
+          "contributionM": 0.20681271005802487,
+          "observedAdvanceM": 32.069100000000006,
+          "beforeAdvanceM": 2.4471202944624646,
+          "afterAdvanceM": 2.417818924423535
+        },
+        {
+          "jersey": 23,
+          "beforeErrorM": 6.0401953684509895,
+          "afterErrorM": 6.0401953684509895,
+          "contributionM": 0,
+          "observedAdvanceM": 14.082600000000006,
+          "beforeAdvanceM": 5.371104729968073,
+          "afterAdvanceM": 5.371104729968073
+        },
+        {
+          "jersey": 24,
+          "beforeErrorM": 14.302610070511735,
+          "afterErrorM": 14.302610070511735,
+          "contributionM": 0,
+          "observedAdvanceM": 11.040750000000001,
+          "beforeAdvanceM": 4.753846530625419,
+          "afterAdvanceM": 4.753846530625419
+        }
+      ]
+    },
+    {
+      "id": "contrast-progress",
+      "beforeErrorM": 8.88194782733371,
+      "afterErrorM": 9.275254757506465,
+      "perPlayer": [
+        {
+          "jersey": 15,
+          "beforeErrorM": 8.698564891987274,
+          "afterErrorM": 8.493395903875141,
+          "contributionM": -0.051292247028033255,
+          "observedAdvanceM": 10.322549999999996,
+          "beforeAdvanceM": 17.007446284352287,
+          "afterAdvanceM": 22.364261272211817
+        },
+        {
+          "jersey": 16,
+          "beforeErrorM": 10.222914641659605,
+          "afterErrorM": 11.58552494412054,
+          "contributionM": 0.34065257561523365,
+          "observedAdvanceM": 17.872049999999994,
+          "beforeAdvanceM": 27.55928181061289,
+          "afterAdvanceM": 26.29303664917858
+        },
+        {
+          "jersey": 21,
+          "beforeErrorM": 9.507880584960684,
+          "afterErrorM": 9.923666991302902,
+          "contributionM": 0.10394660158555435,
+          "observedAdvanceM": 20.659800000000004,
+          "beforeAdvanceM": 15.664503249885868,
+          "afterAdvanceM": 15.656960459662736
+        },
+        {
+          "jersey": 23,
+          "beforeErrorM": 7.098431190727301,
+          "afterErrorM": 7.098431190727301,
+          "contributionM": 0,
+          "observedAdvanceM": 16.514400000000002,
+          "beforeAdvanceM": 15.792143968400687,
+          "afterAdvanceM": 15.792143968400687
+        }
+      ]
+    }
+  ]
+}

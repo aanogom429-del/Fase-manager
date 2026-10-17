@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 17 de octubre de 2026
 
+- **0.34 — Continuidad de apoyos con margen de utilidad.** Dos funciones de apoyo persistentes por equipo conservan sus integrantes y su prioridad relativa. Un candidato sustituye a un apoyo vigente si supera su valoración en más de 2 puntos; igualdad o variaciones pequeñas no provocan cambio. El margen es provisional, fijado sin búsqueda de parámetros. Poseedor/receptor previsto, portero y expulsados no pueden ocupar esas funciones; las vacantes se cubren sin espera artificial. Pérdida, reanudación y reinicio limpian la asignación; cambiar de modo la mantiene y comparar decisiones restaura el estado. Las órdenes explícitas y la recepción conservan prioridad. No se copian las selecciones del tracking ni de versiones anteriores para jugar.
+
+Contraste frente a 0.33: error en progresión azul 7,65 → 6,60 m; cambios de integrantes de la pareja 19 → 11 y cambios de función efectivamente aplicados al actualizar la intención, sumados entre los jugadores simulados, 14 → 9. En las otras ventanas del partido 1, cambios aplicados 18 → 9 y 20 → 11, pero sus errores empeoran: 9,90 → 10,11 m y 8,88 → 9,28 m. No confundir cambios de pareja con cambios individuales ni asumir que menos cambios implica mejor juego.
+
+Partido 2: tras banda, error 8,20 → 8,07 m; ventanas de auditoría, 6,68 → 6,23 m y 7,16 → 6,87 m. Mejoran cuatro de seis secuencias ofensivas respecto a 0.33; dos empeoran. Las defensivas permanecen iguales. No hay nuevos partidos ni validación independiente; son las mismas ventanas de diagnóstico. Línea base conservada en `data/support-baseline-v033.json`; comparación reproducible en `data/support-stability.json` y `scripts/compare_support_stability.cjs`. El observador registra cambios al refrescar la intención, además de las selecciones calculadas, sin alterar las trayectorias. Se conserva la intervención de diagnóstico anterior como prueba, no como política del motor.
+
+Pruebas de margen estricto, pequeñas oscilaciones, sustitución ante ventaja clara, exclusión de participantes inválidos, pausa/modos, repetición, pérdida y reanudación. Próximo paso: fijar ventanas nuevas antes de inspeccionar resultados para contrastar generalización, y revisar las dos regresiones sin buscar un margen que simplemente encaje estos ejemplos. Sigue pendiente la estabilidad de las funciones de equilibrio y el retroceso defensivo; no se introduce aprendizaje.
+
 - **0.33 — Diagnóstico de selección de apoyos, sin cambio de conducta.** Instrumentación pasiva de los tres contrastes ofensivos del partido 1, desglose del error por jugador y reproducción de la regla anterior de alturas. Esta reproducción recupera exactamente el error agregado de 0.31; activar la observación no cambia las trayectorias. Se conserva el motor de movimiento de 0.32.
 
 En la progresión azul que empeora, el dorsal real #7 (asignado provisionalmente al puesto 8 del motor) pasa de 3,0879 a 9,1692 m de error. Su contribución al incremento de la media es +1,0135 m, frente a +0,9973 m netos del equipo: otros jugadores compensan parcialmente. La selección calculada de integrantes de apoyo cambia 16 → 19 veces en 5,28 s. Son cambios en los destinos calculados; no todos necesariamente se ejecutan debido a la demora individual.
@@ -143,7 +151,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 17 de octubre de 2026. Estado del motor: 0.33 (conducta de movimiento conservada desde 0.32).
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.34.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

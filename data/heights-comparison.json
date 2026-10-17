@@ -1,5 +1,5 @@
 {
-  "engineVersion": "0.33",
+  "engineVersion": "0.34",
   "baselineVersion": "0.31",
   "method": "One structural rule change: two deepest eligible non-forward/non-support players provide balance instead of forcing every non-wide non-forward behind ball. Same thresholds, samples, and individual parameters. No parameter search.",
   "limitations": [
@@ -14,33 +14,33 @@
       "id": "away-progress",
       "metric": "Game 1 sampled position MAE",
       "beforeErrorM": 11.218222759760458,
-      "afterErrorM": 9.901040576692402,
-      "changePercent": -11.741451487242363
+      "afterErrorM": 10.107853286750426,
+      "changePercent": -9.897908936100865
     },
     {
       "id": "home-progress",
       "metric": "Game 1 sampled position MAE",
       "beforeErrorM": 6.651492734527907,
-      "afterErrorM": 7.648812789148924,
-      "changePercent": 14.993928346999878
+      "afterErrorM": 6.596896153922528,
+      "changePercent": -0.8208169622131294
     },
     {
       "id": "contrast-progress",
       "metric": "Game 1 sampled position MAE",
       "beforeErrorM": 10.503890275493331,
-      "afterErrorM": 8.88194782733371,
-      "changePercent": -15.441349877233414
+      "afterErrorM": 9.275254757506465,
+      "changePercent": -11.696956896564322
     },
     {
       "id": "game2-throw",
       "metric": "Time-integrated position error",
       "beforeErrorM": 10.129217143246045,
-      "afterErrorM": 8.200791810380286,
+      "afterErrorM": 8.073101395963743,
       "stationaryErrorM": 4.72513313172551,
       "beforeAdvanceM": -14.855213058372707,
-      "afterAdvanceM": -11.213964443044517,
+      "afterAdvanceM": -11.438391103283838,
       "observedAdvanceM": -6.507299999999999,
-      "changePercent": -19.038246545554543
+      "changePercent": -20.298861384892692
     },
     {
       "id": "game2-corner",
@@ -57,23 +57,23 @@
       "id": "audit-game2-a",
       "metric": "Time-integrated position error",
       "beforeErrorM": 8.850267460644037,
-      "afterErrorM": 6.6820520723301176,
+      "afterErrorM": 6.22793600271524,
       "stationaryErrorM": 7.366815329887085,
       "beforeAdvanceM": -20.4497785851216,
-      "afterAdvanceM": -14.368014331135331,
+      "afterAdvanceM": -14.375981031843551,
       "observedAdvanceM": -10.2144,
-      "changePercent": -24.49886851392554
+      "changePercent": -29.629968468071237
     },
     {
       "id": "audit-game2-b",
       "metric": "Time-integrated position error",
       "beforeErrorM": 12.201201319727735,
-      "afterErrorM": 7.164621541919985,
+      "afterErrorM": 6.874194901443792,
       "stationaryErrorM": 3.5450819582786557,
       "beforeAdvanceM": -8.832084385472372,
-      "afterAdvanceM": -1.206162336120509,
+      "afterAdvanceM": -1.1866607451163458,
       "observedAdvanceM": 0.10500000000000018,
-      "changePercent": -41.279376069832274
+      "changePercent": -43.65968791672075
     }
   ]
 }

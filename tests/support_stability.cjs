@@ -1,0 +1,6 @@
+const assert=require('node:assert/strict'),{compare}=require('../scripts/compare_support_stability.cjs'),report=require('../data/support-stability.json'),baseline=require('../data/support-baseline-v033.json'),{env}=require('./continuity.cjs');
+(async()=>{assert.deepEqual(compare(),report);assert.equal(report.engineVersion,'0.34');assert.deepEqual(require('../data/defense-validation.json').clips,baseline['defense-validation'].clips);
+const measured=report.clips.filter(c=>Number.isFinite(c.afterAppliedChanges));assert.equal(measured.length,3);assert(measured.every(c=>c.afterAppliedChanges<c.beforeAppliedChanges));
+assert.equal(report.clips.filter(c=>c.afterErrorM<c.beforeErrorM).length,4);assert.equal(report.clips.filter(c=>c.afterErrorM>c.beforeErrorM).length,2);
+const e=env();e.nodes['real-reference'].open=true;await e.nodes['real-reference'].ontoggle();e.nodes['reference-sequence'].onchange({target:{value:'1'}});assert(e.nodes['reference-diagnosis'].textContent.includes('14 → 9'));assert(e.nodes['reference-diagnosis'].textContent.includes('dos empeoran'));
+console.log('PASS: reproducible support stability, applied changes, mixed outcomes and unchanged defensive contrasts');})().catch(e=>{console.error(e);process.exitCode=1;});

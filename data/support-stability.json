@@ -1,0 +1,68 @@
+{
+  "engineVersion": "0.34",
+  "baselineVersion": "0.33",
+  "switchMargin": 2,
+  "method": "Fixed utility margin, no search. Same existing diagnostic windows. Applied changes count per-player slot changes when intent cache refreshes, among simulated players only; selection changes count pair membership and are different units.",
+  "limitations": [
+    "No new independent tracking",
+    "Fewer switches does not prove better tactics",
+    "Margin is provisional; actual roles approximate"
+  ],
+  "clips": [
+    {
+      "id": "away-progress",
+      "beforeErrorM": 9.901040576692402,
+      "afterErrorM": 10.107853286750426,
+      "beforeSelectionChanges": 18,
+      "afterSelectionChanges": 17,
+      "beforeAppliedChanges": 18,
+      "afterAppliedChanges": 9
+    },
+    {
+      "id": "home-progress",
+      "beforeErrorM": 7.648812789148924,
+      "afterErrorM": 6.596896153922528,
+      "beforeSelectionChanges": 19,
+      "afterSelectionChanges": 11,
+      "beforeAppliedChanges": 14,
+      "afterAppliedChanges": 9
+    },
+    {
+      "id": "contrast-progress",
+      "beforeErrorM": 8.88194782733371,
+      "afterErrorM": 9.275254757506465,
+      "beforeSelectionChanges": 31,
+      "afterSelectionChanges": 15,
+      "beforeAppliedChanges": 20,
+      "afterAppliedChanges": 11
+    },
+    {
+      "id": "game2-throw",
+      "beforeErrorM": 8.200791810380286,
+      "afterErrorM": 8.073101395963743,
+      "beforeAdvanceM": -11.213964443044517,
+      "afterAdvanceM": -11.438391103283838
+    },
+    {
+      "id": "game2-corner",
+      "beforeErrorM": 5.8114554448374145,
+      "afterErrorM": 5.8114554448374145,
+      "beforeAdvanceM": -12.237185045537702,
+      "afterAdvanceM": -12.237185045537702
+    },
+    {
+      "id": "audit-game2-a",
+      "beforeErrorM": 6.6820520723301176,
+      "afterErrorM": 6.22793600271524,
+      "beforeAdvanceM": -14.368014331135331,
+      "afterAdvanceM": -14.375981031843551
+    },
+    {
+      "id": "audit-game2-b",
+      "beforeErrorM": 7.164621541919985,
+      "afterErrorM": 6.874194901443792,
+      "beforeAdvanceM": -1.206162336120509,
+      "afterAdvanceM": -1.1866607451163458
+    }
+  ]
+}

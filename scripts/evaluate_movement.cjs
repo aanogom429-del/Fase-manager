@@ -22,13 +22,19 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituati
 function environment(options={}){
  const nodes={};class E{constructor(){this.style={};this.dataset={};this.children=[];}setAttribute(){}append(...x){this.children.push(...x);}appendChild(x){this.append(x);}replaceChildren(...x){this.children=x;}querySelectorAll(){return this.children;}insertAdjacentElement(){}insertAdjacentHTML(){}}
  let source=script;
+ if(options.legacyHeights||options.statelessSupports||options.supportTimeline)source=source.replace(' const ranked=selectAttackSupports(mates,focus,supportValue);',' const ranked=mates.filter(p=>p!==focus&&!isKeeper(p)).sort((a,b)=>supportValue(b)-supportValue(a)||a.id-b.id).slice(0,2);');
  if(options.legacyHeights)source=source.replace('if(balance.includes(p))tx=', 'if(!support&&!isWide(p)&&!isForward(p))tx=');
  if(options.supportTimeline)source=source.replace(' const ranked=mates.filter', ' let ranked=mates.filter').replace(' // Equilibrio a cargo', ' if(t===0)ranked=replaySupport(elapsed).map(n=>mates.find(p=>p.n===n));\n // Equilibrio a cargo');
  const trace=[];
+ const executions=[];
+ if(options.diagnostics)source=source.replace('p.intentX=tx;p.intentY=ty;p.intentAt=', 'if(p.t===0)recordExecution(elapsed,p.n,p.attackSupport||0);p.intentX=tx;p.intentY=ty;p.intentAt=');
+ // Give the stateless diagnostic the same slot labels without changing selection.
+ if(options.diagnostics)source=source.replace(' // Equilibrio a cargo',' for(const p of mates)p.attackSupport=ranked.indexOf(p)+1;\n // Equilibrio a cargo');
  if(options.diagnostics)source=source.replace(' const progress=t===0?ballPos.x:100-ballPos.x,finalThird=', ' if(t===0)recordAssignments(elapsed,ranked.map(p=>p.n),balance.map(p=>p.n));\n const progress=t===0?ballPos.x:100-ballPos.x,finalThird=');
  const c={document:{head:new E(),getElementById:id=>nodes[id]||(nodes[id]=new E()),createElement:()=>new E()},console,requestAnimationFrame:()=>{},recordAssignments:(time,support,balance)=>{const last=trace.at(-1);if(last&&JSON.stringify(last.support)===JSON.stringify(support)&&JSON.stringify(last.balance)===JSON.stringify(balance))last.end=time;else trace.push({start:time,end:time,support:[...support],balance:[...balance]});}};
+ c.recordExecution=(time,n,slot)=>{const prev=executions.findLast(r=>r.n===n);if(!prev||prev.slot!==slot)executions.push({time,n,slot});};
  let cursor=0;c.replaySupport=time=>{while(cursor+1<options.supportTimeline.length&&options.supportTimeline[cursor+1].start<=time)cursor++;return options.supportTimeline[cursor].support;};
- vm.createContext(c);vm.runInContext(source,c);return {...c.replay,trace};
+ vm.createContext(c);vm.runInContext(source,c);return {...c.replay,trace,executions};
 }
 function orient(p,team){
  const t=p[0]===team?0:1,n=p[0]===0?(p[1]===11?1:p[1]+1):(p[1]===25?1:p[1]-13);
@@ -62,7 +68,7 @@ function evaluate(clip,gain,options={}){
  const result={id:clip.id,players:ids.length,positionMAEM:errors.reduce((sum,p)=>sum+p.error*p.weight,0)/weight,
   endpointMAEM:endpoint.reduce((s,p)=>s+p.errorM,0)/endpoint.length,
   forwardMAEM:endpoint.reduce((s,p)=>s+p.forwardErrorM,0)/endpoint.length};
- if(options.diagnostics){result.assignments=model.trace;result.perPlayer=endpoint.map(p=>{const rows=errors.filter(r=>r.n===p.playerRole);return {...p,jersey:first.players.find(q=>q[0]===team&&orient(q,team)[1]===p.playerRole)[1],positionMAEM:rows.reduce((s,r)=>s+r.error*r.weight,0)/rows.reduce((s,r)=>s+r.weight,0)};});}
+ if(options.diagnostics){result.assignments=model.trace;result.executions=model.executions.filter(r=>ids.includes(r.n));result.appliedSupportChanges=ids.reduce((sum,n)=>sum+Math.max(0,result.executions.filter(r=>r.n===n).length-1),0);result.perPlayer=endpoint.map(p=>{const rows=errors.filter(r=>r.n===p.playerRole);return {...p,jersey:first.players.find(q=>q[0]===team&&orient(q,team)[1]===p.playerRole)[1],positionMAEM:rows.reduce((s,r)=>s+r.error*r.weight,0)/rows.reduce((s,r)=>s+r.weight,0)};});}
  return result;
 }
 function mean(rows,key){return rows.reduce((s,r)=>s+r[key],0)/rows.length;}

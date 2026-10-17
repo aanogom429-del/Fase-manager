@@ -7,7 +7,7 @@ async function run(){
   const result=evaluate(c,{id:c.id,start:c.start,end:c.end,attacking:true});assert.deepEqual(result,report.clips.find(x=>x.id===c.id));
  }
  const e=env();e.nodes['real-reference'].open=true;await e.nodes['real-reference'].ontoggle();
- for(let i=0;i<2;i++){e.nodes['reference-sequence'].onchange({target:{value:String(original.clips.length+i)}});assert(e.nodes['reference-game2'].textContent.includes('Auditoría 0.33'));assert(!e.nodes['reference-game2'].hidden);}
+ for(let i=0;i<2;i++){e.nodes['reference-sequence'].onchange({target:{value:String(original.clips.length+i)}});assert(e.nodes['reference-game2'].textContent.includes('Auditoría 0.34'));assert(!e.nodes['reference-game2'].hidden);}
  console.log('PASS: fixed non-overlapping complete audit windows, reproducible comparison and viewer');
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});

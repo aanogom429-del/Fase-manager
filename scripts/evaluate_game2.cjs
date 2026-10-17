@@ -1,7 +1,7 @@
 // Fixed-window external-match contrast. No fitting and no inferred off-ball orders.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..');
-const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const html=fs.readFileSync(process.env.FASE_ENGINE_SOURCE||path.join(root,'index.html'),'utf8');
 const engineVersion=html.match(/FASE MANAGER · ([0-9.]+)/)[1];
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const definitions=[{id:'game2-throw',start:28.28,end:32.32,attacking:true},{id:'game2-corner',start:420.24,end:424.32,attacking:false}];

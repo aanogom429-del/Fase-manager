@@ -1,5 +1,5 @@
 {
-  "engineVersion": "0.29",
+  "engineVersion": "0.30",
   "baselineVersion": "0.28",
   "gain": 0.35,
   "method": "Same three original Game 1 windows and existing controlled replay metric; fixed gain, no search. Current positions and ball anchored together at initial time.",

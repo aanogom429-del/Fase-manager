@@ -8,7 +8,7 @@ const definitions=[{id:'game2-throw',start:28.28,end:32.32,attacking:true},{id:'
 function environment(){
  const source=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',`globalThis.replay={
  init:(ps,point,attacking)=>{guided=true;selected=null;elapsed=0;owner=null;loose=false;techAction=null;flight={t:attacking?0:1,target:null};bx=point[0];by=point[1];
- for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];delete p.intentAt;delete p.defOrigin;delete p.defDuty;}},
+ for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];p.attackOrigin={x:p.x,y:p.y,bx:point[0],by:point[1]};delete p.intentAt;delete p.defOrigin;delete p.defDuty;}},
  step:(ps,point,ids,dt)=>{for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);if(p.t!==0||!ids.includes(p.n)){p.x=q[2];p.y=q[3];}}
  bx=point[0];by=point[1];elapsed+=dt;movement(dt);return players.filter(p=>p.t===0&&ids.includes(p.n)).map(p=>[p.n,p.x,p.y]);}
  };`);
@@ -60,6 +60,8 @@ function evaluate(clip,definition){
 function run(){const report={schemaVersion:1,engineVersion,match:'Metrica Sample Game 2',source:data.additionalSources[0].source,
  method:'Fixed complete subwindows; same initial positions, ball/opposition/keeper and recorded attackers prescribed; other players use the unchanged motor. <=1/120 s steps; trapezoidal time-weighted position error in source metres. No parameter search.',
  limitations:['Two selected subwindows, not a representative sample or free-match validation','Throw window starts at first complete sample and ends at the second pass reception; corner window starts at annotated rival recovery and ends at last complete sample before ball out','Ball-out flight is a defensive-response probe, not proven continuous rival possession','Stable roster mapping preserves identities; shirt ordering is only an approximate tactical-role assignment','No interpolation across missing samples; initial throw and later incomplete data excluded','Stationary reference is a diagnostic baseline, not a tactical recommendation','No explicit off-ball orders: does not validate the coordination added in 0.27'],
+ baseline:JSON.parse(fs.readFileSync(path.join(root,'data/game2-baseline-v028.json'),'utf8')),
+ firstMatchComparison:JSON.parse(fs.readFileSync(path.join(root,'data/attack-comparison.json'),'utf8')),
  clips:definitions.map(d=>evaluate(data.clips.find(c=>c.id===d.id),d))};
  fs.writeFileSync(path.join(root,'data/game2-validation.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report.clips.map(({roleMapping,...c})=>c)));return report;}
 if(require.main===module)run();module.exports={evaluate,definitions};

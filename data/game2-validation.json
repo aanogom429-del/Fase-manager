@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "engineVersion": "0.32",
+  "engineVersion": "0.33",
   "match": "Metrica Sample Game 2",
   "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
   "method": "Fixed complete subwindows; same initial positions, ball/opposition/keeper and recorded attackers prescribed; other players use the unchanged motor. <=1/120 s steps; trapezoidal time-weighted position error in source metres. No parameter search.",
@@ -307,7 +307,7 @@
     ]
   },
   "firstMatchComparison": {
-    "engineVersion": "0.32",
+    "engineVersion": "0.33",
     "baselineVersion": "0.28",
     "gain": 0.35,
     "method": "Same three original Game 1 windows and existing controlled replay metric; fixed gain, no search. Current positions and ball anchored together at initial time.",

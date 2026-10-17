@@ -1,5 +1,5 @@
 {
-  "engineVersion": "0.32",
+  "engineVersion": "0.33",
   "baselineVersion": "0.31",
   "method": "One structural rule change: two deepest eligible non-forward/non-support players provide balance instead of forcing every non-wide non-forward behind ball. Same thresholds, samples, and individual parameters. No parameter search.",
   "limitations": [

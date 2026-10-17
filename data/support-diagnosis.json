@@ -1,0 +1,4933 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "0.33",
+  "method": "Diagnostic replay of all three existing Game 1 attacking windows. Legacy-height ablation reproduces 0.31 exactly. Assignment observer does not change trajectories. Additional intervention prescribes legacy support selection while retaining current height rules; this is NOT a proposed deployable policy. Per-player errors use the existing sampled, time-weighted metric.",
+  "limitations": [
+    "Existing diagnostic windows, not independent validation",
+    "Membership changes are not necessarily errors; ball and recorded actors are prescribed",
+    "Ranks and role mapping are provisional, not observed tactical intentions",
+    "No new tracking or fitted parameters; no gameplay change"
+  ],
+  "clips": [
+    {
+      "id": "away-progress",
+      "start": 30.52,
+      "end": 40.4,
+      "current": {
+        "id": "away-progress",
+        "players": 5,
+        "positionMAEM": 9.901040576692402,
+        "endpointMAEM": 19.009890809911447,
+        "forwardMAEM": 14.241226505014087,
+        "assignments": [
+          {
+            "start": 0.008333333333333304,
+            "end": 0.19166666666666599,
+            "support": [
+              2,
+              7
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 0.1999999999999993,
+            "end": 0.2079999999999994,
+            "support": [
+              2,
+              6
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.21599999999999953,
+            "end": 0.35200000000000153,
+            "support": [
+              6,
+              2
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.36000000000000165,
+            "end": 0.43333333333333546,
+            "support": [
+              2,
+              5
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.44166666666666876,
+            "end": 0.5166666666666685,
+            "support": [
+              5,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.5250000000000018,
+            "end": 0.6250000000000014,
+            "support": [
+              7,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.6333333333333347,
+            "end": 1.0583333333333331,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.0666666666666664,
+            "end": 1.1583333333333328,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.166666666666666,
+            "end": 1.2399999999999993,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.2479999999999993,
+            "end": 1.3199999999999994,
+            "support": [
+              6,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.3279999999999994,
+            "end": 1.3279999999999994,
+            "support": [
+              7,
+              6
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3359999999999994,
+            "end": 1.3599999999999994,
+            "support": [
+              6,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.3679999999999994,
+            "end": 1.871999999999997,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.879999999999997,
+            "end": 2.449999999999996,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.4583333333333295,
+            "end": 3.3439999999999954,
+            "support": [
+              4,
+              3
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 3.3519999999999954,
+            "end": 3.549999999999995,
+            "support": [
+              4,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.5583333333333282,
+            "end": 3.6159999999999948,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.623999999999995,
+            "end": 4.024999999999994,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.033333333333327,
+            "end": 4.116666666666656,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.1249999999999885,
+            "end": 4.919999999999973,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.927999999999973,
+            "end": 5.091666666666635,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.099999999999968,
+            "end": 5.207999999999962,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.215999999999962,
+            "end": 5.508333333333289,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.516666666666622,
+            "end": 5.549999999999954,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.5583333333332865,
+            "end": 5.863999999999951,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.871999999999951,
+            "end": 5.935999999999951,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.943999999999951,
+            "end": 8.149999999999899,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 8.158333333333232,
+            "end": 8.999999999999941,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.008333333333274,
+            "end": 9.116666666666601,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.124999999999934,
+            "end": 9.599999999999941,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.607999999999942,
+            "end": 9.839999999999959,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.847999999999958,
+            "end": 9.879999999999955,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 20.118316728657167,
+            "forwardErrorM": 13.795813132728362,
+            "observedAdvanceM": 18.639600000000005,
+            "simulatedAdvanceM": 4.843786867271642,
+            "jersey": 15,
+            "positionMAEM": 9.674064754509715
+          },
+          {
+            "playerRole": 5,
+            "errorM": 13.53013491855624,
+            "forwardErrorM": 12.789940947398023,
+            "observedAdvanceM": 17.138099999999998,
+            "simulatedAdvanceM": 4.348159052601973,
+            "jersey": 18,
+            "positionMAEM": 5.03776665365631
+          },
+          {
+            "playerRole": 8,
+            "errorM": 29.631182067533803,
+            "forwardErrorM": 29.621979705537537,
+            "observedAdvanceM": 32.069100000000006,
+            "simulatedAdvanceM": 2.4471202944624646,
+            "jersey": 21,
+            "positionMAEM": 14.450566036333253
+          },
+          {
+            "playerRole": 10,
+            "errorM": 13.078953632561054,
+            "forwardErrorM": 8.711495270031934,
+            "observedAdvanceM": 14.082600000000006,
+            "simulatedAdvanceM": 5.371104729968073,
+            "jersey": 23,
+            "positionMAEM": 6.0401953684509895
+          },
+          {
+            "playerRole": 11,
+            "errorM": 18.690866702248975,
+            "forwardErrorM": 6.2869034693745816,
+            "observedAdvanceM": 11.040750000000001,
+            "simulatedAdvanceM": 4.753846530625419,
+            "jersey": 24,
+            "positionMAEM": 14.302610070511735
+          }
+        ]
+      },
+      "legacy": {
+        "id": "away-progress",
+        "players": 5,
+        "positionMAEM": 11.218222759760458,
+        "endpointMAEM": 20.242755197687245,
+        "forwardMAEM": 15.353307667923465,
+        "assignments": [
+          {
+            "start": 0.008333333333333304,
+            "end": 0.19166666666666599,
+            "support": [
+              2,
+              7
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 0.1999999999999993,
+            "end": 0.2079999999999994,
+            "support": [
+              2,
+              6
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.21599999999999953,
+            "end": 0.35200000000000153,
+            "support": [
+              6,
+              2
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.36000000000000165,
+            "end": 0.43333333333333546,
+            "support": [
+              2,
+              5
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.44166666666666876,
+            "end": 0.5166666666666685,
+            "support": [
+              5,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.5250000000000018,
+            "end": 0.6250000000000014,
+            "support": [
+              7,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.6333333333333347,
+            "end": 0.6333333333333347,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.641666666666668,
+            "end": 1.0999999999999996,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.108333333333333,
+            "end": 1.1249999999999996,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.1333333333333329,
+            "end": 1.1583333333333328,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.166666666666666,
+            "end": 1.2399999999999993,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.2479999999999993,
+            "end": 1.3199999999999994,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3279999999999994,
+            "end": 1.3279999999999994,
+            "support": [
+              7,
+              6
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3359999999999994,
+            "end": 1.3599999999999994,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3679999999999994,
+            "end": 1.847999999999997,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.855999999999997,
+            "end": 2.3199999999999963,
+            "support": [
+              4,
+              6
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.3279999999999963,
+            "end": 2.6639999999999957,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.6719999999999957,
+            "end": 3.3279999999999954,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.3359999999999954,
+            "end": 3.4833333333333285,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.491666666666662,
+            "end": 3.663999999999995,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.671999999999995,
+            "end": 4.166666666666653,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.174999999999986,
+            "end": 4.1833333333333185,
+            "support": [
+              4,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.191666666666651,
+            "end": 6.951999999999929,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.959999999999929,
+            "end": 7.935999999999907,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 7.943999999999907,
+            "end": 8.149999999999899,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 8.158333333333232,
+            "end": 9.116666666666601,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.124999999999934,
+            "end": 9.1416666666666,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.149999999999933,
+            "end": 9.19999999999993,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.207999999999931,
+            "end": 9.474999999999948,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.483333333333281,
+            "end": 9.77599999999996,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.783999999999962,
+            "end": 9.879999999999955,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 20.118316728657167,
+            "forwardErrorM": 13.795813132728362,
+            "observedAdvanceM": 18.639600000000005,
+            "simulatedAdvanceM": 4.843786867271642,
+            "jersey": 15,
+            "positionMAEM": 9.674064754509715
+          },
+          {
+            "playerRole": 5,
+            "errorM": 13.53013491855624,
+            "forwardErrorM": 12.789940947398023,
+            "observedAdvanceM": 17.138099999999998,
+            "simulatedAdvanceM": 4.348159052601973,
+            "jersey": 18,
+            "positionMAEM": 5.03776665365631
+          },
+          {
+            "playerRole": 8,
+            "errorM": 35.7955040064128,
+            "forwardErrorM": 35.18238552008443,
+            "observedAdvanceM": 32.069100000000006,
+            "simulatedAdvanceM": -3.113285520084425,
+            "jersey": 21,
+            "positionMAEM": 21.03647695167356
+          },
+          {
+            "playerRole": 10,
+            "errorM": 13.078953632561054,
+            "forwardErrorM": 8.711495270031934,
+            "observedAdvanceM": 14.082600000000006,
+            "simulatedAdvanceM": 5.371104729968073,
+            "jersey": 23,
+            "positionMAEM": 6.0401953684509895
+          },
+          {
+            "playerRole": 11,
+            "errorM": 18.690866702248975,
+            "forwardErrorM": 6.2869034693745816,
+            "observedAdvanceM": 11.040750000000001,
+            "simulatedAdvanceM": 4.753846530625419,
+            "jersey": 24,
+            "positionMAEM": 14.302610070511735
+          }
+        ]
+      },
+      "supportReplay": {
+        "id": "away-progress",
+        "players": 5,
+        "positionMAEM": 9.358591167292365,
+        "endpointMAEM": 18.50236542238769,
+        "forwardMAEM": 13.723694109033962,
+        "assignments": [
+          {
+            "start": 0.008333333333333304,
+            "end": 0.19166666666666599,
+            "support": [
+              2,
+              7
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 0.1999999999999993,
+            "end": 0.2079999999999994,
+            "support": [
+              2,
+              6
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.21599999999999953,
+            "end": 0.35200000000000153,
+            "support": [
+              6,
+              2
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.36000000000000165,
+            "end": 0.43333333333333546,
+            "support": [
+              2,
+              5
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 0.44166666666666876,
+            "end": 0.5166666666666685,
+            "support": [
+              5,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.5250000000000018,
+            "end": 0.6250000000000014,
+            "support": [
+              7,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.6333333333333347,
+            "end": 0.6333333333333347,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.641666666666668,
+            "end": 1.0999999999999996,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.108333333333333,
+            "end": 1.1249999999999996,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.1333333333333329,
+            "end": 1.1583333333333328,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.166666666666666,
+            "end": 1.2399999999999993,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.2479999999999993,
+            "end": 1.3199999999999994,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3279999999999994,
+            "end": 1.3279999999999994,
+            "support": [
+              7,
+              6
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3359999999999994,
+            "end": 1.3599999999999994,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3679999999999994,
+            "end": 1.847999999999997,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 1.855999999999997,
+            "end": 2.3199999999999963,
+            "support": [
+              4,
+              6
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.3279999999999963,
+            "end": 2.6639999999999957,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.6719999999999957,
+            "end": 3.3279999999999954,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.3359999999999954,
+            "end": 3.4833333333333285,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.491666666666662,
+            "end": 3.663999999999995,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.671999999999995,
+            "end": 4.166666666666653,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.174999999999986,
+            "end": 4.1833333333333185,
+            "support": [
+              4,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.191666666666651,
+            "end": 6.951999999999929,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.959999999999929,
+            "end": 7.935999999999907,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 7.943999999999907,
+            "end": 8.149999999999899,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 8.158333333333232,
+            "end": 9.116666666666601,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.124999999999934,
+            "end": 9.1416666666666,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.149999999999933,
+            "end": 9.19999999999993,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.207999999999931,
+            "end": 9.474999999999948,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.483333333333281,
+            "end": 9.77599999999996,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 9.783999999999962,
+            "end": 9.879999999999955,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 20.118316728657167,
+            "forwardErrorM": 13.795813132728362,
+            "observedAdvanceM": 18.639600000000005,
+            "simulatedAdvanceM": 4.843786867271642,
+            "jersey": 15,
+            "positionMAEM": 9.674064754509715
+          },
+          {
+            "playerRole": 5,
+            "errorM": 13.53013491855624,
+            "forwardErrorM": 12.789940947398023,
+            "observedAdvanceM": 17.138099999999998,
+            "simulatedAdvanceM": 4.348159052601973,
+            "jersey": 18,
+            "positionMAEM": 5.03776665365631
+          },
+          {
+            "playerRole": 8,
+            "errorM": 27.09355512991502,
+            "forwardErrorM": 27.034317725636917,
+            "observedAdvanceM": 32.069100000000006,
+            "simulatedAdvanceM": 5.034782274363085,
+            "jersey": 21,
+            "positionMAEM": 11.738318989333093
+          },
+          {
+            "playerRole": 10,
+            "errorM": 13.078953632561054,
+            "forwardErrorM": 8.711495270031934,
+            "observedAdvanceM": 14.082600000000006,
+            "simulatedAdvanceM": 5.371104729968073,
+            "jersey": 23,
+            "positionMAEM": 6.0401953684509895
+          },
+          {
+            "playerRole": 11,
+            "errorM": 18.690866702248975,
+            "forwardErrorM": 6.2869034693745816,
+            "observedAdvanceM": 11.040750000000001,
+            "simulatedAdvanceM": 4.753846530625419,
+            "jersey": 24,
+            "positionMAEM": 14.302610070511735
+          }
+        ]
+      },
+      "summary": {
+        "currentSupportMembershipChanges": 18,
+        "legacySupportMembershipChanges": 20,
+        "currentBalanceMembershipChanges": 9,
+        "supportReplayErrorM": 9.358591167292365,
+        "perPlayer": [
+          {
+            "jersey": 15,
+            "playerRole": 2,
+            "beforeErrorM": 9.674064754509715,
+            "afterErrorM": 9.674064754509715,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 18.639600000000005,
+            "beforeAdvanceM": 4.843786867271642,
+            "afterAdvanceM": 4.843786867271642
+          },
+          {
+            "jersey": 18,
+            "playerRole": 5,
+            "beforeErrorM": 5.03776665365631,
+            "afterErrorM": 5.03776665365631,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 17.138099999999998,
+            "beforeAdvanceM": 4.348159052601973,
+            "afterAdvanceM": 4.348159052601973
+          },
+          {
+            "jersey": 21,
+            "playerRole": 8,
+            "beforeErrorM": 21.03647695167356,
+            "afterErrorM": 14.450566036333253,
+            "deltaErrorM": -6.585910915340307,
+            "contributionToMeanDeltaM": -1.3171821830680615,
+            "observedAdvanceM": 32.069100000000006,
+            "beforeAdvanceM": -3.113285520084425,
+            "afterAdvanceM": 2.4471202944624646
+          },
+          {
+            "jersey": 23,
+            "playerRole": 10,
+            "beforeErrorM": 6.0401953684509895,
+            "afterErrorM": 6.0401953684509895,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 14.082600000000006,
+            "beforeAdvanceM": 5.371104729968073,
+            "afterAdvanceM": 5.371104729968073
+          },
+          {
+            "jersey": 24,
+            "playerRole": 11,
+            "beforeErrorM": 14.302610070511735,
+            "afterErrorM": 14.302610070511735,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 11.040750000000001,
+            "beforeAdvanceM": 4.753846530625419,
+            "afterAdvanceM": 4.753846530625419
+          }
+        ]
+      }
+    },
+    {
+      "id": "home-progress",
+      "start": 45.36,
+      "end": 50.64,
+      "current": {
+        "id": "home-progress",
+        "players": 6,
+        "positionMAEM": 7.648812789148924,
+        "endpointMAEM": 9.562054978455203,
+        "forwardMAEM": 2.978360261955551,
+        "assignments": [
+          {
+            "start": 0.008000000000000113,
+            "end": 0.16800000000000243,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.17600000000000254,
+            "end": 0.18400000000000266,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.19200000000000278,
+            "end": 0.258333333333335,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.26666666666666816,
+            "end": 0.4559999999999992,
+            "support": [
+              8,
+              11
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.4639999999999993,
+            "end": 0.9039999999999995,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.9119999999999996,
+            "end": 1.040000000000001,
+            "support": [
+              8,
+              6
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.048000000000001,
+            "end": 1.200000000000001,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.2083333333333341,
+            "end": 1.2583333333333326,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.2666666666666657,
+            "end": 1.291666666666665,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.299999999999998,
+            "end": 1.3666666666666627,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3749999999999958,
+            "end": 1.391666666666662,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.399999999999995,
+            "end": 1.423999999999995,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.431999999999995,
+            "end": 1.5919999999999952,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.5999999999999952,
+            "end": 1.6159999999999948,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.6239999999999946,
+            "end": 2.2583333333333235,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 2.266666666666657,
+            "end": 2.32499999999999,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.3333333333333233,
+            "end": 2.57599999999999,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.58399999999999,
+            "end": 2.6666666666666563,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 2.6749999999999896,
+            "end": 3.9359999999999893,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.9439999999999893,
+            "end": 4.023999999999989,
+            "support": [
+              7,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.031999999999989,
+            "end": 4.079999999999989,
+            "support": [
+              9,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.087999999999989,
+            "end": 4.69166666666664,
+            "support": [
+              9,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.699999999999973,
+            "end": 5.063999999999967,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.071999999999967,
+            "end": 5.095999999999967,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.103999999999967,
+            "end": 5.103999999999967,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.111999999999967,
+            "end": 5.279999999999967,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 4.2119344581327915,
+            "forwardErrorM": 4.155895393205202,
+            "observedAdvanceM": 12.524399999999998,
+            "simulatedAdvanceM": 8.368504606794795,
+            "jersey": 1,
+            "positionMAEM": 3.939109549578723
+          },
+          {
+            "playerRole": 3,
+            "errorM": 8.570837398112188,
+            "forwardErrorM": 0.19329423935784648,
+            "observedAdvanceM": 7.940100000000002,
+            "simulatedAdvanceM": 8.133394239357848,
+            "jersey": 2,
+            "positionMAEM": 4.370767982179065
+          },
+          {
+            "playerRole": 4,
+            "errorM": 8.39895867690423,
+            "forwardErrorM": 4.429009319727425,
+            "observedAdvanceM": 7.4140500000000005,
+            "simulatedAdvanceM": 11.843059319727425,
+            "jersey": 3,
+            "positionMAEM": 8.306315582463595
+          },
+          {
+            "playerRole": 5,
+            "errorM": 8.977767811967647,
+            "forwardErrorM": 4.268342962321797,
+            "observedAdvanceM": 12.817350000000001,
+            "simulatedAdvanceM": 8.549007037678205,
+            "jersey": 4,
+            "positionMAEM": 11.158992124328533
+          },
+          {
+            "playerRole": 8,
+            "errorM": 10.586689568466811,
+            "forwardErrorM": 4.800100791449723,
+            "observedAdvanceM": 15.829800000000004,
+            "simulatedAdvanceM": 11.029699208550282,
+            "jersey": 7,
+            "positionMAEM": 9.16915402667841
+          },
+          {
+            "playerRole": 10,
+            "errorM": 16.62614195714755,
+            "forwardErrorM": 0.02351886567131203,
+            "observedAdvanceM": 18.216450000000005,
+            "simulatedAdvanceM": 18.239968865671315,
+            "jersey": 9,
+            "positionMAEM": 8.948537469665215
+          }
+        ]
+      },
+      "legacy": {
+        "id": "home-progress",
+        "players": 6,
+        "positionMAEM": 6.651492734527907,
+        "endpointMAEM": 8.057956679266754,
+        "forwardMAEM": 2.069700028379564,
+        "assignments": [
+          {
+            "start": 0.008000000000000113,
+            "end": 0.1040000000000015,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.11200000000000161,
+            "end": 0.16800000000000243,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 0.17600000000000254,
+            "end": 0.17600000000000254,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 0.18400000000000266,
+            "end": 0.18400000000000266,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 0.19200000000000278,
+            "end": 0.258333333333335,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 0.26666666666666816,
+            "end": 0.4079999999999985,
+            "support": [
+              8,
+              11
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 0.4159999999999986,
+            "end": 0.4559999999999992,
+            "support": [
+              8,
+              2
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 0.4639999999999993,
+            "end": 0.9039999999999995,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 0.9119999999999996,
+            "end": 1.040000000000001,
+            "support": [
+              8,
+              6
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.048000000000001,
+            "end": 1.064000000000001,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.072000000000001,
+            "end": 1.200000000000001,
+            "support": [
+              8,
+              2
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 1.2083333333333341,
+            "end": 1.2583333333333326,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 1.2666666666666657,
+            "end": 1.291666666666665,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 1.299999999999998,
+            "end": 1.3166666666666642,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 1.3249999999999973,
+            "end": 1.391666666666662,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 1.399999999999995,
+            "end": 1.5519999999999952,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 1.5599999999999952,
+            "end": 1.6319999999999943,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 1.6399999999999941,
+            "end": 1.6639999999999935,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 1.6719999999999933,
+            "end": 1.99999999999999,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 2.0079999999999902,
+            "end": 2.1439999999999904,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 2.1519999999999904,
+            "end": 2.2583333333333235,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 2.266666666666657,
+            "end": 2.815999999999989,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.823999999999989,
+            "end": 3.9359999999999893,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.9439999999999893,
+            "end": 4.023999999999989,
+            "support": [
+              7,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.031999999999989,
+            "end": 4.37499999999998,
+            "support": [
+              9,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.383333333333312,
+            "end": 4.69166666666664,
+            "support": [
+              9,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.699999999999973,
+            "end": 5.055999999999967,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.063999999999967,
+            "end": 5.279999999999967,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 4.235139661781118,
+            "forwardErrorM": 4.1794117522014975,
+            "observedAdvanceM": 12.524399999999998,
+            "simulatedAdvanceM": 8.344988247798499,
+            "jersey": 1,
+            "positionMAEM": 3.9324611952411286
+          },
+          {
+            "playerRole": 3,
+            "errorM": 8.569254499242785,
+            "forwardErrorM": 0.19235606652840237,
+            "observedAdvanceM": 7.940100000000002,
+            "simulatedAdvanceM": 8.132456066528404,
+            "jersey": 2,
+            "positionMAEM": 4.740433592563318
+          },
+          {
+            "playerRole": 4,
+            "errorM": 7.644889763047801,
+            "forwardErrorM": 2.116807706840298,
+            "observedAdvanceM": 7.4140500000000005,
+            "simulatedAdvanceM": 9.530857706840298,
+            "jersey": 3,
+            "positionMAEM": 8.040675934909691
+          },
+          {
+            "playerRole": 5,
+            "errorM": 8.977767811967647,
+            "forwardErrorM": 4.268342962321797,
+            "observedAdvanceM": 12.817350000000001,
+            "simulatedAdvanceM": 8.549007037678205,
+            "jersey": 4,
+            "positionMAEM": 11.158992124328533
+          },
+          {
+            "playerRole": 8,
+            "errorM": 2.2945463824136163,
+            "forwardErrorM": 1.637762816714079,
+            "observedAdvanceM": 15.829800000000004,
+            "simulatedAdvanceM": 14.192037183285926,
+            "jersey": 7,
+            "positionMAEM": 3.087856090459556
+          },
+          {
+            "playerRole": 10,
+            "errorM": 16.62614195714755,
+            "forwardErrorM": 0.02351886567131203,
+            "observedAdvanceM": 18.216450000000005,
+            "simulatedAdvanceM": 18.239968865671315,
+            "jersey": 9,
+            "positionMAEM": 8.948537469665215
+          }
+        ]
+      },
+      "supportReplay": {
+        "id": "home-progress",
+        "players": 6,
+        "positionMAEM": 6.647234796834157,
+        "endpointMAEM": 8.049512313010771,
+        "forwardMAEM": 2.063079797271525,
+        "assignments": [
+          {
+            "start": 0.008000000000000113,
+            "end": 0.16800000000000243,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.17600000000000254,
+            "end": 0.18400000000000266,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.19200000000000278,
+            "end": 0.258333333333335,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.26666666666666816,
+            "end": 0.4079999999999985,
+            "support": [
+              8,
+              11
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 0.4159999999999986,
+            "end": 0.4559999999999992,
+            "support": [
+              8,
+              2
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 0.4639999999999993,
+            "end": 0.9039999999999995,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.9119999999999996,
+            "end": 1.040000000000001,
+            "support": [
+              8,
+              6
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.048000000000001,
+            "end": 1.064000000000001,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.072000000000001,
+            "end": 1.200000000000001,
+            "support": [
+              8,
+              2
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 1.2083333333333341,
+            "end": 1.2583333333333326,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.2666666666666657,
+            "end": 1.291666666666665,
+            "support": [
+              7,
+              11
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.299999999999998,
+            "end": 1.391666666666662,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.399999999999995,
+            "end": 1.407999999999995,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.415999999999995,
+            "end": 1.5519999999999952,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.5599999999999952,
+            "end": 1.6639999999999935,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.6719999999999933,
+            "end": 1.88799999999999,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.89599999999999,
+            "end": 2.0639999999999903,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 2.0719999999999903,
+            "end": 2.1279999999999903,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 2.1359999999999904,
+            "end": 2.29999999999999,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 2.3083333333333234,
+            "end": 2.815999999999989,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 2.823999999999989,
+            "end": 3.9359999999999893,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 3.9439999999999893,
+            "end": 4.023999999999989,
+            "support": [
+              7,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.031999999999989,
+            "end": 4.37499999999998,
+            "support": [
+              9,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.383333333333312,
+            "end": 4.69166666666664,
+            "support": [
+              9,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.699999999999973,
+            "end": 5.055999999999967,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.063999999999967,
+            "end": 5.279999999999967,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 4.212948606919665,
+            "forwardErrorM": 4.156923213651614,
+            "observedAdvanceM": 12.524399999999998,
+            "simulatedAdvanceM": 8.367476786348384,
+            "jersey": 1,
+            "positionMAEM": 4.0472157386288545
+          },
+          {
+            "playerRole": 3,
+            "errorM": 8.569507807599793,
+            "forwardErrorM": 0.1925062046831009,
+            "observedAdvanceM": 7.940100000000002,
+            "simulatedAdvanceM": 8.132606204683102,
+            "jersey": 2,
+            "positionMAEM": 4.664185970216542
+          },
+          {
+            "playerRole": 4,
+            "errorM": 7.631287060748532,
+            "forwardErrorM": 2.109369036570024,
+            "observedAdvanceM": 7.4140500000000005,
+            "simulatedAdvanceM": 9.523419036570024,
+            "jersey": 3,
+            "positionMAEM": 8.019617544878498
+          },
+          {
+            "playerRole": 5,
+            "errorM": 8.977767811967647,
+            "forwardErrorM": 4.268342962321797,
+            "observedAdvanceM": 12.817350000000001,
+            "simulatedAdvanceM": 8.549007037678205,
+            "jersey": 4,
+            "positionMAEM": 11.158992124328533
+          },
+          {
+            "playerRole": 8,
+            "errorM": 2.279420633681433,
+            "forwardErrorM": 1.627818500731304,
+            "observedAdvanceM": 15.829800000000004,
+            "simulatedAdvanceM": 14.201981499268701,
+            "jersey": 7,
+            "positionMAEM": 3.044859933287289
+          },
+          {
+            "playerRole": 10,
+            "errorM": 16.62614195714755,
+            "forwardErrorM": 0.02351886567131203,
+            "observedAdvanceM": 18.216450000000005,
+            "simulatedAdvanceM": 18.239968865671315,
+            "jersey": 9,
+            "positionMAEM": 8.948537469665215
+          }
+        ]
+      },
+      "summary": {
+        "currentSupportMembershipChanges": 19,
+        "legacySupportMembershipChanges": 16,
+        "currentBalanceMembershipChanges": 4,
+        "supportReplayErrorM": 6.647234796834157,
+        "perPlayer": [
+          {
+            "jersey": 1,
+            "playerRole": 2,
+            "beforeErrorM": 3.9324611952411286,
+            "afterErrorM": 3.939109549578723,
+            "deltaErrorM": 0.006648354337594586,
+            "contributionToMeanDeltaM": 0.0011080590562657644,
+            "observedAdvanceM": 12.524399999999998,
+            "beforeAdvanceM": 8.344988247798499,
+            "afterAdvanceM": 8.368504606794795
+          },
+          {
+            "jersey": 2,
+            "playerRole": 3,
+            "beforeErrorM": 4.740433592563318,
+            "afterErrorM": 4.370767982179065,
+            "deltaErrorM": -0.36966561038425283,
+            "contributionToMeanDeltaM": -0.06161093506404214,
+            "observedAdvanceM": 7.940100000000002,
+            "beforeAdvanceM": 8.132456066528404,
+            "afterAdvanceM": 8.133394239357848
+          },
+          {
+            "jersey": 3,
+            "playerRole": 4,
+            "beforeErrorM": 8.040675934909691,
+            "afterErrorM": 8.306315582463595,
+            "deltaErrorM": 0.265639647553904,
+            "contributionToMeanDeltaM": 0.044273274592317335,
+            "observedAdvanceM": 7.4140500000000005,
+            "beforeAdvanceM": 9.530857706840298,
+            "afterAdvanceM": 11.843059319727425
+          },
+          {
+            "jersey": 4,
+            "playerRole": 5,
+            "beforeErrorM": 11.158992124328533,
+            "afterErrorM": 11.158992124328533,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 12.817350000000001,
+            "beforeAdvanceM": 8.549007037678205,
+            "afterAdvanceM": 8.549007037678205
+          },
+          {
+            "jersey": 7,
+            "playerRole": 8,
+            "beforeErrorM": 3.087856090459556,
+            "afterErrorM": 9.16915402667841,
+            "deltaErrorM": 6.081297936218854,
+            "contributionToMeanDeltaM": 1.0135496560364756,
+            "observedAdvanceM": 15.829800000000004,
+            "beforeAdvanceM": 14.192037183285926,
+            "afterAdvanceM": 11.029699208550282
+          },
+          {
+            "jersey": 9,
+            "playerRole": 10,
+            "beforeErrorM": 8.948537469665215,
+            "afterErrorM": 8.948537469665215,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 18.216450000000005,
+            "beforeAdvanceM": 18.239968865671315,
+            "afterAdvanceM": 18.239968865671315
+          }
+        ]
+      }
+    },
+    {
+      "id": "contrast-progress",
+      "start": 463.44,
+      "end": 476.72,
+      "current": {
+        "id": "contrast-progress",
+        "players": 4,
+        "positionMAEM": 8.88194782733371,
+        "endpointMAEM": 9.466361852232538,
+        "forwardMAEM": 5.52242021916966,
+        "assignments": [
+          {
+            "start": 0.00833333333333286,
+            "end": 0.39999999999997726,
+            "support": [
+              3,
+              4
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 0.4079999999999791,
+            "end": 0.7333333333333483,
+            "support": [
+              4,
+              3
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 0.7416666666666811,
+            "end": 0.9000000000000055,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 0.9083333333333383,
+            "end": 0.9333333333333369,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.9416666666666698,
+            "end": 1.375999999999981,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3839999999999795,
+            "end": 3.8916666666666715,
+            "support": [
+              3,
+              9
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 3.9000000000000044,
+            "end": 4.074999999999994,
+            "support": [
+              9,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 4.083333333333327,
+            "end": 4.233333333333318,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 4.241666666666651,
+            "end": 5.800000000000002,
+            "support": [
+              4,
+              3
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 5.8083333333333345,
+            "end": 6.199999999999979,
+            "support": [
+              3,
+              4
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 6.208333333333312,
+            "end": 6.316666666666639,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.324999999999972,
+            "end": 6.407999999999969,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.415999999999971,
+            "end": 6.4719999999999835,
+            "support": [
+              4,
+              3
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 6.479999999999985,
+            "end": 6.560000000000003,
+            "support": [
+              3,
+              6
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 6.568000000000005,
+            "end": 6.666666666666675,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 6.675000000000008,
+            "end": 6.8749999999999964,
+            "support": [
+              6,
+              9
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 6.883333333333329,
+            "end": 7.055999999999977,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 7.063999999999975,
+            "end": 7.135999999999972,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 7.143999999999972,
+            "end": 7.34166666666663,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 7.349999999999963,
+            "end": 7.616666666666671,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 7.6250000000000036,
+            "end": 7.691666666666666,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 7.699999999999999,
+            "end": 7.849999999999991,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 7.858333333333324,
+            "end": 8.103999999999976,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.111999999999977,
+            "end": 8.119999999999978,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 8.127999999999979,
+            "end": 8.308333333333314,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.316666666666647,
+            "end": 8.50400000000001,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.512000000000013,
+            "end": 8.536000000000021,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 8.544000000000024,
+            "end": 8.59200000000004,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.600000000000042,
+            "end": 8.741666666666701,
+            "support": [
+              8,
+              11
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.750000000000034,
+            "end": 8.866666666666694,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.875000000000027,
+            "end": 8.933333333333357,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 8.94166666666669,
+            "end": 9.225000000000023,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.233333333333356,
+            "end": 9.291666666666686,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.300000000000018,
+            "end": 9.308333333333351,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.316666666666684,
+            "end": 9.440000000000026,
+            "support": [
+              2,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 9.448000000000029,
+            "end": 9.448000000000029,
+            "support": [
+              8,
+              2
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 9.456000000000031,
+            "end": 9.456000000000031,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.464000000000034,
+            "end": 9.675000000000075,
+            "support": [
+              3,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.683333333333408,
+            "end": 9.750000000000071,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.758333333333404,
+            "end": 9.858333333333398,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.866666666666731,
+            "end": 9.975000000000058,
+            "support": [
+              3,
+              11
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.983333333333391,
+            "end": 10.025000000000055,
+            "support": [
+              11,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 10.033333333333388,
+            "end": 10.158333333333381,
+            "support": [
+              11,
+              2
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 10.166666666666714,
+            "end": 10.496000000000066,
+            "support": [
+              11,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 10.504000000000069,
+            "end": 10.791666666666757,
+            "support": [
+              5,
+              2
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 10.80000000000009,
+            "end": 10.97500000000008,
+            "support": [
+              5,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 10.983333333333412,
+            "end": 11.075000000000074,
+            "support": [
+              5,
+              2
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 11.083333333333407,
+            "end": 11.725000000000115,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 11.733333333333448,
+            "end": 11.896000000000077,
+            "support": [
+              3,
+              6
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 11.904000000000078,
+            "end": 12.424000000000074,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.432000000000077,
+            "end": 12.544000000000114,
+            "support": [
+              3,
+              11
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.552000000000117,
+            "end": 12.675000000000129,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.683333333333461,
+            "end": 12.725000000000126,
+            "support": [
+              5,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.733333333333459,
+            "end": 12.933333333333447,
+            "support": [
+              3,
+              6
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.94166666666678,
+            "end": 13.280000000000143,
+            "support": [
+              3,
+              2
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 11.323751091100291,
+            "forwardErrorM": 6.684896284352292,
+            "observedAdvanceM": 10.322549999999996,
+            "simulatedAdvanceM": 17.007446284352287,
+            "jersey": 15,
+            "positionMAEM": 8.698564891987274
+          },
+          {
+            "playerRole": 3,
+            "errorM": 14.117648786932593,
+            "forwardErrorM": 9.687231810612895,
+            "observedAdvanceM": 17.872049999999994,
+            "simulatedAdvanceM": 27.55928181061289,
+            "jersey": 16,
+            "positionMAEM": 10.222914641659605
+          },
+          {
+            "playerRole": 8,
+            "errorM": 9.954783156242378,
+            "forwardErrorM": 4.995296750114135,
+            "observedAdvanceM": 20.659800000000004,
+            "simulatedAdvanceM": 15.664503249885868,
+            "jersey": 21,
+            "positionMAEM": 9.507880584960684
+          },
+          {
+            "playerRole": 10,
+            "errorM": 2.4692643746548892,
+            "forwardErrorM": 0.7222560315993157,
+            "observedAdvanceM": 16.514400000000002,
+            "simulatedAdvanceM": 15.792143968400687,
+            "jersey": 23,
+            "positionMAEM": 7.098431190727301
+          }
+        ]
+      },
+      "legacy": {
+        "id": "contrast-progress",
+        "players": 4,
+        "positionMAEM": 10.503890275493331,
+        "endpointMAEM": 12.307860639704016,
+        "forwardMAEM": 10.243584285031737,
+        "assignments": [
+          {
+            "start": 0.00833333333333286,
+            "end": 0.39999999999997726,
+            "support": [
+              3,
+              4
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 0.4079999999999791,
+            "end": 0.7333333333333483,
+            "support": [
+              4,
+              3
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 0.7416666666666811,
+            "end": 0.9333333333333369,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 0.9416666666666698,
+            "end": 1.3199999999999918,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 1.3279999999999903,
+            "end": 1.359999999999984,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 1.3679999999999826,
+            "end": 1.375999999999981,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 1.3839999999999795,
+            "end": 2.6833333333333487,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 2.6916666666666815,
+            "end": 2.958333333333333,
+            "support": [
+              3,
+              9
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 2.966666666666666,
+            "end": 3.2749999999999817,
+            "support": [
+              3,
+              9
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 3.2833333333333146,
+            "end": 3.8916666666666715,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 3.9000000000000044,
+            "end": 4.074999999999994,
+            "support": [
+              8,
+              9
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 4.083333333333327,
+            "end": 4.233333333333318,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 4.241666666666651,
+            "end": 5.349999999999977,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              3,
+              7
+            ]
+          },
+          {
+            "start": 5.35833333333331,
+            "end": 5.639999999999984,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              3,
+              7
+            ]
+          },
+          {
+            "start": 5.647999999999985,
+            "end": 5.899999999999996,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 5.908333333333329,
+            "end": 6.216666666666645,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.224999999999977,
+            "end": 6.316666666666639,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              3,
+              8
+            ]
+          },
+          {
+            "start": 6.324999999999972,
+            "end": 6.407999999999969,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              3,
+              8
+            ]
+          },
+          {
+            "start": 6.415999999999971,
+            "end": 6.4719999999999835,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.479999999999985,
+            "end": 6.625000000000011,
+            "support": [
+              8,
+              6
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 6.6333333333333435,
+            "end": 7.007999999999988,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.015999999999986,
+            "end": 7.079999999999972,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 7.087999999999972,
+            "end": 7.366666666666629,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.374999999999962,
+            "end": 7.576,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 7.584000000000001,
+            "end": 7.766666666666662,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.774999999999995,
+            "end": 7.883333333333322,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 7.891666666666655,
+            "end": 8.119999999999978,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 8.127999999999979,
+            "end": 8.552000000000026,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 8.560000000000029,
+            "end": 8.59200000000004,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 8.600000000000042,
+            "end": 8.741666666666701,
+            "support": [
+              3,
+              11
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 8.750000000000034,
+            "end": 9.225000000000023,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 9.233333333333356,
+            "end": 9.708333333333407,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 9.71666666666674,
+            "end": 9.750000000000071,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 9.758333333333404,
+            "end": 9.808333333333401,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 9.816666666666734,
+            "end": 9.858333333333398,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 9.866666666666731,
+            "end": 9.89166666666673,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 9.900000000000063,
+            "end": 9.991666666666724,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 10.000000000000057,
+            "end": 10.275000000000041,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              8,
+              4
+            ]
+          },
+          {
+            "start": 10.283333333333374,
+            "end": 10.325000000000038,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              8,
+              3
+            ]
+          },
+          {
+            "start": 10.333333333333371,
+            "end": 10.400000000000034,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              3,
+              8
+            ]
+          },
+          {
+            "start": 10.408000000000037,
+            "end": 10.44800000000005,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 10.456000000000053,
+            "end": 10.496000000000066,
+            "support": [
+              11,
+              2
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 10.504000000000069,
+            "end": 10.504000000000069,
+            "support": [
+              2,
+              5
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 10.512000000000072,
+            "end": 10.600000000000101,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 10.608333333333434,
+            "end": 12.125000000000082,
+            "support": [
+              3,
+              2
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.133333333333415,
+            "end": 12.20833333333341,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.216666666666743,
+            "end": 12.358333333333402,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.366666666666735,
+            "end": 12.544000000000114,
+            "support": [
+              3,
+              11
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.552000000000117,
+            "end": 12.691666666666794,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.700000000000127,
+            "end": 12.725000000000126,
+            "support": [
+              5,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.733333333333459,
+            "end": 12.808333333333454,
+            "support": [
+              3,
+              6
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 12.816666666666787,
+            "end": 13.041666666666774,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          },
+          {
+            "start": 13.050000000000107,
+            "end": 13.280000000000143,
+            "support": [
+              3,
+              2
+            ],
+            "balance": [
+              4,
+              8
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 11.345289392640831,
+            "forwardErrorM": 9.893518550472688,
+            "observedAdvanceM": 10.322549999999996,
+            "simulatedAdvanceM": 20.216068550472684,
+            "jersey": 15,
+            "positionMAEM": 7.98619494296656
+          },
+          {
+            "playerRole": 3,
+            "errorM": 14.185279946654589,
+            "forwardErrorM": 9.889587690167287,
+            "observedAdvanceM": 17.872049999999994,
+            "simulatedAdvanceM": 27.76163769016728,
+            "jersey": 16,
+            "positionMAEM": 6.89486023121433
+          },
+          {
+            "playerRole": 8,
+            "errorM": 21.23160884486575,
+            "forwardErrorM": 20.468974867887656,
+            "observedAdvanceM": 20.659800000000004,
+            "simulatedAdvanceM": 0.19082513211234514,
+            "jersey": 21,
+            "positionMAEM": 20.036074737065142
+          },
+          {
+            "playerRole": 10,
+            "errorM": 2.4692643746548892,
+            "forwardErrorM": 0.7222560315993157,
+            "observedAdvanceM": 16.514400000000002,
+            "simulatedAdvanceM": 15.792143968400687,
+            "jersey": 23,
+            "positionMAEM": 7.098431190727301
+          }
+        ]
+      },
+      "supportReplay": {
+        "id": "contrast-progress",
+        "players": 4,
+        "positionMAEM": 8.041169963366336,
+        "endpointMAEM": 9.141296759009546,
+        "forwardMAEM": 5.711731141642966,
+        "assignments": [
+          {
+            "start": 0.00833333333333286,
+            "end": 0.39999999999997726,
+            "support": [
+              3,
+              4
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 0.4079999999999791,
+            "end": 0.7333333333333483,
+            "support": [
+              4,
+              3
+            ],
+            "balance": [
+              2,
+              7
+            ]
+          },
+          {
+            "start": 0.7416666666666811,
+            "end": 0.9000000000000055,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 0.9083333333333383,
+            "end": 0.9333333333333369,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 0.9416666666666698,
+            "end": 1.3199999999999918,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 1.3279999999999903,
+            "end": 1.359999999999984,
+            "support": [
+              7,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 1.3679999999999826,
+            "end": 1.375999999999981,
+            "support": [
+              8,
+              7
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 1.3839999999999795,
+            "end": 2.6833333333333487,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 2.6916666666666815,
+            "end": 3.2749999999999817,
+            "support": [
+              3,
+              9
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 3.2833333333333146,
+            "end": 3.8916666666666715,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 3.9000000000000044,
+            "end": 4.074999999999994,
+            "support": [
+              8,
+              9
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 4.083333333333327,
+            "end": 4.233333333333318,
+            "support": [
+              8,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 4.241666666666651,
+            "end": 5.349999999999977,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.35833333333331,
+            "end": 5.849999999999999,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 5.858333333333332,
+            "end": 5.899999999999996,
+            "support": [
+              8,
+              4
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 5.908333333333329,
+            "end": 5.974999999999992,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 5.9833333333333245,
+            "end": 6.216666666666645,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.224999999999977,
+            "end": 6.241666666666643,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.249999999999976,
+            "end": 6.316666666666639,
+            "support": [
+              4,
+              7
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.324999999999972,
+            "end": 6.407999999999969,
+            "support": [
+              7,
+              4
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.415999999999971,
+            "end": 6.4719999999999835,
+            "support": [
+              4,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.479999999999985,
+            "end": 6.487999999999987,
+            "support": [
+              8,
+              6
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.495999999999989,
+            "end": 6.625000000000011,
+            "support": [
+              8,
+              6
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.6333333333333435,
+            "end": 6.6333333333333435,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 6.641666666666676,
+            "end": 6.908333333333328,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 6.916666666666661,
+            "end": 7.007999999999988,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 7.015999999999986,
+            "end": 7.055999999999977,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 7.063999999999975,
+            "end": 7.079999999999972,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 7.087999999999972,
+            "end": 7.135999999999972,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.143999999999972,
+            "end": 7.34166666666663,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 7.349999999999963,
+            "end": 7.366666666666629,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.374999999999962,
+            "end": 7.567999999999998,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 7.576,
+            "end": 7.616666666666671,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.6250000000000036,
+            "end": 7.691666666666666,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 7.699999999999999,
+            "end": 7.774999999999995,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 7.783333333333328,
+            "end": 7.791666666666661,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 7.799999999999994,
+            "end": 7.849999999999991,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 7.858333333333324,
+            "end": 7.874999999999989,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 7.883333333333322,
+            "end": 8.047999999999977,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              2,
+              3
+            ]
+          },
+          {
+            "start": 8.055999999999976,
+            "end": 8.103999999999976,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              2
+            ]
+          },
+          {
+            "start": 8.111999999999977,
+            "end": 8.119999999999978,
+            "support": [
+              6,
+              8
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 8.127999999999979,
+            "end": 8.50400000000001,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.512000000000013,
+            "end": 8.536000000000021,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 8.544000000000024,
+            "end": 8.59200000000004,
+            "support": [
+              6,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.600000000000042,
+            "end": 8.741666666666701,
+            "support": [
+              3,
+              11
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.750000000000034,
+            "end": 8.866666666666694,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 8.875000000000027,
+            "end": 8.933333333333357,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 8.94166666666669,
+            "end": 9.225000000000023,
+            "support": [
+              7,
+              3
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.233333333333356,
+            "end": 9.750000000000071,
+            "support": [
+              3,
+              7
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.758333333333404,
+            "end": 9.808333333333401,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              2,
+              4
+            ]
+          },
+          {
+            "start": 9.816666666666734,
+            "end": 9.858333333333398,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 9.866666666666731,
+            "end": 9.89166666666673,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 9.900000000000063,
+            "end": 9.991666666666724,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 10.000000000000057,
+            "end": 10.275000000000041,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              4,
+              3
+            ]
+          },
+          {
+            "start": 10.283333333333374,
+            "end": 10.44800000000005,
+            "support": [
+              2,
+              11
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 10.456000000000053,
+            "end": 10.496000000000066,
+            "support": [
+              11,
+              2
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 10.504000000000069,
+            "end": 10.504000000000069,
+            "support": [
+              2,
+              5
+            ],
+            "balance": [
+              3,
+              4
+            ]
+          },
+          {
+            "start": 10.512000000000072,
+            "end": 10.600000000000101,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 10.608333333333434,
+            "end": 12.125000000000082,
+            "support": [
+              3,
+              2
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 12.133333333333415,
+            "end": 12.20833333333341,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 12.216666666666743,
+            "end": 12.358333333333402,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 12.366666666666735,
+            "end": 12.544000000000114,
+            "support": [
+              3,
+              11
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 12.552000000000117,
+            "end": 12.608333333333466,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 12.616666666666799,
+            "end": 12.691666666666794,
+            "support": [
+              3,
+              5
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.700000000000127,
+            "end": 12.725000000000126,
+            "support": [
+              5,
+              3
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.733333333333459,
+            "end": 12.808333333333454,
+            "support": [
+              3,
+              6
+            ],
+            "balance": [
+              4,
+              2
+            ]
+          },
+          {
+            "start": 12.816666666666787,
+            "end": 12.875000000000117,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              6
+            ]
+          },
+          {
+            "start": 12.88333333333345,
+            "end": 13.041666666666774,
+            "support": [
+              2,
+              3
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          },
+          {
+            "start": 13.050000000000107,
+            "end": 13.280000000000143,
+            "support": [
+              3,
+              2
+            ],
+            "balance": [
+              4,
+              7
+            ]
+          }
+        ],
+        "perPlayer": [
+          {
+            "playerRole": 2,
+            "errorM": 9.957400515710596,
+            "forwardErrorM": 7.241176335057418,
+            "observedAdvanceM": 10.322549999999996,
+            "simulatedAdvanceM": 17.563726335057414,
+            "jersey": 15,
+            "positionMAEM": 8.499985725808475
+          },
+          {
+            "playerRole": 3,
+            "errorM": 14.183575748179928,
+            "forwardErrorM": 9.888243036909802,
+            "observedAdvanceM": 17.872049999999994,
+            "simulatedAdvanceM": 27.760293036909797,
+            "jersey": 16,
+            "positionMAEM": 6.81037381585056
+          },
+          {
+            "playerRole": 8,
+            "errorM": 9.954946397492767,
+            "forwardErrorM": 4.995249163005328,
+            "observedAdvanceM": 20.659800000000004,
+            "simulatedAdvanceM": 15.664550836994675,
+            "jersey": 21,
+            "positionMAEM": 9.755889121078999
+          },
+          {
+            "playerRole": 10,
+            "errorM": 2.4692643746548892,
+            "forwardErrorM": 0.7222560315993157,
+            "observedAdvanceM": 16.514400000000002,
+            "simulatedAdvanceM": 15.792143968400687,
+            "jersey": 23,
+            "positionMAEM": 7.098431190727301
+          }
+        ]
+      },
+      "summary": {
+        "currentSupportMembershipChanges": 31,
+        "legacySupportMembershipChanges": 28,
+        "currentBalanceMembershipChanges": 14,
+        "supportReplayErrorM": 8.041169963366336,
+        "perPlayer": [
+          {
+            "jersey": 15,
+            "playerRole": 2,
+            "beforeErrorM": 7.98619494296656,
+            "afterErrorM": 8.698564891987274,
+            "deltaErrorM": 0.7123699490207143,
+            "contributionToMeanDeltaM": 0.17809248725517857,
+            "observedAdvanceM": 10.322549999999996,
+            "beforeAdvanceM": 20.216068550472684,
+            "afterAdvanceM": 17.007446284352287
+          },
+          {
+            "jersey": 16,
+            "playerRole": 3,
+            "beforeErrorM": 6.89486023121433,
+            "afterErrorM": 10.222914641659605,
+            "deltaErrorM": 3.328054410445275,
+            "contributionToMeanDeltaM": 0.8320136026113187,
+            "observedAdvanceM": 17.872049999999994,
+            "beforeAdvanceM": 27.76163769016728,
+            "afterAdvanceM": 27.55928181061289
+          },
+          {
+            "jersey": 21,
+            "playerRole": 8,
+            "beforeErrorM": 20.036074737065142,
+            "afterErrorM": 9.507880584960684,
+            "deltaErrorM": -10.528194152104458,
+            "contributionToMeanDeltaM": -2.6320485380261145,
+            "observedAdvanceM": 20.659800000000004,
+            "beforeAdvanceM": 0.19082513211234514,
+            "afterAdvanceM": 15.664503249885868
+          },
+          {
+            "jersey": 23,
+            "playerRole": 10,
+            "beforeErrorM": 7.098431190727301,
+            "afterErrorM": 7.098431190727301,
+            "deltaErrorM": 0,
+            "contributionToMeanDeltaM": 0,
+            "observedAdvanceM": 16.514400000000002,
+            "beforeAdvanceM": 15.792143968400687,
+            "afterAdvanceM": 15.792143968400687
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -19,21 +19,27 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituati
   return players.filter(p=>p.t===0&&freeIds.includes(p.n)).map(p=>[p.n,p.x,p.y]);
  }
 };`);
-function environment(){
+function environment(options={}){
  const nodes={};class E{constructor(){this.style={};this.dataset={};this.children=[];}setAttribute(){}append(...x){this.children.push(...x);}appendChild(x){this.append(x);}replaceChildren(...x){this.children=x;}querySelectorAll(){return this.children;}insertAdjacentElement(){}insertAdjacentHTML(){}}
- const c={document:{head:new E(),getElementById:id=>nodes[id]||(nodes[id]=new E()),createElement:()=>new E()},console,requestAnimationFrame:()=>{}};
- vm.createContext(c);vm.runInContext(script,c);return c.replay;
+ let source=script;
+ if(options.legacyHeights)source=source.replace('if(balance.includes(p))tx=', 'if(!support&&!isWide(p)&&!isForward(p))tx=');
+ if(options.supportTimeline)source=source.replace(' const ranked=mates.filter', ' let ranked=mates.filter').replace(' // Equilibrio a cargo', ' if(t===0)ranked=replaySupport(elapsed).map(n=>mates.find(p=>p.n===n));\n // Equilibrio a cargo');
+ const trace=[];
+ if(options.diagnostics)source=source.replace(' const progress=t===0?ballPos.x:100-ballPos.x,finalThird=', ' if(t===0)recordAssignments(elapsed,ranked.map(p=>p.n),balance.map(p=>p.n));\n const progress=t===0?ballPos.x:100-ballPos.x,finalThird=');
+ const c={document:{head:new E(),getElementById:id=>nodes[id]||(nodes[id]=new E()),createElement:()=>new E()},console,requestAnimationFrame:()=>{},recordAssignments:(time,support,balance)=>{const last=trace.at(-1);if(last&&JSON.stringify(last.support)===JSON.stringify(support)&&JSON.stringify(last.balance)===JSON.stringify(balance))last.end=time;else trace.push({start:time,end:time,support:[...support],balance:[...balance]});}};
+ let cursor=0;c.replaySupport=time=>{while(cursor+1<options.supportTimeline.length&&options.supportTimeline[cursor+1].start<=time)cursor++;return options.supportTimeline[cursor].support;};
+ vm.createContext(c);vm.runInContext(source,c);return {...c.replay,trace};
 }
 function orient(p,team){
  const t=p[0]===team?0:1,n=p[0]===0?(p[1]===11?1:p[1]+1):(p[1]===25?1:p[1]-13);
  return [t,n,team?100-p[2]:p[2],team?64-p[3]:p[3]];
 }
 function orientBall(p,team){return team?[100-p[0],64-p[1]]:p;}
-function evaluate(clip,gain){
+function evaluate(clip,gain,options={}){
  const frames=clip.frames,team=clip.team,first=frames[0],last=frames.at(-1);
  const ids=clip.summary.movements.filter(m=>m.noRecordedTouch).map(m=>orient([team,m.player,0,0],team)[1]);
  if(frames.some(f=>!f.ball||f.players.length!==22))return {id:clip.id,excluded:'Incomplete tracking; no interpolation across gaps'};
- const model=environment(),start=first.players.map(p=>orient(p,team));
+ const model=environment(options),start=first.players.map(p=>orient(p,team));
  model.init(start,orientBall(first.ball,team),gain);
  let errors=[],endpoint=[];
  for(let i=1;i<frames.length;i++){
@@ -48,14 +54,16 @@ function evaluate(clip,gain){
   for(const [n,x,y] of predicted){
    const q=pb.find(p=>p[0]===0&&p[1]===n);
    const error=Math.hypot((x-q[2])*1.05,(y-q[3])*68/64);
-   errors.push({error,weight:dt});
-   if(i===frames.length-1)endpoint.push({playerRole:n,errorM:error,forwardErrorM:Math.abs(x-q[2])*1.05});
+   errors.push({n,error,weight:dt});
+   if(i===frames.length-1)endpoint.push({playerRole:n,errorM:error,forwardErrorM:Math.abs(x-q[2])*1.05,observedAdvanceM:(q[2]-start.find(p=>p[0]===0&&p[1]===n)[2])*1.05,simulatedAdvanceM:(x-start.find(p=>p[0]===0&&p[1]===n)[2])*1.05});
   }
  }
  const weight=errors.reduce((sum,p)=>sum+p.weight,0);
- return {id:clip.id,players:ids.length,positionMAEM:errors.reduce((sum,p)=>sum+p.error*p.weight,0)/weight,
+ const result={id:clip.id,players:ids.length,positionMAEM:errors.reduce((sum,p)=>sum+p.error*p.weight,0)/weight,
   endpointMAEM:endpoint.reduce((s,p)=>s+p.errorM,0)/endpoint.length,
   forwardMAEM:endpoint.reduce((s,p)=>s+p.forwardErrorM,0)/endpoint.length};
+ if(options.diagnostics){result.assignments=model.trace;result.perPlayer=endpoint.map(p=>{const rows=errors.filter(r=>r.n===p.playerRole);return {...p,jersey:first.players.find(q=>q[0]===team&&orient(q,team)[1]===p.playerRole)[1],positionMAEM:rows.reduce((s,r)=>s+r.error*r.weight,0)/rows.reduce((s,r)=>s+r.weight,0)};});}
+ return result;
 }
 function mean(rows,key){return rows.reduce((s,r)=>s+r[key],0)/rows.length;}
 function run(){

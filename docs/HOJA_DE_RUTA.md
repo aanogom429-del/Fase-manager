@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 17 de octubre de 2026
 
+- **0.33 — Diagnóstico de selección de apoyos, sin cambio de conducta.** Instrumentación pasiva de los tres contrastes ofensivos del partido 1, desglose del error por jugador y reproducción de la regla anterior de alturas. Esta reproducción recupera exactamente el error agregado de 0.31; activar la observación no cambia las trayectorias. Se conserva el motor de movimiento de 0.32.
+
+En la progresión azul que empeora, el dorsal real #7 (asignado provisionalmente al puesto 8 del motor) pasa de 3,0879 a 9,1692 m de error. Su contribución al incremento de la media es +1,0135 m, frente a +0,9973 m netos del equipo: otros jugadores compensan parcialmente. La selección calculada de integrantes de apoyo cambia 16 → 19 veces en 5,28 s. Son cambios en los destinos calculados; no todos necesariamente se ejecutan debido a la demora individual.
+
+Intervención de diagnóstico: imponer la secuencia anterior de selección de apoyos manteniendo las alturas actuales produce 6,6472 m frente a 7,6488 m actuales y 6,6515 m anteriores. Esto apoya que el empeoramiento en ese banco depende de la interacción entre alturas y selección dinámica, no solo de la distancia detrás del balón. No demuestra que reducir cambios siempre sea mejor: la prueba reproduce selecciones anteriores, no aplica histéresis ni simula decisiones reales observadas. En las otras dos secuencias también se calcula la intervención (9,3586 y 8,0412 m); no se usa para calibrar un parámetro ni se despliega como conducta.
+
+Informe y trazas: `data/support-diagnosis.json`, reproducible con `scripts/diagnose_supports.cjs`. El visor muestra la contribución dominante y distingue la intervención del comportamiento implantado. Pruebas de reproducibilidad, suma de contribuciones, ausencia de alteración por el observador y asociación del resultado a la secuencia correcta. Sin partidos nuevos, aprendizaje ni mejora de movimiento en esta versión. Próximo paso: diseñar una selección persistente de apoyos que solo cambie ante una ventaja contextual suficiente, comprobar cambios realmente ejecutados y contrastarla sin copiar la secuencia anterior. Mantener visible la regresión de 0.32 hasta corregirla.
+
 - **0.32 — Alturas de progresión y equilibrio distribuido.** Se elimina la obligación de que todo jugador no abierto ni delantero y no seleccionado como apoyo se sitúe al menos 13 unidades detrás del balón. Ahora esa responsabilidad recae en los dos compañeros elegibles más retrasados (sin portero, delanteros, apoyos seleccionados ni receptor previsto). Los restantes conservan su referencia de posesión y acompañamiento. No equivale a inmovilizar jugadores ni impedir retrocesos: permanecen los apoyos cercanos, las referencias móviles, el fuera de juego, las órdenes explícitas y la respuesta a la pérdida. Se conserva el margen 13, las alturas de último tercio, la velocidad y la demora; no se ajustaron parámetros buscando encajar las muestras. La elección de dos jugadores sigue siendo una heurística provisional, no una ley táctica.
 
 Contraste 0.31 → 0.32, error de posición en metros: partido 1, progresión roja 11,22 → 9,90; progresión azul 6,65 → 7,65 (empeora aproximadamente 15 %); contraste rojo 10,50 → 8,88. Partido 2, tras banda 10,13 → 8,20; ventana 77,44–83,16 s, 8,85 → 6,68; ventana 87,96–92,80 s, 12,20 → 7,16. En esta última el retroceso simulado pasa de 8,83 a 1,21 m frente a avance observado +0,11 m; todavía supera el error de la referencia inmóvil (3,55 m). Mejoran cinco de seis secuencias ofensivas, no todas. Las métricas de los dos partidos no se agrupan por usar integración distinta. El tramo defensivo tras córner y las cuatro ventanas defensivas del partido 1 permanecen exactamente iguales.
@@ -135,7 +143,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 17 de octubre de 2026. Estado del motor: 0.32.
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.33 (conducta de movimiento conservada desde 0.32).
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

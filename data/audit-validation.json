@@ -1,5 +1,5 @@
 {
-  "engineVersion": "0.32",
+  "engineVersion": "0.33",
   "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
   "selection": "Two Away pass chains selected before tracking inspection; same possession and match, not independent matches. No tuning or replacement based on results.",
   "method": "Same controlled Game 2 replay; no missing samples reconstructed, no fitting. Whole fixed window excluded if integrity checks fail.",

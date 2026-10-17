@@ -1,5 +1,13 @@
 # Actualizaciones completadas · 17 de octubre de 2026
 
+- **0.30 — Correcciones de auditoría y contraste reservado.** Corregidos el salto de posición al salir de una reanudación junto a la línea y la recuperación indebida de órdenes canceladas al repetir una decisión. El margen interior limita ahora el destino, no desplaza instantáneamente al jugador. El punto de comparación conserva las órdenes activas después de su cancelación individual o conjunta.
+
+Dos ventanas nuevas de Sample Game 2, 77,44–83,16 s y 87,96–92,80 s, seleccionadas por eventos antes de inspeccionar sus trayectorias, cuentan con 32 y 28 muestras completas. Se conservan en `data/audit-windows.json`, con línea base 0.29 y resultados 0.30 reproducibles. Son tramos de una misma posesión y partido, no partidos independientes. No se ajustaron parámetros a estos datos. Error medio actual: 8,85 y 12,20 m, frente a 7,37 y 3,55 m de referencia inmóvil. En el segundo tramo, avance observado +0,11 m frente a −8,83 m simulado: persiste el exceso de retroceso.
+
+Revisión táctica: `attackingTargets` impone a determinados roles una altura detrás del balón (−13), conserva umbrales de altura en último tercio y utiliza dorsales para amplitud y funciones adelantadas. Son candidatos al desajuste, no una causalidad aislada ya demostrada. Próximo paso: separar rol táctico de dorsal y revisar alturas según contexto; no cambiar distancias para encajar estas dos ventanas. El retroceso defensivo también sigue pendiente.
+
+Pruebas añadidas: `tests/audit_continuity.cjs` limita cada desplazamiento a velocidad × tiempo tras bandas, córneres y penaltis de ambos equipos, y verifica cancelación individual/conjunta y repetición. `tests/audit_windows.cjs` verifica datos completos, ausencia de solapamiento con ventanas anteriores, reproducción exacta y visualización. Regresión libre de tres semillas y 90 s en `data/runtime-regression-v030.json`. Los informes anteriores se regeneran: hay pequeñas variaciones por la corrección de límites, sin acreditar mejora táctica general ni aprendizaje.
+
 - **0.29 — Referencia ofensiva al comienzo de la posesión.** Causa identificada: fuera de la decisión azul guiada, el acompañamiento sumaba a la formación un desplazamiento del balón respecto al centro del campo, aunque las posiciones iniciales de esa fase ya estuvieran desplazadas. Se introduce una referencia conjunta e inmutable de posiciones y balón al entrar en ataque, válida para ambos equipos y ambos modos. Los pases entre compañeros la conservan; pérdida, reanudación o reinicio la invalidan. Comparar decisiones la restaura. No se cambia el coeficiente 0,35 ni las reglas de amplitud, alturas o velocidad.
 
 Contraste tras banda del partido 2: error medio 11,4297 → 10,1292 m (reducción aproximada del 11,4 %); retroceso medio simulado 18,6214 → 14,8552 m, frente a 6,5073 m observado. La referencia inmóvil conserva 4,7251 m: la corrección no resuelve la discrepancia ni valida el realismo. El tramo defensivo tras córner conserva 5,8486 m de error y 12,2311 m de retroceso. Las tres secuencias ofensivas del partido 1 conservan exactamente sus resultados anteriores: ese banco ya utilizaba posiciones y balón iniciales como referencia guiada. Las cuatro ventanas defensivas del partido 1 tampoco cambian.
@@ -111,7 +119,7 @@ Las medidas de apoyo son geométricas, no sustituyen la interpretación de los e
 ---
 
 # MANAGER-FASE — Hoja de ruta
-Actualizada: 17 de octubre de 2026. Estado del motor: 0.29.
+Actualizada: 17 de octubre de 2026. Estado del motor: 0.30.
 
 ## Prioridad y alcance
 Requisitos del usuario para las siguientes etapas. Esta hoja de ruta no implica que las funciones estén implementadas.

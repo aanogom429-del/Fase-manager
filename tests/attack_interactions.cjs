@@ -1,3 +1,5 @@
+// Reproduce archived 0.34 reports; UI and gameplay tests still load current index.html.
+process.env.FASE_ENGINE_SOURCE=require('node:path').join(__dirname,'fixtures/engine-v034.html');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {intervene,keys}=require('../scripts/attack_interventions.cjs'),{diagnose}=require('../scripts/diagnose_attack_interactions.cjs');
 const report=require('../data/attack-interactions.json'),plan=require('../data/attack-interaction-plan.json');

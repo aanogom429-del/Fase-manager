@@ -1,3 +1,5 @@
+// Reproduce archived 0.34 reports; UI and gameplay tests still load current index.html.
+process.env.FASE_ENGINE_SOURCE=require('node:path').join(__dirname,'fixtures/engine-v034.html');
 const assert=require('node:assert/strict'),{compare}=require('../scripts/compare_support_stability.cjs'),report=require('../data/support-stability.json'),baseline=require('../data/support-baseline-v033.json'),{env}=require('./continuity.cjs');
 (async()=>{assert.deepEqual(compare(),report);assert.equal(report.engineVersion,'0.34');assert.deepEqual(require('../data/defense-validation.json').clips,baseline['defense-validation'].clips);
 const measured=report.clips.filter(c=>Number.isFinite(c.afterAppliedChanges));assert.equal(measured.length,3);assert(measured.every(c=>c.afterAppliedChanges<c.beforeAppliedChanges));

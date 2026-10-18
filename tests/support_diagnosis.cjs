@@ -1,3 +1,5 @@
+// Reproduce archived 0.34 reports; UI and gameplay tests still load current index.html.
+process.env.FASE_ENGINE_SOURCE=require('node:path').join(__dirname,'fixtures/engine-v034.html');
 const assert=require('node:assert/strict'),{diagnose}=require('../scripts/diagnose_supports.cjs'),{env}=require('./continuity.cjs');
 (async()=>{const report=require('../data/support-diagnosis.json');assert.deepEqual(diagnose(),report,'diagnostic report reproducible');
 for(const c of report.clips){const delta=c.current.positionMAEM-c.legacy.positionMAEM;assert(Math.abs(c.summary.perPlayer.reduce((s,p)=>s+p.contributionToMeanDeltaM,0)-delta)<1e-10);assert(c.current.assignments.length>1);assert(c.current.assignments.every(r=>r.support.length===2&&new Set(r.support).size===2));}

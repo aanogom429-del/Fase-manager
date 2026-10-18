@@ -1,3 +1,5 @@
+// Reproduce archived 0.34 reports; UI and gameplay tests still load current index.html.
+process.env.FASE_ENGINE_SOURCE=require('node:path').join(__dirname,'fixtures/engine-v034.html');
 const assert=require('node:assert/strict'),{validate}=require('../scripts/validate_support_holdout.cjs');
 const report=require('../data/support-holdout-validation.json'),windows=require('../data/support-holdout-windows.json'),plan=require('../data/support-holdout-plan.json');
 assert.deepEqual(validate(),report);

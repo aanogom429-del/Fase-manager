@@ -4,7 +4,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const root=path.join(__dirname,'..');
 const dataset=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
-const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const html=fs.readFileSync(process.env.FASE_ENGINE_SOURCE||path.join(root,'index.html'),'utf8');
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituation();requestAnimationFrame(frame);',
  `globalThis.replay={
  init:(positions,ballPoint,gain)=>{

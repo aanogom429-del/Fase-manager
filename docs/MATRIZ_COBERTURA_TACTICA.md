@@ -1,7 +1,7 @@
 # Matriz de cobertura del motor táctico
 
 Fecha: 18-10-2026. Base auditada: motor 0.34, commit ced4caa81ae015b105ab255c31bfbcef71b89329.
-Esta entrega especifica trabajo y aceptación; no modifica la conducta del juego ni acredita pruebas nuevas.
+Auditoría inicial de 0.34. Actualización A1 en 0.35: corrección acotada documentada al final; los estados de cobertura general permanecen parciales.
 
 ## Fuentes y alcance
 
@@ -15,7 +15,7 @@ Estados:
 - **Operativo acotado**: funciona en el alcance descrito; no implica cobertura general.
 - **Validado**: reservado para evidencia documentada de aceptación y contraste independiente. Ningún elemento del marco recibe este estado en esta auditoría.
 
-Las situaciones de aceptación de las tablas son **especificaciones pendientes de ejecutar**, no tests superados. Se aplicarán a ambos equipos y sentidos, manteniendo geometría equivalente, semilla reproducible y prioridades de recepción, reglamento y órdenes. No se exige la misma decisión siempre, ni se premia avanzar o moverse por sí mismo.
+Las situaciones de aceptación de las tablas son **especificaciones pendientes de ejecutar**, salvo la evidencia acotada A1 detallada al final; no son bloques completos superados. Se aplicarán a ambos equipos y sentidos, manteniendo geometría equivalente, semilla reproducible y prioridades de recepción, reglamento y órdenes. No se exige la misma decisión siempre, ni se premia avanzar o moverse por sí mismo.
 
 ## Criterios conformadores
 
@@ -121,9 +121,9 @@ Las fases son interpretaciones funcionales que pueden solaparse y cambiar; no un
 5. Actualizar evidencia: commit, caso, resultado, alcance y muestras usadas. Solo pasar a validado tras aceptación documentada y contraste independiente pertinente.
 6. Fijar métricas, protocolo y umbrales de éxito antes de evaluar una muestra reservada. No inventar porcentajes de finalización.
 
-## Siguiente actualización ejecutable: A1, apoyos contextuales
+## Actualización A1: apoyos contextuales
 
-IDs: O01–O03, E02–E05, C02/C05 y T01/T02/T07. Estado: pendiente; esta entrega deja su especificación preparada.
+IDs: O01–O03, E02–E05, C02/C05 y T01/T02/T07. Estado: implementada una corrección acotada en 0.35 y comprobada mediante casos sintéticos; contraste independiente pendiente.
 Objetivo: eliminar retrocesos impuestos por una referencia fija cuando existe una alternativa útil, preservando seguridad, recepción y equilibrio. No eliminar universalmente los pases atrás ni los límites de equilibrio.
 
 Casos a fijar antes de modificar attackingTargets:
@@ -142,3 +142,16 @@ Usar primero el inspector existente para aislar un caso causal reproducible; con
 Motor táctico 1.0: cobertura operativa de los elementos acordados, límites explícitos, acciones/reglas compatibles, ausencia de bloqueos sistemáticos y validación documentada en ambos sentidos y modos.
 Para afirmar cobertura completa del marco, deberán resolverse también C03, C06 y las ocho áreas; cualquier simplificación será declarada, nunca presentada como equivalencia científica.
 El aprendizaje de T06 queda después del núcleo, con preparación de identidad/perfiles/restauración antes. Hito B: producto 1.0, partidas, interfaz y estadísticas. Hito C: adaptación iOS, TestFlight y publicación. No se adelantan por completar esta documentación.
+
+
+## Evidencia A1 · motor 0.35
+
+Causa reproducida en ambos sentidos: con balón en altura relativa 50, apoyo conectado en 56 y salida de seguridad en 42, los destinos anteriores eran 42 y 54. El orden de utilidad intercambiaba sus alturas sin necesidad. Ahora conservan 56 y 42 cuando ambas líneas están accesibles y no están marcados de cerca.
+
+Implementación: connectedSupportPair y attackingTargets. Solo durante posesión controlada, para los dos apoyos seleccionados y sin órdenes vigentes o pendientes sobre ellos. Distancia al balón 6–25, altura avanzada 0–12 y retrasada −18 a −1, separación mínima 6, distancia al rival >3 y penalización de línea <6: umbrales provisionales en unidades del campo, no metros ni valores calibrados con partidos. Se mantienen después las restricciones de fuera de juego, límites y separación. La demora de lectura puede mantener temporalmente un destino previo.
+
+Evidencia: tests/contextual_supports.cjs compara con tests/fixtures/engine-v034.html, conserva seguridad, comprueba línea frontal bloqueada, apoyo retrasado marcado, orden pendiente/ejecutada, recepción, pérdida, simetría, orden de jugadores, pausa y restauración. Incluye tres simulaciones de 60 s con semillas fijadas para continuidad y estados finitos; no demuestra calidad táctica de un partido completo.
+
+No cambia el criterio de selección/persistencia, equilibrio ni los parámetros individuales. No resuelve otros tipos de apoyo regresivo, perfilación, trayectorias anticipadas ni aprendizaje. Durante balón en vuelo se conserva la política previa y la prioridad del receptor.
+
+Los informes de tracking 0.34 siguen archivados y etiquetados como históricos. Sus pruebas de reproducción usan explícitamente la instantánea de esa versión; las pruebas de juego usan index.html actual. No se presentan como validación de 0.35. Los evaluadores con balón impuesto y sin poseedor no activan esta corrección: se necesita un protocolo con posesión identificada antes de contrastar ventanas nuevas. Próxima comprobación de A1: fijar ese protocolo y reservar ventanas sin ajustar estos umbrales a posteriori.

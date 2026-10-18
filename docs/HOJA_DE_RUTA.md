@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.35. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.36. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -8,7 +8,7 @@ Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). 
 |---|---|---|
 | A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
 | A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada; contraste con poseedor en tres ventanas nuevas: una activación con mejora pequeña y dos sin activación. Validación general pendiente |
-| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | Siguiente: orientación corporal y percepción con estado restaurable; después trayectorias y capacidades |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | Primera implementación en 0.36: orientación y filtro perceptivo automático. Siguiente: recepción/control y preparación del giro; memoria, trayectorias y capacidades siguen pendientes |
 | A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
 | A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
 | A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
@@ -24,6 +24,12 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 ---
 
 # Actualizaciones completadas · 18 de octubre de 2026
+
+- **0.36 — Orientación corporal y primera percepción angular (A2).** Marca amarilla por jugador, orientación persistente y giro gradual. Las decisiones automáticas del poseedor filtran receptores, dirección de tiro y conducción según orientación. Sin solución elegida, detiene desplazamiento y gira para buscar. Recepción conserva orientación; decisiones explícitas del usuario siguen autorizadas. Parámetros provisionales: 220° de apertura y 180°/s de giro, sin calibración científica.
+
+Estado escalar conservado al pausar, cambiar de modo y comparar decisiones. No introduce memoria visual, oclusión, percepción limitada de rivales, mirada independiente ni coste corporal del control de balón. No cambia distancias de apoyo ni aprende del tracking. El informe de 0.35 se reproduce desde su instantánea y se muestra como histórico.
+
+Verificación: 14 suites seleccionadas superadas (orientación, continuidad, apoyos contextuales, inspector, órdenes sin balón, reglas, fuera de juego, faltas, disciplina, ventaja, contraste histórico con poseedor, alturas, persistencia de apoyos y funciones defensivas). Pruebas funcionales: opciones de cara/de espaldas, giro sin salto, simetría, recepción, restauración exacta, repetición y tres simulaciones de 60 s. Alcance y límites en la matriz C03/I03/T01. **Siguiente paso:** coste y orientación de recepción/control, antes de ampliar trayectorias y percepción colectiva. No declarar A2 ni el marco completos.
 
 - **Contraste con poseedor de 0.35 — conducta sin reajustar.** Protocolo y tres intervalos fijados por eventos antes de importar sus posiciones y evaluarlos (commit 50d2976674d9aa9594138ce5c06e74368eef99a3). Nuevo evaluador conserva poseedor identificado, balón, rivales y porteros observados; simula los otros nueve atacantes. Verifica todas las muestras a 25 Hz, continuidad, identidades y compatibilidad balón–poseedor. No rellena huecos ni reemplaza exclusiones.
 

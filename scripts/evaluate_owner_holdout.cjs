@@ -1,7 +1,8 @@
+// Frozen 0.35 report: do not attribute these results to subsequent game versions.
 // Owner inferred from adjacent recorded passes; all 25 Hz samples must pass integrity checks.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const root=path.join(__dirname,'..'),plan=require('../data/owner-holdout-plan.json');
-const sources={before:fs.readFileSync(path.join(root,'tests/fixtures/engine-v034.html'),'utf8'),after:fs.readFileSync(path.join(root,'index.html'),'utf8')};
+const sources={before:fs.readFileSync(path.join(root,'tests/fixtures/engine-v034.html'),'utf8'),after:fs.readFileSync(path.join(root,'tests/fixtures/engine-v035.html'),'utf8')};
 const metres=(a,b)=>Math.hypot((a[0]-b[0])*1.05,(a[1]-b[1])*68/64);
 function validate(c){
  assert(c.team===0||c.team===1,'invalid team');assert(Number.isInteger(c.holder),'missing holder identity');

@@ -572,6 +572,7 @@ function technicalOptions(){
  if(technique==='pass')return {
  support:pass(support,'Pase de continuidad'),progress:pass(progress,'Pase para progresar'),width:pass(width,'Pase para cambiar el foco'),
  ground:pass(target,'Pase raso al compañero elegido'),loft:pass(target,'Pase elevado','loft'),through:pass(target,'Pase al espacio','through'),
+ repeat:make('repeat','Repetir pase: A → B → A','Pasa a #'+target.n+' y recibe de nuevo en tu posición, sin carrera obligatoria de pared. De primeras si es viable; si no, después del control.',{n:target.n,firstTouch:true}),
  wall:make('wall','Pared al primer toque','Pasa a #'+target.n+' y busca devolución directa. Si la orientación o la oposición lo impiden, controla y devuelve.',{n:target.n,firstTouch:true,disabled:d(p,target)>24?'Acerca el apoyo: distancia máxima 24 unidades.':null}),
  relay:make('relay','Primer toque hacia #'+(relayTarget?relayTarget.n:'—'),'Pasa a #'+target.n+' para que juegue directamente hacia el tercer compañero elegido. Si no puede hacerlo de primeras, controla antes.',{n:target.n,nextN:relayTarget?.n,firstTouch:true,disabled:!relayTarget?'Elige un tercer compañero.':null}),
  wallControl:make('wall','Pared con control','Pasa a #'+target.n+' y prepara el control antes de devolver.',{n:target.n,firstTouch:false,disabled:d(p,target)>24?'Acerca el apoyo: distancia máxima 24 unidades.':null})};
@@ -599,10 +600,10 @@ function executeTechnique(o){
  if(o.n&&!target){techAction=null;resolution='El receptor ya no está disponible';report(resolution);return;}
  if(elapsed<p.controlUntil){techAction={kind:'receiveWait',actor:p,option:{...o}};report('Azul #'+p.n+' prepara el control antes de '+o.title.toLowerCase());return;}
  const kind=o.kind||'pass';
- if(['pass','loft','through','wall','relay'].includes(kind)){
+ if(['pass','loft','through','wall','relay','repeat'].includes(kind)){
   let x=target.x,y=target.y;
   if(kind==='through')x=clamp(x+8,3,97);
-  if(kind==='wall'||kind==='relay')techAction={kind:'wall',relay:kind==='relay',actor:p,target,nextTarget:kind==='relay'?nextTarget:p,firstTouch:o.firstTouch===true,phase:0,runX:clamp(p.x+9,3,97),runY:p.y};
+  if(kind==='wall'||kind==='relay'||kind==='repeat')techAction={kind:'wall',relay:kind==='relay',repeat:kind==='repeat',actor:p,target,nextTarget:kind==='relay'?nextTarget:p,firstTouch:o.firstTouch===true,phase:0,runX:clamp(p.x+9,3,97),runY:p.y};
   kickTo(p,x,y,'pass',target);if(kind==='loft')flight.loft=5;
  }else if(kind==='shot'){
   const error=(random()-.5)*(4+(100-p.x)*.25);kickTo(p,102,32+error,'shot');
@@ -892,9 +893,9 @@ function movement(dt){if(matchStopped)return;pruneOffBall();
   traceDestination(p,'Destino tras demora',tx,ty);
   // Recepción, pared y disputa inmediata tienen prioridad sobre una orden sin balón.
   if(flight&&flight.target===p){const point=anticipateFlight(p,flight);tx=point?point.x:flight.tx;ty=point?point.y:flight.ty;traceDestination(p,point?'Recepción anticipada':'Recepción al destino',tx,ty);}
-  if(techAction&&techAction.kind==='wall'&&!techAction.relay&&p===techAction.actor&&p!==owner){tx=techAction.runX;ty=techAction.runY;}
+  if(techAction&&techAction.kind==='wall'&&!techAction.relay&&!techAction.repeat&&p===techAction.actor&&p!==owner){tx=techAction.runX;ty=techAction.runY;}
   if(p===recoverer){tx=bx;ty=by;}
-  traceApplied(p,tx,ty,p===recoverer?'disputa':techAction&&techAction.kind==='wall'&&!techAction.relay&&p===techAction.actor&&p!==owner?'pared':flight&&flight.target===p?'recepción':p===owner?'poseedor':isKeeper(p)?'portero':'lectura almacenada');
+  traceApplied(p,tx,ty,p===recoverer?'disputa':techAction&&techAction.kind==='wall'&&!techAction.relay&&!techAction.repeat&&p===techAction.actor&&p!==owner?'pared':flight&&flight.target===p?'recepción':p===owner?'poseedor':isKeeper(p)?'portero':'lectura almacenada');
   moves.push({p,tx,ty});
  }
  // El margen interior limita el destino, no la posición actual del ejecutor.
@@ -912,7 +913,7 @@ function capture(p,why){
  restartGuard=null;
  const wall=techAction&&techAction.kind==='wall'&&techAction.phase===0&&techAction.target===p?techAction:null;
  const next=wall?(wall.nextTarget||wall.actor):null;
- const firstTouch=wall&&wall.firstTouch&&flight&&flight.target===p&&flight.from===wall.actor&&canFirstTouch(p,flight,wall.relay?next:{x:wall.runX,y:wall.runY},next);
+ const firstTouch=wall&&wall.firstTouch&&flight&&flight.target===p&&flight.from===wall.actor&&canFirstTouch(p,flight,(wall.relay||wall.repeat)?next:{x:wall.runX,y:wall.runY},next);
  prepareReception(p,flight);
  if(firstTouch){p.controlUntil=elapsed;p.controlDuration=0;wall.returnMode='firstTouch';}else if(wall)wall.returnMode='control';
  const previousTeam=owner?owner.t:flight?flight.t:lastTouchTeam;recordMeasurementTouch(p);if((owner?owner.t:flight?flight.t:lastTouchTeam)!==p.t)turnovers++;lastTouchTeam=p.t;owner=p;p.scanUntil=0;flight=null;loose=false;ballHeight=0;bx=p.x;by=p.y;decision=.3+random()*.35;p.driveX=p.x;p.driveY=p.y;report((p.t?'Rojo':'Azul')+' #'+p.n+' '+why);if(previousTeam!==p.t){for(const q of players){delete q.attackOrigin;delete q.attackSupport;delete q.defOrigin;delete q.defDuty;}startLossTrace(previousTeam);}if(guided&&stage==='resolve')resolution=why;}
@@ -943,7 +944,7 @@ function update(dt){if(matchStopped){running=false;syncControls();return;}elapse
  }
  if(restart)return;
  if(!flight&&!owner&&!restart){const p=nearest({x:bx,y:by},activePlayers());if(d(p,{x:bx,y:by})<2.2)capture(p,'controla');else loose=true;}
- if(techAction&&techAction.kind==='wall'&&owner&&techAction.phase===0){const a=techAction,next=a.nextTarget||a.actor;if(next.sentOff){techAction=null;resolution='Pase enlazado cancelado: compañero no disponible';report(resolution);}else if(owner===a.target){resolution=null;if(elapsed>=owner.controlUntil){a.phase=1;kickTo(owner,a.relay?next.x:a.runX,a.relay?next.y:a.runY,'pass',next);report((a.relay?'Pase hacia #'+next.n:'Devolución')+(a.returnMode==='firstTouch'?' al primer toque':' después del control'));}}else if(owner!==a.actor){techAction=null;}}
+ if(techAction&&techAction.kind==='wall'&&owner&&techAction.phase===0){const a=techAction,next=a.nextTarget||a.actor;if(next.sentOff){techAction=null;resolution='Pase enlazado cancelado: compañero no disponible';report(resolution);}else if(owner===a.target){resolution=null;if(elapsed>=owner.controlUntil){a.phase=1;kickTo(owner,(a.relay||a.repeat)?next.x:a.runX,(a.relay||a.repeat)?next.y:a.runY,'pass',next);report((a.repeat?'Repetición hacia #'+next.n:a.relay?'Pase hacia #'+next.n:'Devolución')+(a.returnMode==='firstTouch'?' al primer toque':' después del control'));}}else if(owner!==a.actor){techAction=null;}}
  if(owner&&(owner.x<2||owner.x>98||owner.y<2||owner.y>62)){owner.x=clamp(owner.x,3,97);owner.y=clamp(owner.y,3,61);}
 }
 function render(){$('control-status').textContent=owner&&elapsed<owner.controlUntil?(owner.t?'Rojo':'Azul')+' #'+owner.n+' prepara la recepción · '+(owner.controlUntil-elapsed).toFixed(2)+' s restantes':'';for(const p of players)$('facing-'+p.t+'-'+p.n).setAttribute('transform','rotate('+(p.bodyAngle*180/Math.PI).toFixed(1)+')');renderDestinationTrace();renderOffBall();if(matchStopped)syncControls();for(const p of players)p.el.setAttribute('display',p.sentOff?'none':'inline');renderRules();renderPhase();renderMeasurement();renderExecution();renderDefense();for(const p of players){p.el.setAttribute('class','player'+(guided&&p===owner?' decision-owner':guided&&p.t===0&&Object.values(options).some(o=>o.n===p.n)?' decision-target':''));}for(const p of players)p.el.setAttribute('transform',`translate(${(45+p.x*9.1).toFixed(1)} ${(34+p.y*9.1).toFixed(1)})`);ball.setAttribute('cx',(45+bx*9.1).toFixed(1));ball.setAttribute('cy',(34+by*9.1-ballHeight*3).toFixed(1));ball.setAttribute('r',(6.5+ballHeight*.7).toFixed(1));const s=Math.floor(elapsed);clockEl.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')+(guided?'.'+Math.floor((elapsed%1)*10):'');scoreEl.textContent=score.join(' - ');}

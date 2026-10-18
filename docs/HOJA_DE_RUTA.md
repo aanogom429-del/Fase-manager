@@ -344,3 +344,5 @@ Decisión técnica pendiente: progresión mediante parámetros adaptativos o apr
 - Las mejoras entrenadas persisten y se evalúan frente a una línea base y en situaciones no ensayadas.
 - Se preservan el diseño, los controles y la capacidad de comparar decisiones.
 
+
+Ampliación 0.38: «Repetir pase: A → B → A» devuelve a la posición actual de A sin imponer la carrera de pared. Conserva la opción de primer toque, el control alternativo si no es viable y la cancelación si A deja de estar disponible. Pruebas específicas de destino, control y cancelación añadidas.

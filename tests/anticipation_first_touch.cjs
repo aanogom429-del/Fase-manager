@@ -11,18 +11,27 @@ assert.equal(e.t.anticipateFlight({...runner,x:95},f),null);assert.equal(e.t.ant
 assert.equal(e.t.anticipateFlight(runner,{...f,age:1}),null);
 const mirrored=e.t.anticipateFlight({...runner,t:1,x:70,y:29},{...f,t:1,x:90,y:32,tx:60});
 assert(Math.abs(mirrored.x-(100-point.x))<1e-10);assert.equal(mirrored.time,point.time);
-function wall(firstTouch=true,facing=true,pressure=false){
+function wall(firstTouch=true,facing=true,pressure=false,repeat=false){
  const sim=env();sim.t.scenario({time:1,team:0,seed:73});const s=sim.t.get(),actor=s.owner;
  for(const p of s.players){p.x=p.t?95:15;p.y=10+(p.id%11)*4;}
  actor.x=50;actor.y=32;const target=s.players.find(p=>p.t===0&&p.n===8);target.x=70;target.y=32;target.bodyAngle=facing?Math.PI:0;
  if(pressure){const rival=s.players.find(p=>p.t===1);rival.x=71;rival.y=32;}
- sim.t.executeTechnique({kind:'wall',n:8,title:'Pared',firstTouch});sim.t.capture(target,'recibe');return {sim,actor,target};
+ if(repeat){sim.t.prepareDecision();sim.nodes['target-player'].onchange({target:{value:'8'}});sim.t.playChoice('repeat');}else sim.t.executeTechnique({kind:'wall',n:8,title:'Pared',firstTouch});sim.t.capture(target,'recibe');return {sim,actor,target};
 }
 const direct=wall();assert.equal(direct.sim.t.get().techAction.returnMode,'firstTouch');assert.equal(direct.target.controlDuration,0);
 direct.sim.t.update(.001);assert.equal(direct.sim.t.get().passes,2,'return in same update without control delay');assert.equal(direct.sim.t.get().flight.target,direct.actor);
 assert.equal(direct.sim.t.get().techAction.phase,1);assert(direct.sim.t.get().flight.execution,'normal pass error remains active');
 for(const w of [wall(false),wall(true,false),wall(true,true,true)]){assert.equal(w.sim.t.get().techAction.returnMode,'control');assert(w.target.controlDuration>0,'fallback retains preparation');}
 const cancelled=wall(false);cancelled.actor.sentOff=true;cancelled.sim.t.update(.001);assert.equal(cancelled.sim.t.get().techAction,null,'unavailable return recipient cancels wall');
+// Repeat returns to A's actual position, without the wall's prescribed forward run.
+const repeated=wall(true,true,false,true);assert.equal(repeated.sim.t.get().techAction.returnMode,'firstTouch');
+repeated.actor.x=48;repeated.actor.y=34;repeated.sim.t.update(.001);
+assert.equal(repeated.sim.t.get().flight.target,repeated.actor);assert.equal(repeated.sim.t.get().passes,2);
+assert(Math.abs(repeated.sim.t.get().flight.tx-repeated.actor.x)<3,'return aims at A, not the wall run nine units ahead');
+const repeatedControl=wall(true,false,false,true);assert.equal(repeatedControl.sim.t.get().techAction.returnMode,'control');
+repeatedControl.sim.t.update(.001);assert.equal(repeatedControl.sim.t.get().passes,1);
+const repeatedGone=wall(true,true,false,true);repeatedGone.actor.sentOff=true;repeatedGone.sim.t.update(.001);
+assert.equal(repeatedGone.sim.t.get().techAction,null);assert.equal(repeatedGone.sim.t.get().passes,1);
 // A -> B -> C: the first-touch recipient is chosen explicitly, not forced back to A.
 function relay(facing=true){
  const sim=env();sim.t.scenario({time:1,team:0,seed:73});const s=sim.t.get(),a=s.owner;

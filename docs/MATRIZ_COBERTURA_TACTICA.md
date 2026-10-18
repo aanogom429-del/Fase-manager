@@ -201,3 +201,5 @@ La preparación de 0.37 se evita solo en un primer toque viable; se comprueban r
 Pruebas: tests/anticipation_first_touch.cjs contrasta tiempos de llegada, llegada durante la demora, encuentro alcanzable, geometría reflejada, exclusión aérea, A→B→A y A→B→C, conservación de C tras control, cancelación sin redirección a A, selector/restauración, error de pase y velocidades. Se actualizan pruebas de recepción para admitir punto de encuentro, no exigir siempre destino final. Las reproducciones de informes 0.34 y 0.35 usan las instantáneas correspondientes; no validan 0.38.
 
 Próximo incremento: ampliar percepción/anticipación al destino de pases al espacio y contrastar estas decisiones con escenarios de oposición, sin confundir menor tiempo de llegada con ventaja táctica suficiente. C05 e individualidad permanecen parciales.
+
+Ampliación 0.38: «Repetir pase: A → B → A» devuelve a la posición actual de A sin imponer la carrera de pared. Conserva la opción de primer toque, el control alternativo si no es viable y la cancelación si A deja de estar disponible. Pruebas específicas de destino, control y cancelación añadidas.

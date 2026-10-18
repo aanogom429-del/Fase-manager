@@ -25,6 +25,8 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 
 # Actualizaciones completadas · 18 de octubre de 2026
 
+- **Representación corporal de 0.36:** la marca amarilla se sustituye por dos bracitos cortos, a ambos lados y ligeramente inclinados hacia el frente. Giran con la misma orientación corporal. Cambio visual solicitado por el usuario; se conserva apertura perceptiva de 220° (±110°), giro y decisiones. Comprobados los 22 indicadores.
+
 - **0.36 — Orientación corporal y primera percepción angular (A2).** Marca amarilla por jugador, orientación persistente y giro gradual. Las decisiones automáticas del poseedor filtran receptores, dirección de tiro y conducción según orientación. Sin solución elegida, detiene desplazamiento y gira para buscar. Recepción conserva orientación; decisiones explícitas del usuario siguen autorizadas. Parámetros provisionales: 220° de apertura y 180°/s de giro, sin calibración científica.
 
 Estado escalar conservado al pausar, cambiar de modo y comparar decisiones. No introduce memoria visual, oclusión, percepción limitada de rivales, mirada independiente ni coste corporal del control de balón. No cambia distancias de apoyo ni aprende del tracking. El informe de 0.35 se reproduce desde su instantánea y se muestra como histórico.

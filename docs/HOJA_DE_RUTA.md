@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.36. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.37. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -8,7 +8,7 @@ Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). 
 |---|---|---|
 | A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
 | A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada; contraste con poseedor en tres ventanas nuevas: una activación con mejora pequeña y dos sin activación. Validación general pendiente |
-| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | Primera implementación en 0.36: orientación y filtro perceptivo automático. Siguiente: recepción/control y preparación del giro; memoria, trayectorias y capacidades siguen pendientes |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación y filtro perceptivo; 0.37: preparación de recepción rasa. Siguiente: anticipación de trayectorias y llegada; memoria y capacidades siguen pendientes |
 | A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
 | A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
 | A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
@@ -24,6 +24,12 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 ---
 
 # Actualizaciones completadas · 18 de octubre de 2026
+
+- **0.37 — Preparación de recepción rasa según perfilación (A2).** Diferencia angular respecto al origen del pase determina una espera provisional de 0,12–0,47 s. Durante ella el receptor gira gradualmente, permanece en posición y espera antes de decidir automáticamente. La orden técnica del usuario se conserva y ejecuta una sola vez cuando está listo; pérdida o reanudación la cancelan. La devolución de pared respeta la preparación.
+
+Estado de control conservado al pausar y restaurar; indicador de tiempo restante junto al campo. Se mantienen los dos bracitos y la apertura perceptiva de 220°. No incluye control aéreo, pie dominante, errores del primer toque ni desplazamiento de control orientado. Parámetros provisionales, sin ajuste a tracking ni aprendizaje. El informe 0.35 sigue siendo histórico.
+
+Verificación: 15 suites seleccionadas superadas, incluyendo recepción, orientación, continuidad, apoyos, inspector, órdenes, reglas, fuera de juego, faltas, disciplina, ventaja y reproducción histórica. Pruebas de cara/de espaldas en ambos sentidos, giro gradual, órdenes diferidas, pausa/repetición, pérdida, reanudación y pared en tests/reception.cjs. **Siguiente paso:** anticipación de trayectorias y tiempos de llegada, manteniendo abiertos los límites de percepción e individualidad.
 
 - **Representación corporal de 0.36:** la marca amarilla se sustituye por dos bracitos cortos, a ambos lados y ligeramente inclinados hacia el frente. Giran con la misma orientación corporal. Cambio visual solicitado por el usuario; se conserva apertura perceptiva de 220° (±110°), giro y decisiones. Comprobados los 22 indicadores.
 

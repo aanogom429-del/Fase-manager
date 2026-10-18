@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.40. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.41. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -8,7 +8,7 @@ Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). 
 |---|---|---|
 | A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
 | A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada; contraste con poseedor en tres ventanas nuevas: una activación con mejora pequeña y dos sin activación. Validación general pendiente |
-| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación; 0.37: preparación; 0.38: llegada y encuentro con pase raso, primer toque A→B→A/C. 0.39: destino anticipado del pase al espacio guiado. 0.40: memoria temporal de compañeros en pases autónomos. Siguiente: percepción de rivales y riesgo incierto; capacidades y aceleración pendientes |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación; 0.37: preparación; 0.38: llegada y encuentro con pase raso, primer toque A→B→A/C. 0.39: destino anticipado del pase al espacio guiado. 0.40: memoria temporal de compañeros en pases autónomos. 0.41: rivales recordados e incertidumbre en decisión autónoma. Siguiente: acoplar giro y desplazamiento; capacidades y aceleración pendientes |
 | A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
 | A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
 | A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
@@ -25,11 +25,18 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 
 # Actualizaciones completadas · 18 de octubre de 2026
 
+- **0.41 — Rivales percibidos e incertidumbre (A2, I03/C03/T01).** Recuerdo de última posición rival con la misma caducidad provisional de 1,5 s. Al salir del cono no se actualiza su posición. La zona de incertidumbre crece a 2 unidades/s y disminuye la confianza hasta caducar.
+- Presión estimada, libertad del receptor, valoración de pase/centro y corredor de conducción usan ese recuerdo. La falta de información incorpora riesgo basal y limita la estimación de espacio libre; no equivale a ausencia de rivales. La sospecha de fuera de juego para elegir pase usa defensores recordados, mientras la sanción real mantiene las posiciones reales al golpeo.
+- Estado independiente en pausa/restauración y limpieza en reanudaciones. Los parámetros son heurísticos comunes, no capacidades calibradas. Contacto, ejecución bajo presión física, reglas, movimientos colectivos y órdenes guiadas mantienen estado real.
+- Verificación: ocho suites superadas (opponent_perception, perceptual_memory, orientation, continuity, offside, anticipation_first_touch, lead_pass, reception), incluidas tres simulaciones libres de 60 s. Pruebas emparejadas: mover un rival oculto sin hacerlo visible no altera la valoración ni el destino elegido.
+- **Siguiente paso vigente A2:** acoplar la orientación corporal al desplazamiento para que girar tenga consecuencias al cambiar de dirección. Siguen abiertos aceleración, diferencias individuales, atención, oclusión y percepción de jugadores sin balón.
+
+
 - **0.40 — Memoria perceptiva limitada de compañeros (A2, I03/T01).** Cada jugador observa a sus compañeros dentro del cono existente de 220° y conserva únicamente identidad, última posición y tiempo de observación. Fuera del cono no se actualiza esa posición; caduca a los 1,5 s de tiempo simulado. Parámetro provisional común, no calibrado.
 - La elección autónoma de pases y centros usa posiciones observadas o recordadas, conservando la identidad real del destinatario para el contacto y las reglas. El pase raso penaliza la antigüedad de la información (3 puntos de valoración/s). Puede pasar a un lugar que el compañero ya abandonó. Volver a observar renueva el recuerdo; un compañero expulsado no es elegible.
 - Estado copiado de forma independiente al guardar/restaurar, congelado con la pausa y vaciado al reiniciar situación, saque inicial o reanudación. No se afirma aprendizaje.
 - Verificación: siete suites superadas (perceptual_memory, orientation, continuity, anticipation_first_touch, lead_pass, offside, reception), incluyendo simetría, destino recordado frente a posición real, caducidad, renovación, pausa, restauración determinista y tres simulaciones libres de 60 s.
-- **Siguiente paso vigente:** limitar la información de rivales en la valoración autónoma de presión y líneas de pase, tratando lo desconocido como incertidumbre, no como espacio garantizado. Movimientos colectivos, órdenes guiadas, reglas y contacto físico conservan por ahora información global.
+- **Siguiente paso previsto en 0.40 (atendido para decisiones del poseedor en 0.41):** limitar la información de rivales en la valoración autónoma de presión y líneas de pase, tratando lo desconocido como incertidumbre, no como espacio garantizado. Movimientos colectivos, órdenes guiadas, reglas y contacto físico conservan por ahora información global.
 
 
 - **0.39 — Destino del pase al espacio según trayectoria (A2, C05).** Sustituye el avance fijo de ocho unidades por un encuentro estimado con el receptor usando su velocidad observada, limitada a su velocidad máxima, y la velocidad del pase raso (35 unidades/s). Iteración determinista con horizonte provisional de 1,2 s y destino dentro del campo. Atiende desplazamientos longitudinales, laterales y de retroceso; no impone un desmarque a jugadores parados.

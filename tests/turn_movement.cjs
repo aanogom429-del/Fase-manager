@@ -1,0 +1,23 @@
+const assert=require('node:assert/strict'),{env}=require('./continuity.cjs');
+const e=env(),make=angle=>({x:40,y:32,speed:8,bodyAngle:angle,vx:0,vy:0});
+const forward=make(0),lateral=make(Math.PI/2),backward=make(Math.PI);
+for(const p of [forward,lateral,backward])e.t.advancePlayer(p,80,32,.1);
+assert(forward.x>lateral.x&&lateral.x>backward.x&&backward.x>40,'side/back travel remains possible with angular cost');
+assert(Math.abs(forward.x-40.8)<1e-10);assert(Math.abs(backward.bodyAngle-.9*Math.PI)<1e-10);
+assert(Math.abs(e.t.strideDistance(8,0,Math.PI,Math.PI,1)-3.6)<1e-10);
+const one=make(Math.PI),split=make(Math.PI);e.t.advancePlayer(one,80,32,1.2);
+for(let i=0;i<120;i++)e.t.advancePlayer(split,80,32,.01);
+assert(Math.abs(one.x-split.x)<1e-8,'integrating the turn is independent of time-step subdivision');
+assert(Math.abs(one.x-(40+8*.725+8*.2))<1e-8);
+const mirror={...make(0),x:60};e.t.advancePlayer(mirror,20,32,.1);assert(Math.abs(mirror.x-(100-backward.x))<1e-8);
+const facing=e.t.arrivalTime(make(0),{x:60,y:32}),turned=e.t.arrivalTime(make(Math.PI),{x:60,y:32});
+assert(turned>facing);assert(Math.abs(turned-(1+(20-8*.725)/8))<1e-8);
+const short=make(Math.PI),eta=e.t.arrivalTime(short,{x:41,y:32});e.t.advancePlayer(short,41,32,eta);assert(Math.abs(short.x-41)<1e-5,'short-trip arrival matches actual angular integration');
+const boundary={...make(Math.PI),x:0,y:0};e.t.advancePlayer(boundary,2,2,.01);assert(boundary.x<.08&&boundary.y<.08,'no teleport away from boundary');
+// Actual movement pipeline applies the cost and retry preserves its initial orientation.
+const sim=env();sim.t.scenario({time:1,team:0,seed:73});const p=sim.t.get().owner;
+p.x=40;p.y=32;p.bodyAngle=Math.PI;p.driveX=80;p.driveY=32;p.scanUntil=0;p.controlUntil=0;sim.t.prepareDecision();
+sim.t.movement(.1);assert(p.x>40&&p.x<40+p.speed*.1);const state=JSON.stringify([p.x,p.y,p.bodyAngle,p.vx,p.vy]);
+sim.t.restorePosition();sim.t.movement(.1);assert.equal(JSON.stringify([p.x,p.y,p.bodyAngle,p.vx,p.vy]),state);
+assert(sim.t.get().players.every(p=>Number.isFinite(p.vx)&&Math.hypot(p.vx,p.vy)<=p.speed+1e-8));
+console.log('PASS: angular speed cost, lateral/backward mobility, exact integrated turn, step invariance, mirror, arrival consistency, bounds and movement/retry');

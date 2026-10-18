@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.38. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.39. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -8,7 +8,7 @@ Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). 
 |---|---|---|
 | A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
 | A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada; contraste con poseedor en tres ventanas nuevas: una activación con mejora pequeña y dos sin activación. Validación general pendiente |
-| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación; 0.37: preparación; 0.38: llegada y encuentro con pase raso, primer toque A→B→A/C. Siguiente: destino anticipado de pases al espacio; memoria y capacidades siguen pendientes |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación; 0.37: preparación; 0.38: llegada y encuentro con pase raso, primer toque A→B→A/C. 0.39: destino anticipado del pase al espacio guiado. Siguiente: memoria perceptiva limitada; capacidades y aceleración siguen pendientes |
 | A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
 | A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
 | A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
@@ -25,13 +25,20 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 
 # Actualizaciones completadas · 18 de octubre de 2026
 
+- **0.39 — Destino del pase al espacio según trayectoria (A2, C05).** Sustituye el avance fijo de ocho unidades por un encuentro estimado con el receptor usando su velocidad observada, limitada a su velocidad máxima, y la velocidad del pase raso (35 unidades/s). Iteración determinista con horizonte provisional de 1,2 s y destino dentro del campo. Atiende desplazamientos longitudinales, laterales y de retroceso; no impone un desmarque a jugadores parados.
+- Si no hay movimiento anticipable o la estimación de llegada no permite alcanzar el destino, pasa a la posición actual; la opción guiada informa de esta alternativa. Recalcula al ejecutar, también tras una espera de control. Conserva dispersión de ejecución y reglas.
+- Alcance: opción guiada «Pase al espacio». No incorpora selección autónoma de estos pases, aceleración, cambios futuros de dirección ni validación con tracking real. La anticipación no garantiza recepción ni evita interceptaciones.
+- Verificación: nueva prueba de encuentro analítico longitudinal/lateral, retroceso, simetría, límites, horizonte, reposo, ejecución guiada, restauración y fuera de juego; regresiones de anticipación/primer toque, recepción, continuidad y fuera de juego.
+- **Siguiente paso vigente:** memoria perceptiva limitada y caducidad de la información, para avanzar A2 sin tratar la posición de todos los compañeros como conocimiento permanente.
+
+
 - **0.38 — Anticipación y primer toque hacia otro compañero (A2).** Tiempo de llegada incorpora velocidad ejecutada y demora de lectura; acceso al balón, presión y cobertura comparten la estimación. Receptor y primer defensor buscan puntos alcanzables de un pase raso durante un horizonte máximo de 0,8 s. Estimación provisional, sin física de aceleración ni trayectorias aéreas.
 
 Primer toque generalizado dentro de combinaciones guiadas: pared A→B→A o pase A→B→C, con selectores independientes para B y C. También se ofrece pared con control. Si orientación, trayectoria u oposición impiden el primer toque, conserva el destinatario y controla; si éste desaparece, cancela, sin volver automáticamente a A. Mantiene error de pase y comprobaciones reglamentarias. La selección se restaura al repetir. Todavía no se aplica a todas las decisiones autónomas.
 
 Verificación inicial: 19 suites seleccionadas superadas; tras añadir A→B→C, se repiten las pruebas afectadas de combinación, recepción, continuidad, órdenes, fuera de juego, inspector y contraste histórico. Los informes antiguos permanecen vinculados a sus fuentes 0.34/0.35. No se presenta validación con partidos reales de 0.38 ni aprendizaje.
 
-**Siguiente paso:** destino anticipado de pases al espacio y coherencia con el desplazamiento del receptor; mantener abiertos memoria perceptiva, aceleración y validación táctica.
+**Siguiente paso previsto en 0.38 (atendido en 0.39):** destino anticipado de pases al espacio y coherencia con el desplazamiento del receptor; mantener abiertos memoria perceptiva, aceleración y validación táctica.
 
 - **0.37 — Preparación de recepción rasa según perfilación (A2).** Diferencia angular respecto al origen del pase determina una espera provisional de 0,12–0,47 s. Durante ella el receptor gira gradualmente, permanece en posición y espera antes de decidir automáticamente. La orden técnica del usuario se conserva y ejecuta una sola vez cuando está listo; pérdida o reanudación la cancelan. La devolución de pared respeta la preparación.
 

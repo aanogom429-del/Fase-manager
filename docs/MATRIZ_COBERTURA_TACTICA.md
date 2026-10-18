@@ -25,7 +25,7 @@ Las situaciones de aceptación de las tablas son **especificaciones pendientes d
 | C02 | Ubicación · Parcial | Líneas de pase, separación y destinos por roles | Relación con líneas rivales, espacios accesibles y utilidad de permanecer | Una posición útil se mantiene; otra tapada se adapta sin duplicar al compañero |
 | C03 | Perfilación · Parcial | 0.37: orientación y giro limitado, filtro automático y preparación de recepción rasa | Control orientado con desplazamiento, primer toque, mirada independiente y acoplamiento al desplazamiento | Misma posición, balón y rivales, distinta orientación: cambiar tiempo o repertorio viable de recepción |
 | C04 | Individualidad · Parcial | players: speed, reactionDelay y passPrecision derivados del puesto | Ocho áreas I01–I08, diferenciación estable y límites observables | Variar una capacidad en escenarios emparejados afecta su mecanismo específico sin bonificación global |
-| C05 | Trayectorias · Parcial | 0.38: velocidad del movimiento, llegada con demora y encuentro anticipado con pase raso | Aceleración, inercia, giro acoplado al movimiento y anticipación aérea | Dos jugadores equidistantes con movimientos opuestos no tienen automáticamente la misma llegada |
+| C05 | Trayectorias · Parcial | 0.38: velocidad, llegada y encuentro; 0.39: destino del pase al espacio guiado según trayectoria | Aceleración, inercia, giro acoplado al movimiento y anticipación aérea | Dos jugadores equidistantes con movimientos opuestos no tienen automáticamente la misma llegada |
 | C06 | Resonancia empática · Pendiente | Pared y coordinación programada de destinos; no equivalen al constructo | Ajuste recíproco, anticipación de compañeros y asociaciones contextualizadas | Si un apoyo cambia su intención, el otro adapta la suya; diferenciar coordinación programada de relación aprendida |
 | C07 | Integración simultánea · Parcial | Cálculos geométricos repartidos entre funciones | Lectura compartida que combine criterios sin una cadena rígida de fases | Un cambio de orientación o rival actualiza opciones, espacio funcional e intención; explicar factores y conflictos |
 
@@ -203,3 +203,9 @@ Pruebas: tests/anticipation_first_touch.cjs contrasta tiempos de llegada, llegad
 Próximo incremento: ampliar percepción/anticipación al destino de pases al espacio y contrastar estas decisiones con escenarios de oposición, sin confundir menor tiempo de llegada con ventaja táctica suficiente. C05 e individualidad permanecen parciales.
 
 Ampliación 0.38: «Repetir pase: A → B → A» devuelve a la posición actual de A sin imponer la carrera de pared. Conserva la opción de primer toque, el control alternativo si no es viable y la cancelación si A deja de estar disponible. Pruebas específicas de destino, control y cancelación añadidas.
+
+
+## Evidencia A2 · pase al espacio 0.39
+C05 sigue parcial. El destino de la opción guiada se calcula mediante encuentro con velocidad constante observada, limitada a la velocidad del jugador, horizonte de 1,2 s y límites del terreno. Compara la llegada estimada con el tiempo de vuelo y vuelve a la posición actual si no hay una anticipación viable. Para un receptor parado no inventa una carrera. Dirección lateral y retroceso son válidas; no presupone avance hacia portería.
+
+La precisión, oposición y fuera de juego siguen actuando. El destino se recalcula al ejecutar la acción. Pruebas en tests/lead_pass.cjs contrastan solución analítica, ejecución por interfaz, restauración, límites y sanción por fuera de juego. No añade política autónoma de pase al espacio ni aceleración, percepción con memoria, cambios de trayectoria futuros o validación empírica. Parámetros provisionales. Siguiente subpaso A2: memoria perceptiva limitada.

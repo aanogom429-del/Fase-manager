@@ -25,7 +25,7 @@ function run(){
  }
  // Flight target overrides the cached intention and is labelled separately.
  const e=env();e.t.setDestinationTrace(true);e.t.scenario({time:2,team:0});const target=e.t.get().players.find(p=>p.t===0&&p.n===10);e.t.kickTo(e.t.get().owner,target.x,target.y,'pass',target);e.t.movement(.02);
- const receiver=e.t.getDestinationTrace().rows.find(r=>r.id===target.id);assert.equal(receiver.source,'recepción');assert.equal(receiver.appliedX,e.t.get().flight.tx);
+ const receiver=e.t.getDestinationTrace().rows.find(r=>r.id===target.id);assert.equal(receiver.source,'recepción');assert.equal(receiver.appliedX,receiver.steps.find(s=>s.stage==='Recepción anticipada'||s.stage==='Recepción al destino').x);
  const ui=env();ui.nodes['destination-enabled'].onchange({target:{checked:true}});ui.t.movement(.02);ui.t.render();assert(ui.nodes['destination-detail'].innerHTML.includes('Último paso registrado'));
  ui.nodes['destination-detail'].innerHTML='expanded cached provenance';ui.t.render();assert.equal(ui.nodes['destination-detail'].innerHTML,'expanded cached provenance','paused render must preserve expanded details');
  ui.t.prepareDecision();ui.t.restorePosition();assert.equal(ui.t.getDestinationTrace().rows.length,0);

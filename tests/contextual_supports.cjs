@@ -38,7 +38,7 @@ for(const t of [0,1]){
  const rival=now.rivals[5];now.e.t.capture(rival,'test loss');now.e.t.movement(.02);
  assert(now.e.t.getDestinationTrace().rows.filter(r=>r.team===t).every(r=>!r.steps.some(s=>s.stage==='Conservar pareja conectada')));
  const flight=setup(t);flight.e.t.kickTo(flight.s.owner,flight.a.x,flight.a.y,'pass',flight.a);flight.e.t.movement(.02);
- const row=flight.e.t.getDestinationTrace().rows.find(r=>r.id===flight.a.id);assert.equal(row.source,'recepción');assert.equal(row.appliedX,flight.e.t.get().flight.tx);
+ const row=flight.e.t.getDestinationTrace().rows.find(r=>r.id===flight.a.id);assert.equal(row.source,'recepción');assert.equal(row.appliedX,row.steps.find(s=>s.stage==='Recepción anticipada'||s.stage==='Recepción al destino').x);
 }
 // A pending explicit order invalidates using its player as the preserved safety option.
 const ordered=setup(0);assert(ordered.e.t.queueOffBall(ordered.b.id,'depth'));ordered.e.t.commitOffBall();ordered.e.t.attackingTargets(0,ordered.ball);

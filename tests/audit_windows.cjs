@@ -1,3 +1,5 @@
+// Archived 0.34 replay; not a validation of the current engine.
+process.env.FASE_ENGINE_SOURCE=require('node:path').join(__dirname,'fixtures/engine-v034.html');
 const assert=require('node:assert/strict'),{evaluate}=require('../scripts/evaluate_game2.cjs'),{env}=require('./continuity.cjs');
 const data=require('../data/audit-windows.json'),report=require('../data/audit-validation.json'),original=require('../data/metrica-analysis.json');
 async function run(){

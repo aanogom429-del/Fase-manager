@@ -1,3 +1,5 @@
+// Archived 0.34 replay; not a validation of the current engine.
+process.env.FASE_ENGINE_SOURCE=require('node:path').join(__dirname,'fixtures/engine-v034.html');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {evaluate,definitions}=require('../scripts/evaluate_game2.cjs'),{env}=require('./continuity.cjs');
 const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/metrica-analysis.json'),'utf8'));

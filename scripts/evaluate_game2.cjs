@@ -6,7 +6,7 @@ const engineVersion=html.match(/FASE MANAGER · ([0-9.]+)/)[1];
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/metrica-analysis.json'),'utf8'));
 const definitions=[{id:'game2-throw',start:28.28,end:32.32,attacking:true},{id:'game2-corner',start:420.24,end:424.32,attacking:false}];
 function environment(options={}){
- let engine=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+ let engine=require('./attack_interventions.cjs').intervene(html.match(/<script>([\s\S]*?)<\/script>/)[1],options.disabledMechanisms);
  if(options.statelessSupports){assert(engine.includes('const ranked=selectAttackSupports(mates,focus,supportValue);'));engine=engine.replace('const ranked=selectAttackSupports(mates,focus,supportValue);','const ranked=mates.filter(p=>p!==focus&&!isKeeper(p)).sort((a,b)=>supportValue(b)-supportValue(a)||a.id-b.id).slice(0,2);');}
  const source=engine.replace('startSituation();requestAnimationFrame(frame);',`globalThis.replay={
  init:(ps,point,attacking)=>{guided=true;selected=null;elapsed=0;owner=null;loose=false;techAction=null;flight={t:attacking?0:1,target:null};bx=point[0];by=point[1];

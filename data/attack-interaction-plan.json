@@ -1,0 +1,8 @@
+{
+ "engineVersion":"0.34",
+ "factors":["supportTargets","balanceCap","longitudinalFollow"],
+ "clips":["away-progress","home-progress","contrast-progress","support-holdout-a","support-holdout-b","support-holdout-c"],
+ "design":"Full 2^3 factorial, fixed before outcomes. Disable mechanisms separately and together; retain all results and exclusions. No parameter search or automatic policy choice.",
+ "scope":"supportTargets disables only the fixed support destination override, retaining selection, persistence and exclusions from other duties. balanceCap disables only the 13-unit rear cap, retaining selection and final-third floors. longitudinalFollow disables only longitudinal displacement of the possession anchor, retaining lateral following and all other role targets. Endogenous assignments may change with trajectories. Effects are conditional on this simulator and replay, not causal effects in real football.",
+ "decision":"Inspect interactions and contradictory directions, not minimum-error arm. Existing diagnostic samples are not fresh validation. Do not change deployed movement in this step."
+}

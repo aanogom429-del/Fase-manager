@@ -21,7 +21,7 @@ const script=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace('startSituati
 };`);
 function environment(options={}){
  const nodes={};class E{constructor(){this.style={};this.dataset={};this.children=[];}setAttribute(){}append(...x){this.children.push(...x);}appendChild(x){this.append(x);}replaceChildren(...x){this.children=x;}querySelectorAll(){return this.children;}insertAdjacentElement(){}insertAdjacentHTML(){}}
- let source=script;
+ let source=require('./attack_interventions.cjs').intervene(script,options.disabledMechanisms);
  if(options.legacyHeights||options.statelessSupports||options.supportTimeline)source=source.replace(' const ranked=selectAttackSupports(mates,focus,supportValue);',' const ranked=mates.filter(p=>p!==focus&&!isKeeper(p)).sort((a,b)=>supportValue(b)-supportValue(a)||a.id-b.id).slice(0,2);');
  if(options.legacyHeights)source=source.replace('if(balance.includes(p))tx=', 'if(!support&&!isWide(p)&&!isForward(p))tx=');
  if(options.supportTimeline)source=source.replace(' const ranked=mates.filter', ' let ranked=mates.filter').replace(' // Equilibrio a cargo', ' if(t===0)ranked=replaySupport(elapsed).map(n=>mates.find(p=>p.n===n));\n // Equilibrio a cargo');

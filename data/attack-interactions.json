@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "0.34",
+  "plan": {
+    "engineVersion": "0.34",
+    "factors": [
+      "supportTargets",
+      "balanceCap",
+      "longitudinalFollow"
+    ],
+    "clips": [
+      "away-progress",
+      "home-progress",
+      "contrast-progress",
+      "support-holdout-a",
+      "support-holdout-b",
+      "support-holdout-c"
+    ],
+    "design": "Full 2^3 factorial, fixed before outcomes. Disable mechanisms separately and together; retain all results and exclusions. No parameter search or automatic policy choice.",
+    "scope": "supportTargets disables only the fixed support destination override, retaining selection, persistence and exclusions from other duties. balanceCap disables only the 13-unit rear cap, retaining selection and final-third floors. longitudinalFollow disables only longitudinal displacement of the possession anchor, retaining lateral following and all other role targets. Endogenous assignments may change with trajectories. Effects are conditional on this simulator and replay, not causal effects in real football.",
+    "decision": "Inspect interactions and contradictory directions, not minimum-error arm. Existing diagnostic samples are not fresh validation. Do not change deployed movement in this step."
+  },
+  "limitations": [
+    "No deployed movement change or learning",
+    "Old diagnostic clips; no new match or independent validation",
+    "Metrics from the two evaluators are not pooled",
+    "Removal may suppress useful behaviour; lower error is not proof of better football",
+    "Selection and final-third constraints remain active; these are narrowly defined interventions"
+  ],
+  "clips": [
+    {
+      "id": "away-progress",
+      "metric": "Game 1 sampled time-weighted position error",
+      "arms": [
+        {
+          "mask": 0,
+          "disabled": [],
+          "errorM": 10.107853286750426,
+          "deltaM": 0
+        },
+        {
+          "mask": 1,
+          "disabled": [
+            "supportTargets"
+          ],
+          "errorM": 9.094444213629906,
+          "deltaM": -1.0134090731205205
+        },
+        {
+          "mask": 2,
+          "disabled": [
+            "balanceCap"
+          ],
+          "errorM": 10.107853286750426,
+          "deltaM": 0
+        },
+        {
+          "mask": 3,
+          "disabled": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "errorM": 9.094444213629906,
+          "deltaM": -1.0134090731205205
+        },
+        {
+          "mask": 4,
+          "disabled": [
+            "longitudinalFollow"
+          ],
+          "errorM": 11.106165331846853,
+          "deltaM": 0.9983120450964265
+        },
+        {
+          "mask": 5,
+          "disabled": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "errorM": 11.003068088613055,
+          "deltaM": 0.8952148018626289
+        },
+        {
+          "mask": 6,
+          "disabled": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 11.106165331846853,
+          "deltaM": 0.9983120450964265
+        },
+        {
+          "mask": 7,
+          "disabled": [
+            "supportTargets",
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 11.003068088613055,
+          "deltaM": 0.8952148018626289
+        }
+      ],
+      "pairs": [
+        {
+          "factors": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "interactionM": 0
+        },
+        {
+          "factors": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "interactionM": 0.910311829886723
+        },
+        {
+          "factors": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "interactionM": 0
+        }
+      ],
+      "tripleInteractionM": 0
+    },
+    {
+      "id": "home-progress",
+      "metric": "Game 1 sampled time-weighted position error",
+      "arms": [
+        {
+          "mask": 0,
+          "disabled": [],
+          "errorM": 6.596896153922528,
+          "deltaM": 0
+        },
+        {
+          "mask": 1,
+          "disabled": [
+            "supportTargets"
+          ],
+          "errorM": 6.70022814368709,
+          "deltaM": 0.1033319897645617
+        },
+        {
+          "mask": 2,
+          "disabled": [
+            "balanceCap"
+          ],
+          "errorM": 7.310733440656027,
+          "deltaM": 0.713837286733499
+        },
+        {
+          "mask": 3,
+          "disabled": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "errorM": 6.838370468915859,
+          "deltaM": 0.24147431499333116
+        },
+        {
+          "mask": 4,
+          "disabled": [
+            "longitudinalFollow"
+          ],
+          "errorM": 6.912720471527986,
+          "deltaM": 0.3158243176054576
+        },
+        {
+          "mask": 5,
+          "disabled": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "errorM": 7.576051892524986,
+          "deltaM": 0.9791557386024579
+        },
+        {
+          "mask": 6,
+          "disabled": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 7.572023899554974,
+          "deltaM": 0.9751277456324461
+        },
+        {
+          "mask": 7,
+          "disabled": [
+            "supportTargets",
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 7.63798431888256,
+          "deltaM": 1.0410881649600316
+        }
+      ],
+      "pairs": [
+        {
+          "factors": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "interactionM": -0.5756949615047295
+        },
+        {
+          "factors": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "interactionM": 0.5599994312324386
+        },
+        {
+          "factors": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "interactionM": -0.05453385870651051
+        }
+      ],
+      "tripleInteractionM": -0.02167604016468605
+    },
+    {
+      "id": "contrast-progress",
+      "metric": "Game 1 sampled time-weighted position error",
+      "arms": [
+        {
+          "mask": 0,
+          "disabled": [],
+          "errorM": 9.275254757506465,
+          "deltaM": 0
+        },
+        {
+          "mask": 1,
+          "disabled": [
+            "supportTargets"
+          ],
+          "errorM": 7.948024105309502,
+          "deltaM": -1.3272306521969632
+        },
+        {
+          "mask": 2,
+          "disabled": [
+            "balanceCap"
+          ],
+          "errorM": 9.094585935610727,
+          "deltaM": -0.18066882189573796
+        },
+        {
+          "mask": 3,
+          "disabled": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "errorM": 7.849546750071857,
+          "deltaM": -1.4257080074346078
+        },
+        {
+          "mask": 4,
+          "disabled": [
+            "longitudinalFollow"
+          ],
+          "errorM": 8.981451437956471,
+          "deltaM": -0.29380331954999406
+        },
+        {
+          "mask": 5,
+          "disabled": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "errorM": 8.241222847167123,
+          "deltaM": -1.0340319103393423
+        },
+        {
+          "mask": 6,
+          "disabled": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 8.088245993907389,
+          "deltaM": -1.187008763599076
+        },
+        {
+          "mask": 7,
+          "disabled": [
+            "supportTargets",
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 7.227702072575975,
+          "deltaM": -2.0475526849304897
+        }
+      ],
+      "pairs": [
+        {
+          "factors": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "interactionM": 0.0821914666580934
+        },
+        {
+          "factors": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "interactionM": 0.587002061407615
+        },
+        {
+          "factors": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "interactionM": -0.712536622153344
+        }
+      ],
+      "tripleInteractionM": -0.20250679720015974
+    },
+    {
+      "id": "support-holdout-a",
+      "metric": "Game 2 trapezoidal time-weighted position error",
+      "arms": [
+        {
+          "mask": 0,
+          "disabled": [],
+          "errorM": 9.036010267316849,
+          "deltaM": 0,
+          "simulatedAdvanceM": 1.284398046911039,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 1,
+          "disabled": [
+            "supportTargets"
+          ],
+          "errorM": 7.134733425151069,
+          "deltaM": -1.90127684216578,
+          "simulatedAdvanceM": 2.282524752311511,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 2,
+          "disabled": [
+            "balanceCap"
+          ],
+          "errorM": 7.462406843877041,
+          "deltaM": -1.573603423439808,
+          "simulatedAdvanceM": 2.742242323880925,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 3,
+          "disabled": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "errorM": 6.876221825714189,
+          "deltaM": -2.15978844160266,
+          "simulatedAdvanceM": 2.285172093648725,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 4,
+          "disabled": [
+            "longitudinalFollow"
+          ],
+          "errorM": 7.984897923179713,
+          "deltaM": -1.0511123441371355,
+          "simulatedAdvanceM": 1.5793482568215043,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 5,
+          "disabled": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "errorM": 8.103220874789821,
+          "deltaM": -0.9327893925270274,
+          "simulatedAdvanceM": 1.3038322371605975,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 6,
+          "disabled": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 8.359733712011634,
+          "deltaM": -0.6762765553052148,
+          "simulatedAdvanceM": 1.9944711308028238,
+          "observedAdvanceM": 5.865474999999999
+        },
+        {
+          "mask": 7,
+          "disabled": [
+            "supportTargets",
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 8.052666646519768,
+          "deltaM": -0.9833436207970809,
+          "simulatedAdvanceM": 1.3038322728007539,
+          "observedAdvanceM": 5.865474999999999
+        }
+      ],
+      "pairs": [
+        {
+          "factors": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "interactionM": 1.315091824002928
+        },
+        {
+          "factors": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "interactionM": 2.019599793775888
+        },
+        {
+          "factors": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "interactionM": 1.9484392122717287
+        }
+      ],
+      "tripleInteractionM": -1.740481841104903
+    },
+    {
+      "id": "support-holdout-b",
+      "excluded": true,
+      "reason": "incomplete player positions\n\n21 !== 22\n"
+    },
+    {
+      "id": "support-holdout-c",
+      "metric": "Game 2 trapezoidal time-weighted position error",
+      "arms": [
+        {
+          "mask": 0,
+          "disabled": [],
+          "errorM": 9.461504437620897,
+          "deltaM": 0,
+          "simulatedAdvanceM": 9.231028967892916,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 1,
+          "disabled": [
+            "supportTargets"
+          ],
+          "errorM": 9.657030744620624,
+          "deltaM": 0.19552630699972617,
+          "simulatedAdvanceM": 9.733269242922471,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 2,
+          "disabled": [
+            "balanceCap"
+          ],
+          "errorM": 8.824094365340384,
+          "deltaM": -0.6374100722805132,
+          "simulatedAdvanceM": 14.004499206896172,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 3,
+          "disabled": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "errorM": 9.67488768624456,
+          "deltaM": 0.21338324862366242,
+          "simulatedAdvanceM": 13.865544810566204,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 4,
+          "disabled": [
+            "longitudinalFollow"
+          ],
+          "errorM": 6.879997656218455,
+          "deltaM": -2.5815067814024424,
+          "simulatedAdvanceM": -1.7271633780804083,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 5,
+          "disabled": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "errorM": 5.654045606477993,
+          "deltaM": -3.8074588311429043,
+          "simulatedAdvanceM": -0.4051090575757289,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 6,
+          "disabled": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 5.9438254642988575,
+          "deltaM": -3.51767897332204,
+          "simulatedAdvanceM": -1.7990518734381349,
+          "observedAdvanceM": 3.7643812499999987
+        },
+        {
+          "mask": 7,
+          "disabled": [
+            "supportTargets",
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "errorM": 4.723420109229743,
+          "deltaM": -4.738084328391154,
+          "simulatedAdvanceM": 0.010262046834967186,
+          "observedAdvanceM": 3.7643812499999987
+        }
+      ],
+      "pairs": [
+        {
+          "factors": [
+            "supportTargets",
+            "balanceCap"
+          ],
+          "interactionM": 0.6552670139044494
+        },
+        {
+          "factors": [
+            "supportTargets",
+            "longitudinalFollow"
+          ],
+          "interactionM": -1.421478356740188
+        },
+        {
+          "factors": [
+            "balanceCap",
+            "longitudinalFollow"
+          ],
+          "interactionM": -0.2987621196390844
+        }
+      ],
+      "tripleInteractionM": -0.6497203192331025
+    }
+  ]
+}

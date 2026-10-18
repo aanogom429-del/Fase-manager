@@ -934,7 +934,17 @@ for(const [id,seconds] of [['transition-zero',0],['transition-two',2],['transiti
  stopReference();const at=c.transition.anchor+seconds;referenceIndex=c.frames.reduce((best,f,i)=>Math.abs(f.time-at)<Math.abs(c.frames[best].time-at)?i:best,0);renderReference();
 };
 let defenseComparison=null,defenseComparisonLoading=false,defenseComparisonFailed=false;
-let game2Comparison=null,auditComparison=null,heightsComparison=null,supportDiagnosis=null,supportStability=null,supportHoldout=null;
+let game2Comparison=null,auditComparison=null,heightsComparison=null,supportDiagnosis=null,supportStability=null,supportHoldout=null,attackInteractions=null;
+const interactionPanel=document.createElement('details');interactionPanel.id='attack-interactions';interactionPanel.hidden=true;
+$('reference-diagnosis').insertAdjacentElement('afterend',interactionPanel);
+function renderAttackInteractions(id){
+ const c=attackInteractions&&attackInteractions.clips.find(c=>c.id===id),panel=$('attack-interactions');panel.hidden=!c;
+ if(!c){panel.innerHTML='';return;}
+ const labels={supportTargets:'Destino de apoyo',balanceCap:'Límite de equilibrio',longitudinalFollow:'Seguimiento longitudinal'};
+ panel.innerHTML='<summary><strong>Diagnóstico de interacción · ocho pruebas controladas</strong></summary>';
+ if(c.excluded){panel.innerHTML+='<p>Secuencia excluida por datos incompletos. No se reconstruye ni sustituye.</p>';return;}
+ panel.innerHTML+='<p>Motor 0.34 sin cambios. Se retiran mecanismos solo en pruebas: no son opciones de juego ni recomendaciones. Menor error no implica mejor fútbol. Secuencias ya utilizadas; sin validación independiente.</p><div style="overflow-x:auto"><table style="width:100%;text-align:left;border-collapse:collapse"><thead><tr><th>Mecanismo retirado</th><th>Error (m)</th><th>Cambio (m)</th></tr></thead><tbody>'+c.arms.map(a=>'<tr><td style="padding:5px">'+(a.disabled.map(k=>labels[k]).join(' + ')||'Ninguno · motor actual')+'</td><td>'+a.errorM.toFixed(2)+'</td><td>'+(a.deltaM>0?'+':'')+a.deltaM.toFixed(2)+'</td></tr>').join('')+'</tbody></table></div><p>Interacción de retiradas: efecto conjunto menos suma de efectos aislados. '+c.pairs.map(p=>p.factors.map(k=>labels[k]).join(' × ')+': '+p.interactionM.toFixed(2)+' m').join('; ')+'. Interacción triple: '+c.tripleInteractionM.toFixed(2)+' m.</p><small>Se conserva la selección de apoyos, su persistencia y las demás restricciones, incluidas las alturas del último tercio. Las asignaciones pueden cambiar al cambiar las trayectorias. Es una comparación dentro del simulador, no causalidad demostrada en fútbol real. No se mezclan las métricas de ambos partidos.</small>';
+}
 const game2Result=document.createElement('p');game2Result.id='reference-game2';
 $('reference-analysis').insertAdjacentElement('afterend',game2Result);
 let referenceData=null,referenceClip=0,referenceIndex=0,referencePlaying=false,referenceStart=null,referenceBase=0,referenceToken=0;
@@ -972,6 +982,7 @@ if(priorContrast)$('reference-game2').textContent+=' Comparación 0.28 → 0.34:
  if(heightRow)$('reference-analysis').textContent+=' Alturas 0.31 → 0.34: error '+heightRow.beforeErrorM.toFixed(2)+' → '+heightRow.afterErrorM.toFixed(2)+' m ('+(heightRow.changePercent>0?'aumento ':'reducción ')+Math.abs(heightRow.changePercent).toFixed(1)+' %). '+(Number.isFinite(heightRow.afterAdvanceM)?'Avance simulado '+heightRow.beforeAdvanceM.toFixed(2)+' → '+heightRow.afterAdvanceM.toFixed(2)+' m. ':'')+'Secuencias ya utilizadas en diagnóstico, no validación independiente. No se combinan métricas de ambos partidos ni se generalizan estos resultados.';
  const stability=supportStability&&supportStability.clips.find(r=>r.id===c.id);
  if(stability){$('reference-diagnosis').hidden=false;$('reference-diagnosis').textContent='Continuidad de apoyos · 0.33 → 0.34: error '+stability.beforeErrorM.toFixed(2)+' → '+stability.afterErrorM.toFixed(2)+' m. '+(Number.isFinite(stability.afterAppliedChanges)?'Cambios de pareja calculados '+stability.beforeSelectionChanges+' → '+stability.afterSelectionChanges+'; cambios de función aplicados por jugador '+stability.beforeAppliedChanges+' → '+stability.afterAppliedChanges+'. Son medidas distintas. ':'')+'Se conserva cada apoyo salvo ventaja superior a 2 puntos de utilidad o pérdida de elegibilidad. Umbral provisional, sin búsqueda de parámetros. Cuatro secuencias ofensivas mejoran y dos empeoran frente a 0.33. Menos cambios no demuestra por sí solo mejor juego.';}
+ renderAttackInteractions(c.id);
  const regression=supportHoldout&&supportHoldout.regressions.find(r=>r.id===c.id);
  if(regression){const p=regression.perPlayer.reduce((a,b)=>a.contributionM>b.contributionM?a:b);$('reference-diagnosis').textContent+=' Revisión individual: dorsal observado #'+p.jersey+', error '+p.beforeErrorM.toFixed(2)+' → '+p.afterErrorM.toFixed(2)+' m; contribución al aumento medio +'+p.contributionM.toFixed(2)+' m. Desglose descriptivo, no causa demostrada; roles aproximados.';}
  renderReference();
@@ -1040,6 +1051,7 @@ referencePanel.ontoggle=async()=>{
   const response=await fetch('data/metrica-analysis.json');if(!response.ok)throw new Error('No se ha podido descargar la muestra');
   const data=await response.json();if(data.schemaVersion!==2||!Array.isArray(data.clips)||data.clips.length<1)throw new Error('Formato de referencia no válido');
   referenceData=data;$('reference-sequence').replaceChildren();
+  try{const report=await (await fetch('data/attack-interactions.json?v=1')).json();if(report.engineVersion!=='0.34'||report.schemaVersion!==1||!Array.isArray(report.clips))throw Error('Schema');attackInteractions=report;}catch(err){attackInteractions=null;}
   try{const report=await (await fetch('data/support-stability.json?v=0.34')).json();if(report.engineVersion!=='0.34'||!Array.isArray(report.clips))throw Error('Schema');supportStability=report;}catch(err){supportStability=null;}
   try{const report=await (await fetch('data/support-diagnosis.json?v=0.34')).json();if(report.engineVersion!=='0.34'||!Array.isArray(report.clips))throw Error('Schema');supportDiagnosis=report;}catch(err){supportDiagnosis=null;}
   try{const report=await (await fetch('data/heights-comparison.json?v=0.34')).json();if(report.engineVersion!=='0.34'||!Array.isArray(report.clips))throw Error('Schema');heightsComparison=report;}catch(err){heightsComparison=null;}

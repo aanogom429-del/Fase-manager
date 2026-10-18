@@ -155,3 +155,9 @@ Evidencia: tests/contextual_supports.cjs compara con tests/fixtures/engine-v034.
 No cambia el criterio de selección/persistencia, equilibrio ni los parámetros individuales. No resuelve otros tipos de apoyo regresivo, perfilación, trayectorias anticipadas ni aprendizaje. Durante balón en vuelo se conserva la política previa y la prioridad del receptor.
 
 Los informes de tracking 0.34 siguen archivados y etiquetados como históricos. Sus pruebas de reproducción usan explícitamente la instantánea de esa versión; las pruebas de juego usan index.html actual. No se presentan como validación de 0.35. Los evaluadores con balón impuesto y sin poseedor no activan esta corrección: se necesita un protocolo con posesión identificada antes de contrastar ventanas nuevas. Próxima comprobación de A1: fijar ese protocolo y reservar ventanas sin ajustar estos umbrales a posteriori.
+
+## Contraste posterior de A1 · poseedor identificado
+
+Protocolo fijado previamente y ejecutado en tres ventanas nuevas de Sample Game 2. Resultado: dos ventanas sin activación y sin diferencia; una con 74/375 pasos de activación y error 5,8603 → 5,7584 m. No hay ajuste de parámetros ni evidencia suficiente para validación general. Se resuelve la limitación del antiguo replay sin poseedor mediante un evaluador específico, conservando los informes anteriores como históricos.
+
+Evidencia reproducible y límites en [CONTRASTE_APOYOS_035.md](CONTRASTE_APOYOS_035.md), scripts/import_owner_holdout.py, scripts/evaluate_owner_holdout.cjs y tests/owner_holdout.cjs. Los estados generales de la matriz siguen parciales. Próximo trabajo de implementación: A2, comenzando por C03/I03 y preservando T01; validación amplia de A1 pendiente.

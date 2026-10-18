@@ -7,8 +7,8 @@ Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). 
 | Paso | Alcance | Estado / salida |
 |---|---|---|
 | A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
-| A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada en 0.35 y comprobada en ambos sentidos; pendiente contraste independiente con posesión identificada |
-| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | Pendiente; decisiones y espacios deben responder a capacidades, orientación y tiempo |
+| A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada; contraste con poseedor en tres ventanas nuevas: una activación con mejora pequeña y dos sin activación. Validación general pendiente |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | Siguiente: orientación corporal y percepción con estado restaurable; después trayectorias y capacidades |
 | A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
 | A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
 | A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
@@ -24,6 +24,14 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 ---
 
 # Actualizaciones completadas · 18 de octubre de 2026
+
+- **Contraste con poseedor de 0.35 — conducta sin reajustar.** Protocolo y tres intervalos fijados por eventos antes de importar sus posiciones y evaluarlos (commit 50d2976674d9aa9594138ce5c06e74368eef99a3). Nuevo evaluador conserva poseedor identificado, balón, rivales y porteros observados; simula los otros nueve atacantes. Verifica todas las muestras a 25 Hz, continuidad, identidades y compatibilidad balón–poseedor. No rellena huecos ni reemplaza exclusiones.
+
+Resultados: 222,44–225,60 s, 6,9151 → 6,9151 m sin activación; 236,00–237,16 s, 3,7823 → 3,7823 m sin activación; 256,76–259,76 s, 5,8603 → 5,7584 m con activación en 74/375 pasos. Ninguna ventana excluida. La referencia inmóvil tiene menor error en las tres; no implica que quedarse quieto sea una política táctica. Misma fuente de partido ya utilizada, nuevas ventanas, sin validación por partidos independientes ni inferencia de intención demostrada.
+
+Verificación específica: importación exacta, reporte reproducible, activación sintética, simetría, identidades reordenadas, rechazo de datos/posesión incompatibles, visor y continuidad entre modos. Informe: [Contraste de apoyos 0.35](CONTRASTE_APOYOS_035.md). Los resultados aparecen en el panel de referencias reales. No cambia la versión ni la conducta del motor.
+
+**Siguiente paso vigente: A2**, orientación corporal y percepción con restauración completa del estado. A1 mantiene pendiente validación amplia; conservar esta evidencia sin ajustar parámetros para encajarla.
 
 - **0.35 — Conservar apoyos conectados a distintas alturas (A1).** Reproducido un intercambio innecesario: un apoyo adelantado en altura 56 era enviado a 42 y la salida de seguridad de 42 a 54, con balón en 50. Se conservan sus posiciones cuando ambos apoyos están conectados, sin marca inmediata y sin órdenes pendientes o vigentes. Persisten fuera de juego, separación, equilibrio, demora y prioridades de recepción/órdenes. Umbrales geométricos provisionales, detallados en la matriz; sin aprendizaje ni ajuste a tracking.
 

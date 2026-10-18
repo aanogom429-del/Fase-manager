@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.42. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.45. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -8,7 +8,7 @@ Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). 
 |---|---|---|
 | A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
 | A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Corrección acotada implementada; contraste con poseedor en tres ventanas nuevas: una activación con mejora pequeña y dos sin activación. Validación general pendiente |
-| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación; 0.37: preparación; 0.38: llegada y encuentro con pase raso, primer toque A→B→A/C. 0.39: destino anticipado del pase al espacio guiado. 0.40: memoria temporal de compañeros en pases autónomos. 0.41: rivales recordados e incertidumbre en decisión autónoma. 0.42: coste angular en desplazamiento y llegada. Siguiente: aceleración/frenada; capacidades individuales pendientes |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | 0.36: orientación; 0.37: preparación; 0.38: llegada y encuentro con pase raso, primer toque A→B→A/C. 0.39: destino anticipado del pase al espacio guiado. 0.40: memoria temporal de compañeros en pases autónomos. 0.41: rivales recordados e incertidumbre en decisión autónoma. 0.42: coste angular en desplazamiento y llegada. 0.43–0.45: aceleración/frenada, capacidades físicas y memoria individuales. Pendientes percepción sin balón y atención; no se cierra A2 |
 | A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
 | A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
 | A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
@@ -25,11 +25,23 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 
 # Actualizaciones completadas · 18 de octubre de 2026
 
+### Tres actualizaciones integradas · 0.43–0.45
+1. **0.43 — Aceleración y frenada progresivas (C05/I02/T01).** Velocidad vectorial cambia gradualmente, con subpasos de hasta 1/60 s, integración trapezoidal y velocidad deseada limitada por distancia de frenada. Al invertir la orden conserva inicialmente el impulso anterior y frena antes de volver. Estimación de llegada combina el coste angular con una aproximación longitudinal de aceleración y cambio de sentido; no es un predictor físico exacto del recorrido completo.
+2. **0.44 — Capacidades físicas individuales (I01/I02/C04).** Tabla explícita por plaza con aceleración, frenada y velocidad de giro. Misma configuración en ambos equipos y estado preservado al comparar decisiones. Las capacidades afectan solo a su mecanismo; no añaden una bonificación global. Panel desplegable con los valores de velocidad, aceleración, frenada y giro.
+3. **0.45 — Memoria individual (I03/C04/T01).** Duración por jugador entre 1,2 y 1,8 s aplicada a recuerdos de compañeros y rivales, caducidad y confianza. Recordar durante más tiempo conserva información potencialmente desactualizada; no revela posiciones ocultas. El panel muestra la duración. No añade aprendizaje ni entrenamiento.
+
+Los perfiles son ejemplos de diseño, no valores fisiológicos o psicológicos medidos. Las pausas y restauraciones conservan capacidades y estado. Reanudaciones limpian velocidad/memoria; el control estático de recepción y el límite del campo conservan paradas explícitas, excepciones a la frenada progresiva. No hay fatiga, energía ni contacto corporal con dinámica física completa.
+
+Verificación específica en tests/acceleration.cjs y tests/individual_capabilities.cjs: arranque analítico, límites de variación y velocidad, frenada al invertir, estabilización en destino, simetría, subdivisión temporal, diferencias aisladas de capacidad, llegada aproximada y restauración. Regresiones de giro, recuerdos, anticipación, recepción, continuidad, órdenes, apoyos, inspector y reglas.
+
+**Siguiente paso vigente A2:** incorporar información percibida a la selección de apoyos sin balón. Mantener abiertas atención selectiva, oclusión y validación con partidos. Las tres actualizaciones no equivalen a completar A2, A3 y A4 ni las ocho áreas de individualidad.
+
+
 - **0.42 — Perfilación y desplazamiento acoplados (A2, C03/C05/T01).** Velocidad lineal modulada por el ángulo entre cuerpo y trayectoria: factor 0,725 + 0,275 × cos(ángulo). Alineado 100%, lateral 72,5%, hacia atrás 45%; parámetros provisionales, no mediciones. El giro corporal conserva su límite de 180°/s.
 - Integra el coste mientras gira, incluida la parte del intervalo posterior a completar el giro. Permite desplazarse lateralmente o hacia atrás sin congelar al jugador. La velocidad registrada refleja el avance real y el cálculo de llegada incorpora el mismo coste angular tras la demora de lectura.
 - Conserva destinos tácticos, órdenes, preparación de recepción, primer toque, errores y reglas. Sin aceleración, inercia, frenada, trayectoria curva ni preferencias individuales de carrera. La llegada sigue siendo una aproximación para un destino fijo; no predice futuros giros de intención.
 - Pruebas específicas: orden de velocidades frontal/lateral/trasera, giro integrado analítico, independencia de subdivisión temporal, simetría, llegada corta/larga, ausencia de teletransporte en límites y restauración determinista. Regresiones de recepción, primer toque, pase al espacio, continuidad, órdenes, apoyos e inspector.
-- **Siguiente paso vigente A2:** aceleración y frenada progresivas coherentes con la velocidad registrada y la llegada estimada. Mantener pendientes atención, percepción sin balón y diferenciación individual.
+- **Siguiente paso previsto en 0.42 (atendido en 0.43):** aceleración y frenada progresivas coherentes con la velocidad registrada y la llegada estimada. Mantener pendientes atención, percepción sin balón y diferenciación individual.
 
 
 - **0.41 — Rivales percibidos e incertidumbre (A2, I03/C03/T01).** Recuerdo de última posición rival con la misma caducidad provisional de 1,5 s. Al salir del cono no se actualiza su posición. La zona de incertidumbre crece a 2 unidades/s y disminuye la confianza hasta caducar.

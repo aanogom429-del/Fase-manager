@@ -1,3 +1,28 @@
+# Plan vigente tras auditoría · 18 de octubre de 2026
+
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor de referencia: 0.34; esta actualización es de especificación, sin cambio de conducta.
+
+Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. Las pruebas propuestas en la matriz están pendientes; no son resultados superados.
+
+| Paso | Alcance | Estado / salida |
+|---|---|---|
+| A0 | Auditar criterios, espacios, ventajas, conductas, ciclo y requisitos transversales | Completado: matriz verificable y orden de implementación; no equivale a completar el marco |
+| A1 | Corregir apoyos regresivos con contexto, seguridad, continuidad y equilibrio (O01–O03, E02–E05) | Siguiente: aislar caso con inspector, corrección acotada y comprobación en ambos sentidos; conservar contracasos donde retroceder es útil |
+| A2 | Perfilación, percepción y trayectorias; perfiles básicos y estado restaurable (C03–C05, I01–I03, E01–E04) | Pendiente; decisiones y espacios deben responder a capacidades, orientación y tiempo |
+| A3 | Interpretar ventajas numéricas, posicionales, cualitativas y dinámicas (V01–V04) | Pendiente; comparar soluciones por utilidad contextual, no solo avance |
+| A4 | Completar conductas ofensivas/defensivas y ciclo adaptativo (O01–O06, D01–D04, F01–F09) | Pendiente; integrar ayudas, fijación, superación, temporización y reorganización |
+| A5 | Completar individualidad y coordinación relacional (I01–I08, C06, V05) | Pendiente; representación operativa con límites, diferenciada de aprendizaje |
+| A6 | Cerrar repertorio técnico y cobertura reglamentaria (T03/T04) | Pendiente; mantener reglas existentes durante todos los pasos |
+| A7 | Validación integral y cierre del núcleo (T01/T02/T05/T07) | Pendiente; escenarios, simulación libre y referencias nuevas, incluyendo regresiones |
+| Posterior | Entrenamiento con retención y transferencia (T06) | Pendiente; preparar identidad/perfiles antes, sin afirmar aprendizaje actual |
+| B / C | Producto comercial 1.0 / adaptación iOS | Posteriores al cierre del núcleo; se mantiene la hoja de ruta general |
+
+La validación acompaña cada paso; A7 consolida el conjunto. No esperar a A6 para respetar reglas ni a A5 para considerar diferencias individuales.
+Las muestras de tracking ya usadas son diagnóstico, no reserva independiente. Los resultados posicionales mixtos no acreditan todavía realismo táctico.
+No se asigna porcentaje de finalización. El cierre exige evidencia por requisito y declarar simplificaciones.
+
+---
+
 # Actualizaciones completadas · 18 de octubre de 2026
 
 - **Inspector de destinos sobre motor 0.34 — observación pasiva en el juego.** Nuevo panel «Por qué se mueve»: registro opcional, desactivado de inicio, por jugador y en ambos equipos. Separa referencia de posesión, seguimiento del balón, destino de apoyo/función, límite de equilibrio, altura de último tercio, restricción de fuera de juego, límites del campo y separación. Después muestra lectura ofensiva/defensiva, orden explícita, destino tras demora, prioridad final (poseedor, portero, lectura almacenada, recepción, pared o disputa) y desplazamiento longitudinal realmente ejecutado en ese paso. Conserva la procedencia y fecha de la lectura almacenada: no atribuye un destino antiguo a la selección recién calculada. Si no se observó su creación, declara que falta esa procedencia.

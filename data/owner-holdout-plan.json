@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "0.35",
+  "baselineVersion": "0.34",
+  "sourceCommit": "57a685d479ab8af9ff4e0b3e877510a8bb2e7005",
+  "match": "Metrica Sample Game 2",
+  "period": 1,
+  "selection": "First three chronological intervals in 220–400 s, between adjacent PASS events of the same team whose receiver then passes; duration 1–6 s. Selected from events before importing positions; no replacement after exclusion.",
+  "windows": [
+    {
+      "id": "owner-holdout-a",
+      "team": 0,
+      "holder": 8,
+      "start": 222.44,
+      "end": 225.6
+    },
+    {
+      "id": "owner-holdout-b",
+      "team": 1,
+      "holder": 19,
+      "start": 236,
+      "end": 237.16
+    },
+    {
+      "id": "owner-holdout-c",
+      "team": 0,
+      "holder": 9,
+      "start": 256.76,
+      "end": 259.76
+    }
+  ],
+  "protocol": {
+    "fps": 25,
+    "step": 0.008333333333333333,
+    "maximumHolderBallDistanceM": 3,
+    "completeRosterPerTeam": 11,
+    "missingPolicy": "Exclude whole interval on missing, inconsistent or unsynchronized samples; no filling and no replacement",
+    "possession": "Inferred from adjacent pass reception and subsequent pass by same actor, checked against ball distance at every original sample; not direct observation of continuous control",
+    "simulation": "Observed holder, ball, rivals and keepers imposed; other attacking players simulated; roles approximated from stable jersey order",
+    "primary": "Time-weighted mean positional error in metres, paired 0.34 and 0.35",
+    "secondary": [
+      "rule activation steps",
+      "number of simulated players",
+      "backward distance per player per second",
+      "stationary reference error"
+    ],
+    "decision": "No generalization claim from three short intervals of a previously used match. If rule never activates, report uninformative for its effect. Any worse interval is a regression. No coefficient adjustment. Tactical utility requires later annotated review."
+  }
+}

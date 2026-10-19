@@ -1,0 +1,681 @@
+{
+  "protocol": "Two fixed seeds (17,73), 30 s at 60 Hz per version. Geometric passing candidates: 3–30 m; no rival within 2 m of interior 8–95% segment. Active controlled-ball samples only. Loss inferred from successive opposing holders, including intervening flight; restart resets identity. Follow losses at 0/2/5 s, censor on regain, restart or observation end.",
+  "limitations": [
+    "Synthetic free play, not real-match validation",
+    "Same seeds do not keep later situations equivalent",
+    "Geometric options omit offside, perception, flight timing and reception quality",
+    "Behind-ball count does not prove defensive protection",
+    "Controlled run counts owned-ball time, excludes flight; not full possession duration",
+    "No statistical inference or behavior tuning"
+  ],
+  "runs": [
+    {
+      "version": "047",
+      "seed": 17,
+      "controlledSeconds": 20.30000000000013,
+      "meanGeometricOptions": 3.2438423645320045,
+      "noOptionSeconds": 1.3666666666666667,
+      "longestObservedControlledRunSeconds": 4.9166666666666545,
+      "losses": [
+        {
+          "at": 3.0666666666666607,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.5160828763322347,
+              "widthM": 46.754821416483466
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 4.766666666666655,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 3.4240473556487276,
+              "widthM": 46.85974972138794
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 5.366666666666653,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.6696809236043244,
+              "widthM": 47.147870582156486
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 7.14999999999998,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 6,
+              "nearestBallM": 1.9560242450666903,
+              "widthM": 55.925040782386446
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 8.416666666666664,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 0.5609976386373511,
+              "widthM": 47.015324335867305
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 10.000000000000076,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 7,
+              "nearestBallM": 1.9960833502583388,
+              "widthM": 50.866011843920404
+            },
+            {
+              "after": 2.0000000000000995,
+              "behindBall": 5,
+              "nearestBallM": 3.250707224925819,
+              "widthM": 49.579385383323334
+            }
+          ],
+          "end": "censored: restart or stopped"
+        },
+        {
+          "at": 21.85000000000004,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 10,
+              "nearestBallM": 16.936461086049373,
+              "widthM": 47.35484978692714
+            },
+            {
+              "after": 2.016666666666552,
+              "behindBall": 7,
+              "nearestBallM": 6.558387737541046,
+              "widthM": 47.04097763071847
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 24.61666666666655,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.4583210259476473,
+              "widthM": 50.858294628786574
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 26.01666666666647,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 10,
+              "nearestBallM": 7.30023876092628,
+              "widthM": 47.50464268858123
+            },
+            {
+              "after": 2.016666666666552,
+              "behindBall": 10,
+              "nearestBallM": 6.902790263857135,
+              "widthM": 47.57601784029021
+            }
+          ],
+          "end": "censored: end of observation"
+        }
+      ]
+    },
+    {
+      "version": "047",
+      "seed": 73,
+      "controlledSeconds": 23.199999999999964,
+      "meanGeometricOptions": 2.8383620689654956,
+      "noOptionSeconds": 1.2166666666666672,
+      "longestObservedControlledRunSeconds": 6.733333333333315,
+      "losses": [
+        {
+          "at": 3.099999999999994,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.3948761770357208,
+              "widthM": 47.47238910295137
+            },
+            {
+              "after": 2.01666666666666,
+              "behindBall": 7,
+              "nearestBallM": 2.3880712537515683,
+              "widthM": 46.75091647167954
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 5.249999999999987,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 1.6056438943813445,
+              "widthM": 46.45502484553987
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 6.833333333333314,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 7,
+              "nearestBallM": 0.1943602997972012,
+              "widthM": 46.68346450529015
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 7.066666666666647,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 6,
+              "nearestBallM": 1.0598738338021778,
+              "widthM": 46.50734570049235
+            },
+            {
+              "after": 2.0000000000000497,
+              "behindBall": 6,
+              "nearestBallM": 7.937187780871643,
+              "widthM": 44.25526979299501
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 9.300000000000042,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 11.991051135367737,
+              "widthM": 51.012193814901984
+            },
+            {
+              "after": 2.0000000000000995,
+              "behindBall": 5,
+              "nearestBallM": 7.275279528665802,
+              "widthM": 48.786019359241436
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 13.50000000000025,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 2.337048295391974,
+              "widthM": 49.80244748814127
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 14.083333333333613,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 5,
+              "nearestBallM": 1.8574119679335217,
+              "widthM": 50.30301030796784
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 15.333333333333675,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 0.7116928896955036,
+              "widthM": 49.63326394589032
+            },
+            {
+              "after": 2.0166666666666213,
+              "behindBall": 6,
+              "nearestBallM": 3.4728903359884296,
+              "widthM": 49.416724019909786
+            },
+            {
+              "after": 5.016666666666451,
+              "behindBall": 5,
+              "nearestBallM": 2.3320555069498536,
+              "widthM": 49.26610139179335
+            }
+          ],
+          "end": "complete"
+        },
+        {
+          "at": 22.233333333333352,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 2.039139053011464,
+              "widthM": 51.11801045879952
+            },
+            {
+              "after": 2.016666666666552,
+              "behindBall": 7,
+              "nearestBallM": 2.2205976379275447,
+              "widthM": 50.530671322522494
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 25.366666666666507,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 2.0315734414738746,
+              "widthM": 56.60986543139803
+            },
+            {
+              "after": 2.016666666666552,
+              "behindBall": 4,
+              "nearestBallM": 2.0211709837832004,
+              "widthM": 50.09341142973992
+            }
+          ],
+          "end": "censored: end of observation"
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "seed": 17,
+      "controlledSeconds": 21.766666666666712,
+      "meanGeometricOptions": 3.349157733537497,
+      "noOptionSeconds": 0.4666666666666666,
+      "longestObservedControlledRunSeconds": 4.116666666666657,
+      "losses": [
+        {
+          "at": 3.0666666666666607,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.5160828763322347,
+              "widthM": 46.754821416483466
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 4.766666666666655,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 3.4240473556487276,
+              "widthM": 46.85974972138794
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 5.366666666666653,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.6696809236043244,
+              "widthM": 47.147870582156486
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 7.14999999999998,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 6,
+              "nearestBallM": 1.9560242450666903,
+              "widthM": 55.925040782386446
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 8.416666666666664,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 0.5609976386373511,
+              "widthM": 47.015324335867305
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 10.000000000000076,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 7,
+              "nearestBallM": 1.9960833502583388,
+              "widthM": 50.866011843920404
+            },
+            {
+              "after": 2.0000000000000995,
+              "behindBall": 5,
+              "nearestBallM": 3.250707224925819,
+              "widthM": 49.579385383323334
+            }
+          ],
+          "end": "censored: restart or stopped"
+        },
+        {
+          "at": 19.95000000000015,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 1.1793530468500841,
+              "widthM": 47.68413458508433
+            },
+            {
+              "after": 2.016666666666552,
+              "behindBall": 8,
+              "nearestBallM": 3.7313199562785666,
+              "widthM": 45.95886210776641
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 23.033333333333307,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 1.1958294399000498,
+              "widthM": 47.90000059393084
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 23.583333333333275,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.6847427714834653,
+              "widthM": 46.48879590993631
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 25.28333333333318,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 3.537840115559767,
+              "widthM": 51.06221045382967
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 26.48333333333311,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.6764608217883639,
+              "widthM": 48.58687339978324
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 27.06666666666641,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.7410911094689965,
+              "widthM": 50.360808501989894
+            },
+            {
+              "after": 2.016666666666552,
+              "behindBall": 9,
+              "nearestBallM": 8.942980657526025,
+              "widthM": 49.122478826750644
+            }
+          ],
+          "end": "censored: end of observation"
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "seed": 73,
+      "controlledSeconds": 20.866666666666763,
+      "meanGeometricOptions": 3.638977635782701,
+      "noOptionSeconds": 0.44999999999999996,
+      "longestObservedControlledRunSeconds": 6.816666666666648,
+      "losses": [
+        {
+          "at": 3.099999999999994,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 1.3948761770357208,
+              "widthM": 47.47238910295137
+            },
+            {
+              "after": 2.01666666666666,
+              "behindBall": 7,
+              "nearestBallM": 2.3880712537515683,
+              "widthM": 46.75091647167954
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 5.249999999999987,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 1.6056438943813445,
+              "widthM": 46.45502484553987
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 6.833333333333314,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 7,
+              "nearestBallM": 0.1943602997972012,
+              "widthM": 46.68346450529015
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 7.066666666666647,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 6,
+              "nearestBallM": 1.0598738338021778,
+              "widthM": 46.50734570049235
+            },
+            {
+              "after": 2.0000000000000497,
+              "behindBall": 6,
+              "nearestBallM": 7.937187780871643,
+              "widthM": 44.25526979299501
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 9.300000000000042,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 9,
+              "nearestBallM": 12.967018047467091,
+              "widthM": 50.56867816706406
+            },
+            {
+              "after": 2.0000000000000995,
+              "behindBall": 8,
+              "nearestBallM": 3.3316636126831116,
+              "widthM": 49.134456343634064
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 12.616666666666873,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 7.510718435456358,
+              "widthM": 50.13176080225343
+            },
+            {
+              "after": 2.0000000000000995,
+              "behindBall": 6,
+              "nearestBallM": 5.008022997981221,
+              "widthM": 47.34848071266715
+            },
+            {
+              "after": 5.000000000000075,
+              "behindBall": 5,
+              "nearestBallM": 3.6282826828085777,
+              "widthM": 46.46751658988567
+            }
+          ],
+          "end": "complete"
+        },
+        {
+          "at": 18.133333333333585,
+          "team": 0,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 8,
+              "nearestBallM": 2.0714544381528555,
+              "widthM": 49.39059217991046
+            }
+          ],
+          "end": "censored: regained possession"
+        },
+        {
+          "at": 18.70000000000022,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 6,
+              "nearestBallM": 1.7595367184462989,
+              "widthM": 47.58955689781281
+            }
+          ],
+          "end": "censored: restart or stopped"
+        },
+        {
+          "at": 29.999999999999577,
+          "team": 1,
+          "samples": [
+            {
+              "after": 0,
+              "behindBall": 6,
+              "nearestBallM": 1.6586306180454613,
+              "widthM": 51.402361688409684
+            }
+          ],
+          "end": "censored: end of observation"
+        }
+      ]
+    }
+  ]
+}

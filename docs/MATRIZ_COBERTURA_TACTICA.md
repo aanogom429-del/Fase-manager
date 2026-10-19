@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Evidencia diagnóstica E02–E04/D01–D04/T05: [utilidad geométrica 0.48](UTILIDAD_TACTICA_048.md). Observación de líneas y 0/2/5 s tras pérdida con exposición y censura explícitas. Más opciones geométricas en dos simulaciones; no prueba de pases ejecutables ni mejora defensiva. Semilla de aleatoriedad del entorno configurable para distinguir repeticiones. Pendiente contraste controlado de protección de líneas y llegada rival. Sin cambio de cobertura ni conducta.
+
 Evidencia 0.48 A1/A2/E03–E04/T05: [amplitud contextual progresiva](AMPLITUD_CONTEXTUAL_048.md) integrada. Pruebas de posesión larga, ocupación observada, cambio de lado y restauración en ambos equipos. Tres ventanas nuevas del mismo partido mejoran error 10,7–21,9 %, sin superar referencia inmóvil. Fuente local completa recuperada y prefijos históricos verificados. Calidad táctica general, funciones reales y validación por otro partido pendientes.
 
 Intervención experimental A1/A2/E03–E04: [amplitud desde relaciones iniciales](EXPERIMENTO_AMPLITUD_047.md). Menor error posicional en tres ventanas reutilizadas y prueba causal de recolocación lateral en ambos sentidos. Pendientes amplitud sostenida, cambios de función y secuencias nuevas. No integrada en producción; cobertura permanece parcial.

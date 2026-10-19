@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.46. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.47. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -24,6 +24,16 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 ---
 
 # Actualizaciones completadas · 18 de octubre de 2026
+
+### Actualización 0.47 · 19 de octubre de 2026
+
+- **Asignación perceptiva de apoyos (A2, I03/E02–E04).** La valoración de cada candidato usa su propia oposición vista/recordada para estimar la línea de pase. Reemplaza el valor global de phaseRelations en la asignación; la clasificación visual permanece descriptiva. Se conservan dos puestos, exclusión del poseedor/receptor y portero, y margen de sustitución de dos puntos.
+- **Conservar pareja conectada:** usa presión, línea e incertidumbre percibidas por cada integrante. No considera la pareja una salida segura cuando la incertidumbre llega a 0,75. Umbral provisional. Permanece el apoyo normal, sin garantía de conexión.
+- **Continuidad:** información caducada mejora una valoración sin provocar necesariamente cambio de función si no supera el margen. Pérdida, órdenes, reinicio y restauración conservan su comportamiento. Lecturas de compañeros resueltas por identidad estable, también al cambiar el orden del array.
+- **Límite:** coordinación de los dos puestos, identidad de posesión, referencia del balón, equilibrio y techo táctico de fuera de juego siguen compartidos/globales. No es comunicación ni organización totalmente descentralizada. Sin nueva calibración con partidos reales.
+- **Verificación:** tests/support_assignment_perception.cjs contrasta sustitución ante bloqueo observado, movimiento oculto, caducidad y margen de estabilidad en ambos equipos. Se conservan pruebas de pareja segura con bloqueo visible, apoyos, órdenes, continuidad, inspector y juego aéreo.
+
+**Siguiente paso vigente:** contrastar el juego aéreo y los apoyos con referencias reales, registrando desajustes antes de calibrar las frecuencias. Mantener pendientes atención selectiva y conocimiento del balón sin visión directa.
 
 ### Actualización 0.46 · 19 de octubre de 2026
 

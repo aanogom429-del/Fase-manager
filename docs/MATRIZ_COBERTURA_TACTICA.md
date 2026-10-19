@@ -257,3 +257,11 @@ Despejes manuales/automáticos y de cabeza, centros con intento de cabeceo y env
 Los saques de meta alternan corto y largo conservando su exención de fuera de juego y segundo toque. En juego abierto, el portero selecciona destino largo desde compañeros observados/recordados; la reanudación mantiene selección global. No hay modelo de posesión en manos/volea, salto individual, choque aéreo o voleas de jugadores de campo. Altura y probabilidades son heurísticas sin calibración con partidos reales.
 
 tests/aerial_play.cjs recorre centros hasta cabeceo en ambos equipos y contrasta cabeceo en fuera de juego, alturas imposibles, despeje de cabeza, salto fallido, despeje sin receptor y alternativas larga/corta del saque de meta. Se mantiene la resolución geométrica de gol y límites. El vuelo nuevo no hereda el cierre o la salida del centro que lo originó.
+
+## Evidencia A2 · asignación perceptiva 0.47
+
+I03/E02–E04 permanecen parciales. perceivedSupportReading calcula valor, línea, presión e incertidumbre con recuerdos del candidato; selectAttackSupports conserva dos puestos y el margen de sustitución. connectedSupportPair comprueba la seguridad con esas lecturas y exige incertidumbre menor de 0,75. Los recuerdos se actualizan por visión antes de valorar; no se actualizan posiciones ocultas.
+
+Pruebas causales en tests/support_assignment_perception.cjs: un bloqueo observado sustituye al apoyo, mover al rival oculto no cambia su valor, caducar el recuerdo elimina su localización y mantiene incertidumbre, una mejora pequeña no cambia el puesto y una clara permite recuperarlo. La prueba histórica de bloqueo ahora orienta al apoyo hacia el rival para que el bloqueo sea visible; ya no exige que responda a un defensor que no ha visto. La conservación de altura, equilibrio y los casos de órdenes y pérdida siguen comprobados.
+
+La comparación de candidatos y asignación de puestos es coordinada; balón/posesión, equilibrio, límites y fuera de juego táctico siguen globales. No cierra la percepción sin balón completa ni introduce comunicación entre agentes, atención selectiva o validación empírica. Próximo trabajo: contraste externo de apoyos y juego aéreo.

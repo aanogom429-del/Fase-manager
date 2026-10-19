@@ -13,7 +13,7 @@ function run(){
    for(const r of rows){assert(Math.abs(r.forwardStep-(r.endX-r.x)*(r.team===0?1:-1))<1e-12);assert(r.appliedX>=2&&r.appliedX<=98);}
    for(const r of rows.filter(r=>r.source==='lectura almacenada')){const p=b.t.get().players.find(p=>p.id===r.id),s=r.steps.find(s=>s.stage==='Destino tras demora');assert.equal(s.x,p.intentX);assert.equal(s.y,p.intentY);assert(r.intent,'known cached provenance');}
    const attacking=rows.filter(r=>r.team===team&&r.steps.some(s=>s.stage==='Destino de apoyo'));
-   assert(attacking.length>0);assert(attacking.every(r=>r.steps.some(s=>s.stage==='Separación y línea de pase')));
+   assert(attacking.length>0);assert(attacking.every(r=>r.steps.some(s=>s.stage==='Apoyo según percepción propia')));
    cases.push({team,phase,backwardPlayers:rows.filter(r=>r.team===team&&r.forwardStep<0).map(r=>r.jersey),cachedReads:rows.filter(r=>r.intent&&r.intent.at<r.time).length});
   }
   for(const e of [a,b]){const rival=e.t.get().players.find(p=>p.t!==team&&p.n===6);e.t.capture(rival,'prueba de pérdida');e.t.movement(.05);}

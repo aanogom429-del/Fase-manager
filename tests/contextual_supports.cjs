@@ -27,6 +27,8 @@ for(const t of [0,1]){
  // Frontal pass blocked and holder pressured: preserve the original safety response.
  const blocked=setup(t);blocked.rivals[0].x=blocked.abs(53);blocked.rivals[0].y=27.5;
  blocked.rivals[1].x=blocked.abs(51);blocked.rivals[1].y=32;
+ // This safety countercase requires the advanced support to observe the blocker.
+ blocked.a.bodyAngle=Math.atan2(blocked.ball.y-blocked.a.y,blocked.ball.x-blocked.a.x);
  const blockedQ=blocked.e.t.attackingTargets(t,blocked.ball);
  assert([blocked.a,blocked.b].some(p=>blocked.abs(blockedQ.get(p).x)<50));
  assert(!blocked.e.t.getDestinationTrace().rows.some(r=>r.steps.some(s=>s.stage==='Conservar pareja conectada')));

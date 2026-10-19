@@ -1,5 +1,7 @@
 # Plan vigente tras auditoría · 19 de octubre de 2026
 
+**Prioridad vigente tras el desglose por jugador:** [diagnóstico de destinos 0.47](DIAGNOSTICO_DESTINOS_047.md). Inicializar velocidad desde los 0,20 s previos cambia poco el error; la recolocación por función aparece como candidata a revisión, con posible influencia del mapeo de roles. Siguiente paso: intervención controlada sobre carriles fijos frente a relaciones espaciales iniciales, manteniendo apoyos, equilibrio y órdenes. No se ha cambiado el motor ni cerrado A1/A2/A7. Esta indicación sustituye las prioridades anteriores que siguen abajo como historial.
+
 **Último avance: contraste diagnóstico 0.47.** [Resultados y protocolo](CONTRASTE_REAL_047.md): menor error que 0.35 en tres ventanas reutilizadas, todavía mayor que la referencia inmóvil. Recuento de cabeceos, centros, despejes y saques de meta de Metrica Game 2; sin altura observada ni calibración de frecuencias. Motor sin cambios. **Siguiente paso vigente:** desglosar error de apoyos por jugador, velocidad inicial y destino táctico antes de corregir movimientos. Sustituye la prioridad de la entrada histórica 0.47.
 
 Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.47. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.

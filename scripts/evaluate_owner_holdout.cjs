@@ -29,14 +29,16 @@ function validate(c){
 function environment(html){
  const entry='startSituation();requestAnimationFrame(frame);';assert(html.includes(entry));
  const source=html.match(/<script>([\s\S]*?)<\/script>/)[1].replace(entry,`globalThis.replay={
- init:(ps,ball,holder)=>{guided=true;selected=null;elapsed=0;flight=null;loose=false;techAction=null;setDestinationTrace(true);
+ init:(ps,ball,holder,velocities=[])=>{guided=true;selected=null;elapsed=0;flight=null;loose=false;techAction=null;setDestinationTrace(true);
   for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);p.x=p.hx=p.sx=q[2];p.y=p.hy=p.sy=q[3];p.attackOrigin={x:p.x,y:p.y,bx:ball[0],by:ball[1]};delete p.intentAt;delete p.attackSupport;delete p.driveX;delete p.driveY;}
+  for(const v of velocities){const p=players.find(p=>p.t===v[0]&&p.n===v[1]);p.vx=v[2];p.vy=v[3];}
   owner=players.find(p=>p.t===0&&p.n===holder);bx=ball[0];by=ball[1];},
  step:(ps,ball,ids,dt)=>{for(const q of ps){const p=players.find(p=>p.t===q[0]&&p.n===q[1]);if(p.t!==0||!ids.includes(p.n)){p.x=q[2];p.y=q[3];}}
   bx=ball[0];by=ball[1];elapsed+=dt;
   const before=new Map(players.filter(p=>p.t===0&&ids.includes(p.n)).map(p=>[p.n,p.x]));movement(dt);
   const free=players.filter(p=>p.t===0&&ids.includes(p.n));return {positions:free.map(p=>[p.n,p.x,p.y]),
    backward:free.reduce((sum,p)=>sum+Math.max(0,before.get(p.n)-p.x)*1.05,0),
+   traces:JSON.parse(JSON.stringify([...destinationTrace.values()])),
    active:[...destinationTrace.values()].some(r=>r.steps.some(s=>s.stage==='Conservar pareja conectada'))};}
  };`);
  class E{constructor(){this.style={};this.dataset={};this.children=[];}setAttribute(){}append(...v){this.children.push(...v);}appendChild(v){this.append(v);}replaceChildren(...v){this.children=v;}querySelectorAll(){return this.children;}insertAdjacentElement(){}insertAdjacentHTML(){}}
@@ -77,4 +79,4 @@ function run(){
   limitations:['Possession inferred from events and proximity, not verified continuous control','Same previously used match; new windows are not independent matches','Recorded holder/ball/opponents/keepers imposed, not free play','Jersey order approximates roles; orientation and individual traits unobserved','Positional error and backward distance do not establish tactical utility','No replacement, parameter fitting, or learning'],clips};
 }
 if(require.main===module){const report=run();fs.writeFileSync(path.join(root,'data/owner-holdout-validation.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report.clips));}
-module.exports={validate,evaluate,run};
+module.exports={validate,evaluate,run,environment};

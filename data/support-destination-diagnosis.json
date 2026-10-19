@@ -1,0 +1,5201 @@
+{
+  "engineVersion": "0.47",
+  "engineSha256": "93c0a3d1be90e59f080fcda14bcc22d57bb083c34c9072820d6bb983c46fa57c",
+  "protocol": "Paired replay: same engine, windows and default body orientation; only initial velocity changes. Velocity is least-squares slope of preceding 0.20 s, no future samples. Direction comparison requires both speeds >0.2 m/s. Stage shifts are consecutive destination distances, NOT causal attribution.",
+  "limitations": [
+    "Reused short windows, not independent validation",
+    "Default body orientation and approximate roles remain",
+    "Past velocity is an estimate; no physical or tactical truth labels",
+    "Stage shifts can include canceled or cached intentions; magnitude does not prove error",
+    "No calibration, behavior change or learning"
+  ],
+  "clips": [
+    {
+      "id": "owner-holdout-a",
+      "zeroVelocity": [
+        {
+          "jersey": 1,
+          "initialVelocityMps": [
+            2.1045,
+            -1.4710312500000087
+          ],
+          "meanErrorM": 6.399449992477613,
+          "realPathM": 6.3224951500005195,
+          "simulatedPathM": 4.448929807300546,
+          "oppositeDirectionSeconds": 1.039999999999992,
+          "comparableMovingSeconds": 1.3600000000000136,
+          "meanAppliedTargetDistanceM": 0.5417445714060588,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172596,
+            "Destino por función": 2.8666581715189974,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.06020766455696154,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 64.649,
+                "y": 48.361
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 64.65684,
+                "y": 48.3550864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 64.65684,
+                "y": 52
+              }
+            ],
+            "applied": [
+              64.65684,
+              52
+            ]
+          }
+        },
+        {
+          "jersey": 2,
+          "initialVelocityMps": [
+            1.4407500000000597,
+            -0.08864285714284756
+          ],
+          "meanErrorM": 4.8595691020981775,
+          "realPathM": 3.97079309365177,
+          "simulatedPathM": 22.43154897601711,
+          "oppositeDirectionSeconds": 1.32000000000005,
+          "comparableMovingSeconds": 3.039999999999992,
+          "meanAppliedTargetDistanceM": 8.51850945984731,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.107616839217259,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 8.500000000000028,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.5894172960980595,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 54.227,
+                "y": 31.5226
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 54.23484,
+                "y": 23.5166864
+              }
+            ],
+            "applied": [
+              54.23484,
+              23.5166864
+            ]
+          }
+        },
+        {
+          "jersey": 3,
+          "initialVelocityMps": [
+            1.3649999999999607,
+            -0.19064285714286863
+          ],
+          "meanErrorM": 7.802612203714907,
+          "realPathM": 3.148094227170428,
+          "simulatedPathM": 21.805068680959142,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 2.960000000000008,
+          "meanAppliedTargetDistanceM": 16.21710787951578,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172592,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.9975055728166085,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 24.52093096916733,
+            "Apoyo según percepción propia": 4.389873417721523
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 53.662,
+                "y": 17.8106
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 53.66984,
+                "y": 17.8046864
+              }
+            ],
+            "applied": [
+              53.66984,
+              17.8046864
+            ]
+          }
+        },
+        {
+          "jersey": 4,
+          "initialVelocityMps": [
+            0.24449999999994437,
+            -1.1336116071428752
+          ],
+          "meanErrorM": 2.5211624068000527,
+          "realPathM": 2.470085125421153,
+          "simulatedPathM": 6.337480925659026,
+          "oppositeDirectionSeconds": 1,
+          "comparableMovingSeconds": 2.1200000000000045,
+          "meanAppliedTargetDistanceM": 0.6389113781317742,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172594,
+            "Destino de apoyo": 14.221516888654524,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 9.180422041139254,
+            "Apoyo según percepción propia": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.13000382278480999,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 69.859,
+                "y": 7.7997
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 69.86684,
+                "y": 7.793786399999999
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 69.2154,
+                "y": 4
+              }
+            ],
+            "applied": [
+              69.2154,
+              4
+            ]
+          }
+        },
+        {
+          "jersey": 5,
+          "initialVelocityMps": [
+            0.6479999999999697,
+            -0.5818705357143451
+          ],
+          "meanErrorM": 5.207517204284491,
+          "realPathM": 3.4670379025007048,
+          "simulatedPathM": 8.962500895376033,
+          "oppositeDirectionSeconds": 1.3600000000000136,
+          "comparableMovingSeconds": 2.280000000000001,
+          "meanAppliedTargetDistanceM": 1.1187778508589576,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172596,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 3.2386075949367297,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.31246321823058587,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 67.366,
+                "y": 37.8362
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 67.37384,
+                "y": 41.8302864
+              }
+            ],
+            "applied": [
+              67.37384,
+              41.8302864
+            ]
+          }
+        },
+        {
+          "jersey": 6,
+          "initialVelocityMps": [
+            -0.5107499999999986,
+            0.28467410714285407
+          ],
+          "meanErrorM": 5.7132651462506825,
+          "realPathM": 1.6428774639118628,
+          "simulatedPathM": 13.184916792447117,
+          "oppositeDirectionSeconds": 0.7199999999999989,
+          "comparableMovingSeconds": 2.240000000000009,
+          "meanAppliedTargetDistanceM": 2.3840014504863003,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172592,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 6.218987341772117,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.6322565942457635,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 63.981,
+                "y": 20.656
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 63.98884,
+                "y": 28.6500864
+              }
+            ],
+            "applied": [
+              63.98884,
+              28.6500864
+            ]
+          }
+        },
+        {
+          "jersey": 7,
+          "initialVelocityMps": [
+            3.035249999999999,
+            -0.4593035714285738
+          ],
+          "meanErrorM": 5.2534953723327265,
+          "realPathM": 11.57296145019359,
+          "simulatedPathM": 15.932413396838166,
+          "oppositeDirectionSeconds": 1.9199999999999875,
+          "comparableMovingSeconds": 3.1200000000000045,
+          "meanAppliedTargetDistanceM": 5.3679535531918114,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172596,
+            "Destino de apoyo": 0.11631236508948709,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0.002510483544303823,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0.08607594936709452,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.2210724197055112,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 4.013291139240528
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 79.5,
+                "y": 14.2938
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 79.50784,
+                "y": 14.2878864
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 76.2154,
+                "y": 13.97788
+              }
+            ],
+            "applied": [
+              76.2154,
+              13.97788
+            ]
+          }
+        },
+        {
+          "jersey": 9,
+          "initialVelocityMps": [
+            0.3832500000000252,
+            -0.8946250000000053
+          ],
+          "meanErrorM": 8.459670969265062,
+          "realPathM": 6.84115554017496,
+          "simulatedPathM": 16.692937883761996,
+          "oppositeDirectionSeconds": 0.47999999999998977,
+          "comparableMovingSeconds": 2.6399999999999864,
+          "meanAppliedTargetDistanceM": 4.625642938420639,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172594,
+            "Destino por función": 15.073986336707828,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 1.7697922784810147,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 3.927215189873415,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.5559958092685541,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 72.47,
+                "y": 28.1222
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 72.47784,
+                "y": 28.1162864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 86.2154,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 86.2154,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 86.2154,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 84.036,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 84.036,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 84.036,
+                "y": 23.6569032
+              }
+            ],
+            "applied": [
+              84.036,
+              23.6569032
+            ]
+          }
+        },
+        {
+          "jersey": 10,
+          "initialVelocityMps": [
+            1.4902500000001857,
+            0.46886607142857106
+          ],
+          "meanErrorM": 12.836684662021351,
+          "realPathM": 3.737638558555244,
+          "simulatedPathM": 23.028778399959716,
+          "oppositeDirectionSeconds": 2.280000000000001,
+          "comparableMovingSeconds": 3.039999999999992,
+          "meanAppliedTargetDistanceM": 11.906688316243187,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172594,
+            "Destino por función": 20.972635632887158,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 4.145094936708889,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 2.361330212045856,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 84.724,
+                "y": 31.703
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 84.73184,
+                "y": 31.6970864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 82.2154,
+                "y": 9
+              }
+            ],
+            "applied": [
+              82.2154,
+              9
+            ]
+          }
+        }
+      ],
+      "trackingVelocity": [
+        {
+          "jersey": 1,
+          "initialVelocityMps": [
+            2.1045,
+            -1.4710312500000087
+          ],
+          "meanErrorM": 6.333865377383305,
+          "realPathM": 6.3224951500005195,
+          "simulatedPathM": 4.6307291680248,
+          "oppositeDirectionSeconds": 0.9199999999999875,
+          "comparableMovingSeconds": 1.3199999999999932,
+          "meanAppliedTargetDistanceM": 0.6022629598203635,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172596,
+            "Destino por función": 2.8666581715189974,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.06020766455696154,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 64.649,
+                "y": 48.361
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 64.65684,
+                "y": 48.3550864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 64.65684,
+                "y": 52
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 64.65684,
+                "y": 52
+              }
+            ],
+            "applied": [
+              64.65684,
+              52
+            ]
+          }
+        },
+        {
+          "jersey": 2,
+          "initialVelocityMps": [
+            1.4407500000000597,
+            -0.08864285714284756
+          ],
+          "meanErrorM": 4.858060058556632,
+          "realPathM": 3.97079309365177,
+          "simulatedPathM": 22.473863396909586,
+          "oppositeDirectionSeconds": 1.4400000000000546,
+          "comparableMovingSeconds": 3.039999999999992,
+          "meanAppliedTargetDistanceM": 8.513312403038887,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.107616839217259,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 8.500000000000028,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.5894172960980595,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 54.227,
+                "y": 31.5226
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 54.23484,
+                "y": 31.5166864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 54.23484,
+                "y": 23.5166864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 54.23484,
+                "y": 23.5166864
+              }
+            ],
+            "applied": [
+              54.23484,
+              23.5166864
+            ]
+          }
+        },
+        {
+          "jersey": 3,
+          "initialVelocityMps": [
+            1.3649999999999607,
+            -0.19064285714286863
+          ],
+          "meanErrorM": 7.821421089943356,
+          "realPathM": 3.148094227170428,
+          "simulatedPathM": 21.832078130247123,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 3,
+          "meanAppliedTargetDistanceM": 16.194685819495927,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172592,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.9721682412007875,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 24.45716522134576,
+            "Apoyo según percepción propia": 4.250000000000001
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 53.662,
+                "y": 17.8106
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 53.66984,
+                "y": 17.8046864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 53.66984,
+                "y": 17.8046864
+              }
+            ],
+            "applied": [
+              53.66984,
+              17.8046864
+            ]
+          }
+        },
+        {
+          "jersey": 4,
+          "initialVelocityMps": [
+            0.24449999999994437,
+            -1.1336116071428752
+          ],
+          "meanErrorM": 2.5573467201714974,
+          "realPathM": 2.470085125421153,
+          "simulatedPathM": 6.322254889947595,
+          "oppositeDirectionSeconds": 0.8800000000000239,
+          "comparableMovingSeconds": 2.0800000000000125,
+          "meanAppliedTargetDistanceM": 0.5963108455459618,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172594,
+            "Destino de apoyo": 14.221516888654524,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 9.180422041139254,
+            "Apoyo según percepción propia": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.13000382278480999,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 69.859,
+                "y": 7.7997
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 69.86684,
+                "y": 7.793786399999999
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 69.2154,
+                "y": -8.02212
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 69.2154,
+                "y": 4
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 69.2154,
+                "y": 4
+              }
+            ],
+            "applied": [
+              69.2154,
+              4
+            ]
+          }
+        },
+        {
+          "jersey": 5,
+          "initialVelocityMps": [
+            0.6479999999999697,
+            -0.5818705357143451
+          ],
+          "meanErrorM": 5.182038556557512,
+          "realPathM": 3.4670379025007048,
+          "simulatedPathM": 8.984607392373253,
+          "oppositeDirectionSeconds": 1.360000000000042,
+          "comparableMovingSeconds": 2.240000000000009,
+          "meanAppliedTargetDistanceM": 1.141060098013879,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172596,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 3.2386075949367297,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.31246321823058587,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 67.366,
+                "y": 37.8362
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 67.37384,
+                "y": 37.8302864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 67.37384,
+                "y": 41.8302864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 67.37384,
+                "y": 41.8302864
+              }
+            ],
+            "applied": [
+              67.37384,
+              41.8302864
+            ]
+          }
+        },
+        {
+          "jersey": 6,
+          "initialVelocityMps": [
+            -0.5107499999999986,
+            0.28467410714285407
+          ],
+          "meanErrorM": 5.745735088303815,
+          "realPathM": 1.6428774639118628,
+          "simulatedPathM": 13.200438352884186,
+          "oppositeDirectionSeconds": 0.7199999999999989,
+          "comparableMovingSeconds": 2.240000000000009,
+          "meanAppliedTargetDistanceM": 2.349833333637306,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172592,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 6.218987341772117,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.6322565942457635,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 63.981,
+                "y": 20.656
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 63.98884,
+                "y": 20.6500864
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 63.98884,
+                "y": 28.6500864
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 63.98884,
+                "y": 28.6500864
+              }
+            ],
+            "applied": [
+              63.98884,
+              28.6500864
+            ]
+          }
+        },
+        {
+          "jersey": 7,
+          "initialVelocityMps": [
+            3.035249999999999,
+            -0.4593035714285738
+          ],
+          "meanErrorM": 4.973900274315133,
+          "realPathM": 11.57296145019359,
+          "simulatedPathM": 15.520702896048236,
+          "oppositeDirectionSeconds": 1.759999999999991,
+          "comparableMovingSeconds": 3.1599999999999966,
+          "meanAppliedTargetDistanceM": 5.5261736564709825,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172596,
+            "Destino de apoyo": 0.1308046499736184,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0.002510483544303823,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0.09683544303798612,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.1709291364267087,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 4.056329113924063
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 79.5,
+                "y": 14.2938
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 79.50784,
+                "y": 14.2878864
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 76.2154,
+                "y": 9.97788
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 76.2154,
+                "y": 13.97788
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 76.2154,
+                "y": 13.97788
+              }
+            ],
+            "applied": [
+              76.2154,
+              13.97788
+            ]
+          }
+        },
+        {
+          "jersey": 9,
+          "initialVelocityMps": [
+            0.3832500000000252,
+            -0.8946250000000053
+          ],
+          "meanErrorM": 8.562581322822894,
+          "realPathM": 6.84115554017496,
+          "simulatedPathM": 16.808318908086758,
+          "oppositeDirectionSeconds": 0.47999999999998977,
+          "comparableMovingSeconds": 2.6399999999999864,
+          "meanAppliedTargetDistanceM": 4.534643473086433,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172594,
+            "Destino por función": 15.073986336707828,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 1.7697922784810147,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 3.948734177215183,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.5156691758913606,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 72.47,
+                "y": 28.1222
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 72.47784,
+                "y": 28.1162864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 86.2154,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 86.2154,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 86.2154,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 84.036,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 84.036,
+                "y": 27.6569032
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 84.036,
+                "y": 23.6569032
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 84.036,
+                "y": 23.6569032
+              }
+            ],
+            "applied": [
+              84.036,
+              23.6569032
+            ]
+          }
+        },
+        {
+          "jersey": 10,
+          "initialVelocityMps": [
+            1.4902500000001857,
+            0.46886607142857106
+          ],
+          "meanErrorM": 12.667067034864319,
+          "realPathM": 3.737638558555244,
+          "simulatedPathM": 22.94474770622387,
+          "oppositeDirectionSeconds": 2.1999999999999886,
+          "comparableMovingSeconds": 3.039999999999992,
+          "meanAppliedTargetDistanceM": 12.013480860008883,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.1076168392172594,
+            "Destino por función": 20.972635632887158,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 4.336075949367115,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.8394065622004945,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 84.724,
+                "y": 31.703
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 84.73184,
+                "y": 31.6970864
+              },
+              {
+                "stage": "Destino por función",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 82.2154,
+                "y": 13
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 82.2154,
+                "y": 9
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 82.2154,
+                "y": 9
+              }
+            ],
+            "applied": [
+              82.2154,
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "owner-holdout-b",
+      "zeroVelocity": [
+        {
+          "jersey": 15,
+          "initialVelocityMps": [
+            -0.40950000000004816,
+            0.08644196428563644
+          ],
+          "meanErrorM": 1.164472244231017,
+          "realPathM": 0.8404491534119725,
+          "simulatedPathM": 5.175751664969202,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 0.799999999999983,
+          "meanAppliedTargetDistanceM": 2.998947332885582,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 0,
+            "Límite de equilibrio": 5.048839044827606,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.2394523897021075,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 18.013999999999996,
+                "y": 54.624
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Destino por función",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              }
+            ],
+            "applied": [
+              18.014839999999996,
+              54.6232832
+            ]
+          }
+        },
+        {
+          "jersey": 16,
+          "initialVelocityMps": [
+            -1.3575000000000248,
+            -0.16218303571435236
+          ],
+          "meanErrorM": 1.7843276549246891,
+          "realPathM": 1.7624369429471671,
+          "simulatedPathM": 4.382929789990881,
+          "oppositeDirectionSeconds": 0.6800000000000068,
+          "comparableMovingSeconds": 0.6800000000000068,
+          "meanAppliedTargetDistanceM": 10.24773781372922,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608116,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 6.2565137054183,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 17.557110006723097,
+            "Apoyo según percepción propia": 3.458620689655179
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 12.311000000000007,
+                "y": 46.0627
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Destino por función",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              }
+            ],
+            "applied": [
+              12.311840000000007,
+              46.0619832
+            ]
+          }
+        },
+        {
+          "jersey": 17,
+          "initialVelocityMps": [
+            0.26475000000005516,
+            -0.08758035714288795
+          ],
+          "meanErrorM": 2.511906266164818,
+          "realPathM": 1.0839554545748529,
+          "simulatedPathM": 5.330555771028629,
+          "oppositeDirectionSeconds": 0.5600000000000023,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 1.4465072728513273,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608116,
+            "Destino por función": 0,
+            "Límite de equilibrio": 3.5294051896551686,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.26053166255522403,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 15.878,
+                "y": 32.435199999999995
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 15.87884,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Destino por función",
+                "x": 15.87884,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              }
+            ],
+            "applied": [
+              13.553400000000003,
+              32.434483199999995
+            ]
+          }
+        },
+        {
+          "jersey": 18,
+          "initialVelocityMps": [
+            0.4852499999999754,
+            -1.385803571428635
+          ],
+          "meanErrorM": 2.84614884561242,
+          "realPathM": 1.8844140598706431,
+          "simulatedPathM": 8.412365663839978,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 6.72923901953764,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 10.328030868965525,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.13427436206897303,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 19.135000000000005,
+                "y": 21.719700000000003
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 19.135840000000005,
+                "y": 21.718983200000004
+              },
+              {
+                "stage": "Destino por función",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 19.135840000000005,
+                "y": 12
+              }
+            ],
+            "applied": [
+              19.135840000000005,
+              12
+            ]
+          }
+        },
+        {
+          "jersey": 20,
+          "initialVelocityMps": [
+            -0.1312500000000701,
+            -0.1219598214286244
+          ],
+          "meanErrorM": 2.7533469566579667,
+          "realPathM": 1.460684581092454,
+          "simulatedPathM": 7.813265890235605,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 3.6525449898047113,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino de apoyo": 6.777971774500003,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.6006512423909172,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 23.855999999999995,
+                "y": 39.0554
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 23.856839999999995,
+                "y": 39.0546832
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              }
+            ],
+            "applied": [
+              18.553400000000003,
+              37.85444
+            ]
+          }
+        },
+        {
+          "jersey": 21,
+          "initialVelocityMps": [
+            1.4264999999999908,
+            1.2856249999999896
+          ],
+          "meanErrorM": 2.247946727890203,
+          "realPathM": 2.961924998968083,
+          "simulatedPathM": 2.963451311161564,
+          "oppositeDirectionSeconds": 1.1200000000000045,
+          "comparableMovingSeconds": 1.1200000000000045,
+          "meanAppliedTargetDistanceM": 0.649085346473708,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 2.1536871189655207,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.09116331724137934,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 22.456999999999994,
+                "y": 62.0262
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Destino por función",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 22.457839999999994,
+                "y": 60
+              }
+            ],
+            "applied": [
+              22.457839999999994,
+              60
+            ]
+          }
+        },
+        {
+          "jersey": 22,
+          "initialVelocityMps": [
+            1.0109999999999695,
+            0.5057500000000205
+          ],
+          "meanErrorM": 4.018896537021982,
+          "realPathM": 1.0901644544561158,
+          "simulatedPathM": 8.538351669353782,
+          "oppositeDirectionSeconds": 1.1599999999999966,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 14.172435023337702,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 17.902487612048027,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.38364103448277986,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 31.034999999999997,
+                "y": 28.479999999999997
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 31.035839999999997,
+                "y": 28.479283199999998
+              },
+              {
+                "stage": "Destino por función",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 35.5534,
+                "y": 12
+              }
+            ],
+            "applied": [
+              35.5534,
+              12
+            ]
+          }
+        },
+        {
+          "jersey": 23,
+          "initialVelocityMps": [
+            0.6007499999999163,
+            -0.7364642857143684
+          ],
+          "meanErrorM": 2.1993403257279383,
+          "realPathM": 1.327095220155607,
+          "simulatedPathM": 4.756633905954693,
+          "oppositeDirectionSeconds": 0.19999999999998863,
+          "comparableMovingSeconds": 1.039999999999992,
+          "meanAppliedTargetDistanceM": 1.6091011485393594,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608117,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 4.250000000000004,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.17834221817235119,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 47.512,
+                "y": 25.825899999999997
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Destino por función",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              }
+            ],
+            "applied": [
+              47.512840000000004,
+              21.825183199999998
+            ]
+          }
+        },
+        {
+          "jersey": 24,
+          "initialVelocityMps": [
+            -1.3020000000001153,
+            -1.6367812500001957
+          ],
+          "meanErrorM": 1.4767464221036881,
+          "realPathM": 2.752788226597424,
+          "simulatedPathM": 6.55767885276719,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 7.411465802984287,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608117,
+            "Destino de apoyo": 1.3799858731097092,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 3.309603561183536,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 5.439153341379385
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 38.848,
+                "y": 58.041
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 38.84884,
+                "y": 58.0402832
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              }
+            ],
+            "applied": [
+              30.553400000000003,
+              55.85444
+            ]
+          }
+        }
+      ],
+      "trackingVelocity": [
+        {
+          "jersey": 15,
+          "initialVelocityMps": [
+            -0.40950000000004816,
+            0.08644196428563644
+          ],
+          "meanErrorM": 1.164798123686007,
+          "realPathM": 0.8404491534119725,
+          "simulatedPathM": 5.178584431492006,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 0.799999999999983,
+          "meanAppliedTargetDistanceM": 2.997856432188476,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 0,
+            "Límite de equilibrio": 5.048839044827606,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.2394523897021075,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 18.013999999999996,
+                "y": 54.624
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Destino por función",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 18.014839999999996,
+                "y": 54.6232832
+              }
+            ],
+            "applied": [
+              18.014839999999996,
+              54.6232832
+            ]
+          }
+        },
+        {
+          "jersey": 16,
+          "initialVelocityMps": [
+            -1.3575000000000248,
+            -0.16218303571435236
+          ],
+          "meanErrorM": 1.7553388957501082,
+          "realPathM": 1.7624369429471671,
+          "simulatedPathM": 4.4128317194940765,
+          "oppositeDirectionSeconds": 0.6800000000000068,
+          "comparableMovingSeconds": 0.7199999999999989,
+          "meanAppliedTargetDistanceM": 10.276570319784135,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608116,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 6.2565137054183,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 17.557110006723097,
+            "Apoyo según percepción propia": 3.458620689655179
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 12.311000000000007,
+                "y": 46.0627
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Destino por función",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 12.311840000000007,
+                "y": 46.0619832
+              }
+            ],
+            "applied": [
+              12.311840000000007,
+              46.0619832
+            ]
+          }
+        },
+        {
+          "jersey": 17,
+          "initialVelocityMps": [
+            0.26475000000005516,
+            -0.08758035714288795
+          ],
+          "meanErrorM": 2.4886230030472705,
+          "realPathM": 1.0839554545748529,
+          "simulatedPathM": 5.33168504909386,
+          "oppositeDirectionSeconds": 0.5600000000000023,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 1.4701008014269088,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608116,
+            "Destino por función": 0,
+            "Límite de equilibrio": 3.5294051896551686,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.26053166255522403,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 15.878,
+                "y": 32.435199999999995
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 15.87884,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Destino por función",
+                "x": 15.87884,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 13.553400000000003,
+                "y": 32.434483199999995
+              }
+            ],
+            "applied": [
+              13.553400000000003,
+              32.434483199999995
+            ]
+          }
+        },
+        {
+          "jersey": 18,
+          "initialVelocityMps": [
+            0.4852499999999754,
+            -1.385803571428635
+          ],
+          "meanErrorM": 3.153812266699129,
+          "realPathM": 1.8844140598706431,
+          "simulatedPathM": 8.778354143544645,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 6.412178670369765,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 10.328030868965525,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.13427436206897303,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 19.135000000000005,
+                "y": 21.719700000000003
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 19.135840000000005,
+                "y": 21.718983200000004
+              },
+              {
+                "stage": "Destino por función",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 19.135840000000005,
+                "y": 12
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 19.135840000000005,
+                "y": 12
+              }
+            ],
+            "applied": [
+              19.135840000000005,
+              12
+            ]
+          }
+        },
+        {
+          "jersey": 20,
+          "initialVelocityMps": [
+            -0.1312500000000701,
+            -0.1219598214286244
+          ],
+          "meanErrorM": 2.7842762789490476,
+          "realPathM": 1.460684581092454,
+          "simulatedPathM": 7.839653553958946,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 3.620546412654247,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino de apoyo": 6.777971774500003,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.6006512423909172,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 23.855999999999995,
+                "y": 39.0554
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 23.856839999999995,
+                "y": 39.0546832
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 18.553400000000003,
+                "y": 37.85444
+              }
+            ],
+            "applied": [
+              18.553400000000003,
+              37.85444
+            ]
+          }
+        },
+        {
+          "jersey": 21,
+          "initialVelocityMps": [
+            1.4264999999999908,
+            1.2856249999999896
+          ],
+          "meanErrorM": 2.1402582444363962,
+          "realPathM": 2.961924998968083,
+          "simulatedPathM": 3.0566023683584853,
+          "oppositeDirectionSeconds": 0.960000000000008,
+          "comparableMovingSeconds": 1.1200000000000045,
+          "meanAppliedTargetDistanceM": 0.7415225052434552,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 2.1536871189655207,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.09116331724137934,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 22.456999999999994,
+                "y": 62.0262
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Destino por función",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 22.457839999999994,
+                "y": 62.025483200000004
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 22.457839999999994,
+                "y": 60
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 22.457839999999994,
+                "y": 60
+              }
+            ],
+            "applied": [
+              22.457839999999994,
+              60
+            ]
+          }
+        },
+        {
+          "jersey": 22,
+          "initialVelocityMps": [
+            1.0109999999999695,
+            0.5057500000000205
+          ],
+          "meanErrorM": 3.946510438064582,
+          "realPathM": 1.0901644544561158,
+          "simulatedPathM": 8.520321524419256,
+          "oppositeDirectionSeconds": 1.039999999999992,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 14.234341530688765,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608118,
+            "Destino por función": 17.902487612048027,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.38364103448277986,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 31.034999999999997,
+                "y": 28.479999999999997
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 31.035839999999997,
+                "y": 28.479283199999998
+              },
+              {
+                "stage": "Destino por función",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 35.5534,
+                "y": 12
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 35.5534,
+                "y": 12
+              }
+            ],
+            "applied": [
+              35.5534,
+              12
+            ]
+          }
+        },
+        {
+          "jersey": 23,
+          "initialVelocityMps": [
+            0.6007499999999163,
+            -0.7364642857143684
+          ],
+          "meanErrorM": 2.276933212398099,
+          "realPathM": 1.327095220155607,
+          "simulatedPathM": 4.735874843210643,
+          "oppositeDirectionSeconds": 0.23999999999998067,
+          "comparableMovingSeconds": 1.039999999999992,
+          "meanAppliedTargetDistanceM": 1.5213940352417779,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608117,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 4.250000000000004,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.17834221817235119,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 47.512,
+                "y": 25.825899999999997
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Destino por función",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 47.512840000000004,
+                "y": 25.825183199999998
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 47.512840000000004,
+                "y": 21.825183199999998
+              }
+            ],
+            "applied": [
+              47.512840000000004,
+              21.825183199999998
+            ]
+          }
+        },
+        {
+          "jersey": 24,
+          "initialVelocityMps": [
+            -1.3020000000001153,
+            -1.6367812500001957
+          ],
+          "meanErrorM": 1.607981321222322,
+          "realPathM": 2.752788226597424,
+          "simulatedPathM": 6.757007007792517,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 1.1599999999999966,
+          "meanAppliedTargetDistanceM": 7.345078112693029,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 0.5850839152608117,
+            "Destino de apoyo": 1.3799858731097092,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 3.309603561183536,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 5.439153341379385
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 38.848,
+                "y": 58.041
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 38.84884,
+                "y": 58.0402832
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 30.553400000000003,
+                "y": 55.85444
+              }
+            ],
+            "applied": [
+              30.553400000000003,
+              55.85444
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "owner-holdout-c",
+      "zeroVelocity": [
+        {
+          "jersey": 1,
+          "initialVelocityMps": [
+            1.3327499999998815,
+            -0.45634375000013616
+          ],
+          "meanErrorM": 3.295045120730084,
+          "realPathM": 2.1542292604388313,
+          "simulatedPathM": 5.496059776241927,
+          "oppositeDirectionSeconds": 0.6800000000000637,
+          "comparableMovingSeconds": 1.6400000000000432,
+          "meanAppliedTargetDistanceM": 0.6320644949708889,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445113,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 5.024740841333325,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.11848493999999865,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 65.252,
+                "y": 63.7203
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Destino por función",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 65.25305,
+                "y": 60
+              }
+            ],
+            "applied": [
+              65.25305,
+              60
+            ]
+          }
+        },
+        {
+          "jersey": 2,
+          "initialVelocityMps": [
+            2.3977499999999816,
+            -0.5298080357143125
+          ],
+          "meanErrorM": 3.138544002658728,
+          "realPathM": 4.7803885247686475,
+          "simulatedPathM": 12.110463309642265,
+          "oppositeDirectionSeconds": 0.8799999999999386,
+          "comparableMovingSeconds": 2.2799999999999727,
+          "meanAppliedTargetDistanceM": 11.680987612189176,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445118,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 1.111209363333313,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 8.182813790058958,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 20.28720421970269,
+            "Apoyo según percepción propia": 3.841496006666618,
+            "Conservar pareja conectada": 2.810489781979634
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 39.957,
+                "y": 54.1101
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Destino por función",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              }
+            ],
+            "applied": [
+              39.95805,
+              54.108162400000005
+            ]
+          }
+        },
+        {
+          "jersey": 3,
+          "initialVelocityMps": [
+            2.9340000000000317,
+            -0.9958660714285926
+          ],
+          "meanErrorM": 5.489608952149386,
+          "realPathM": 7.715674709477036,
+          "simulatedPathM": 3.4517177021394976,
+          "oppositeDirectionSeconds": 2.640000000000043,
+          "comparableMovingSeconds": 2.640000000000043,
+          "meanAppliedTargetDistanceM": 0.1817923937419416,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.10963678727715086,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 34.045,
+                "y": 37.767
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Destino por función",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              }
+            ],
+            "applied": [
+              34.04605,
+              37.765062400000005
+            ]
+          }
+        },
+        {
+          "jersey": 4,
+          "initialVelocityMps": [
+            3.77099999999998,
+            -1.2698392857143244
+          ],
+          "meanErrorM": 9.697138501889397,
+          "realPathM": 7.283263145862557,
+          "simulatedPathM": 18.17616368061476,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 2.4399999999999977,
+          "meanAppliedTargetDistanceM": 7.408388225636744,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 19.02934084133332,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.0900876759999973,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 44.48,
+                "y": 28.9011
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 44.481049999999996,
+                "y": 28.899162399999998
+              },
+              {
+                "stage": "Destino por función",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 44.481049999999996,
+                "y": 12
+              }
+            ],
+            "applied": [
+              44.481049999999996,
+              12
+            ]
+          }
+        },
+        {
+          "jersey": 5,
+          "initialVelocityMps": [
+            0.6884999999999365,
+            -2.9416071428573316
+          ],
+          "meanErrorM": 3.9491811080141086,
+          "realPathM": 6.014582337659752,
+          "simulatedPathM": 19.21881851974342,
+          "oppositeDirectionSeconds": 1.1200000000000614,
+          "comparableMovingSeconds": 2.920000000000016,
+          "meanAppliedTargetDistanceM": 5.470467605158923,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino de apoyo": 2.091264269243355,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0.13599999999998905,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.4180148500146805,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 2.238875621999935
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 59.725,
+                "y": 56.0045
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 59.72605,
+                "y": 56.0025624
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 67.938,
+                "y": 56.00688
+              }
+            ],
+            "applied": [
+              67.938,
+              56.00688
+            ]
+          }
+        },
+        {
+          "jersey": 6,
+          "initialVelocityMps": [
+            3.1492500000000168,
+            -0.47895982142856663
+          ],
+          "meanErrorM": 5.148308389071319,
+          "realPathM": 8.70978152790283,
+          "simulatedPathM": 6.624668483079649,
+          "oppositeDirectionSeconds": 1.0399999999999068,
+          "comparableMovingSeconds": 1.7599999999998772,
+          "meanAppliedTargetDistanceM": 2.650449472943659,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 2.2870650017787564,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 5.215209191031996,
+            "Apoyo según percepción propia": 2.6859999999999604
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 41.208,
+                "y": 48.1907
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Destino por función",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 41.20905,
+                "y": 48.1887624
+              }
+            ],
+            "applied": [
+              41.20905,
+              48.1887624
+            ]
+          }
+        },
+        {
+          "jersey": 7,
+          "initialVelocityMps": [
+            1.6964999999999448,
+            0.16886160714277237
+          ],
+          "meanErrorM": 4.404791871807693,
+          "realPathM": 8.072199796705304,
+          "simulatedPathM": 12.389104405044293,
+          "oppositeDirectionSeconds": 2.159999999999968,
+          "comparableMovingSeconds": 2.9599999999999795,
+          "meanAppliedTargetDistanceM": 1.9594034310451454,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445118,
+            "Destino de apoyo": 1.0099416483734573,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0.6346666666667012,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.4970046729102165,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 52.968,
+                "y": 38.9062
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 52.96905,
+                "y": 38.9042624
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 55.938,
+                "y": 38.00688
+              }
+            ],
+            "applied": [
+              55.938,
+              38.00688
+            ]
+          }
+        },
+        {
+          "jersey": 8,
+          "initialVelocityMps": [
+            1.1362499999999867,
+            -0.3915312500000145
+          ],
+          "meanErrorM": 3.6855665592660714,
+          "realPathM": 2.715798172473656,
+          "simulatedPathM": 11.38501157825645,
+          "oppositeDirectionSeconds": 1.3999999999999773,
+          "comparableMovingSeconds": 2.920000000000016,
+          "meanAppliedTargetDistanceM": 1.9544070774639126,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 6.720154420000017,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.3065684274252205,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 64.466,
+                "y": 7.1872
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 64.46705,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Destino por función",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 72.938,
+                "y": 7.185262399999999
+              }
+            ],
+            "applied": [
+              72.938,
+              7.185262399999999
+            ]
+          }
+        },
+        {
+          "jersey": 10,
+          "initialVelocityMps": [
+            0.10874999999988329,
+            -0.5879419642857799
+          ],
+          "meanErrorM": 11.214981105079573,
+          "realPathM": 3.0863260673193342,
+          "simulatedPathM": 18.776884037497467,
+          "oppositeDirectionSeconds": 2.5600000000000023,
+          "comparableMovingSeconds": 2.5600000000000023,
+          "meanAppliedTargetDistanceM": 7.270134936383818,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445109,
+            "Destino por función": 15.272988016076866,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0.31733333333336666,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.433208928155084,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 2.079027746441995,
+            "Apoyo según percepción propia": 0.06799999999997036,
+            "Conservar pareja conectada": 2.5585652084593025
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 66.467,
+                "y": 34.9133
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 66.46805,
+                "y": 34.9113624
+              },
+              {
+                "stage": "Destino por función",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 72.938,
+                "y": 52
+              }
+            ],
+            "applied": [
+              72.938,
+              52
+            ]
+          }
+        }
+      ],
+      "trackingVelocity": [
+        {
+          "jersey": 1,
+          "initialVelocityMps": [
+            1.3327499999998815,
+            -0.45634375000013616
+          ],
+          "meanErrorM": 3.302743593525328,
+          "realPathM": 2.1542292604388313,
+          "simulatedPathM": 5.548003335914299,
+          "oppositeDirectionSeconds": 0.6800000000000637,
+          "comparableMovingSeconds": 1.6400000000000432,
+          "meanAppliedTargetDistanceM": 0.6169460268942243,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445113,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 5.024740841333325,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.11848493999999865,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 65.252,
+                "y": 63.7203
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Destino por función",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 65.25305,
+                "y": 63.718362400000004
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 65.25305,
+                "y": 60
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 65.25305,
+                "y": 60
+              }
+            ],
+            "applied": [
+              65.25305,
+              60
+            ]
+          }
+        },
+        {
+          "jersey": 2,
+          "initialVelocityMps": [
+            2.3977499999999816,
+            -0.5298080357143125
+          ],
+          "meanErrorM": 4.505354575931684,
+          "realPathM": 4.7803885247686475,
+          "simulatedPathM": 17.648996475632075,
+          "oppositeDirectionSeconds": 0.7200000000000273,
+          "comparableMovingSeconds": 2.4399999999999977,
+          "meanAppliedTargetDistanceM": 13.026106861313352,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445118,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0.8227317166666942,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 4.292739440313565,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 20.30075620989493,
+            "Apoyo según percepción propia": 3.4108293399999865
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 39.957,
+                "y": 54.1101
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Destino por función",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 39.95805,
+                "y": 54.108162400000005
+              }
+            ],
+            "applied": [
+              39.95805,
+              54.108162400000005
+            ]
+          }
+        },
+        {
+          "jersey": 3,
+          "initialVelocityMps": [
+            2.9340000000000317,
+            -0.9958660714285926
+          ],
+          "meanErrorM": 5.481728065660174,
+          "realPathM": 7.715674709477036,
+          "simulatedPathM": 3.7289333366720734,
+          "oppositeDirectionSeconds": 2.759999999999991,
+          "comparableMovingSeconds": 2.839999999999975,
+          "meanAppliedTargetDistanceM": 0.1892769876401682,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.10963678727715086,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 34.045,
+                "y": 37.767
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Destino por función",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 34.04605,
+                "y": 37.765062400000005
+              }
+            ],
+            "applied": [
+              34.04605,
+              37.765062400000005
+            ]
+          }
+        },
+        {
+          "jersey": 4,
+          "initialVelocityMps": [
+            3.77099999999998,
+            -1.2698392857143244
+          ],
+          "meanErrorM": 9.71265748760498,
+          "realPathM": 7.283263145862557,
+          "simulatedPathM": 18.38621195462056,
+          "oppositeDirectionSeconds": 0,
+          "comparableMovingSeconds": 2.4399999999999977,
+          "meanAppliedTargetDistanceM": 7.268379155778038,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 19.02934084133332,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.0900876759999973,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 44.48,
+                "y": 28.9011
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 44.481049999999996,
+                "y": 28.899162399999998
+              },
+              {
+                "stage": "Destino por función",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 44.481049999999996,
+                "y": 12
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 44.481049999999996,
+                "y": 12
+              }
+            ],
+            "applied": [
+              44.481049999999996,
+              12
+            ]
+          }
+        },
+        {
+          "jersey": 5,
+          "initialVelocityMps": [
+            0.6884999999999365,
+            -2.9416071428573316
+          ],
+          "meanErrorM": 3.9788126654930545,
+          "realPathM": 6.014582337659752,
+          "simulatedPathM": 19.429154125932666,
+          "oppositeDirectionSeconds": 1.3199999999999932,
+          "comparableMovingSeconds": 2.920000000000016,
+          "meanAppliedTargetDistanceM": 5.635651707824649,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino de apoyo": 2.6011347512528173,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0.2884776466666193,
+            "Apoyo según percepción propia": 0.13599999999998905,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 1.4162342586451164,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 2.069705457733366
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 59.725,
+                "y": 56.0045
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 59.72605,
+                "y": 56.0025624
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 67.938,
+                "y": 56.00688
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 67.938,
+                "y": 56.00688
+              }
+            ],
+            "applied": [
+              67.938,
+              56.00688
+            ]
+          }
+        },
+        {
+          "jersey": 6,
+          "initialVelocityMps": [
+            3.1492500000000168,
+            -0.47895982142856663
+          ],
+          "meanErrorM": 3.9528255941777686,
+          "realPathM": 8.70978152790283,
+          "simulatedPathM": 10.508408132587457,
+          "oppositeDirectionSeconds": 0.8399999999999181,
+          "comparableMovingSeconds": 2.0799999999998704,
+          "meanAppliedTargetDistanceM": 3.328153162416489,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 0,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 2.7621653113917652,
+            "Aplicado · lectura almacenada": 0,
+            "Destino de apoyo": 6.666620957117293,
+            "Apoyo según percepción propia": 3.230000000000004
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 41.208,
+                "y": 48.1907
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Destino por función",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 41.20905,
+                "y": 48.1887624
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 41.20905,
+                "y": 48.1887624
+              }
+            ],
+            "applied": [
+              41.20905,
+              48.1887624
+            ]
+          }
+        },
+        {
+          "jersey": 7,
+          "initialVelocityMps": [
+            1.6964999999999448,
+            0.16886160714277237
+          ],
+          "meanErrorM": 4.497668055992772,
+          "realPathM": 8.072199796705304,
+          "simulatedPathM": 12.669966114927426,
+          "oppositeDirectionSeconds": 2.1999999999999886,
+          "comparableMovingSeconds": 2.9599999999999795,
+          "meanAppliedTargetDistanceM": 1.9188419294782488,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445118,
+            "Destino de apoyo": 1.0099416483734573,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Apoyo según percepción propia": 0.6346666666667012,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.4970046729102165,
+            "Aplicado · lectura almacenada": 0,
+            "Destino por función": 0,
+            "Separación y línea de pase": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 52.968,
+                "y": 38.9062
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 52.96905,
+                "y": 38.9042624
+              },
+              {
+                "stage": "Destino de apoyo",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Apoyo según percepción propia",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 55.938,
+                "y": 38.00688
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 55.938,
+                "y": 38.00688
+              }
+            ],
+            "applied": [
+              55.938,
+              38.00688
+            ]
+          }
+        },
+        {
+          "jersey": 8,
+          "initialVelocityMps": [
+            1.1362499999999867,
+            -0.3915312500000145
+          ],
+          "meanErrorM": 3.7807858268688634,
+          "realPathM": 2.715798172473656,
+          "simulatedPathM": 11.64505146506874,
+          "oppositeDirectionSeconds": 1.3999999999999773,
+          "comparableMovingSeconds": 2.8799999999999955,
+          "meanAppliedTargetDistanceM": 1.8732272549027398,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.611055812144511,
+            "Destino por función": 6.720154420000017,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.3065684274252205,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 64.466,
+                "y": 7.1872
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 64.46705,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Destino por función",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 72.938,
+                "y": 7.185262399999999
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 72.938,
+                "y": 7.185262399999999
+              }
+            ],
+            "applied": [
+              72.938,
+              7.185262399999999
+            ]
+          }
+        },
+        {
+          "jersey": 10,
+          "initialVelocityMps": [
+            0.10874999999988329,
+            -0.5879419642857799
+          ],
+          "meanErrorM": 11.844759978151954,
+          "realPathM": 3.0863260673193342,
+          "simulatedPathM": 19.651186047900577,
+          "oppositeDirectionSeconds": 2.599999999999966,
+          "comparableMovingSeconds": 2.8799999999999955,
+          "meanAppliedTargetDistanceM": 7.302642176193507,
+          "meanSequentialStageShiftM": {
+            "Seguimiento del balón": 1.6110558121445109,
+            "Destino por función": 17.72139536367884,
+            "Límite de equilibrio": 0,
+            "Altura de último tercio": 0,
+            "Restricción de fuera de juego": 0,
+            "Límites del campo": 0,
+            "Separación y línea de pase": 0.6233333333333301,
+            "Lectura ofensiva": 0,
+            "Sin orden explícita": 0,
+            "Destino tras demora": 0.8291562434008718,
+            "Aplicado · lectura almacenada": 0
+          },
+          "firstIntent": {
+            "source": "lectura almacenada",
+            "steps": [
+              {
+                "stage": "Referencia de posesión",
+                "x": 66.467,
+                "y": 34.9133
+              },
+              {
+                "stage": "Seguimiento del balón",
+                "x": 66.46805,
+                "y": 34.9113624
+              },
+              {
+                "stage": "Destino por función",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Límite de equilibrio",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Altura de último tercio",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Restricción de fuera de juego",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Límites del campo",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Separación y línea de pase",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Lectura ofensiva",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Sin orden explícita",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Destino tras demora",
+                "x": 72.938,
+                "y": 52
+              },
+              {
+                "stage": "Aplicado · lectura almacenada",
+                "x": 72.938,
+                "y": 52
+              }
+            ],
+            "applied": [
+              72.938,
+              52
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

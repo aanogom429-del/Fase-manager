@@ -1,0 +1,29 @@
+{
+  "match": "Sample_Game_2",
+  "rangeStart": 400,
+  "rangeEnd": 600,
+  "selection": "First three chronological adjacent-pass ownership intervals in 400\u2013600 s, duration 1\u20136 s. No replacement after exclusion. Same match, new windows; not independent match validation.",
+  "windows": [
+    {
+      "id": "width-new-1",
+      "team": 0,
+      "holder": 2,
+      "start": 430.6,
+      "end": 435.44
+    },
+    {
+      "id": "width-new-2",
+      "team": 0,
+      "holder": 6,
+      "start": 436.84,
+      "end": 440.32
+    },
+    {
+      "id": "width-new-3",
+      "team": 0,
+      "holder": 4,
+      "start": 447.96,
+      "end": 451.0
+    }
+  ]
+}

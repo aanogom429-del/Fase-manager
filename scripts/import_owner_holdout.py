@@ -4,9 +4,9 @@ from pathlib import Path
 from import_metrica import read_team, ROOT
 from analyze_sequences import normalize_event
 
-def build(directory):
+def build(directory, plan_override=None):
     root=Path(__file__).resolve().parents[1]
-    plan=json.loads((root/'data/owner-holdout-plan.json').read_text())
+    plan=plan_override or json.loads((root/'data/owner-holdout-plan.json').read_text())
     directory=Path(directory)
     with (directory/'events.csv').open() as f:
         events=[normalize_event(r,i+1) for i,r in enumerate(csv.DictReader(f))]
@@ -14,7 +14,7 @@ def build(directory):
     for a,b in zip(events,events[1:]):
         if (a['type']==b['type']=='PASS' and a['period']==b['period']==1
             and a['team']==b['team'] and a['receiver'] is not None and a['receiver']==b['sender']
-            and 220<=a['end']<b['start']<=400 and 1<=b['start']-a['end']<=6):
+            and plan.get('rangeStart',220)<=a['end']<b['start']<=plan.get('rangeEnd',400) and 1<=b['start']-a['end']<=6):
             eligible.append((a,b))
     chosen=eligible[:3]
     assert len(chosen)==len(plan['windows'])

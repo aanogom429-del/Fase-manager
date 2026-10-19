@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Evidencia 0.48 A1/A2/E03–E04/T05: [amplitud contextual progresiva](AMPLITUD_CONTEXTUAL_048.md) integrada. Pruebas de posesión larga, ocupación observada, cambio de lado y restauración en ambos equipos. Tres ventanas nuevas del mismo partido mejoran error 10,7–21,9 %, sin superar referencia inmóvil. Fuente local completa recuperada y prefijos históricos verificados. Calidad táctica general, funciones reales y validación por otro partido pendientes.
+
 Intervención experimental A1/A2/E03–E04: [amplitud desde relaciones iniciales](EXPERIMENTO_AMPLITUD_047.md). Menor error posicional en tres ventanas reutilizadas y prueba causal de recolocación lateral en ambos sentidos. Pendientes amplitud sostenida, cambios de función y secuencias nuevas. No integrada en producción; cobertura permanece parcial.
 
 Evidencia diagnóstica A1/A2/T05: [desglose por jugador y velocidad previa](DIAGNOSTICO_DESTINOS_047.md). Replay emparejado con historial anterior, trazas de destinos y prueba reproducible. La velocidad inicial no resuelve el desajuste; revisión de funciones/mapeo pendiente. Sin nueva conducta ni validación independiente; cobertura permanece parcial.

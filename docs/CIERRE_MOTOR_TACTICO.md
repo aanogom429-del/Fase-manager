@@ -1,5 +1,7 @@
 # Qué falta para cerrar el motor táctico
 
+Actualización 0.51: cobertura considera amenazas simultáneas y penaliza abandonar líneas sin respaldo. El bloque 1 continúa abierto: acceso que abandona el presionante, inferioridad y protección de finalización. Evidencia causal acotada en AMENAZAS_SIMULTANEAS_051.md; sin validación defensiva general.
+
 Actualización 0.50: asignación de cobertura según amenaza percibida alcanzable y ayuda disponible considerando órdenes y llegada. El bloque 1 sigue abierto: amenazas simultáneas, acceso que se abandona y decisiones ante inferioridad. Véase COORDINACION_DEFENSIVA_050.md; no se declara mejora defensiva general.
 
 Actualización 0.49: primera presión/temporización según llegada y ayuda, con cobertura de línea percibida alcanzable. El bloque 1 sigue abierto: falta coordinar mejor quién cubre y si la ayuda está realmente disponible. Las seis medidas comparadas no mejoran; no constituye validación general. Véase DEFENSA_CONTEXTUAL_049.md. Las referencias a 0.48 inferiores conservan el estado de la revisión original.

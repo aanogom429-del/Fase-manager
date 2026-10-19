@@ -247,3 +247,13 @@ arrivalTime usa el máximo del tiempo angular y el longitudinal acelerado tras l
 Pruebas nuevas: tests/acceleration.cjs y tests/individual_capabilities.cjs. Incluyen arranque 0,11 unidades en 0,1 s con aceleración 22, impulso antes de invertir, estabilización, giro y frenada diferenciados, memoria larga/corta bajo idénticas observaciones, simetría de perfiles y restauración. Regresiones existentes conservan recepción, primer toque, órdenes, reglas, apoyos y continuidad.
 
 Pendientes: atención, percepción sin balón, fatiga/bioenergética, calibración, contacto físico, otras áreas de individualidad y validación externa. No hay aprendizaje. Siguiente subpaso A2: selección de apoyos desde información percibida.
+
+## Evidencia A2/T03 · apoyos y juego aéreo 0.46
+
+El ajuste local de los apoyos asignados usa recuerdos individuales para separación, presión y línea de pase. La asignación colectiva de funciones, anclaje al balón y límite táctico de fuera de juego siguen globales. tests/support_perception.cjs verifica simetría, recuerdo de un bloqueo, independencia ante movimiento oculto y caducidad. Alcance parcial, no eliminación completa del conocimiento global sin balón.
+
+Despejes manuales/automáticos y de cabeza, centros con intento de cabeceo y envíos largos aéreos del portero. Ventana de cabeceo 1,4–2,8; radio de contacto existente; intento con probabilidad provisional reducida por oposición cercana. Un salto fallido no cuenta como toque. Un contacto válido pasa por las comprobaciones reglamentarias antes de crear el remate o despeje. El remate puede ir fuera, alto o ser detenido; no se adjudica gol por seleccionar la acción.
+
+Los saques de meta alternan corto y largo conservando su exención de fuera de juego y segundo toque. En juego abierto, el portero selecciona destino largo desde compañeros observados/recordados; la reanudación mantiene selección global. No hay modelo de posesión en manos/volea, salto individual, choque aéreo o voleas de jugadores de campo. Altura y probabilidades son heurísticas sin calibración con partidos reales.
+
+tests/aerial_play.cjs recorre centros hasta cabeceo en ambos equipos y contrasta cabeceo en fuera de juego, alturas imposibles, despeje de cabeza, salto fallido, despeje sin receptor y alternativas larga/corta del saque de meta. Se mantiene la resolución geométrica de gol y límites. El vuelo nuevo no hereda el cierre o la salida del centro que lo originó.

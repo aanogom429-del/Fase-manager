@@ -1,6 +1,6 @@
 # Plan vigente tras auditoría · 18 de octubre de 2026
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.45. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.46. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 
@@ -24,6 +24,16 @@ No se asigna porcentaje de finalización. El cierre exige evidencia por requisit
 ---
 
 # Actualizaciones completadas · 18 de octubre de 2026
+
+### Actualización 0.46 · 19 de octubre de 2026
+
+- **A2: ajuste local de apoyos mediante percepción propia.** Los apoyos asignados escogen su separación lateral y línea de pase con compañeros/rivales vistos o recordados por ellos mismos. La incertidumbre permanece si falta información. La asignación de los dos apoyos, la estructura colectiva, el balón compartido y el límite táctico de fuera de juego todavía usan estado global; no se afirma percepción autónoma completa sin balón.
+- **Despejes.** Acción guiada disponible hasta medio campo, despeje automático bajo presión en campo propio y despeje de cabeza ante balón rival elevado. Balón sin destinatario garantizado, error normal de ejecución y disputa posterior.
+- **Centro y remate de cabeza.** Nueva opción «Centro para remate de cabeza». Los centros guiados y automáticos permiten cabecear durante el vuelo, en una ventana provisional de altura 1,4–2,8 y cerca de la portería contraria. Puede fallar el salto o el remate. Defensores pueden despejar y el portero intervenir dentro del área. El contacto respeta fuera de juego y segunda intervención antes de producir un nuevo vuelo; el remate conserva altura inicial y dispersión horizontal/vertical.
+- **Portero en largo aéreo.** Opción guiada y elección automática con balón. Saques de meta alternan corto/largo; una salida corta bloqueada favorece largo. Conserva exención de fuera de juego del saque de meta y control de segundo toque. Parámetros de elección provisionales (45% abierto sin presión; 60% en saque de meta sin salida bloqueada), no frecuencias medidas en partidos.
+- **Pruebas:** tests/aerial_play.cjs y tests/support_perception.cjs; integración de centro real hasta cabeceo en ambos sentidos, despeje defensivo y salto fallido sin contacto, altura, fuera de juego, salida larga/corta, percepción local y caducidad. Regresiones de leyes, fuera de juego, recepción, primer toque, órdenes, apoyos y continuidad.
+
+**Siguiente paso vigente:** extender la percepción a la asignación de apoyos y contrastar la frecuencia/contexto de juego aéreo con datos reales. Continúan pendientes voleas, control aéreo específico, saltos individuales y choque corporal. El envío del portero no distingue todavía volea desde las manos de golpeo desde el suelo.
 
 ### Tres actualizaciones integradas · 0.43–0.45
 1. **0.43 — Aceleración y frenada progresivas (C05/I02/T01).** Velocidad vectorial cambia gradualmente, con subpasos de hasta 1/60 s, integración trapezoidal y velocidad deseada limitada por distancia de frenada. Al invertir la orden conserva inicialmente el impulso anterior y frena antes de volver. Estimación de llegada combina el coste angular con una aproximación longitudinal de aceleración y cambio de sentido; no es un predictor físico exacto del recorrido completo.

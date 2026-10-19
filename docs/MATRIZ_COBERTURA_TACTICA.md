@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Avance 0.50 D01/D02/D04/F05/F06/T02: [coordinación y ayuda disponible](COORDINACION_DEFENSIVA_050.md). Asignación ligada a línea percibida alcanzable, exclusión de órdenes y verificación de llegada de la ayuda. Casos espejo y regresiones; comparaciones controladas sin mejora general. Pendiente valorar amenazas simultáneas y consecuencias de abandonar coberturas. Estados generales permanecen parciales.
+
 Avance 0.49 D01/D02/D04/F05/F06: [defensa contextual](DEFENSA_CONTEXTUAL_049.md), primera selección de presión/temporización y cobertura de línea vista/recordada alcanzable. Pruebas causales en ambos equipos; comparación controlada sin mejora de las medidas previas. Asignación colectiva y disponibilidad funcional de ayuda pendientes. Estados generales permanecen parciales.
 
 Diagnóstico D01–D04/F05–F08/T05: [pérdidas controladas](PERDIDA_CONTROLADA_048.md), seis geometrías reflejadas y muestras completas 0/2/5 s; mismas respuestas defensivas desde iguales estados en 0.47 y 0.48. Se mantiene una de dos líneas geométricas abierta; no se infiere éxito o fracaso táctico global. Siguiente trabajo: presión/cobertura/temporización según peligro. [Estado de cierre](CIERRE_MOTOR_TACTICO.md) consolida pendientes del marco y del núcleo.

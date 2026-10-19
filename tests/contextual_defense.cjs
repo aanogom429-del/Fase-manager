@@ -6,7 +6,7 @@ for(const t of [0,1]){
  for(const q of ps.filter(p=>p.t===t))Object.assign(q,f(90,60),{vx:0,vy:0});
  Object.assign(p,f(40,32));Object.assign(carrier,f(50,32));e.t.capture(carrier,'test');
  const ball=f(50,32);assert.equal(e.t.contextualDefense(p,0,ball).mode,'Temporizar sin ayuda cercana');
- Object.assign(mate,f(45,32));assert.equal(e.t.contextualDefense(p,0,ball).mode,'Presionar con acceso o ayuda');
+ Object.assign(mate,f(45,32),{defDuty:'cover'});assert.equal(e.t.contextualDefense(p,0,ball).mode,'Presionar con acceso o ayuda');
  Object.assign(p,f(43.5,25.5));Object.assign(receiver,f(40,22));p.rivalMemory=[{id:receiver.id,...f(40,22),seenAt:10}];
  let q=e.t.contextualDefense(p,1,ball);assert(q);assert.equal(q.mode,'Cubrir línea percibida');assert(Math.hypot(q.x-p.x,q.y-p.y)<1e-8);
  Object.assign(receiver,f(80,60));q=e.t.contextualDefense(p,1,ball);assert.equal(q.mode,'Cubrir línea percibida','Hidden actual movement does not alter remembered target');

@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Intervención experimental A1/A2/E03–E04: [amplitud desde relaciones iniciales](EXPERIMENTO_AMPLITUD_047.md). Menor error posicional en tres ventanas reutilizadas y prueba causal de recolocación lateral en ambos sentidos. Pendientes amplitud sostenida, cambios de función y secuencias nuevas. No integrada en producción; cobertura permanece parcial.
+
 Evidencia diagnóstica A1/A2/T05: [desglose por jugador y velocidad previa](DIAGNOSTICO_DESTINOS_047.md). Replay emparejado con historial anterior, trazas de destinos y prueba reproducible. La velocidad inicial no resuelve el desajuste; revisión de funciones/mapeo pendiente. Sin nueva conducta ni validación independiente; cobertura permanece parcial.
 
 Actualización diagnóstica 19-10-2026: [contraste real 0.47](CONTRASTE_REAL_047.md). A1/A2/T03/T05 mantienen cobertura parcial: mejora posicional respecto a 0.35 en tres ventanas reutilizadas, sin superar referencia inmóvil. Etiquetas reales acreditan ejemplos del repertorio, no frecuencia calibrada ni calidad táctica del motor. Informes reproducibles reference-v047.json y metrica-game2-event-reference.json; sin cambios de conducta.

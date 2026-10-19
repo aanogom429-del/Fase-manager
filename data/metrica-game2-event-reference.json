@@ -1,0 +1,180 @@
+{
+  "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
+  "attribution": "Tracking and event data: Metrica Sports sample-data",
+  "sourceSha256": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba",
+  "eventCount": 1935,
+  "typeCounts": {
+    "SET PIECE": 80,
+    "PASS": 964,
+    "BALL LOST": 233,
+    "CHALLENGE": 311,
+    "RECOVERY": 248,
+    "BALL OUT": 49,
+    "SHOT": 24,
+    "FAULT RECEIVED": 20,
+    "CARD": 6
+  },
+  "headerShots": 7,
+  "crossLabels": 16,
+  "clearanceLabels": 10,
+  "goalKickLabels": 16,
+  "goalKicks": [
+    {
+      "csvLine": 436,
+      "team": "Away",
+      "period": 1,
+      "startSeconds": 1119.76,
+      "type": "BALL LOST",
+      "subtype": "GOAL KICK-INTERCEPTION",
+      "distanceM": 69.31413997158155
+    },
+    {
+      "csvLine": 532,
+      "team": "Home",
+      "period": 1,
+      "startSeconds": 1385.84,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 22.336179171917475
+    },
+    {
+      "csvLine": 655,
+      "team": "Home",
+      "period": 1,
+      "startSeconds": 1787.28,
+      "type": "BALL LOST",
+      "subtype": "GOAL KICK-INTERCEPTION",
+      "distanceM": 52.97643249596938
+    },
+    {
+      "csvLine": 814,
+      "team": "Home",
+      "period": 1,
+      "startSeconds": 2100.28,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 17.099520461112355
+    },
+    {
+      "csvLine": 856,
+      "team": "Away",
+      "period": 1,
+      "startSeconds": 2278.32,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 50.13549740453365
+    },
+    {
+      "csvLine": 865,
+      "team": "Home",
+      "period": 1,
+      "startSeconds": 2316.24,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 53.14415207715708
+    },
+    {
+      "csvLine": 966,
+      "team": "Home",
+      "period": 1,
+      "startSeconds": 2558.52,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 29.132869752223176
+    },
+    {
+      "csvLine": 1062,
+      "team": "Home",
+      "period": 2,
+      "startSeconds": 2817.72,
+      "type": "BALL LOST",
+      "subtype": "GOAL KICK-INTERCEPTION",
+      "distanceM": 45.27783674161123
+    },
+    {
+      "csvLine": 1127,
+      "team": "Home",
+      "period": 2,
+      "startSeconds": 3054.96,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 53.55431728628422
+    },
+    {
+      "csvLine": 1281,
+      "team": "Home",
+      "period": 2,
+      "startSeconds": 3474.16,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 54.27474642962416
+    },
+    {
+      "csvLine": 1459,
+      "team": "Away",
+      "period": 2,
+      "startSeconds": 3897.16,
+      "type": "BALL LOST",
+      "subtype": "GOAL KICK-INTERCEPTION",
+      "distanceM": 63.01508470199815
+    },
+    {
+      "csvLine": 1489,
+      "team": "Away",
+      "period": 2,
+      "startSeconds": 3988.72,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 22.474207438750764
+    },
+    {
+      "csvLine": 1685,
+      "team": "Away",
+      "period": 2,
+      "startSeconds": 4721.92,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 58.600703920686826
+    },
+    {
+      "csvLine": 1760,
+      "team": "Away",
+      "period": 2,
+      "startSeconds": 5032.76,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 22.04899997732323
+    },
+    {
+      "csvLine": 1847,
+      "team": "Home",
+      "period": 2,
+      "startSeconds": 5334.52,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 55.86233167349892
+    },
+    {
+      "csvLine": 1908,
+      "team": "Home",
+      "period": 2,
+      "startSeconds": 5478.44,
+      "type": "PASS",
+      "subtype": "GOAL KICK",
+      "distanceM": 51.70873813969937
+    }
+  ],
+  "longGoalKicksByThresholdM": {
+    "30": 11,
+    "35": 11,
+    "40": 11
+  },
+  "protocol": "All events in Game 2; exact hyphen-separated subtype tokens. Distance from event endpoints on 105 x 68 m pitch; no coordinate clipping. Thresholds are descriptive, not calibrated football categories.",
+  "limitations": [
+    "One anonymized match, not representative frequencies",
+    "No ball height: long does not imply aerial",
+    "Header shots are not necessarily from crosses",
+    "Labels do not identify intention, jump ability or success probability of an attempted header",
+    "No comparison of engine frequency without equivalent exposure and event logging"
+  ]
+}

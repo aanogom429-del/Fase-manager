@@ -1,0 +1,720 @@
+{
+  "engineVersion": "0.47",
+  "engineSha256": "93c0a3d1be90e59f080fcda14bcc22d57bb083c34c9072820d6bb983c46fa57c",
+  "baselineSha256": "fffe0f109ed15ca6707ab113ec3ac9cc7ebff7cf390bb75c35af14305580e4a2",
+  "source": "https://github.com/metrica-sports/sample-data/tree/master/data/Sample_Game_2",
+  "rawSha256": {
+    "Home.csv": "dbd63a1f78c81201b904a21afb34ba2d880e8bc8c23ac84d87aa3a630914a999",
+    "Away.csv": "bdc175cbd8a136643f160dd5e0354f164d20fa59e8439b9fdb27bdee762b9ae9",
+    "events.csv": "edf31a18599265b77a8baf150f2ce6d89456fb0324b62ea7a391229657a619ba"
+  },
+  "protocol": "Reuse all three frozen owner windows, nine free teammates; impose recorded holder, ball, opponents and keepers. Time-integrated mean Euclidean position error in metres; compare with stationary initial positions.",
+  "limitations": [
+    "Reused windows from one match: not independent validation",
+    "Short intervals; stationary baseline favors inertia",
+    "Player roles approximated by jersey order; real body orientation, initial velocity and individual capacities not supplied",
+    "Position similarity does not measure tactical quality",
+    "No parameter fitting or learning"
+  ],
+  "clips": [
+    {
+      "id": "owner-holdout-a",
+      "start": 222.44,
+      "end": 225.6,
+      "baseline035": {
+        "maximumHolderBallDistanceM": 0.1907047276919548,
+        "players": 9,
+        "jerseys": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        "roleMapping": [
+          [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              25,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ],
+            [
+              24,
+              11
+            ]
+          ]
+        ],
+        "meanErrorM": 6.915122134062302,
+        "stationaryErrorM": 2.2979347943994783,
+        "activationSteps": 0,
+        "totalSteps": 395,
+        "backwardMPerPlayerSecond": 0.2630549733015967
+      },
+      "current047": {
+        "maximumHolderBallDistanceM": 0.1907047276919548,
+        "players": 9,
+        "jerseys": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        "roleMapping": [
+          [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              25,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ],
+            [
+              24,
+              11
+            ]
+          ]
+        ],
+        "meanErrorM": 6.5614918954716765,
+        "stationaryErrorM": 2.2979347943994783,
+        "activationSteps": 0,
+        "totalSteps": 395,
+        "backwardMPerPlayerSecond": 0.19930510346667069
+      }
+    },
+    {
+      "id": "owner-holdout-b",
+      "start": 236,
+      "end": 237.16,
+      "baseline035": {
+        "maximumHolderBallDistanceM": 0.142116510300533,
+        "players": 9,
+        "jerseys": [
+          15,
+          16,
+          17,
+          18,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "roleMapping": [
+          [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              25,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ],
+            [
+              24,
+              11
+            ]
+          ]
+        ],
+        "meanErrorM": 3.782311328271285,
+        "stationaryErrorM": 0.7547535564615366,
+        "activationSteps": 0,
+        "totalSteps": 145,
+        "backwardMPerPlayerSecond": 2.241122982462646
+      },
+      "current047": {
+        "maximumHolderBallDistanceM": 0.142116510300533,
+        "players": 9,
+        "jerseys": [
+          15,
+          16,
+          17,
+          18,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "roleMapping": [
+          [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              25,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ],
+            [
+              24,
+              11
+            ]
+          ]
+        ],
+        "meanErrorM": 2.333681331148302,
+        "stationaryErrorM": 0.7547535564615366,
+        "activationSteps": 0,
+        "totalSteps": 145,
+        "backwardMPerPlayerSecond": 2.249895156141636
+      }
+    },
+    {
+      "id": "owner-holdout-c",
+      "start": 256.76,
+      "end": 259.76,
+      "baseline035": {
+        "maximumHolderBallDistanceM": 0.302317111100351,
+        "players": 9,
+        "jerseys": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        "roleMapping": [
+          [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              25,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ],
+            [
+              24,
+              11
+            ]
+          ]
+        ],
+        "meanErrorM": 5.7584043055244925,
+        "stationaryErrorM": 2.8841064936617875,
+        "activationSteps": 74,
+        "totalSteps": 375,
+        "backwardMPerPlayerSecond": 1.0005954890254547
+      },
+      "current047": {
+        "maximumHolderBallDistanceM": 0.302317111100351,
+        "players": 9,
+        "jerseys": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        "roleMapping": [
+          [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              25,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              23,
+              10
+            ],
+            [
+              24,
+              11
+            ]
+          ]
+        ],
+        "meanErrorM": 5.558129512296262,
+        "stationaryErrorM": 2.8841064936617875,
+        "activationSteps": 49,
+        "totalSteps": 375,
+        "backwardMPerPlayerSecond": 0.9638747415018147
+      }
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-# Plan vigente tras auditoría · 18 de octubre de 2026
+# Plan vigente tras auditoría · 19 de octubre de 2026
+
+**Último avance: contraste diagnóstico 0.47.** [Resultados y protocolo](CONTRASTE_REAL_047.md): menor error que 0.35 en tres ventanas reutilizadas, todavía mayor que la referencia inmóvil. Recuento de cabeceos, centros, despejes y saques de meta de Metrica Game 2; sin altura observada ni calibración de frecuencias. Motor sin cambios. **Siguiente paso vigente:** desglosar error de apoyos por jugador, velocidad inicial y destino táctico antes de corregir movimientos. Sustituye la prioridad de la entrada histórica 0.47.
 
 Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.47. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
 

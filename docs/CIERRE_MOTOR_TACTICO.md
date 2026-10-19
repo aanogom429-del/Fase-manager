@@ -1,5 +1,7 @@
 # Qué falta para cerrar el motor táctico
 
+Actualización 0.52: el primer defensor considera líneas que deja libres al presionar e inferioridad local percibida. Evidencia acotada en PRESION_EXPOSICION_052.md. El bloque 1 sigue abierto: protección de finalización y validación con pases ejecutados y rival reactivo; sin mejora defensiva general demostrada.
+
 Actualización 0.51: cobertura considera amenazas simultáneas y penaliza abandonar líneas sin respaldo. El bloque 1 continúa abierto: acceso que abandona el presionante, inferioridad y protección de finalización. Evidencia causal acotada en AMENAZAS_SIMULTANEAS_051.md; sin validación defensiva general.
 
 Actualización 0.50: asignación de cobertura según amenaza percibida alcanzable y ayuda disponible considerando órdenes y llegada. El bloque 1 sigue abierto: amenazas simultáneas, acceso que se abandona y decisiones ante inferioridad. Véase COORDINACION_DEFENSIVA_050.md; no se declara mejora defensiva general.

@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Avance 0.52 D01/D02/D04/F05–F08: [presión y exposición](PRESION_EXPOSICION_052.md). Primer defensor considera línea abandonada sin respaldo e inferioridad local percibida. Pruebas espejo y contracasos; geometría y recuento aproximados, sin garantía de interceptación. Pendientes protección de finalización y validación con pases ejecutados y oposición reactiva. Cobertura general parcial.
+
 Avance 0.51 D02/D04/C02/E03: [amenazas simultáneas](AMENAZAS_SIMULTANEAS_051.md). Coste de abandonar líneas recordadas sin respaldo y alternativa de mantener posición. Pruebas causales frente a 0.50, espejo, respaldo ocupado y caducidad. Protección geométrica y respaldo presente no garantizan interceptación ni relevo futuro. Pendiente presión en inferioridad, acceso que abre el presionante y protección de finalización; cobertura general parcial.
 
 Avance 0.50 D01/D02/D04/F05/F06/T02: [coordinación y ayuda disponible](COORDINACION_DEFENSIVA_050.md). Asignación ligada a línea percibida alcanzable, exclusión de órdenes y verificación de llegada de la ayuda. Casos espejo y regresiones; comparaciones controladas sin mejora general. Pendiente valorar amenazas simultáneas y consecuencias de abandonar coberturas. Estados generales permanecen parciales.

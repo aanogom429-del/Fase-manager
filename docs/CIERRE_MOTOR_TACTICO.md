@@ -1,5 +1,7 @@
 # Qué falta para cerrar el motor táctico
 
+Actualización 0.49: primera presión/temporización según llegada y ayuda, con cobertura de línea percibida alcanzable. El bloque 1 sigue abierto: falta coordinar mejor quién cubre y si la ayuda está realmente disponible. Las seis medidas comparadas no mejoran; no constituye validación general. Véase DEFENSA_CONTEXTUAL_049.md. Las referencias a 0.48 inferiores conservan el estado de la revisión original.
+
 Estado revisado el 19-10-2026, motor publicado 0.48. Base: código actual, matriz de cobertura y últimas pruebas. No se asigna porcentaje de finalización: existen mecanismos operativos, pero no cobertura completa ni validación general del marco.
 
 ## Ya disponible, con alcance acotado

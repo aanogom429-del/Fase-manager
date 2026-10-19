@@ -1,0 +1,456 @@
+{
+  "protocol": "Six controlled losses: own-oriented x=40,60,80, mirrored teams; identical initial positions and zero velocities. Rival carrier/receivers prescribed at 2 pitch units/s toward defending goal; keeper fixed. Only ten defenders move freely for 5 s. Samples 0/2/5 s. Two geometric receiver lanes, 2 m clearance, interior 8–95%. Arrival estimates to fixed own-oriented point (16,32).",
+  "limitations": [
+    "Synthetic intervention, not free match or real tracking",
+    "Prescribed rivals cannot react; no actual passes, tackles or regain",
+    "Arrival times are engine approximations, not measured interception times",
+    "Identical loss states remove effects of preceding attacking shape",
+    "Small scenario set, no tactical success claim"
+  ],
+  "cases": [
+    {
+      "version": "047",
+      "defendingTeam": 0,
+      "lossX": 40,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.801198568749975,
+          "rivalArrivalSeconds": 2.6057851780578223,
+          "arrivalDisadvantageSeconds": -1.8045866093078473
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167281,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.8021783610692045,
+          "rivalArrivalSeconds": 2.196442549237262,
+          "arrivalDisadvantageSeconds": -1.3942641881680577
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332774,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 1.0467687595892188,
+          "rivalArrivalSeconds": 1.9463545510866505,
+          "arrivalDisadvantageSeconds": -0.8995857914974317
+        }
+      ]
+    },
+    {
+      "version": "047",
+      "defendingTeam": 0,
+      "lossX": 60,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.922368891913637,
+          "rivalArrivalSeconds": 4.745319237812419,
+          "arrivalDisadvantageSeconds": -1.8229503458987821
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167281,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.746909870641928,
+          "rivalArrivalSeconds": 4.145197533407352,
+          "arrivalDisadvantageSeconds": -1.3982876627654237
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332737,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.495772002017327,
+          "rivalArrivalSeconds": 3.5327571375316276,
+          "arrivalDisadvantageSeconds": -1.0369851355143007
+        }
+      ]
+    },
+    {
+      "version": "047",
+      "defendingTeam": 0,
+      "lossX": 80,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.307445176816569,
+          "rivalArrivalSeconds": 6.921788615113823,
+          "arrivalDisadvantageSeconds": -1.6143434382972544
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167206,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.106869226650194,
+          "rivalArrivalSeconds": 6.296085573901271,
+          "arrivalDisadvantageSeconds": -1.1892163472510768
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.487427083333244,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 4.823826901117365,
+          "rivalArrivalSeconds": 5.640695262083306,
+          "arrivalDisadvantageSeconds": -0.8168683609659411
+        }
+      ]
+    },
+    {
+      "version": "047",
+      "defendingTeam": 1,
+      "lossX": 40,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.801198568749975,
+          "rivalArrivalSeconds": 2.6057851780578223,
+          "arrivalDisadvantageSeconds": -1.8045866093078473
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167206,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.802178361069204,
+          "rivalArrivalSeconds": 2.196442549237262,
+          "arrivalDisadvantageSeconds": -1.3942641881680582
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.487427083333244,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 1.0467687595892163,
+          "rivalArrivalSeconds": 1.9463545510866505,
+          "arrivalDisadvantageSeconds": -0.8995857914974341
+        }
+      ]
+    },
+    {
+      "version": "047",
+      "defendingTeam": 1,
+      "lossX": 60,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.922368891913637,
+          "rivalArrivalSeconds": 4.745319237812419,
+          "arrivalDisadvantageSeconds": -1.8229503458987821
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167281,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.746909870641927,
+          "rivalArrivalSeconds": 4.145197533407352,
+          "arrivalDisadvantageSeconds": -1.3982876627654246
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332737,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.4957720020173193,
+          "rivalArrivalSeconds": 3.5327571375316276,
+          "arrivalDisadvantageSeconds": -1.0369851355143083
+        }
+      ]
+    },
+    {
+      "version": "047",
+      "defendingTeam": 1,
+      "lossX": 80,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.30744517681657,
+          "rivalArrivalSeconds": 6.921788615113823,
+          "arrivalDisadvantageSeconds": -1.6143434382972535
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167317,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.106869226650194,
+          "rivalArrivalSeconds": 6.296085573901271,
+          "arrivalDisadvantageSeconds": -1.1892163472510768
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332774,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 4.823826901117361,
+          "rivalArrivalSeconds": 5.640695262083306,
+          "arrivalDisadvantageSeconds": -0.8168683609659455
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "defendingTeam": 0,
+      "lossX": 40,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.801198568749975,
+          "rivalArrivalSeconds": 2.6057851780578223,
+          "arrivalDisadvantageSeconds": -1.8045866093078473
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167281,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.8021783610692045,
+          "rivalArrivalSeconds": 2.196442549237262,
+          "arrivalDisadvantageSeconds": -1.3942641881680577
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332774,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 1.0467687595892188,
+          "rivalArrivalSeconds": 1.9463545510866505,
+          "arrivalDisadvantageSeconds": -0.8995857914974317
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "defendingTeam": 0,
+      "lossX": 60,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.922368891913637,
+          "rivalArrivalSeconds": 4.745319237812419,
+          "arrivalDisadvantageSeconds": -1.8229503458987821
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167281,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.746909870641928,
+          "rivalArrivalSeconds": 4.145197533407352,
+          "arrivalDisadvantageSeconds": -1.3982876627654237
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332737,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.495772002017327,
+          "rivalArrivalSeconds": 3.5327571375316276,
+          "arrivalDisadvantageSeconds": -1.0369851355143007
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "defendingTeam": 0,
+      "lossX": 80,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.307445176816569,
+          "rivalArrivalSeconds": 6.921788615113823,
+          "arrivalDisadvantageSeconds": -1.6143434382972544
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167206,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.106869226650194,
+          "rivalArrivalSeconds": 6.296085573901271,
+          "arrivalDisadvantageSeconds": -1.1892163472510768
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.487427083333244,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 4.823826901117365,
+          "rivalArrivalSeconds": 5.640695262083306,
+          "arrivalDisadvantageSeconds": -0.8168683609659411
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "defendingTeam": 1,
+      "lossX": 40,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.801198568749975,
+          "rivalArrivalSeconds": 2.6057851780578223,
+          "arrivalDisadvantageSeconds": -1.8045866093078473
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167206,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 0.802178361069204,
+          "rivalArrivalSeconds": 2.196442549237262,
+          "arrivalDisadvantageSeconds": -1.3942641881680582
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.487427083333244,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 1.0467687595892163,
+          "rivalArrivalSeconds": 1.9463545510866505,
+          "arrivalDisadvantageSeconds": -0.8995857914974341
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "defendingTeam": 1,
+      "lossX": 60,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.922368891913637,
+          "rivalArrivalSeconds": 4.745319237812419,
+          "arrivalDisadvantageSeconds": -1.8229503458987821
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167281,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.746909870641927,
+          "rivalArrivalSeconds": 4.145197533407352,
+          "arrivalDisadvantageSeconds": -1.3982876627654246
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332737,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 2.4957720020173193,
+          "rivalArrivalSeconds": 3.5327571375316276,
+          "arrivalDisadvantageSeconds": -1.0369851355143083
+        }
+      ]
+    },
+    {
+      "version": "048",
+      "defendingTeam": 1,
+      "lossX": 80,
+      "samples": [
+        {
+          "at": 0,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 6.7721972985139764,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.30744517681657,
+          "rivalArrivalSeconds": 6.921788615113823,
+          "arrivalDisadvantageSeconds": -1.6143434382972535
+        },
+        {
+          "at": 2,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.3533437219167317,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 5.106869226650194,
+          "rivalArrivalSeconds": 6.296085573901271,
+          "arrivalDisadvantageSeconds": -1.1892163472510768
+        },
+        {
+          "at": 5,
+          "blockedReceiverLines": 1,
+          "totalReceiverLines": 2,
+          "nearestBallM": 1.4874270833332774,
+          "behindBall": 6,
+          "defenderArrivalSeconds": 4.823826901117361,
+          "rivalArrivalSeconds": 5.640695262083306,
+          "arrivalDisadvantageSeconds": -0.8168683609659455
+        }
+      ]
+    }
+  ]
+}

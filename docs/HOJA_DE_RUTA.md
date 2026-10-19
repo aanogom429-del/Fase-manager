@@ -1,5 +1,7 @@
 # Plan vigente tras auditoría · 19 de octubre de 2026
 
+**Prioridad vigente: presión, protección de líneas y temporización contextual.** [Pérdidas controladas](PERDIDA_CONTROLADA_048.md): seis escenarios en ambos sentidos, respuesta idéntica 0.47–0.48 desde estados iguales; acercamiento al poseedor sin aumentar las líneas cerradas. Diagnóstico completado, motor 0.48 sin modificación. [Pasos pendientes para cerrar el motor](CIERRE_MOTOR_TACTICO.md) consolida los siete bloques restantes y criterios de cierre. Las entradas inferiores son historial y no sustituyen esta prioridad.
+
 **Último avance: utilidad geométrica y seguimiento tras pérdida medidos.** [Informe 0.48](UTILIDAD_TACTICA_048.md): dos semillas distintas, opciones medias 3,03→3,49; tiempo controlado sin opción 5,94 %→2,15 %. Más pérdidas totales (19→21), evidencia defensiva insuficiente y muestras censuradas. **Siguiente prioridad:** situaciones controladas de pérdida en ambos sentidos con contexto comparable, protección de líneas y llegada rival; ampliar opciones con fuera de juego/intercepción. Motor sigue 0.48. Esta prioridad sustituye las entradas históricas inferiores.
 
 **Motor vigente: 0.48 · amplitud contextual progresiva integrada.** [Cambio y contraste](AMPLITUD_CONTEXTUAL_048.md). Abre progresivamente cuando falta ocupación cercana de banda, adapta el lado y conserva prioridades de apoyos/órdenes. Tres ventanas nuevas preseleccionadas reducen error posicional 10,7–21,9 %, todavía por encima de la referencia inmóvil. Pruebas funcionales superadas. **Siguiente paso vigente:** medir utilidad de amplitud/apoyos en posesiones prolongadas y tras pérdida, revisar mapeo de funciones y ampliar contraste. Sustituye las prioridades históricas inferiores; A1/A2/A7 siguen abiertos.
@@ -10,7 +12,7 @@
 
 **Último avance: contraste diagnóstico 0.47.** [Resultados y protocolo](CONTRASTE_REAL_047.md): menor error que 0.35 en tres ventanas reutilizadas, todavía mayor que la referencia inmóvil. Recuento de cabeceos, centros, despejes y saques de meta de Metrica Game 2; sin altura observada ni calibración de frecuencias. Motor sin cambios. **Siguiente paso vigente:** desglosar error de apoyos por jugador, velocidad inicial y destino táctico antes de corregir movimientos. Sustituye la prioridad de la entrada histórica 0.47.
 
-Esta sección sustituye las prioridades futuras de las entradas históricas inferiores. Conserva sus resultados y pendientes como trazabilidad. Motor actual: 0.47. La auditoría base sigue referida a 0.34; A1 incorpora ahora una corrección acotada de conducta.
+Esta sección conserva resultados y pendientes como trazabilidad. Motor actual: 0.48. La auditoría base sigue referida a 0.34; los avances posteriores no implican cerrar los bloques generales.
 
 Fuente de trabajo: [Matriz de cobertura táctica](MATRIZ_COBERTURA_TACTICA.md). Cada actualización debe indicar IDs atendidos, evidencia, casos de aceptación y límites. La matriz distingue las pruebas pendientes de la evidencia sintética A1; no acredita cobertura general.
 

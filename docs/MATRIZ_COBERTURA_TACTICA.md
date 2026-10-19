@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Diagnóstico D01–D04/F05–F08/T05: [pérdidas controladas](PERDIDA_CONTROLADA_048.md), seis geometrías reflejadas y muestras completas 0/2/5 s; mismas respuestas defensivas desde iguales estados en 0.47 y 0.48. Se mantiene una de dos líneas geométricas abierta; no se infiere éxito o fracaso táctico global. Siguiente trabajo: presión/cobertura/temporización según peligro. [Estado de cierre](CIERRE_MOTOR_TACTICO.md) consolida pendientes del marco y del núcleo.
+
 Evidencia diagnóstica E02–E04/D01–D04/T05: [utilidad geométrica 0.48](UTILIDAD_TACTICA_048.md). Observación de líneas y 0/2/5 s tras pérdida con exposición y censura explícitas. Más opciones geométricas en dos simulaciones; no prueba de pases ejecutables ni mejora defensiva. Semilla de aleatoriedad del entorno configurable para distinguir repeticiones. Pendiente contraste controlado de protección de líneas y llegada rival. Sin cambio de cobertura ni conducta.
 
 Evidencia 0.48 A1/A2/E03–E04/T05: [amplitud contextual progresiva](AMPLITUD_CONTEXTUAL_048.md) integrada. Pruebas de posesión larga, ocupación observada, cambio de lado y restauración en ambos equipos. Tres ventanas nuevas del mismo partido mejoran error 10,7–21,9 %, sin superar referencia inmóvil. Fuente local completa recuperada y prefijos históricos verificados. Calidad táctica general, funciones reales y validación por otro partido pendientes.

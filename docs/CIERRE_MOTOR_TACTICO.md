@@ -1,5 +1,7 @@
 # Qué falta para cerrar el motor táctico
 
+Actualización vigente 0.53 (20-10-2026): protección de finalización ante poseedor visible y conservación de cobertura de tiro, integrada sobre 0.52. [Mecanismo, pruebas dinámicas y límites](PROTECCION_FINALIZACION_053.md). En 20 parejas sintéticas: 3 reducen goles concedidos, 16 empatan y 1 empeora. A2/A4/A7 y el cierre defensivo siguen abiertos; no se demuestra mejora general. Consultar [ROADMAP.md](../ROADMAP.md) para estado consolidado. Las entradas inferiores se conservan como historial. No se inicia 0.54.
+
 Actualización 0.52: el primer defensor considera líneas que deja libres al presionar e inferioridad local percibida. Evidencia acotada en PRESION_EXPOSICION_052.md. El bloque 1 sigue abierto: protección de finalización y validación con pases ejecutados y rival reactivo; sin mejora defensiva general demostrada.
 
 Actualización 0.51: cobertura considera amenazas simultáneas y penaliza abandonar líneas sin respaldo. El bloque 1 continúa abierto: acceso que abandona el presionante, inferioridad y protección de finalización. Evidencia causal acotada en AMENAZAS_SIMULTANEAS_051.md; sin validación defensiva general.

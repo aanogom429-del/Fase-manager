@@ -1,0 +1,638 @@
+{
+  "engineSha256": {
+    "v052": "2aabc7ad31293682799fc3e39d086ea5e77541b609307fdb7c76f9952136ccfc",
+    "v053": "3df7034dfafb05ecd642b2ea0601b7f27224fdcdd66fee3ce1e94101c264f331"
+  },
+  "base": "a19f7435c22896d15e22f4d1a00033ac87c58cea",
+  "candidate": "0.53",
+  "protocol": "20 paired six-second cases, teams mirrored, seeds 101/202. All players update freely at 1/120 s. delayed/immediate/central prescribe one real shot; pass prescribes one real pass then reactive decisions; free is autonomous. No positions are imposed after initialization. Goalkeeper intentionally off-centre. protectionSamples counts actual cached protective intentions applied to defenders, in player-steps, via passive destination trace. Samples use ordinary update, movement, contact, goals and restarts.",
+  "limitations": [
+    "Synthetic scenarios, not real-match tracking",
+    "Small sample; no general improvement claim",
+    "Prescribed probes control initial action timing; only free is wholly autonomous",
+    "Both teams use same seeded random stream but identity/order can affect mirrored outcomes",
+    "First shot outcome is coarse; shots/captures do not model physical rebounds"
+  ],
+  "rows": [
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "delayed",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 2,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "delayed",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 2,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "delayed",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "delayed",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "immediate",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "immediate",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "immediate",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "immediate",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "central",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 3,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "central",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 40,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "central",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "central",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 40,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 2,
+        "shots": 0,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 2,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": -1
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 2,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 2,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 79,
+        "passes": 4,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 5,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": -1
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "delayed",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 5,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "delayed",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "delayed",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 5,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "delayed",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "immediate",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 5,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "immediate",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 57,
+        "passes": 5,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "immediate",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 5,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "immediate",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 5,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "central",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 3,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "central",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 69,
+        "passes": 5,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "central",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 1,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "central",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 40,
+        "passes": 5,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 0,
+        "goalsConceded": 0,
+        "turnovers": 2,
+        "firstShotOutcome": null,
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 88,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 1
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 4,
+        "shots": 1,
+        "goalsConceded": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 2,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 101,
+        "seconds": 6,
+        "protectionSamples": 99,
+        "passes": 4,
+        "shots": 2,
+        "goalsConceded": 0,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": 0
+    },
+    {
+      "before": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 0,
+        "passes": 3,
+        "shots": 2,
+        "goalsConceded": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "after": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "seconds": 6,
+        "protectionSamples": 44,
+        "passes": 2,
+        "shots": 1,
+        "goalsConceded": 0,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "movedAttackers": 11,
+        "movedDefenders": 11
+      },
+      "goalDelta": -1
+    }
+  ]
+}

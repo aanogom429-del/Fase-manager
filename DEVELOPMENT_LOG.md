@@ -1,5 +1,86 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 20-10-2026 — Versión 0.53: protección de finalización
+
+Base: `main@13c0330cc6abad294e0cc1552abb64b4bd71e46d`, motor previo 0.52 (`a19f743`). El hash del commit de esta versión se obtiene con `git log -1 -- index.html`; no se inserta su propio hash dentro del contenido del commit.
+
+Implementado: capa de protección sobre el plan defensivo 0.52, con tres corredores de tiro raso, preparación angular del poseedor visible, extrapolación corta de su movimiento, desplazamiento estimado del defensor y ayuda visible disponible. Distingue proteger tiro/mantener cobertura sin sustituir presión, temporización ni defensa de líneas de pase. No se han cambiado física de contacto, acciones ofensivas, reglas ni tests históricos. Informe: [PROTECCION_FINALIZACION_053.md](docs/PROTECCION_FINALIZACION_053.md).
+
+### Verificación incremental y resultados
+
+- Regresiones defensivas específicas, continuidad, órdenes y disciplina verificadas antes de integrar.
+- **50/50 archivos automatizados PASS: 48 anteriores + 2 nuevos** (49 CommonJS y una entrada Python con tres casos). Node.js v24.19.0, Python 3.12.14. Cero fallos finales, errores de entorno o timeouts. Batería secuencial con límite preventivo de 240 s por archivo; prueba dinámica adicional ejecutada y registrada por separado. Los 48 archivos anteriores se conservaron sin cambios.
+- Prueba específica: ambos equipos, ayuda libre/comprometida/en movimiento, visión limitada, orientación, trayectoria observada, acceso inmediato y amenaza fuera del rango. Predictor sin mutaciones, comprobado contra el estado guardado completo. Los fallos iniciales de dos supuestos del nuevo test y su corrección se describen en el informe; no eran regresiones del motor anterior.
+- Evaluación dinámica: 20 parejas, 40 simulaciones de seis segundos. Todos los jugadores se mueven con el motor; tiros/pases reales, decisiones reactivas y casos autónomos. Se cuentan intenciones protectoras realmente aplicadas mediante el inspector pasivo. Los hashes del informe identifican los motores evaluados.
+- **Goles concedidos: 3 parejas mejoran, 16 empatan, 1 empeora.** Caso adverso: equipo defensor 1, pase, semilla 101, 0→1. Caso favorable autónomo: equipo defensor 0, libre, semilla 202, 1→0. Ambos se reprodujeron automáticamente. Las sondas de tiro controlado no mejoran el desenlace del primer tiro (control defensivo en ambas versiones). No se afirma mejora general ni validación científica.
+- No se ejecutó prueba visual en Safari/iPhone. Los reportes de versiones congeladas siguen siendo históricos.
+
+### Pendientes y alcance de la entrega
+
+A continúa en desarrollo; A4/A7 no se cierran. Ampliar dentro del bloque la predicción de intervención, investigar el contracaso adverso, receptor potencial y ayuda futura, y contrastar datos externos. Tres rayos rasos, preparación heurística y proyección inicial del punto de paso no equivalen a intercepción física exacta. La valoración nueva solo opera con poseedor visible y balón controlado; tras el tiro sigue el movimiento/contacto anterior. No hay oclusión completa, resonancia empática ni aprendizaje. B comercial y C iOS pendientes. **No se inicia 0.54.**
+
+### Inventario final de pruebas 0.53
+
+| Entrada | Resultado | Duración (s) |
+|---|---|---:|
+| `tests/acceleration.cjs` | PASS | 0.14 |
+| `tests/advantage.cjs` | PASS | 0.54 |
+| `tests/aerial_play.cjs` | PASS | 1.77 |
+| `tests/anticipation_first_touch.cjs` | PASS | 0.40 |
+| `tests/attack_interactions.cjs` | PASS | 37.41 |
+| `tests/attack_origin.cjs` | PASS | 0.41 |
+| `tests/attacking_heights.cjs` | PASS | 0.21 |
+| `tests/audit_continuity.cjs` | PASS | 2.31 |
+| `tests/audit_windows.cjs` | PASS | 1.37 |
+| `tests/contextual_defense.cjs` | PASS | 0.10 |
+| `tests/contextual_supports.cjs` | PASS | 33.96 |
+| `tests/contextual_width.cjs` | PASS | 0.16 |
+| `tests/continuity.cjs` | PASS | 17.01 |
+| `tests/defense.cjs` | PASS | 0.13 |
+| `tests/defense_origin.cjs` | PASS | 0.17 |
+| `tests/defense_replay.cjs` | PASS | 1.90 |
+| `tests/defensive_coordination.cjs` | PASS | 0.11 |
+| `tests/defensive_roles.cjs` | PASS | 0.19 |
+| `tests/destination_trace.cjs` | PASS | 7.68 |
+| `tests/discipline.cjs` | PASS | 0.52 |
+| `tests/finishing_dynamic.cjs` | PASS | 11.64 |
+| `tests/finishing_protection.cjs` | PASS | 0.15 |
+| `tests/fouls.cjs` | PASS | 2.60 |
+| `tests/game2.cjs` | PASS | 2.20 |
+| `tests/heights_report.cjs` | PASS | 0.09 |
+| `tests/individual_capabilities.cjs` | PASS | 0.14 |
+| `tests/laws.cjs` | PASS | 3.68 |
+| `tests/lead_pass.cjs` | PASS | 0.12 |
+| `tests/offball.cjs` | PASS | 1.13 |
+| `tests/offside.cjs` | PASS | 0.78 |
+| `tests/offside_reference.cjs` | PASS | 0.10 |
+| `tests/opponent_perception.cjs` | PASS | 0.21 |
+| `tests/orientation.cjs` | PASS | 32.12 |
+| `tests/owner_holdout.cjs` | PASS | 4.97 |
+| `tests/perceptual_memory.cjs` | PASS | 0.26 |
+| `tests/player_roles.cjs` | PASS | 15.17 |
+| `tests/pressure_exposure.cjs` | PASS | 0.10 |
+| `tests/reception.cjs` | PASS | 0.71 |
+| `tests/relational_width.cjs` | PASS | 0.15 |
+| `tests/simultaneous_threats.cjs` | PASS | 0.13 |
+| `tests/support_assignment_perception.cjs` | PASS | 0.11 |
+| `tests/support_destination_diagnosis.cjs` | PASS | 9.16 |
+| `tests/support_diagnosis.cjs` | PASS | 14.69 |
+| `tests/support_holdout.cjs` | PASS | 12.22 |
+| `tests/support_perception.cjs` | PASS | 0.10 |
+| `tests/support_persistence.cjs` | PASS | 0.25 |
+| `tests/support_stability.cjs` | PASS | 9.43 |
+| `tests/tactical_utility.cjs` | PASS | 0.06 |
+| `tests/tracking.py` | PASS | 0.05 |
+| `tests/turn_movement.cjs` | PASS | 0.12 |
+
+La prueba específica de protección también se repitió después de reforzar la comprobación de inmutabilidad. Los tiempos dependen de la carga del entorno y no son un benchmark del videojuego.
+
+---
+
+Las secciones siguientes describen la recuperación histórica de 0.52.
+
+
 ## 20-10-2026 — Consolidación documental de 0.52
 
 Repositorio `aanogom429-del/Fase-manager`, rama `main`. Base del motor y padre previsto de este commit documental: **a19f7435c22896d15e22f4d1a00033ac87c58cea**, 19-10-2026 21:38:58 UTC (23:38:58 Europe/Madrid). Mensaje: `Implement 0.52 pressure exposure and perceived local inferiority`.

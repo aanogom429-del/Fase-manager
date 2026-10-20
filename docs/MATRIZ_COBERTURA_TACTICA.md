@@ -1,5 +1,7 @@
 # Matriz de cobertura del motor táctico
 
+Actualización vigente 0.53 (20-10-2026): protección de finalización ante poseedor visible y conservación de cobertura de tiro, integrada sobre 0.52. [Mecanismo, pruebas dinámicas y límites](PROTECCION_FINALIZACION_053.md). En 20 parejas sintéticas: 3 reducen goles concedidos, 16 empatan y 1 empeora. A2/A4/A7 y el cierre defensivo siguen abiertos; no se demuestra mejora general. Consultar [ROADMAP.md](../ROADMAP.md) para estado consolidado. Las entradas inferiores se conservan como historial. No se inicia 0.54.
+
 Avance 0.52 D01/D02/D04/F05–F08: [presión y exposición](PRESION_EXPOSICION_052.md). Primer defensor considera línea abandonada sin respaldo e inferioridad local percibida. Pruebas espejo y contracasos; geometría y recuento aproximados, sin garantía de interceptación. Pendientes protección de finalización y validación con pases ejecutados y oposición reactiva. Cobertura general parcial.
 
 Avance 0.51 D02/D04/C02/E03: [amenazas simultáneas](AMENAZAS_SIMULTANEAS_051.md). Coste de abandonar líneas recordadas sin respaldo y alternativa de mantener posición. Pruebas causales frente a 0.50, espejo, respaldo ocupado y caducidad. Protección geométrica y respaldo presente no garantizan interceptación ni relevo futuro. Pendiente presión en inferioridad, acceso que abre el presionante y protección de finalización; cobertura general parcial.

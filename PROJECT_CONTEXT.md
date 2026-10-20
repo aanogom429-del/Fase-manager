@@ -1,6 +1,8 @@
 # Fase Manager — Contexto permanente del proyecto
 
-Actualizado: 20-10-2026. Motor actual: **0.53**, repositorio `aanogom429-del/Fase-manager`, rama `main`, commit anterior de motor `a19f7435c22896d15e22f4d1a00033ac87c58cea` (19-10-2026 21:38:58 UTC). La referencia anterior identifica el motor 0.52; el padre de la entrega 0.53 es `13c0330cc6abad294e0cc1552abb64b4bd71e46d`. La 0.53 se implementa de forma acotada según el informe enlazado, sin iniciar 0.54.
+Actualizado: 20-10-2026. Motor publicado: **0.53**, `main@82c6c02`. Esta rama contiene una **propuesta 0.53.1 evaluada y NO integrada en main** tras la auditoría. Commit del motor candidato: `3f189c9`; el commit final de documentación/evaluación se consulta en Git. Se conservan las referencias 0.52 (`a19f743`) y 0.53 (`d440066`) como instantáneas históricas. No se inicia 0.54.
+
+Informe vigente: [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md). Se corrige el anclaje del portero únicamente en el ensayo; el motor compara presión/temporización y protección con contactos rasos simulados a tiempo real, tiro ejecutable inmediato y costes de pases/disputa. No se cambia el comportamiento general del portero, el ataque ni las reglas IFAB. La evaluación sigue siendo sintética; la propuesta no supera la aceptación táctica: concede 32 goles frente a 26 en 0.53 y 28 en 0.52, aunque pasan las 55 entradas de pruebas. No promover el candidato solo por corregir el predictor. Los casos perjudiciales se conservan.
 
 ## Objetivos y continuidad
 
@@ -15,10 +17,10 @@ Fuentes: código del commit indicado, historial Git y documentación de `docs/`.
 - `index.html`: aplicación monolítica con HTML, CSS, SVG y JavaScript sin framework. Incluye interfaz, estado, decisiones, física simplificada, arbitraje y visor de referencia.
 - Simulación en navegador con `requestAnimationFrame` y acumulador a pasos de 1/120 s; movimiento acelerado integrado por subpasos. Campo lógico 100×64; parámetros de diseño no equivalen automáticamente a magnitudes calibradas de futbolistas reales.
 - Estado en memoria: jugadores, orientación, velocidad, capacidades, recuerdos, posesión, vuelo, acción técnica, órdenes, reloj, marcador, faltas, ventaja y reanudaciones. Guardado/restauración de decisiones y semilla reproducible en modo guiado; modo libre usa azar.
-- `data/`: 58 JSON de referencias, diagnósticos y resultados históricos.
-- `docs/`: 15 documentos anteriores y el informe de protección de finalización 0.53.
-- `scripts/`: 31 herramientas Python/Node para importación, diagnóstico y comparación.
-- `tests/`: 49 entradas CommonJS y una entrada Python; ocho instantáneas HTML en `tests/fixtures/`.
+- `data/`: referencias y resultados históricos más informes pareados, trazas y regresiones de 0.53.1; conservar procedencia y hashes.
+- `docs/`: continuidad, protección 0.53, auditoría y corrección 0.53.1 con resultados y limitaciones.
+- `scripts/`: herramientas Python/Node de importación, diagnóstico y comparación; `evaluate_finishing_v0531.cjs` reproduce comparación del candidato, control de tiro posterior descartado y trazas adversas.
+- `tests/`: 54 entradas CommonJS y una entrada Python (tres casos); diez instantáneas HTML (incluida una selección correctiva rechazada) en `tests/fixtures/`. Las pruebas específicas históricas 0.53 cargan su fixture; trayectoria, revisión y comparación comprueban la correctiva actual.
 - `README.md`: descripción mínima. Antes de esta consolidación había 160 archivos versionados.
 
 No hay proyecto nativo iOS, Capacitor, servidor de partidas, base de datos ni manifiesto `package.json` en esta base. Las pruebas Node usan `node:vm` y un DOM simulado; no equivalen a pruebas visuales en Safari/iPhone.
@@ -41,7 +43,7 @@ El enfoque del proyecto es sistémico: las conductas dependen de las relaciones 
 
 `attackingTargets` y `selectAttackSupports` asignan dos apoyos persistentes, con valoración desde oposición percibida, amplitud contextual progresiva, profundidad, equilibrio y ocupación de remate. Hay anclajes de posesión y límites tácticos de fuera de juego; persiste coordinación central y acceso a datos globales.
 
-`defensiveOrder`, `contextualDefense` y `defendingTarget` asignan presionante/cobertura, estiman llegada y ayuda disponible y consideran líneas percibidas y amenazas simultáneas. La 0.52 puede temporizar si presionar abandona una línea de pase sin respaldo o ante inferioridad local percibida; mantiene presión con acceso inmediato. La 0.53 añade protección de corredores rasos ante poseedor visible y conservación de cobertura, considerando orientación, movimiento y ayuda visible. Informe y contracasos en [PROTECCION_FINALIZACION_053.md](docs/PROTECCION_FINALIZACION_053.md).
+`defensiveOrder`, `contextualDefense` y `defendingTarget` asignan presionante/cobertura, estiman llegada y ayuda disponible y consideran líneas percibidas y amenazas simultáneas. La 0.52 puede temporizar si presionar abandona una línea de pase sin respaldo o ante inferioridad local percibida; mantiene presión con acceso inmediato. La 0.53 añadió protección de corredores rasos; la 0.53.1 sustituye su preparación ficticia por tiro ejecutable inmediato, integra movimiento y contacto de vuelo y compara los costes de abandonar presión/pases. Solo usa información visible o memoria propia vigente; mantiene órdenes y demora. Informes históricos en [PROTECCION_FINALIZACION_053.md](docs/PROTECCION_FINALIZACION_053.md) y corrección en [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md).
 
 Las órdenes guiadas sin balón incluyen apoyo, equilibrio, amplitud, profundidad, mantener posición, cobertura, presión y repliegue. Tienen demora, duración y prioridades; se cancelan según posesión y disponibilidad. Las transiciones limpian referencias ofensivas/defensivas y registran pérdidas. No constituyen todavía un ciclo adaptativo completo.
 
@@ -71,6 +73,6 @@ Consultar [REGLAS_IMPLEMENTACION.md](docs/REGLAS_IMPLEMENTACION.md): sus seccion
 
 ## Estado y evidencia
 
-La etapa A está abierta. La comparación dinámica 0.53 añade evidencia sintética acotada (3 parejas favorables, 16 sin cambio en goles y 1 adversa), no validación general. Existen pruebas funcionales, regresiones e informes con tracking de Metrica; reproducirlos no demuestra realismo general ni aprendizaje. Las ventanas históricas reutilizadas no son una reserva independiente. Las pruebas de la 0.52 aíslan destinos; la mejora defensiva general con rival reactivo no está demostrada. Resultado de la ejecución de recuperación y límites detallados en DEVELOPMENT_LOG.md.
+La etapa A está abierta; la propuesta 0.53.1 queda sin integrar por resultados tácticos insuficientemente consistentes. La propuesta 0.53.1 aporta coherencia temporal y comparación física comprobadas, pero no garantiza mejor resultado defensivo. Compara 76 configuraciones/228 simulaciones con 0.52 y 0.53, ambos equipos, orientaciones, ayudas y 16 condiciones de reserva inicial y otras 16 de confirmación de 12 s. El adverso auditado vuelve a 0 goles, pero se conserva, entre otros, el perjuicio equipo 0/pase/202 (0.53→0.53.1: 0→1). Los resultados agregados, tasas condicionadas, casos neutros, contrarios y límites figuran en el informe vigente. No son partidos independientes, xG ni validación externa. Permanecen las limitaciones de portero, conocimiento global de algunas capas, predicción general de vuelo y coordinación. Regresiones y comprobación Chromium se documentan en DEVELOPMENT_LOG.md; no se ha probado Safari/iOS.
 
 Referencias de continuidad: [matriz](docs/MATRIZ_COBERTURA_TACTICA.md), [cierre del motor](docs/CIERRE_MOTOR_TACTICO.md), [hoja histórica](docs/HOJA_DE_RUTA.md), [avance 0.52](docs/PRESION_EXPOSICION_052.md).

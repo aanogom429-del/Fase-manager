@@ -1,6 +1,6 @@
 # Fase Manager — Hoja de ruta de continuidad
 
-Fecha: 20-10-2026. Motor **0.53**, desarrollado sobre `main@13c0330` (motor anterior 0.52, `a19f743`). Incremento acotado de protección de finalización; no se inicia 0.54.
+Fecha: 20-10-2026. Motor publicado **0.53**, `main@82c6c02`. Propuesta correctiva **0.53.1 evaluada, NO integrada** tras la auditoría. Se preservan 0.52 y 0.53 como comparadores; no se inicia 0.54.
 
 Se conservan expresamente las etapas **A) motor táctico; B) videojuego comercial; C) adaptación a iOS**. Los estados son de alcance, no porcentajes. «Implementado» no significa «validado científicamente». Fuente detallada de requisitos e identificadores: [MATRIZ_COBERTURA_TACTICA.md](docs/MATRIZ_COBERTURA_TACTICA.md). Esta síntesis fija las prioridades actuales; se conserva la trazabilidad en [HOJA_DE_RUTA.md](docs/HOJA_DE_RUTA.md).
 
@@ -11,7 +11,7 @@ Se conservan expresamente las etapas **A) motor táctico; B) videojuego comercia
 - Orientación, recepción rasa con preparación, memoria individual y movimiento con aceleración/frenada/giro.
 - Pases y combinaciones guiadas de primer toque; conducciones y acciones de duelo; tiros, centros, cabeceos y despejes; envío largo del portero.
 - Procedimientos reglamentarios enumerados en PROJECT_CONTEXT.md.
-- Incrementos defensivos 0.49–0.53 e inspector de decisiones/destinos.
+- Incrementos defensivos publicados 0.49–0.53 e inspector; propuesta 0.53.1 pendiente de aceptación de decisiones/destinos.
 - Auditoría A0 y conservación de instantáneas e informes históricos.
 
 Estas entregas no cierran sus bloques generales. Los resultados efectivos de las pruebas de recuperación figuran en DEVELOPMENT_LOG.md, incluidos fallos o bloqueos si los hubiera.
@@ -24,7 +24,7 @@ Estas entregas no cierran sus bloques generales. Los resultados efectivos de las
 | A1 Apoyos/contexto | Parcial: apoyos persistentes y amplitud contextual implementados | Validar utilidad, continuidad, seguridad y equilibrio en escenarios nuevos y posesiones prolongadas. |
 | A2 Criterios y espacios | Parcial: orientación, memoria, llegada y capacidades; apoyos con percepción propia | Completar atención/percepción sin balón, recepción/anticipación y contornos de accesibilidad; comprobar estabilidad y cambios de función. |
 | A3 Ventajas | Pendiente de modelo completo; hay puntuaciones y recuentos locales | Comparar conservar/progresar/finalizar por ventaja numérica, posicional, cualitativa y dinámica con casos contrarios. |
-| A4 Conductas/ciclo | Parcial: ataque, órdenes y defensa 0.49–0.53 | Ampliar y validar protección de finalización, fijación/superación, rupturas sincronizadas, ayudas y reorganización adaptativa. |
+| A4 Conductas/ciclo | Parcial: ataque, órdenes y defensa 0.49–0.53; propuesta correctiva sin aceptar | Ampliar y validar protección de finalización, fijación/superación, rupturas sincronizadas, ayudas y reorganización adaptativa. |
 | A5 Individualidad/relaciones | Parcial: perfiles físicos, reacción, precisión y memoria | Fatiga/recuperación y áreas restantes; definir resonancia y ajuste recíproco observables, sin inferir psicología de tracking. |
 | A6 Técnica/reglas | Parcial: repertorio y procedimientos acotados | Controles en movimiento/aéreos, portero, contacto y lagunas IFAB; casos positivos/negativos por acción y regla. |
 | A7 Validación integral | En curso; cierre pendiente | Regresiones, ambos sentidos/modos, simulación prolongada, oposición reactiva, datos reservados por partido y utilidad además de posiciones. |
@@ -46,6 +46,16 @@ Criterios de aceptación del incremento (resultados y límites en [informe 0.53]
 7. Registrar código, pruebas, resultados adversos y límites antes de marcar el incremento completado. No declarar cerrado A4 ni todo el marco por completar 0.53.
 
 La 0.53 añade protección del poseedor visible y cobertura de tiro sin sustituir presión/temporización ni protección de pases. Casos espejo, pruebas dinámicas con tiros/pases y oposición libre, y regresiones acompañan la entrega. En 20 parejas sintéticas: 3 reducen goles, 16 empatan, 1 empeora. No demuestra mejora general ni cierra A4/A7. Pendientes dentro del bloque: investigar el contracaso adverso, trayectorias/intercepciones más completas, receptores potenciales y validación externa. No se desarrolla ni se asigna aquí una versión 0.54.
+
+### Propuesta 0.53.1 — NO ACEPTADA PARA MAIN
+
+Se corrigen montaje del portero, preparación ficticia, estimación de contacto y sustitución automática de un plan previo. Se conserva solo el tiro ejecutable inmediato tras descartar la hipótesis posterior sin beneficio demostrado, se conservan corredores ya accesibles y se vetan pérdidas locales de presión o pases sin respaldo. Órdenes, percepción limitada y reglas IFAB se mantienen; no se amplía el portero ni se inicia otro bloque.
+
+Comparación actual: 76 configuraciones × 0.52/0.53/0.53.1, con 16 condiciones de reserva inicial y otras 16 de confirmación más largas y capacidades distintas. Se guardan los casos favorables, neutros y perjudiciales y las tasas de exposición/presión/continuidad, además de goles. La precisión del predictor no equivale a superioridad táctica; el caso equipo 0/pase/202 pierde un bloqueo de 0.53. Informe: [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md).
+
+Las 55 entradas de regresión pasan, pero el candidato concede 32 goles frente a 26/28 en 0.53/0.52, pierde intercepciones y no ofrece una mejora suficientemente consistente. No se integra en main; se conserva en una rama revisable con las variantes rechazadas y sus informes.
+
+A2/A4/A6/A7 siguen abiertos: faltan relevo funcional y coordinación amplia, portero anticipativo, validación externa y comprobación representativa de posesiones prolongadas. Se descarta la primera selección que perjudicaba sistemáticamente la ayuda cercana; se conserva el acceso del presionante sin relevo. El motor posterior queda fijado antes de consultar las 16 condiciones nuevas de confirmación; los resultados no se usan para retocar umbrales de un gol concreto.
 
 ### Cierre de A y entrenamiento posterior
 

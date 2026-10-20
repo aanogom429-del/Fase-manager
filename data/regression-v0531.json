@@ -1,0 +1,558 @@
+{
+  "status": "technical_checks_passed_tactical_acceptance_failed",
+  "base": "82c6c021a510433472e12157a4ec363667ea9000",
+  "candidateEngineCommit": "3f189c9f875fc5bf8536fba231fd321579745a21",
+  "engineSha256": {
+    "v052": "2aabc7ad31293682799fc3e39d086ea5e77541b609307fdb7c76f9952136ccfc",
+    "v053": "3df7034dfafb05ecd642b2ea0601b7f27224fdcdd66fee3ce1e94101c264f331",
+    "v0531": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c"
+  },
+  "node": "v24.19.0",
+  "python": "3.12.14",
+  "baseline": [
+    {
+      "test": "tests/acceleration.cjs",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "test": "tests/advantage.cjs",
+      "exit": 0,
+      "seconds": 0.5
+    },
+    {
+      "test": "tests/aerial_play.cjs",
+      "exit": 0,
+      "seconds": 1.71
+    },
+    {
+      "test": "tests/anticipation_first_touch.cjs",
+      "exit": 0,
+      "seconds": 0.39
+    },
+    {
+      "test": "tests/attack_interactions.cjs",
+      "exit": 0,
+      "seconds": 37.0
+    },
+    {
+      "test": "tests/attack_origin.cjs",
+      "exit": 0,
+      "seconds": 0.45
+    },
+    {
+      "test": "tests/attacking_heights.cjs",
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "test": "tests/audit_continuity.cjs",
+      "exit": 0,
+      "seconds": 2.34
+    },
+    {
+      "test": "tests/audit_windows.cjs",
+      "exit": 0,
+      "seconds": 1.48
+    },
+    {
+      "test": "tests/contextual_defense.cjs",
+      "exit": 0,
+      "seconds": 0.08
+    },
+    {
+      "test": "tests/contextual_supports.cjs",
+      "exit": 0,
+      "seconds": 31.7
+    },
+    {
+      "test": "tests/contextual_width.cjs",
+      "exit": 0,
+      "seconds": 0.1
+    },
+    {
+      "test": "tests/continuity.cjs",
+      "exit": 0,
+      "seconds": 16.25
+    },
+    {
+      "test": "tests/defense.cjs",
+      "exit": 0,
+      "seconds": 0.09
+    },
+    {
+      "test": "tests/defense_origin.cjs",
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "test": "tests/defense_replay.cjs",
+      "exit": 0,
+      "seconds": 1.62
+    },
+    {
+      "test": "tests/defensive_coordination.cjs",
+      "exit": 0,
+      "seconds": 0.09
+    },
+    {
+      "test": "tests/defensive_roles.cjs",
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "test": "tests/destination_trace.cjs",
+      "exit": 0,
+      "seconds": 7.68
+    },
+    {
+      "test": "tests/discipline.cjs",
+      "exit": 0,
+      "seconds": 0.46
+    },
+    {
+      "test": "tests/finishing_dynamic.cjs",
+      "exit": 0,
+      "seconds": 8.31
+    },
+    {
+      "test": "tests/finishing_protection.cjs",
+      "exit": 0,
+      "seconds": 0.09
+    },
+    {
+      "test": "tests/fouls.cjs",
+      "exit": 0,
+      "seconds": 2.21
+    },
+    {
+      "test": "tests/game2.cjs",
+      "exit": 0,
+      "seconds": 1.78
+    },
+    {
+      "test": "tests/heights_report.cjs",
+      "exit": 0,
+      "seconds": 0.06
+    },
+    {
+      "test": "tests/individual_capabilities.cjs",
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "test": "tests/laws.cjs",
+      "exit": 0,
+      "seconds": 3.29
+    },
+    {
+      "test": "tests/lead_pass.cjs",
+      "exit": 0,
+      "seconds": 0.1
+    },
+    {
+      "test": "tests/offball.cjs",
+      "exit": 0,
+      "seconds": 1.08
+    },
+    {
+      "test": "tests/offside.cjs",
+      "exit": 0,
+      "seconds": 0.68
+    },
+    {
+      "test": "tests/offside_reference.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/opponent_perception.cjs",
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "test": "tests/orientation.cjs",
+      "exit": 0,
+      "seconds": 34.06
+    },
+    {
+      "test": "tests/owner_holdout.cjs",
+      "exit": 0,
+      "seconds": 5.16
+    },
+    {
+      "test": "tests/perceptual_memory.cjs",
+      "exit": 0,
+      "seconds": 0.24
+    },
+    {
+      "test": "tests/player_roles.cjs",
+      "exit": 0,
+      "seconds": 15.06
+    },
+    {
+      "test": "tests/pressure_exposure.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/reception.cjs",
+      "exit": 0,
+      "seconds": 0.7
+    },
+    {
+      "test": "tests/relational_width.cjs",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "test": "tests/simultaneous_threats.cjs",
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "test": "tests/support_assignment_perception.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/support_destination_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 9.19
+    },
+    {
+      "test": "tests/support_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 11.9
+    },
+    {
+      "test": "tests/support_holdout.cjs",
+      "exit": 0,
+      "seconds": 9.56
+    },
+    {
+      "test": "tests/support_perception.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/support_persistence.cjs",
+      "exit": 0,
+      "seconds": 0.25
+    },
+    {
+      "test": "tests/support_stability.cjs",
+      "exit": 0,
+      "seconds": 10.16
+    },
+    {
+      "test": "tests/tactical_utility.cjs",
+      "exit": 0,
+      "seconds": 0.04
+    },
+    {
+      "test": "tests/turn_movement.cjs",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "test": "tests/tracking.py",
+      "exit": 0
+    }
+  ],
+  "candidate": [
+    {
+      "test": "tests/acceleration.cjs",
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "test": "tests/advantage.cjs",
+      "exit": 0,
+      "seconds": 0.79
+    },
+    {
+      "test": "tests/aerial_play.cjs",
+      "exit": 0,
+      "seconds": 2.53
+    },
+    {
+      "test": "tests/anticipation_first_touch.cjs",
+      "exit": 0,
+      "seconds": 0.61
+    },
+    {
+      "test": "tests/attack_interactions.cjs",
+      "exit": 0,
+      "seconds": 41.63
+    },
+    {
+      "test": "tests/attack_origin.cjs",
+      "exit": 0,
+      "seconds": 0.47
+    },
+    {
+      "test": "tests/attacking_heights.cjs",
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "test": "tests/audit_continuity.cjs",
+      "exit": 0,
+      "seconds": 2.5
+    },
+    {
+      "test": "tests/audit_windows.cjs",
+      "exit": 0,
+      "seconds": 1.45
+    },
+    {
+      "test": "tests/contextual_defense.cjs",
+      "exit": 0,
+      "seconds": 0.08
+    },
+    {
+      "test": "tests/contextual_supports.cjs",
+      "exit": 0,
+      "seconds": 35.03
+    },
+    {
+      "test": "tests/contextual_width.cjs",
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "test": "tests/continuity.cjs",
+      "exit": 0,
+      "seconds": 18.0
+    },
+    {
+      "test": "tests/defense.cjs",
+      "exit": 0,
+      "seconds": 0.13
+    },
+    {
+      "test": "tests/defense_origin.cjs",
+      "exit": 0,
+      "seconds": 0.19
+    },
+    {
+      "test": "tests/defense_replay.cjs",
+      "exit": 0,
+      "seconds": 1.82
+    },
+    {
+      "test": "tests/defensive_coordination.cjs",
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "test": "tests/defensive_roles.cjs",
+      "exit": 0,
+      "seconds": 0.22
+    },
+    {
+      "test": "tests/destination_trace.cjs",
+      "exit": 0,
+      "seconds": 8.79
+    },
+    {
+      "test": "tests/discipline.cjs",
+      "exit": 0,
+      "seconds": 0.51
+    },
+    {
+      "test": "tests/finishing_dynamic.cjs",
+      "exit": 0,
+      "seconds": 9.7
+    },
+    {
+      "test": "tests/finishing_evaluation.cjs",
+      "exit": 0,
+      "seconds": 32.05
+    },
+    {
+      "test": "tests/finishing_pressure.cjs",
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "test": "tests/finishing_protection.cjs",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "test": "tests/finishing_revision.cjs",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "test": "tests/finishing_trajectory.cjs",
+      "exit": 0,
+      "seconds": 26.48
+    },
+    {
+      "test": "tests/fouls.cjs",
+      "exit": 0,
+      "seconds": 2.41
+    },
+    {
+      "test": "tests/game2.cjs",
+      "exit": 0,
+      "seconds": 2.03
+    },
+    {
+      "test": "tests/heights_report.cjs",
+      "exit": 0,
+      "seconds": 0.08
+    },
+    {
+      "test": "tests/individual_capabilities.cjs",
+      "exit": 0,
+      "seconds": 0.13
+    },
+    {
+      "test": "tests/laws.cjs",
+      "exit": 0,
+      "seconds": 4.7
+    },
+    {
+      "test": "tests/lead_pass.cjs",
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "test": "tests/offball.cjs",
+      "exit": 0,
+      "seconds": 1.53
+    },
+    {
+      "test": "tests/offside.cjs",
+      "exit": 0,
+      "seconds": 0.99
+    },
+    {
+      "test": "tests/offside_reference.cjs",
+      "exit": 0,
+      "seconds": 0.09
+    },
+    {
+      "test": "tests/opponent_perception.cjs",
+      "exit": 0,
+      "seconds": 0.27
+    },
+    {
+      "test": "tests/orientation.cjs",
+      "exit": 0,
+      "seconds": 38.91
+    },
+    {
+      "test": "tests/owner_holdout.cjs",
+      "exit": 0,
+      "seconds": 6.24
+    },
+    {
+      "test": "tests/perceptual_memory.cjs",
+      "exit": 0,
+      "seconds": 0.25
+    },
+    {
+      "test": "tests/player_roles.cjs",
+      "exit": 0,
+      "seconds": 16.57
+    },
+    {
+      "test": "tests/pressure_exposure.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/reception.cjs",
+      "exit": 0,
+      "seconds": 0.82
+    },
+    {
+      "test": "tests/relational_width.cjs",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "test": "tests/simultaneous_threats.cjs",
+      "exit": 0,
+      "seconds": 0.14
+    },
+    {
+      "test": "tests/support_assignment_perception.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/support_destination_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 8.45
+    },
+    {
+      "test": "tests/support_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 13.29
+    },
+    {
+      "test": "tests/support_holdout.cjs",
+      "exit": 0,
+      "seconds": 9.41
+    },
+    {
+      "test": "tests/support_perception.cjs",
+      "exit": 0,
+      "seconds": 0.07
+    },
+    {
+      "test": "tests/support_persistence.cjs",
+      "exit": 0,
+      "seconds": 0.27
+    },
+    {
+      "test": "tests/support_stability.cjs",
+      "exit": 0,
+      "seconds": 10.29
+    },
+    {
+      "test": "tests/tactical_utility.cjs",
+      "exit": 0,
+      "seconds": 0.03
+    },
+    {
+      "test": "tests/turn_movement.cjs",
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "test": "tests/tracking.py",
+      "exit": 0,
+      "detail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "test": "tests/finishing_comparison.cjs",
+      "exit": 0,
+      "seconds": null,
+      "detail": "Executed after final report generation: hashes, 76 cases, metric bounds, historical/current adverse replays, traces and ablation provenance passed."
+    }
+  ],
+  "candidatePassedFiles": 55,
+  "candidateFailedFiles": 0,
+  "pythonCases": 3,
+  "trajectoryOracle": {
+    "cases": 144,
+    "hits": 60,
+    "misses": 84,
+    "disagreements": 0
+  },
+  "dynamicComparison": {
+    "configurations": 76,
+    "engineResults": 228,
+    "fresh": 108,
+    "reused": 120
+  },
+  "browser": "Chromium: guided choice, free simulation, 4x speed, finite SVG, pause, reference panel, advancing clock, no page errors or engine error status",
+  "acceptance": "Do not merge candidate into main: 32 goals vs 26 in 0.53 and 28 in 0.52; technical correctness does not establish consistent tactical improvement."
+}

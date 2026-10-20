@@ -1,5 +1,43 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 20-10-2026 — Propuesta correctiva 0.53.1 evaluada; NO integrada en main
+
+Base solicitada y comprobada en GitHub: `82c6c021a510433472e12157a4ec363667ea9000`. Motor candidato fijado en `3f189c9` antes de consultar las nuevas condiciones de confirmación. Rama de conservación: `codex/fase-manager-0.53.1-evaluation`. **No se acepta la propuesta para main**: pasan las verificaciones técnicas, pero no hay mejora táctica suficientemente consistente. No se inicia 0.54.
+
+Informe: [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md). Datos completos y procedencia: `data/finishing-v0531.json`, `finishing-v0531-control.json`, `finishing-v0531-rejected.json`, `finishing-v0531-traces.json` y `regression-v0531.json`.
+
+### Cambios investigados
+
+- Portero: se corrige el montaje del ensayo (`hx/hy/sx/sy` coherentes con su posición). La política general del portero permanece idéntica. Se conservan evaluador/informe 0.53 defectuosos como históricos y su fuente exacta en un fixture.
+- Predictor: remate ejecutable inmediato, sin preparación angular ficticia. Movimiento copiado con aceleración vectorial, velocidad, frenada, orientación y demora propia; comprobación del segmento de balón a 120 Hz con radio real de contacto. No se cambia la física real ni la ejecución ofensiva para favorecer a la defensa.
+- Decisión: comparación de corredores, pases percibidos y acceso; el presionante sin relevo confirmado no acepta perder acceso estimado para cubrir un rayo. Se mantienen percepción limitada, órdenes y memoria. El control de tiro posterior fue neutral en 22 situaciones y se retira del motor propuesto.
+- Una primera selección con dos horizontes (`bedf99f`) concedió cinco goles en los ocho casos con ayuda, frente a cero en 0.52 y 0.53. Se rechaza y conserva con sus 60 configuraciones y fuente. Permitir sacrificar acceso ante ganancia inmediata tampoco solucionó consistentemente ese grupo. No se ajustaron umbrales para borrar un gol.
+
+### Pruebas antes y después
+
+- Base: 50/50 entradas PASS, incluidas las tres pruebas Python.
+- Primera selección: 53 entradas técnicas PASS, posteriormente rechazada por la evaluación táctica; un conjunto de pruebas verde no constituyó aceptación.
+- Selección conservadora previa a simplificar: 54 entradas PASS; comparación documental adicional ejecutada tras generar datos. Se mantuvo el motor fijo antes de evaluar el grupo nuevo.
+- Candidato final: **55/55 entradas PASS** (54 CommonJS y una entrada Python con tres casos), cero fallos finales. La comprobación del informe se ejecutó después de regenerarlo y forma parte del total. Resultado por archivo y versiones Node 24.19.0 / Python 3.12.14 en `data/regression-v0531.json`.
+- Oráculo físico: 144 confrontaciones con `update` real; 60 contactos, 84 ausencias, cero discrepancias. Ambos equipos, orientaciones, velocidades y aceleraciones. La prueba de función de presión reproduce el fallo previo y pasa con la corrección; 64 alternativas espejo y opciones protectoras conservadas.
+- Observación: igualdad de contadores/posiciones con observador desactivado, equivalencia del protocolo histórico, anclajes corregidos en ambos equipos, hashes y límites de métricas, seis reejecuciones adversas y trazas que preservan la simulación. Cachés inválidas se recalculan y producen los mismos resultados.
+- Chromium: decisión guiada, modo libre, velocidad ×4, reloj avanzando, pausa, SVG finito y panel de referencia; sin errores JavaScript ni mensaje de error del motor. Sin prueba Safari/iPhone.
+- `movement`, `update`, decisiones ofensivas y código IFAB permanecen idénticos al texto de la base; las regresiones de reglas, reanudaciones, disciplina, ventaja y continuidad pasan.
+
+### Resultado y decisión de integración
+
+76 configuraciones × tres motores = 228 resultados comparables. Se ejecutan de nuevo 108 simulaciones (las 76 del candidato y 32 de comparadores en condiciones nuevas); se reutilizan 120 resultados históricos con código, hashes y configuración idénticos. Un modo permite forzar las 228 nuevas. Los datos originales de la primera selección se habían obtenido ejecutando sus 180 simulaciones. Los grupos incluyen ambos equipos, tres orientaciones iniciales, tiros/pases reales, ayudas, 16 condiciones de reserva inicial y otras 16 de confirmación con semillas 1009/1601 y posesiones de 12 s.
+
+- Goles 0.52 / 0.53 / candidato: **28 / 26 / 32**. Frente a 0.52: 0 configuraciones favorables en goles, 72 neutrales y 4 perjudiciales. Frente a 0.53: 3 favorables, 64 neutrales y 9 perjudiciales.
+- Frente a 0.53 bajan tiros 85→77 y ventanas potenciales 39,15→33,55 s; mejoran algunos indicadores de acceso/presión y doble cobertura. Empeoran intercepciones 70→58, opciones de pase acumuladas 180,85→184,70 opción·s y exposición condicionada aproximadamente 0,494→0,530. No se interpreta una reducción de tiempo de peligro tras un gol como mejora por sí sola.
+- El adverso auditado equipo 1/pase/101 pasa 1→0 y recupera por entrada a 2,350 s, pero el caso equipo 0/pase/202 conserva el perjuicio 0→1. Ambos se registran con la secuencia completa, sin atribuir toda divergencia posterior a los mismos sorteos.
+- La confirmación nueva no se usa para retocar el código: un caso mejora en goles frente a 0.53 y 15 empatan; frente a 0.52, dos empeoran y 14 empatan.
+
+La corrección del ensayo y del cálculo de contacto queda demostrada en su alcance. La combinación de decisiones no supera la aceptación táctica pedida. Por eso no se integra 0.53.1 en main ni se presentan las variantes como funcionalidades aceptadas. Se conserva una propuesta reproducible para revisar coordinación/relevo y reacción ante recepción antes de volver a intentar una correctiva. A2/A4/A6/A7 siguen abiertos; B comercial y C iOS pendientes.
+
+---
+
+
 ## 20-10-2026 — Auditoría táctica de 0.53 (solo documentación)
 
 Referencia de motor: `d440066319ad18c5ebbe6cbd0ebe0e7bdc62488b`, comprobada en `main`. Informe: [AUDITORIA_TACTICA_053.md](docs/AUDITORIA_TACTICA_053.md). No se modifica el motor, el evaluador ni las pruebas; no se implementa 0.54.

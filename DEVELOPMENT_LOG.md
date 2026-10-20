@@ -1,5 +1,18 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 20-10-2026 — Auditoría táctica de 0.53 (solo documentación)
+
+Referencia de motor: `d440066319ad18c5ebbe6cbd0ebe0e7bdc62488b`, comprobada en `main`. Informe: [AUDITORIA_TACTICA_053.md](docs/AUDITORIA_TACTICA_053.md). No se modifica el motor, el evaluador ni las pruebas; no se implementa 0.54.
+
+- Caso adverso equipo 1/pase/101 reproducido: 0→1. Reconstrucción de posiciones, intenciones, pases, recuperación, tiro y portero. A 1,825 s, con los mismos sorteos hasta la bifurcación, la distancia percibida 4,047→3,797 cruza el umbral de conducción y favorece el pase; no es simplemente pérdida continua de presión.
+- Error demostrado del ensayo anterior: `hx` del portero queda lejos de su posición inicial y lo hace abandonar la meta. Corregir solo ese anclaje en el ensayo no elimina el caso adverso. Con ayuda cercana parada o en movimiento, el caso termina 0→0.
+- 40 parejas distintas / 80 simulaciones de seis segundos: 24 de orientación, ocho con anclaje del portero corregido y ocho con ayuda. Observación temporal externa; igualdad de ocho parejas originales en los contadores y desenlaces. Repeticiones adicionales para trazar azar y acceso, sin contarlas como nuevas parejas.
+- Grupo de orientación: goles 10→6, pero tiros concedidos 19→26 y ventanas potenciales de ocasión 9,00→15,50 s. Intercepciones 4→14 y entradas recuperadoras 6→2. Son métricas sintéticas, no xG ni validación general. Detalle, controles y código de reproducción en el informe.
+- No se demuestra que proteger impida una entrada segura: persisten lecturas antiguas y la disputa sigue activa. Se identifica desajuste entre preparación angular supuesta y ejecución instantánea del tiro, además de límites de cobertura conjunta.
+- Recomendación: revisar/corregir de forma acotada la 0.53 y el protocolo antes de pasar al siguiente bloque; no revertir todo ni ajustar para un único gol. A4/A7 siguen abiertos, B/C pendientes. No se vuelve a ejecutar toda la batería histórica: el motor permanece idéntico y el 50/50 anterior no se presenta como resultado nuevo.
+
+---
+
 ## 20-10-2026 — Versión 0.53: protección de finalización
 
 Base: `main@13c0330cc6abad294e0cc1552abb64b4bd71e46d`, motor previo 0.52 (`a19f743`). El hash del commit de esta versión se obtiene con `git log -1 -- index.html`; no se inserta su propio hash dentro del contenido del commit.

@@ -95,13 +95,30 @@ function definitions(){
  for(const t of [0,1])for(const [kind,seed] of [['pass',101],['free',202]])for(const help of [1,2])cases.push({group:'help',t,kind,seed,options:{help}});
  // Reserved seeds and structure/profile combinations; do not tune policy against this group.
  for(const t of [0,1])for(const kind of ['pass','free'])for(const seed of [307,809])for(const profile of [.8,1.2])cases.push({group:'reserved',t,kind,seed,options:{structure:true,help:1,profile,angle:profile<1?-Math.PI/2:Math.PI/2,seconds:12}});
+ for(const t of [0,1])for(const kind of ['pass','free'])for(const seed of [1009,1601])for(const profile of [.9,1.1])cases.push({group:'confirmation',t,kind,seed,options:{structure:true,help:2,profile,angle:profile<1?-Math.PI/2:Math.PI/2,seconds:12}});
  return cases;
 }
 function sources(){return Object.fromEntries(['v052','v053','v0531'].map(v=>[v,fs.readFileSync(path.join(root,v==='v0531'?'index.html':`tests/fixtures/engine-${v}.html`),'utf8')]));}
-function run(cases=definitions()){
- const src=sources(),rows=[];
+function run(cases=definitions(),src=sources()){
+ const rows=[];
  for(const c of cases){const results={};for(const [v,s] of Object.entries(src))results[v]=simulate(s,c.t,c.kind,c.seed,c.options);rows.push({...c,results});if(require.main===module)console.error('Evaluated',rows.length,c.group,c.t,c.kind,c.seed);}
  return {candidate:'0.53.1',engineSha256:Object.fromEntries(Object.entries(src).map(([v,s])=>[v,hash(s)])),protocol:'Identical corrected keeper anchors for all three engines; 120 Hz updates, 20 Hz passive geometry; no interventions after setup except declared initial kick. Reserved group uses new seeds, nearby block, altered defender capabilities/momentum and 12 s possessions. Observer information never enters engine decisions.',limitations:['Synthetic, no real-match validation or xG','Potential windows are geometric opportunities, not predicted goals','Geometric rays omit height and body parts; access uses existing approximate arrivalTime to radius 1.65','Goalkeeper movement/contact policy unchanged','Shared seed does not imply shared draws after decisions diverge','Pressure means tackle range and cooldown, not a guaranteed recovery','Intent changes include target movement, not necessarily tactical oscillation'],rows};
 }
-if(require.main===module){const report=run();fs.writeFileSync(path.join(root,'data/finishing-v0531.json'),JSON.stringify(report,null,2)+'\n');}
+if(require.main===module){
+ const immediate=process.argv[2]==='--immediate-only',traces=process.argv[2]==='--traces',rejected=process.argv[2]==='--rejected';
+ if(process.argv[2]&&!immediate&&!traces&&!rejected)throw Error('Unknown evaluation option');
+ const src=sources();let cases=definitions();
+ if(rejected){src.v0531=fs.readFileSync(path.join(root,'tests/fixtures/finishing-candidate-rejected.html'),'utf8');cases=cases.filter(c=>c.group!=='confirmation');}
+ if(immediate){
+  const anchor='const rays=[0,horizon].flatMap';if(!src.v0531.includes(anchor))throw Error('Missing immediate-only variant anchor');
+  src.immediateOnly=src.v0531.replace(anchor,'const rays=[0].flatMap');delete src.v052;delete src.v0531;
+  cases=cases.filter(c=>c.group==='help'||c.group==='orientation'&&c.options.angle===0||c.group==='shot'&&c.seed===101);
+ }
+ if(traces)cases=[{group:'audited-adverse',t:1,kind:'pass',seed:101,options:{trace:true}},{group:'retained-adverse',t:0,kind:'pass',seed:202,options:{trace:true}}];
+ const report=run(cases,src);
+ if(immediate){report.candidate='rejected immediate-only control';report.protocol='22 corrected development cases: archived 0.53 against current-source perturbation limited to launch time zero. No reserved cases. Source hashes identify both engines.';}
+ if(rejected){report.candidate='rejected two-horizon selection';report.rejection='Nearby-help development group concedes 5 goals versus 0 in both archived engines; physical ray gain alone did not preserve pressure function.';}
+ if(traces)report.protocol='Two adverse sequences, three engines, corrected keeper anchors; passive events and 20 Hz positions/intents. No goal threshold fitting.';
+ fs.writeFileSync(path.join(root,rejected?'data/finishing-v0531-rejected.json':traces?'data/finishing-v0531-traces.json':immediate?'data/finishing-v0531-immediate.json':'data/finishing-v0531.json'),JSON.stringify(report,null,2)+'\n');
+}
 module.exports={simulate,definitions,sources,run,laneGap};

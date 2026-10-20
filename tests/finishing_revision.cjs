@@ -9,14 +9,14 @@ function setup(t){
  return {e,p,mate,c,receiver,ps,f};
 }
 for(const t of [0,1]){
- const {e,p,mate,c,receiver,ps,f}=setup(t),proposed=f(15,40),read=()=>e.t.protect(p,0,c,proposed),initial=JSON.stringify(e.t.savePosition());
+ const {e,p,mate,c,receiver,ps,f}=setup(t),proposed=f(15,40),read=()=>e.t.protect(p,1,c,proposed),initial=JSON.stringify(e.t.savePosition());
  const protect=read();assert(protect?.mode.includes('tiro'),'Unbacked shot corridor can still justify protection');
  assert.equal(JSON.stringify(e.t.savePosition()),initial,'Hypotheses do not alter state or random seed');
  assert.equal(e.t.protect(p,1,c,proposed).mode,'Mantener cobertura de tiro');
  // A turn is not a compulsory wind-up: kickTo can launch at the same instant.
  c.bodyAngle+=Math.PI;assert.equal(JSON.stringify(read()),JSON.stringify(protect));c.bodyAngle-=Math.PI;
  // Retain the previous approach when its path already blocks the threat.
- Object.assign(p,f(7,34.5));assert.equal(read(),null);Object.assign(p,f(7,36));
+ Object.assign(p,f(7,34.5));assert.equal(e.t.protect(p,0,c,proposed),null);Object.assign(p,f(7,36));
  // A visible/recent receiver whose line would be abandoned vetoes the override.
  p.rivalMemory=[{id:receiver.id,...f(0,35.5),seenAt:10}];assert.equal(read(),null,'Do not open an unbacked passing line');
  p.rivalMemory[0].seenAt=0;assert(read(),'Expired memory cannot constrain the policy');p.rivalMemory=[];

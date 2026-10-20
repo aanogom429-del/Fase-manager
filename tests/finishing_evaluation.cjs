@@ -16,5 +16,5 @@ for(const t of [0,1]){
 const adverse=simulate(source,1,'pass',101,{trace:true});assert.equal(adverse.goalsConceded,1,'Correcting setup does not erase audited adverse case');
 assert(adverse.events.some(e=>e.type==='kick'&&e.kind==='shot'&&e.team===0));
 assert.equal(adverse.metrics.shotsConceded,1);assert.equal(adverse.metrics.tackleRecoveries,0);
-const defs=definitions();assert.equal(defs.length,60);assert(defs.filter(c=>c.group==='reserved').every(c=>![101,202].includes(c.seed)&&c.options.seconds===12));
+const defs=definitions();assert.equal(defs.length,76);assert(defs.filter(c=>c.group==='reserved').every(c=>![101,202].includes(c.seed)&&c.options.seconds===12));
 console.log('PASS: passive observer, legacy equivalence, corrected keeper anchors mirrored, audited adverse case and reserved protocol');

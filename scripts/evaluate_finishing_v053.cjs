@@ -1,4 +1,5 @@
-// Paired synthetic dynamic probes: no fitted real-match claim.
+// Historical 0.53 protocol, intentionally retained with its audited stale keeper anchor.
+// Use evaluate_finishing_v0531.cjs for corrected, current comparisons.
 const fs=require('node:fs'),path=require('node:path'),{env}=require('../tests/continuity.cjs');
 const {createHash}=require('node:crypto');
 const root=path.join(__dirname,'..'),entry='startSituation();requestAnimationFrame(frame);';
@@ -42,7 +43,7 @@ function simulate(source,t,kind,seed){
   movedDefenders:ps.filter(q=>q.t===t&&Math.hypot(q.x-initial[q.id].x,q.y-initial[q.id].y)>.1).length};
 }
 function run(){
- const sources={v052:fs.readFileSync(path.join(root,'tests/fixtures/engine-v052.html'),'utf8'),v053:fs.readFileSync(path.join(root,'index.html'),'utf8')};
+ const sources={v052:fs.readFileSync(path.join(root,'tests/fixtures/engine-v052.html'),'utf8'),v053:fs.readFileSync(path.join(root,'tests/fixtures/engine-v053.html'),'utf8')};
  const rows=[];
  for(const t of [0,1])for(const kind of ['delayed','immediate','central','pass','free'])for(const seed of [101,202]){
   const before=simulate(sources.v052,t,kind,seed),after=simulate(sources.v053,t,kind,seed);

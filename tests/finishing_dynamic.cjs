@@ -1,8 +1,8 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{createHash}=require('node:crypto');
 const {simulate}=require('../scripts/evaluate_finishing_v053.cjs');
-const root=path.join(__dirname,'..'),source=fs.readFileSync(path.join(root,'index.html'),'utf8'),baseline=fs.readFileSync(path.join(root,'tests/fixtures/engine-v052.html'),'utf8');
+const root=path.join(__dirname,'..'),source=fs.readFileSync(path.join(root,'tests/fixtures/engine-v053.html'),'utf8'),baseline=fs.readFileSync(path.join(root,'tests/fixtures/engine-v052.html'),'utf8');
 const report=JSON.parse(fs.readFileSync(path.join(root,'data/finishing-v053.json'),'utf8'));
-assert.equal(report.engineSha256.v053,createHash('sha256').update(source).digest('hex'),'Report must identify the tested candidate');
+assert.equal(report.engineSha256.v053,createHash('sha256').update(source).digest('hex'),'Historical report must identify archived 0.53; current engine covered by finishing_revision' );
 assert.equal(report.engineSha256.v052,createHash('sha256').update(baseline).digest('hex'));
 assert.equal(report.rows.length,20);
 for(const t of [0,1])for(const kind of ['delayed','immediate','central','pass','free'])for(const seed of [101,202]){

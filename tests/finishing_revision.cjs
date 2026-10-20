@@ -5,22 +5,22 @@ function setup(t){
  e.t.scenario({time:10,team:t});const f=(x,y)=>({x:t?100-x:x,y:t?64-y:y}),ps=e.t.get().players;
  const p=ps.find(q=>q.t===t&&q.n===6),mate=ps.find(q=>q.t===t&&q.n===7),c=ps.find(q=>q.t!==t&&q.n===6),receiver=ps.find(q=>q.t!==t&&q.n===7);
  for(const q of ps)Object.assign(q,f(80,60),{vx:0,vy:0,rivalMemory:[],visualMemory:[]});
- Object.assign(c,f(20,40),{bodyAngle:t?0:Math.PI});e.t.capture(c,'test');Object.assign(p,f(7,36),{bodyAngle:t?Math.PI:0});
+ Object.assign(c,f(20,40),{bodyAngle:t?0:Math.PI});e.t.capture(c,'test');Object.assign(p,f(7,34.5),{bodyAngle:t?Math.PI:0});
  return {e,p,mate,c,receiver,ps,f};
 }
 for(const t of [0,1]){
- const {e,p,mate,c,receiver,ps,f}=setup(t),proposed=f(15,40),read=()=>e.t.protect(p,1,c,proposed),initial=JSON.stringify(e.t.savePosition());
+ const {e,p,mate,c,receiver,ps,f}=setup(t),proposed=f(13,35),read=()=>e.t.protect(p,1,c,proposed),initial=JSON.stringify(e.t.savePosition());
  const protect=read();assert(protect?.mode.includes('tiro'),'Unbacked shot corridor can still justify protection');
  assert.equal(JSON.stringify(e.t.savePosition()),initial,'Hypotheses do not alter state or random seed');
  assert.equal(e.t.protect(p,1,c,proposed).mode,'Mantener cobertura de tiro');
  // A turn is not a compulsory wind-up: kickTo can launch at the same instant.
  c.bodyAngle+=Math.PI;assert.equal(JSON.stringify(read()),JSON.stringify(protect));c.bodyAngle-=Math.PI;
  // Retain the previous approach when its path already blocks the threat.
- Object.assign(p,f(7,34.5));assert.equal(e.t.protect(p,0,c,proposed),null);Object.assign(p,f(7,36));
+ Object.assign(p,f(7,34.5));assert.equal(e.t.protect(p,0,c,f(15,40)),null);Object.assign(p,f(7,34.5));
  // A visible/recent receiver whose line would be abandoned vetoes the override.
- p.rivalMemory=[{id:receiver.id,...f(0,35.5),seenAt:10}];assert.equal(read(),null,'Do not open an unbacked passing line');
+ p.rivalMemory=[{id:receiver.id,...f(0,27),seenAt:10}];assert.equal(read(),null,'Do not open an unbacked passing line');
  p.rivalMemory[0].seenAt=0;assert(read(),'Expired memory cannot constrain the policy');p.rivalMemory=[];
- Object.assign(p,f(19,40));assert.equal(read(),null,'Tackle-range access preserves pressure');Object.assign(p,f(7,36));
+ Object.assign(p,f(19,40));assert.equal(read(),null,'Tackle-range access preserves pressure');Object.assign(p,f(7,34.5));
  e.t.get().offBallOrders.push({i:ps.indexOf(p),until:20});assert.equal(read(),null,'Explicit orders remain authoritative');e.t.get().offBallOrders.length=0;
  // No private destination of the helper: only visible position and motion are used.
  const a=JSON.stringify(read());mate.intentX=123;mate.intentY=-40;assert.equal(JSON.stringify(read()),a);

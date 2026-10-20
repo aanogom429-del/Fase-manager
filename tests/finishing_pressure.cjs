@@ -9,8 +9,8 @@ for(const t of [0,1]){
  Object.assign(c,f(20,40),{bodyAngle:t?0:Math.PI});e.t.capture(c,'test');
  Object.assign(p,f(12,35.8),{bodyAngle:t?Math.PI:0});
  assert.equal(e.t.protect(p,0,c,f(15,40)),null,'Without a confirmed pressure relay, geometric gain must not sacrifice approach');
- for(const rank of [0,1])for(const x of [4,7,10,13])for(const y of [33,36,39]){
-  Object.assign(p,f(x,y),{bodyAngle:t?Math.PI:0});const proposed=f(rank===0?15:4,rank===0?40:32),choice=e.t.protect(p,rank,c,proposed);checked++;
+ for(const rank of [0,1])for(const x of [4,7,10,13])for(const y of [33,34.5,36,39]){
+  Object.assign(p,f(x,y),{bodyAngle:t?Math.PI:0});const proposed=f(rank===0?15:13,rank===0?40:35),choice=e.t.protect(p,rank,c,proposed);checked++;
   if(!choice)continue;protectedChoices++;
   if(rank===0){const a=e.t.position(p,proposed,p.reactionDelay),b=e.t.position(p,choice,p.reactionDelay);
    assert(e.t.arrivalTime({...b,intentAt:10},c,2.8)<=e.t.arrivalTime({...a,intentAt:10},c,2.8)+1e-6,'Every accepted pressing override preserves estimated access');}

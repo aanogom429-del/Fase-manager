@@ -1094,11 +1094,9 @@ function protectFinishingLine(p,rank,ballPos,proposed){
  if(Math.abs(ballPos.x-goalX)>25||Math.abs(ballPos.y-32)>17)return null;
  // Radio de tentativa real, separado del contacto de vuelo (1,65). No promete recuperar.
  if(arrivalTime(p,ballPos,2.8)<=.35)return null;
- // Dos hipótesis, no una espera obligatoria: tiro ahora o durante la próxima lectura.
- const horizon=p.reactionDelay||.35,speed=Math.hypot(owner.vx||0,owner.vy||0),scale=speed?Math.min(1,(owner.speed||8)/speed):0;
- const rays=[0,horizon].flatMap(delay=>[0,-2.5,2.5].map(offset=>({delay,
-  a:{x:clamp(ballPos.x+(owner.vx||0)*scale*delay,0,100),y:clamp(ballPos.y+(owner.vy||0)*scale*delay,0,64)},
-  end:{x:goalX,y:32+offset*direction(p.t)}})));
+ // Tiro ejecutable ahora. El horizonte posterior solo compara nuestro acceso, no retrasa al rival.
+ const horizon=p.reactionDelay||.35;
+ const rays=[0,-2.5,2.5].map(offset=>({delay:0,a:{...ballPos},end:{x:goalX,y:32+offset*direction(p.t)}}));
  const contacts=rays.map(({a,end})=>shotLaneProjection(p,a,end)).filter(q=>q&&q.gap<1.65);
  if(!contacts.length)return null;
  const helpers=team(p.t).filter(q=>q!==p&&!isKeeper(q)&&!defenseCommitted(q)&&q.defDuty!=='press'&&perceives(p,q));

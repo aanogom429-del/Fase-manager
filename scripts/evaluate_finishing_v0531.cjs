@@ -99,26 +99,45 @@ function definitions(){
  return cases;
 }
 function sources(){return Object.fromEntries(['v052','v053','v0531'].map(v=>[v,fs.readFileSync(path.join(root,v==='v0531'?'index.html':`tests/fixtures/engine-${v}.html`),'utf8')]));}
-function run(cases=definitions(),src=sources()){
- const rows=[];
- for(const c of cases){const results={};for(const [v,s] of Object.entries(src))results[v]=simulate(s,c.t,c.kind,c.seed,c.options);rows.push({...c,results});if(require.main===module)console.error('Evaluated',rows.length,c.group,c.t,c.kind,c.seed);}
- return {candidate:'0.53.1',engineSha256:Object.fromEntries(Object.entries(src).map(([v,s])=>[v,hash(s)])),protocol:'Identical corrected keeper anchors for all three engines; 120 Hz updates, 20 Hz passive geometry; no interventions after setup except declared initial kick. Reserved group uses new seeds, nearby block, altered defender capabilities/momentum and 12 s possessions. Observer information never enters engine decisions.',limitations:['Synthetic, no real-match validation or xG','Potential windows are geometric opportunities, not predicted goals','Geometric rays omit height and body parts; access uses existing approximate arrivalTime to radius 1.65','Goalkeeper movement/contact policy unchanged','Shared seed does not imply shared draws after decisions diverge','Pressure means tackle range and cooldown, not a guaranteed recovery','Intent changes include target movement, not necessarily tactical oscillation'],rows};
+function simulationHash(){return hash(instrument.toString()+laneGap.toString()+simulate.toString());}
+function twoHorizonControl(source){
+ const anchor='const rays=[0,-2.5,2.5].map(offset=>({delay:0,a:{...ballPos},end:{x:goalX,y:32+offset*direction(p.t)}}));';
+ if(!source.includes(anchor))throw Error('Missing two-horizon control anchor');
+ return source.replace(anchor,`const speed=Math.hypot(owner.vx||0,owner.vy||0),scale=speed?Math.min(1,(owner.speed||8)/speed):0;
+ const rays=[0,horizon].flatMap(delay=>[0,-2.5,2.5].map(offset=>({delay,
+ a:{x:clamp(ballPos.x+(owner.vx||0)*scale*delay,0,100),y:clamp(ballPos.y+(owner.vy||0)*scale*delay,0,64)},end:{x:goalX,y:32+offset*direction(p.t)}})));`);
+}
+function run(cases=definitions(),src=sources(),cache=null){
+ const rows=[],engineSha256=Object.fromEntries(Object.entries(src).map(([v,s])=>[v,hash(s)])),executionCounts={fresh:0,reused:0};
+ const simulationSha256=simulationHash();
+ for(const c of cases){
+  const known=cache&&cache.simulationSha256===simulationSha256&&cache.rows.find(r=>r.group===c.group&&r.t===c.t&&r.kind===c.kind&&r.seed===c.seed&&JSON.stringify(r.options)===JSON.stringify(c.options));
+  const results={};
+  for(const [v,s]of Object.entries(src)){
+   const cached=v!=='v0531'&&cache&&cache.engineSha256[v]===engineSha256[v]&&known&&known.results[v];
+   results[v]=cached||simulate(s,c.t,c.kind,c.seed,c.options);executionCounts[cached?'reused':'fresh']++;
+  }
+  rows.push({...c,results});if(require.main===module)console.error('Compared',rows.length,c.group,c.t,c.kind,c.seed);
+ }
+ return {candidate:'0.53.1',engineSha256,simulationSha256,executionCounts,protocol:'Identical corrected keeper anchors for all compared engines; 120 Hz updates, 20 Hz passive geometry; no interventions after setup except declared initial kick. Initial reserve and new confirmation use distinct seeds, nearby block, altered defender capabilities/momentum and 12 s possessions. Observer information never enters engine decisions. Cached historical results require identical engine/simulation hashes and exact configuration; current candidate always runs afresh.',limitations:['Synthetic, no real-match validation or xG','Potential windows are geometric opportunities, not predicted goals','Geometric rays omit height and body parts; access uses existing approximate arrivalTime to radius 1.65','Goalkeeper movement/contact policy unchanged','Shared seed does not imply shared draws after decisions diverge','Pressure means tackle range and cooldown, not a guaranteed recovery','Intent changes include target movement, not necessarily tactical oscillation'],rows};
 }
 if(require.main===module){
- const immediate=process.argv[2]==='--immediate-only',traces=process.argv[2]==='--traces',rejected=process.argv[2]==='--rejected';
- if(process.argv[2]&&!immediate&&!traces&&!rejected)throw Error('Unknown evaluation option');
- const src=sources();let cases=definitions();
- if(rejected){src.v0531=fs.readFileSync(path.join(root,'tests/fixtures/finishing-candidate-rejected.html'),'utf8');cases=cases.filter(c=>c.group!=='confirmation');}
- if(immediate){
-  const anchor='const rays=[0,horizon].flatMap';if(!src.v0531.includes(anchor))throw Error('Missing immediate-only variant anchor');
-  src.immediateOnly=src.v0531.replace(anchor,'const rays=[0].flatMap');delete src.v052;delete src.v0531;
-  cases=cases.filter(c=>c.group==='help'||c.group==='orientation'&&c.options.angle===0||c.group==='shot'&&c.seed===101);
+ const mode=process.argv[2]||'full';
+ if(!['full','--two-horizon-control','--traces','--rejected'].includes(mode))throw Error('Unknown evaluation option');
+ const src=sources();let cases=definitions(),output='data/finishing-v0531.json',cache=null;
+ if(mode==='full'&&process.env.FASE_EVALUATION_FRESH!=='1'){
+  const p=path.join(root,'data/finishing-v0531-rejected.json');if(fs.existsSync(p))cache=JSON.parse(fs.readFileSync(p,'utf8'));
  }
- if(traces)cases=[{group:'audited-adverse',t:1,kind:'pass',seed:101,options:{trace:true}},{group:'retained-adverse',t:0,kind:'pass',seed:202,options:{trace:true}}];
- const report=run(cases,src);
- if(immediate){report.candidate='rejected immediate-only control';report.protocol='22 corrected development cases: archived 0.53 against current-source perturbation limited to launch time zero. No reserved cases. Source hashes identify both engines.';}
- if(rejected){report.candidate='rejected two-horizon selection';report.rejection='Nearby-help development group concedes 5 goals versus 0 in both archived engines; physical ray gain alone did not preserve pressure function.';}
- if(traces)report.protocol='Two adverse sequences, three engines, corrected keeper anchors; passive events and 20 Hz positions/intents. No goal threshold fitting.';
- fs.writeFileSync(path.join(root,rejected?'data/finishing-v0531-rejected.json':traces?'data/finishing-v0531-traces.json':immediate?'data/finishing-v0531-immediate.json':'data/finishing-v0531.json'),JSON.stringify(report,null,2)+'\n');
+ if(mode==='--rejected'){src.v0531=fs.readFileSync(path.join(root,'tests/fixtures/finishing-candidate-rejected.html'),'utf8');cases=cases.filter(c=>c.group!=='confirmation');output='data/finishing-v0531-rejected.json';}
+ if(mode==='--two-horizon-control'){
+  src.twoHorizonControl=twoHorizonControl(src.v0531);delete src.v052;
+  cases=cases.filter(c=>c.group==='help'||c.group==='orientation'&&c.options.angle===0||c.group==='shot'&&c.seed===101);output='data/finishing-v0531-control.json';
+ }
+ if(mode==='--traces'){cases=[{group:'audited-adverse',t:1,kind:'pass',seed:101,options:{trace:true}},{group:'retained-adverse',t:0,kind:'pass',seed:202,options:{trace:true}}];output='data/finishing-v0531-traces.json';}
+ const report=run(cases,src,cache);
+ if(mode==='--two-horizon-control'){report.candidate='two-horizon ablation control';report.protocol='22 corrected development cases: archived 0.53, current engine, and current-source perturbation adding the discarded future-shot hypothesis. No reserved/confirmation cases.';}
+ if(mode==='--rejected'){report.candidate='rejected two-horizon selection';report.rejection='Nearby-help development group concedes 5 goals versus 0 in both archived engines; physical ray gain alone did not preserve pressure function.';}
+ if(mode==='--traces')report.protocol='Two adverse sequences, three engines, corrected keeper anchors; passive events and 20 Hz positions/intents. No goal threshold fitting.';
+ fs.writeFileSync(path.join(root,output),JSON.stringify(report,null,2)+'\n');
 }
-module.exports={simulate,definitions,sources,run,laneGap};
+module.exports={simulate,definitions,sources,run,laneGap,simulationHash,twoHorizonControl};

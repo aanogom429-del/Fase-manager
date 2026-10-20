@@ -1,5 +1,6 @@
+// Archived 0.53 policy expectations; current corrective policy is exercised in finishing_revision.cjs.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{env,signature}=require('./continuity.cjs');
-const source=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8'),entry='startSituation();requestAnimationFrame(frame);';
+const source=fs.readFileSync(path.join(__dirname,'fixtures/engine-v053.html'),'utf8'),entry='startSituation();requestAnimationFrame(frame);';
 function setup(t){
  const e=env(source.replace(entry,entry+'globalThis.test.read=contextualDefense;globalThis.test.base=contextualDefensePlan;globalThis.test.protect=protectFinishingLine;'));
  e.t.scenario({time:10,team:t});const f=(x,y)=>({x:t?100-x:x,y:t?64-y:y}),ps=e.t.get().players;

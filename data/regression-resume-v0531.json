@@ -1,0 +1,421 @@
+{
+  "baseCommit": "e28d7848431305c2a449b402c18000399314cd53",
+  "mainCommit": "82c6c021a510433472e12157a4ec363667ea9000",
+  "mainVerifiedWith": "git ls-remote origin refs/heads/main",
+  "initialWorktreeClean": true,
+  "execution": "Fresh sequential commands in an isolated copy; no inherited pass status; tests that regenerate historical reports cannot alter the worktree.",
+  "versions": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.14"
+  },
+  "baselineEntries": [
+    {
+      "test": "tests/acceleration.cjs",
+      "exit": 0,
+      "seconds": 0.4,
+      "sha256": "7f6d175ec5731f7c206ec40874cef1a238f9b9b4d7c4729d9d2b54e70504fd03",
+      "command": "node tests/acceleration.cjs"
+    },
+    {
+      "test": "tests/advantage.cjs",
+      "exit": 0,
+      "seconds": 1.11,
+      "sha256": "343b24da21ebe04b9a0ee3f8387548f7ce3ba344be2e05c7c76779bff45e929d",
+      "command": "node tests/advantage.cjs"
+    },
+    {
+      "test": "tests/aerial_play.cjs",
+      "exit": 0,
+      "seconds": 3.67,
+      "sha256": "3c35aa182f8c68e979a406803206511eb54fe9775089af6b8edd227d3c9715e0",
+      "command": "node tests/aerial_play.cjs"
+    },
+    {
+      "test": "tests/anticipation_first_touch.cjs",
+      "exit": 0,
+      "seconds": 0.83,
+      "sha256": "502dca7251ae0d12eb1b5bb1223a0a845dbc3959a3707b1b5fb946376e9fdff5",
+      "command": "node tests/anticipation_first_touch.cjs"
+    },
+    {
+      "test": "tests/attack_interactions.cjs",
+      "exit": 0,
+      "seconds": 53.81,
+      "sha256": "8800ed93be0c7c59d054a2be0a2983f4f700ddde1ed647366a37c88edd44a962",
+      "command": "node tests/attack_interactions.cjs"
+    },
+    {
+      "test": "tests/attack_origin.cjs",
+      "exit": 0,
+      "seconds": 0.63,
+      "sha256": "15e964c6575df4fa69cad461490e4059f6afca6460d472b6013a86f6dfa0d4da",
+      "command": "node tests/attack_origin.cjs"
+    },
+    {
+      "test": "tests/attacking_heights.cjs",
+      "exit": 0,
+      "seconds": 0.23,
+      "sha256": "3f613b12cad8850064962a75fff1d8e8ab8465aa6efaf0a58166e6cd0c9c39d2",
+      "command": "node tests/attacking_heights.cjs"
+    },
+    {
+      "test": "tests/audit_continuity.cjs",
+      "exit": 0,
+      "seconds": 3.24,
+      "sha256": "65aaabc035ffd3ff73b93a68b09bbc95df1944e0d4f39ca32d4332cc730487c7",
+      "command": "node tests/audit_continuity.cjs"
+    },
+    {
+      "test": "tests/audit_windows.cjs",
+      "exit": 0,
+      "seconds": 1.33,
+      "sha256": "361fca36a4ba7ff49b585e18c7032aa902fa3a572484e23a70560a51470ddd2d",
+      "command": "node tests/audit_windows.cjs"
+    },
+    {
+      "test": "tests/contextual_defense.cjs",
+      "exit": 0,
+      "seconds": 0.11,
+      "sha256": "9d5901ea9b8a5fdc8d38dffd743e6eb5274ff04f6a0e4e5c64fa2ce77a719558",
+      "command": "node tests/contextual_defense.cjs"
+    },
+    {
+      "test": "tests/contextual_supports.cjs",
+      "exit": 0,
+      "seconds": 41.21,
+      "sha256": "f0401ca50413bb1f77da7ad3d2b8a115dbb5128946e02c27e87bd09651b75185",
+      "command": "node tests/contextual_supports.cjs"
+    },
+    {
+      "test": "tests/contextual_width.cjs",
+      "exit": 0,
+      "seconds": 0.21,
+      "sha256": "bdc2d774f93d5bea63091bf90aecb6de97d3f8a0703375dfcef9e040684600ad",
+      "command": "node tests/contextual_width.cjs"
+    },
+    {
+      "test": "tests/continuity.cjs",
+      "exit": 0,
+      "seconds": 23.41,
+      "sha256": "d7f3e289e6c560b2dab642fabe75496f495c7af36d189a798bfd522c7e236645",
+      "command": "node tests/continuity.cjs"
+    },
+    {
+      "test": "tests/defense.cjs",
+      "exit": 0,
+      "seconds": 0.12,
+      "sha256": "48cda1ecd7293c96cd1ca11584cb704e59c5469245a846bab66639a1e2ad21cc",
+      "command": "node tests/defense.cjs"
+    },
+    {
+      "test": "tests/defense_origin.cjs",
+      "exit": 0,
+      "seconds": 0.15,
+      "sha256": "18205f806bee1258e1b393c9d48cc6f532e98b9830106860bec7d6e270fa5a04",
+      "command": "node tests/defense_origin.cjs"
+    },
+    {
+      "test": "tests/defense_replay.cjs",
+      "exit": 0,
+      "seconds": 2.1,
+      "sha256": "e12c480de9a54e064dcec7ffae456d122c2e1bd8dca984e1421520265ea90f0e",
+      "command": "node tests/defense_replay.cjs"
+    },
+    {
+      "test": "tests/defensive_coordination.cjs",
+      "exit": 0,
+      "seconds": 0.11,
+      "sha256": "c00d99309d9fc695572c41b799f7b1a11879fb9e29d6f7bd368b98b4bcc856fb",
+      "command": "node tests/defensive_coordination.cjs"
+    },
+    {
+      "test": "tests/defensive_roles.cjs",
+      "exit": 0,
+      "seconds": 0.23,
+      "sha256": "86465f115790a8dc5e8e8a8acd3023ef4a5f08740bd9f0a44db7ee154f4f187e",
+      "command": "node tests/defensive_roles.cjs"
+    },
+    {
+      "test": "tests/destination_trace.cjs",
+      "exit": 0,
+      "seconds": 9.34,
+      "sha256": "aebbba7f6d33b0e39768d659d35f4aa4b6e3173ccd5c1ff8ffeaf4b2c240d9aa",
+      "command": "node tests/destination_trace.cjs"
+    },
+    {
+      "test": "tests/discipline.cjs",
+      "exit": 0,
+      "seconds": 0.56,
+      "sha256": "6a150f01be89ece2977bdfe1517eb28cc7902aaebf9dc3d566ef555df1af6d67",
+      "command": "node tests/discipline.cjs"
+    },
+    {
+      "test": "tests/finishing_comparison.cjs",
+      "exit": 0,
+      "seconds": 18.02,
+      "sha256": "029622e6b116e4b5825d4ba6273b5a755c0022957e30c2f9a79f35980b694552",
+      "command": "node tests/finishing_comparison.cjs"
+    },
+    {
+      "test": "tests/finishing_dynamic.cjs",
+      "exit": 0,
+      "seconds": 10.89,
+      "sha256": "9bbdabfb03c934df59ad763fdcd4a7145a027aa8c55d37d8c08be2d4759f266c",
+      "command": "node tests/finishing_dynamic.cjs"
+    },
+    {
+      "test": "tests/finishing_evaluation.cjs",
+      "exit": 0,
+      "seconds": 40.28,
+      "sha256": "fdb76bcffc7774eeeabeb536d76d8aab90cdd59209aeb87ebab8ca6b196c989d",
+      "command": "node tests/finishing_evaluation.cjs"
+    },
+    {
+      "test": "tests/finishing_pressure.cjs",
+      "exit": 0,
+      "seconds": 0.42,
+      "sha256": "d3c792dfab403630af6ea9a66f0c7c7b9dfec1533b9f3c5049528440d21c7aa2",
+      "command": "node tests/finishing_pressure.cjs"
+    },
+    {
+      "test": "tests/finishing_protection.cjs",
+      "exit": 0,
+      "seconds": 0.2,
+      "sha256": "c6a509eaa70ec02af8473e5a488b293b9464f2bb15eac579fc5575ec66c59e86",
+      "command": "node tests/finishing_protection.cjs"
+    },
+    {
+      "test": "tests/finishing_revision.cjs",
+      "exit": 0,
+      "seconds": 0.2,
+      "sha256": "f58064a04127b57cba8ca41e0f6ccddadc509609807bff632adfb97828c7ad23",
+      "command": "node tests/finishing_revision.cjs"
+    },
+    {
+      "test": "tests/finishing_trajectory.cjs",
+      "exit": 0,
+      "seconds": 30.25,
+      "sha256": "9781bd7e0addd88db5c9f9e2060531bc6e51a6c2fcc3f9590d4bfebde38c136f",
+      "command": "node tests/finishing_trajectory.cjs"
+    },
+    {
+      "test": "tests/fouls.cjs",
+      "exit": 0,
+      "seconds": 3.26,
+      "sha256": "f5a67e3972f1fe94997d4613b4f9a555a561668c1f3b1481575284e355243f79",
+      "command": "node tests/fouls.cjs"
+    },
+    {
+      "test": "tests/game2.cjs",
+      "exit": 0,
+      "seconds": 4.23,
+      "sha256": "e73cf2de2ec8e717afa4c6b4a434d68abbbf8d7b444760f0e6c33abc928a549f",
+      "command": "node tests/game2.cjs"
+    },
+    {
+      "test": "tests/heights_report.cjs",
+      "exit": 0,
+      "seconds": 0.08,
+      "sha256": "7a25d458cb07b2b6d8c9cf34aafbf5e047a926a971f5e8f13a297e11af22dddb",
+      "command": "node tests/heights_report.cjs"
+    },
+    {
+      "test": "tests/individual_capabilities.cjs",
+      "exit": 0,
+      "seconds": 0.18,
+      "sha256": "67dd4c116ec3d0c70eed4546d23e1d593240fb8df54a386f7f55b5eba6783250",
+      "command": "node tests/individual_capabilities.cjs"
+    },
+    {
+      "test": "tests/laws.cjs",
+      "exit": 0,
+      "seconds": 4.16,
+      "sha256": "7ee96f736d6a1a7901f089e0665b37cab9b97a62a15037193b0e952d2609818d",
+      "command": "node tests/laws.cjs"
+    },
+    {
+      "test": "tests/lead_pass.cjs",
+      "exit": 0,
+      "seconds": 0.2,
+      "sha256": "79d12d5dc72f918690f4b0c09080e857959beeffb03c1fd4bba10d709cceba5a",
+      "command": "node tests/lead_pass.cjs"
+    },
+    {
+      "test": "tests/offball.cjs",
+      "exit": 0,
+      "seconds": 2.13,
+      "sha256": "9831bd076d5cf342ce31efd26cd37c3fe59a5e83c5bbcead53c7fde92e68b71a",
+      "command": "node tests/offball.cjs"
+    },
+    {
+      "test": "tests/offside.cjs",
+      "exit": 0,
+      "seconds": 1.09,
+      "sha256": "ab5851409bf50cd870c7fd3a6f1f556c9ea8285745fbd44e43a759cddb36dc62",
+      "command": "node tests/offside.cjs"
+    },
+    {
+      "test": "tests/offside_reference.cjs",
+      "exit": 0,
+      "seconds": 0.1,
+      "sha256": "d069e8d805af39ec0cbd1f07e22a8cc15cf8eca4b4bbe761c56a59c2d72136a8",
+      "command": "node tests/offside_reference.cjs"
+    },
+    {
+      "test": "tests/opponent_perception.cjs",
+      "exit": 0,
+      "seconds": 0.26,
+      "sha256": "ffd46c2731d68bcbf8eee2074dc90b185b0a9c99e8460ddd98acb7bf8322a2a0",
+      "command": "node tests/opponent_perception.cjs"
+    },
+    {
+      "test": "tests/orientation.cjs",
+      "exit": 0,
+      "seconds": 59.75,
+      "sha256": "4eb43833bb58dcd09f07868ac75268aecc2acdff18768e746599c32fbacd6932",
+      "command": "node tests/orientation.cjs"
+    },
+    {
+      "test": "tests/owner_holdout.cjs",
+      "exit": 0,
+      "seconds": 10.99,
+      "sha256": "13f7696c5e2d775be4f57bfb97cb0ff52625ab7684069e2b040e5cfbf781967d",
+      "command": "node tests/owner_holdout.cjs"
+    },
+    {
+      "test": "tests/perceptual_memory.cjs",
+      "exit": 0,
+      "seconds": 0.63,
+      "sha256": "2ae5cd4c083388aaf576fc313fcde60343816dfd4d3f01c01a83fd345c9f2735",
+      "command": "node tests/perceptual_memory.cjs"
+    },
+    {
+      "test": "tests/player_roles.cjs",
+      "exit": 0,
+      "seconds": 30.7,
+      "sha256": "a6381b03346daac55a713c9d9acd06444dcc0f4b9cfd221364c3600ecfe682e1",
+      "command": "node tests/player_roles.cjs"
+    },
+    {
+      "test": "tests/pressure_exposure.cjs",
+      "exit": 0,
+      "seconds": 0.09,
+      "sha256": "72c924d2787118d3b7f850308a2580f63e570fd8ef4510f8ee46b00bb86426e7",
+      "command": "node tests/pressure_exposure.cjs"
+    },
+    {
+      "test": "tests/reception.cjs",
+      "exit": 0,
+      "seconds": 0.77,
+      "sha256": "9f4235c4b63fb09640be044118743fc0556ac15d4625f49febc5b6ada1976708",
+      "command": "node tests/reception.cjs"
+    },
+    {
+      "test": "tests/relational_width.cjs",
+      "exit": 0,
+      "seconds": 0.14,
+      "sha256": "40d390b683717ef7473af61f2faad2846c16a89d3fb18c2b9e1ec2d035975dac",
+      "command": "node tests/relational_width.cjs"
+    },
+    {
+      "test": "tests/simultaneous_threats.cjs",
+      "exit": 0,
+      "seconds": 0.13,
+      "sha256": "fbff0e6ab2b0dac7e5286a8a87d9abeab2f08426ee3a55585bfc4ef0901030fc",
+      "command": "node tests/simultaneous_threats.cjs"
+    },
+    {
+      "test": "tests/support_assignment_perception.cjs",
+      "exit": 0,
+      "seconds": 0.12,
+      "sha256": "f77719437bd97227ae5909964084d3ca8f2cdd6dd69b23e212d0ff5aac3bda24",
+      "command": "node tests/support_assignment_perception.cjs"
+    },
+    {
+      "test": "tests/support_destination_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 18.06,
+      "sha256": "902815e5e9196c429ac175b915b31d01364770d286d120ca9d679068d457ea47",
+      "command": "node tests/support_destination_diagnosis.cjs"
+    },
+    {
+      "test": "tests/support_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 25.62,
+      "sha256": "781534803a689585955d95e4cadc5706e346e93356b0149f4ad1f960dc45fe1e",
+      "command": "node tests/support_diagnosis.cjs"
+    },
+    {
+      "test": "tests/support_holdout.cjs",
+      "exit": 0,
+      "seconds": 11.68,
+      "sha256": "e744ac6f825e74f7745e2c7fd79da8b61f75e8c0840223edb9c065551aac9189",
+      "command": "node tests/support_holdout.cjs"
+    },
+    {
+      "test": "tests/support_perception.cjs",
+      "exit": 0,
+      "seconds": 0.22,
+      "sha256": "c711acedeca95a2eb24974f57a139273d133980efd6c6d88335cb708157633e3",
+      "command": "node tests/support_perception.cjs"
+    },
+    {
+      "test": "tests/support_persistence.cjs",
+      "exit": 0,
+      "seconds": 0.84,
+      "sha256": "e89a6fcedd9d7a5a6ef8a4903b304d3016822bbeb0524b70ac854ec42616f1f6",
+      "command": "node tests/support_persistence.cjs"
+    },
+    {
+      "test": "tests/support_stability.cjs",
+      "exit": 0,
+      "seconds": 21.27,
+      "sha256": "b8b7fcbca0b00a6c98a96ebc2a28c889a32140422fe5e6d2a360e56045a92d63",
+      "command": "node tests/support_stability.cjs"
+    },
+    {
+      "test": "tests/tactical_utility.cjs",
+      "exit": 0,
+      "seconds": 0.13,
+      "sha256": "de1c56f9c70f8bbe0bdfc62bc9700ff552e18dc960a6f3512d0b2b7713c1005c",
+      "command": "node tests/tactical_utility.cjs"
+    },
+    {
+      "test": "tests/turn_movement.cjs",
+      "exit": 0,
+      "seconds": 0.36,
+      "sha256": "e772944b371ca17a0cd68a05db5d07f58c1c8bf1f2b091315b02c1306c186c02",
+      "command": "node tests/turn_movement.cjs"
+    },
+    {
+      "test": "tests/tracking.py",
+      "exit": 0,
+      "detail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.041s\n\nOK\n",
+      "sha256": "c67ee1c785764f6698298cfa939ee2fcf8bf3db0f7ecd5c32a6a254c041a7b62",
+      "command": "python3 -B tests/tracking.py"
+    }
+  ],
+  "commonjsFiles": 54,
+  "pythonFiles": 1,
+  "pythonCases": 3,
+  "failures": 0,
+  "baselineEngineSha256": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c",
+  "incrementalEntries": [
+    {
+      "test": "tests/finishing_observed_control.cjs",
+      "command": "node tests/finishing_observed_control.cjs",
+      "exit": 0,
+      "sha256": "cc5532d5f5cb24e12bb82b45e707e7ccb6b9da8493e45f3de0917c8dd6f6cb0e",
+      "output": "PASS observed-shot rollout: { positive: 48, negative: 96 } privacy, reaction, orders, perception, purity"
+    },
+    {
+      "test": "tests/finishing_resume_evidence.cjs",
+      "command": "node tests/finishing_resume_evidence.cjs",
+      "exit": 0,
+      "sha256": "5c637d9c6a0903bf47b21f3161ad96d44c882ede498d57ca857d62ea0b65ec46",
+      "output": "PASS: recovered-file manifest, fresh 320 simulations, exact historical replication, immutable controls and eight passive adverse traces"
+    }
+  ],
+  "verifiedEntries": 57,
+  "executionNote": "55 recovered entries on the unchanged e28 engine, then two additional entries. Not a claim of a single new all-57 suite run; controls are tested separately."
+}

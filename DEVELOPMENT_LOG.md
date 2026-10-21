@@ -1,5 +1,17 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 21-10-2026 — Reanudación verificada de e28; dos controles descartados
+
+Se inspeccionó y preservó el árbol limpio de `e28d784`; main publicado sigue en `82c6c02`. Los cinco commits adicionales contienen código, pruebas e informes de una propuesta rechazada, no una 0.53.1 aceptada. Se consultaron los tres documentos de continuidad y la auditoría completa. Se continuó en la rama local `codex/fase-manager-0.53.1-resume`, sin sobrescribir la rama de evaluación.
+
+- Recuperación comprobada: 54 CommonJS y un archivo Python con tres casos, todos versionados. Reejecución fresca en copia aislada: 55 entradas, cero fallos; hashes y resultados por archivo en `data/regression-resume-v0531.json`. No se dieron por verificadas las pruebas del trabajo anterior.
+- Comparación fresca sin caché: 76 casos × cuatro fuentes, más 16 casos de un control perjudicial: 320 simulaciones. Las 228 de 0.52/0.53/e28 reproducen exactamente contadores, métricas y hashes de estados históricos. Ocho reejecuciones adicionales generan las trazas adversas, sin cambiar resultados.
+- Control de conservación de presión solo dentro del tiempo del tiro: falla el contracaso de presión existente y encaja 6 frente a 3 goles de e28 en 16 casos; descartado sin retocar umbrales.
+- Control de tiro ya observado: 144 combinaciones, 48 contactos propuestos comprobados con update real; 96 sin propuesta no equivalen a imposibilidad física. Pruebas de percepción, metadatos privados, demora, órdenes, altura, enfriamiento y restauración. Una nueva prueba falló al detectar dependencia de altura futura del vuelo; se eliminó y pasó antes de la evaluación final. En 76 casos: mismos 32 goles/77 tiros que e28, dos entradas adicionales, más exposición y pases disponibles. Se descarta por resultado mixto.
+- Dos entradas nuevas ejecutadas: `finishing_observed_control.cjs` y `finishing_resume_evidence.cjs`. La regresión recuperada y las pruebas adicionales se ejecutaron incrementalmente; el motor permanece idéntico a e28. No se afirma que se haya repetido la validación visual histórica.
+
+No se integra en main ni se publica una nueva versión: e28 sigue concediendo 32 goles frente a 26/28 de 0.53/0.52. Se preservan fixture exacto, recetas, informes y trazas. No se inicia 0.54. Informe y reproducción: [REANUDACION_0531.md](docs/REANUDACION_0531.md).
+
 ## 20-10-2026 — Propuesta correctiva 0.53.1 evaluada; NO integrada en main
 
 Base solicitada y comprobada en GitHub: `82c6c021a510433472e12157a4ec363667ea9000`. Motor candidato fijado en `3f189c9` antes de consultar las nuevas condiciones de confirmación. Rama de conservación: `codex/fase-manager-0.53.1-evaluation`. **No se acepta la propuesta para main**: pasan las verificaciones técnicas, pero no hay mejora táctica suficientemente consistente. No se inicia 0.54.

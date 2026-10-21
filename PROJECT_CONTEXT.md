@@ -1,8 +1,10 @@
 # Fase Manager — Contexto permanente del proyecto
 
-Actualizado: 20-10-2026. Motor publicado: **0.53**, `main@82c6c02`. Esta rama contiene una **propuesta 0.53.1 evaluada y NO integrada en main** tras la auditoría. Commit del motor candidato: `3f189c9`; el commit final de documentación/evaluación se consulta en Git. Se conservan las referencias 0.52 (`a19f743`) y 0.53 (`d440066`) como instantáneas históricas. No se inicia 0.54.
+Actualizado: 21-10-2026. Motor publicado: **0.53**, `main@82c6c02`. Referencia recuperada: `e28d784`, propuesta 0.53.1 **NO integrada**. Continuación local: `codex/fase-manager-0.53.1-resume`. No se inicia 0.54.
 
-Informe vigente: [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md). Se corrige el anclaje del portero únicamente en el ensayo; el motor compara presión/temporización y protección con contactos rasos simulados a tiempo real, tiro ejecutable inmediato y costes de pases/disputa. No se cambia el comportamiento general del portero, el ataque ni las reglas IFAB. La evaluación sigue siendo sintética; la propuesta no supera la aceptación táctica: concede 32 goles frente a 26 en 0.53 y 28 en 0.52, aunque pasan las 55 entradas de pruebas. No promover el candidato solo por corregir el predictor. Los casos perjudiciales se conservan.
+Informe vigente de reanudación: [REANUDACION_0531.md](docs/REANUDACION_0531.md); informe anterior conservado: [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md). Antes de modificar archivos se comprobó que e28 y main existían en GitHub y que no había trabajo pendiente. Se localizaron y reejecutaron los 54 CommonJS y el archivo Python con tres casos: **55 entradas sin fallos**, sin heredar el PASS anterior. Dos pruebas adicionales verifican el nuevo control y su evidencia.
+
+Se repiten sin caché las 76 situaciones para 0.52/0.53/e28 y un control de tiro observado; más 16 situaciones de otro control: **320 simulaciones nuevas** y ocho trazas adversas adicionales. Las 228 ejecuciones históricas coinciden exactamente con los informes recuperados. e28 mantiene 32 goles frente a 26/28 de 0.53/0.52. El tiro observado conserva goles/tiros, pero aumenta exposición y opciones de pase; relajar conservación de presión encaja 6 frente a 3 goles en 16 casos. Ambos controles quedan fuera del motor. `index.html` permanece idéntico a e28; no se integra ni publica una 0.53.1 inconsistente. Siguen pendientes selección y coordinación defensivas con evidencia suficiente.
 
 ## Objetivos y continuidad
 
@@ -20,7 +22,7 @@ Fuentes: código del commit indicado, historial Git y documentación de `docs/`.
 - `data/`: referencias y resultados históricos más informes pareados, trazas y regresiones de 0.53.1; conservar procedencia y hashes.
 - `docs/`: continuidad, protección 0.53, auditoría y corrección 0.53.1 con resultados y limitaciones.
 - `scripts/`: herramientas Python/Node de importación, diagnóstico y comparación; `evaluate_finishing_v0531.cjs` reproduce comparación del candidato, control de tiro posterior descartado y trazas adversas.
-- `tests/`: 54 entradas CommonJS y una entrada Python (tres casos); diez instantáneas HTML (incluida una selección correctiva rechazada) en `tests/fixtures/`. Las pruebas específicas históricas 0.53 cargan su fixture; trayectoria, revisión y comparación comprueban la correctiva actual.
+- `tests/`: 56 entradas CommonJS y una entrada Python (tres casos); once instantáneas HTML (incluida una selección correctiva rechazada) en `tests/fixtures/`. Las pruebas específicas históricas 0.53 cargan su fixture; trayectoria, revisión y comparación comprueban la correctiva actual.
 - `README.md`: descripción mínima. Antes de esta consolidación había 160 archivos versionados.
 
 No hay proyecto nativo iOS, Capacitor, servidor de partidas, base de datos ni manifiesto `package.json` en esta base. Las pruebas Node usan `node:vm` y un DOM simulado; no equivalen a pruebas visuales en Safari/iPhone.

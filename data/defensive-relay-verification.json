@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-21",
+  "stepBaseCommit": "12d33d79acbce5aa9b134bcce7f2d830913bec3e",
+  "engineUnchanged": true,
+  "engineSha256": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c",
+  "fullSuiteRerunThisStep": false,
+  "priorCompleteRegression": {
+    "file": "data/regression-resume-v0531.json",
+    "sha256": "34f4fb412cf4d0f9b92400befbf72c6c5bd1b785916ac1c769c56aa10a7998c1",
+    "recoveredEntries": 55,
+    "allRecoveredTestFilesUnchanged": true
+  },
+  "freshTargetedTests": [
+    {
+      "command": "node tests/finishing_pressure.cjs",
+      "exit": 0,
+      "sha256": "d3c792dfab403630af6ea9a66f0c7c7b9dfec1533b9f3c5049528440d21c7aa2"
+    },
+    {
+      "command": "node tests/finishing_revision.cjs",
+      "exit": 0,
+      "sha256": "f58064a04127b57cba8ca41e0f6ccddadc509609807bff632adfb97828c7ad23"
+    },
+    {
+      "command": "node tests/finishing_resume_evidence.cjs",
+      "exit": 0,
+      "sha256": "5c637d9c6a0903bf47b21f3161ad96d44c882ede498d57ca857d62ea0b65ec46"
+    },
+    {
+      "command": "node tests/defensive_relay_survey.cjs",
+      "exit": 0,
+      "sha256": "b4b3e99c05ad501a50ed916db896cdffc2e9f14c5e84d6b6fbd59570c2b43ac1"
+    }
+  ],
+  "newTestOutput": "PASS: mirrored relay opportunity and contextual counterexample, perception/readiness, pure actual-role audit, four fresh observer-on/off pairs, 76 unchanged cases and eight diagnostic snapshots",
+  "finalDatasets": {
+    "passiveConfigurations": 76,
+    "exactBaselineMatches": 76,
+    "diagnosticSnapshots": 8,
+    "diagnosticExecutions": 16,
+    "freshObserverOnOffTestPairs": 4
+  },
+  "inputs": {
+    "scripts/survey_defensive_relay.cjs": "131a842a473eab1598979e05ba9a46fd5aeae2527405b11282ff5d04f021ae00",
+    "tests/defensive_relay_survey.cjs": "b4b3e99c05ad501a50ed916db896cdffc2e9f14c5e84d6b6fbd59570c2b43ac1",
+    "data/defensive-relay-survey.json": "e8d3bbc517d108c6d2583f7a29226b2e076724a42094af3c0b3f9c88aa429314",
+    "data/defensive-relay-snapshots.json": "59996a29d1ce20b06523101421e0923e521c6d38b3f17be76586d91a311d1987"
+  },
+  "limits": [
+    "No defensive relay is executed or accepted",
+    "Pair coverage and approximate access costs do not establish collective tactical utility",
+    "No new full regression run or visual browser test is claimed; engine and previous test inputs remain unchanged"
+  ],
+  "runtimeNode": "v24.19.0",
+  "measurementScope": "The current defending side is surveyed after each possession change; scenario team is the initial defender. Final repeated datasets include full contextual baseline and examination of alternative targets after a pass veto."
+}

@@ -1,0 +1,605 @@
+{
+  "baseSha256": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c",
+  "surveySha256": "d8f5251ee889e692d83be8641680fab460ee373d29d920ed074b46181cf8cac2",
+  "setupRecipeSha256": "70a28eac9c28bf8a51442ef5a65d68ec963b72235c41667826b65039ec9efaf0",
+  "simulationSha256": "d8d7c5cfce8569ccbc4c9d112f63f0f855c133b0965c0c6caf00195a9ae6e9b5",
+  "freshSimulations": 16,
+  "protocol": "Eight diagnostic possession snapshots with an existing press/cover assignment and nearby helper; source and baseline receive identical initial placement before initial capture. No interventions after setup. Constructed from the mirrored unit-test opportunity, not a reserved acceptance sample.",
+  "rows": [
+    {
+      "t": 0,
+      "kind": "pass",
+      "helperX": 8,
+      "seed": 2017,
+      "sourceSha256": "681a2f982547cff204d048543a951d098cff05bd1db5a1e0d1e0bdb7fc329a60",
+      "baselineSha256": "132ee16849196b1d564f8a373143bba83cabd2253119a026cb2da28e433fb389",
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 2017,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.9000000000000002,
+          "dangerSeconds": 0.7500000000000001,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.1300816339544741,
+          "openGoalSum": 0.44999999999999996,
+          "fieldOpenSum": 0.44999999999999996,
+          "passOptionsSum": 0.7500000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.15000000000000002,
+          "longestPossession": 1.4749999999999972,
+          "protectionSteps": 0,
+          "intentChanges": 148,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "d845cc6cbc9da3cec47cd881b98e690865255cae42b2d65a828a5cde514e7769"
+      },
+      "stats": {
+        "no-pair-shot-gain": 7,
+        "not-mutually-visible": 42,
+        "no-owner": 103,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 381
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "t": 0,
+      "kind": "pass",
+      "helperX": 10,
+      "seed": 3011,
+      "sourceSha256": "b4306ac587d4cbc1e157538f05f8d827a06960dc66b99e6771330e3e3d123fd7",
+      "baselineSha256": "8efdaec0809aad4f4665bd08251233c924ae8158a81f20a2893c6cf134fde14d",
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 3011,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.9816740359266233,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.416666666666664,
+          "protectionSteps": 0,
+          "intentChanges": 152,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "eb6376f18079d0d58ad2ef2ddd89a54af4d1068e5a36d3cb027c237cf543facf"
+      },
+      "stats": {
+        "not-mutually-visible": 65,
+        "no-owner": 381,
+        "no-local-shot-position": 18,
+        "outside-shot-zone": 111
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "t": 0,
+      "kind": "free",
+      "helperX": 8,
+      "seed": 2017,
+      "sourceSha256": "681a2f982547cff204d048543a951d098cff05bd1db5a1e0d1e0bdb7fc329a60",
+      "baselineSha256": "132ee16849196b1d564f8a373143bba83cabd2253119a026cb2da28e433fb389",
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 2017,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.35,
+          "dangerSeconds": 0.35,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.5269472900207841,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.35,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.7083333333333333,
+          "protectionSteps": 0,
+          "intentChanges": 135,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "88b534b3939826cbdf211d8d68e21fa28b1fbee29dd70ebe0c67233a9319207f"
+      },
+      "stats": {
+        "no-pair-shot-gain": 7,
+        "not-mutually-visible": 29,
+        "no-owner": 370,
+        "outside-shot-zone": 142
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "t": 0,
+      "kind": "free",
+      "helperX": 10,
+      "seed": 3011,
+      "sourceSha256": "b4306ac587d4cbc1e157538f05f8d827a06960dc66b99e6771330e3e3d123fd7",
+      "baselineSha256": "8efdaec0809aad4f4665bd08251233c924ae8158a81f20a2893c6cf134fde14d",
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 3011,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 4,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.6500000000000008,
+          "dangerSeconds": 1.4000000000000006,
+          "occasionSeconds": 0.44999999999999996,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.8659233718927951,
+          "openGoalSum": 0.8,
+          "fieldOpenSum": 0.9857142857142859,
+          "passOptionsSum": 0.6,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.3,
+          "longestPossession": 0.9833333333333323,
+          "protectionSteps": 0,
+          "intentChanges": 174,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cab3f456e4f2b7c18cc2b16609879ee8899eaa7e23a74bae90a1951983ee277f"
+      },
+      "stats": {
+        "not-mutually-visible": 157,
+        "no-owner": 335,
+        "outside-shot-zone": 228
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "t": 1,
+      "kind": "pass",
+      "helperX": 8,
+      "seed": 2017,
+      "sourceSha256": "681a2f982547cff204d048543a951d098cff05bd1db5a1e0d1e0bdb7fc329a60",
+      "baselineSha256": "132ee16849196b1d564f8a373143bba83cabd2253119a026cb2da28e433fb389",
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 2017,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7500000000000001,
+          "dangerSeconds": 0.7500000000000001,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.1021974174510134,
+          "openGoalSum": 0.44999999999999996,
+          "fieldOpenSum": 0.44999999999999996,
+          "passOptionsSum": 0.7500000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.466666666666664,
+          "protectionSteps": 0,
+          "intentChanges": 147,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "86f93fd116691a9a7263b4410eedb591631de78d54060f2248daa395dfc810db"
+      },
+      "stats": {
+        "no-pair-shot-gain": 42,
+        "no-owner": 102,
+        "no-local-shot-position": 38,
+        "not-mutually-visible": 11,
+        "outside-shot-zone": 382
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "t": 1,
+      "kind": "pass",
+      "helperX": 10,
+      "seed": 3011,
+      "sourceSha256": "b4306ac587d4cbc1e157538f05f8d827a06960dc66b99e6771330e3e3d123fd7",
+      "baselineSha256": "8efdaec0809aad4f4665bd08251233c924ae8158a81f20a2893c6cf134fde14d",
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 3011,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.9731033806575369,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 118,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "1fdda08ded7aea7da3e7d88ced1368ec3391a28395d5012f82b6ee8bb961ef50"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-pair-shot-gain": 35,
+        "no-owner": 281,
+        "no-local-shot-position": 6,
+        "outside-shot-zone": 82
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "t": 1,
+      "kind": "free",
+      "helperX": 8,
+      "seed": 2017,
+      "sourceSha256": "681a2f982547cff204d048543a951d098cff05bd1db5a1e0d1e0bdb7fc329a60",
+      "baselineSha256": "132ee16849196b1d564f8a373143bba83cabd2253119a026cb2da28e433fb389",
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 2017,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.6,
+          "dangerSeconds": 0.35,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6301467706300101,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.35,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.2,
+          "longestPossession": 0.508333333333334,
+          "protectionSteps": 0,
+          "intentChanges": 176,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "10d676f0f3fd2c33705c8cc3c5a9d87fae3957290b749826b2d25f671eef9f4a"
+      },
+      "stats": {
+        "no-pair-shot-gain": 49,
+        "no-owner": 252,
+        "outside-shot-zone": 311,
+        "no-local-shot-position": 18,
+        "candidate-access-cost": 8,
+        "not-mutually-visible": 82
+      },
+      "witnesses": [
+        {
+          "time": 4.900000000000033,
+          "press": 8,
+          "cover": 4,
+          "stage": "candidate-access-cost",
+          "baseAccess": 0.6276214564750504,
+          "relayAccess": 2.417175941732873,
+          "accessCost": 1.7895544852578225,
+          "pending": true,
+          "base": [
+            false,
+            true,
+            false
+          ],
+          "next": [
+            true,
+            true,
+            false
+          ],
+          "qMode": "Temporizar ante inferioridad percibida",
+          "pTarget": {
+            "x": 16.3271917899324,
+            "y": 21.499215804734366
+          },
+          "qTarget": {
+            "x": 19.92942880839729,
+            "y": 17.283877192511948
+          },
+          "pWait": 0.05333333333332302,
+          "qWait": 0.05333333333332302
+        },
+        {
+          "time": 4.908333333333367,
+          "press": 8,
+          "cover": 4,
+          "stage": "candidate-access-cost",
+          "baseAccess": 0.620183081085551,
+          "relayAccess": 2.4089973436328753,
+          "accessCost": 1.7888142625473242,
+          "pending": true,
+          "base": [
+            false,
+            true,
+            false
+          ],
+          "next": [
+            true,
+            true,
+            false
+          ],
+          "qMode": "Temporizar ante inferioridad percibida",
+          "pTarget": {
+            "x": 16.379556997224746,
+            "y": 21.47355537713133
+          },
+          "qTarget": {
+            "x": 19.92942880839729,
+            "y": 17.283877192511948
+          },
+          "pWait": 0.04499999999998927,
+          "qWait": 0.04499999999998927
+        },
+        {
+          "time": 4.916666666666701,
+          "press": 8,
+          "cover": 4,
+          "stage": "candidate-access-cost",
+          "baseAccess": 0.6127413100435464,
+          "relayAccess": 2.40081967951448,
+          "accessCost": 1.7880783694709337,
+          "pending": true,
+          "base": [
+            false,
+            true,
+            false
+          ],
+          "next": [
+            true,
+            true,
+            false
+          ],
+          "qMode": "Temporizar ante inferioridad percibida",
+          "pTarget": {
+            "x": 16.432164946614954,
+            "y": 21.447775999058116
+          },
+          "qTarget": {
+            "x": 19.92942880839729,
+            "y": 17.283877192511948
+          },
+          "pWait": 0.03666666666665552,
+          "qWait": 0.03666666666665552
+        }
+      ],
+      "costs": [
+        {
+          "time": 4.900000000000033,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.7895544852578225,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.908333333333367,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.7888142625473242,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.916666666666701,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.7880783694709337,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.9250000000000345,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.7873452798318596,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.933333333333368,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.7866134201069248,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.941666666666702,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.785881169084122,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.950000000000036,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.785146857607212,
+          "pending": true,
+          "qMode": "Temporizar ante inferioridad percibida"
+        },
+        {
+          "time": 4.9583333333333695,
+          "stage": "candidate-access-cost",
+          "accessCost": 1.7844087684322303,
+          "pending": false,
+          "qMode": "Temporizar ante inferioridad percibida"
+        }
+      ]
+    },
+    {
+      "t": 1,
+      "kind": "free",
+      "helperX": 10,
+      "seed": 3011,
+      "sourceSha256": "b4306ac587d4cbc1e157538f05f8d827a06960dc66b99e6771330e3e3d123fd7",
+      "baselineSha256": "8efdaec0809aad4f4665bd08251233c924ae8158a81f20a2893c6cf134fde14d",
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 3011,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.44999999999999996,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.5496044000916268,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0.02142857142857143,
+          "pressureSeconds": 0,
+          "longestPossession": 0.5583333333333338,
+          "protectionSteps": 0,
+          "intentChanges": 177,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "b52ec154afe682f528eb83f7d63758cbe708cc391aaf720274b31aea3a955ace"
+      },
+      "stats": {
+        "not-mutually-visible": 7,
+        "no-pair-shot-gain": 45,
+        "no-owner": 413,
+        "outside-shot-zone": 255
+      },
+      "witnesses": [],
+      "costs": []
+    }
+  ]
+}

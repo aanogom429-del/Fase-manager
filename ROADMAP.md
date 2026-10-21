@@ -59,6 +59,8 @@ A2/A4/A6/A7 siguen abiertos: faltan relevo funcional y coordinación amplia, por
 
 Reanudación 21-10-2026: se recuperó e28 sin pendientes y se reejecutaron sus 55 entradas; se añadieron dos pruebas de control/procedencia. Las 320 simulaciones nuevas reproducen las referencias y descartan otras dos alternativas por perjuicio o resultados mixtos. No cambia el motor ni se acepta la 0.53.1. Informe vigente: [REANUDACION_0531.md](docs/REANUDACION_0531.md). El siguiente trabajo sigue siendo la corrección 0.53.1 con coordinación perceptivamente justificable y contraste reservado nuevo; no 0.54.
 
+Paso posterior de 0.53.1: completado el [contraste pasivo de relevo](docs/RELEVO_DEFENSIVO_0531.md). Se conservan contracasos favorables/contextuales, 76 simulaciones sin interferencia y ocho instantáneas diagnósticas pareadas. No se acredita todavía una política de relevo útil; faltan valorar el coste de aproximación y validar solicitud/aceptación con percepción y demora propias. No se cierra A4/A7 ni se modifica el motor.
+
 ### Cierre de A y entrenamiento posterior
 
 Cierre de A exige requisitos con evidencia, simplificaciones declaradas, pruebas de continuidad y reglas, escenarios contrarios y validación táctica representativa. Un conjunto de pruebas verde no basta para afirmar realismo científico.

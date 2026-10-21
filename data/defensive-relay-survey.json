@@ -1,0 +1,4374 @@
+{
+  "baseSha256": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c",
+  "surveySha256": "d8f5251ee889e692d83be8641680fab460ee373d29d920ed074b46181cf8cac2",
+  "simulationSha256": "d8d7c5cfce8569ccbc4c9d112f63f0f855c133b0965c0c6caf00195a9ae6e9b5",
+  "passive": true,
+  "limitations": [
+    "Pair-level feasibility, not a defensive policy or a claim of tactical improvement",
+    "Mutual visibility is not a communication or confirmation protocol",
+    "Each hypothetical player retains its own pending intention; no future ball endpoint is consulted; joint audit of individual memories is not a communication mechanism",
+    "Other defenders and goalkeeper can already cover a ray; pair gain need not be collective gain",
+    "Ready-reading samples do not establish that a delayed two-way agreement would still be feasible",
+    "Existing arrivalTime and constant-owner hypotheses remain approximate"
+  ],
+  "rows": [
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.9038773642282372,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 185,
+          "shotsConceded": 0,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "55263194dcae1c19a520b5877f433ef7ff21ad4ddcf9b77224a0460c9967e531"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 175,
+        "no-local-shot-position": 213,
+        "outside-shot-zone": 290
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.9038773642282372,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 185,
+          "shotsConceded": 0,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "a292a2dbd66a7cb00177b2626f1fb173d255e20c5a40590a5b85bb8d113448fd"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 175,
+        "no-local-shot-position": 213,
+        "outside-shot-zone": 290
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.9043015626069704,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 185,
+          "shotsConceded": 0,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "7e73f52cf76ddeef065badb8b9ff8269aff5133dad59a9a0154c2d26a0692195"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 175,
+        "no-local-shot-position": 213,
+        "outside-shot-zone": 290
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.08956290192027,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "90525684540dbe891340d6161cb4f9d8e22647efb177a3888528789c570c693a"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 106,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 385
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 202,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.08956290192027,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "90525684540dbe891340d6161cb4f9d8e22647efb177a3888528789c570c693a"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 106,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 385
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 202,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.090695136397353,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "90525684540dbe891340d6161cb4f9d8e22647efb177a3888528789c570c693a"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 106,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 385
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194534,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.783333333333333,
+          "protectionSteps": 0,
+          "intentChanges": 150,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "ed13c927f2e3c7dd9ed3566da4c84b71e736f88d79382218e24b5bdca94eb1b4"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 4,
+        "no-owner": 434,
+        "outside-shot-zone": 88
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 101,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194534,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.783333333333333,
+          "protectionSteps": 0,
+          "intentChanges": 150,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "408bf132d720e6daf4c4bc3ec79acd9b003247fce054be4e91b8b237ea91f595"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 4,
+        "no-owner": 434,
+        "outside-shot-zone": 88
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 101,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6346829471555937,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.7916666666666663,
+          "protectionSteps": 0,
+          "intentChanges": 150,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "6abf0f13b3518311877211e83c5834eafc7d967c87beafba6880c8e33d4ab1d0"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 4,
+        "no-owner": 434,
+        "outside-shot-zone": 89
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.8348499935889563,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "4c0e1178f655f3b49d67e482b0bf112bf4c602b0f4e23354d2fbfb1ec125c48c"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 6,
+        "no-owner": 71,
+        "outside-shot-zone": 455
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.8348499935889563,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "4c0e1178f655f3b49d67e482b0bf112bf4c602b0f4e23354d2fbfb1ec125c48c"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 6,
+        "no-owner": 71,
+        "outside-shot-zone": 455
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.8422585352247594,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8583333333333327,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "ff56ae4b92d4804a9224b483fb6c19a9533fbdb46c75206b04b67d112394d66a"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 6,
+        "no-owner": 72,
+        "outside-shot-zone": 454
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 0,
+        "turnovers": 2,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.799999999999998,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.4485932031646924,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 187,
+          "shotsConceded": 0,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "f4f090de8b4def12f149c96334d8ceab5182ace99c3c2ee21d82167b30565846"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 326,
+        "no-local-shot-position": 213,
+        "outside-shot-zone": 139
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 0,
+        "turnovers": 2,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.799999999999998,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.4485865592671536,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 187,
+          "shotsConceded": 0,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "32c4492966c68568041c19ce2bb564ac6f97c359f95df3ea0872177e45b8ac04"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 326,
+        "no-local-shot-position": 213,
+        "outside-shot-zone": 139
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 0,
+        "turnovers": 3,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.4499999999999993,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.0075129386898567,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.49999999999999994,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 188,
+          "shotsConceded": 0,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "5c98e7bbf2fe2be10de4fd0890634565b97e59d8570989058ec53cfd79c570b2"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 297,
+        "no-local-shot-position": 213,
+        "outside-shot-zone": 168
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.0901847366095332,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cc0fe1373d46d8fb785d5cf00c84fcd4ecaf46b4375551dbfb04aa9355aac0b1"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 107,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 384
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 202,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.0901847366095332,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cc0fe1373d46d8fb785d5cf00c84fcd4ecaf46b4375551dbfb04aa9355aac0b1"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 107,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 384
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 202,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.090436690923332,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cc0fe1373d46d8fb785d5cf00c84fcd4ecaf46b4375551dbfb04aa9355aac0b1"
+      },
+      "stats": {
+        "not-mutually-visible": 42,
+        "no-owner": 107,
+        "no-local-shot-position": 42,
+        "outside-shot-zone": 384
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194541,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 109,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "ba687af83682c4693171eb6b61a8e2665f78a21c0050b103431f1eb93ea3e610"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 4,
+        "no-owner": 313,
+        "outside-shot-zone": 41
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 101,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194541,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 108,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "060116f774c8630845718415f54f7a0da6a6d8541c352c75b35c2a7e25122e66"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 4,
+        "no-owner": 282,
+        "outside-shot-zone": 72
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 101,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6346829471555941,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 108,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "d4a807699fc885ffb4e7f446e1d651f4fabba4b40434364c92d67086cbd12781"
+      },
+      "stats": {
+        "not-mutually-visible": 43,
+        "no-pair-shot-gain": 4,
+        "no-owner": 282,
+        "outside-shot-zone": 72
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 2,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.9500000000000003,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6889761678933306,
+          "openGoalSum": 0.5142857142857143,
+          "fieldOpenSum": 0.5499999999999999,
+          "passOptionsSum": 0.7500000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6666666666666667,
+          "protectionSteps": 0,
+          "intentChanges": 187,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 2,
+          "keeperSaves": 1,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "1d81d1940ef0d5fcd65b3feee7bffeb420f40f7dae2ef54db3d997c736bfd1aa"
+      },
+      "stats": {
+        "not-mutually-visible": 98,
+        "no-pair-shot-gain": 6,
+        "no-owner": 263,
+        "outside-shot-zone": 353
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 1.5707963267948966
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 2,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.44999999999999996,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6889761678933306,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.5833333333333337,
+          "protectionSteps": 0,
+          "intentChanges": 188,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "dc865e2576b4a34be147cc24ffa23a20369cbb1c172e7a34a199fb2fd69a848f"
+      },
+      "stats": {
+        "not-mutually-visible": 80,
+        "no-pair-shot-gain": 6,
+        "no-owner": 421,
+        "outside-shot-zone": 213
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 3.141592653589793
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.44999999999999996,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6902753012629216,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.5833333333333337,
+          "protectionSteps": 0,
+          "intentChanges": 187,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "7705a33d8c43a8b6c8cdfe8f66b7e4cc8e66c797c10a8a66d5c616d65d412de4"
+      },
+      "stats": {
+        "not-mutually-visible": 85,
+        "no-pair-shot-gain": 6,
+        "no-owner": 416,
+        "outside-shot-zone": 213
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 0,
+      "kind": "delayed",
+      "seed": 101,
+      "options": {},
+      "result": {
+        "defendingTeam": 0,
+        "kind": "delayed",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.8500000000000002,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 1.2621006578389224,
+          "openGoalSum": 0.05714285714285715,
+          "fieldOpenSum": 0.32857142857142857,
+          "passOptionsSum": 0.65,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.7,
+          "protectionSteps": 0,
+          "intentChanges": 148,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "f9ae43ee72ed2a9dd5e20dd51e67cf719c759cbc12354f9143d4107c8cf73e3f"
+      },
+      "stats": {
+        "not-mutually-visible": 79,
+        "no-pair-shot-gain": 23,
+        "no-owner": 72,
+        "outside-shot-zone": 401
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 0,
+      "kind": "delayed",
+      "seed": 202,
+      "options": {},
+      "result": {
+        "defendingTeam": 0,
+        "kind": "delayed",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 5,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.950000000000001,
+          "dangerSeconds": 1.950000000000001,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 1.7258249911185946,
+          "openGoalSum": 0.05714285714285715,
+          "fieldOpenSum": 0.05714285714285715,
+          "passOptionsSum": 1.950000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.2,
+          "longestPossession": 1.3916666666666642,
+          "protectionSteps": 0,
+          "intentChanges": 188,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "55bd956436915eecfccfc5194021a4737bed8ec5aa48bc01bd99bf7a6c9be871"
+      },
+      "stats": {
+        "not-mutually-visible": 196,
+        "no-pair-shot-gain": 36,
+        "no-owner": 184,
+        "outside-shot-zone": 304
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 0,
+      "kind": "immediate",
+      "seed": 101,
+      "options": {},
+      "result": {
+        "defendingTeam": 0,
+        "kind": "immediate",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0,
+          "dangerSeconds": 0,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0,
+          "openGoalSum": 0,
+          "fieldOpenSum": 0,
+          "passOptionsSum": 0,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.24999999999999997,
+          "protectionSteps": 0,
+          "intentChanges": 181,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "1906c70f0454ae87870223714c84d3527cfc62d6b22de28423498802cbbb4f4f"
+      },
+      "stats": {
+        "no-owner": 288,
+        "outside-shot-zone": 334,
+        "not-mutually-visible": 98
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 0,
+      "kind": "immediate",
+      "seed": 202,
+      "options": {},
+      "result": {
+        "defendingTeam": 0,
+        "kind": "immediate",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0,
+          "dangerSeconds": 0,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0,
+          "openGoalSum": 0,
+          "fieldOpenSum": 0,
+          "passOptionsSum": 0,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.24999999999999997,
+          "protectionSteps": 0,
+          "intentChanges": 174,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "c5312896b1a41a6ee8b739615c7140c05d315129e3a77bcb3f34c60e0a3f3ee3"
+      },
+      "stats": {
+        "no-owner": 364,
+        "outside-shot-zone": 356
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 0,
+      "kind": "central",
+      "seed": 101,
+      "options": {},
+      "result": {
+        "defendingTeam": 0,
+        "kind": "central",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.8000000000000002,
+          "dangerSeconds": 0.5499999999999999,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.7164140120253911,
+          "openGoalSum": 0.12142857142857144,
+          "fieldOpenSum": 0.12142857142857144,
+          "passOptionsSum": 0.5499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.25,
+          "longestPossession": 0.6666666666666667,
+          "protectionSteps": 0,
+          "intentChanges": 177,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "35506847b38a53c021ef2a8703457e76555c5ece02d2fff7ce57a7370a0bb000"
+      },
+      "stats": {
+        "not-mutually-visible": 90,
+        "no-pair-shot-gain": 21,
+        "no-owner": 331,
+        "outside-shot-zone": 277,
+        "no-local-shot-position": 1
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 0,
+      "kind": "central",
+      "seed": 202,
+      "options": {},
+      "result": {
+        "defendingTeam": 0,
+        "kind": "central",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.5499999999999999,
+          "dangerSeconds": 0.5499999999999999,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.7164140120253911,
+          "openGoalSum": 0.12142857142857144,
+          "fieldOpenSum": 0.12142857142857144,
+          "passOptionsSum": 0.5499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6666666666666667,
+          "protectionSteps": 0,
+          "intentChanges": 189,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "23b98481195c4d7891299f14cffdbcde4b0cc7fcb25c402d6b9dd6f64e3c1b3d"
+      },
+      "stats": {
+        "not-mutually-visible": 45,
+        "no-pair-shot-gain": 21,
+        "no-owner": 338,
+        "outside-shot-zone": 316
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 1,
+      "kind": "delayed",
+      "seed": 101,
+      "options": {},
+      "result": {
+        "defendingTeam": 1,
+        "kind": "delayed",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.8500000000000002,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 1.2621381684750115,
+          "openGoalSum": 0.05714285714285715,
+          "fieldOpenSum": 0.32857142857142857,
+          "passOptionsSum": 0.65,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.7,
+          "protectionSteps": 0,
+          "intentChanges": 148,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "94d47131eff3593d4c05ef72aae62a91db017113d46e61e6bed60d75dd0ebcfa"
+      },
+      "stats": {
+        "not-mutually-visible": 79,
+        "no-pair-shot-gain": 23,
+        "no-owner": 73,
+        "outside-shot-zone": 400
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 1,
+      "kind": "delayed",
+      "seed": 202,
+      "options": {},
+      "result": {
+        "defendingTeam": 1,
+        "kind": "delayed",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 5,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.950000000000001,
+          "dangerSeconds": 1.950000000000001,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 1.725820815750977,
+          "openGoalSum": 0.05714285714285715,
+          "fieldOpenSum": 0.05714285714285715,
+          "passOptionsSum": 1.950000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.2,
+          "longestPossession": 1.3916666666666642,
+          "protectionSteps": 0,
+          "intentChanges": 189,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "6a48eff1ad413a1b1761e21d665505e4bccacdbdb85069508ad0448cc9e98ff5"
+      },
+      "stats": {
+        "not-mutually-visible": 196,
+        "no-pair-shot-gain": 36,
+        "no-owner": 196,
+        "outside-shot-zone": 292
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 1,
+      "kind": "immediate",
+      "seed": 101,
+      "options": {},
+      "result": {
+        "defendingTeam": 1,
+        "kind": "immediate",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 3,
+        "shots": 3,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.4000000000000006,
+          "dangerSeconds": 1.4000000000000006,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.0046171180245744,
+          "openGoalSum": 0.7499999999999997,
+          "fieldOpenSum": 0.8928571428571427,
+          "passOptionsSum": 0.9000000000000002,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.991666666666662,
+          "protectionSteps": 0,
+          "intentChanges": 140,
+          "shotsConceded": 3,
+          "passesAgainst": 1,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "f8a1984a70ad9c3ddc1f412ed9cac5cd249d3cd28a793838a42328b48f4aa12b"
+      },
+      "stats": {
+        "no-owner": 106,
+        "outside-shot-zone": 301,
+        "no-local-shot-position": 10,
+        "not-mutually-visible": 85,
+        "no-pair-shot-gain": 73
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 1,
+      "kind": "immediate",
+      "seed": 202,
+      "options": {},
+      "result": {
+        "defendingTeam": 1,
+        "kind": "immediate",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.6,
+          "dangerSeconds": 0.6,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0,
+          "openGoalSum": 0.5857142857142856,
+          "fieldOpenSum": 0.6,
+          "passOptionsSum": 0.6,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.05,
+          "longestPossession": 0.5833333333333337,
+          "protectionSteps": 0,
+          "intentChanges": 172,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "23ead3b4e2ad693a627a4b14aa969a237738c4486cb61ae156db4bc95eb6a17c"
+      },
+      "stats": {
+        "no-owner": 296,
+        "outside-shot-zone": 355,
+        "no-local-shot-position": 12,
+        "not-mutually-visible": 57
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 1,
+      "kind": "central",
+      "seed": 101,
+      "options": {},
+      "result": {
+        "defendingTeam": 1,
+        "kind": "central",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.5499999999999999,
+          "dangerSeconds": 0.5499999999999999,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.716414012025392,
+          "openGoalSum": 0.12142857142857144,
+          "fieldOpenSum": 0.12142857142857144,
+          "passOptionsSum": 0.5499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6666666666666667,
+          "protectionSteps": 0,
+          "intentChanges": 177,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "826164181a21cc88a2dcfe273644034e7a0a2009e83e8dd4f50c9accc2be5f16"
+      },
+      "stats": {
+        "not-mutually-visible": 124,
+        "no-pair-shot-gain": 51,
+        "no-owner": 319,
+        "outside-shot-zone": 226
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "shot",
+      "t": 1,
+      "kind": "central",
+      "seed": 202,
+      "options": {},
+      "result": {
+        "defendingTeam": 1,
+        "kind": "central",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.9500000000000003,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0.35,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.9745185299054867,
+          "openGoalSum": 0.5071428571428571,
+          "fieldOpenSum": 0.5214285714285714,
+          "passOptionsSum": 0.5499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6833333333333333,
+          "protectionSteps": 0,
+          "intentChanges": 148,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "a3d7fc0e1b2f157373c04ac69cf6aa6b43dd109531d03d8bc1895014febd9df0"
+      },
+      "stats": {
+        "not-mutually-visible": 91,
+        "no-pair-shot-gain": 21,
+        "no-owner": 250,
+        "outside-shot-zone": 213
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "help": 1
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 1,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 1.6000000000000008,
+          "dangerSeconds": 1.6000000000000008,
+          "occasionSeconds": 1.1000000000000003,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.3120137493724884,
+          "openGoalSum": 0.8357142857142857,
+          "fieldOpenSum": 0.8357142857142857,
+          "passOptionsSum": 1.5000000000000007,
+          "doubleCoverSum": 0.26428571428571435,
+          "pressureSeconds": 0,
+          "longestPossession": 1.8583333333333292,
+          "protectionSteps": 176,
+          "intentChanges": 177,
+          "shotsConceded": 0,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "a289873c577a2a29dedd6b19630a982ba7cdc67d5363fe8e8e5ceb7cd56be4df"
+      },
+      "stats": {
+        "not-mutually-visible": 141,
+        "no-owner": 253,
+        "no-local-shot-position": 51,
+        "outside-shot-zone": 275
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "help": 2
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 2,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 1.6000000000000008,
+          "dangerSeconds": 1.6000000000000008,
+          "occasionSeconds": 1.1000000000000003,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.3474817416249947,
+          "openGoalSum": 0.8500000000000001,
+          "fieldOpenSum": 0.8500000000000001,
+          "passOptionsSum": 1.4500000000000006,
+          "doubleCoverSum": 0.1642857142857143,
+          "pressureSeconds": 0,
+          "longestPossession": 1.8583333333333292,
+          "protectionSteps": 176,
+          "intentChanges": 176,
+          "shotsConceded": 0,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "b37bc462f87d679c4880036930a40d9abba79275bf7eea40844e983e90572e95"
+      },
+      "stats": {
+        "not-mutually-visible": 176,
+        "no-owner": 249,
+        "no-local-shot-position": 16,
+        "outside-shot-zone": 279
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "help": 1
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 1,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.44999999999999996,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.4485376336926204,
+          "openGoalSum": 0.03571428571428571,
+          "fieldOpenSum": 0.03571428571428571,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0.3500000000000001,
+          "pressureSeconds": 0,
+          "longestPossession": 0.49166666666666736,
+          "protectionSteps": 88,
+          "intentChanges": 176,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "fba2b598da2d4c2a32e0d0d83c4bdbb4287927a08d021bd8b27f81ea8db46a17"
+      },
+      "stats": {
+        "not-mutually-visible": 49,
+        "no-owner": 386,
+        "outside-shot-zone": 285
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "help": 2
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 2,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 2,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.44999999999999996,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.585999557968553,
+          "openGoalSum": 0.0642857142857143,
+          "fieldOpenSum": 0.0642857142857143,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0.20714285714285718,
+          "pressureSeconds": 0,
+          "longestPossession": 0.5166666666666673,
+          "protectionSteps": 88,
+          "intentChanges": 169,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "9cb39ede8a2caf0d3f30ca947a86a23d0a0b3c9fb1672f4d1b41e4dbfeaf2508"
+      },
+      "stats": {
+        "not-mutually-visible": 49,
+        "no-owner": 446,
+        "outside-shot-zone": 225
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "help": 1
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 1,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 1.6000000000000008,
+          "dangerSeconds": 1.6000000000000008,
+          "occasionSeconds": 1.1000000000000003,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.3106760383859433,
+          "openGoalSum": 0.8285714285714286,
+          "fieldOpenSum": 0.8285714285714286,
+          "passOptionsSum": 1.5000000000000007,
+          "doubleCoverSum": 0.26428571428571435,
+          "pressureSeconds": 0,
+          "longestPossession": 1.8583333333333292,
+          "protectionSteps": 176,
+          "intentChanges": 178,
+          "shotsConceded": 0,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cf889f0d3435775009eb739a842974c11a75a2c5ba352368aff0d771da82065c"
+      },
+      "stats": {
+        "not-mutually-visible": 141,
+        "no-owner": 264,
+        "no-local-shot-position": 51,
+        "outside-shot-zone": 264
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "help": 2
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 101,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 2,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 1.6000000000000008,
+          "dangerSeconds": 1.6000000000000008,
+          "occasionSeconds": 1.1000000000000003,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.34872705180951,
+          "openGoalSum": 0.842857142857143,
+          "fieldOpenSum": 0.842857142857143,
+          "passOptionsSum": 1.4500000000000006,
+          "doubleCoverSum": 0.1642857142857143,
+          "pressureSeconds": 0,
+          "longestPossession": 1.8583333333333292,
+          "protectionSteps": 176,
+          "intentChanges": 178,
+          "shotsConceded": 0,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "e613b398907a0712b393484e41a27e090496b022339b2ce8ed9a1f98c7199e70"
+      },
+      "stats": {
+        "not-mutually-visible": 176,
+        "no-owner": 246,
+        "no-local-shot-position": 16,
+        "outside-shot-zone": 282
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "help": 1
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 1,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 3,
+        "shots": 2,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.44999999999999996,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.4485376336926192,
+          "openGoalSum": 0.03571428571428571,
+          "fieldOpenSum": 0.03571428571428571,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0.3500000000000001,
+          "pressureSeconds": 0,
+          "longestPossession": 0.49166666666666736,
+          "protectionSteps": 88,
+          "intentChanges": 177,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "e6f09dd8080fa7427acf15e0a0196962fd6f8aad201f88d42620de4daedb4c48"
+      },
+      "stats": {
+        "not-mutually-visible": 85,
+        "no-owner": 329,
+        "outside-shot-zone": 261,
+        "no-local-shot-position": 45
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "help",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "help": 2
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 202,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 2,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.8500000000000002,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.5859995579685535,
+          "openGoalSum": 0.24285714285714288,
+          "fieldOpenSum": 0.36428571428571427,
+          "passOptionsSum": 0.65,
+          "doubleCoverSum": 0.20714285714285718,
+          "pressureSeconds": 0.39999999999999997,
+          "longestPossession": 0.8083333333333329,
+          "protectionSteps": 88,
+          "intentChanges": 134,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cfcac0b825ec1ec9b993559e94b797a3fe27744b78bdc496109a3215ff0e8b83"
+      },
+      "stats": {
+        "not-mutually-visible": 90,
+        "no-owner": 167,
+        "outside-shot-zone": 295,
+        "no-local-shot-position": 4
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "pass",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 307,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 0,
+        "passes": 5,
+        "shots": 2,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 1.4500000000000006,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.6219976420286166,
+          "openGoalSum": 1.1214285714285719,
+          "fieldOpenSum": 1.1214285714285719,
+          "passOptionsSum": 4.6499999999999995,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0,
+          "longestPossession": 2.1083333333333285,
+          "protectionSteps": 54,
+          "intentChanges": 320,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "539a2332f768dd15dd01ede2a0ad0b8aefc35cd032ab7d1d3712510640d6b9e9"
+      },
+      "stats": {
+        "no-local-shot-position": 181,
+        "no-owner": 376,
+        "not-mutually-visible": 190,
+        "outside-shot-zone": 519
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "pass",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 307,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 1.4500000000000006,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.6319722710805755,
+          "openGoalSum": 1.1214285714285719,
+          "fieldOpenSum": 1.1214285714285719,
+          "passOptionsSum": 4.7,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0,
+          "longestPossession": 2.1083333333333285,
+          "protectionSteps": 54,
+          "intentChanges": 327,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "5c117e3c8b521746c9db63c2b6ed0b73f2f14677eed42eda4ed258ce4e8fbf23"
+      },
+      "stats": {
+        "no-local-shot-position": 72,
+        "no-owner": 337,
+        "not-mutually-visible": 180,
+        "outside-shot-zone": 677
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "pass",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 809,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 1.3000000000000005,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0.39999999999999997,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.2181652973231485,
+          "openGoalSum": 0.5214285714285714,
+          "fieldOpenSum": 0.5214285714285714,
+          "passOptionsSum": 2.899999999999999,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0.2,
+          "longestPossession": 1.6833333333333298,
+          "protectionSteps": 54,
+          "intentChanges": 301,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "7a9df4c4407d677ceeab26f8f711b8e4182c023a530854ccdb4589e6859304bc"
+      },
+      "stats": {
+        "no-local-shot-position": 51,
+        "no-owner": 643,
+        "not-mutually-visible": 52,
+        "outside-shot-zone": 549
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "pass",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 809,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.7499999999999982,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0.39999999999999997,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.885948267779626,
+          "openGoalSum": 0.5214285714285714,
+          "fieldOpenSum": 0.5214285714285714,
+          "passOptionsSum": 2.899999999999999,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0.44999999999999996,
+          "longestPossession": 2.0749999999999953,
+          "protectionSteps": 54,
+          "intentChanges": 290,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "5f46ae05976c548a5256b014663fa2c9af19d73047cdcb7502c72299bf152b17"
+      },
+      "stats": {
+        "no-local-shot-position": 55,
+        "no-owner": 261,
+        "not-mutually-visible": 52,
+        "outside-shot-zone": 824
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "free",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 307,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 0,
+        "passes": 14,
+        "shots": 3,
+        "turnovers": 6,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 3.949999999999994,
+          "dangerSeconds": 3.4499999999999957,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.624152649758952,
+          "openGoalSum": 1.0928571428571432,
+          "fieldOpenSum": 1.2571428571428576,
+          "passOptionsSum": 9.149999999999997,
+          "doubleCoverSum": 1.171428571428572,
+          "pressureSeconds": 0.8000000000000002,
+          "longestPossession": 3.9249999999999887,
+          "protectionSteps": 98,
+          "intentChanges": 358,
+          "shotsConceded": 3,
+          "passesAgainst": 6,
+          "interceptions": 3,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "7b975d809b8bb829bd80d3018479d640fe7823a425e81b33581e659b2278a665"
+      },
+      "stats": {
+        "no-local-shot-position": 99,
+        "no-owner": 264,
+        "outside-shot-zone": 763,
+        "not-mutually-visible": 267,
+        "no-pair-shot-gain": 47
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "free",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 307,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 0,
+        "passes": 7,
+        "shots": 2,
+        "turnovers": 3,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.7500000000000001,
+          "dangerSeconds": 0.7500000000000001,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.4195878107253876,
+          "openGoalSum": 0.05714285714285715,
+          "fieldOpenSum": 0.1357142857142857,
+          "passOptionsSum": 1.75,
+          "doubleCoverSum": 0.28571428571428575,
+          "pressureSeconds": 0.3,
+          "longestPossession": 0.5500000000000005,
+          "protectionSteps": 54,
+          "intentChanges": 283,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "080803d70733eb946ef744b003ecb8822ddf928de9d5bd51306050954c5a6371"
+      },
+      "stats": {
+        "no-local-shot-position": 120,
+        "no-owner": 420,
+        "outside-shot-zone": 575,
+        "not-mutually-visible": 24
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "free",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 809,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 0,
+        "passes": 7,
+        "shots": 0,
+        "turnovers": 1,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 1.900000000000001,
+          "dangerSeconds": 1.900000000000001,
+          "occasionSeconds": 0.5499999999999999,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.6962924670970755,
+          "openGoalSum": 0.9857142857142858,
+          "fieldOpenSum": 0.9857142857142858,
+          "passOptionsSum": 6.850000000000002,
+          "doubleCoverSum": 0.30714285714285716,
+          "pressureSeconds": 1.0000000000000002,
+          "longestPossession": 2.308333333333328,
+          "protectionSteps": 54,
+          "intentChanges": 357,
+          "shotsConceded": 0,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "de82a74c8b4bf171bbff35d6be594aeaa46b0b7f9ff2206f53ead30a1cba9caa"
+      },
+      "stats": {
+        "no-local-shot-position": 145,
+        "no-owner": 523,
+        "not-mutually-visible": 154,
+        "outside-shot-zone": 618
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 0,
+      "kind": "free",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 809,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 1.4500000000000006,
+          "dangerSeconds": 1.0500000000000003,
+          "occasionSeconds": 0.44999999999999996,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.4370187211829342,
+          "openGoalSum": 0.5714285714285714,
+          "fieldOpenSum": 0.5714285714285714,
+          "passOptionsSum": 3.549999999999999,
+          "doubleCoverSum": 0.30714285714285716,
+          "pressureSeconds": 0.39999999999999997,
+          "longestPossession": 1.8166666666666627,
+          "protectionSteps": 54,
+          "intentChanges": 303,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "5f43b9c5614e1854e2255086e468c0ee97661e65d5d9419d6ad8ac4644b000f1"
+      },
+      "stats": {
+        "no-local-shot-position": 128,
+        "no-owner": 453,
+        "outside-shot-zone": 633
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "pass",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 307,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 1,
+        "passes": 8,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.6444059452039517,
+          "openGoalSum": 1.1214285714285719,
+          "fieldOpenSum": 1.1214285714285719,
+          "passOptionsSum": 4.6499999999999995,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0.49999999999999994,
+          "longestPossession": 2.1333333333333284,
+          "protectionSteps": 54,
+          "intentChanges": 320,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "002262e6f116c3d800a3e12ca832e7bd06aa246eac1f9c7c0c8ef4c88d78b395"
+      },
+      "stats": {
+        "no-local-shot-position": 67,
+        "no-owner": 280,
+        "not-mutually-visible": 109,
+        "outside-shot-zone": 839
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "pass",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 307,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.3,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.9267369881248562,
+          "openGoalSum": 1.1214285714285719,
+          "fieldOpenSum": 1.1214285714285719,
+          "passOptionsSum": 4.7,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0.49999999999999994,
+          "longestPossession": 2.1333333333333284,
+          "protectionSteps": 54,
+          "intentChanges": 318,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "93f2dac2c3a3d10e717646eb7a20e8d8b03aef2de8f9252542219452b13f638e"
+      },
+      "stats": {
+        "no-local-shot-position": 73,
+        "no-owner": 554,
+        "not-mutually-visible": 103,
+        "outside-shot-zone": 565
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "pass",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 809,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 3.599999999999995,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0.39999999999999997,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.5822124077754633,
+          "openGoalSum": 0.5214285714285714,
+          "fieldOpenSum": 0.5214285714285714,
+          "passOptionsSum": 2.899999999999999,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0.49999999999999994,
+          "longestPossession": 2.4416666666666607,
+          "protectionSteps": 54,
+          "intentChanges": 328,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "8cf0ed29a928fa4feedda3a454eef71c22ad13e4f29247b28b5a7b11757cb0fb"
+      },
+      "stats": {
+        "no-local-shot-position": 51,
+        "no-owner": 190,
+        "not-mutually-visible": 52,
+        "outside-shot-zone": 1002
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "pass",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 809,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 1,
+        "passes": 8,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 3.1999999999999966,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0.39999999999999997,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.1211506514417695,
+          "openGoalSum": 0.5214285714285714,
+          "fieldOpenSum": 0.5214285714285714,
+          "passOptionsSum": 2.899999999999999,
+          "doubleCoverSum": 0.23571428571428577,
+          "pressureSeconds": 0.44999999999999996,
+          "longestPossession": 2.0749999999999953,
+          "protectionSteps": 54,
+          "intentChanges": 314,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "7af5f2558da0ba62d065b4af302baf183fed10d0558b7ce8b6a8c120a51a8134"
+      },
+      "stats": {
+        "no-local-shot-position": 94,
+        "no-owner": 212,
+        "not-mutually-visible": 98,
+        "outside-shot-zone": 891
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "free",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 307,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 1,
+        "passes": 10,
+        "shots": 2,
+        "turnovers": 6,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.950000000000001,
+          "dangerSeconds": 0.8000000000000002,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6151010083386008,
+          "openGoalSum": 0.3285714285714285,
+          "fieldOpenSum": 0.3285714285714285,
+          "passOptionsSum": 2.7999999999999994,
+          "doubleCoverSum": 0.28571428571428575,
+          "pressureSeconds": 0.05,
+          "longestPossession": 0.6500000000000001,
+          "protectionSteps": 54,
+          "intentChanges": 306,
+          "shotsConceded": 2,
+          "passesAgainst": 2,
+          "interceptions": 3,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "c1d8c940698eedf4315801d717a893b91ba2fa770ccc81c092f200877a785b0a"
+      },
+      "stats": {
+        "no-local-shot-position": 50,
+        "no-owner": 210,
+        "outside-shot-zone": 995,
+        "not-mutually-visible": 40
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "free",
+      "seed": 307,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 307,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 0,
+        "passes": 4,
+        "shots": 1,
+        "turnovers": 4,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 4.499999999999992,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 2.750094133781216,
+          "openGoalSum": 0.02142857142857143,
+          "fieldOpenSum": 0.02142857142857143,
+          "passOptionsSum": 1.75,
+          "doubleCoverSum": 0.28571428571428575,
+          "pressureSeconds": 0.65,
+          "longestPossession": 3.191666666666658,
+          "protectionSteps": 54,
+          "intentChanges": 353,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "94b015e5ed4d546070d7f2f54ad5a6033004e4e8473ecc139bdab83111ae6e3a"
+      },
+      "stats": {
+        "no-local-shot-position": 50,
+        "no-owner": 716,
+        "outside-shot-zone": 674
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "free",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 0.8,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 809,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.8
+        },
+        "goalsConceded": 0,
+        "passes": 6,
+        "shots": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "other",
+        "metrics": {
+          "attackSeconds": 2.1500000000000004,
+          "dangerSeconds": 1.850000000000001,
+          "occasionSeconds": 0.44999999999999996,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.8570978541804186,
+          "openGoalSum": 1.371428571428572,
+          "fieldOpenSum": 1.371428571428572,
+          "passOptionsSum": 5.950000000000003,
+          "doubleCoverSum": 0.30714285714285716,
+          "pressureSeconds": 1.0000000000000002,
+          "longestPossession": 2.2999999999999945,
+          "protectionSteps": 54,
+          "intentChanges": 359,
+          "shotsConceded": 0,
+          "passesAgainst": 3,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "8eb20e5c8ea865220a9ce4429a96535f678abbd47750a3f15d259155298f485c"
+      },
+      "stats": {
+        "no-local-shot-position": 181,
+        "no-owner": 485,
+        "not-mutually-visible": 166,
+        "outside-shot-zone": 608
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "reserved",
+      "t": 1,
+      "kind": "free",
+      "seed": 809,
+      "options": {
+        "structure": true,
+        "help": 1,
+        "profile": 1.2,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 809,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 1,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.2
+        },
+        "goalsConceded": 1,
+        "passes": 9,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 3.2499999999999964,
+          "dangerSeconds": 1.7000000000000008,
+          "occasionSeconds": 0.7500000000000001,
+          "occasionEpisodes": 2,
+          "arrivalSum": 2.236689786343392,
+          "openGoalSum": 0.7642857142857142,
+          "fieldOpenSum": 0.7642857142857142,
+          "passOptionsSum": 5.500000000000002,
+          "doubleCoverSum": 0.3214285714285714,
+          "pressureSeconds": 0.3,
+          "longestPossession": 1.8416666666666626,
+          "protectionSteps": 54,
+          "intentChanges": 281,
+          "shotsConceded": 2,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "5ca0aff412a4003c3749602211706b501fdda8edb4cd8778d7cd7e1f24569310"
+      },
+      "stats": {
+        "no-local-shot-position": 128,
+        "no-owner": 179,
+        "outside-shot-zone": 767,
+        "not-mutually-visible": 76
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 1009,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 1,
+        "passes": 9,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 5.1999999999999895,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 4.1343366464590305,
+          "openGoalSum": 1.1500000000000004,
+          "fieldOpenSum": 1.1500000000000004,
+          "passOptionsSum": 4.7,
+          "doubleCoverSum": 0.15000000000000002,
+          "pressureSeconds": 0.5499999999999999,
+          "longestPossession": 4.333333333333338,
+          "protectionSteps": 0,
+          "intentChanges": 316,
+          "shotsConceded": 1,
+          "passesAgainst": 6,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "bf59391baeeb609a88bc81c30e509c2164247a6b9b2b42745e01ab6e2d8d3c44"
+      },
+      "stats": {
+        "not-mutually-visible": 50,
+        "no-local-shot-position": 125,
+        "no-owner": 221,
+        "outside-shot-zone": 899
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 1009,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 1,
+        "passes": 10,
+        "shots": 1,
+        "turnovers": 4,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 4.599999999999992,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 3.1943614442173205,
+          "openGoalSum": 1.1500000000000004,
+          "fieldOpenSum": 1.1500000000000004,
+          "passOptionsSum": 4.7,
+          "doubleCoverSum": 0.15714285714285717,
+          "pressureSeconds": 1.0500000000000003,
+          "longestPossession": 2.4916666666666605,
+          "protectionSteps": 0,
+          "intentChanges": 319,
+          "shotsConceded": 1,
+          "passesAgainst": 6,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "46b279dfa58be3edfe3e5ac667b3b1eb23837b27351b688d50a4ecb5540f30b7"
+      },
+      "stats": {
+        "not-mutually-visible": 51,
+        "no-local-shot-position": 124,
+        "no-owner": 207,
+        "outside-shot-zone": 913
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 1601,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 1,
+        "passes": 8,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 1.850000000000001,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0.49999999999999994,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.3812389226847765,
+          "openGoalSum": 0.65,
+          "fieldOpenSum": 0.65,
+          "passOptionsSum": 3.199999999999999,
+          "doubleCoverSum": 0.15000000000000002,
+          "pressureSeconds": 0.9000000000000002,
+          "longestPossession": 1.7333333333333296,
+          "protectionSteps": 0,
+          "intentChanges": 299,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "27df3e663fbcd95a090c1f568fd1f69b67ea653f6e7808713be23047046ed881"
+      },
+      "stats": {
+        "not-mutually-visible": 9,
+        "no-local-shot-position": 108,
+        "no-owner": 238,
+        "outside-shot-zone": 940
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "pass",
+        "seed": 1601,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.9499999999999975,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0.49999999999999994,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.3160500795258283,
+          "openGoalSum": 0.65,
+          "fieldOpenSum": 0.65,
+          "passOptionsSum": 3.199999999999999,
+          "doubleCoverSum": 0.15714285714285717,
+          "pressureSeconds": 0.15000000000000002,
+          "longestPossession": 3.57499999999999,
+          "protectionSteps": 0,
+          "intentChanges": 310,
+          "shotsConceded": 1,
+          "passesAgainst": 4,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "cccaf461ed47f19fcf4b51f727d85215d817e766c91b4329ecacc8ec1c87606e"
+      },
+      "stats": {
+        "not-mutually-visible": 9,
+        "no-local-shot-position": 108,
+        "no-owner": 532,
+        "outside-shot-zone": 646
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "free",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 1009,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 1,
+        "passes": 11,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 4.899999999999991,
+          "dangerSeconds": 0.9000000000000002,
+          "occasionSeconds": 0.1,
+          "occasionEpisodes": 1,
+          "arrivalSum": 3.2663390996651223,
+          "openGoalSum": 0.42857142857142855,
+          "fieldOpenSum": 0.42857142857142855,
+          "passOptionsSum": 3.2499999999999996,
+          "doubleCoverSum": 0.27857142857142864,
+          "pressureSeconds": 0.8000000000000002,
+          "longestPossession": 4.808333333333362,
+          "protectionSteps": 44,
+          "intentChanges": 313,
+          "shotsConceded": 1,
+          "passesAgainst": 8,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "bf751cef7e62ecc8993c393053d2e62ff138c25240723bba769e484bc65fd9a1"
+      },
+      "stats": {
+        "not-mutually-visible": 9,
+        "no-local-shot-position": 90,
+        "no-owner": 271,
+        "outside-shot-zone": 925
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "free",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 1009,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 5.4999999999999885,
+          "dangerSeconds": 1.7000000000000008,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 3.9493239653015078,
+          "openGoalSum": 1.228571428571429,
+          "fieldOpenSum": 1.228571428571429,
+          "passOptionsSum": 5.4,
+          "doubleCoverSum": 0.28571428571428575,
+          "pressureSeconds": 0.35,
+          "longestPossession": 4.866666666666698,
+          "protectionSteps": 99,
+          "intentChanges": 318,
+          "shotsConceded": 1,
+          "passesAgainst": 4,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "77d09b12479a29800e9a886f71c278b9f7445062911038c459aa5a7527b9724d"
+      },
+      "stats": {
+        "not-mutually-visible": 81,
+        "no-local-shot-position": 115,
+        "no-owner": 233,
+        "outside-shot-zone": 866
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "free",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 1601,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 0,
+        "passes": 5,
+        "shots": 1,
+        "turnovers": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.6,
+          "dangerSeconds": 0.6,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.5024342322762069,
+          "openGoalSum": 0.08571428571428573,
+          "fieldOpenSum": 0.08571428571428573,
+          "passOptionsSum": 2.2499999999999996,
+          "doubleCoverSum": 0.3214285714285715,
+          "pressureSeconds": 0,
+          "longestPossession": 0.7166666666666666,
+          "protectionSteps": 44,
+          "intentChanges": 347,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "97830ea058b989ef19929650790d77b0d25d93c9d0b6cd44d6a3dd9f8daf0bf6"
+      },
+      "stats": {
+        "not-mutually-visible": 9,
+        "no-local-shot-position": 62,
+        "no-owner": 580,
+        "outside-shot-zone": 789
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 0,
+      "kind": "free",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 0,
+        "kind": "free",
+        "seed": 1601,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 0,
+        "passes": 7,
+        "shots": 3,
+        "turnovers": 4,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 4.099999999999993,
+          "dangerSeconds": 1.5500000000000007,
+          "occasionSeconds": 0.35,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.490162322831394,
+          "openGoalSum": 0.6785714285714287,
+          "fieldOpenSum": 0.6785714285714287,
+          "passOptionsSum": 5.2,
+          "doubleCoverSum": 0.55,
+          "pressureSeconds": 0.25,
+          "longestPossession": 3.8916666666666555,
+          "protectionSteps": 76,
+          "intentChanges": 369,
+          "shotsConceded": 2,
+          "passesAgainst": 3,
+          "interceptions": 2,
+          "keeperSaves": 1,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "36fd4ecaf962e8b076a145b387155554b0ed0e6f4dde71637900a4ef02a72405"
+      },
+      "stats": {
+        "not-mutually-visible": 98,
+        "no-local-shot-position": 114,
+        "no-owner": 497,
+        "outside-shot-zone": 731
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 1009,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 1,
+        "passes": 10,
+        "shots": 1,
+        "turnovers": 5,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 5.399999999999989,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 3.6823511497959798,
+          "openGoalSum": 1.1500000000000004,
+          "fieldOpenSum": 1.1500000000000004,
+          "passOptionsSum": 4.7,
+          "doubleCoverSum": 0.15000000000000002,
+          "pressureSeconds": 1.2000000000000004,
+          "longestPossession": 3.141666666666658,
+          "protectionSteps": 0,
+          "intentChanges": 322,
+          "shotsConceded": 1,
+          "passesAgainst": 7,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "5b4b7f831ae8ced74077b13dcf013b54d8e034a14cd50272d0c1bcb8c7f2a76a"
+      },
+      "stats": {
+        "not-mutually-visible": 50,
+        "no-local-shot-position": 125,
+        "no-owner": 192,
+        "outside-shot-zone": 928
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 1009,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 1,
+        "passes": 11,
+        "shots": 1,
+        "turnovers": 4,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 4.299999999999993,
+          "dangerSeconds": 1.4500000000000006,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.9651635471957225,
+          "openGoalSum": 1.1500000000000004,
+          "fieldOpenSum": 1.1500000000000004,
+          "passOptionsSum": 4.7,
+          "doubleCoverSum": 0.15714285714285717,
+          "pressureSeconds": 1.0000000000000002,
+          "longestPossession": 2.291666666666661,
+          "protectionSteps": 0,
+          "intentChanges": 315,
+          "shotsConceded": 1,
+          "passesAgainst": 7,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "87c8c030bea21f6228612510e615c0bb3c67edb9ea0faca7f35c7d2808c0c0d0"
+      },
+      "stats": {
+        "not-mutually-visible": 51,
+        "no-local-shot-position": 124,
+        "no-owner": 253,
+        "outside-shot-zone": 867
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 1601,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 1,
+        "passes": 5,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.9999999999999973,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0.49999999999999994,
+          "occasionEpisodes": 1,
+          "arrivalSum": 3.9904270447062964,
+          "openGoalSum": 0.65,
+          "fieldOpenSum": 0.65,
+          "passOptionsSum": 3.199999999999999,
+          "doubleCoverSum": 0.15000000000000002,
+          "pressureSeconds": 0.25,
+          "longestPossession": 2.016666666666662,
+          "protectionSteps": 0,
+          "intentChanges": 316,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "1a5fdc654137c13ae71386421ea3f3f4a1c9bb4cdaf4e54e768b026a5d96aefc"
+      },
+      "stats": {
+        "not-mutually-visible": 76,
+        "no-local-shot-position": 140,
+        "no-owner": 168,
+        "outside-shot-zone": 911
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "pass",
+        "seed": 1601,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 1,
+        "passes": 8,
+        "shots": 1,
+        "turnovers": 2,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 5.399999999999989,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0.49999999999999994,
+          "occasionEpisodes": 1,
+          "arrivalSum": 4.5260511252738,
+          "openGoalSum": 0.65,
+          "fieldOpenSum": 0.65,
+          "passOptionsSum": 3.199999999999999,
+          "doubleCoverSum": 0.15714285714285717,
+          "pressureSeconds": 0.44999999999999996,
+          "longestPossession": 5.266666666666718,
+          "protectionSteps": 0,
+          "intentChanges": 312,
+          "shotsConceded": 1,
+          "passesAgainst": 5,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "3014e62108d6ced52b632ba1c693eea28898b76cfd7ac281684c0911bf1cb0f2"
+      },
+      "stats": {
+        "not-mutually-visible": 9,
+        "no-local-shot-position": 108,
+        "no-owner": 218,
+        "outside-shot-zone": 960
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "free",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 1009,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 1,
+        "passes": 10,
+        "shots": 1,
+        "turnovers": 0,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 5.849999999999987,
+          "dangerSeconds": 4.599999999999992,
+          "occasionSeconds": 0.7500000000000001,
+          "occasionEpisodes": 1,
+          "arrivalSum": 4.34964175503013,
+          "openGoalSum": 1.221428571428571,
+          "fieldOpenSum": 1.2285714285714282,
+          "passOptionsSum": 17.050000000000004,
+          "doubleCoverSum": 1.5571428571428572,
+          "pressureSeconds": 0.7500000000000001,
+          "longestPossession": 4.5916666666666845,
+          "protectionSteps": 197,
+          "intentChanges": 329,
+          "shotsConceded": 1,
+          "passesAgainst": 8,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "1126ea5b92cd1fffb3dbaf03c65d7017ed3f72301ecf2d04235a19a436c9a2c3"
+      },
+      "stats": {
+        "not-mutually-visible": 339,
+        "no-local-shot-position": 156,
+        "no-owner": 351,
+        "no-pair-shot-gain": 47,
+        "outside-shot-zone": 402
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "free",
+      "seed": 1009,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 1009,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 1,
+        "passes": 7,
+        "shots": 1,
+        "turnovers": 3,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 5.549999999999988,
+          "dangerSeconds": 1.7000000000000008,
+          "occasionSeconds": 1.0000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 3.2897673126272595,
+          "openGoalSum": 1.228571428571429,
+          "fieldOpenSum": 1.228571428571429,
+          "passOptionsSum": 5.4,
+          "doubleCoverSum": 0.28571428571428575,
+          "pressureSeconds": 1.4000000000000006,
+          "longestPossession": 4.383333333333341,
+          "protectionSteps": 99,
+          "intentChanges": 322,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "stateSha256": "cb0d4b6b6b78770c5b206e30ac9558f77a5fb6d8a6be9cd653ffa7f652394a29"
+      },
+      "stats": {
+        "not-mutually-visible": 81,
+        "no-local-shot-position": 115,
+        "no-owner": 182,
+        "outside-shot-zone": 917
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "free",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 0.9,
+        "angle": -1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 1601,
+        "options": {
+          "angle": -1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 0.9
+        },
+        "goalsConceded": 0,
+        "passes": 8,
+        "shots": 2,
+        "turnovers": 1,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.9500000000000003,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0.05,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.532314553899903,
+          "openGoalSum": 0.36428571428571427,
+          "fieldOpenSum": 0.36428571428571427,
+          "passOptionsSum": 3.5500000000000003,
+          "doubleCoverSum": 0.3214285714285715,
+          "pressureSeconds": 0,
+          "longestPossession": 0.974999999999999,
+          "protectionSteps": 44,
+          "intentChanges": 279,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "463019600c38682dd4dbcb63d0dd798978c3e9e2af1e2529579090cf3a43f9bd"
+      },
+      "stats": {
+        "not-mutually-visible": 18,
+        "no-local-shot-position": 95,
+        "no-owner": 619,
+        "outside-shot-zone": 418
+      },
+      "witnesses": [],
+      "costs": []
+    },
+    {
+      "group": "confirmation",
+      "t": 1,
+      "kind": "free",
+      "seed": 1601,
+      "options": {
+        "structure": true,
+        "help": 2,
+        "profile": 1.1,
+        "angle": 1.5707963267948966,
+        "seconds": 12
+      },
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 1601,
+        "options": {
+          "angle": 1.5707963267948966,
+          "keeperHome": true,
+          "help": 2,
+          "structure": true,
+          "seconds": 12,
+          "profile": 1.1
+        },
+        "goalsConceded": 0,
+        "passes": 8,
+        "shots": 2,
+        "turnovers": 2,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 1.950000000000001,
+          "dangerSeconds": 1.6000000000000008,
+          "occasionSeconds": 0.49999999999999994,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.2314545707065199,
+          "openGoalSum": 0.6785714285714287,
+          "fieldOpenSum": 0.6785714285714287,
+          "passOptionsSum": 5.900000000000001,
+          "doubleCoverSum": 0.3642857142857143,
+          "pressureSeconds": 0.49999999999999994,
+          "longestPossession": 1.7666666666666628,
+          "protectionSteps": 99,
+          "intentChanges": 290,
+          "shotsConceded": 2,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "e0ca53b21d93926dee2509249bec73e6bd5497f7de0c42282dd2081c15851540"
+      },
+      "stats": {
+        "not-mutually-visible": 91,
+        "no-local-shot-position": 98,
+        "no-owner": 382,
+        "outside-shot-zone": 547,
+        "no-pair-shot-gain": 1
+      },
+      "witnesses": [],
+      "costs": []
+    }
+  ]
+}

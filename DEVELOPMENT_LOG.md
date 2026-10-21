@@ -1,5 +1,18 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 21-10-2026 — Siguiente paso: contraste de relevo defensivo, sin nueva política
+
+Desde `12d33d7`, con árbol limpio, se investiga intercambiar protección del tiro y primera aproximación entre dos jugadores que se ven y ven al poseedor. Se mantiene index.html idéntico a e28 y no se publica ni integra en main.
+
+- Pasan antes del instrumento las pruebas de presión, revisión y evidencia de la reanudación.
+- Nuevo instrumento pasivo: compara asignación real con histéresis, cobertura física de corredores, aproximación, pases recordados y disponibilidad de lectura. Cuantifica costes sin descartar a priori todo intercambio que pierda aproximación. No comparte memorias ni aplica propuestas al motor.
+- Nueva prueba espejo: oportunidad local de tres corredores frente a dos, con mejor acceso estimado; al añadir un receptor percibido, la base temporiza y ya cubre los tres. Lectura pendiente y visibilidad limitan el acuerdo. Cuatro parejas nuevas observador activado/desactivado sin diferencias.
+- 76 ejecuciones instrumentadas: igualdad exacta con e28 en métricas y hashes de estados; 69.668 consultas, ninguna propuesta con ganancia bajo los criterios examinados.
+- Ocho estados diagnósticos × observador/base = 16 ejecuciones nuevas, idénticas por pareja. Una secuencia de ocho pasos gana un corredor, pero añade entre 1,784 y 1,790 s de acceso estimado; siete pasos tienen lecturas pendientes. No es un perjuicio dinámico probado porque no se ejecuta el intercambio.
+- Se conserva la batería completa verificada anteriormente; no se afirma haber vuelto a ejecutar todas sus entradas en este paso sin cambios del motor. Resultados específicos, hashes y comandos en `data/defensive-relay-verification.json`.
+
+No se incorpora una regla de relevo automático. El siguiente problema sigue siendo seleccionar y acordar un intercambio útil con información individual y demora real; 0.53.1 permanece sin aceptar. No se inicia 0.54. Informe y reproducción: [RELEVO_DEFENSIVO_0531.md](docs/RELEVO_DEFENSIVO_0531.md).
+
 ## 21-10-2026 — Reanudación verificada de e28; dos controles descartados
 
 Se inspeccionó y preservó el árbol limpio de `e28d784`; main publicado sigue en `82c6c02`. Los cinco commits adicionales contienen código, pruebas e informes de una propuesta rechazada, no una 0.53.1 aceptada. Se consultaron los tres documentos de continuidad y la auditoría completa. Se continuó en la rama local `codex/fase-manager-0.53.1-resume`, sin sobrescribir la rama de evaluación.

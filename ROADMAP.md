@@ -61,6 +61,8 @@ Reanudación 21-10-2026: se recuperó e28 sin pendientes y se reejecutaron sus 5
 
 Paso posterior de 0.53.1: completado el [contraste pasivo de relevo](docs/RELEVO_DEFENSIVO_0531.md). Se conservan contracasos favorables/contextuales, 76 simulaciones sin interferencia y ocho instantáneas diagnósticas pareadas. No se acredita todavía una política de relevo útil; faltan valorar el coste de aproximación y validar solicitud/aceptación con percepción y demora propias. No se cierra A4/A7 ni se modifica el motor.
 
+Control posterior de comunicación: [relevo con demora y señal observada](docs/RELEVO_DEMORADO_0531.md), implementado y probado fuera del motor. Pasan 59 entradas del repositorio y 14 específicas sobre el control. No hay activaciones en 76 situaciones y diez diagnósticos nuevos; no se incorpora una funcionalidad sin utilidad demostrada. Siguen pendientes selección y ejecución de intercambios con coste, sin información futura ni supuesta coordinación instantánea. No se cierra 0.53.1 ni se inicia 0.54.
+
 ### Cierre de A y entrenamiento posterior
 
 Cierre de A exige requisitos con evidencia, simplificaciones declaradas, pruebas de continuidad y reglas, escenarios contrarios y validación táctica representativa. Un conjunto de pruebas verde no basta para afirmar realismo científico.

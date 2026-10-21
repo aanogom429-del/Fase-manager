@@ -8,6 +8,8 @@ Se repiten sin caché las 76 situaciones para 0.52/0.53/e28 y un control de tiro
 
 Siguiente paso ejecutado: [viabilidad del relevo defensivo](docs/RELEVO_DEFENSIVO_0531.md). Se instrumentan pasivamente las 76 situaciones: sus resultados siguen idénticos a e28 y no aparece una propuesta que gane cobertura bajo los criterios examinados. Ocho situaciones diagnósticas nuevas añaden 16 simulaciones pareadas; aparece una secuencia con ganancia y coste estimado de acceso de unos 1,79 s. Una prueba espejo conserva una oportunidad local favorable y su contrario al percibir otro rival. No se implementa un intercambio automático sin validar su utilidad y acuerdo perceptivo. Verificación específica y límites en `data/defensive-relay-verification.json`.
 
+Paso posterior ejecutado: [control de relevo demorado](docs/RELEVO_DEMORADO_0531.md). Se implementa fuera del motor y se prueba solicitud/aceptación/activación con tiempos propios desde la primera señal vista y sin leer intenciones privadas ajenas. Regresión nueva completa del repositorio: **59/59 entradas PASS** (58 CommonJS y un archivo Python con tres casos); comprobación aparte de 14 entradas sobre la fuente experimental: 14/14 PASS. En las 76 situaciones no envía solicitudes; diez diagnósticos nuevos envían seis pero no aceptan ni activan relevos. Las métricas siguen idénticas a e28. Dos sondas muestran que aproximarse antes todavía dejaría un rayo central sin cobertura antes del contacto posible. Se conserva el experimento y se descarta incorporarlo; 0.53.1 sigue sin aceptar, sin cambios en index.html ni main.
+
 ## Objetivos y continuidad
 
 Videojuego de simulación futbolística basado en los espacios de fase de Paco Seirul·lo, el comportamiento colectivo y las decisiones individuales. Permite observar situaciones, intervenir como entrenador, comparar decisiones y continuar la simulación. Se conserva la secuencia **A) motor táctico y deportivo; B) videojuego comercial; C) adaptación a iOS**.
@@ -24,7 +26,7 @@ Fuentes: código del commit indicado, historial Git y documentación de `docs/`.
 - `data/`: referencias y resultados históricos más informes pareados, trazas y regresiones de 0.53.1; conservar procedencia y hashes.
 - `docs/`: continuidad, protección 0.53, auditoría y corrección 0.53.1 con resultados y limitaciones.
 - `scripts/`: herramientas Python/Node de importación, diagnóstico y comparación; `evaluate_finishing_v0531.cjs` reproduce comparación del candidato, control de tiro posterior descartado y trazas adversas.
-- `tests/`: 57 entradas CommonJS y una entrada Python (tres casos); once instantáneas HTML (incluida una selección correctiva rechazada) en `tests/fixtures/`. Las pruebas específicas históricas 0.53 cargan su fixture; trayectoria, revisión y comparación comprueban la correctiva actual.
+- `tests/`: 58 entradas CommonJS y una entrada Python (tres casos); once instantáneas HTML (incluida una selección correctiva rechazada) en `tests/fixtures/`. Las pruebas específicas históricas 0.53 cargan su fixture; trayectoria, revisión y comparación comprueban la correctiva actual.
 - `README.md`: descripción mínima. Antes de esta consolidación había 160 archivos versionados.
 
 No hay proyecto nativo iOS, Capacitor, servidor de partidas, base de datos ni manifiesto `package.json` en esta base. Las pruebas Node usan `node:vm` y un DOM simulado; no equivalen a pruebas visuales en Safari/iPhone.

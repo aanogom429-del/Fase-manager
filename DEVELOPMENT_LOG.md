@@ -1,5 +1,17 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 21-10-2026 — Control experimental de relevo demorado: sin incorporación
+
+Desde `68f84a7`, árbol limpio y motor e28 preservado. Se implementan mensajes locales de solicitud, aceptación, cancelación y caducidad; cada respuesta espera percepción y lectura propias, y el emisor no deja su plan antes de ver una aproximación real. El código queda en un generador de control Node, fuera de index.html.
+
+- Antes: presión, revisión y evidencia pasan. La prueba nueva detecta reacción acreditada antes de ver una señal y un reintento inmediato tras cancelar; se corrigen antes de la evaluación final. Se prueban ambos equipos, intenciones ajenas irrelevantes, lectura pendiente, visión, órdenes, poseedor diferente, caducidad, cancelación, semilla y checkpoint/restauración.
+- Regresión completa nueva en copia aislada: 59/59 entradas PASS (58 CommonJS y Python con tres casos). Copia con fuente experimental: 14/14 comprobaciones específicas de continuidad, física y reglas PASS. No se presenta esa segunda comprobación como una batería completa del control.
+- Comparación final: 76 ejecuciones nuevas del control; referencias 0.52/0.53/e28 reutilizadas de su informe previamente ejecutado y verificado, con hashes/configuración coincidentes. Cero solicitudes y resultados exactos de e28: 32 goles frente a 26/28 de 0.53/0.52.
+- Diez diagnósticos exploratorios nuevos: 40 ejecuciones frescas entre las cuatro fuentes. Seis solicitudes, cero aceptaciones/activaciones. Mensajes obsoletos, caducidad y dos vetos locales; no se cuenta un envío como funcionalidad útil.
+- Dos reejecuciones pasivas separan el coste: mejorar acceso unos 0,115 s deja el rayo central sin cubrir; tiro inmediato tarda 0,405/0,411 s frente a horizonte + acceso de 0,726/0,756 s. No hay beneficio demostrado de añadir el protocolo ni una demostración general de utilidad de esos vetos.
+
+Se conserva el control y su procedencia; no se incorpora al motor ni se publica o integra en main. Queda pendiente seleccionar intercambios ejecutables con costes justificados, no solo añadir mensajes. No se inicia 0.54. Informe, reproducción y límites: [RELEVO_DEMORADO_0531.md](docs/RELEVO_DEMORADO_0531.md).
+
 ## 21-10-2026 — Siguiente paso: contraste de relevo defensivo, sin nueva política
 
 Desde `12d33d7`, con árbol limpio, se investiga intercambiar protección del tiro y primera aproximación entre dos jugadores que se ven y ven al poseedor. Se mantiene index.html idéntico a e28 y no se publica ni integra en main.

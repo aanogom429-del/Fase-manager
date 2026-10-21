@@ -1,0 +1,173 @@
+{
+  "controlSha256": "bc084205a82019867137742227c8a861c15286674a52fa724b64d96bc3489c42",
+  "simulationSha256": "d8d7c5cfce8569ccbc4c9d112f63f0f855c133b0965c0c6caf00195a9ae6e9b5",
+  "protocol": "Two passive replays to separate receiver shot/pass/access vetoes; full outcomes required to match the already evaluated control.",
+  "rows": [
+    {
+      "label": "far",
+      "sourceSha256": "4e82f74f7a544d19ef892ba2f30edb7cb7404af13f738abe77f79748ec0a12f0",
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 4603,
+        "options": {
+          "angle": 0,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 0,
+        "passes": 5,
+        "shots": 0,
+        "turnovers": 4,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 3.899999999999994,
+          "dangerSeconds": 3.4499999999999957,
+          "occasionSeconds": 0.44999999999999996,
+          "occasionEpisodes": 2,
+          "arrivalSum": 2.1712290389802176,
+          "openGoalSum": 0.5785714285714286,
+          "fieldOpenSum": 0.5785714285714286,
+          "passOptionsSum": 2.5999999999999988,
+          "doubleCoverSum": 0.7142857142857137,
+          "pressureSeconds": 1.5000000000000007,
+          "longestPossession": 2.041666666666662,
+          "protectionSteps": 164,
+          "intentChanges": 187,
+          "shotsConceded": 0,
+          "passesAgainst": 3,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "3e470f0198472b7ceb8fa1860a64f05e337e90500c5204b5509bea147bdf1235"
+      },
+      "costs": [
+        {
+          "time": 0.4583333333333339,
+          "actor": 17,
+          "partner": 16,
+          "ball": {
+            "x": 81.83727314583835,
+            "y": 25.103184098442682
+          },
+          "shotTime": 0.40475189393240113,
+          "cool": 0,
+          "horizon": 0.45,
+          "base": {
+            "x": 88.83727314583835,
+            "y": 30.103184098442682
+          },
+          "target": {
+            "x": 83.83727314583835,
+            "y": 25.103184098442682,
+            "mode": "Aproximar con relevo"
+          },
+          "ownAccess": 0.2763765303045919,
+          "partnerObservedAccess": 0.3910665270975368,
+          "rays": [
+            {
+              "base": true,
+              "next": false
+            },
+            {
+              "base": false,
+              "next": false
+            },
+            {
+              "base": true,
+              "next": true
+            }
+          ],
+          "openedPasses": []
+        }
+      ]
+    },
+    {
+      "label": "scan",
+      "sourceSha256": "98b9099f7bfe6d9b22ec0c244655faf134e634955b115aeb95d94c5e730fbf1d",
+      "result": {
+        "defendingTeam": 1,
+        "kind": "free",
+        "seed": 6503,
+        "options": {
+          "angle": 3.141592653589793,
+          "keeperHome": true,
+          "help": 0,
+          "structure": false,
+          "seconds": 6,
+          "profile": 1
+        },
+        "goalsConceded": 1,
+        "passes": 5,
+        "shots": 2,
+        "turnovers": 4,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.950000000000001,
+          "dangerSeconds": 1.950000000000001,
+          "occasionSeconds": 0.3,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.7844573679703966,
+          "openGoalSum": 1.1214285714285719,
+          "fieldOpenSum": 1.1214285714285719,
+          "passOptionsSum": 1.4500000000000006,
+          "doubleCoverSum": 0.04285714285714286,
+          "pressureSeconds": 0,
+          "longestPossession": 1.5833333333333302,
+          "protectionSteps": 0,
+          "intentChanges": 145,
+          "shotsConceded": 2,
+          "passesAgainst": 2,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "stateSha256": "28a05a178b69ce89c237fcda2c2d991edd78fccf00b9d419218bbfc33cb88427"
+      },
+      "costs": [
+        {
+          "time": 0.4583333333333339,
+          "actor": 17,
+          "partner": 16,
+          "ball": {
+            "x": 81.64419160966746,
+            "y": 24.822095804833722
+          },
+          "shotTime": 0.41061121145122104,
+          "cool": 0,
+          "horizon": 0.45,
+          "base": {
+            "x": 88.64419160966746,
+            "y": 29.822095804833722
+          },
+          "target": {
+            "x": 83.64419160966746,
+            "y": 24.822095804833722,
+            "mode": "Aproximar con relevo"
+          },
+          "ownAccess": 0.30603606919900994,
+          "partnerObservedAccess": 0.42337005347761075,
+          "rays": [
+            {
+              "base": true,
+              "next": false
+            },
+            {
+              "base": false,
+              "next": false
+            },
+            {
+              "base": true,
+              "next": true
+            }
+          ],
+          "openedPasses": []
+        }
+      ]
+    }
+  ]
+}

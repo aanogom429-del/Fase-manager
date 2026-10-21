@@ -1,0 +1,53 @@
+{
+  "sourceSha256": "441d2e33afc7bfca628ff58928e03fb2f5696f938249b7b4cf1a417fd84db377",
+  "entries": [
+    {
+      "file": "tests/finishing_pressure.cjs",
+      "status": 0,
+      "stdout": "PASS: pressure function preserved without a relay; checked 64 mirrored alternatives, retained 6 protective choices\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_revision.cjs",
+      "status": 0,
+      "stdout": "PASS: mirrored physical protection, immediate action timing, pressure/pass trade-offs, explicit orders, perception and cache readiness\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_trajectory.cjs",
+      "status": 0,
+      "stdout": "PASS exact shot-contact prediction vs actual update: 60 hits 84 misses\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/contextual_defense.cjs",
+      "status": 0,
+      "stdout": "PASS: mirrored pressure/help, delay, reachable perceived lane, hidden movement, expiry and unreachable countercase\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/simultaneous_threats.cjs",
+      "status": 0,
+      "stdout": "PASS: mirrored competing lines, baseline counterexample, replacement, busy/presser exclusion and expired threat\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/offball.cjs",
+      "status": 0,
+      "stdout": "PASS: off-ball lifecycle, bounded movement, coordination, blocked line adaptation, balance, held positions and deterministic replay\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defensive_coordination.cjs",
+      "status": 0,
+      "stdout": "PASS: mirrored threat-aware assignment, ordered players, slow/unassigned help and no-free-cover case\n",
+      "stderr": ""
+    }
+  ],
+  "incrementalRepositoryTest": {
+    "file": "tests/compromise_targets.cjs",
+    "sha256": "3c81c30a02a79f60c0dede1222c8e6a87c40ff5eca21fb8416d6d0661c0774c6",
+    "status": 0,
+    "scope": "Executed separately after complete dynamic report: mirrored local decisions, source/configuration provenance, summary and four passive trace outcomes. The seven entries above ran on the generated experimental index in an isolated copy."
+  }
+}

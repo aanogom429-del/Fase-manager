@@ -63,6 +63,9 @@ Paso posterior de 0.53.1: completado el [contraste pasivo de relevo](docs/RELEVO
 
 Control posterior de comunicación: [relevo con demora y señal observada](docs/RELEVO_DEMORADO_0531.md), implementado y probado fuera del motor. Pasan 59 entradas del repositorio y 14 específicas sobre el control. No hay activaciones en 76 situaciones y diez diagnósticos nuevos; no se incorpora una funcionalidad sin utilidad demostrada. Siguen pendientes selección y ejecución de intercambios con coste, sin información futura ni supuesta coordinación instantánea. No se cierra 0.53.1 ni se inicia 0.54.
 
+
+Nueva investigación desde `953855d`: [destinos intermedios](docs/DESTINOS_INTERMEDIOS_0531.md). Manteniendo los vetos de presión, disputa y pases, el control amplía los destinos sin modificar index.html. En 64 decisiones espejo ofrece seis elecciones protectoras frente a cuatro; en 76 simulaciones nuevas conserva exactamente las métricas de e28 (32 goles/77 tiros concedidos), con un único hash final distinto. Cuatro trazas nuevas confirman que pase/202 sigue perdiendo el bloqueo de 0.53. No se incorpora por falta de utilidad dinámica demostrada; las referencias 0.52/0.53/e28 son reutilizadas con procedencia comprobada. No se inicia 0.54.
+
 ### Cierre de A y entrenamiento posterior
 
 Cierre de A exige requisitos con evidencia, simplificaciones declaradas, pruebas de continuidad y reglas, escenarios contrarios y validación táctica representativa. Un conjunto de pruebas verde no basta para afirmar realismo científico.

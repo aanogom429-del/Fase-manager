@@ -1,5 +1,13 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 21-10-2026 — Destinos intermedios: sin mejora dinámica
+
+Nueva investigación desde `953855d`: [destinos intermedios](docs/DESTINOS_INTERMEDIOS_0531.md). Manteniendo los vetos de presión, disputa y pases, el control amplía los destinos sin modificar index.html. En 64 decisiones espejo ofrece seis elecciones protectoras frente a cuatro; en 76 simulaciones nuevas conserva exactamente las métricas de e28 (32 goles/77 tiros concedidos), con un único hash final distinto. Cuatro trazas nuevas confirman que pase/202 sigue perdiendo el bloqueo de 0.53. No se incorpora por falta de utilidad dinámica demostrada; las referencias 0.52/0.53/e28 son reutilizadas con procedencia comprobada. No se inicia 0.54.
+
+Pruebas incrementales: tres sobre la base, siete sobre copia experimental y nueva prueba espejo de pureza, ganancia de corredores y conservación de acceso/disputa. Informes y fuente experimental preservados; main e index.html sin cambios.
+
+Regresión nueva completa de la base sin modificar, ejecutada en copia aislada: **59/59 entradas PASS** (58 CommonJS y Python con tres casos), con hashes de archivos y motor comprobados. La nueva entrada de destinos intermedios pasa aparte tras generar los informes: **60 entradas verificadas incrementalmente**, no una batería completa de 60 sobre la fuente experimental. Las siete comprobaciones experimentales se registran por separado. No se realiza una prueba visual nueva en Safari/iOS.
+
 ## 21-10-2026 — Control experimental de relevo demorado: sin incorporación
 
 Desde `68f84a7`, árbol limpio y motor e28 preservado. Se implementan mensajes locales de solicitud, aceptación, cancelación y caducidad; cada respuesta espera percepción y lectura propias, y el emisor no deja su plan antes de ver una aproximación real. El código queda en un generador de control Node, fuera de index.html.

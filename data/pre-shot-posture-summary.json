@@ -1,0 +1,294 @@
+{
+  "configurations": 8,
+  "freshPassiveSimulations": 16,
+  "summary": [
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 0,
+        "e28": 0
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 3.299999999999991,
+        "e28": null
+      },
+      "v053": {
+        "samplesBeforeShot": 221,
+        "selectedBeforeShot": 3,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 216
+      },
+      "e28": {
+        "samplesBeforeShot": 210,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 30,
+        "waitSamples": 205
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 0,
+        "e28": 1
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 0.9249999999999992,
+        "e28": 0.9249999999999992
+      },
+      "v053": {
+        "samplesBeforeShot": 50,
+        "selectedBeforeShot": 2,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 49
+      },
+      "e28": {
+        "samplesBeforeShot": 49,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 30,
+        "waitSamples": 48
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 0,
+        "e28": 0
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 0.4000000000000004,
+        "e28": 0.4000000000000004
+      },
+      "v053": {
+        "samplesBeforeShot": 47,
+        "selectedBeforeShot": 1,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 45
+      },
+      "e28": {
+        "samplesBeforeShot": 47,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 35,
+        "waitSamples": 45
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 0,
+        "e28": 1
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 0.41666666666666713,
+        "e28": 0.41666666666666713
+      },
+      "v053": {
+        "samplesBeforeShot": 49,
+        "selectedBeforeShot": 1,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 47
+      },
+      "e28": {
+        "samplesBeforeShot": 49,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 37,
+        "waitSamples": 47
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 1,
+        "e28": 0
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 3.5833333333333233,
+        "e28": null
+      },
+      "v053": {
+        "samplesBeforeShot": 204,
+        "selectedBeforeShot": 19,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 2,
+        "waitSamples": 199
+      },
+      "e28": {
+        "samplesBeforeShot": 210,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 30,
+        "waitSamples": 205
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 1,
+        "e28": 1
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 0.9249999999999992,
+        "e28": 0.9249999999999992
+      },
+      "v053": {
+        "samplesBeforeShot": 50,
+        "selectedBeforeShot": 2,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 49
+      },
+      "e28": {
+        "samplesBeforeShot": 49,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 30,
+        "waitSamples": 48
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 0,
+        "e28": 0
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 0.4000000000000004,
+        "e28": 0.4000000000000004
+      },
+      "v053": {
+        "samplesBeforeShot": 47,
+        "selectedBeforeShot": 1,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 45
+      },
+      "e28": {
+        "samplesBeforeShot": 47,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 35,
+        "waitSamples": 45
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "goals": {
+        "v053": 0,
+        "e28": 0
+      },
+      "firstTrajectoryDifference": 0.05,
+      "firstShot": {
+        "v053": 0.41666666666666713,
+        "e28": 0.41666666666666713
+      },
+      "v053": {
+        "samplesBeforeShot": 49,
+        "selectedBeforeShot": 1,
+        "firstSelected": 0.008333333333333333,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 0,
+        "waitSamples": 47
+      },
+      "e28": {
+        "samplesBeforeShot": 49,
+        "selectedBeforeShot": 0,
+        "firstSelected": null,
+        "firstImmediateGuard": 0.008333333333333333,
+        "firstFutureGuard": 0.008333333333333333,
+        "lostFutureSamples": 37,
+        "waitSamples": 47
+      }
+    }
+  ]
+}

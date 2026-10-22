@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 22-10-2026 — Primera intención: causalidad y efectos opuestos
+
+Intervención posterior: [primera intención defensiva](docs/INTENCION_INICIAL_0531.md). 48 simulaciones nuevas (ocho configuraciones × dos motores × base/mismo destino/intercambio) aíslan un único destino almacenado, conservando plazos y movimiento físico. Los 32 controles sin cambio reproducen sus referencias. Intercambiar el primer destino invierte en ambos sentidos pase/202 del equipo 0 y pase/101 del equipo 1, pero añade un gol en libre/101 del equipo 1. No hay elección inicial consistentemente mejor; los prefijos muestreados antes del pase son iguales entre semillas. No se incorpora una regla retrospectiva. Regresión nueva completa en copia aislada: **62/62 entradas PASS**, con hashes actuales contrastados. Próximo análisis: primera lectura ordinaria posterior al pase, información visible y tiempo físico restante, manteniendo contrarios y demoras. Motor y main intactos; no se inicia 0.54.
+
 ## 21-10-2026 — Preparación espacial: divergencia temprana y señal insuficiente
 
 Auditoría posterior: [preparación espacial previa al tiro](docs/PREPARACION_ESPACIAL_0531.md). Dieciséis simulaciones pasivas nuevas (ocho configuraciones × 0.53/e28) reproducen exactamente resultados históricos. La primera diferencia muestreada aparece a 0,05 s; en pase/202 la aproximación e28 ya es distinta desde la consulta inicial y pierde un rayo futuro a 0,10833 s, con intención pendiente. Pero la misma señal aparece en casos favorables y neutros: no basta para seleccionar protección. Se conserva el contrario equipo 1/pase/101. Pasan tres entradas previas y una nueva de pasividad/procedencia; no se reejecuta toda la batería. Sin cambios de motor ni main, 0.53.1 sigue sin aceptar y no se inicia 0.54.

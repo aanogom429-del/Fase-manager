@@ -1,0 +1,1473 @@
+{
+  "freshSimulations": 48,
+  "configurations": 8,
+  "noOpMatches": 32,
+  "prePassSeedPairs": [
+    {
+      "t": 0,
+      "version": "v053",
+      "mode": "baseline",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 0,
+      "version": "v053",
+      "mode": "sham",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 0,
+      "version": "v053",
+      "mode": "swap",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 0,
+      "version": "e28",
+      "mode": "baseline",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 0,
+      "version": "e28",
+      "mode": "sham",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 0,
+      "version": "e28",
+      "mode": "swap",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 1,
+      "version": "v053",
+      "mode": "baseline",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 1,
+      "version": "v053",
+      "mode": "sham",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 1,
+      "version": "v053",
+      "mode": "swap",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 1,
+      "version": "e28",
+      "mode": "baseline",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 1,
+      "version": "e28",
+      "mode": "sham",
+      "sameSampledPrefix": true
+    },
+    {
+      "t": 1,
+      "version": "e28",
+      "mode": "swap",
+      "sameSampledPrefix": true
+    }
+  ],
+  "summary": [
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 1.824999999999996,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "swapped": {
+        "x": 15,
+        "y": 40
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 2.8999999999999977,
+          "dangerSeconds": 2.8999999999999977,
+          "occasionSeconds": 1.800000000000001,
+          "occasionEpisodes": 4,
+          "arrivalSum": 2.8182439286607557,
+          "openGoalSum": 1.571428571428571,
+          "fieldOpenSum": 2.035714285714286,
+          "passOptionsSum": 2.849999999999998,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.2,
+          "longestPossession": 3.708333333333323,
+          "protectionSteps": 44,
+          "intentChanges": 158,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.844180396023903,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 3.299999999999991
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.9038773642282372,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 44,
+          "intentChanges": 185,
+          "shotsConceded": 0,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402808,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": null
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 1.824999999999996,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 15,
+        "y": 40
+      },
+      "swapped": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.9038773642282372,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 185,
+          "shotsConceded": 0,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402808,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": null
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 2.8999999999999977,
+          "dangerSeconds": 2.8999999999999977,
+          "occasionSeconds": 1.800000000000001,
+          "occasionEpisodes": 4,
+          "arrivalSum": 2.8182439286607557,
+          "openGoalSum": 1.571428571428571,
+          "fieldOpenSum": 2.035714285714286,
+          "passOptionsSum": 2.849999999999998,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.2,
+          "longestPossession": 3.708333333333323,
+          "protectionSteps": 0,
+          "intentChanges": 158,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.844180396023903,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 3.299999999999991
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 1.1499999999999984,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "swapped": {
+        "x": 15,
+        "y": 40
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.0500000000000003,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.3006324389698674,
+          "openGoalSum": 0.33571428571428574,
+          "fieldOpenSum": 0.33571428571428574,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.3,
+          "longestPossession": 1.1499999999999984,
+          "protectionSteps": 44,
+          "intentChanges": 171,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.844180396023903,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      },
+      "swap": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.08956290192027,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 44,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402808,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 2.61666666666666,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 15,
+        "y": 40
+      },
+      "swapped": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "baseline": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.08956290192027,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402808,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.0500000000000003,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.3006324389698674,
+          "openGoalSum": 0.33571428571428574,
+          "fieldOpenSum": 0.33571428571428574,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.3,
+          "longestPossession": 1.1499999999999984,
+          "protectionSteps": 0,
+          "intentChanges": 171,
+          "shotsConceded": 1,
+          "passesAgainst": 2,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.844180396023903,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 2.1083333333333285,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "swapped": {
+        "x": 15,
+        "y": 40
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0.1,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.7218093323600081,
+          "openGoalSum": 0.10714285714285715,
+          "fieldOpenSum": 0.10714285714285715,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.783333333333333,
+          "protectionSteps": 44,
+          "intentChanges": 145,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.8045233309000204,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 1.800000000000001,
+          "dangerSeconds": 1.800000000000001,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 1.730690015259639,
+          "openGoalSum": 0.23571428571428577,
+          "fieldOpenSum": 0.6571428571428571,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.2,
+          "longestPossession": 0.974999999999999,
+          "protectionSteps": 88,
+          "intentChanges": 135,
+          "shotsConceded": 2,
+          "passesAgainst": 1,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.5849326267986337,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 3.59999999999999,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 15,
+        "y": 40
+      },
+      "swapped": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194534,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.783333333333333,
+          "protectionSteps": 0,
+          "intentChanges": 150,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.5849326267986337,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0.1,
+          "occasionEpisodes": 1,
+          "arrivalSum": 0.7218093323600081,
+          "openGoalSum": 0.10714285714285715,
+          "fieldOpenSum": 0.10714285714285715,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.783333333333333,
+          "protectionSteps": 0,
+          "intentChanges": 145,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.8045233309000204,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 0.6250000000000002,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "swapped": {
+        "x": 15,
+        "y": 40
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.8500000000000002,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0.15000000000000002,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.17039475380059,
+          "openGoalSum": 0.13571428571428573,
+          "fieldOpenSum": 0.14285714285714288,
+          "passOptionsSum": 0.8500000000000002,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6250000000000002,
+          "protectionSteps": 79,
+          "intentChanges": 176,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.8045233309000204,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.8500000000000002,
+          "dangerSeconds": 0.8500000000000002,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 1.003800561323634,
+          "openGoalSum": 0.12142857142857144,
+          "fieldOpenSum": 0.12142857142857144,
+          "passOptionsSum": 0.65,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.591666666666667,
+          "protectionSteps": 71,
+          "intentChanges": 180,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.5849326267986337,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 0,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 2.0583333333333287,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 15,
+        "y": 40
+      },
+      "swapped": {
+        "x": 7.545320921117099,
+        "y": 33.46129348358648
+      },
+      "baseline": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.44999999999999996,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.8348499935889563,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.44999999999999996,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.5849326267986337,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 3.2999999999999963,
+          "dangerSeconds": 2.6499999999999986,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 3,
+          "arrivalSum": 2.5879064939128558,
+          "openGoalSum": 1.2571428571428565,
+          "fieldOpenSum": 1.750000000000001,
+          "passOptionsSum": 2.499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.65,
+          "longestPossession": 3.0666666666666584,
+          "protectionSteps": 0,
+          "intentChanges": 184,
+          "shotsConceded": 3,
+          "passesAgainst": 1,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.8045233309000204,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 1.824999999999996,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "swapped": {
+        "x": 85,
+        "y": 24
+      },
+      "baseline": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.499999999999999,
+          "dangerSeconds": 2.499999999999999,
+          "occasionSeconds": 1.7500000000000009,
+          "occasionEpisodes": 4,
+          "arrivalSum": 2.757331168249265,
+          "openGoalSum": 1.5214285714285714,
+          "fieldOpenSum": 1.8071428571428576,
+          "passOptionsSum": 2.499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 2.066666666666662,
+          "protectionSteps": 88,
+          "intentChanges": 148,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.8441803960239047,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 3.5833333333333233
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.799999999999998,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.4485932031646924,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 44,
+          "intentChanges": 187,
+          "shotsConceded": 0,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402817,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": null
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 1.824999999999996,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 85,
+        "y": 24
+      },
+      "swapped": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": null,
+        "metrics": {
+          "attackSeconds": 2.799999999999998,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 1.6000000000000008,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.4485932031646924,
+          "openGoalSum": 1.800000000000001,
+          "fieldOpenSum": 1.800000000000001,
+          "passOptionsSum": 1.850000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0.35,
+          "longestPossession": 2.3499999999999943,
+          "protectionSteps": 0,
+          "intentChanges": 187,
+          "shotsConceded": 0,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 1
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402817,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": null
+      },
+      "swap": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 2.499999999999999,
+          "dangerSeconds": 2.499999999999999,
+          "occasionSeconds": 1.7500000000000009,
+          "occasionEpisodes": 4,
+          "arrivalSum": 2.756500139727346,
+          "openGoalSum": 1.5214285714285714,
+          "fieldOpenSum": 1.8000000000000005,
+          "passOptionsSum": 2.499999999999999,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 2.066666666666662,
+          "protectionSteps": 0,
+          "intentChanges": 148,
+          "shotsConceded": 1,
+          "passesAgainst": 3,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.8441803960239047,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 3.5833333333333233
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": null,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "swapped": {
+        "x": 85,
+        "y": 24
+      },
+      "baseline": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.2088959319771913,
+          "openGoalSum": 0.33571428571428574,
+          "fieldOpenSum": 0.33571428571428574,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 44,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.8441803960239047,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      },
+      "swap": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.0901847366095332,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 44,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402817,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "pass",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": null,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 85,
+        "y": 24
+      },
+      "swapped": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "baseline": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.2,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.0901847366095332,
+          "openGoalSum": 0.39999999999999997,
+          "fieldOpenSum": 0.39999999999999997,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.6439351666402817,
+          "open": 0.14285714285714282,
+          "fieldOpen": 0.14285714285714282,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      },
+      "swap": {
+        "goals": 1,
+        "firstShotOutcome": "goal",
+        "metrics": {
+          "attackSeconds": 0.7000000000000001,
+          "dangerSeconds": 0.7000000000000001,
+          "occasionSeconds": 0.25,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.2088959319771913,
+          "openGoalSum": 0.33571428571428574,
+          "fieldOpenSum": 0.33571428571428574,
+          "passOptionsSum": 0.7000000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.4083333333333308,
+          "protectionSteps": 0,
+          "intentChanges": 133,
+          "shotsConceded": 1,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 7,
+        "prefixMeans": {
+          "arrival": 1.8441803960239047,
+          "open": 0.24489795918367346,
+          "fieldOpen": 0.24489795918367346,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.9249999999999992
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 0.6083333333333336,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "swapped": {
+        "x": 85,
+        "y": 24
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.0500000000000003,
+          "dangerSeconds": 1.0500000000000003,
+          "occasionSeconds": 0.1,
+          "occasionEpisodes": 1,
+          "arrivalSum": 1.2448688406156023,
+          "openGoalSum": 0.10714285714285715,
+          "fieldOpenSum": 0.12142857142857144,
+          "passOptionsSum": 1.0500000000000003,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6833333333333333,
+          "protectionSteps": 99,
+          "intentChanges": 182,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.804523330900022,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194541,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 88,
+          "intentChanges": 108,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.584932626798635,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 101,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 3.5083333333333235,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 85,
+        "y": 24
+      },
+      "swapped": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 0.39999999999999997,
+          "dangerSeconds": 0.39999999999999997,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6339730507194541,
+          "openGoalSum": 0.05,
+          "fieldOpenSum": 0.05,
+          "passOptionsSum": 0.39999999999999997,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.8499999999999994,
+          "protectionSteps": 0,
+          "intentChanges": 109,
+          "shotsConceded": 1,
+          "passesAgainst": 0,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.584932626798635,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      },
+      "swap": {
+        "goals": 1,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 1.5500000000000007,
+          "dangerSeconds": 1.5500000000000007,
+          "occasionSeconds": 0.3,
+          "occasionEpisodes": 2,
+          "arrivalSum": 1.8185180417790756,
+          "openGoalSum": 0.25000000000000006,
+          "fieldOpenSum": 0.30714285714285716,
+          "passOptionsSum": 1.5500000000000007,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.9166666666666659,
+          "protectionSteps": 11,
+          "intentChanges": 139,
+          "shotsConceded": 3,
+          "passesAgainst": 0,
+          "interceptions": 2,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.804523330900022,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.4000000000000004
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "v053",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 2.2249999999999948,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "swapped": {
+        "x": 85,
+        "y": 24
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 2.0500000000000007,
+          "dangerSeconds": 2.0500000000000007,
+          "occasionSeconds": 0.9000000000000002,
+          "occasionEpisodes": 2,
+          "arrivalSum": 2.04618579859453,
+          "openGoalSum": 0.7,
+          "fieldOpenSum": 1.1428571428571426,
+          "passOptionsSum": 2.0500000000000007,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.908333333333329,
+          "protectionSteps": 44,
+          "intentChanges": 143,
+          "shotsConceded": 2,
+          "passesAgainst": 1,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.804523330900022,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 2.1000000000000005,
+          "dangerSeconds": 2.1000000000000005,
+          "occasionSeconds": 0.9500000000000003,
+          "occasionEpisodes": 1,
+          "arrivalSum": 2.0153397179528163,
+          "openGoalSum": 0.8428571428571427,
+          "fieldOpenSum": 1.4142857142857153,
+          "passOptionsSum": 2.0500000000000007,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 2.0583333333333287,
+          "protectionSteps": 88,
+          "intentChanges": 143,
+          "shotsConceded": 2,
+          "passesAgainst": 1,
+          "interceptions": 0,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.584932626798635,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      }
+    },
+    {
+      "group": "orientation",
+      "t": 1,
+      "kind": "free",
+      "seed": 202,
+      "options": {
+        "angle": 0
+      },
+      "version": "e28",
+      "firstSampleDifference": 0.05,
+      "firstEventDifference": 0.5833333333333337,
+      "prefixMatchesOtherEngine": true,
+      "original": {
+        "x": 85,
+        "y": 24
+      },
+      "swapped": {
+        "x": 92.4546790788829,
+        "y": 30.538706516413523
+      },
+      "baseline": {
+        "goals": 0,
+        "firstShotOutcome": "defender_control",
+        "metrics": {
+          "attackSeconds": 0.9500000000000003,
+          "dangerSeconds": 0.9500000000000003,
+          "occasionSeconds": 0,
+          "occasionEpisodes": 0,
+          "arrivalSum": 0.6889761678933306,
+          "openGoalSum": 0.5142857142857143,
+          "fieldOpenSum": 0.5499999999999999,
+          "passOptionsSum": 0.7500000000000001,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 0.6666666666666667,
+          "protectionSteps": 0,
+          "intentChanges": 187,
+          "shotsConceded": 2,
+          "passesAgainst": 0,
+          "interceptions": 2,
+          "keeperSaves": 1,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.584932626798635,
+          "open": 0.12499999999999997,
+          "fieldOpen": 0.12499999999999997,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      },
+      "swap": {
+        "goals": 0,
+        "firstShotOutcome": "restart",
+        "metrics": {
+          "attackSeconds": 2.0500000000000007,
+          "dangerSeconds": 2.0500000000000007,
+          "occasionSeconds": 0.9000000000000002,
+          "occasionEpisodes": 2,
+          "arrivalSum": 2.04618579859453,
+          "openGoalSum": 0.7,
+          "fieldOpenSum": 1.1428571428571426,
+          "passOptionsSum": 2.0500000000000007,
+          "doubleCoverSum": 0,
+          "pressureSeconds": 0,
+          "longestPossession": 1.908333333333329,
+          "protectionSteps": 0,
+          "intentChanges": 143,
+          "shotsConceded": 2,
+          "passesAgainst": 1,
+          "interceptions": 1,
+          "keeperSaves": 0,
+          "tackleRecoveries": 0
+        },
+        "prefixSamples": 8,
+        "prefixMeans": {
+          "arrival": 1.804523330900022,
+          "open": 0.26785714285714285,
+          "fieldOpen": 0.26785714285714285,
+          "passOptions": 1,
+          "pressure": 0
+        },
+        "firstShot": 0.41666666666666713
+      }
+    }
+  ]
+}

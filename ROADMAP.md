@@ -49,6 +49,8 @@ La 0.53 añade protección del poseedor visible y cobertura de tiro sin sustitui
 
 ### Propuesta 0.53.1 — NO ACEPTADA PARA MAIN
 
+Actualización 22-10-2026: [intervención sobre la primera intención](docs/INTENCION_INICIAL_0531.md), 48 simulaciones nuevas y 32 controles sin cambio. Se demuestra contribución causal del primer destino en los dos casos adversos opuestos, con otro perjuicio en juego libre; no se acepta ninguna política. Regresión completa actual: **62/62 entradas PASS**, sin sustituir el motor de producción. Siguiente investigación: información realmente disponible y corrección físicamente ejecutable en la primera lectura ordinaria posterior al pase, sin cancelar intenciones pendientes ni usar desenlaces futuros. Sin cambios en motor/main y sin 0.54.
+
 Se corrigen montaje del portero, preparación ficticia, estimación de contacto y sustitución automática de un plan previo. Se conserva solo el tiro ejecutable inmediato tras descartar la hipótesis posterior sin beneficio demostrado, se conservan corredores ya accesibles y se vetan pérdidas locales de presión o pases sin respaldo. Órdenes, percepción limitada y reglas IFAB se mantienen; no se amplía el portero ni se inicia otro bloque.
 
 Comparación actual: 76 configuraciones × 0.52/0.53/0.53.1, con 16 condiciones de reserva inicial y otras 16 de confirmación más largas y capacidades distintas. Se guardan los casos favorables, neutros y perjudiciales y las tasas de exposición/presión/continuidad, además de goles. La precisión del predictor no equivale a superioridad táctica; el caso equipo 0/pase/202 pierde un bloqueo de 0.53. Informe: [CORRECCION_DEFENSIVA_0531.md](docs/CORRECCION_DEFENSIVA_0531.md).

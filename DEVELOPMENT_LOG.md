@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 22-10-2026 — Lecturas posteriores al pase y conservación del avance remoto
+
+Auditoría sintética complementaria: [lecturas posteriores al pase](docs/LECTURAS_POSTPASE_0531.md). Dieciséis simulaciones pasivas nuevas reproducen exactamente sus referencias. En los ocho pases, primera lectura a 0,375 s con balón visible en vuelo; ninguna proyección de contacto en ese ciclo. A 0,741667 s el receptor está visible y los destinos de ambos motores coinciden, pero sus posturas acumuladas no: 0.53 conserva un rayo hipotético accesible frente a cero de e28 en los destinos examinados, también en contrarios que después conceden gol. No prueba imposibilidad de corrección ni decide una política. Se preservan los nuevos commits remotos `1eb24a6` y `07ee3a7`. Verificación incremental: 63/63 entradas del estado inicial y las dos nuevas remotas PASS; 65 distintas con hashes actuales contrastados, no una batería única de 65. Se mantiene como prioridad contrastar anclajes y destinos del grupo restante en el replay real; no iniciar otra variante sintética por defecto. Motor/main intactos, sin aceptación de 0.53.1 ni 0.54.
+
 ## 22-10-2026 — Replay defensivo con ataque real impuesto
 
 Desde rama remota `1eb24a6`, comprobada contra main `82c6c02`, en nuevo worktree aislado que preserva el anterior y el avance de primera intención. Se conservan políticas y HTML de e28; no se inicia 0.54. Informe: [REPLAY_DEFENSIVO_REAL_0531.md](docs/REPLAY_DEFENSIVO_REAL_0531.md).

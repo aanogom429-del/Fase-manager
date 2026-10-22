@@ -1,0 +1,25 @@
+{
+  "scope": "Two newly fetched remote test entries run afresh after 63-entry isolated regression; prior 63 test hashes, production source and passive observer recipe match current files. No common engine/evaluator/test implementation was changed by the fetched commits. Not a new single 65-entry batch.",
+  "remoteBase": "07ee3a78f14fe74d3b176c497fcc8de597fdad87",
+  "previousEntries": 63,
+  "previousHashesMatched": true,
+  "rows": [
+    {
+      "file": "tests/real_defense_principles.py",
+      "sha256": "8d494056b3df95cc7724a9d9f96769c0571f0b5958a3d1df663a62559271f269",
+      "exitCode": 0,
+      "seconds": 0.13896526099961193,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.054s\n\nOK\n"
+    },
+    {
+      "file": "tests/real_defense_replay.cjs",
+      "sha256": "80d0c127dc2c7fbe1478c576a18d550f6ac00ffd6ab7fc07a0e0e3f85ef58cb5",
+      "exitCode": 0,
+      "seconds": 2.8675677369992627,
+      "stdout": "PASS controlled real defensive replay: imposed actors/ball checked at every step, carrier activation, past-only initialization, missing-data refusal, zero observed-reference error, stable groups, mirror, no private endpoints/outcomes and report provenance\n",
+      "stderr": ""
+    }
+  ],
+  "distinctEntries": 65
+}

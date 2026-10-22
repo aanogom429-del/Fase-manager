@@ -1,0 +1,514 @@
+{
+  "scope": "Full current repository in isolated copy. Production index remains e28; new post-pass instrument is passive. Historical fixtures retain their declared scope. Reports produced by tests cannot overwrite repository evidence.",
+  "engineSha256": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c",
+  "recipeSha256": "d60918271a3abddb1a278ac6f6523bf66ccb52698750071c175d50dcb28d134a",
+  "node": "v24.19.0",
+  "rows": [
+    {
+      "file": "tests/acceleration.cjs",
+      "sha256": "7f6d175ec5731f7c206ec40874cef1a238f9b9b4d7c4729d9d2b54e70504fd03",
+      "exitCode": 0,
+      "seconds": 0.133,
+      "stdout": "PASS: progressive acceleration, bounded speed, reversal braking, target settling, mirror, substeps, differential acceleration, ETA and restore\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/advantage.cjs",
+      "sha256": "343b24da21ebe04b9a0ee3f8387548f7ce3ba344be2e05c7c76779bff45e929d",
+      "exitCode": 0,
+      "seconds": 0.825,
+      "stdout": "PASS: mirrored advantage, no benefit/expiry, original location, clock, possession loss, boundary, goal, shot opportunity, offside priority, second foul, pause, modes, retry and reset\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/aerial_play.cjs",
+      "sha256": "3c35aa182f8c68e979a406803206511eb54fe9775089af6b8edd227d3c9715e0",
+      "exitCode": 0,
+      "seconds": 2.526,
+      "stdout": "PASS: real-flight mirrored headers, aerial height limits, header offside, clearances, long goalkeeper distribution and mixed goal kicks\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/anticipation_first_touch.cjs",
+      "sha256": "502dca7251ae0d12eb1b5bb1223a0a845dbc3959a3707b1b5fb946376e9fdff5",
+      "exitCode": 0,
+      "seconds": 0.437,
+      "stdout": "PASS: velocity-aware arrival, reachable interception, mirrored geometry, explicit first-touch wall, fallback, normal pass error and motion-state restore\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/attack_interactions.cjs",
+      "sha256": "8800ed93be0c7c59d054a2be0a2983f4f700ddde1ed647366a37c88edd44a962",
+      "exitCode": 0,
+      "seconds": 54.386,
+      "stdout": "PASS: exact factorial reproduction, unchanged baseline, narrow diagnostic-only interventions, viewer and exclusions\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/attack_origin.cjs",
+      "sha256": "15e964c6575df4fa69cad461490e4059f6afca6460d472b6013a86f6dfa0d4da",
+      "exitCode": 0,
+      "seconds": 0.525,
+      "stdout": "PASS: attacking origins for both teams, mode invariance, same-team reception, turnover, restart, retry and reset\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/attacking_heights.cjs",
+      "sha256": "3f613b12cad8850064962a75fff1d8e8ab8465aa6efaf0a58166e6cd0c9c39d2",
+      "exitCode": 0,
+      "seconds": 0.289,
+      "stdout": "PASS: mirrored progression heights, two balance players, order independence, expulsion, speed limits and retry\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/audit_continuity.cjs",
+      "sha256": "65aaabc035ffd3ff73b93a68b09bbc95df1944e0d4f39ca32d4332cc730487c7",
+      "exitCode": 0,
+      "seconds": 2.849,
+      "stdout": "PASS: speed continuity after both-team throws/corners/penalties, individual/all cancellations and repeated retry\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/audit_windows.cjs",
+      "sha256": "361fca36a4ba7ff49b585e18c7032aa902fa3a572484e23a70560a51470ddd2d",
+      "exitCode": 0,
+      "seconds": 1.106,
+      "stdout": "PASS: fixed non-overlapping complete audit windows, reproducible comparison and viewer\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/compromise_targets.cjs",
+      "sha256": "3c81c30a02a79f60c0dede1222c8e6a87c40ff5eca21fb8416d6d0661c0774c6",
+      "exitCode": 0,
+      "seconds": 0.456,
+      "stdout": "PASS compromise search: mirrored pure selection, physical ray gain, retained existing choices and strict access/tackle vetoes; 6 choices, 2 additional. No claim of autonomous tactical improvement.\nPASS full evidence provenance, scenario order, aggregate summary and four passive trace outcomes\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/contextual_defense.cjs",
+      "sha256": "9d5901ea9b8a5fdc8d38dffd743e6eb5274ff04f6a0e4e5c64fa2ce77a719558",
+      "exitCode": 0,
+      "seconds": 0.077,
+      "stdout": "PASS: mirrored pressure/help, delay, reachable perceived lane, hidden movement, expiry and unreachable countercase\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/contextual_supports.cjs",
+      "sha256": "f0401ca50413bb1f77da7ad3d2b8a115dbb5128946e02c27e87bd09651b75185",
+      "exitCode": 0,
+      "seconds": 26.943,
+      "stdout": "PASS: contextual supports, mirrored causal regression, blocked/marked countercases, orders, reception, loss, continuity and 3 \u00d7 60 s free play [{\"team\":0,\"beforeForwardTarget\":42,\"afterForwardTarget\":56,\"safetyTarget\":42},{\"team\":1,\"beforeForwardTarget\":42,\"afterForwardTarget\":56,\"safetyTarget\":42}]\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/contextual_width.cjs",
+      "sha256": "bdc2d774f93d5bea63091bf90aecb6de97d3f8a0703375dfcef9e040684600ad",
+      "exitCode": 0,
+      "seconds": 0.12,
+      "stdout": "PASS: early/long width, occupied side, side exchange, restore and possession reset for both teams\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/continuity.cjs",
+      "sha256": "d7f3e289e6c560b2dab642fabe75496f495c7af36d189a798bfd522c7e236645",
+      "exitCode": 0,
+      "seconds": 29.028,
+      "stdout": "Execution dispersion: {\"low\":0.10047300259181295,\"high\":0.4910159030317507,\"long\":0.2266484011954851}\nPASS: possession for both teams, frozen flight, loose ball, clock/score, pause, retry, both mode directions, reference isolation/playback, explicit restart\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defense.cjs",
+      "sha256": "48cda1ecd7293c96cd1ca11584cb704e59c5469245a846bab66639a1e2ad21cc",
+      "exitCode": 0,
+      "seconds": 0.095,
+      "stdout": "PASS: mirrored defense, missing data, passive observation, game-time sampling, loss identity, reset and event-aligned UI\n[{\"id\":\"transition-blue\",\"team\":0,\"anchor\":288.12,\"measurements\":[{\"at\":0,\"frame\":7203,\"nearest\":4,\"distance\":2.764991989654142,\"covers\":[],\"goalSide\":5,\"depth\":35.423849999999995},{\"at\":2,\"frame\":7253,\"nearest\":4,\"distance\":1.8469887053936107,\"covers\":[],\"goalSide\":5,\"depth\":31.952550000000002},{\"at\":5,\"frame\":7328,\"nearest\":4,\"distance\":3.644338496901734,\"covers\":[],\"goalSide\":6,\"depth\":29.794800000000002}]},{\"id\":\"transition-red\",\"team\":1,\"anchor\":374.16,\"measurements\":[{\"at\":0,\"frame\":9354,\"nearest\":19,\"distance\":2.7264954848497833,\"covers\":[20],\"goalSide\":6,\"depth\":34.314},{\"at\":2,\"frame\":9404,\"nearest\":20,\"distance\":3.1927538117587457,\"covers\":[],\"goalSide\":4,\"depth\":35.874300000000005},{\"at\":5,\"frame\":9479,\"nearest\":16,\"distance\":7.3065896330919164,\"covers\":[],\"goalSide\":1,\"depth\":43.34925}]},{\"id\":\"transition-check\",\"team\":0,\"anchor\":215.4,\"measurements\":[{\"at\":0,\"frame\":5385,\"nearest\":9,\"distance\":1.611669839902567,\"covers\":[],\"goalSide\":10,\"depth\":32.383050000000004},{\"at\":2,\"frame\":5435,\"nearest\":6,\"distance\":1.253952440426496,\"covers\":[],\"goalSide\":8,\"depth\":32.1111},{\"at\":5,\"frame\":5510,\"nearest\":8,\"distance\":2.5730445291339676,\"covers\":[3,4],\"goalSide\":4,\"depth\":36.9789}]},{\"id\":\"transition-roles-check\",\"team\":0,\"anchor\":300.76,\"measurements\":[{\"at\":0,\"frame\":7519,\"nearest\":8,\"distance\":4.229829850467539,\"covers\":[3,4,6,7],\"goalSide\":8,\"depth\":25.2063},{\"at\":2,\"frame\":7569,\"nearest\":8,\"distance\":10.111153306250479,\"covers\":[4,7],\"goalSide\":8,\"depth\":21.95025},{\"at\":5,\"frame\":7644,\"nearest\":10,\"distance\":5.9447574897052124,\"covers\":[7],\"goalSide\":8,\"depth\":23.134649999999997}]}]\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defense_origin.cjs",
+      "sha256": "18205f806bee1258e1b393c9d48cc6f532e98b9830106860bec7d6e270fa5a04",
+      "exitCode": 0,
+      "seconds": 0.126,
+      "stdout": "PASS: loss-relative displacement, formation independence, possession renewal, retry and restart\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defense_replay.cjs",
+      "sha256": "e12c480de9a54e064dcec7ffae456d122c2e1bd8dca984e1421520265ea90f0e",
+      "exitCode": 0,
+      "seconds": 1.328,
+      "stdout": "PASS: deterministic replay, exact initial state, symmetric directions, missing-data rejection, overlay, baseline disclosure, game isolation\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defensive_coordination.cjs",
+      "sha256": "c00d99309d9fc695572c41b799f7b1a11879fb9e29d6f7bd368b98b4bcc856fb",
+      "exitCode": 0,
+      "seconds": 0.092,
+      "stdout": "PASS: mirrored threat-aware assignment, ordered players, slow/unassigned help and no-free-cover case\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defensive_relay_survey.cjs",
+      "sha256": "b4b3e99c05ad501a50ed916db896cdffc2e9f14c5e84d6b6fbd59570c2b43ac1",
+      "exitCode": 0,
+      "seconds": 19.106,
+      "stdout": "PASS: mirrored relay opportunity and contextual counterexample, perception/readiness, pure actual-role audit, four fresh observer-on/off pairs, 76 unchanged cases and eight diagnostic snapshots\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/defensive_roles.cjs",
+      "sha256": "86465f115790a8dc5e8e8a8acd3023ef4a5f08740bd9f0a44db7ee154f4f187e",
+      "exitCode": 0,
+      "seconds": 0.193,
+      "stdout": "PASS: stable handovers, clear advantage, distinct cover, keeper exclusion, speed-aware arrival, possession renewal and retry\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/delayed_defensive_relay.cjs",
+      "sha256": "c821c2438c137d69d4f2560b71c054d30e66d37d1921a840ede9dfda1d264bb7",
+      "exitCode": 0,
+      "seconds": 0.456,
+      "stdout": "PASS delayed relay: mirrored request/accept/activate timing, observed motion, private-intention invariance, own readiness, perception, orders, immutable checkpoint/retry and no random draws\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/destination_trace.cjs",
+      "sha256": "aebbba7f6d33b0e39768d659d35f4aa4b6e3173ccd5c1ff8ffeaf4b2c240d9aa",
+      "exitCode": 0,
+      "seconds": 12.631,
+      "stdout": "PASS: passive destination tracing, progression/circulation/loss both directions, cached reads, bounds, reset and reception priority [{\"team\":0,\"phase\":\"progresi\u00f3n\",\"backwardPlayers\":[7,6],\"cachedReads\":19},{\"team\":0,\"phase\":\"circulaci\u00f3n\",\"backwardPlayers\":[2,4,5,8,9,6],\"cachedReads\":19},{\"team\":0,\"phase\":\"p\u00e9rdida\",\"backwardPlayers\":[2,4,5,6,8,9,11]},{\"team\":1,\"phase\":\"progresi\u00f3n\",\"backwardPlayers\":[7,6],\"cachedReads\":19},{\"team\":1,\"phase\":\"circulaci\u00f3n\",\"backwardPlayers\":[2,4,5,8,9,6],\"cachedReads\":19},{\"team\":1,\"phase\":\"p\u00e9rdida\",\"backwardPlayers\":[2,4,5,6,8,9,11]}]\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/discipline.cjs",
+      "sha256": "6a150f01be89ece2977bdfe1517eb28cc7902aaebf9dc3d566ef555df1af6d67",
+      "exitCode": 0,
+      "seconds": 0.484,
+      "stdout": "PASS: tactical yellow/red, penalty reduction, second yellow, no card for location alone, SPA advantage/recall, active-player exclusion, movement, restarts, rendering, pause, retry, seven-player threshold and reset\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_comparison.cjs",
+      "sha256": "029622e6b116e4b5825d4ba6273b5a755c0022957e30c2f9a79f35980b694552",
+      "exitCode": 0,
+      "seconds": 13.043,
+      "stdout": "PASS: exact three-engine hashes, all 76 declared configurations, metric bounds, corrected anchors, retained mixed outcomes and six adverse replays\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_dynamic.cjs",
+      "sha256": "9bbdabfb03c934df59ad763fdcd4a7145a027aa8c55d37d8c08be2d4759f266c",
+      "exitCode": 0,
+      "seconds": 7.098,
+      "stdout": "PASS: current/baseline hashes, 20 dynamic pairs, actual movement/shots/passes, mirrored coverage and reproduced favourable/adverse cases\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_evaluation.cjs",
+      "sha256": "fdb76bcffc7774eeeabeb536d76d8aab90cdd59209aeb87ebab8ca6b196c989d",
+      "exitCode": 0,
+      "seconds": 33.772,
+      "stdout": "PASS: passive observer, legacy equivalence, corrected keeper anchors mirrored, audited adverse case and reserved protocol\nPASS: historical cache reuse only with matching simulation/source/configuration\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_observed_control.cjs",
+      "sha256": "cc5532d5f5cb24e12bb82b45e707e7ccb6b9da8493e45f3de0917c8dd6f6cb0e",
+      "exitCode": 0,
+      "seconds": 6.82,
+      "stdout": "PASS observed-shot rollout: { positive: 48, negative: 96 } privacy, reaction, orders, perception, purity\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_pressure.cjs",
+      "sha256": "d3c792dfab403630af6ea9a66f0c7c7b9dfec1533b9f3c5049528440d21c7aa2",
+      "exitCode": 0,
+      "seconds": 0.208,
+      "stdout": "PASS: pressure function preserved without a relay; checked 64 mirrored alternatives, retained 4 protective choices\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_protection.cjs",
+      "sha256": "c6a509eaa70ec02af8473e5a488b293b9464f2bb15eac579fc5575ec66c59e86",
+      "exitCode": 0,
+      "seconds": 0.115,
+      "stdout": "PASS: mirrored finishing protection/cover, safe pressure, help/velocity/orders, hidden state, orientation, immediate access and danger limits\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_resume_evidence.cjs",
+      "sha256": "5c637d9c6a0903bf47b21f3161ad96d44c882ede498d57ca857d62ea0b65ec46",
+      "exitCode": 0,
+      "seconds": 0.08,
+      "stdout": "PASS: recovered-file manifest, fresh 320 simulations, exact historical replication, immutable controls and eight passive adverse traces\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_revision.cjs",
+      "sha256": "f58064a04127b57cba8ca41e0f6ccddadc509609807bff632adfb97828c7ad23",
+      "exitCode": 0,
+      "seconds": 0.134,
+      "stdout": "PASS: mirrored physical protection, immediate action timing, pressure/pass trade-offs, explicit orders, perception and cache readiness\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/finishing_trajectory.cjs",
+      "sha256": "9781bd7e0addd88db5c9f9e2060531bc6e51a6c2fcc3f9590d4bfebde38c136f",
+      "exitCode": 0,
+      "seconds": 23.332,
+      "stdout": "PASS exact shot-contact prediction vs actual update: 60 hits 84 misses\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/fouls.cjs",
+      "sha256": "f5a67e3972f1fe94997d4613b4f9a555a561668c1f3b1481575284e355243f79",
+      "exitCode": 0,
+      "seconds": 2.122,
+      "stdout": "PASS: legal tackle, missed attempt, contact foul, both teams, area lines, direct free kick, penalty setup, second touch, direct goal, pause, retry and real update/guided continuation\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/game2.cjs",
+      "sha256": "e73cf2de2ec8e717afa4c6b4a434d68abbbf8d7b444760f0e6c33abc928a549f",
+      "exitCode": 0,
+      "seconds": 1.565,
+      "stdout": "PASS: reproducible second-match contrast, stable identities, missing-data rejection, UI disclosure and game isolation\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/heights_report.cjs",
+      "sha256": "7a25d458cb07b2b6d8c9cf34aafbf5e047a926a971f5e8f13a297e11af22dddb",
+      "exitCode": 0,
+      "seconds": 0.081,
+      "stdout": "PASS: mixed height results visible including regression; defensive contrast unchanged\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/individual_capabilities.cjs",
+      "sha256": "67dd4c116ec3d0c70eed4546d23e1d593240fb8df54a386f7f55b5eba6783250",
+      "exitCode": 0,
+      "seconds": 0.114,
+      "stdout": "PASS: explicit symmetric profiles, isolated turn/braking effects, individual teammate/rival expiry and confidence, snapshot restoration\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/initial_intent.cjs",
+      "sha256": "7edb9682b300a7df624bbb3a61af55ccf35048e657ad442e08a4c44365e7b02e",
+      "exitCode": 0,
+      "seconds": 5.441,
+      "stdout": "PASS initial intent: four full-state no-op replays; reciprocal-team single intervention, ordinary renewal, reaction deadline and physical continuity; production source intact\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/laws.cjs",
+      "sha256": "7ee96f736d6a1a7901f089e0665b37cab9b97a62a15037193b0e952d2609818d",
+      "exitCode": 0,
+      "seconds": 3.018,
+      "stdout": "PASS: full-ball crossing, first exit, mirrored restarts/goals, width/height, direct-goal exceptions, second touch, pause and guided continuation\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/lead_pass.cjs",
+      "sha256": "79d12d5dc72f918690f4b0c09080e857959beeffb03c1fd4bba10d709cceba5a",
+      "exitCode": 0,
+      "seconds": 0.111,
+      "stdout": "PASS: analytical forward/lateral meeting, backward motion, stationary fallback, mirror, bounds, horizon, guided execution, retry and offside\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/offball.cjs",
+      "sha256": "9831bd076d5cf342ce31efd26cd37c3fe59a5e83c5bbcead53c7fde92e68b71a",
+      "exitCode": 0,
+      "seconds": 1.01,
+      "stdout": "PASS: off-ball lifecycle, bounded movement, coordination, blocked line adaptation, balance, held positions and deterministic replay\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/offside.cjs",
+      "sha256": "ab5851409bf50cd870c7fd3a6f1f556c9ea8285745fbd44e43a759cddb36dc62",
+      "exitCode": 0,
+      "seconds": 0.673,
+      "stdout": "PASS: both directions, level/own half/behind ball, second-last opponent, passive position, frozen kick snapshot, return to own half, late run, exemptions, controlled interception, real contact, reset, retry and free-kick distances\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/offside_reference.cjs",
+      "sha256": "d069e8d805af39ec0cbd1f07e22a8cc15cf8eca4b4bbe761c56a59c2d72136a8",
+      "exitCode": 0,
+      "seconds": 0.113,
+      "stdout": "{\"passes\":28,\"complete\":26,\"withAheadCentres\":7}\nPASS: observed pass geometry, missing data and reference isolation\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/opponent_perception.cjs",
+      "sha256": "ffd46c2731d68bcbf8eee2074dc90b185b0a9c99e8460ddd98acb7bf8322a2a0",
+      "exitCode": 0,
+      "seconds": 0.294,
+      "stdout": "PASS: mirrored rival memory, growing uncertainty, hidden-position independence, expiry, renewal, estimated offside, pause, snapshot and reset\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/orientation.cjs",
+      "sha256": "4eb43833bb58dcd09f07868ac75268aecc2acdff18768e746599c32fbacd6932",
+      "exitCode": 0,
+      "seconds": 51.658,
+      "stdout": "PASS: facing-dependent options, bounded search turn, mirrored perception, reception, pause/retry, marker and three 60 s free simulations\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/owner_holdout.cjs",
+      "sha256": "13f7696c5e2d775be4f57bfb97cb0ff52625ab7684069e2b040e5cfbf781967d",
+      "exitCode": 0,
+      "seconds": 4.311,
+      "stdout": "PASS: owner-aware activation, mirrored geometry, identity order, corrupt-data rejection, new windows and exact report reproduction\nPASS: owner-aware report visible with limits\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/perceptual_memory.cjs",
+      "sha256": "2ae5cd4c083388aaf576fc313fcde60343816dfd4d3f01c01a83fd345c9f2735",
+      "exitCode": 0,
+      "seconds": 0.213,
+      "stdout": "PASS: mirrored last-seen passing, expiry, refresh, unavailable target, no invented observation, pause, independent retry and restart reset\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/player_roles.cjs",
+      "sha256": "a6381b03346daac55a713c9d9acd06444dcc0f4b9cfd221364c3600ecfe682e1",
+      "exitCode": 0,
+      "seconds": 25.377,
+      "stdout": "PASS: roles, keeper, movement, precision, order delay and restarts independent of shirt numbers; role changes and retry\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/post_pass_reads.cjs",
+      "sha256": "d0c41365ee2c23051bfde773d8a7a66fd40df8b5ca120b748916b307c222a49a",
+      "exitCode": 0,
+      "seconds": 3.853,
+      "stdout": "PASS post-pass reads: four full-state passive replays, pure own physics, visibility, pending intent and independence from other private state / programmed flight future; production intact\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/pre_shot_posture.cjs",
+      "sha256": "671f95bcf868dc1bf78b7f9e5456669d91dfe5415a87228f838f51f4e7363816",
+      "exitCode": 0,
+      "seconds": 3.007,
+      "stdout": "PASS posture audit: four full-state passive replays, pure physical copies, 16 historical-result matches and preserved adverse/pre-shot evidence; no policy improvement claim\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/pressure_exposure.cjs",
+      "sha256": "72c924d2787118d3b7f850308a2580f63e570fd8ef4510f8ee46b00bb86426e7",
+      "exitCode": 0,
+      "seconds": 0.081,
+      "stdout": "PASS: mirrored press exposure, line-preserving delay, replacement/orders/expiry, local inferiority and immediate access\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/reception.cjs",
+      "sha256": "9f4235c4b63fb09640be044118743fc0556ac15d4625f49febc5b6ada1976708",
+      "exitCode": 0,
+      "seconds": 0.699,
+      "stdout": "PASS: mirrored reception cost, waiting actions, movement/turning, pause, retry, cancellation, wall return and aerial exclusion\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/relational_width.cjs",
+      "sha256": "40d390b683717ef7473af61f2faad2846c16a89d3fb18c2b9e1ec2d035975dac",
+      "exitCode": 0,
+      "seconds": 0.114,
+      "stdout": "PASS: controlled width intervention removes large central-to-wide role jump in both attack directions\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/simultaneous_threats.cjs",
+      "sha256": "fbff0e6ab2b0dac7e5286a8a87d9abeab2f08426ee3a55585bfc4ef0901030fc",
+      "exitCode": 0,
+      "seconds": 0.1,
+      "stdout": "PASS: mirrored competing lines, baseline counterexample, replacement, busy/presser exclusion and expired threat\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_assignment_perception.cjs",
+      "sha256": "f77719437bd97227ae5909964084d3ca8f2cdd6dd69b23e212d0ff5aac3bda24",
+      "exitCode": 0,
+      "seconds": 0.068,
+      "stdout": "PASS: mirrored perception-driven assignment, hidden-rival independence, expiry, replacement and uncertainty\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_destination_diagnosis.cjs",
+      "sha256": "902815e5e9196c429ac175b915b31d01364770d286d120ca9d679068d457ea47",
+      "exitCode": 0,
+      "seconds": 7.928,
+      "stdout": "PASS: paired initial-velocity diagnostic, finite per-player measures, preserved 0.47 baseline and reproducibility\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_diagnosis.cjs",
+      "sha256": "781534803a689585955d95e4cadc5706e346e93356b0149f4ad1f960dc45fe1e",
+      "exitCode": 0,
+      "seconds": 10.026,
+      "stdout": "PASS: reproducible support diagnosis, additive individual error contributions, honest intervention label and clip-specific UI\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_holdout.cjs",
+      "sha256": "e744ac6f825e74f7745e2c7fd79da8b61f75e8c0840223edb9c065551aac9189",
+      "exitCode": 0,
+      "seconds": 15.305,
+      "stdout": "PASS: frozen non-overlapping windows, exact baseline, reproducible mixed outcomes and retained exclusion\nPASS: holdout viewer, exclusion and individual regression explanation\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_perception.cjs",
+      "sha256": "c711acedeca95a2eb24974f57a139273d133980efd6c6d88335cb708157633e3",
+      "exitCode": 0,
+      "seconds": 0.094,
+      "stdout": "PASS: mirrored support adjustment from observed/remembered opposition, hidden-position independence and expiry\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_persistence.cjs",
+      "sha256": "e89a6fcedd9d7a5a6ef8a4903b304d3016822bbeb0524b70ac854ec42616f1f6",
+      "exitCode": 0,
+      "seconds": 0.203,
+      "stdout": "PASS: support persistence, strict utility margin, replacement, invalid participants, mode continuity, retry, loss and restart\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/support_stability.cjs",
+      "sha256": "b8b7fcbca0b00a6c98a96ebc2a28c889a32140422fe5e6d2a360e56045a92d63",
+      "exitCode": 0,
+      "seconds": 7.572,
+      "stdout": "PASS: reproducible support stability, applied changes, mixed outcomes and unchanged defensive contrasts\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/tactical_utility.cjs",
+      "sha256": "de1c56f9c70f8bbe0bdfc62bc9700ff552e18dc960a6f3512d0b2b7713c1005c",
+      "exitCode": 0,
+      "seconds": 0.034,
+      "stdout": "PASS: open/blocked line, keeper exclusion and mirrored balance metrics\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/tracking.py",
+      "sha256": "c67ee1c785764f6698298cfa939ee2fcf8bf3db0f7ecd5c32a6a254c041a7b62",
+      "exitCode": 0,
+      "seconds": 0.101,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "tests/turn_movement.cjs",
+      "sha256": "e772944b371ca17a0cd68a05db5d07f58c1c8bf1f2b091315b02c1306c186c02",
+      "exitCode": 0,
+      "seconds": 0.104,
+      "stdout": "PASS: angular speed cost, lateral/backward mobility, exact integrated turn, step invariance, mirror, arrival consistency, bounds and movement/retry\n",
+      "stderr": ""
+    }
+  ],
+  "passed": 63,
+  "total": 63
+}

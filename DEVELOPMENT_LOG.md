@@ -1,4 +1,17 @@
 # Fase Manager — Registro de desarrollo y recuperación
+
+## 22-10-2026 — Replay defensivo con ataque real impuesto
+
+Desde rama remota `1eb24a6`, comprobada contra main `82c6c02`, en nuevo worktree aislado que preserva el anterior y el avance de primera intención. Se conservan políticas y HTML de e28; no se inicia 0.54. Informe: [REPLAY_DEFENSIVO_REAL_0531.md](docs/REPLAY_DEFENSIVO_REAL_0531.md).
+
+- Plan previo, ocho casos conocidos y sin sustitución. Poseedor anotado en fases de control; durante tránsito no se proporciona endpoint ni receptor privado. Solo avanzan diez defensores, con el movimiento existente. Ataque, balón y dos porteros impuestos. La ventana 298 empieza tras recuperación rival a 739,20 s, con estado común en 739,24 s; no se mueve a ese equipo como defensa cuando tenía la posesión.
+- Velocidad inicial de muestras pasadas; dos hipótesis corporales explícitas. Ocho pilotos finales y 48 ejecuciones de ocho configuraciones × tres motores × dos hipótesis. Los ocho resultados piloto coinciden exactamente con sus equivalentes del contraste completo. Tres referencias: observada, posición fija y velocidad inicial constante. No hay simulación de goles o recuperaciones.
+- 0.52/0.53/e28 se parecen más que la estática a la defensa observada en 3/8 casos y más que la velocidad constante en 2/8. Medias hacia balón: 5,804/5,783/5,805 m frente a 6,071 estática y 4,370 inercial; no son puntuaciones de eficacia. En e28 la discrepancia del grupo restante alcanza 7,89 m frente a 4,79 próximos y 4,23 profundos; grupos iniciales fijos, no líneas identificadas.
+- Se conservan los contrarios: una trayectoria de mayor error puede conservar más jugadores del lado de portería que la observada; retroceder más también puede terminar con menos protección. Proximidad plana de 1,65 m en seis casos no acredita contacto; el ataque impuesto continúa, por lo que las métricas son de organización condicional, no partido libre.
+- Nueva entrada de replay pasa contra piloto y contraste completo: imposición en cada paso, poseedor, tránsito sin endpoint, etiquetas futuras irrelevantes, simetría, grupos estables, rechazo de ausencia de datos, semilla, estados iniciales y regeneración. Primera aserción fallida: orden del grupo restante dependía de filas aunque sus miembros fueran iguales; se ordena por dorsal antes de los informes finales. Sin ajuste de umbrales por resultado.
+- Pasan también presión, revisión y análisis defensivo real (cinco casos Python): cuatro entradas finales, tres CommonJS y una Python; no se anuncia batería completa de 64 entradas. Figura generada desde resultados e inspeccionada. Sin prueba visual del juego nueva.
+
+Datos completos, piloto, resumen, plan, adaptador, gráfico y pruebas conservados. Siguiente paso: contrastar anclajes/destinos del grupo restante y después una modificación acotada de continuidad colectiva, con casos sintéticos opuestos y prueba reactiva antes de aceptar. Main/motor intactos, 0.53.1 no aceptada.
 ## 22-10-2026 — Defensa real y cinco funciones defensivas
 
 Petición explícita del usuario: analizar Metrica y relacionar presión, temporización, contención, retroceso y protección de zona de finalización. Se conserva el estado local limpio `ce940b8`, equivalente al remoto `ce9aaf0`, antes de añadir archivos. No se modifica index.html.

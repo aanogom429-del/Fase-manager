@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-22",
+  "purpose": "Controlled positional defensive replay; no policy tuning or free-match outcome claim",
+  "source": "data/real-defense-principles.json.gz",
+  "clips": ["transition-blue", "transition-red", "transition-check", "transition-roles-check", "game2-shot-84", "game2-shot-199", "game2-shot-253", "game2-shot-298"],
+  "window": "Transitions: entire existing interval. Shots: through shot onset, restricted to the final continuous opponent-possession run. No bridging own-possession intervals.",
+  "initialization": "Second complete sample; initial velocity uses the preceding sample only. Stable shirt-to-slot mapping, keeper fixed to slot 1. No actual body orientation is observed.",
+  "bodyHypotheses": ["ball-facing", "attack-axis"],
+  "engines": ["v052", "v053", "e28"],
+  "references": ["observed", "stationary", "initial-velocity"],
+  "stepMaximumSeconds": 0.008333333333333333,
+  "subgroups": "Disjoint fixed identities: two initially nearest to ball; four deepest remaining; four remaining",
+  "exogenous": "Ball, ten attackers and both goalkeepers prescribed; only ten defending outfield players integrate engine movement",
+  "contact": "Shadow replay: no capture, tackle, scoring, free attacking decision, aerial reconstruction or anticipation from a private pass endpoint",
+  "missingData": "Exclude incomplete/gapped intervals; never reconstruct missing actors or ball",
+  "acceptance": "Harness integrity and complete results including adverse comparisons. No production policy accepted from trajectory error or imposed outcomes. These previously analysed clips are development, not held out."
+}

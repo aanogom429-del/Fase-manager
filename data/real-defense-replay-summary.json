@@ -1,0 +1,1279 @@
+{
+  "mode": "full",
+  "engineRuns": 48,
+  "averaging": "Unweighted mean of per-clip time-weighted errors; eight selected clips, not independent matches",
+  "groups": {
+    "v052/ball-facing": {
+      "cases": 8,
+      "betterThanStatic": 3,
+      "betterThanInitialVelocity": 2,
+      "errorM": 5.804037938842742,
+      "nearErrorM": 4.785231209452287,
+      "deepErrorM": 4.229231875572183,
+      "restErrorM": 7.888247366808532
+    },
+    "v053/ball-facing": {
+      "cases": 8,
+      "betterThanStatic": 3,
+      "betterThanInitialVelocity": 2,
+      "errorM": 5.783247210677328,
+      "nearErrorM": 4.624392516193568,
+      "deepErrorM": 4.264496149483954,
+      "restErrorM": 7.881425619112584
+    },
+    "e28/ball-facing": {
+      "cases": 8,
+      "betterThanStatic": 3,
+      "betterThanInitialVelocity": 2,
+      "errorM": 5.804736189871687,
+      "nearErrorM": 4.785231209452287,
+      "deepErrorM": 4.230977503144546,
+      "restErrorM": 7.888247366808532
+    },
+    "v052/attack-axis": {
+      "cases": 8,
+      "betterThanStatic": 3,
+      "betterThanInitialVelocity": 2,
+      "errorM": 5.775249284092326,
+      "nearErrorM": 4.857895256221719,
+      "deepErrorM": 4.229422258761358,
+      "restErrorM": 7.7797533233586
+    },
+    "v053/attack-axis": {
+      "cases": 8,
+      "betterThanStatic": 3,
+      "betterThanInitialVelocity": 2,
+      "errorM": 5.765779152772948,
+      "nearErrorM": 4.8745690329344775,
+      "deepErrorM": 4.197410042106533,
+      "restErrorM": 7.7797533233586
+    },
+    "e28/attack-axis": {
+      "cases": 8,
+      "betterThanStatic": 3,
+      "betterThanInitialVelocity": 2,
+      "errorM": 5.775944561018657,
+      "nearErrorM": 4.857895256221719,
+      "deepErrorM": 4.231160451077187,
+      "restErrorM": 7.7797533233586
+    }
+  },
+  "rows": [
+    {
+      "clipId": "transition-blue",
+      "hypothesis": "ball-facing",
+      "initialTime": 288.32,
+      "end": 293.12,
+      "stationary": 3.7684065172557757,
+      "initialVelocity": 2.455105472015006,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 5.273060566863572,
+            "near": 3.905921668684797,
+            "deep": 2.6188275857240795,
+            "rest": 8.610862997092452
+          },
+          "metricErrors": {
+            "nearestDistanceM": 0.954500293730963,
+            "goalSide": 0.3750000000000015,
+            "centroidX": 4.1659640409737,
+            "lengthM": 9.274855456139514,
+            "widthM": 2.5389442321164806,
+            "potentialCover": 0.8958333333333277,
+            "centralZone": 0.12500000000000444
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 5.273060566863572,
+            "near": 3.905921668684797,
+            "deep": 2.6188275857240795,
+            "rest": 8.610862997092452
+          },
+          "metricErrors": {
+            "nearestDistanceM": 0.954500293730963,
+            "goalSide": 0.3750000000000015,
+            "centroidX": 4.1659640409737,
+            "lengthM": 9.274855456139514,
+            "widthM": 2.5389442321164806,
+            "potentialCover": 0.8958333333333277,
+            "centralZone": 0.12500000000000444
+          },
+          "protection": {
+            "protectionQueries": 2220,
+            "carrierQueries": 2220,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 5.273060566863572,
+            "near": 3.905921668684797,
+            "deep": 2.6188275857240795,
+            "rest": 8.610862997092452
+          },
+          "metricErrors": {
+            "nearestDistanceM": 0.954500293730963,
+            "goalSide": 0.3750000000000015,
+            "centroidX": 4.1659640409737,
+            "lengthM": 9.274855456139514,
+            "widthM": 2.5389442321164806,
+            "potentialCover": 0.8958333333333277,
+            "centralZone": 0.12500000000000444
+          },
+          "protection": {
+            "protectionQueries": 2220,
+            "carrierQueries": 2220,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-blue",
+      "hypothesis": "attack-axis",
+      "initialTime": 288.32,
+      "end": 293.12,
+      "stationary": 3.7684065172557757,
+      "initialVelocity": 2.455105472015006,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 5.176468303579753,
+            "near": 3.888952202340688,
+            "deep": 2.614601006408929,
+            "rest": 8.38209365137011
+          },
+          "metricErrors": {
+            "nearestDistanceM": 0.9545005074039327,
+            "goalSide": 0.3750000000000015,
+            "centroidX": 4.0908398110226045,
+            "lengthM": 8.867027074740149,
+            "widthM": 2.5219071257890247,
+            "potentialCover": 0.8958333333333277,
+            "centralZone": 0.16666666666666863
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 5.176468303579753,
+            "near": 3.888952202340688,
+            "deep": 2.614601006408929,
+            "rest": 8.38209365137011
+          },
+          "metricErrors": {
+            "nearestDistanceM": 0.9545005074039327,
+            "goalSide": 0.3750000000000015,
+            "centroidX": 4.0908398110226045,
+            "lengthM": 8.867027074740149,
+            "widthM": 2.5219071257890247,
+            "potentialCover": 0.8958333333333277,
+            "centralZone": 0.16666666666666863
+          },
+          "protection": {
+            "protectionQueries": 2220,
+            "carrierQueries": 2220,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 5.176468303579753,
+            "near": 3.888952202340688,
+            "deep": 2.614601006408929,
+            "rest": 8.38209365137011
+          },
+          "metricErrors": {
+            "nearestDistanceM": 0.9545005074039327,
+            "goalSide": 0.3750000000000015,
+            "centroidX": 4.0908398110226045,
+            "lengthM": 8.867027074740149,
+            "widthM": 2.5219071257890247,
+            "potentialCover": 0.8958333333333277,
+            "centralZone": 0.16666666666666863
+          },
+          "protection": {
+            "protectionQueries": 2220,
+            "carrierQueries": 2220,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-red",
+      "hypothesis": "ball-facing",
+      "initialTime": 374.36,
+      "end": 379.16,
+      "stationary": 8.119053569097964,
+      "initialVelocity": 6.31239155506529,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 6.4012848487657115,
+            "near": 2.2811174066957522,
+            "deep": 5.564146571844438,
+            "rest": 9.29850684672196
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.209578695301085,
+            "goalSide": 0.6458333333333425,
+            "centroidX": 3.355792455305846,
+            "lengthM": 13.431589903387833,
+            "widthM": 2.730427493676262,
+            "potentialCover": 0.7500000000000148,
+            "centralZone": 0
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 6.4012848487657115,
+            "near": 2.2811174066957522,
+            "deep": 5.564146571844438,
+            "rest": 9.29850684672196
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.209578695301085,
+            "goalSide": 0.6458333333333425,
+            "centroidX": 3.355792455305846,
+            "lengthM": 13.431589903387833,
+            "widthM": 2.730427493676262,
+            "potentialCover": 0.7500000000000148,
+            "centralZone": 0
+          },
+          "protection": {
+            "protectionQueries": 3779,
+            "carrierQueries": 3779,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 6.4012848487657115,
+            "near": 2.2811174066957522,
+            "deep": 5.564146571844438,
+            "rest": 9.29850684672196
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.209578695301085,
+            "goalSide": 0.6458333333333425,
+            "centroidX": 3.355792455305846,
+            "lengthM": 13.431589903387833,
+            "widthM": 2.730427493676262,
+            "potentialCover": 0.7500000000000148,
+            "centralZone": 0
+          },
+          "protection": {
+            "protectionQueries": 3779,
+            "carrierQueries": 3779,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-red",
+      "hypothesis": "attack-axis",
+      "initialTime": 374.36,
+      "end": 379.16,
+      "stationary": 8.119053569097964,
+      "initialVelocity": 6.31239155506529,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 6.497755594267475,
+            "near": 2.263827574939502,
+            "deep": 5.56646556885498,
+            "rest": 9.546009629343956
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.1930351279816986,
+            "goalSide": 0.6458333333333425,
+            "centroidX": 3.4252344570879334,
+            "lengthM": 12.824875049130977,
+            "widthM": 2.818664648503541,
+            "potentialCover": 0.7083333333333447,
+            "centralZone": 0
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 6.497755594267475,
+            "near": 2.263827574939502,
+            "deep": 5.56646556885498,
+            "rest": 9.546009629343956
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.1930351279816986,
+            "goalSide": 0.6458333333333425,
+            "centroidX": 3.4252344570879334,
+            "lengthM": 12.824875049130977,
+            "widthM": 2.818664648503541,
+            "potentialCover": 0.7083333333333447,
+            "centralZone": 0
+          },
+          "protection": {
+            "protectionQueries": 3779,
+            "carrierQueries": 3779,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 6.497755594267475,
+            "near": 2.263827574939502,
+            "deep": 5.56646556885498,
+            "rest": 9.546009629343956
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.1930351279816986,
+            "goalSide": 0.6458333333333425,
+            "centroidX": 3.4252344570879334,
+            "lengthM": 12.824875049130977,
+            "widthM": 2.818664648503541,
+            "potentialCover": 0.7083333333333447,
+            "centralZone": 0
+          },
+          "protection": {
+            "protectionQueries": 3779,
+            "carrierQueries": 3779,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-check",
+      "hypothesis": "ball-facing",
+      "initialTime": 215.6,
+      "end": 220.4,
+      "stationary": 6.632593376758632,
+      "initialVelocity": 6.203761156471218,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 7.734491339391104,
+            "near": 10.338316421265821,
+            "deep": 5.8711541995015635,
+            "rest": 8.29591593834329
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.204613180433747,
+            "goalSide": 2.0333333333333354,
+            "centroidX": 7.106631219262026,
+            "lengthM": 5.893863895114896,
+            "widthM": 3.914625336516879,
+            "potentialCover": 1.020833333333329,
+            "centralZone": 0.02083333333333506
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 7.734491339391104,
+            "near": 10.338316421265821,
+            "deep": 5.8711541995015635,
+            "rest": 8.29591593834329
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.204613180433747,
+            "goalSide": 2.0333333333333354,
+            "centroidX": 7.106631219262026,
+            "lengthM": 5.893863895114896,
+            "widthM": 3.914625336516879,
+            "potentialCover": 1.020833333333329,
+            "centralZone": 0.02083333333333506
+          },
+          "protection": {
+            "protectionQueries": 3400,
+            "carrierQueries": 3400,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 7.734491339391104,
+            "near": 10.338316421265821,
+            "deep": 5.8711541995015635,
+            "rest": 8.29591593834329
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.204613180433747,
+            "goalSide": 2.0333333333333354,
+            "centroidX": 7.106631219262026,
+            "lengthM": 5.893863895114896,
+            "widthM": 3.914625336516879,
+            "potentialCover": 1.020833333333329,
+            "centralZone": 0.02083333333333506
+          },
+          "protection": {
+            "protectionQueries": 3400,
+            "carrierQueries": 3400,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-check",
+      "hypothesis": "attack-axis",
+      "initialTime": 215.6,
+      "end": 220.4,
+      "stationary": 6.632593376758632,
+      "initialVelocity": 6.203761156471218,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 8.495806786405826,
+            "near": 12.31768229056858,
+            "deep": 5.868697421399721,
+            "rest": 9.211978399330556
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.3114453324013553,
+            "goalSide": 2.4916666666666685,
+            "centroidX": 7.654586640204655,
+            "lengthM": 8.38753773388417,
+            "widthM": 3.921016537901269,
+            "potentialCover": 0.9166666666666597,
+            "centralZone": 0.02083333333333506
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 8.495806786405826,
+            "near": 12.31768229056858,
+            "deep": 5.868697421399721,
+            "rest": 9.211978399330556
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.3114453324013553,
+            "goalSide": 2.4916666666666685,
+            "centroidX": 7.654586640204655,
+            "lengthM": 8.38753773388417,
+            "widthM": 3.921016537901269,
+            "potentialCover": 0.9166666666666597,
+            "centralZone": 0.02083333333333506
+          },
+          "protection": {
+            "protectionQueries": 3382,
+            "carrierQueries": 3382,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 8.495806786405826,
+            "near": 12.31768229056858,
+            "deep": 5.868697421399721,
+            "rest": 9.211978399330556
+          },
+          "metricErrors": {
+            "nearestDistanceM": 3.3114453324013553,
+            "goalSide": 2.4916666666666685,
+            "centroidX": 7.654586640204655,
+            "lengthM": 8.38753773388417,
+            "widthM": 3.921016537901269,
+            "potentialCover": 0.9166666666666597,
+            "centralZone": 0.02083333333333506
+          },
+          "protection": {
+            "protectionQueries": 3382,
+            "carrierQueries": 3382,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-roles-check",
+      "hypothesis": "ball-facing",
+      "initialTime": 300.96,
+      "end": 305.76,
+      "stationary": 1.9178492616504939,
+      "initialVelocity": 2.5445892974593356,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 4.12195747182211,
+            "near": 3.874890270260837,
+            "deep": 4.852721361122951,
+            "rest": 3.5147271833019103
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.7297368211240114,
+            "goalSide": 0,
+            "centroidX": 0.47086324577517713,
+            "lengthM": 1.215111208376822,
+            "widthM": 5.344144644183763,
+            "potentialCover": 1.2249999999999903,
+            "centralZone": 0.729166666666665
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 4.12195747182211,
+            "near": 3.874890270260837,
+            "deep": 4.852721361122951,
+            "rest": 3.5147271833019103
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.7297368211240114,
+            "goalSide": 0,
+            "centroidX": 0.47086324577517713,
+            "lengthM": 1.215111208376822,
+            "widthM": 5.344144644183763,
+            "potentialCover": 1.2249999999999903,
+            "centralZone": 0.729166666666665
+          },
+          "protection": {
+            "protectionQueries": 3328,
+            "carrierQueries": 3328,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 4.12195747182211,
+            "near": 3.874890270260837,
+            "deep": 4.852721361122951,
+            "rest": 3.5147271833019103
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.7297368211240114,
+            "goalSide": 0,
+            "centroidX": 0.47086324577517713,
+            "lengthM": 1.215111208376822,
+            "widthM": 5.344144644183763,
+            "potentialCover": 1.2249999999999903,
+            "centralZone": 0.729166666666665
+          },
+          "protection": {
+            "protectionQueries": 3328,
+            "carrierQueries": 3328,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "transition-roles-check",
+      "hypothesis": "attack-axis",
+      "initialTime": 300.96,
+      "end": 305.76,
+      "stationary": 1.9178492616504939,
+      "initialVelocity": 2.5445892974593356,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 4.158389533938195,
+            "near": 3.957518871920658,
+            "deep": 4.85586324444006,
+            "rest": 3.5613511544450955
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.9213080943964873,
+            "goalSide": 0,
+            "centroidX": 0.5663230218378668,
+            "lengthM": 1.4271073400769498,
+            "widthM": 5.537699023759597,
+            "potentialCover": 1.183333333333326,
+            "centralZone": 0.729166666666665
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 4.158389533938195,
+            "near": 3.957518871920658,
+            "deep": 4.85586324444006,
+            "rest": 3.5613511544450955
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.9213080943964873,
+            "goalSide": 0,
+            "centroidX": 0.5663230218378668,
+            "lengthM": 1.4271073400769498,
+            "widthM": 5.537699023759597,
+            "potentialCover": 1.183333333333326,
+            "centralZone": 0.729166666666665
+          },
+          "protection": {
+            "protectionQueries": 3305,
+            "carrierQueries": 3305,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 4.158389533938195,
+            "near": 3.957518871920658,
+            "deep": 4.85586324444006,
+            "rest": 3.5613511544450955
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.9213080943964873,
+            "goalSide": 0,
+            "centroidX": 0.5663230218378668,
+            "lengthM": 1.4271073400769498,
+            "widthM": 5.537699023759597,
+            "potentialCover": 1.183333333333326,
+            "centralZone": 0.729166666666665
+          },
+          "protection": {
+            "protectionQueries": 3305,
+            "carrierQueries": 3305,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-84",
+      "hypothesis": "ball-facing",
+      "initialTime": 170.8,
+      "end": 176.76,
+      "stationary": 4.578572971799941,
+      "initialVelocity": 6.90725056779152,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 5.095070957674577,
+            "near": 6.83563548886926,
+            "deep": 2.8886369298244565,
+            "rest": 6.431222719927356
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.7208236828750667,
+            "goalSide": 1.3724832214765113,
+            "centroidX": 3.2221602315771865,
+            "lengthM": 10.970183699396987,
+            "widthM": 5.260242545617205,
+            "potentialCover": 1.0637583892617444,
+            "centralZone": 0.932885906040272
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 5.095070957674577,
+            "near": 6.83563548886926,
+            "deep": 2.8886369298244565,
+            "rest": 6.431222719927356
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.7208236828750667,
+            "goalSide": 1.3724832214765113,
+            "centroidX": 3.2221602315771865,
+            "lengthM": 10.970183699396987,
+            "widthM": 5.260242545617205,
+            "potentialCover": 1.0637583892617444,
+            "centralZone": 0.932885906040272
+          },
+          "protection": {
+            "protectionQueries": 3105,
+            "carrierQueries": 3105,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 5.095070957674577,
+            "near": 6.83563548886926,
+            "deep": 2.8886369298244565,
+            "rest": 6.431222719927356
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.7208236828750667,
+            "goalSide": 1.3724832214765113,
+            "centroidX": 3.2221602315771865,
+            "lengthM": 10.970183699396987,
+            "widthM": 5.260242545617205,
+            "potentialCover": 1.0637583892617444,
+            "centralZone": 0.932885906040272
+          },
+          "protection": {
+            "protectionQueries": 3105,
+            "carrierQueries": 3105,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-84",
+      "hypothesis": "attack-axis",
+      "initialTime": 170.8,
+      "end": 176.76,
+      "stationary": 4.578572971799941,
+      "initialVelocity": 6.90725056779152,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 5.027879425652258,
+            "near": 6.700080574194942,
+            "deep": 2.8628492941395836,
+            "rest": 6.356808982893592
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.7796432090227243,
+            "goalSide": 1.3489932885906002,
+            "centroidX": 3.1529698618833186,
+            "lengthM": 10.863010361773993,
+            "widthM": 5.252534456345418,
+            "potentialCover": 1.0704697986577187,
+            "centralZone": 0.8926174496644338
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 5.027879425652258,
+            "near": 6.700080574194942,
+            "deep": 2.8628492941395836,
+            "rest": 6.356808982893592
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.7796432090227243,
+            "goalSide": 1.3489932885906002,
+            "centroidX": 3.1529698618833186,
+            "lengthM": 10.863010361773993,
+            "widthM": 5.252534456345418,
+            "potentialCover": 1.0704697986577187,
+            "centralZone": 0.8926174496644338
+          },
+          "protection": {
+            "protectionQueries": 3105,
+            "carrierQueries": 3105,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 5.027879425652258,
+            "near": 6.700080574194942,
+            "deep": 2.8628492941395836,
+            "rest": 6.356808982893592
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.7796432090227243,
+            "goalSide": 1.3489932885906002,
+            "centroidX": 3.1529698618833186,
+            "lengthM": 10.863010361773993,
+            "widthM": 5.252534456345418,
+            "potentialCover": 1.0704697986577187,
+            "centralZone": 0.8926174496644338
+          },
+          "protection": {
+            "protectionQueries": 3105,
+            "carrierQueries": 3105,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-199",
+      "hypothesis": "ball-facing",
+      "initialTime": 482.12,
+      "end": 488.08,
+      "stationary": 5.9398135113468475,
+      "initialVelocity": 7.4404688230902,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 5.769222462156871,
+            "near": 4.247241834695324,
+            "deep": 3.313205176828188,
+            "rest": 8.986230061216325
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.6399586946871854,
+            "goalSide": 1.1208053691275217,
+            "centroidX": 2.538017436730024,
+            "lengthM": 7.592703340523934,
+            "widthM": 1.6997636009854311,
+            "potentialCover": 1.8724832214765208,
+            "centralZone": 0.9228187919463119
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 5.602896636833557,
+            "near": 2.960532288625572,
+            "deep": 3.5953193681223556,
+            "rest": 8.931656079648748
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.648034024181464,
+            "goalSide": 1.1308724832214818,
+            "centroidX": 2.304456344876648,
+            "lengthM": 7.646280964601562,
+            "widthM": 1.6997636009854311,
+            "potentialCover": 1.7583892617449755,
+            "centralZone": 0.9228187919463119
+          },
+          "protection": {
+            "protectionQueries": 2862,
+            "carrierQueries": 2862,
+            "selectedQueries": 149
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 5.769222462156871,
+            "near": 4.247241834695324,
+            "deep": 3.313205176828188,
+            "rest": 8.986230061216325
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.6399586946871854,
+            "goalSide": 1.1208053691275217,
+            "centroidX": 2.538017436730024,
+            "lengthM": 7.592703340523934,
+            "widthM": 1.6997636009854311,
+            "potentialCover": 1.8724832214765208,
+            "centralZone": 0.9228187919463119
+          },
+          "protection": {
+            "protectionQueries": 2857,
+            "carrierQueries": 2857,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-199",
+      "hypothesis": "attack-axis",
+      "initialTime": 482.12,
+      "end": 488.08,
+      "stationary": 5.9398135113468475,
+      "initialVelocity": 7.4404688230902,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 5.678334888321734,
+            "near": 3.013185600953004,
+            "deep": 3.769242644101399,
+            "rest": 8.92000177622644
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.6855845423709062,
+            "goalSide": 1.1778523489932944,
+            "centroidX": 2.3490288625648077,
+            "lengthM": 7.287102052427737,
+            "widthM": 1.786809136765655,
+            "potentialCover": 1.765100671140952,
+            "centralZone": 0.9161073825503353
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 5.678334888321734,
+            "near": 3.013185600953004,
+            "deep": 3.769242644101399,
+            "rest": 8.92000177622644
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.6855845423709062,
+            "goalSide": 1.1778523489932944,
+            "centroidX": 2.3490288625648077,
+            "lengthM": 7.287102052427737,
+            "widthM": 1.786809136765655,
+            "potentialCover": 1.765100671140952,
+            "centralZone": 0.9161073825503353
+          },
+          "protection": {
+            "protectionQueries": 2841,
+            "carrierQueries": 2841,
+            "selectedQueries": 49
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 5.678334888321734,
+            "near": 3.013185600953004,
+            "deep": 3.769242644101399,
+            "rest": 8.92000177622644
+          },
+          "metricErrors": {
+            "nearestDistanceM": 1.6855845423709062,
+            "goalSide": 1.1778523489932944,
+            "centroidX": 2.3490288625648077,
+            "lengthM": 7.287102052427737,
+            "widthM": 1.786809136765655,
+            "potentialCover": 1.765100671140952,
+            "centralZone": 0.9161073825503353
+          },
+          "protection": {
+            "protectionQueries": 2841,
+            "carrierQueries": 2841,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-253",
+      "hypothesis": "ball-facing",
+      "initialTime": 653.4,
+      "end": 659.36,
+      "stationary": 16.196779632848532,
+      "initialVelocity": 2.652164753355633,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 9.578936430094023,
+            "near": 4.547271200420125,
+            "deep": 7.042075665845302,
+            "rest": 14.631629809179708
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.4341484647461824,
+            "goalSide": 1.6778523489932784,
+            "centroidX": 5.156983561518128,
+            "lengthM": 20.93130166599274,
+            "widthM": 4.0769485123385785,
+            "potentialCover": 0.7818791946308719,
+            "centralZone": 0.5067114093959861
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 9.578936430094023,
+            "near": 4.547271200420125,
+            "deep": 7.042075665845302,
+            "rest": 14.631629809179708
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.4341484647461824,
+            "goalSide": 1.6778523489932784,
+            "centroidX": 5.156983561518128,
+            "lengthM": 20.93130166599274,
+            "widthM": 4.0769485123385785,
+            "potentialCover": 0.7818791946308719,
+            "centralZone": 0.5067114093959861
+          },
+          "protection": {
+            "protectionQueries": 5935,
+            "carrierQueries": 5935,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 9.578936430094023,
+            "near": 4.547271200420125,
+            "deep": 7.042075665845302,
+            "rest": 14.631629809179708
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.4341484647461824,
+            "goalSide": 1.6778523489932784,
+            "centroidX": 5.156983561518128,
+            "lengthM": 20.93130166599274,
+            "widthM": 4.0769485123385785,
+            "potentialCover": 0.7818791946308719,
+            "centralZone": 0.5067114093959861
+          },
+          "protection": {
+            "protectionQueries": 5935,
+            "carrierQueries": 5935,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-253",
+      "hypothesis": "attack-axis",
+      "initialTime": 653.4,
+      "end": 659.36,
+      "stationary": 16.196779632848532,
+      "initialVelocity": 2.652164753355633,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 8.838282053088193,
+            "near": 4.563658154037419,
+            "deep": 6.630676817440705,
+            "rest": 13.183199238261073
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.054197936550349,
+            "goalSide": 1.7785234899328788,
+            "centroidX": 4.350870330915812,
+            "lengthM": 19.67683828746472,
+            "widthM": 4.1502244497997784,
+            "potentialCover": 0.6778523489932688,
+            "centralZone": 0.5134228187919531
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 8.838282053088193,
+            "near": 4.563658154037419,
+            "deep": 6.630676817440705,
+            "rest": 13.183199238261073
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.054197936550349,
+            "goalSide": 1.7785234899328788,
+            "centroidX": 4.350870330915812,
+            "lengthM": 19.67683828746472,
+            "widthM": 4.1502244497997784,
+            "potentialCover": 0.6778523489932688,
+            "centralZone": 0.5134228187919531
+          },
+          "protection": {
+            "protectionQueries": 5866,
+            "carrierQueries": 5866,
+            "selectedQueries": 2
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 8.838282053088193,
+            "near": 4.563658154037419,
+            "deep": 6.630676817440705,
+            "rest": 13.183199238261073
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.054197936550349,
+            "goalSide": 1.7785234899328788,
+            "centroidX": 4.350870330915812,
+            "lengthM": 19.67683828746472,
+            "widthM": 4.1502244497997784,
+            "potentialCover": 0.6778523489932688,
+            "centralZone": 0.5134228187919531
+          },
+          "protection": {
+            "protectionQueries": 5866,
+            "carrierQueries": 5866,
+            "selectedQueries": 0
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-298",
+      "hypothesis": "ball-facing",
+      "initialTime": 739.24,
+      "end": 740.6,
+      "stationary": 1.4185134034928792,
+      "initialVelocity": 0.4459615035288603,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 2.45827943397397,
+            "near": 2.2514553847263756,
+            "deep": 1.6830875138864885,
+            "rest": 3.33688337868525
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.491949678581472,
+            "goalSide": 0.9705882352941447,
+            "centroidX": 0.974931610501481,
+            "lengthM": 3.328228040470781,
+            "widthM": 1.9642178178307048,
+            "potentialCover": 1.5294117647058971,
+            "centralZone": 0.8676470588235675
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 2.45827943397397,
+            "near": 2.2514553847263756,
+            "deep": 1.6830875138864885,
+            "rest": 3.33688337868525
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.491949678581472,
+            "goalSide": 0.9705882352941447,
+            "centroidX": 0.974931610501481,
+            "lengthM": 3.328228040470781,
+            "widthM": 1.9642178178307048,
+            "potentialCover": 1.5294117647058971,
+            "centralZone": 0.8676470588235675
+          },
+          "protection": {
+            "protectionQueries": 2028,
+            "carrierQueries": 2028,
+            "selectedQueries": 0
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 2.463865442205531,
+            "near": 2.2514553847263756,
+            "deep": 1.6970525344653888,
+            "rest": 3.33688337868525
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.491949678581472,
+            "goalSide": 0.9705882352941447,
+            "centroidX": 0.9847732926540822,
+            "lengthM": 3.328228040470781,
+            "widthM": 1.9642178178307048,
+            "potentialCover": 1.5294117647058971,
+            "centralZone": 0.8676470588235675
+          },
+          "protection": {
+            "protectionQueries": 2028,
+            "carrierQueries": 2028,
+            "selectedQueries": 2
+          }
+        }
+      }
+    },
+    {
+      "clipId": "game2-shot-298",
+      "hypothesis": "attack-axis",
+      "initialTime": 739.24,
+      "end": 740.6,
+      "stationary": 1.4185134034928792,
+      "initialVelocity": 0.4459615035288603,
+      "engines": {
+        "v052": {
+          "error": {
+            "all": 2.329077687485172,
+            "near": 2.158256780818955,
+            "deep": 1.6669820733054805,
+            "rest": 3.076583754997971
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.324194072482369,
+            "goalSide": 0.9411764705882893,
+            "centroidX": 0.8579827312830838,
+            "lengthM": 2.5613993152582437,
+            "widthM": 1.9091196408485285,
+            "potentialCover": 1.5294117647059389,
+            "centralZone": 0.8382352941176704
+          },
+          "protection": {
+            "protectionQueries": 0,
+            "carrierQueries": 0,
+            "selectedQueries": 0
+          }
+        },
+        "v053": {
+          "error": {
+            "all": 2.253316636930149,
+            "near": 2.2916469945210234,
+            "deep": 1.4108843400668896,
+            "rest": 3.076583754997971
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.324194072482369,
+            "goalSide": 0.9411764705882893,
+            "centroidX": 0.8795646075080902,
+            "lengthM": 2.5613993152582437,
+            "widthM": 1.9149968657846073,
+            "potentialCover": 1.5882352941176914,
+            "centralZone": 0.8382352941176704
+          },
+          "protection": {
+            "protectionQueries": 2028,
+            "carrierQueries": 2028,
+            "selectedQueries": 306
+          }
+        },
+        "e28": {
+          "error": {
+            "all": 2.3346399028958262,
+            "near": 2.158256780818955,
+            "deep": 1.6808876118321165,
+            "rest": 3.076583754997971
+          },
+          "metricErrors": {
+            "nearestDistanceM": 2.324194072482369,
+            "goalSide": 0.9411764705882893,
+            "centroidX": 0.8678840298911102,
+            "lengthM": 2.5613993152582437,
+            "widthM": 1.9091196408485285,
+            "potentialCover": 1.5294117647059389,
+            "centralZone": 0.8382352941176704
+          },
+          "protection": {
+            "protectionQueries": 2028,
+            "carrierQueries": 2028,
+            "selectedQueries": 2
+          }
+        }
+      }
+    }
+  ]
+}

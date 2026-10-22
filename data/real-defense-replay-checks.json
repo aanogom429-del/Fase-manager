@@ -1,0 +1,43 @@
+{
+  "engineSha256": {
+    "v052": "2aabc7ad31293682799fc3e39d086ea5e77541b609307fdb7c76f9952136ccfc",
+    "v053": "3df7034dfafb05ecd642b2ea0601b7f27224fdcdd66fee3ce1e94101c264f331",
+    "e28": "f34b02c57a9f067cddca031a99ac17ea69e6aa1b785114c01b0a5d774dc7d18c"
+  },
+  "adapterSha256": "5921b623de68232505b094edd746bab2ecee5c84c199e94d1936c6c4d039a08f",
+  "planSha256": "7c5e47845093f66d1b2d0e634089acfb053d00ffac7f0cf214f9ff93d7338165",
+  "scope": "Four targeted final entries, not the whole game regression. The replay entry passed against final pilot and full comparison; eight pilot trajectories match exactly.",
+  "entries": [
+    {
+      "file": "tests/real_defense_replay.cjs",
+      "sha256": "80d0c127dc2c7fbe1478c576a18d550f6ac00ffd6ab7fc07a0e0e3f85ef58cb5",
+      "status": 0
+    },
+    {
+      "file": "tests/finishing_pressure.cjs",
+      "sha256": "d3c792dfab403630af6ea9a66f0c7c7b9dfec1533b9f3c5049528440d21c7aa2",
+      "status": 0
+    },
+    {
+      "file": "tests/finishing_revision.cjs",
+      "sha256": "f58064a04127b57cba8ca41e0f6ccddadc509609807bff632adfb97828c7ad23",
+      "status": 0
+    },
+    {
+      "file": "tests/real_defense_principles.py",
+      "sha256": "8d494056b3df95cc7724a9d9f96769c0571f0b5958a3d1df663a62559271f269",
+      "status": 0
+    }
+  ],
+  "developmentFailure": {
+    "assertion": "Row order must not change the fixed subgroups",
+    "cause": "Rest group membership was stable but array order followed the CSV rows",
+    "correction": "Canonical ascending shirt order before final pilot and comparison"
+  },
+  "retainedEngineRuns": {
+    "pilot": 8,
+    "full": 48
+  },
+  "node": "v24.19.0",
+  "additionalControl": "Changing future recorded defensive positions leaves simulated trajectories identical; those positions are observer-only."
+}

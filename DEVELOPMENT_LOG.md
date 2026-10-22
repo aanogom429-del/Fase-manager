@@ -1,4 +1,19 @@
 # Fase Manager — Registro de desarrollo y recuperación
+## 22-10-2026 — Defensa real y cinco funciones defensivas
+
+Petición explícita del usuario: analizar Metrica y relacionar presión, temporización, contención, retroceso y protección de zona de finalización. Se conserva el estado local limpio `ce940b8`, equivalente al remoto `ce9aaf0`, antes de añadir archivos. No se modifica index.html.
+
+- Cuatro transiciones existentes de Game 1 y los cuatro primeros tiros cronológicos de la primera parte Game 2; no sustituidos por calidad o desenlace. CSV completos locales recuperados y sus hashes diferenciados de los recortes anteriores. La orientación se comprueba con porteros y se expresa en metros, portería propia x=0 para ambos equipos.
+- Ocho secuencias: 820/918 frames completos (114/114 transición y 706/804 tiros). Los 604/604 frames previos/simultáneos al tiro son completos; las ausencias posteriores permanecen explícitas. No se interpola ni se infiere perfil corporal/altura/comunicación.
+- Presión compatible con balón alejándose 10,43 m y bloque acortándose 5,63 m; contención compatible con ocho jugadores del lado de portería y balón sin progresión neta; contrario con balón avanzando 25,39 m y bloque desplazándose 3,09 m hacia delante. Retroceso de 19,14 m insuficiente frente a avance del balón de 43,21 m. No se atribuye causalidad exclusiva a estos indicadores.
+- En un gol, defensor a 0,67 m, nueve defensores en la zona central descriptiva pero solo uno del lado de portería. Bloqueo real con cero rayos al radio 1 m y tres al radio 2 m: se conserva la sensibilidad, sin ajustar para acertar la etiqueta. Una parada o tiro fuera tampoco se transforman en bloqueos ficticios.
+- Cinco pruebas nuevas pasan: simetría, ausencia sin interpolación/puentes, movimiento del balón separado de aproximación propia, geometría y procedencia/regeneración de métricas y contracasos. La revisión corrigió el contador previo al tiro que incluía ausencias posteriores; se regenera antes de verificar. No se anuncia batería completa nueva del motor.
+- Figura exacta de tracking generada y revisada visualmente. Fuentes formativas primarias FIFA/FA contextualizan los principios; la correspondencia con las cinco funciones es interpretación operativa del proyecto.
+
+Informe: [DEFENSA_REAL_PRINCIPIOS_0531.md](docs/DEFENSA_REAL_PRINCIPIOS_0531.md). Datos completos comprimidos, scripts de análisis/figura y prueba preservados. Siguiente paso: replay defensivo controlado, no otro ajuste sintético inmediato. Main/motor sin cambios; 0.53.1 sigue sin aceptar, no se inicia 0.54.
+
+
+Sincronización: se conserva íntegro el avance remoto `992d771` de primera intención, encontrado después de preparar esta entrega local. Se incorporan los nuevos documentos por adición; no se sobrescriben sus experimentos, pruebas o resultados.
 
 ## 22-10-2026 — Primera intención: causalidad y efectos opuestos
 

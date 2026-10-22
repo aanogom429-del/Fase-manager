@@ -1,4 +1,8 @@
 # Reanudación y contraste de la corrección 0.53.1
+## Actualización 22-10-2026 — Contraste real solicitado
+
+El usuario redirige la investigación hacia los partidos Metrica ya disponibles y pide relacionarlos con presión, temporización, contención, retroceso y protección de la zona de finalización. Se completa el [análisis real de ocho secuencias](DEFENSA_REAL_PRINCIPIOS_0531.md), con cuatro transiciones Game 1 y los cuatro primeros tiros Game 2, sin selección por resultado. Se conservan contracasos, ausencias, sensibilidad de los rayos y una figura de posiciones reales. Cinco pruebas del análisis pasan; no se modifica el motor. Próxima tarea: preparar replay defensivo con ataque impuesto por tracking, defensores libres, control estático y defensa observada, antes de retocar selección. Estas secuencias son desarrollo, no reserva nueva. 0.53.1 sigue sin aceptar; no se inicia 0.54. Los siguientes apartados conservan la cronología anterior.
+
 
 Fecha: 21-10-2026. **La 0.53.1 sigue sin aceptarse para main.** Se recupera y verifica el trabajo de `e28d784`, se investigan dos controles nuevos y se descartan para el motor por resultados perjudiciales o mixtos. No se inicia 0.54. La aplicación `index.html` permanece idéntica a e28; no se publica una nueva versión en GitHub.
 

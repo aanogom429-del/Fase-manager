@@ -1,5 +1,11 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.57 — Elegir receptores habilitados
+
+Incremento A6 de decisión táctica automática: un receptor percibido en fuera de juego queda excluido de la selección de pases y centros. Antes recibía una penalización que podía ser compensada por el avance. Si falta una salida habilitada, se mantiene la alternativa de conducción u observación; las acciones manuales y el arbitraje no cambian. La percepción incompleta aún puede provocar un fuera de juego real.
+
+Prioridad vigente: motor táctico, pruebas acotadas, publicación de cada incremento probado en GitHub y main para el mismo enlace GitHub Pages, según autorización posterior del usuario. Las restricciones históricas de mantener main intacta quedan sustituidas; las ramas de investigación 0.53.1 siguen conservadas y excluidas.
+
 ## 0.56 — Desmarque de apoyo con cambio de altura
 
 Incremento A1/A2: si la mejor alternativa lateral sigue tapada por oposición percibida, el apoyo puede retrasar su destino 4 u 8 unidades, con desplazamiento lateral opcional. Solo acepta una alternativa con menor riesgo percibido y una mejora suficiente de espacio, separación y coste de movimiento. Conserva el límite previo de fuera de juego; no consulta posiciones rivales ocultas. El inspector identifica el cambio de altura.

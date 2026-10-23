@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.57 — Decisión automática y fuera de juego
+
+Verificación: PASS onside_decisions.cjs, offside.cjs, opponent_perception.cjs, contextual_supports.cjs (3 × 60 s de juego libre), simulation_entry.cjs y continuity.cjs. Sin validación nueva en Safari/iPhone ni con tracking real.
+
+Contracaso reproducido frente a 0.56 en ambos equipos: bajo presión, con poseedor a altura 55, receptor adelantado a 75 y línea defensiva a 60, el motor anterior elegía #10 adelantado; 0.57 selecciona #8 habilitado. Se elimina la penalización compensable y se filtran también los centros. Prueba onside_decisions.cjs cubre ambos equipos, receptor en línea, ausencia de salidas habilitadas y 24 elecciones desde banda. No constituye validación general de mejora ofensiva. Se conservan la 0.53.1 y sus investigaciones sin integrar.
+
 ## 0.56 — Apoyo ante línea tapada
 
 PASS support_escape.cjs: caso espejo en ambos equipos, riesgo percibido 10.125 → 0 en el destino, movimiento sin teletransporte, independencia de rival oculto y contracasos de línea abierta/memoria vacía. Este índice no es una probabilidad de éxito ni evidencia de superioridad general.

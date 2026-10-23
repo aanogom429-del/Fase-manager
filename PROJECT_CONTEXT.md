@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.57
+
+Sobre 0.56: selección automática de pases y centros descarta receptores percibidos en fuera de juego. El motor conserva percepción limitada, conducción y exploración cuando no hay salida. No garantiza evitar todos los fueras de juego ni cambia la sanción reglamentaria o las decisiones manuales. Flujo autorizado: publicar rama y actualizar main tras pruebas; enlace de juego https://aanogom429-del.github.io/Fase-manager/. No continuar despliegues en Sites como vía habitual.
+
 ## Estado 0.56
 
 Base: 0.55 corregida (simulación directa y guardado plegado). Mejora de apoyo: otra altura cuando la salida lateral sigue tapada, con información percibida y margen mínimo de utilidad. Ver ROADMAP.md y tests/support_escape.cjs. No modifica la política defensiva ni cierra A. Los guardados previos conservan su formato, pero sus resultados pueden cambiar al evolucionar el motor. Usuario autoriza publicar el proyecto en GitHub; conservar main y las ramas de investigación.

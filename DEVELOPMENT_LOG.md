@@ -1,5 +1,13 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.59 — Pase automático al espacio
+
+Verificación final: PASS automatic_lead_pass.cjs, lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, perceptual_memory.cjs, anticipation_first_touch.cjs, reception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s de juego libre). git diff --check sin errores.
+
+También conserva la opción a los pies cuando anticipar supera el alcance automático de 42 unidades. La prueba inicial de igualdad entre entornos VM se corrigió para comparar datos serializados, evitando diferencias de prototipo entre contextos.
+
+Comparación causal con 0.58 en ambos sentidos: poseedor a altura 50, compañero a 68 avanzando a 6 unidades/s; antes apuntaba a 68, ahora a 71.724 (espejo 28.276). Es destino intencional: conserva dispersión de ejecución y oposición real. Reutiliza el cálculo existente de encuentro con velocidad constante y horizonte 1.2 s. No anticipa compañeros parados, en retroceso, ocultos ni destinos con deterioro excesivo de línea/espacio. Prueba receptor habilitado que recibe más allá de la línea: no confundir destino del balón con posición de fuera de juego al golpeo. No acredita mejora general del porcentaje de pases ni validación con tracking/Safari/iPhone. Investigación defensiva 0.53.1 sin integrar.
+
 ## 0.58 — Conducción corta diagonal
 
 Verificación: PASS short_carry.cjs, onside_decisions.cjs, opponent_perception.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s de juego libre), support_escape.cjs y offside.cjs. git diff --check sin errores.

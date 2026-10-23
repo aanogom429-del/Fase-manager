@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.59
+
+Sobre 0.58: pase automático al espacio para receptores visibles en avance, reutilizando leadPassTarget con filtros de riesgo y espacio percibidos. El mensaje del partido identifica «pasa al espacio». No añade conocimiento oculto, nuevos formatos de guardado ni cambios de arbitraje. Prueba tests/automatic_lead_pass.cjs; instrucciones vigentes de publicar incrementos probados en main y verificar el mismo enlace https://aanogom429-del.github.io/Fase-manager/.
+
 ## Estado 0.58
 
 Sobre 0.57: conducción automática con avance corto y diagonal como alternativa al recorrido largo bloqueado. Usa exclusivamente oposición percibida para valorar el recorrido; conserva presión mínima, comparación con pases, exploración sin salida y física de movimiento. Prueba específica tests/short_carry.cjs. No cambia guardados, órdenes, arbitraje ni defensa experimental 0.53.1. Publicar incrementos probados en main y verificar https://aanogom429-del.github.io/Fase-manager/.

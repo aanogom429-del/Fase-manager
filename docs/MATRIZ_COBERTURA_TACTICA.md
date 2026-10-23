@@ -1,5 +1,17 @@
 # Matriz de cobertura del motor táctico
 
+## Evidencia vigente 0.56–0.60
+
+Las restricciones históricas a versiones posteriores quedan sustituidas por ROADMAP.md. Estados generales siguen parciales; no se incorpora la investigación 0.53.1.
+
+- 0.56 O01–O03/E02: apoyo que cambia altura ante línea tapada; tests/support_escape.cjs.
+- 0.57 T03/O03: receptores percibidos en fuera de juego excluidos de pases y centros automáticos; tests/onside_decisions.cjs.
+- 0.58 O03/C05: conducción diagonal corta cuando los recorridos largos están cerrados; tests/short_carry.cjs.
+- 0.59 V04/O04/C05: pase automático al espacio sobre carrera visible ya iniciada, con filtros de línea, presión y alcance; no sincroniza una ruptura nueva; tests/automatic_lead_pass.cjs.
+- 0.60 F04/D04/V02: un bloqueo percibido de la línea central puede disuadir el tiro automático y dar paso a otras opciones; portero excluido de ese veto. No evalúa toda la portería ni cierra la selección de ventajas; tests/shot_selection.cjs. D04 incorpora este mecanismo acotado de disuasión, sin completar la conducta estratégica defensiva.
+
+Quedan abiertos los siete bloques de cierre descritos en CIERRE_MOTOR_TACTICO.md. Estas evidencias son sintéticas, no validación científica integral. Consultar DEVELOPMENT_LOG.md para ejecuciones y límites.
+
 Actualización vigente 0.53 (20-10-2026): protección de finalización ante poseedor visible y conservación de cobertura de tiro, integrada sobre 0.52. [Mecanismo, pruebas dinámicas y límites](PROTECCION_FINALIZACION_053.md). En 20 parejas sintéticas: 3 reducen goles concedidos, 16 empatan y 1 empeora. A2/A4/A7 y el cierre defensivo siguen abiertos; no se demuestra mejora general. Consultar [ROADMAP.md](../ROADMAP.md) para estado consolidado. Las entradas inferiores se conservan como historial. No se inicia 0.54.
 
 Avance 0.52 D01/D02/D04/F05–F08: [presión y exposición](PRESION_EXPOSICION_052.md). Primer defensor considera línea abandonada sin respaldo e inferioridad local percibida. Pruebas espejo y contracasos; geometría y recuento aproximados, sin garantía de interceptación. Pendientes protección de finalización y validación con pases ejecutados y oposición reactiva. Cobertura general parcial.
@@ -104,7 +116,7 @@ No inferir estas áreas de coordenadas de tracking. Los indicadores por definir 
 | D01 | Presión · Parcial | defensiveOrder/defendingTarget: presor estable y cobertura | Presión conjunta según acceso, orientación y ayudas | Si el primer defensor salta, otro cubre; si no puede llegar, revisar presión |
 | D02 | Contención · Parcial | Cobertura y recuperación de profundidad | Orientar y limitar progresión, temporizar | Un defensor superado en número gana tiempo sin perseguir ciegamente el balón |
 | D03 | Protección de finalización · Parcial | Retroceso y referencias de portería | Priorizar accesos, remates, receptores y área | Ante amenaza de remate, proteger zona peligrosa sin arrastrar a todos al poseedor |
-| D04 | Disuasión · Pendiente | Ocupación de líneas incidental | Negar opciones mediante posición estratégica | Cerrar una línea modifica las opciones rivales aunque no haya entrada ni recuperación |
+| D04 | Disuasión · Parcial | 0.60: bloqueo percibido de línea central disuade tiro automático; selección defensiva estratégica incompleta | Negar opciones mediante posición estratégica | Cerrar una línea modifica las opciones rivales aunque no haya entrada ni recuperación |
 
 ## Ciclo y prioridades adaptativas
 

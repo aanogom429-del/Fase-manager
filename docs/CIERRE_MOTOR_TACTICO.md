@@ -1,5 +1,13 @@
 # Qué falta para cerrar el motor táctico
 
+## Estado vigente 0.60
+
+Quedan **7 bloques principales abiertos**, enumerados en «Secuencia de cierre». Son paquetes de trabajo, no siete actualizaciones. No existe todavía una estimación defendible del número de versiones restantes. La cifra no se reduce por cada corrección pequeña: un bloque se cierra al cumplir sus criterios de aceptación. La etapa B comercial y C iOS no están incluidas en esos siete.
+
+Avances 0.56–0.60: apoyo con cambio de altura, selección de receptores habilitados, conducción diagonal corta, pases automáticos al espacio y selección de remate con línea central no bloqueada. Avanzan mecanismos de A1/A2/A3/A4/A6; no completan las ventajas, el ciclo, la percepción sin balón, la individualidad o la validación externa. 0.54–0.55 aportan herramientas de decisiones, no cierre táctico. Investigación 0.53.1 conservada y no integrada. Las referencias inferiores a no iniciar versiones posteriores son históricas y quedan sustituidas.
+
+Para evitar confundir alcance con número de versiones, el criterio sigue siendo: requisitos y simplificaciones explícitos, casos favorables y contrarios, continuidad/reglas, simulación prolongada y contraste táctico representativo. Las pruebas sintéticas superadas no equivalen a validación científica del marco de Seirul·lo.
+
 Actualización vigente 0.53 (20-10-2026): protección de finalización ante poseedor visible y conservación de cobertura de tiro, integrada sobre 0.52. [Mecanismo, pruebas dinámicas y límites](PROTECCION_FINALIZACION_053.md). En 20 parejas sintéticas: 3 reducen goles concedidos, 16 empatan y 1 empeora. A2/A4/A7 y el cierre defensivo siguen abiertos; no se demuestra mejora general. Consultar [ROADMAP.md](../ROADMAP.md) para estado consolidado. Las entradas inferiores se conservan como historial. No se inicia 0.54.
 
 Actualización 0.52: el primer defensor considera líneas que deja libres al presionar e inferioridad local percibida. Evidencia acotada en PRESION_EXPOSICION_052.md. El bloque 1 sigue abierto: protección de finalización y validación con pases ejecutados y rival reactivo; sin mejora defensiva general demostrada.

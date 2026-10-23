@@ -22,7 +22,13 @@ assert(report.rows.some(r=>r.goalDelta===0),'Retain no-improvement cases');
 // Re-execute a favourable autonomous case and an adverse pass/reactive case.
 for(const [t,kind,seed] of [[0,'free',202],[1,'pass',101]]){
  const row=report.rows.find(r=>r.after.defendingTeam===t&&r.after.kind===kind&&r.after.seed===seed);
- assert.deepEqual(simulate(source,t,kind,seed),row.after,'Dynamic candidate report reproducibility');
+ assert.deepEqual(simulate(historical,t,kind,seed),row.after,'Historical candidate report reproducibility');
  assert.deepEqual(simulate(baseline,t,kind,seed),row.before,'Dynamic baseline report reproducibility');
+ const current=simulate(source,t,kind,seed);
+ assert.deepEqual(simulate(source,t,kind,seed),current,'Current engine remains deterministic');
+ assert(current.movedDefenders>0&&current.movedAttackers>0,'Current engine moves both teams');
+ assert.equal(current.seconds,6);
+ assert(Number.isFinite(current.goalsConceded));
+ assert(kind!=='pass'||current.passes>=1,'Prescribed pass is still executed');
 }
-console.log('PASS: historical/baseline hashes and current-engine replay, 20 dynamic pairs, actual movement/shots/passes, mirrored coverage and reproduced favourable/adverse cases');
+console.log('PASS: historical/baseline replay, 20 archived pairs including adverse cases, current deterministic movement and prescribed pass');

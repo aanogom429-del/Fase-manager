@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.60
+
+Sobre 0.59: la elección automática de tiro tiene en cuenta bloqueadores de campo percibidos en la línea central a portería. Si está cerrada, continúa valorando pase/conducción; portero y tiro manual conservan su función. Ver tests/shot_selection.cjs. El informe histórico 0.53 se reproduce ahora sobre su fixture inmutable y el motor actual tiene comprobaciones dinámicas propias. Siguen abiertos siete bloques de cierre, no siete versiones. Publicar en main y comprobar el mismo enlace Pages; 0.53.1 sigue excluida.
+
 ## Estado 0.59
 
 Sobre 0.58: pase automático al espacio para receptores visibles en avance, reutilizando leadPassTarget con filtros de riesgo y espacio percibidos. El mensaje del partido identifica «pasa al espacio». No añade conocimiento oculto, nuevos formatos de guardado ni cambios de arbitraje. Prueba tests/automatic_lead_pass.cjs; instrucciones vigentes de publicar incrementos probados en main y verificar el mismo enlace https://aanogom429-del.github.io/Fase-manager/.

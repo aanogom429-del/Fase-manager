@@ -1,5 +1,11 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.60 — Elegir remate o continuidad
+
+Incremento A3/A4 (F04/D04): antes del tiro automático se comprueba la separación de la línea central a portería respecto a defensores de campo percibidos. Si es <=1.65 unidades, se valoran las alternativas existentes de pase, conducción o exploración. El portero no veta el tiro por ocupar su posición. No cambia el tiro manual, la ejecución ni el arbitraje. No compara aún todos los ángulos de portería, probabilidades de gol ni ventajas completas.
+
+Recuento de cierre actualizado: siguen abiertos los **7 bloques de trabajo** de docs/CIERRE_MOTOR_TACTICO.md; esta entrega avanza selección de soluciones/finalización, pero no cierra esos bloques. No equivalen a siete versiones: falta descomposición y validación suficiente para un número fiable de entregas. Se conserva la prioridad de motor, incrementos comprobables y publicación en main/Pages; no se integra 0.53.1.
+
 ## 0.59 — Pase automático al espacio
 
 Incremento A2/A4/A6: reutiliza el cálculo de encuentro del pase guiado para compañeros observados que avanzan. Solo anticipa con observación actual y destino visible, avance mayor de 0.5, riesgo de línea no superior en más de 0.5 y espacio de recepción no inferior en más de 1. Evalúa después ese destino frente a los otros pases y la conducción. El fuera de juego se valora sobre el receptor al golpeo, no sobre el punto futuro de recepción. Los recuerdos sin observación actual siguen usando la última posición, sin velocidad oculta. No sincroniza todavía rupturas ni garantiza completar el pase; no cierra A. Publicación en main y mismo enlace Pages; investigación 0.53.1 conservada y excluida.

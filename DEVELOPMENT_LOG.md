@@ -1,5 +1,13 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.60 — Selección de remate ante bloqueo percibido
+
+Verificación final: PASS shot_selection.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, finishing_protection.cjs, finishing_dynamic.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s de juego libre). git diff --check sin errores. No hay nueva validación Safari/iPhone ni con tracking reservado.
+
+Contracaso causal frente a 0.59 en ambos equipos y semilla 73: poseedor a altura 80, defensor de campo a 90 en la línea central, apoyo a (80,42). 0.59 remataba; 0.60 descarta ese tiro y valora continuidad. Pruebas: línea abierta, portero como único obstáculo, tiro manual, 32 decisiones con bloqueo, recuerdo de bloqueador oculto y caducidad. Umbral 1.65 provisional; no valora todos los ángulos de tiro ni acredita más goles o mejor juego general.
+
+Incidencia de prueba histórica: finishing_dynamic.cjs exigía al motor actual reproducir el informe 0.53. También difiere 0.59 (caso libre 0/202: 1 tiro, 2 pases, 1 pérdida frente a 2/4/5 históricos). Se conserva el informe intacto, se reproduce con engine-v053.html y se añaden repeticiones deterministas y movimiento real para el motor actual. No se regeneran datos históricos para hacer pasar la prueba.
+
 ## 0.59 — Pase automático al espacio
 
 Verificación final: PASS automatic_lead_pass.cjs, lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, perceptual_memory.cjs, anticipation_first_touch.cjs, reception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s de juego libre). git diff --check sin errores.

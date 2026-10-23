@@ -1,5 +1,24 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 23-10-2026 — Prioridad vigente: entregas acotadas y guardado de decisiones
+
+Por instrucción del usuario se cierra la ronda abierta de investigación: **0.53.1 queda aparcada, no aceptada para main**. No se exige resolverla para avanzar en tareas independientes. Las prioridades históricas de continuar indefinidamente 0.53.1 quedan sustituidas por esta decisión; A4/A7 siguen abiertos.
+
+Recuperación verificada: `main@82c6c02`, remoto de investigación `5ecf9ed` y local `5d610b1`. Se reúnen las dos líneas en `d172bd5` (rama `codex/fase-manager-0.53.1-preserved`), conservando ambos informes, pruebas y datos. Los cambios pendientes de otras carpetas no se tocan. La mejora independiente parte deliberadamente de la 0.53 estable en `codex/fase-manager-decision-storage`; no incorpora la política defensiva rechazada ni borra su investigación.
+
+Entrega: tres espacios locales para guardar una decisión pausada del modo guiado y recuperarla tras cerrar/abrir la aplicación. Conserva posiciones, memoria perceptiva, órdenes, marcador, reloj, disciplina, selección técnica y semilla; se recupera pausada. Se bloquea guardar durante ejecución, balón libre, reanudaciones y modo libre. Se informa de espacios vacíos, datos incompatibles/dañados y almacenamiento bloqueado/lleno. No hay sincronización entre dispositivos, importación externa, autoguardado ni partidas completas en vuelo.
+
+Es un adelanto acotado de persistencia de B autorizado al desbloquear tareas independientes; no declara terminada A ni el videojuego comercial. Motor táctico sin cambios respecto a 0.53. El siguiente incremento debe elegir un requisito independiente y terminar en una función comprobable, con regresiones pertinentes; no reiniciar una investigación defensiva abierta sin un objetivo acotado.
+## Verificación final — 23-10-2026
+
+52 entradas distintas verificadas sin fallos pendientes, de forma incremental: primera ejecución completa 50/51 PASS; `finishing_dynamic.cjs` falló por comparar el hash del HTML nuevo con un informe histórico. Se conserva el HTML exacto de 0.53 en fixture, se mantiene la comparación del motor actual con los desenlaces históricos y se reejecuta esa prueba: PASS. Se añade `decision_storage_edges.cjs`: PASS. No se presenta como una sola ejecución de 52. Resultados y fallo inicial conservados en `data/decision-storage-verification.json`.
+
+La prueba de guardado reproduce seis trayectorias/resultados entre contextos nuevos (dos equipos y tres decisiones), restaura para comparar, comprueba tres espacios, almacenamiento bloqueado/lleno y datos vacíos/incompatibles/corruptos. Otra prueba comprueba ventaja pendiente con identidad compartida de falta, orden sin balón y recuperación sobre un vuelo existente. Pruebas Node VM con DOM simulado; no se ha verificado visualmente Chromium/Safari/iPhone: no había navegador instalado y la descarga de Chromium falló.
+
+Publicación pendiente: la revisión automática rechazó el push de la rama de investigación preservada porque no consideró explícita la autorización de ese destino/rama. No se reintentó por otra vía. Los commits quedan locales; main no se modifica.
+
+
+
 ## 20-10-2026 — Auditoría táctica de 0.53 (solo documentación)
 
 Referencia de motor: `d440066319ad18c5ebbe6cbd0ebe0e7bdc62488b`, comprobada en `main`. Informe: [AUDITORIA_TACTICA_053.md](docs/AUDITORIA_TACTICA_053.md). No se modifica el motor, el evaluador ni las pruebas; no se implementa 0.54.

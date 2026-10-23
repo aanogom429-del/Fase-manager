@@ -1,0 +1,379 @@
+{
+  "date": "2026-10-23",
+  "base": "82c6c02",
+  "engineSha256": "69952bce3a908398389067465472019bfb40fbeb9a8daff32b166c81b7200cca",
+  "initialRun": [
+    {
+      "test": "acceleration.cjs",
+      "exit": 0,
+      "seconds": 0.14,
+      "output": "PASS: progressive acceleration, bounded speed, reversal braking, target settling, mirror, substeps, differential acceleration, ETA and restore\n",
+      "currentTestSha256": "7f6d175ec5731f7c206ec40874cef1a238f9b9b4d7c4729d9d2b54e70504fd03"
+    },
+    {
+      "test": "advantage.cjs",
+      "exit": 0,
+      "seconds": 0.55,
+      "output": "PASS: mirrored advantage, no benefit/expiry, original location, clock, possession loss, boundary, goal, shot opportunity, offside priority, second foul, pause, modes, retry and reset\n",
+      "currentTestSha256": "343b24da21ebe04b9a0ee3f8387548f7ce3ba344be2e05c7c76779bff45e929d"
+    },
+    {
+      "test": "aerial_play.cjs",
+      "exit": 0,
+      "seconds": 1.9,
+      "output": "PASS: real-flight mirrored headers, aerial height limits, header offside, clearances, long goalkeeper distribution and mixed goal kicks\n",
+      "currentTestSha256": "3c35aa182f8c68e979a406803206511eb54fe9775089af6b8edd227d3c9715e0"
+    },
+    {
+      "test": "anticipation_first_touch.cjs",
+      "exit": 0,
+      "seconds": 0.44,
+      "output": "PASS: velocity-aware arrival, reachable interception, mirrored geometry, explicit first-touch wall, fallback, normal pass error and motion-state restore\n",
+      "currentTestSha256": "502dca7251ae0d12eb1b5bb1223a0a845dbc3959a3707b1b5fb946376e9fdff5"
+    },
+    {
+      "test": "attack_interactions.cjs",
+      "exit": 0,
+      "seconds": 37.98,
+      "output": "PASS: exact factorial reproduction, unchanged baseline, narrow diagnostic-only interventions, viewer and exclusions\n",
+      "currentTestSha256": "8800ed93be0c7c59d054a2be0a2983f4f700ddde1ed647366a37c88edd44a962"
+    },
+    {
+      "test": "attack_origin.cjs",
+      "exit": 0,
+      "seconds": 0.44,
+      "output": "PASS: attacking origins for both teams, mode invariance, same-team reception, turnover, restart, retry and reset\n",
+      "currentTestSha256": "15e964c6575df4fa69cad461490e4059f6afca6460d472b6013a86f6dfa0d4da"
+    },
+    {
+      "test": "attacking_heights.cjs",
+      "exit": 0,
+      "seconds": 0.21,
+      "output": "PASS: mirrored progression heights, two balance players, order independence, expulsion, speed limits and retry\n",
+      "currentTestSha256": "3f613b12cad8850064962a75fff1d8e8ab8465aa6efaf0a58166e6cd0c9c39d2"
+    },
+    {
+      "test": "audit_continuity.cjs",
+      "exit": 0,
+      "seconds": 2.39,
+      "output": "PASS: speed continuity after both-team throws/corners/penalties, individual/all cancellations and repeated retry\n",
+      "currentTestSha256": "65aaabc035ffd3ff73b93a68b09bbc95df1944e0d4f39ca32d4332cc730487c7"
+    },
+    {
+      "test": "audit_windows.cjs",
+      "exit": 0,
+      "seconds": 1.38,
+      "output": "PASS: fixed non-overlapping complete audit windows, reproducible comparison and viewer\n",
+      "currentTestSha256": "361fca36a4ba7ff49b585e18c7032aa902fa3a572484e23a70560a51470ddd2d"
+    },
+    {
+      "test": "contextual_defense.cjs",
+      "exit": 0,
+      "seconds": 0.15,
+      "output": "PASS: mirrored pressure/help, delay, reachable perceived lane, hidden movement, expiry and unreachable countercase\n",
+      "currentTestSha256": "9d5901ea9b8a5fdc8d38dffd743e6eb5274ff04f6a0e4e5c64fa2ce77a719558"
+    },
+    {
+      "test": "contextual_supports.cjs",
+      "exit": 0,
+      "seconds": 31.21,
+      "output": "PASS: contextual supports, mirrored causal regression, blocked/marked countercases, orders, reception, loss, continuity and 3 \u00d7 60 s free play [{\"team\":0,\"beforeForwardTarget\":42,\"afterForwardTarget\":56,\"safetyTarget\":42},{\"team\":1,\"beforeForwardTarget\":42,\"afterForwardTarget\":56,\"safetyTarget\":42}]\n",
+      "currentTestSha256": "f0401ca50413bb1f77da7ad3d2b8a115dbb5128946e02c27e87bd09651b75185"
+    },
+    {
+      "test": "contextual_width.cjs",
+      "exit": 0,
+      "seconds": 0.16,
+      "output": "PASS: early/long width, occupied side, side exchange, restore and possession reset for both teams\n",
+      "currentTestSha256": "bdc2d774f93d5bea63091bf90aecb6de97d3f8a0703375dfcef9e040684600ad"
+    },
+    {
+      "test": "continuity.cjs",
+      "exit": 0,
+      "seconds": 16.39,
+      "output": "Execution dispersion: {\"low\":0.10047300259181295,\"high\":0.4910159030317507,\"long\":0.2266484011954851}\nPASS: possession for both teams, frozen flight, loose ball, clock/score, pause, retry, both mode directions, reference isolation/playback, explicit restart\n",
+      "currentTestSha256": "8eafb147bb98637e5f4f5dcf37f6992153a8bb41f21053a8621c2599405f0af8"
+    },
+    {
+      "test": "decision_storage.cjs",
+      "exit": 0,
+      "seconds": 56.27,
+      "output": "PASS: 6 cross-session trajectories, retry, 3 slots, corrupt/empty/incompatible data, unavailable storage, no saving in free mode\n",
+      "currentTestSha256": "f31cd43c68929a6e122808e9b47213f6c6e38b5b9b70b58e5900c59d386289c7"
+    },
+    {
+      "test": "defense.cjs",
+      "exit": 0,
+      "seconds": 0.11,
+      "output": "PASS: mirrored defense, missing data, passive observation, game-time sampling, loss identity, reset and event-aligned UI\n[{\"id\":\"transition-blue\",\"team\":0,\"anchor\":288.12,\"measurements\":[{\"at\":0,\"frame\":7203,\"nearest\":4,\"distance\":2.764991989654142,\"covers\":[],\"goalSide\":5,\"depth\":35.423849999999995},{\"at\":2,\"frame\":7253,\"nearest\":4,\"distance\":1.8469887053936107,\"covers\":[],\"goalSide\":5,\"depth\":31.952550000000002},{\"at\":5,\"frame\":7328,\"nearest\":4,\"distance\":3.644338496901734,\"covers\":[],\"goalSide\":6,\"depth\":29.794800000000002}]},{\"id\":\"transition-red\",\"team\":1,\"anchor\":374.16,\"measurements\":[{\"at\":0,\"frame\":9354,\"nearest\":19,\"distance\":2.7264954848497833,\"covers\":[20],\"goalSide\":6,\"depth\":34.314},{\"at\":2,\"frame\":9404,\"nearest\":20,\"distance\":3.1927538117587457,\"covers\":[],\"goalSide\":4,\"depth\":35.874300000000005},{\"at\":5,\"frame\":9479,\"nearest\":16,\"distance\":7.3065896330919164,\"covers\":[],\"goalSide\":1,\"depth\":43.34925}]},{\"id\":\"transition-check\",\"team\":0,\"anchor\":215.4,\"measurements\":[{\"at\":0,\"frame\":5385,\"nearest\":9,\"distance\":1.611669839902567,\"covers\":[],\"goalSide\":10,\"depth\":32.383050000000004},{\"at\":2,\"frame\":5435,\"nearest\":6,\"distance\":1.253952440426496,\"covers\":[],\"goalSide\":8,\"depth\":32.1111},{\"at\":5,\"frame\":5510,\"nearest\":8,\"distance\":2.5730445291339676,\"covers\":[3,4],\"goalSide\":4,\"depth\":36.9789}]},{\"id\":\"transition-roles-check\",\"team\":0,\"anchor\":300.76,\"measurements\":[{\"at\":0,\"frame\":7519,\"nearest\":8,\"distance\":4.229829850467539,\"covers\":[3,4,6,7],\"goalSide\":8,\"depth\":25.2063},{\"at\":2,\"frame\":7569,\"nearest\":8,\"distance\":10.111153306250479,\"covers\":[4,7],\"goalSide\":8,\"depth\":21.95025},{\"at\":5,\"frame\":7644,\"nearest\":10,\"distance\":5.9447574897052124,\"covers\":[7],\"goalSide\":8,\"depth\":23.134649999999997}]}]\n",
+      "currentTestSha256": "48cda1ecd7293c96cd1ca11584cb704e59c5469245a846bab66639a1e2ad21cc"
+    },
+    {
+      "test": "defense_origin.cjs",
+      "exit": 0,
+      "seconds": 0.16,
+      "output": "PASS: loss-relative displacement, formation independence, possession renewal, retry and restart\n",
+      "currentTestSha256": "18205f806bee1258e1b393c9d48cc6f532e98b9830106860bec7d6e270fa5a04"
+    },
+    {
+      "test": "defense_replay.cjs",
+      "exit": 0,
+      "seconds": 1.78,
+      "output": "PASS: deterministic replay, exact initial state, symmetric directions, missing-data rejection, overlay, baseline disclosure, game isolation\n",
+      "currentTestSha256": "e12c480de9a54e064dcec7ffae456d122c2e1bd8dca984e1421520265ea90f0e"
+    },
+    {
+      "test": "defensive_coordination.cjs",
+      "exit": 0,
+      "seconds": 0.12,
+      "output": "PASS: mirrored threat-aware assignment, ordered players, slow/unassigned help and no-free-cover case\n",
+      "currentTestSha256": "c00d99309d9fc695572c41b799f7b1a11879fb9e29d6f7bd368b98b4bcc856fb"
+    },
+    {
+      "test": "defensive_roles.cjs",
+      "exit": 0,
+      "seconds": 0.19,
+      "output": "PASS: stable handovers, clear advantage, distinct cover, keeper exclusion, speed-aware arrival, possession renewal and retry\n",
+      "currentTestSha256": "86465f115790a8dc5e8e8a8acd3023ef4a5f08740bd9f0a44db7ee154f4f187e"
+    },
+    {
+      "test": "destination_trace.cjs",
+      "exit": 0,
+      "seconds": 7.87,
+      "output": "PASS: passive destination tracing, progression/circulation/loss both directions, cached reads, bounds, reset and reception priority [{\"team\":0,\"phase\":\"progresi\u00f3n\",\"backwardPlayers\":[7,6],\"cachedReads\":19},{\"team\":0,\"phase\":\"circulaci\u00f3n\",\"backwardPlayers\":[2,4,5,8,9,6],\"cachedReads\":19},{\"team\":0,\"phase\":\"p\u00e9rdida\",\"backwardPlayers\":[2,4,5,6,8,9,11]},{\"team\":1,\"phase\":\"progresi\u00f3n\",\"backwardPlayers\":[7,6],\"cachedReads\":19},{\"team\":1,\"phase\":\"circulaci\u00f3n\",\"backwardPlayers\":[2,4,5,8,9,6],\"cachedReads\":19},{\"team\":1,\"phase\":\"p\u00e9rdida\",\"backwardPlayers\":[2,4,5,6,8,9,11]}]\n",
+      "currentTestSha256": "aebbba7f6d33b0e39768d659d35f4aa4b6e3173ccd5c1ff8ffeaf4b2c240d9aa"
+    },
+    {
+      "test": "discipline.cjs",
+      "exit": 0,
+      "seconds": 0.46,
+      "output": "PASS: tactical yellow/red, penalty reduction, second yellow, no card for location alone, SPA advantage/recall, active-player exclusion, movement, restarts, rendering, pause, retry, seven-player threshold and reset\n",
+      "currentTestSha256": "6a150f01be89ece2977bdfe1517eb28cc7902aaebf9dc3d566ef555df1af6d67"
+    },
+    {
+      "test": "finishing_dynamic.cjs",
+      "exit": 1,
+      "seconds": 0.06,
+      "output": "node:assert:152\n  throw new AssertionError(obj);\n  ^\n\nAssertionError [ERR_ASSERTION]: Report must identify the tested candidate\n+ actual - expected\n\n+ '3df7034dfafb05ecd642b2ea0601b7f27224fdcdd66fee3ce1e94101c264f331'\n- '69952bce3a908398389067465472019bfb40fbeb9a8daff32b166c81b7200cca'\n\n    at Object.<anonymous> (/workspace/scratch/e2ff76f1d5d7/storage-regression/tests/finishing_dynamic.cjs:5:8)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: '3df7034dfafb05ecd642b2ea0601b7f27224fdcdd66fee3ce1e94101c264f331',\n  expected: '69952bce3a908398389067465472019bfb40fbeb9a8daff32b166c81b7200cca',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n",
+      "currentTestSha256": "a3cc69f8a352f3026b46b58b287f110a6a4427babc90d679b38962fb739d2673"
+    },
+    {
+      "test": "finishing_protection.cjs",
+      "exit": 0,
+      "seconds": 0.16,
+      "output": "PASS: mirrored finishing protection/cover, safe pressure, help/velocity/orders, hidden state, orientation, immediate access and danger limits\n",
+      "currentTestSha256": "2e52eaac7f3bc35964a06bdd316685c6900f221ad5df8a0ff4ba24c2cfeff5c6"
+    },
+    {
+      "test": "fouls.cjs",
+      "exit": 0,
+      "seconds": 2.6,
+      "output": "PASS: legal tackle, missed attempt, contact foul, both teams, area lines, direct free kick, penalty setup, second touch, direct goal, pause, retry and real update/guided continuation\n",
+      "currentTestSha256": "f5a67e3972f1fe94997d4613b4f9a555a561668c1f3b1481575284e355243f79"
+    },
+    {
+      "test": "game2.cjs",
+      "exit": 0,
+      "seconds": 1.92,
+      "output": "PASS: reproducible second-match contrast, stable identities, missing-data rejection, UI disclosure and game isolation\n",
+      "currentTestSha256": "e73cf2de2ec8e717afa4c6b4a434d68abbbf8d7b444760f0e6c33abc928a549f"
+    },
+    {
+      "test": "heights_report.cjs",
+      "exit": 0,
+      "seconds": 0.1,
+      "output": "PASS: mixed height results visible including regression; defensive contrast unchanged\n",
+      "currentTestSha256": "7a25d458cb07b2b6d8c9cf34aafbf5e047a926a971f5e8f13a297e11af22dddb"
+    },
+    {
+      "test": "individual_capabilities.cjs",
+      "exit": 0,
+      "seconds": 0.15,
+      "output": "PASS: explicit symmetric profiles, isolated turn/braking effects, individual teammate/rival expiry and confidence, snapshot restoration\n",
+      "currentTestSha256": "67dd4c116ec3d0c70eed4546d23e1d593240fb8df54a386f7f55b5eba6783250"
+    },
+    {
+      "test": "laws.cjs",
+      "exit": 0,
+      "seconds": 3.6,
+      "output": "PASS: full-ball crossing, first exit, mirrored restarts/goals, width/height, direct-goal exceptions, second touch, pause and guided continuation\n",
+      "currentTestSha256": "7ee96f736d6a1a7901f089e0665b37cab9b97a62a15037193b0e952d2609818d"
+    },
+    {
+      "test": "lead_pass.cjs",
+      "exit": 0,
+      "seconds": 0.15,
+      "output": "PASS: analytical forward/lateral meeting, backward motion, stationary fallback, mirror, bounds, horizon, guided execution, retry and offside\n",
+      "currentTestSha256": "79d12d5dc72f918690f4b0c09080e857959beeffb03c1fd4bba10d709cceba5a"
+    },
+    {
+      "test": "offball.cjs",
+      "exit": 0,
+      "seconds": 1.11,
+      "output": "PASS: off-ball lifecycle, bounded movement, coordination, blocked line adaptation, balance, held positions and deterministic replay\n",
+      "currentTestSha256": "9831bd076d5cf342ce31efd26cd37c3fe59a5e83c5bbcead53c7fde92e68b71a"
+    },
+    {
+      "test": "offside.cjs",
+      "exit": 0,
+      "seconds": 0.73,
+      "output": "PASS: both directions, level/own half/behind ball, second-last opponent, passive position, frozen kick snapshot, return to own half, late run, exemptions, controlled interception, real contact, reset, retry and free-kick distances\n",
+      "currentTestSha256": "ab5851409bf50cd870c7fd3a6f1f556c9ea8285745fbd44e43a759cddb36dc62"
+    },
+    {
+      "test": "offside_reference.cjs",
+      "exit": 0,
+      "seconds": 0.11,
+      "output": "{\"passes\":28,\"complete\":26,\"withAheadCentres\":7}\nPASS: observed pass geometry, missing data and reference isolation\n",
+      "currentTestSha256": "d069e8d805af39ec0cbd1f07e22a8cc15cf8eca4b4bbe761c56a59c2d72136a8"
+    },
+    {
+      "test": "opponent_perception.cjs",
+      "exit": 0,
+      "seconds": 0.2,
+      "output": "PASS: mirrored rival memory, growing uncertainty, hidden-position independence, expiry, renewal, estimated offside, pause, snapshot and reset\n",
+      "currentTestSha256": "ffd46c2731d68bcbf8eee2074dc90b185b0a9c99e8460ddd98acb7bf8322a2a0"
+    },
+    {
+      "test": "orientation.cjs",
+      "exit": 0,
+      "seconds": 31.11,
+      "output": "PASS: facing-dependent options, bounded search turn, mirrored perception, reception, pause/retry, marker and three 60 s free simulations\n",
+      "currentTestSha256": "4eb43833bb58dcd09f07868ac75268aecc2acdff18768e746599c32fbacd6932"
+    },
+    {
+      "test": "owner_holdout.cjs",
+      "exit": 0,
+      "seconds": 5.32,
+      "output": "PASS: owner-aware activation, mirrored geometry, identity order, corrupt-data rejection, new windows and exact report reproduction\nPASS: owner-aware report visible with limits\n",
+      "currentTestSha256": "13f7696c5e2d775be4f57bfb97cb0ff52625ab7684069e2b040e5cfbf781967d"
+    },
+    {
+      "test": "perceptual_memory.cjs",
+      "exit": 0,
+      "seconds": 0.27,
+      "output": "PASS: mirrored last-seen passing, expiry, refresh, unavailable target, no invented observation, pause, independent retry and restart reset\n",
+      "currentTestSha256": "2ae5cd4c083388aaf576fc313fcde60343816dfd4d3f01c01a83fd345c9f2735"
+    },
+    {
+      "test": "player_roles.cjs",
+      "exit": 0,
+      "seconds": 14.51,
+      "output": "PASS: roles, keeper, movement, precision, order delay and restarts independent of shirt numbers; role changes and retry\n",
+      "currentTestSha256": "a6381b03346daac55a713c9d9acd06444dcc0f4b9cfd221364c3600ecfe682e1"
+    },
+    {
+      "test": "pressure_exposure.cjs",
+      "exit": 0,
+      "seconds": 0.1,
+      "output": "PASS: mirrored press exposure, line-preserving delay, replacement/orders/expiry, local inferiority and immediate access\n",
+      "currentTestSha256": "72c924d2787118d3b7f850308a2580f63e570fd8ef4510f8ee46b00bb86426e7"
+    },
+    {
+      "test": "reception.cjs",
+      "exit": 0,
+      "seconds": 0.7,
+      "output": "PASS: mirrored reception cost, waiting actions, movement/turning, pause, retry, cancellation, wall return and aerial exclusion\n",
+      "currentTestSha256": "9f4235c4b63fb09640be044118743fc0556ac15d4625f49febc5b6ada1976708"
+    },
+    {
+      "test": "relational_width.cjs",
+      "exit": 0,
+      "seconds": 0.15,
+      "output": "PASS: controlled width intervention removes large central-to-wide role jump in both attack directions\n",
+      "currentTestSha256": "40d390b683717ef7473af61f2faad2846c16a89d3fb18c2b9e1ec2d035975dac"
+    },
+    {
+      "test": "simultaneous_threats.cjs",
+      "exit": 0,
+      "seconds": 0.13,
+      "output": "PASS: mirrored competing lines, baseline counterexample, replacement, busy/presser exclusion and expired threat\n",
+      "currentTestSha256": "fbff0e6ab2b0dac7e5286a8a87d9abeab2f08426ee3a55585bfc4ef0901030fc"
+    },
+    {
+      "test": "support_assignment_perception.cjs",
+      "exit": 0,
+      "seconds": 0.09,
+      "output": "PASS: mirrored perception-driven assignment, hidden-rival independence, expiry, replacement and uncertainty\n",
+      "currentTestSha256": "f77719437bd97227ae5909964084d3ca8f2cdd6dd69b23e212d0ff5aac3bda24"
+    },
+    {
+      "test": "support_destination_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 9.05,
+      "output": "PASS: paired initial-velocity diagnostic, finite per-player measures, preserved 0.47 baseline and reproducibility\n",
+      "currentTestSha256": "902815e5e9196c429ac175b915b31d01364770d286d120ca9d679068d457ea47"
+    },
+    {
+      "test": "support_diagnosis.cjs",
+      "exit": 0,
+      "seconds": 12.59,
+      "output": "PASS: reproducible support diagnosis, additive individual error contributions, honest intervention label and clip-specific UI\n",
+      "currentTestSha256": "781534803a689585955d95e4cadc5706e346e93356b0149f4ad1f960dc45fe1e"
+    },
+    {
+      "test": "support_holdout.cjs",
+      "exit": 0,
+      "seconds": 9.56,
+      "output": "PASS: frozen non-overlapping windows, exact baseline, reproducible mixed outcomes and retained exclusion\nPASS: holdout viewer, exclusion and individual regression explanation\n",
+      "currentTestSha256": "e744ac6f825e74f7745e2c7fd79da8b61f75e8c0840223edb9c065551aac9189"
+    },
+    {
+      "test": "support_perception.cjs",
+      "exit": 0,
+      "seconds": 0.12,
+      "output": "PASS: mirrored support adjustment from observed/remembered opposition, hidden-position independence and expiry\n",
+      "currentTestSha256": "c711acedeca95a2eb24974f57a139273d133980efd6c6d88335cb708157633e3"
+    },
+    {
+      "test": "support_persistence.cjs",
+      "exit": 0,
+      "seconds": 0.27,
+      "output": "PASS: support persistence, strict utility margin, replacement, invalid participants, mode continuity, retry, loss and restart\n",
+      "currentTestSha256": "e89a6fcedd9d7a5a6ef8a4903b304d3016822bbeb0524b70ac854ec42616f1f6"
+    },
+    {
+      "test": "support_stability.cjs",
+      "exit": 0,
+      "seconds": 9.49,
+      "output": "PASS: reproducible support stability, applied changes, mixed outcomes and unchanged defensive contrasts\n",
+      "currentTestSha256": "b8b7fcbca0b00a6c98a96ebc2a28c889a32140422fe5e6d2a360e56045a92d63"
+    },
+    {
+      "test": "tactical_utility.cjs",
+      "exit": 0,
+      "seconds": 0.06,
+      "output": "PASS: open/blocked line, keeper exclusion and mirrored balance metrics\n",
+      "currentTestSha256": "de1c56f9c70f8bbe0bdfc62bc9700ff552e18dc960a6f3512d0b2b7713c1005c"
+    },
+    {
+      "test": "tracking.py",
+      "exit": 0,
+      "seconds": 0.07,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.011s\n\nOK\n",
+      "currentTestSha256": "c67ee1c785764f6698298cfa939ee2fcf8bf3db0f7ecd5c32a6a254c041a7b62"
+    },
+    {
+      "test": "turn_movement.cjs",
+      "exit": 0,
+      "seconds": 0.16,
+      "output": "PASS: angular speed cost, lateral/backward mobility, exact integrated turn, step invariance, mirror, arrival consistency, bounds and movement/retry\n",
+      "currentTestSha256": "e772944b371ca17a0cd68a05db5d07f58c1c8bf1f2b091315b02c1306c186c02"
+    }
+  ],
+  "incrementalRechecks": [
+    {
+      "test": "finishing_dynamic.cjs",
+      "exit": 0,
+      "output": "PASS: historical/baseline hashes and current-engine replay, 20 dynamic pairs, actual movement/shots/passes, mirrored coverage and reproduced favourable/adverse cases\n",
+      "reason": "Archive exact historical HTML for report hash; keep live source for dynamic replay assertions."
+    },
+    {
+      "test": "decision_storage_edges.cjs",
+      "exit": 0,
+      "output": "PASS: pending advantage identity, off-ball order, load over flight, malformed state leaves play untouched"
+    }
+  ],
+  "finalDistinctEntriesPassing": 52,
+  "browser": "Not run: Chromium not installed; download failed. Node VM tests are not Safari/iPhone verification."
+}

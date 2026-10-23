@@ -1,5 +1,20 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## Corrección: prioridad simulación
+
+El usuario no considera prioritario guardar decisiones. Se priorizan simulación y motor táctico; guardado plegado como herramienta opcional. El botón superior estaba desactivado en choose/review guiados: ahora Simular partido entra en modo libre desde la posición actual; después pausa/reanuda. Se conserva la parada reglamentaria. PASS simulation_entry.cjs y continuity.cjs. Publicación GitHub de 0.55 bloqueada por revisión automática; código local conservado.
+
+Verificación 0.55: PASS `decision_comparison.cjs`, `continuity.cjs`, `decision_portable.cjs` y `decision_storage_edges.cjs`. Prueba visual en Chrome: registro de resultado, conservación al comparar y corrección de superposición de guardados con controles. Se restringe el selector de cuadrícula al panel de decisiones; el panel de guardados ocupa su propia fila. Safari/iPhone no comprobados. `git diff --check` sin errores.
+
+## 23-10-2026 — 0.55: comparación de decisiones
+
+Incremento de estadísticas y experiencia del entrenador (B) sobre 0.54. La tabla conserva los últimos ocho intentos terminados desde una misma situación: intención, órdenes sin balón, duración simulada, posesión final, desplazamiento longitudinal del balón, tiros totales de ambos equipos y goles azul/rojo. «Comparar otra decisión» conserva la tabla y restaura el punto de partida. Continuar, reiniciar, cambiar de modo o recuperar un guardado limpia la comparación. Importar un archivo solo escribe un espacio: no limpia la comparación hasta recuperarlo.
+
+Los intentos pueden terminar tras duraciones distintas. Avance positivo significa hacia portería roja; no equivale a una puntuación táctica ni a un ranking. Los resultados no se guardan ni exportan; los guardados 0.54 siguen siendo compatibles. Motor táctico sin modificaciones; A2/A4/A7 siguen abiertos y 0.53.1 permanece aparcada.
+
+Publicación de prueba: se actualiza el Site existente, conservando su URL y acceso privado. La URL contiene 054 por continuidad, pero el encabezado muestra la versión vigente. GitHub: rama `codex/fase-manager-0.55`, sin modificar main.
+
+
 ## 23-10-2026 — Entrega 0.54: exportar y cargar decisiones
 
 Base: `63e5d82`, rama de entrega `codex/fase-manager-0.54`. Añade descarga JSON y carga asíncrona al espacio seleccionado, con compatibilidad con guardados 0.53, límites de tamaño y rechazo de marcado HTML en datos. No modifica políticas tácticas ni integra 0.53.1. Actualiza versión visible, contexto y hoja de ruta.

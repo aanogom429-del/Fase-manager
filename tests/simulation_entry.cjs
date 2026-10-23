@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+const {env,signature}=require('./continuity.cjs');
+const e=env();assert.equal(e.nodes.pause.disabled,false);assert.match(e.nodes.pause.textContent,/Simular partido/);
+const before=signature(e);e.nodes.pause.onclick();assert.equal(signature(e),before);assert.equal(e.t.get().stage,'free');assert.equal(e.t.get().running,true);
+for(let i=0;i<120;i++)e.tick();assert(e.t.get().elapsed>0);assert.notEqual(signature(e),before);
+e.nodes.pause.onclick();const frozen=signature(e);for(let i=0;i<60;i++)e.tick();assert.equal(signature(e),frozen);
+e.nodes.pause.onclick();assert(e.t.get().running);e.nodes.mode.onclick();assert.equal(e.t.get().running,false);
+e.t.startSituation();e.t.playChoice('support');for(let i=0;i<4000&&['resolve','settle'].includes(e.t.get().stage);i++)e.tick();assert.equal(e.t.get().stage,'review');assert.equal(e.nodes.pause.disabled,false);
+e.nodes.pause.onclick();assert.equal(e.t.get().stage,'free');assert(e.t.get().running);
+console.log('PASS: simulation from initial/review screen, clock and motion, pause/resume, return to guided mode');

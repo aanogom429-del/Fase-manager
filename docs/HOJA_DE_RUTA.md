@@ -1,3 +1,7 @@
+# Actualización 0.55
+
+Comparación de resultados de decisiones desde el mismo punto de partida. Estado vigente en [ROADMAP.md](../ROADMAP.md).
+
 # Actualización 0.54
 
 Exportar y cargar situaciones de entrenamiento, sobre el guardado local existente. Estado y límites vigentes en [ROADMAP.md](../ROADMAP.md). Las entradas siguientes son históricas.

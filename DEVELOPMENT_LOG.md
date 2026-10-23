@@ -1,5 +1,12 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 23-10-2026 — Entrega 0.54: exportar y cargar decisiones
+
+Base: `63e5d82`, rama de entrega `codex/fase-manager-0.54`. Añade descarga JSON y carga asíncrona al espacio seleccionado, con compatibilidad con guardados 0.53, límites de tamaño y rechazo de marcado HTML en datos. No modifica políticas tácticas ni integra 0.53.1. Actualiza versión visible, contexto y hoja de ruta.
+
+Verificación en Node v24.19.0: PASS `tests/decision_portable.cjs`, `tests/decision_storage.cjs`, `tests/decision_storage_edges.cjs`, `tests/continuity.cjs`; `git diff --check` sin errores. Se verifican tres alternativas reproducibles tras exportar/importar, seis trayectorias entre sesiones del guardado anterior, órdenes/ventaja pendientes, datos dañados/incompatibles, marcado malicioso con checksum recalculado, archivo grande, almacenamiento bloqueado y cambio del selector durante lectura. No se ha repetido toda la batería táctica: sus políticas no cambian. Descarga real, selector y presentación en Safari/iPhone pendientes; las API de descarga están simuladas en las pruebas.
+
+
 ## 23-10-2026 — Prioridad vigente: entregas acotadas y guardado de decisiones
 
 Por instrucción del usuario se cierra la ronda abierta de investigación: **0.53.1 queda aparcada, no aceptada para main**. No se exige resolverla para avanzar en tareas independientes. Las prioridades históricas de continuar indefinidamente 0.53.1 quedan sustituidas por esta decisión; A4/A7 siguen abiertos.

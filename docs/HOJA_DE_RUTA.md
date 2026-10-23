@@ -1,3 +1,7 @@
+# Actualización 0.54
+
+Exportar y cargar situaciones de entrenamiento, sobre el guardado local existente. Estado y límites vigentes en [ROADMAP.md](../ROADMAP.md). Las entradas siguientes son históricas.
+
 # Plan vigente tras auditoría · 19 de octubre de 2026
 
 Actualización vigente 0.53 (20-10-2026): protección de finalización ante poseedor visible y conservación de cobertura de tiro, integrada sobre 0.52. [Mecanismo, pruebas dinámicas y límites](PROTECCION_FINALIZACION_053.md). En 20 parejas sintéticas: 3 reducen goles concedidos, 16 empatan y 1 empeora. A2/A4/A7 y el cierre defensivo siguen abiertos; no se demuestra mejora general. Consultar [ROADMAP.md](../ROADMAP.md) para estado consolidado. Las entradas inferiores se conservan como historial. No se inicia 0.54.

@@ -1,5 +1,11 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.56 — Desmarque de apoyo con cambio de altura
+
+Incremento A1/A2: si la mejor alternativa lateral sigue tapada por oposición percibida, el apoyo puede retrasar su destino 4 u 8 unidades, con desplazamiento lateral opcional. Solo acepta una alternativa con menor riesgo percibido y una mejora suficiente de espacio, separación y coste de movimiento. Conserva el límite previo de fuera de juego; no consulta posiciones rivales ocultas. El inspector identifica el cambio de altura.
+
+Evidencia acotada a escenarios sintéticos y regresiones; no demuestra mejora táctica general. 0.53.1 sigue aparcada. Se priorizan simulación y comportamiento táctico; el guardado sigue siendo opcional. GitHub es destino autorizado del código; main permanece intacta.
+
 ## Corrección: prioridad simulación
 
 El usuario no considera prioritario guardar decisiones. Se priorizan simulación y motor táctico; guardado plegado como herramienta opcional. El botón superior estaba desactivado en choose/review guiados: ahora Simular partido entra en modo libre desde la posición actual; después pausa/reanuda. Se conserva la parada reglamentaria. PASS simulation_entry.cjs y continuity.cjs. Publicación GitHub de 0.55 bloqueada por revisión automática; código local conservado.

@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.56 — Apoyo ante línea tapada
+
+PASS support_escape.cjs: caso espejo en ambos equipos, riesgo percibido 10.125 → 0 en el destino, movimiento sin teletransporte, independencia de rival oculto y contracasos de línea abierta/memoria vacía. Este índice no es una probabilidad de éxito ni evidencia de superioridad general.
+
+PASS contextual_supports.cjs (incluye 3 × 60 s de juego libre), simulation_entry.cjs y continuity.cjs al cerrar la entrega. También pasaron support_perception.cjs, support_assignment_perception.cjs, support_persistence.cjs, offball.cjs y offside.cjs durante implementación. Sin validación nueva con tracking real ni Safari/iPhone. Publicación GitHub expresamente autorizada; 0.55 remota 197b206, árbol idéntico a local 591e79d.
+
 ## Corrección: prioridad simulación
 
 El usuario no considera prioritario guardar decisiones. Se priorizan simulación y motor táctico; guardado plegado como herramienta opcional. El botón superior estaba desactivado en choose/review guiados: ahora Simular partido entra en modo libre desde la posición actual; después pausa/reanuda. Se conserva la parada reglamentaria. PASS simulation_entry.cjs y continuity.cjs. Publicación GitHub de 0.55 bloqueada por revisión automática; código local conservado.

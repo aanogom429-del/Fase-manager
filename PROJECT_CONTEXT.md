@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.56
+
+Base: 0.55 corregida (simulación directa y guardado plegado). Mejora de apoyo: otra altura cuando la salida lateral sigue tapada, con información percibida y margen mínimo de utilidad. Ver ROADMAP.md y tests/support_escape.cjs. No modifica la política defensiva ni cierra A. Los guardados previos conservan su formato, pero sus resultados pueden cambiar al evolucionar el motor. Usuario autoriza publicar el proyecto en GitHub; conservar main y las ramas de investigación.
+
 ## Corrección: prioridad simulación
 
 El usuario no considera prioritario guardar decisiones. Se priorizan simulación y motor táctico; guardado plegado como herramienta opcional. El botón superior estaba desactivado en choose/review guiados: ahora Simular partido entra en modo libre desde la posición actual; después pausa/reanuda. Se conserva la parada reglamentaria. PASS simulation_entry.cjs y continuity.cjs. Publicación GitHub de 0.55 bloqueada por revisión automática; código local conservado.

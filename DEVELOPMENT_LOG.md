@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.58 — Conducción corta diagonal
+
+Verificación: PASS short_carry.cjs, onside_decisions.cjs, opponent_perception.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s de juego libre), support_escape.cjs y offside.cjs. git diff --check sin errores.
+
+Contracaso reproducido en 0.57: poseedor a (50,32), rival a altura 55 y compañeros fuera del campo visual; ambos equipos se detenían a explorar pese a disponer de una diagonal corta. 0.58 selecciona avance 3 y desplazamiento lateral 5, con separación percibida superior a 3.2. Filtra candidatos inseguros antes de ordenarlos. Mantiene avance 7 con línea libre; no fuerza la conducción bajo presión inmediata ni con ambas diagonales cerradas. Tests cubren simetría, independencia de rival oculto y movimiento sin teletransporte. Parámetros heurísticos, sin validación científica ni nueva comprobación Safari/iPhone.
+
 ## 0.57 — Decisión automática y fuera de juego
 
 Verificación: PASS onside_decisions.cjs, offside.cjs, opponent_perception.cjs, contextual_supports.cjs (3 × 60 s de juego libre), simulation_entry.cjs y continuity.cjs. Sin validación nueva en Safari/iPhone ni con tracking real.

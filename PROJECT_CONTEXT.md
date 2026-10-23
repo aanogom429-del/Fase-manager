@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.58
+
+Sobre 0.57: conducción automática con avance corto y diagonal como alternativa al recorrido largo bloqueado. Usa exclusivamente oposición percibida para valorar el recorrido; conserva presión mínima, comparación con pases, exploración sin salida y física de movimiento. Prueba específica tests/short_carry.cjs. No cambia guardados, órdenes, arbitraje ni defensa experimental 0.53.1. Publicar incrementos probados en main y verificar https://aanogom429-del.github.io/Fase-manager/.
+
 ## Estado 0.57
 
 Sobre 0.56: selección automática de pases y centros descarta receptores percibidos en fuera de juego. El motor conserva percepción limitada, conducción y exploración cuando no hay salida. No garantiza evitar todos los fueras de juego ni cambia la sanción reglamentaria o las decisiones manuales. Flujo autorizado: publicar rama y actualizar main tras pruebas; enlace de juego https://aanogom429-del.github.io/Fase-manager/. No continuar despliegues en Sites como vía habitual.

@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.58 — Conducción corta ante línea cerrada
+
+Incremento A2/A4: el poseedor compara recorridos de avance 7 y 3, rectos o diagonales. Descarta los recorridos sin separación percibida suficiente antes de elegir el mejor. Conserva la comparación con el pase y no fuerza la conducción bajo presión inmediata. Caso espejo: rival a 5 unidades delante bloquea los recorridos largos, pero deja una diagonal corta accesible. No modela todavía una secuencia completa de fijación/pase ni garantiza superar al defensor. Mantiene publicación en main y el mismo enlace de Pages; 0.53.1 sigue excluida.
+
 ## 0.57 — Elegir receptores habilitados
 
 Incremento A6 de decisión táctica automática: un receptor percibido en fuera de juego queda excluido de la selección de pases y centros. Antes recibía una penalización que podía ser compensada por el avance. Si falta una salida habilitada, se mantiene la alternativa de conducción u observación; las acciones manuales y el arbitraje no cambian. La percepción incompleta aún puede provocar un fuera de juego real.

@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.61
+
+Sobre 0.60: finalización automática compara dos ángulos laterales cuando el centro está bloqueado. Percepción/memoria, dispersión, contacto y tiro manual se conservan. Pruebas ampliadas en shot_selection.cjs; siete bloques generales de cierre siguen abiertos. Mantener publicación en main y https://aanogom429-del.github.io/Fase-manager/.
+
 ## Estado 0.60
 
 Sobre 0.59: la elección automática de tiro tiene en cuenta bloqueadores de campo percibidos en la línea central a portería. Si está cerrada, continúa valorando pase/conducción; portero y tiro manual conservan su función. Ver tests/shot_selection.cjs. El informe histórico 0.53 se reproduce ahora sobre su fixture inmutable y el motor actual tiene comprobaciones dinámicas propias. Siguen abiertos siete bloques de cierre, no siete versiones. Publicar en main y comprobar el mismo enlace Pages; 0.53.1 sigue excluida.

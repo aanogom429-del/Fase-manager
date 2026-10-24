@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.61 — Alternativas de ángulo de tiro
+
+Incremento A3/A4/F04: mantiene el centro libre y, si está cerrado, compara destinos laterales a y=29/35 en la línea de gol. Selecciona separación percibida >1.65 y proyecta esa intención hasta el final del vuelo, conservando dispersión de ejecución. Si todos están tapados, continúa con pase/conducción. No modela toda la superficie de portería ni probabilidad de gol; el portero no veta el tiro. Siguen abiertos los siete bloques; 0.53.1 no se integra. Publicación en main y mismo enlace Pages.
+
 ## 0.60 — Elegir remate o continuidad
 
 Incremento A3/A4 (F04/D04): antes del tiro automático se comprueba la separación de la línea central a portería respecto a defensores de campo percibidos. Si es <=1.65 unidades, se valoran las alternativas existentes de pase, conducción o exploración. El portero no veta el tiro por ocupar su posición. No cambia el tiro manual, la ejecución ni el arbitraje. No compara aún todos los ángulos de portería, probabilidades de gol ni ventajas completas.

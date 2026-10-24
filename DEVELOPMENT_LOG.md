@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.61 — Ángulos laterales de finalización
+
+Verificación: PASS shot_selection.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s libres) y finishing_dynamic.cjs. git diff --check sin errores.
+
+Caso espejo: poseedor a altura 80, bloqueador central a 96. La 0.60 descarta el tiro central; 0.61 encuentra un lateral accesible. Centro bloqueado a 90 sigue cerrando los tres ángulos. Prueba mismo ruido de ejecución con desplazamiento de destino ±3.3, alternativa contraria al bloquear un lateral y ausencia de tiro con tres líneas bloqueadas. Se adapta el caso de memoria: recordar bloqueo central no impide una línea lateral visible; se mantiene independencia de coordenadas ocultas y caducidad. No se modifica el informe histórico 0.53. Parámetros heurísticos, sin validación científica ni nueva prueba Safari/iPhone.
+
 ## 0.60 — Selección de remate ante bloqueo percibido
 
 Verificación final: PASS shot_selection.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, finishing_protection.cjs, finishing_dynamic.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s de juego libre). git diff --check sin errores. No hay nueva validación Safari/iPhone ni con tracking reservado.

@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.64 — Receptor y destino del envío largo
+
+Verificación: PASS keeper_long_target.cjs, keeper_distribution.cjs, aerial_play.cjs, offside.cjs, opponent_perception.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s libres) y finishing_dynamic.cjs. git diff --check sin errores.
+
+Contracaso causal en ambos equipos frente a 0.63: portero a altura 8, compañeros a 20; antes asociaba receptor a 20 pero intención de golpeo a 40 (espejo 80/60). Ahora no asocia ese receptor y anuncia envío al espacio. Con compañero elegible, posición conocida e intención coinciden antes del error de ejecución. Pruebas de elección menos presionada, distancia diagonal, fuera de juego abierto/exención de saque de meta y posición recordada pese a desplazamiento oculto. Restricciones y puntuaciones heurísticas; no acredita mayor porcentaje de recepción ni valida científicamente el motor. Sin nueva comprobación Safari/iPhone.
+
 ## 0.63 — Distribución contextual del portero
 
 Verificación: PASS keeper_distribution.cjs, aerial_play.cjs, safe_outlet.cjs, shot_selection.cjs, automatic_lead_pass.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s libres) y finishing_dynamic.cjs. git diff --check sin errores.

@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incremento 0.64
+
+F01/T03/T04: receptor del envío largo coherente con su destino conocido, alcance diagonal y selección por espacio percibido. Sin receptor elegible se identifica balón al espacio; fuera de juego percibido en juego abierto, exención en saque de meta. Evidencia tests/keeper_long_target.cjs; sigue pendiente repertorio aéreo completo y validación de utilidad. Siete bloques continúan abiertos.
+
 ## Incremento 0.63
 
 F01/T03/O01: el portero decide salida corta en juego abierto desde opciones observadas y riesgo percibido, en vez de alternar inicialmente el largo por azar. Ante presión o falta de receptor elegible conserva largo. Evidencia tests/keeper_distribution.cjs y aerial_play.cjs; no completa la iniciación colectiva, posesión en manos, reglamento del portero ni sus capacidades técnicas. Estados generales parciales.

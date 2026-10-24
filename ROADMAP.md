@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.64 — Destino coherente del envío largo
+
+Incremento A3/A6/F01: el envío largo selecciona receptores con avance >=32 y distancia total <=55, dentro de los márgenes 3–97/2–62. En juego abierto compara espacio percibido, antigüedad y distancia a 42; descarta fuera de juego percibido. Destino intencional igual a posición conocida del receptor, sin desplazarlo por límites del golpeo. Sin candidato, envía al espacio sin receptor asociado. Saque de meta conserva exención y lectura global de reanudación. No añade control aéreo ni garantiza recepción. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.63 — Salida contextual del portero
 
 Incremento A3/A6/F01: en juego abierto, con espacio percibido >=7, busca un receptor observado ahora, habilitado, a 8–25 unidades, no retrasado, riesgo de línea <=3 y espacio receptor >=5. Ordena por espacio, riesgo, distancia y avance; si no existe o hay presión, envía en largo. Sustituye la elección aleatoria inicial de largo, sin cambiar saques de meta ni órdenes manuales. No garantiza recepción; parámetros no calibrados. Siete bloques siguen abiertos y 0.53.1 excluida. Publicar en main/Pages.

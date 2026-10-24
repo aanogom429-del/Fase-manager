@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.64
+
+Sobre 0.63: envíos largos con destino coherente con el receptor conocido, alcance total limitado y elección por espacio percibido. Si falta candidato, el mensaje indica envío al espacio sin receptor identificado. Conserva error físico y memoria; fuera de juego percibido se filtra en juego abierto, no en saque de meta. tests/keeper_long_target.cjs. Publicar main y mismo enlace Pages; siete bloques abiertos.
+
 ## Estado 0.63
 
 Portero en juego abierto: salida corta contextual si dispone de tiempo y compañero observado con línea poco expuesta; largo ante presión o ausencia de esa opción. Mensaje «portero inicia en corto». Saques de meta y acción manual de largo sin cambios. Prueba tests/keeper_distribution.cjs y regresión aerial_play.cjs. Publicar main y mismo enlace Pages; siete bloques abiertos, sin integrar 0.53.1.

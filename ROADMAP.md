@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.66 — Recuperar posición habilitada
+
+Incremento A2/A4/O04: delantero no asignado a apoyo, más de 1.5 unidades por delante de la línea, recupera hacia línea menos 0.7 conservando altura lateral. Solo con posesión del equipo, destino libre de compañeros a menos de 4 y corredor percibido >2.5. Sin teletransporte ni restricción después del golpeo; órdenes y apoyos conservan prioridad. Reutiliza la línea táctica GLOBAL ya existente: no completa percepción sin balón. Prueba espejo, movimiento físico, destino ocupado, corredor bloqueado, jugador habilitado y balón en vuelo. Umbrales heurísticos, sin validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.65 — Progresión menos expuesta
 
 Incremento A3/O03: bajo presión percibida <4 y mejor pase ordinario con riesgo >=8, prioriza una alternativa progresiva observada ahora (avance >3, distancia <=25, riesgo <=3, espacio >=5) antes del apoyo de conservación. Caso espejo: poseedor (50,32), receptor profundo (74,32), alternativa (54,50), rivales (48,32)/(60,32). 0.64 elegía el profundo tapado; 0.65 elige la alternativa. Conserva pase profundo abierto y rechaza alternativa marcada. Parámetros heurísticos; sin validación científica ni Safari/iPhone. Siete bloques abiertos, 0.53.1 excluida, publicar main/Pages.

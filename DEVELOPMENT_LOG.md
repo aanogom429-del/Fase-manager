@@ -1,5 +1,13 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.66 — Recolocación sin balón
+
+Comparación causal: delantero inicialmente a altura lateral 10; 0.65 ordenaba recuperar hacia y=28/32 en ambos equipos, 0.66 hacia y=10 con la misma coordenada longitudinal habilitada. Prueba inicial corregida para tolerancia numérica del espejo (25.7 frente a 25.700000000000003), sin cambiar el motor por ese redondeo.
+
+Verificación: PASS onside_recovery.cjs, offside.cjs, offball.cjs, contextual_supports.cjs (3 × 60 s), simulation_entry.cjs y continuity.cjs. git diff --check sin errores.
+
+Incremento A2/A4/O04: delantero no asignado a apoyo, más de 1.5 unidades por delante de la línea, recupera hacia línea menos 0.7 conservando altura lateral. Solo con posesión del equipo, destino libre de compañeros a menos de 4 y corredor percibido >2.5. Sin teletransporte ni restricción después del golpeo; órdenes y apoyos conservan prioridad. Reutiliza la línea táctica GLOBAL ya existente: no completa percepción sin balón. Prueba espejo, movimiento físico, destino ocupado, corredor bloqueado, jugador habilitado y balón en vuelo. Umbrales heurísticos, sin validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.65 — Alternativa progresiva
 
 Verificación: PASS progressive_outlet.cjs, safe_outlet.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s). git diff --check sin errores.

@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incrementos 0.66–0.67
+
+O04/A2/A4: regreso directo de delanteros adelantados no asignados a apoyo y elección de pequeños desvíos si destino/corredor están cerrados. Tests onside_recovery.cjs: espejo, movimiento físico, ocupación, corredor bloqueado, ausencia de ruta, información rival oculta, jugador habilitado y golpeo previo. Reutiliza línea táctica global y posiciones compartidas de compañeros; no cierra percepción sin balón ni sincronización de rupturas. Siete bloques permanecen abiertos.
+
 ## Incremento 0.64
 
 F01/T03/T04: receptor del envío largo coherente con su destino conocido, alcance diagonal y selección por espacio percibido. Sin receptor elegible se identifica balón al espacio; fuera de juego percibido en juego abierto, exención en saque de meta. Evidencia tests/keeper_long_target.cjs; sigue pendiente repertorio aéreo completo y validación de utilidad. Siete bloques continúan abiertos.

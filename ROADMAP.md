@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.67 — Desvío de recolocación
+
+Incremento A2/A4/O04 sobre 0.66: compara regreso directo y desvíos laterales de ±4/±8, acotados al campo, para delanteros adelantados sin función de apoyo. Elige el recorrido geométrico más corto con destino no ocupado y corredor percibido >2.5; si ninguno cumple mantiene la alternativa ordinaria. No garantiza evitar un rival en movimiento. Conserva física, órdenes, apoyos y libertad después del golpeo. La línea táctica sigue siendo global, como antes: no completa percepción sin balón. Siete bloques abiertos, investigación 0.53.1 excluida; publicar main/Pages. Sin validación científica ni nueva comprobación Safari/iPhone.
+
 ## 0.66 — Recuperar posición habilitada
 
 Incremento A2/A4/O04: delantero no asignado a apoyo, más de 1.5 unidades por delante de la línea, recupera hacia línea menos 0.7 conservando altura lateral. Solo con posesión del equipo, destino libre de compañeros a menos de 4 y corredor percibido >2.5. Sin teletransporte ni restricción después del golpeo; órdenes y apoyos conservan prioridad. Reutiliza la línea táctica GLOBAL ya existente: no completa percepción sin balón. Prueba espejo, movimiento físico, destino ocupado, corredor bloqueado, jugador habilitado y balón en vuelo. Umbrales heurísticos, sin validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.

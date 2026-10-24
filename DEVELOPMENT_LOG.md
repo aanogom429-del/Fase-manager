@@ -1,5 +1,13 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.67 — Regreso con alternativa lateral
+
+Comparación causal espejo: delantero en y=10 y rival observado sobre su regreso a x=80/y=10; 0.66 destinaba y=28/32, 0.67 y=4 con igual coordenada longitudinal habilitada. Prueba de cierre total corregida para cubrir las cinco rutas (tres rivales todavía dejaban un hueco); no se modificó el motor para forzar ese resultado.
+
+Verificación: PASS onside_recovery.cjs, offside.cjs, offball.cjs, contextual_supports.cjs (3 × 60 s), simulation_entry.cjs y continuity.cjs. git diff --check sin errores.
+
+Incremento A2/A4/O04 sobre 0.66: compara regreso directo y desvíos laterales de ±4/±8, acotados al campo, para delanteros adelantados sin función de apoyo. Elige el recorrido geométrico más corto con destino no ocupado y corredor percibido >2.5; si ninguno cumple mantiene la alternativa ordinaria. No garantiza evitar un rival en movimiento. Conserva física, órdenes, apoyos y libertad después del golpeo. La línea táctica sigue siendo global, como antes: no completa percepción sin balón. Siete bloques abiertos, investigación 0.53.1 excluida; publicar main/Pages. Sin validación científica ni nueva comprobación Safari/iPhone.
+
 ## 0.66 — Recolocación sin balón
 
 Comparación causal: delantero inicialmente a altura lateral 10; 0.65 ordenaba recuperar hacia y=28/32 en ambos equipos, 0.66 hacia y=10 con la misma coordenada longitudinal habilitada. Prueba inicial corregida para tolerancia numérica del espejo (25.7 frente a 25.700000000000003), sin cambiar el motor por ese redondeo.

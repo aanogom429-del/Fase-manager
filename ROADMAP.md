@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.65 — Progresión menos expuesta
+
+Incremento A3/O03: bajo presión percibida <4 y mejor pase ordinario con riesgo >=8, prioriza una alternativa progresiva observada ahora (avance >3, distancia <=25, riesgo <=3, espacio >=5) antes del apoyo de conservación. Caso espejo: poseedor (50,32), receptor profundo (74,32), alternativa (54,50), rivales (48,32)/(60,32). 0.64 elegía el profundo tapado; 0.65 elige la alternativa. Conserva pase profundo abierto y rechaza alternativa marcada. Parámetros heurísticos; sin validación científica ni Safari/iPhone. Siete bloques abiertos, 0.53.1 excluida, publicar main/Pages.
+
 ## 0.64 — Destino coherente del envío largo
 
 Incremento A3/A6/F01: el envío largo selecciona receptores con avance >=32 y distancia total <=55, dentro de los márgenes 3–97/2–62. En juego abierto compara espacio percibido, antigüedad y distancia a 42; descarta fuera de juego percibido. Destino intencional igual a posición conocida del receptor, sin desplazarlo por límites del golpeo. Sin candidato, envía al espacio sin receptor asociado. Saque de meta conserva exención y lectura global de reanudación. No añade control aéreo ni garantiza recepción. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.

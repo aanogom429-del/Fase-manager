@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.65
+
+Incremento A3/O03: bajo presión percibida <4 y mejor pase ordinario con riesgo >=8, prioriza una alternativa progresiva observada ahora (avance >3, distancia <=25, riesgo <=3, espacio >=5) antes del apoyo de conservación. Caso espejo: poseedor (50,32), receptor profundo (74,32), alternativa (54,50), rivales (48,32)/(60,32). 0.64 elegía el profundo tapado; 0.65 elige la alternativa. Conserva pase profundo abierto y rechaza alternativa marcada. Parámetros heurísticos; sin validación científica ni Safari/iPhone. Siete bloques abiertos, 0.53.1 excluida, publicar main/Pages.
+
 ## Estado 0.64
 
 Sobre 0.63: envíos largos con destino coherente con el receptor conocido, alcance total limitado y elección por espacio percibido. Si falta candidato, el mensaje indica envío al espacio sin receptor identificado. Conserva error físico y memoria; fuera de juego percibido se filtra en juego abierto, no en saque de meta. tests/keeper_long_target.cjs. Publicar main y mismo enlace Pages; siete bloques abiertos.

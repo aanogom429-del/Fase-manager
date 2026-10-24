@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.63 — Distribución contextual del portero
+
+Verificación: PASS keeper_distribution.cjs, aerial_play.cjs, safe_outlet.cjs, shot_selection.cjs, automatic_lead_pass.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s libres) y finishing_dynamic.cjs. git diff --check sin errores.
+
+Comparación con 0.62: portero a (8,32), apoyo a (22,40), resto de compañeros a altura 50 y rivales a 80. En 16 semillas, la 0.62 enviaba largo en 6 pese a tener el apoyo disponible; 0.63 selecciona corto en las 16. Prueba refleja ambos equipos (32 elecciones), presión, línea tapada, receptor marcado/oculto/recordado, distancia y tiempo de control. No se exige corto en saques de meta ni cambia la exención reglamentaria. No es una prueba de mayor rendimiento ni una calibración científica; sin nueva validación Safari/iPhone.
+
 ## 0.62 — Apoyo de seguridad bajo presión
 
 Verificación: PASS safe_outlet.cjs, shot_selection.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, perceptual_memory.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s de juego libre) y finishing_dynamic.cjs. git diff --check sin errores.

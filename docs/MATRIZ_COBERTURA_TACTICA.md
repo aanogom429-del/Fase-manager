@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incremento 0.63
+
+F01/T03/O01: el portero decide salida corta en juego abierto desde opciones observadas y riesgo percibido, en vez de alternar inicialmente el largo por azar. Ante presión o falta de receptor elegible conserva largo. Evidencia tests/keeper_distribution.cjs y aerial_play.cjs; no completa la iniciación colectiva, posesión en manos, reglamento del portero ni sus capacidades técnicas. Estados generales parciales.
+
 ## Incrementos 0.61–0.62
 
 0.61 amplía F04/V02: dos ángulos laterales de remate cuando el centro está tapado, con percepción limitada y error de ejecución. 0.62 amplía O01/A3: alternativa corta lateral/retrasada observada y poco expuesta ante presión y mejor opción ordinaria bloqueada. Evidencia: tests/shot_selection.cjs y tests/safe_outlet.cjs, casos espejo y contrarios. Estados generales siguen parciales; no demuestra superioridad global ni cierra ninguno de los siete bloques.

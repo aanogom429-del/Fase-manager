@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.63
+
+Portero en juego abierto: salida corta contextual si dispone de tiempo y compañero observado con línea poco expuesta; largo ante presión o ausencia de esa opción. Mensaje «portero inicia en corto». Saques de meta y acción manual de largo sin cambios. Prueba tests/keeper_distribution.cjs y regresión aerial_play.cjs. Publicar main y mismo enlace Pages; siete bloques abiertos, sin integrar 0.53.1.
+
 ## Estado 0.62
 
 Sobre 0.61: conservación automática con apoyo observado poco expuesto cuando la mejor opción ordinaria está tapada y hay presión inmediata. Mensaje «busca conservar con el apoyo». Ver tests/safe_outlet.cjs. No modifica guardados, arbitraje ni defensa experimental. Publicar en main y mismo enlace Pages; siete bloques generales siguen abiertos.

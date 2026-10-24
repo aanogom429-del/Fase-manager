@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.63 — Salida contextual del portero
+
+Incremento A3/A6/F01: en juego abierto, con espacio percibido >=7, busca un receptor observado ahora, habilitado, a 8–25 unidades, no retrasado, riesgo de línea <=3 y espacio receptor >=5. Ordena por espacio, riesgo, distancia y avance; si no existe o hay presión, envía en largo. Sustituye la elección aleatoria inicial de largo, sin cambiar saques de meta ni órdenes manuales. No garantiza recepción; parámetros no calibrados. Siete bloques siguen abiertos y 0.53.1 excluida. Publicar en main/Pages.
+
 ## 0.62 — Salida de conservación bajo presión
 
 Incremento A3/O01: con presión percibida menor de 4 y mejor pase ordinario con riesgo de línea >=8, puede preferir apoyo lateral/retrasado observado ahora (avance <=3, longitud <=25, riesgo <=3, espacio receptor >=5). Mantiene comparación ordinaria si no hay tal salida; no garantiza completar el pase. No declara segura una posición recordada antigua. Criterios heurísticos, no probabilidades. Siguen abiertos siete bloques. Publicación en main/Pages; 0.53.1 excluida.

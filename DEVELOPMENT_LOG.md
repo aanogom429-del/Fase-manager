@@ -1,5 +1,13 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.68 — Salida sin avance forzado
+
+Comparación causal espejo: poseedor (50,32), oposición a (55,32)/(54,28)/(54,36); 0.67 se detiene y explora, 0.68 fija destino (50,27) y conduce. No implica mayor éxito global ante oposición móvil.
+
+Verificación: PASS lateral_carry.cjs, short_carry.cjs, progressive_outlet.cjs, safe_outlet.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s). git diff --check sin errores.
+
+Incremento A3/A4/O01: si no existe corredor progresivo viable, añade conducción lateral de 5 unidades, mínimo desplazamiento real 4 dentro de límites. Conserva separación percibida >3.2, presión >4 y comparación con pases. No obliga a avanzar, no fuerza regate bajo presión ni consulta coordenadas rivales ocultas. Pruebas espejo, movimiento físico, avance prioritario, presión inmediata, cierre de todas las rutas y rival oculto. Parámetros heurísticos; sin validación científica ni nueva prueba Safari/iPhone. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.67 — Regreso con alternativa lateral
 
 Comparación causal espejo: delantero en y=10 y rival observado sobre su regreso a x=80/y=10; 0.66 destinaba y=28/32, 0.67 y=4 con igual coordenada longitudinal habilitada. Prueba de cierre total corregida para cubrir las cinco rutas (tres rivales todavía dejaban un hueco); no se modificó el motor para forzar ese resultado.

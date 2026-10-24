@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incremento 0.68
+
+O01/A3/A4: conducción lateral como alternativa cuando ningún corredor progresivo cumple el margen de separación percibida. Conserva la comparación con pases y no fuerza conducción bajo presión inmediata. Evidencia tests/lateral_carry.cjs y short_carry.cjs: espejo, movimiento, prioridad progresiva, cierre total y posiciones ocultas. No equivale a un modelo completo de fijación, protección o regate; los bloques siguen abiertos.
+
 ## Incrementos 0.66–0.67
 
 O04/A2/A4: regreso directo de delanteros adelantados no asignados a apoyo y elección de pequeños desvíos si destino/corredor están cerrados. Tests onside_recovery.cjs: espejo, movimiento físico, ocupación, corredor bloqueado, ausencia de ruta, información rival oculta, jugador habilitado y golpeo previo. Reutiliza línea táctica global y posiciones compartidas de compañeros; no cierra percepción sin balón ni sincronización de rupturas. Siete bloques permanecen abiertos.

@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incrementos 0.61–0.62
+
+0.61 amplía F04/V02: dos ángulos laterales de remate cuando el centro está tapado, con percepción limitada y error de ejecución. 0.62 amplía O01/A3: alternativa corta lateral/retrasada observada y poco expuesta ante presión y mejor opción ordinaria bloqueada. Evidencia: tests/shot_selection.cjs y tests/safe_outlet.cjs, casos espejo y contrarios. Estados generales siguen parciales; no demuestra superioridad global ni cierra ninguno de los siete bloques.
+
 ## Evidencia vigente 0.56–0.60
 
 Las restricciones históricas a versiones posteriores quedan sustituidas por ROADMAP.md. Estados generales siguen parciales; no se incorpora la investigación 0.53.1.

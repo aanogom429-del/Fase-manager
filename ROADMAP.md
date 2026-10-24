@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.62 — Salida de conservación bajo presión
+
+Incremento A3/O01: con presión percibida menor de 4 y mejor pase ordinario con riesgo de línea >=8, puede preferir apoyo lateral/retrasado observado ahora (avance <=3, longitud <=25, riesgo <=3, espacio receptor >=5). Mantiene comparación ordinaria si no hay tal salida; no garantiza completar el pase. No declara segura una posición recordada antigua. Criterios heurísticos, no probabilidades. Siguen abiertos siete bloques. Publicación en main/Pages; 0.53.1 excluida.
+
 ## 0.61 — Alternativas de ángulo de tiro
 
 Incremento A3/A4/F04: mantiene el centro libre y, si está cerrado, compara destinos laterales a y=29/35 en la línea de gol. Selecciona separación percibida >1.65 y proyecta esa intención hasta el final del vuelo, conservando dispersión de ejecución. Si todos están tapados, continúa con pase/conducción. No modela toda la superficie de portería ni probabilidad de gol; el portero no veta el tiro. Siguen abiertos los siete bloques; 0.53.1 no se integra. Publicación en main y mismo enlace Pages.

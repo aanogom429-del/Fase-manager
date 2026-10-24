@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.62 — Apoyo de seguridad bajo presión
+
+Verificación: PASS safe_outlet.cjs, shot_selection.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, perceptual_memory.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s de juego libre) y finishing_dynamic.cjs. git diff --check sin errores.
+
+Contracaso espejo frente a 0.61: poseedor a (50,32), receptor avanzado a (75,32), apoyo a (35,42), rivales a (52,32) y (60,32). La opción avanzada tiene riesgo percibido 19.32 y la retrasada 0; antes elegía #10 avanzado, ahora #8 de apoyo. Son índices heurísticos, no probabilidades. Conserva riesgo físico, dispersión y oposición posterior. Prueba salida marcada/oculta, recuerdo antiguo, ausencia de presión, avance abierto y 32 decisiones con semillas distintas. No demuestra superioridad general ni valida todo A3; no hay nueva prueba Safari/iPhone o tracking reservado.
+
 ## 0.61 — Ángulos laterales de finalización
 
 Verificación: PASS shot_selection.cjs, automatic_lead_pass.cjs, onside_decisions.cjs, short_carry.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs, contextual_supports.cjs (3 × 60 s libres) y finishing_dynamic.cjs. git diff --check sin errores.

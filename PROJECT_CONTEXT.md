@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado 0.62
+
+Sobre 0.61: conservación automática con apoyo observado poco expuesto cuando la mejor opción ordinaria está tapada y hay presión inmediata. Mensaje «busca conservar con el apoyo». Ver tests/safe_outlet.cjs. No modifica guardados, arbitraje ni defensa experimental. Publicar en main y mismo enlace Pages; siete bloques generales siguen abiertos.
+
 ## Estado 0.61
 
 Sobre 0.60: finalización automática compara dos ángulos laterales cuando el centro está bloqueado. Percepción/memoria, dispersión, contacto y tiro manual se conservan. Pruebas ampliadas en shot_selection.cjs; siete bloques generales de cierre siguen abiertos. Mantener publicación en main y https://aanogom429-del.github.io/Fase-manager/.

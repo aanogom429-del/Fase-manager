@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.75 — Progresión corta con continuidad
+
+Verificación: 10 entradas PASS: organizing_progression, organizing_possession, safe_outlet, progressive_outlet, short_carry, lateral_carry, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.
+
+A3/A4: corrige un hueco de 0.74: una salida progresiva corta segura desactivaba la circulación pero podía acabar eligiéndose el pase profundo expuesto. En zona organizativa aproximada (avance <=65), espacio del poseedor >=4 y riesgo del mejor pase >=4, elige progresión corta fresca (avance >3, distancia <=25, riesgo <=3, espacio >=5), o apoyo lateral/retrasado si aquella falta. No fuerza retroceso cuando hay avance claro. Conserva el resto de la política y reglas. Prueba espejo en 16 semillas: progresión corta, pase profundo abierto y alternativa de conservación con receptor marcado. La prueba falla contra 0.74 y pasa con 0.75. No es reconocimiento completo de fases ni garantía de posesión. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.74 — Conservar como principio organizativo
 
 Verificación: 10 entradas PASS: organizing_possession (64 grupos × 4 comprobaciones), safe_outlet, progressive_outlet, short_carry, lateral_carry, keeper_distribution, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.

@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.74 — Conservar como principio organizativo
+
+Petición del usuario: conservación y progresión en iniciación y disposición posicional. Aproximación inicial, NO identificación completa de fases: poseedor hasta avance 65. Sin presión inmediata (espacio >=4), si mejor pase tiene riesgo >=4 y no hay salida progresiva corta segura, prioriza apoyo lateral/retrasado fresco, distancia <=25, riesgo <=3 y espacio >=5, antes de conducir/forzar avance. En avance <35 y presión <3.5, aprovecha salida corta progresiva o de conservación antes del despeje aleatorio. Conserva progresión abierta, percepción y reglas; no asegura completar pases. No aplica nueva política al último tercio ni sustituye salida del portero. Umbrales heurísticos. Prueba organizing_possession: ambos sentidos, iniciación presionada y zona media sin presión, 16 semillas, apoyo marcado/oculto y progresión abierta. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicación main/Pages.
+
 ## 0.73 — Confianza gradual en la separación
 
 A2/A4: la penalización de aglomeración en destinos de apoyo y separación lateral pondera cada compañero por 1 - edad del recuerdo / duración individual de memoria. La observación actual pesa 1; el recuerdo caduca con peso 0. No actualiza posiciones ocultas ni modifica el formato guardado: confianza derivada al consultar. Recuperación habilitada conserva su veto de ocupación hasta caducidad; coordinación global y línea táctica siguen pendientes. No modela colisiones ni garantiza mejor rendimiento táctico. Prueba spacing_confidence.cjs en ambos sentidos: decaimiento, destino, refresco y restauración. Siete bloques abiertos; 0.53.1 excluida; sin validación científica o Safari/iPhone. Publicación main/Pages.

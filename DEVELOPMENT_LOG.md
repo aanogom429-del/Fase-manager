@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.74 — Conservar como principio organizativo
+
+Verificación: 10 entradas PASS: organizing_possession (64 grupos × 4 comprobaciones), safe_outlet, progressive_outlet, short_carry, lateral_carry, keeper_distribution, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.
+
+Petición del usuario: conservación y progresión en iniciación y disposición posicional. Aproximación inicial, NO identificación completa de fases: poseedor hasta avance 65. Sin presión inmediata (espacio >=4), si mejor pase tiene riesgo >=4 y no hay salida progresiva corta segura, prioriza apoyo lateral/retrasado fresco, distancia <=25, riesgo <=3 y espacio >=5, antes de conducir/forzar avance. En avance <35 y presión <3.5, aprovecha salida corta progresiva o de conservación antes del despeje aleatorio. Conserva progresión abierta, percepción y reglas; no asegura completar pases. No aplica nueva política al último tercio ni sustituye salida del portero. Umbrales heurísticos. Prueba organizing_possession: ambos sentidos, iniciación presionada y zona media sin presión, 16 semillas, apoyo marcado/oculto y progresión abierta. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicación main/Pages.
+
 ## 0.73 — Confianza gradual en la separación
 
 Verificación: 11 entradas PASS: spacing_confidence, teammate_spacing_perception, offball_spacing_perception, support_perception, support_escape, onside_recovery, contextual_supports (3 × 60 s), moving_reception, simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.

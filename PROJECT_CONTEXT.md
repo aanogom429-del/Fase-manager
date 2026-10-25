@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.76 — Fases y principios explícitos
+
+Primera integración de las diez fases solicitadas. gamePhase vincula lecturas ofensivas y planes defensivos a principios; la organización ofensiva utiliza opciones percibidas, presión y remate además de profundidad, sustituyendo el corte único de 65. Conservación y progresión corta comparten política. Defensa añade explicación al inspector sobre conductas existentes, sin nueva política defensiva. Alcance, tabla y pendientes en docs/FASES_PRINCIPIOS_076.md. Sin detector global completo ni secuencia rígida; siete bloques abiertos y 0.53.1 excluida. Pruebas sintéticas, no validación científica/Safari. Publicar main y mismo Pages.
+
 ## 0.75 — Progresión corta con continuidad
 
 A3/A4: corrige un hueco de 0.74: una salida progresiva corta segura desactivaba la circulación pero podía acabar eligiéndose el pase profundo expuesto. En zona organizativa aproximada (avance <=65), espacio del poseedor >=4 y riesgo del mejor pase >=4, elige progresión corta fresca (avance >3, distancia <=25, riesgo <=3, espacio >=5), o apoyo lateral/retrasado si aquella falta. No fuerza retroceso cuando hay avance claro. Conserva el resto de la política y reglas. Prueba espejo en 16 semillas: progresión corta, pase profundo abierto y alternativa de conservación con receptor marcado. La prueba falla contra 0.74 y pasa con 0.75. No es reconocimiento completo de fases ni garantía de posesión. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.

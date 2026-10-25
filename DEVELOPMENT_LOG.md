@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.76 — Fases y principios explícitos
+
+Verificación: 11 entradas PASS: game_phases (diez fases y conservación avanzada espejo), organizing_progression, organizing_possession, safe_outlet, progressive_outlet, contextual_supports (3 × 60 s), pressure_exposure, finishing_protection, simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.
+
+Primera integración de las diez fases solicitadas. gamePhase vincula lecturas ofensivas y planes defensivos a principios; la organización ofensiva utiliza opciones percibidas, presión y remate además de profundidad, sustituyendo el corte único de 65. Conservación y progresión corta comparten política. Defensa añade explicación al inspector sobre conductas existentes, sin nueva política defensiva. Alcance, tabla y pendientes en docs/FASES_PRINCIPIOS_076.md. Sin detector global completo ni secuencia rígida; siete bloques abiertos y 0.53.1 excluida. Pruebas sintéticas, no validación científica/Safari. Publicar main y mismo Pages.
+
 ## 0.75 — Progresión corta con continuidad
 
 Verificación: 10 entradas PASS: organizing_progression, organizing_possession, safe_outlet, progressive_outlet, short_carry, lateral_carry, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.

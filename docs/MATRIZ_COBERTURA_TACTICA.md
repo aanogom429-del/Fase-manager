@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incremento 0.69
+
+F04/A3: no forzar centro automático hacia receptor percibido muy marcado; elegir otro rematador elegible o valorar pase/conducción. Prueba cross_selection.cjs: ambos equipos, alternativa libre, memoria/caducidad y múltiples semillas. aerial_play.cjs mantiene centros manuales y ejecución aérea. No incorpora ventaja aérea individual ni trayectorias de salto; bloques generales abiertos.
+
 ## Incremento 0.68
 
 O01/A3/A4: conducción lateral como alternativa cuando ningún corredor progresivo cumple el margen de separación percibida. Conserva la comparación con pases y no fuerza conducción bajo presión inmediata. Evidencia tests/lateral_carry.cjs y short_carry.cjs: espejo, movimiento, prioridad progresiva, cierre total y posiciones ocultas. No equivale a un modelo completo de fijación, protección o regate; los bloques siguen abiertos.

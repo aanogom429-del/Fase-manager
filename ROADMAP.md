@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.69 — Selección de centros
+
+Incremento A3/A4/F04: para el centro automático, el receptor necesita espacio percibido >2.5, además de posición habilitada y ubicación de remate. Si no hay candidato, se valoran las otras opciones existentes; no se garantiza posesión ni remate. Conserva memoria e incertidumbre, física aérea y centros manuales. Caso espejo: poseedor (80,10), receptor y marcador (90,32); 0.68 centraba, 0.69 no fuerza ese centro. Prueba alternativa libre, apertura de marcaje, recuerdo/caducidad y 32 decisiones marcadas. Umbral heurístico, no probabilidad ni validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.68 — Conducción lateral
 
 Incremento A3/A4/O01: si no existe corredor progresivo viable, añade conducción lateral de 5 unidades, mínimo desplazamiento real 4 dentro de límites. Conserva separación percibida >3.2, presión >4 y comparación con pases. No obliga a avanzar, no fuerza regate bajo presión ni consulta coordenadas rivales ocultas. Pruebas espejo, movimiento físico, avance prioritario, presión inmediata, cierre de todas las rutas y rival oculto. Parámetros heurísticos; sin validación científica ni nueva prueba Safari/iPhone. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.

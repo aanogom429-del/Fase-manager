@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.69 — Rematador disponible
+
+Verificación: PASS cross_selection.cjs, aerial_play.cjs, onside_decisions.cjs, lateral_carry.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s libres). La prueba específica fallaba antes del cambio ante receptor marcado y pasa después. git diff --check sin errores.
+
+Incremento A3/A4/F04: para el centro automático, el receptor necesita espacio percibido >2.5, además de posición habilitada y ubicación de remate. Si no hay candidato, se valoran las otras opciones existentes; no se garantiza posesión ni remate. Conserva memoria e incertidumbre, física aérea y centros manuales. Caso espejo: poseedor (80,10), receptor y marcador (90,32); 0.68 centraba, 0.69 no fuerza ese centro. Prueba alternativa libre, apertura de marcaje, recuerdo/caducidad y 32 decisiones marcadas. Umbral heurístico, no probabilidad ni validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.68 — Salida sin avance forzado
 
 Comparación causal espejo: poseedor (50,32), oposición a (55,32)/(54,28)/(54,36); 0.67 se detiene y explora, 0.68 fija destino (50,27) y conduce. No implica mayor éxito global ante oposición móvil.

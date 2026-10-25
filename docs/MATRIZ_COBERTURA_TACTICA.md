@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incremento 0.70
+
+C03/C05/T03: recepción rasa con absorción de velocidad existente mediante frenada si perfil y espacio percibido lo permiten. Conserva preparación y no libera antes el balón. Evidencia moving_reception.cjs y regresiones reception/acceleration/anticipation_first_touch/aerial_play. No añade toque independiente ni recepción aérea completa; cobertura sigue parcial.
+
 ## Incremento 0.69
 
 F04/A3: no forzar centro automático hacia receptor percibido muy marcado; elegir otro rematador elegible o valorar pase/conducción. Prueba cross_selection.cjs: ambos equipos, alternativa libre, memoria/caducidad y múltiples semillas. aerial_play.cjs mantiene centros manuales y ejecución aérea. No incorpora ventaja aérea individual ni trayectorias de salto; bloques generales abiertos.

@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.70 — Absorber velocidad al controlar
+
+Verificación: PASS moving_reception.cjs, reception.cjs, acceleration.cjs, anticipation_first_touch.cjs, aerial_play.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s libres). git diff --check sin errores. Comparación directa con 0.69: en el caso de recepción bien perfilada la base anulaba la velocidad sin desplazamiento; 0.70 ejecuta la frenada analítica en ambos sentidos.
+
+Incremento A2/A6: durante preparación de recepción rasa, permite frenar la velocidad existente si error de perfil <=60°, velocidad alineada al cuerpo <=45°, espacio percibido >5 y corredor observado de 3 unidades con separación >3.2. Integra frenada analítica sin acelerar ni inventar conducción; de lo contrario mantiene control estático. No adelanta la liberación ni cambia primer toque, controles aéreos o formato de guardado. No es todavía control orientado completo ni modelo de toque separado del balón. Prueba espejo, desplazamiento/frenada, presión, mala orientación, pausa, restauración y balón siguiendo al receptor. Umbrales heurísticos; sin validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.
+
 ## 0.69 — Rematador disponible
 
 Verificación: PASS cross_selection.cjs, aerial_play.cjs, onside_decisions.cjs, lateral_carry.cjs, opponent_perception.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s libres). La prueba específica fallaba antes del cambio ante receptor marcado y pasa después. git diff --check sin errores.

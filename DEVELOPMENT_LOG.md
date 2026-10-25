@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.73 — Confianza gradual en la separación
+
+Verificación: 11 entradas PASS: spacing_confidence, teammate_spacing_perception, offball_spacing_perception, support_perception, support_escape, onside_recovery, contextual_supports (3 × 60 s), moving_reception, simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.
+
+A2/A4: la penalización de aglomeración en destinos de apoyo y separación lateral pondera cada compañero por 1 - edad del recuerdo / duración individual de memoria. La observación actual pesa 1; el recuerdo caduca con peso 0. No actualiza posiciones ocultas ni modifica el formato guardado: confianza derivada al consultar. Recuperación habilitada conserva su veto de ocupación hasta caducidad; coordinación global y línea táctica siguen pendientes. No modela colisiones ni garantiza mejor rendimiento táctico. Prueba spacing_confidence.cjs en ambos sentidos: decaimiento, destino, refresco y restauración. Siete bloques abiertos; 0.53.1 excluida; sin validación científica o Safari/iPhone. Publicación main/Pages.
+
 ## 0.72 — Separación perceptiva de compañeros
 
 Verificación: 17 entradas PASS: teammate_spacing_perception, offball_spacing_perception, opponent_perception, perceptual_memory, support_perception, support_assignment_perception, onside_recovery, offball, attacking_heights, contextual_supports (3 × 60 s libres), relational_width, support_escape, moving_reception, reception, simulation_entry, continuity y offside. Node con DOM simulado, no navegador real. La prueba nueva falla contra el HTML 0.71 en independencia del compañero oculto y pasa con el actual. git diff --check limpio.

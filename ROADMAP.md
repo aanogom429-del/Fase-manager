@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.73 — Confianza gradual en la separación
+
+A2/A4: la penalización de aglomeración en destinos de apoyo y separación lateral pondera cada compañero por 1 - edad del recuerdo / duración individual de memoria. La observación actual pesa 1; el recuerdo caduca con peso 0. No actualiza posiciones ocultas ni modifica el formato guardado: confianza derivada al consultar. Recuperación habilitada conserva su veto de ocupación hasta caducidad; coordinación global y línea táctica siguen pendientes. No modela colisiones ni garantiza mejor rendimiento táctico. Prueba spacing_confidence.cjs en ambos sentidos: decaimiento, destino, refresco y restauración. Siete bloques abiertos; 0.53.1 excluida; sin validación científica o Safari/iPhone. Publicación main/Pages.
+
 ## 0.72 — Compañeros observados al ocupar espacios
 
 Incremento A2/A4: la separación lateral de jugadores no asignados a apoyo y la ocupación del destino de recuperación habilitada usan compañeros observados/recordados (knownTeammates), sin consultar sus coordenadas ocultas. Mantiene el criterio perceptivo existente de los apoyos y el formato de memoria/guardado. Pruebas espejo de observación, recuerdo sin actualización oculta, refresco al mirar, caducidad, expulsión, movimiento, pausa y restauración; además recuperación directa/desvío. La 0.71 falla el caso oculto (destinos y=16/24); la 0.72 no cambia ese destino por movimiento no visto. No es evitación física de colisiones: puede haber aproximación a un compañero desconocido. Línea táctica de fuera de juego y coordinación de funciones continúan globales; no completa percepción sin balón. Siete bloques abiertos; 0.53.1 excluida; sin validación científica ni Safari/iPhone. Publicar main y mismo Pages.

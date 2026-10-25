@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.71 — Rivales ocultos y separación sin balón
+
+Verificación: 14 entradas PASS: offball_spacing_perception, opponent_perception, perceptual_memory, support_perception, support_assignment_perception, onside_recovery, offball, attacking_heights, contextual_supports (3 × 60 s libres), moving_reception, reception, simulation_entry, continuity y offside. Pruebas Node con DOM simulado. La prueba nueva falla intencionadamente contra el HTML 0.70 en independencia del rival oculto y pasa con el motor actual. git diff --check sin errores.
+
+Incremento A2/A4: la separación lateral de jugadores de campo no asignados a apoyo usa espacio percibido, con recuerdos e incertidumbre, en lugar de la posición real del rival más cercano. Los apoyos conservan su política perceptiva existente. Pruebas espejo: rival oculto, observación directa, recuerdo sin actualizar coordenadas ocultas, caducidad, movimiento y restauración. La comparación con 0.70 reproduce el fallo previo (destino lateral 16 frente a 24 según un rival no visto); 0.71 conserva el destino en ese caso. No completa percepción sin balón: línea táctica de fuera de juego, coordinación de funciones y separación respecto a compañeros siguen usando información compartida/global. Sin validación científica ni Safari/iPhone. Siete bloques abiertos; investigación 0.53.1 excluida; publicación en main y mismo Pages.
+
 ## 0.70 — Absorber velocidad al controlar
 
 Verificación: PASS moving_reception.cjs, reception.cjs, acceleration.cjs, anticipation_first_touch.cjs, aerial_play.cjs, offside.cjs, simulation_entry.cjs, continuity.cjs y contextual_supports.cjs (3 × 60 s libres). git diff --check sin errores. Comparación directa con 0.69: en el caso de recepción bien perfilada la base anulaba la velocidad sin desplazamiento; 0.70 ejecuta la frenada analítica en ambos sentidos.

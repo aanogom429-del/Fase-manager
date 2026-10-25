@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.71 — Separación según percepción
+
+Incremento A2/A4: la separación lateral de jugadores de campo no asignados a apoyo usa espacio percibido, con recuerdos e incertidumbre, en lugar de la posición real del rival más cercano. Los apoyos conservan su política perceptiva existente. Pruebas espejo: rival oculto, observación directa, recuerdo sin actualizar coordenadas ocultas, caducidad, movimiento y restauración. La comparación con 0.70 reproduce el fallo previo (destino lateral 16 frente a 24 según un rival no visto); 0.71 conserva el destino en ese caso. No completa percepción sin balón: línea táctica de fuera de juego, coordinación de funciones y separación respecto a compañeros siguen usando información compartida/global. Sin validación científica ni Safari/iPhone. Siete bloques abiertos; investigación 0.53.1 excluida; publicación en main y mismo Pages.
+
 ## 0.70 — Frenada durante la recepción
 
 Incremento A2/A6: durante preparación de recepción rasa, permite frenar la velocidad existente si error de perfil <=60°, velocidad alineada al cuerpo <=45°, espacio percibido >5 y corredor observado de 3 unidades con separación >3.2. Integra frenada analítica sin acelerar ni inventar conducción; de lo contrario mantiene control estático. No adelanta la liberación ni cambia primer toque, controles aéreos o formato de guardado. No es todavía control orientado completo ni modelo de toque separado del balón. Prueba espejo, desplazamiento/frenada, presión, mala orientación, pausa, restauración y balón siguiendo al receptor. Umbrales heurísticos; sin validación científica/Safari. Siete bloques abiertos; 0.53.1 excluida; publicar main/Pages.

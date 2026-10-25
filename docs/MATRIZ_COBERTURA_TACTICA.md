@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## Incremento 0.71
+
+Incremento A2/A4: la separación lateral de jugadores de campo no asignados a apoyo usa espacio percibido, con recuerdos e incertidumbre, en lugar de la posición real del rival más cercano. Los apoyos conservan su política perceptiva existente. Pruebas espejo: rival oculto, observación directa, recuerdo sin actualizar coordenadas ocultas, caducidad, movimiento y restauración. La comparación con 0.70 reproduce el fallo previo (destino lateral 16 frente a 24 según un rival no visto); 0.71 conserva el destino en ese caso. No completa percepción sin balón: línea táctica de fuera de juego, coordinación de funciones y separación respecto a compañeros siguen usando información compartida/global. Sin validación científica ni Safari/iPhone. Siete bloques abiertos; investigación 0.53.1 excluida; publicación en main y mismo Pages.
+
 ## Incremento 0.70
 
 C03/C05/T03: recepción rasa con absorción de velocidad existente mediante frenada si perfil y espacio percibido lo permiten. Conserva preparación y no libera antes el balón. Evidencia moving_reception.cjs y regresiones reception/acceleration/anticipation_first_touch/aerial_play. No añade toque independiente ni recepción aérea completa; cobertura sigue parcial.

@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.72 — Separación perceptiva de compañeros
+
+Verificación: 17 entradas PASS: teammate_spacing_perception, offball_spacing_perception, opponent_perception, perceptual_memory, support_perception, support_assignment_perception, onside_recovery, offball, attacking_heights, contextual_supports (3 × 60 s libres), relational_width, support_escape, moving_reception, reception, simulation_entry, continuity y offside. Node con DOM simulado, no navegador real. La prueba nueva falla contra el HTML 0.71 en independencia del compañero oculto y pasa con el actual. git diff --check limpio.
+
+Incremento A2/A4: la separación lateral de jugadores no asignados a apoyo y la ocupación del destino de recuperación habilitada usan compañeros observados/recordados (knownTeammates), sin consultar sus coordenadas ocultas. Mantiene el criterio perceptivo existente de los apoyos y el formato de memoria/guardado. Pruebas espejo de observación, recuerdo sin actualización oculta, refresco al mirar, caducidad, expulsión, movimiento, pausa y restauración; además recuperación directa/desvío. La 0.71 falla el caso oculto (destinos y=16/24); la 0.72 no cambia ese destino por movimiento no visto. No es evitación física de colisiones: puede haber aproximación a un compañero desconocido. Línea táctica de fuera de juego y coordinación de funciones continúan globales; no completa percepción sin balón. Siete bloques abiertos; 0.53.1 excluida; sin validación científica ni Safari/iPhone. Publicar main y mismo Pages.
+
 ## 0.71 — Rivales ocultos y separación sin balón
 
 Verificación: 14 entradas PASS: offball_spacing_perception, opponent_perception, perceptual_memory, support_perception, support_assignment_perception, onside_recovery, offball, attacking_heights, contextual_supports (3 × 60 s libres), moving_reception, reception, simulation_entry, continuity y offside. Pruebas Node con DOM simulado. La prueba nueva falla intencionadamente contra el HTML 0.70 en independencia del rival oculto y pasa con el motor actual. git diff --check sin errores.

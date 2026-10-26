@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.77 — Conservar con información reciente
+
+Verificación: 10 entradas PASS: organizing_memory, game_phases, organizing_progression, organizing_possession, perceptual_memory, safe_outlet, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado, no prueba real Safari/iPhone. git diff --check limpio.
+
+A2/A3/A4: en fases organizativas, espacio del poseedor >=4, si el mejor pase depende de un recuerdo de al menos 0.5 s, prioriza salida corta observada ahora y con los criterios de riesgo/espacio existentes. Conserva prioridad de progresión corta cuando es elegible. No elimina recuerdos ni inventa posiciones ocultas; no cambia finalización, portero, acciones manuales o presión inmediata. Umbral heurístico: no calibrado científicamente. organizing_memory prueba ambos equipos y 16 semillas: apoyo fresco, movimiento oculto, refresco, recuerdo reciente y apoyo marcado; falla contra 0.76 y pasa con 0.77. Siete bloques abiertos, modelo de fases parcial y 0.53.1 excluida. Publicar main/Pages.
+
 ## 0.76 — Fases y principios explícitos
 
 Verificación: 11 entradas PASS: game_phases (diez fases y conservación avanzada espejo), organizing_progression, organizing_possession, safe_outlet, progressive_outlet, contextual_supports (3 × 60 s), pressure_exposure, finishing_protection, simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.

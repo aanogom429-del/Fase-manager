@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## 0.80 — Contención y retroceso perceptivos
+
+A2/A4: el ajuste hacia rival cercano de defensores fuera de los dos primeros puestos usa oposición observada/recordada, excluye porteros y pondera el recuerdo con confianza lineal hasta caducidad. Mantiene referencia de pérdida, recuperación de profundidad y políticas del presionante/cobertura. No sigue coordenadas ocultas. containment_perception prueba ambos equipos, contención/retroceso, observación, memoria gradual, caducidad, restauración y movimiento; falla en 0.79 por dependencia del rival oculto. Coordinación, balón y otras partes defensivas conservan información global: no completa percepción ni demuestra mejora defensiva general. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.79 — Centro con referencia reciente
 
 Finalización A2/A3/A6: centros automáticos requieren receptor visto hace menos de 0.5 s, además de espacio y posición habilitada percibidos. Sin candidato se mantienen pase/conducción; no prohíbe todo pase hacia recuerdos ni modifica centros manuales o física aérea. Umbral heurístico. cross_selection añade casos espejo de receptor oculto antiguo y refresco visual. Siete bloques abiertos; fases aún parciales, 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.

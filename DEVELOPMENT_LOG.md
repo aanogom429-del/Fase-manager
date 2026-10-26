@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.80 — Contención y retroceso perceptivos
+
+Verificación: 11 entradas PASS: containment_perception, defense_origin, pressure_exposure, finishing_protection, defensive_coordination, game_phases, contextual_supports (3 × 60 s), destination_trace, simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.
+
+A2/A4: el ajuste hacia rival cercano de defensores fuera de los dos primeros puestos usa oposición observada/recordada, excluye porteros y pondera el recuerdo con confianza lineal hasta caducidad. Mantiene referencia de pérdida, recuperación de profundidad y políticas del presionante/cobertura. No sigue coordenadas ocultas. containment_perception prueba ambos equipos, contención/retroceso, observación, memoria gradual, caducidad, restauración y movimiento; falla en 0.79 por dependencia del rival oculto. Coordinación, balón y otras partes defensivas conservan información global: no completa percepción ni demuestra mejora defensiva general. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.79 — Centro con referencia reciente
 
 Verificación: 9 entradas PASS: cross_selection, aerial_play, game_phases, organizing_memory, organizing_progression, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado; git diff --check limpio.

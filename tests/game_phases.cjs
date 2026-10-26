@@ -2,15 +2,15 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const html=fs.readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8');
 const source=html.slice(html.indexOf('function gamePhase('),html.indexOf('function chooseAction('));
 const phase=vm.runInNewContext(source+';gamePhase');
-const base={depth:50,finish:false,progress:false,risk:6,pressure:5,safety:true};
+const base={depth:50,finish:false,progress:false,progressRisk:6,pressure:5,safety:true};
 for(const [change,name,organize] of [
  [{depth:20},'Iniciación del juego',true],
  [{pressure:9},'Confort',true],
  [{},'Disposición posicional',true],
- [{progress:true,risk:1},'Superación',false],
+ [{progress:true,progressRisk:1},'Superación',false],
  [{finish:true},'Finalización',false],
  [{depth:80},'Disposición posicional',true],
- [{progress:true,risk:7},'Disposición posicional',true]
+ [{progress:true,progressRisk:7},'Disposición posicional',true]
 ]){const q=phase({...base,...change});assert.equal(q.name,name);assert.equal(q.organize,organize);assert(q.principle);}
 for(const [input,name]of [
  [{mode:'Presionar con acceso o ayuda'},'Presión'],

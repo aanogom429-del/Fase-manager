@@ -10,6 +10,7 @@ function setup(t,seed,age=.6){
 for(const t of [0,1])for(let seed=1;seed<=16;seed++){
  const c=setup(t,seed);c.e.t.chooseAction(c.p);assert.equal(c.e.t.get().flight?.target,c.b,'prefer current safe support over old deep reference');
  const moved=setup(t,seed);moved.a.x=moved.x(85);moved.e.t.chooseAction(moved.p);assert.equal(moved.e.t.get().flight?.target,moved.b,'hidden movement does not change choice');
+ const forward=setup(t,seed);forward.b.x=forward.x(54);forward.b.y=50;forward.e.t.chooseAction(forward.p);assert.equal(forward.e.t.get().flight?.target,forward.b,'fresh short progression beats aged deep reference during overcoming');
  const fresh=setup(t,seed);fresh.p.bodyAngle=Math.PI/2;fresh.e.t.chooseAction(fresh.p);assert.equal(fresh.e.t.get().flight?.target,fresh.a,'looking again permits clear progression');
  const recent=setup(t,seed,.1);recent.e.t.chooseAction(recent.p);assert.equal(recent.e.t.get().flight?.target,recent.a,'briefly lost reference remains usable');
  const marked=setup(t,seed),r=marked.s.players.find(q=>q.t!==t);r.x=marked.b.x;r.y=marked.b.y;marked.e.t.chooseAction(marked.p);assert.notEqual(marked.e.t.get().flight?.target,marked.b,'do not conserve into observed marking');

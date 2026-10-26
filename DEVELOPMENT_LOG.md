@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.78 — Superación ligada a su opción concreta
+
+Verificación: 10 entradas PASS: game_phases, organizing_progression, organizing_memory, organizing_possession, progressive_outlet, contextual_supports (3 × 60 s), destination_trace, simulation_entry, continuity y offside. Node/DOM simulado, no Safari/iPhone real. git diff --check limpio.
+
+A3/A4: gamePhase consulta el riesgo de la salida progresiva corta elegible, no el de otro pase mejor puntuado. Conserva prioridad de iniciación/finalización. La preferencia por salida corta frente a alternativa expuesta o recuerdo antiguo también se aplica en Superación; evita que el cambio de etiqueta desactive la continuidad de 0.75/0.77. Prueba espejo de fase y pase ejecutado; el caso falla en 0.77. Progresión profunda abierta sigue disponible. No demuestra líneas realmente superadas ni cierra el detector de fases. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.77 — Conservar con información reciente
 
 Verificación: 10 entradas PASS: organizing_memory, game_phases, organizing_progression, organizing_possession, perceptual_memory, safe_outlet, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado, no prueba real Safari/iPhone. git diff --check limpio.

@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.78 — Superación ligada a su opción concreta
+
+A3/A4: gamePhase consulta el riesgo de la salida progresiva corta elegible, no el de otro pase mejor puntuado. Conserva prioridad de iniciación/finalización. La preferencia por salida corta frente a alternativa expuesta o recuerdo antiguo también se aplica en Superación; evita que el cambio de etiqueta desactive la continuidad de 0.75/0.77. Prueba espejo de fase y pase ejecutado; el caso falla en 0.77. Progresión profunda abierta sigue disponible. No demuestra líneas realmente superadas ni cierra el detector de fases. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.77 — Conservar con información reciente
 
 A2/A3/A4: en fases organizativas, espacio del poseedor >=4, si el mejor pase depende de un recuerdo de al menos 0.5 s, prioriza salida corta observada ahora y con los criterios de riesgo/espacio existentes. Conserva prioridad de progresión corta cuando es elegible. No elimina recuerdos ni inventa posiciones ocultas; no cambia finalización, portero, acciones manuales o presión inmediata. Umbral heurístico: no calibrado científicamente. organizing_memory prueba ambos equipos y 16 semillas: apoyo fresco, movimiento oculto, refresco, recuerdo reciente y apoyo marcado; falla contra 0.76 y pasa con 0.77. Siete bloques abiertos, modelo de fases parcial y 0.53.1 excluida. Publicar main/Pages.

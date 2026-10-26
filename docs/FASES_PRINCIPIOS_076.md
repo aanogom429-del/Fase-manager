@@ -7,7 +7,7 @@ Las fases son lecturas funcionales locales, no turnos obligatorios. Distintos ju
 | Iniciación del juego | Conservar, ofrecer salida y progresar con continuidad | Profundidad menor de 35; salida corta existente antes del despeje |
 | Confort | Conservar mediante apoyos y preparar progresión | Espacio percibido >=7 y apoyo seguro, sin ventaja progresiva clara |
 | Disposición posicional | Conservar, ordenar apoyos y preparar superación | Organización cuando no se identifica remate o progresión clara; ya no limitada a profundidad 65 |
-| Superación | Aprovechar ventaja y dar continuidad | Salida progresiva corta disponible y riesgo del pase mejor valorado <4 |
+| Superación | Aprovechar ventaja y dar continuidad | Desde 0.78: salida progresiva corta disponible y riesgo de ESA salida <=3; no el riesgo de otro pase |
 | Finalización | Buscar remate viable sin forzarlo | Cercanía, posición central y línea de tiro percibida; conserva decisiones existentes |
 | Presión | Reducir tiempo y espacio con acceso o ayuda | Vinculada al plan defensivo existente de presión |
 | Temporización | Ganar tiempo y proteger líneas | Vinculada a demora ante exposición, inferioridad o falta de ayuda |

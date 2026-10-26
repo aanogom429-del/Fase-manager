@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.79 — Centro con referencia reciente
+
+Finalización A2/A3/A6: centros automáticos requieren receptor visto hace menos de 0.5 s, además de espacio y posición habilitada percibidos. Sin candidato se mantienen pase/conducción; no prohíbe todo pase hacia recuerdos ni modifica centros manuales o física aérea. Umbral heurístico. cross_selection añade casos espejo de receptor oculto antiguo y refresco visual. Siete bloques abiertos; fases aún parciales, 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.78 — Superación ligada a su opción concreta
 
 A3/A4: gamePhase consulta el riesgo de la salida progresiva corta elegible, no el de otro pase mejor puntuado. Conserva prioridad de iniciación/finalización. La preferencia por salida corta frente a alternativa expuesta o recuerdo antiguo también se aplica en Superación; evita que el cambio de etiqueta desactive la continuidad de 0.75/0.77. Prueba espejo de fase y pase ejecutado; el caso falla en 0.77. Progresión profunda abierta sigue disponible. No demuestra líneas realmente superadas ni cierra el detector de fases. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.

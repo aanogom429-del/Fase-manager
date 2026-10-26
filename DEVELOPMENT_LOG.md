@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.79 — Centro con referencia reciente
+
+Verificación: 9 entradas PASS: cross_selection, aerial_play, game_phases, organizing_memory, organizing_progression, contextual_supports (3 × 60 s), simulation_entry, continuity y offside. Node/DOM simulado; git diff --check limpio.
+
+Finalización A2/A3/A6: centros automáticos requieren receptor visto hace menos de 0.5 s, además de espacio y posición habilitada percibidos. Sin candidato se mantienen pase/conducción; no prohíbe todo pase hacia recuerdos ni modifica centros manuales o física aérea. Umbral heurístico. cross_selection añade casos espejo de receptor oculto antiguo y refresco visual. Siete bloques abiertos; fases aún parciales, 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.
+
 ## 0.78 — Superación ligada a su opción concreta
 
 Verificación: 10 entradas PASS: game_phases, organizing_progression, organizing_memory, organizing_possession, progressive_outlet, contextual_supports (3 × 60 s), destination_trace, simulation_entry, continuity y offside. Node/DOM simulado, no Safari/iPhone real. git diff --check limpio.

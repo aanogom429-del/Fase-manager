@@ -9,6 +9,8 @@ function setup(t,seed=73){
 for(const t of [0,1]){
  const marked=setup(t);marked.e.t.chooseAction(marked.p);assert(!marked.e.t.get().flight?.cross,'do not force cross toward fully marked receiver');
  const open=setup(t);open.r.y=55;open.e.t.chooseAction(open.p);assert(open.e.t.get().flight.cross);assert.equal(open.e.t.get().flight.target,open.a,'retain open cross');
+ const stale=setup(t);stale.r.y=55;stale.e.t.observeTeammates(stale.p);stale.e.t.observeRivals(stale.p);stale.p.bodyAngle=-Math.PI/2;stale.e.t.scenario({time:1.6,team:t,seed:73});stale.e.t.chooseAction(stale.p);assert(!stale.e.t.get().flight?.cross,'do not cross toward an old unseen receiver');
+ const refreshed=setup(t);refreshed.r.y=55;refreshed.e.t.observeTeammates(refreshed.p);refreshed.e.t.scenario({time:1.6,team:t,seed:73});refreshed.e.t.chooseAction(refreshed.p);assert(refreshed.e.t.get().flight?.cross,'seeing receiver again permits cross');
  const alternative=setup(t);alternative.b.x=alternative.x(88);alternative.b.y=24;alternative.e.t.chooseAction(alternative.p);
  assert(alternative.e.t.get().flight.cross);assert.equal(alternative.e.t.get().flight.target,alternative.b,'choose unmarked alternative');
  function memory(time,hiddenX){const m=setup(t);m.e.t.observeRivals(m.p);m.r.x=m.x(hiddenX);m.r.y=10;m.e.t.scenario({time,team:t,seed:73});m.e.t.chooseAction(m.p);return !!m.e.t.get().flight?.cross;}

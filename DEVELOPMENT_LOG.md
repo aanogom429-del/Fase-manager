@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.88 — Cadena de compensaciones
+
+Implementada cola de vacantes sin alterar prioridades ni crear nuevos campos de estado. Prueba line_chain para cuatro sistemas y dos sentidos: dos enlaces, referencias únicas, ausencia de ciclos, prioridades, límite espacial y liberación. Documentación de límites en docs/CADENAS_088.md. Estudio SkillCorner permanece separado; no se usaron sus umbrales para calibrar este cambio. Fallo previo decision_storage pendiente.
+
 ## 0.87 — Integración de compensaciones
 
 Recuperado código local pendiente. Añadida prueba de integración de lineCoverAssignments en attackingTargets, con fixture espejo corregida. Documentación en docs/LINEAS_087.md. Cambios independientes de resultados SkillCorner; no redistribuyen datos originales. Se conserva investigación en rama separada y el fallo previo de decision_storage como pendiente. No validación en navegador real.

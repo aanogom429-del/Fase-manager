@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.88 — Compensaciones secundarias
+
+Cola de vacantes en lineCoverAssignments: primero salidas originales, luego referencias abandonadas por sustitutos. Encadena defensa←medio←ataque; termina en ataque, no garantiza cubrir vacante final. Mismas prioridades y distancia de 0.87, sin estado nuevo. Ver docs/CADENAS_088.md. No calibrado con SkillCorner; siete bloques abiertos, decision_storage pendiente.
+
 ## 0.87 — Referencias y compensaciones entre líneas
 
 Ver docs/LINEAS_087.md: compensación temporal de salida avanzada de defensor/medio por candidato de línea siguiente, con retorno al acabar la función. Campos lineExitAt/lineCoverFor restaurados y limpiados con el resto de estado ofensivo. Límites: solo con balón, no desdoblamientos nuevos ni permutas permanentes/cadenas; no calibrado por SkillCorner. Estudio SkillCorner separado en rama codex/skillcorner-study, muestra todavía insuficiente. Mantener siete bloques abiertos y fallo decision_storage pendiente.

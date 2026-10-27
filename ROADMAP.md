@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.88 — Cadena de relevos con balón
+
+Compensación secundaria de la referencia del primer sustituto, con prioridad a vacantes originales y sin ciclos. Pendientes evaluación de la vacante final en ataque, coordinación defensiva y contraste colectivo. No cerrar el motor ni afirmar aprendizaje de tracking.
+
 ## 0.87 — Primera compensación temporal entre líneas
 
 Referencia por puesto, sustitución elegible desde línea posterior y retorno progresivo al terminar la función. Pendientes coberturas encadenadas, defensa y evaluación colectiva de vacantes secundarias. Evidencia SkillCorner no usada para ajustar umbrales; no afirmar aprendizaje automático ni cierre del motor.

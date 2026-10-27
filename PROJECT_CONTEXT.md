@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.82 — Arquitectura base con balón
+
+Petición del usuario: mantener estructura y red de receptores. Primera base 4-3-3: referencias por puesto relativas al balón, dos destinos de seguridad escalonados, reconstrucción gradual desde posiciones de recuperación. Apoyos, receptor y órdenes conservan prioridad. Ver docs/ARQUITECTURA_POSESION_082.md para parámetros, evidencia histórica Metrica leída y límites: no entrenado/validado contra un partido, no selector de múltiples sistemas ni garantía de apoyos instantáneos. Siete bloques abiertos; 0.53.1 excluida. Publicar main/Pages.
+
 ## 0.81 — Referencia defensiva según incertidumbre
 
 A2/A4: en contención/retroceso fuera del presionante y primera cobertura, compara referencias de campo a menos de 16 unidades por distancia + 2 × radio de incertidumbre, desempate por id. Evita que un recuerdo próximo casi caducado desplace siempre a un rival visible ligeramente más lejano. Conserva ponderación gradual, referencia de pérdida y retroceso de 0.80. Parámetro heurístico, no probabilidad ni mejora defensiva general demostrada. containment_reference comprueba ambos sentidos y estados, recencia, límite local, movimiento oculto y restauración. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Copia local recuperada de main 317763d tras mantenimiento del entorno. Publicar main/Pages.

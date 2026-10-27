@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.82 — Arquitectura base con balón
+
+Verificación: 11 entradas PASS: possession_shape, attack_origin, attacking_heights, contextual_supports (3 ×60 s), offball, onside_recovery, containment_perception, destination_trace, simulation_entry, continuity y offside. Node/DOM simulado, no Safari/iPhone real. git diff --check limpio.
+
+Petición del usuario: mantener estructura y red de receptores. Primera base 4-3-3: referencias por puesto relativas al balón, dos destinos de seguridad escalonados, reconstrucción gradual desde posiciones de recuperación. Apoyos, receptor y órdenes conservan prioridad. Ver docs/ARQUITECTURA_POSESION_082.md para parámetros, evidencia histórica Metrica leída y límites: no entrenado/validado contra un partido, no selector de múltiples sistemas ni garantía de apoyos instantáneos. Siete bloques abiertos; 0.53.1 excluida. Publicar main/Pages.
+
 ## 0.81 — Referencia defensiva según incertidumbre
 
 Verificación: 11 entradas PASS: containment_reference, containment_perception, defense_origin, pressure_exposure, finishing_protection, defensive_coordination, contextual_supports (3 × 60 s), destination_trace, simulation_entry, continuity y offside. Node/DOM simulado; git diff --check limpio.

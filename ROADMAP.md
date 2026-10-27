@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.87 — Primera compensación temporal entre líneas
+
+Referencia por puesto, sustitución elegible desde línea posterior y retorno progresivo al terminar la función. Pendientes coberturas encadenadas, defensa y evaluación colectiva de vacantes secundarias. Evidencia SkillCorner no usada para ajustar umbrales; no afirmar aprendizaje automático ni cierre del motor.
+
 ## 0.86 — Primer ajuste de estabilidad tras Game 3
 
 Referencia longitudinal amortiguada con desfase acotado y persistencia de dos funciones de seguridad. Contraste controlado de desplazamiento objetivo/físico, no validación de partido completo. Pendientes comparación colectiva contextual, distribución por fases y retardos temporales; no cerrar los siete bloques ni afirmar reproducción aprendida.

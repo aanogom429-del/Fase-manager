@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.87 — Referencias y compensaciones entre líneas
+
+Ver docs/LINEAS_087.md: compensación temporal de salida avanzada de defensor/medio por candidato de línea siguiente, con retorno al acabar la función. Campos lineExitAt/lineCoverFor restaurados y limpiados con el resto de estado ofensivo. Límites: solo con balón, no desdoblamientos nuevos ni permutas permanentes/cadenas; no calibrado por SkillCorner. Estudio SkillCorner separado en rama codex/skillcorner-study, muestra todavía insuficiente. Mantener siete bloques abiertos y fallo decision_storage pendiente.
+
 ## 0.86 — Referencia amortiguada y seguridad persistente
 
 Aplica hipótesis del Game 3: possessionShape usa origen longitudinal de posesión + 0,35 del desplazamiento de balón, limitado a 12 unidades de desfase. Mantiene geometrías por sistema, anchura lateral previa, apoyos/receptor, órdenes, límites y seguridad ligada al balón. No es filtro temporal ni aprendizaje ML; al superar el desfase máximo vuelve a acompañar 1:1 para evitar desconexión. 0,35/12 son parámetros de diseño, no óptimos estimados de Game 3. Dos puestos attackBalance persistentes, reemplazables por inelegibilidad o ventaja de profundidad >8. Campo primitivo incluido en snapshots y limpiado junto a attackSupport; siete bloques siguen abiertos. Ver docs/ESTABILIDAD_BLOQUE_086.md. Incidencia previa decision_storage pendiente.

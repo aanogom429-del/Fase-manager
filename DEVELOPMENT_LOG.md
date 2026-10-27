@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.87 — Integración de compensaciones
+
+Recuperado código local pendiente. Añadida prueba de integración de lineCoverAssignments en attackingTargets, con fixture espejo corregida. Documentación en docs/LINEAS_087.md. Cambios independientes de resultados SkillCorner; no redistribuyen datos originales. Se conserva investigación en rama separada y el fallo previo de decision_storage como pendiente. No validación en navegador real.
+
 ## 0.86 — Estabilidad tras contraste real
 
 Implementada referencia longitudinal de posesión con ganancia 0,35 y desfase máximo 12; dos puestos de seguridad persistentes con margen de relevo de 8. Ver docs/ESTABILIDAD_BLOQUE_086.md. No se confunde fórmula objetivo con ganancia observada del centroide; no es aprendizaje ni validación de partido completo. PASS block_stability (4 sistemas ×2 sentidos, reducción objetivo y movimiento físico controlado, progresión larga, persistencia/relevo y snapshots), possession_shape, formation_selection, open_reception y simulation_entry. Diff --check limpio. Incidencia preexistente decision_storage sigue pendiente. Sin validación Safari ni afirmación de batería completa superada.

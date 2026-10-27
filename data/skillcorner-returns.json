@@ -1,0 +1,303 @@
+{
+  "method": "20 s windows; 1 Hz; build_up/create; fixed >=4 outfield teammates detected at every sample; local centroid-relative 5 s median reference; exit >8 m for 2 samples, return <=4 m for 2 samples. Censored means no observed return within window, NOT no return. Coverage geometric, not tactical.",
+  "matches": [
+    {
+      "match": 1874553,
+      "quality": {
+        "candidateWindows": 25,
+        "acceptedWindows": 3,
+        "missingFrames": 0,
+        "unstablePossession": 13,
+        "insufficientDetectedCohort": 9
+      },
+      "events": [
+        {
+          "match": 1874553,
+          "frame": 6910,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 51005,
+          "cohortSize": 4,
+          "exitSecond": 13,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1874553,
+          "frame": 6910,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 560893,
+          "cohortSize": 4,
+          "exitSecond": 15,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1874553,
+          "frame": 20670,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 50949,
+          "cohortSize": 4,
+          "exitSecond": 12,
+          "returnSeconds": 7,
+          "possibleCover": null,
+          "censored": false
+        },
+        {
+          "match": 1874553,
+          "frame": 20670,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 50959,
+          "cohortSize": 4,
+          "exitSecond": 12,
+          "returnSeconds": 7,
+          "possibleCover": null,
+          "censored": false
+        },
+        {
+          "match": 1874553,
+          "frame": 20670,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 51005,
+          "cohortSize": 4,
+          "exitSecond": 15,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1874553,
+          "frame": 22350,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 50949,
+          "cohortSize": 4,
+          "exitSecond": 19,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1874553,
+          "frame": 22350,
+          "period": 1,
+          "phase": "create",
+          "team": 866,
+          "player": 560893,
+          "cohortSize": 4,
+          "exitSecond": 15,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        }
+      ]
+    },
+    {
+      "match": 1886347,
+      "quality": {
+        "candidateWindows": 15,
+        "acceptedWindows": 5,
+        "missingFrames": 0,
+        "unstablePossession": 4,
+        "insufficientDetectedCohort": 6
+      },
+      "events": [
+        {
+          "match": 1886347,
+          "frame": 8310,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 14736,
+          "cohortSize": 5,
+          "exitSecond": 9,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 8310,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 23418,
+          "cohortSize": 5,
+          "exitSecond": 14,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 8310,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 50951,
+          "cohortSize": 5,
+          "exitSecond": 7,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 8310,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 133498,
+          "cohortSize": 5,
+          "exitSecond": 8,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 14450,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 14736,
+          "cohortSize": 4,
+          "exitSecond": 8,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 14450,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 23418,
+          "cohortSize": 4,
+          "exitSecond": 13,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 14450,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 51667,
+          "cohortSize": 4,
+          "exitSecond": 7,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 14450,
+          "period": 1,
+          "phase": "create",
+          "team": 4177,
+          "player": 133498,
+          "cohortSize": 4,
+          "exitSecond": 6,
+          "returnSeconds": null,
+          "possibleCover": 14736,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 52210,
+          "period": 2,
+          "phase": "create",
+          "team": 1805,
+          "player": 50983,
+          "cohortSize": 5,
+          "exitSecond": 6,
+          "returnSeconds": 6,
+          "possibleCover": null,
+          "censored": false
+        },
+        {
+          "match": 1886347,
+          "frame": 52210,
+          "period": 2,
+          "phase": "create",
+          "team": 1805,
+          "player": 735574,
+          "cohortSize": 5,
+          "exitSecond": 8,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 58040,
+          "period": 2,
+          "phase": "create",
+          "team": 1805,
+          "player": 50983,
+          "cohortSize": 6,
+          "exitSecond": 10,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 58040,
+          "period": 2,
+          "phase": "create",
+          "team": 1805,
+          "player": 51649,
+          "cohortSize": 6,
+          "exitSecond": 11,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 58040,
+          "period": 2,
+          "phase": "create",
+          "team": 1805,
+          "player": 735574,
+          "cohortSize": 6,
+          "exitSecond": 8,
+          "returnSeconds": null,
+          "possibleCover": 797297,
+          "censored": true
+        },
+        {
+          "match": 1886347,
+          "frame": 58040,
+          "period": 2,
+          "phase": "create",
+          "team": 1805,
+          "player": 735578,
+          "cohortSize": 6,
+          "exitSecond": 8,
+          "returnSeconds": null,
+          "possibleCover": null,
+          "censored": true
+        }
+      ]
+    }
+  ],
+  "holdoutUntouched": 1899585
+}

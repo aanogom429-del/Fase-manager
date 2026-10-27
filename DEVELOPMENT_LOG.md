@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.86 — Estabilidad tras contraste real
+
+Implementada referencia longitudinal de posesión con ganancia 0,35 y desfase máximo 12; dos puestos de seguridad persistentes con margen de relevo de 8. Ver docs/ESTABILIDAD_BLOQUE_086.md. No se confunde fórmula objetivo con ganancia observada del centroide; no es aprendizaje ni validación de partido completo. PASS block_stability (4 sistemas ×2 sentidos, reducción objetivo y movimiento físico controlado, progresión larga, persistencia/relevo y snapshots), possession_shape, formation_selection, open_reception y simulation_entry. Diff --check limpio. Incidencia preexistente decision_storage sigue pendiente. Sin validación Safari ni afirmación de batería completa superada.
+
 ## 2026-10-27 — Otra referencia real: estructura del Game 3
 
 Descarga completa de tres archivos Metrica, blobs coinciden con API; 69.661 fotogramas de primera parte procesados. 203 ventanas de cinco segundos, ninguna descartada por coordenadas incompletas. Alineación de 574 pases comprobada. Métricas y cautelas en docs/ESTRUCTURA_PARTIDO_3.md; resultados reproducibles en data/game3-structure.json. Dos pruebas Python superadas, diff --check limpio. No cambios en index.html: no se anuncia 0.86 ni aprendizaje entrenado. Hipótesis para siguiente ajuste: ganancia longitudinal 1 de destinos estructurales vs 0,26–0,31 de desplazamiento colectivo observado; requiere evaluación simulada antes/después. Fallo previo decision_storage sigue pendiente.

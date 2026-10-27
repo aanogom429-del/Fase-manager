@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.86 — Referencia amortiguada y seguridad persistente
+
+Aplica hipótesis del Game 3: possessionShape usa origen longitudinal de posesión + 0,35 del desplazamiento de balón, limitado a 12 unidades de desfase. Mantiene geometrías por sistema, anchura lateral previa, apoyos/receptor, órdenes, límites y seguridad ligada al balón. No es filtro temporal ni aprendizaje ML; al superar el desfase máximo vuelve a acompañar 1:1 para evitar desconexión. 0,35/12 son parámetros de diseño, no óptimos estimados de Game 3. Dos puestos attackBalance persistentes, reemplazables por inelegibilidad o ventaja de profundidad >8. Campo primitivo incluido en snapshots y limpiado junto a attackSupport; siete bloques siguen abiertos. Ver docs/ESTABILIDAD_BLOQUE_086.md. Incidencia previa decision_storage pendiente.
+
 ## Contraste estructural — Sample Game 3 (motor sigue en 0.85)
 
 Petición: aprender de otro partido por desorden posicional. Descargados tracking/eventos/XML de Game 3; integridad blobs verificada. Analizada primera parte completa para seleccionar 203 ventanas PASS/CARRY de 5 s (150 desarrollo/53 contraste temporal). Ver docs/ESTRUCTURA_PARTIDO_3.md, data/game3-structure.json y script reproducible. Ganancia longitudinal centroide/ball 0,259/0,307 frente a objetivo estructural longitudinal de ganancia 1 en possessionShape tras mezcla completa: hipótesis de sobrerreacción, no validación simulada. Próximo paso: amortiguación del centro de bloque y persistencia de funciones con comparación antes/después. No entrenamiento ML, ni partido completo analizado, ni orientación inferida del tracking. Mantener 0.85 hasta implementar/verificar ajuste. Contraste ya inspeccionado, no reutilizar como holdout ciego.

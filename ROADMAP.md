@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.86 — Primer ajuste de estabilidad tras Game 3
+
+Referencia longitudinal amortiguada con desfase acotado y persistencia de dos funciones de seguridad. Contraste controlado de desplazamiento objetivo/físico, no validación de partido completo. Pendientes comparación colectiva contextual, distribución por fases y retardos temporales; no cerrar los siete bloques ni afirmar reproducción aprendida.
+
 ## Prioridad tras contraste de otro partido
 
 Game 3: 203 ventanas de circulación/conducción analizadas, métricas reales derivadas y fuente verificable en docs/ESTRUCTURA_PARTIDO_3.md. Pendiente comparar trayectorias del motor y probar centro de bloque amortiguado + funciones persistentes, sin congelar jugadores. No declarar motor entrenado ni cerrar bloques. Versión jugable sigue 0.85.

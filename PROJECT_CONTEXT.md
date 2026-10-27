@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.81 — Referencia defensiva según incertidumbre
+
+A2/A4: en contención/retroceso fuera del presionante y primera cobertura, compara referencias de campo a menos de 16 unidades por distancia + 2 × radio de incertidumbre, desempate por id. Evita que un recuerdo próximo casi caducado desplace siempre a un rival visible ligeramente más lejano. Conserva ponderación gradual, referencia de pérdida y retroceso de 0.80. Parámetro heurístico, no probabilidad ni mejora defensiva general demostrada. containment_reference comprueba ambos sentidos y estados, recencia, límite local, movimiento oculto y restauración. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Copia local recuperada de main 317763d tras mantenimiento del entorno. Publicar main/Pages.
+
 ## 0.80 — Contención y retroceso perceptivos
 
 A2/A4: el ajuste hacia rival cercano de defensores fuera de los dos primeros puestos usa oposición observada/recordada, excluye porteros y pondera el recuerdo con confianza lineal hasta caducidad. Mantiene referencia de pérdida, recuperación de profundidad y políticas del presionante/cobertura. No sigue coordenadas ocultas. containment_perception prueba ambos equipos, contención/retroceso, observación, memoria gradual, caducidad, restauración y movimiento; falla en 0.79 por dependencia del rival oculto. Coordinación, balón y otras partes defensivas conservan información global: no completa percepción ni demuestra mejora defensiva general. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Publicar main/Pages.

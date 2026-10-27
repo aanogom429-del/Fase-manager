@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.81 — Referencia defensiva según incertidumbre
+
+Verificación: 11 entradas PASS: containment_reference, containment_perception, defense_origin, pressure_exposure, finishing_protection, defensive_coordination, contextual_supports (3 × 60 s), destination_trace, simulation_entry, continuity y offside. Node/DOM simulado; git diff --check limpio.
+
+A2/A4: en contención/retroceso fuera del presionante y primera cobertura, compara referencias de campo a menos de 16 unidades por distancia + 2 × radio de incertidumbre, desempate por id. Evita que un recuerdo próximo casi caducado desplace siempre a un rival visible ligeramente más lejano. Conserva ponderación gradual, referencia de pérdida y retroceso de 0.80. Parámetro heurístico, no probabilidad ni mejora defensiva general demostrada. containment_reference comprueba ambos sentidos y estados, recencia, límite local, movimiento oculto y restauración. Siete bloques abiertos; 0.53.1 excluida; sin validación científica/Safari. Copia local recuperada de main 317763d tras mantenimiento del entorno. Publicar main/Pages.
+
 ## 0.80 — Contención y retroceso perceptivos
 
 Verificación: 11 entradas PASS: containment_perception, defense_origin, pressure_exposure, finishing_protection, defensive_coordination, game_phases, contextual_supports (3 × 60 s), destination_trace, simulation_entry, continuity y offside. Node/DOM simulado. git diff --check limpio.

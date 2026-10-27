@@ -1,5 +1,17 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.84 — Perfilación y espacios de fase
+
+Causa observada en código: orientBody igualaba rumbo corporal a destino de desplazamiento, incluso en reajustes cortos del apoyo; phaseRelations no añadía coste de orientación a la conexión ofensiva. Ahora los apoyos cercanos y receptores próximos abren balón/avance, defensores próximos orientan al balón, y la conexión suma demora por recepción de espaldas. No se modifica el sistema de control posterior al contacto ni se añade visión independiente de cabeza. Sin nueva consulta a posiciones ocultas de rivales.
+
+PASS body_profile (ambos equipos, visión balón/avance, giro acotado, carrera larga, geometría idéntica con distinta relación de fase, prioridad de control), orientation (incluye tres simulaciones de 60 s), turn_movement, reception, moving_reception, formation_selection, possession_shape y simulation_entry. Node con DOM simulado, no navegador real ni validación de partido. Incidencia preexistente de decision_storage documentada en 0.83 sigue pendiente; no se afirma batería completa superada. Conserva cuatro sistemas de 0.83. Publicación pendiente de confirmación remota.
+
+## 0.83 — Sistemas seleccionables por equipo
+
+Verificación: PASS formation_selection (4 sistemas ×2 equipos, roles, destinos, simulación, restauración y guardar/cargar en contexto nuevo), possession_shape, offball, contextual_supports (3 ×60 s), simulation_entry, continuity y offside. decision_storage FALLA en «retry remains deterministic»; se reprodujo contra HEAD:index.html de 0.82 con idéntica diferencia de estado/tiempo (77.30 frente a 77.3916667). Incidencia preexistente pendiente; no se modificaron expectativas para ocultarla. La cadena inicial se detuvo en ese fallo, por lo que decision_portable no se ejecutó. Resto de regresiones ejecutadas separadamente. Node/DOM simulado; sin Safari/iPhone real. git diff --check limpio.
+
+Selectores azul/rojo: 4-3-3, 4-2-3-1, 4-4-2 y 3-5-2. Cada sistema define referencias longitudinales/laterales y funciones por dorsal; actualiza roles, referencias de arquitectura y funciones dependientes del rol, no solo una etiqueta. Conserva posiciones y velocidades al cambiar, apoyos locales y seguridad de 0.82. Sistema por jugador incluido en instantáneas y guardados; recuperar una instantánea antigua sin sistema vuelve a 4-3-3. Reiniciar conserva la selección actual. No redefine aún posiciones de saque inicial ni un bloque defensivo específico por sistema: son arquitecturas con balón, no cuatro modelos de juego completos. No añade redistribución automática tras expulsión. Parámetros de diseño sin calibración de partido real/Safari. Siete bloques abiertos, 0.53.1 excluida; publicar main/Pages.
+
 ## 0.82 — Arquitectura base con balón
 
 Verificación: 11 entradas PASS: possession_shape, attack_origin, attacking_heights, contextual_supports (3 ×60 s), offball, onside_recovery, containment_perception, destination_trace, simulation_entry, continuity y offside. Node/DOM simulado, no Safari/iPhone real. git diff --check limpio.

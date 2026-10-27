@@ -1,5 +1,7 @@
 # Arquitectura de posesión 0.82
 
+Actualización 0.83: ya existen selectores por equipo para 4-3-3, 4-2-3-1, 4-4-2 y 3-5-2, con referencias y roles propios, guardado y restauración. La limitación de selector de la versión 0.82 descrita debajo es histórica. No constituyen todavía cuatro estructuras defensivas específicas ni un reparto automático con expulsiones. Los apoyos y dos puestos de seguridad pueden modificar la silueta nominal según la situación.
+
 Primera base implementada: 4-3-3 para ambos equipos, espejada. No hay todavía selector de varios sistemas; 4-2-3-1 y 3-2-5 requieren asignación de puestos, persistencia y pruebas propias. No se cambian puestos mediante una etiqueta visual.
 
 Problema: attackOrigin conservaba la geometría de la recuperación. Si esa geometría estaba desorganizada, la referencia de posesión la perpetuaba. La nueva capa recupera ocupación por puesto, sin sustituir apoyos cercanos, receptor previsto ni órdenes explícitas.

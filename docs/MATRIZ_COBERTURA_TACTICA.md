@@ -1,5 +1,9 @@
 # Matriz de cobertura del motor táctico
 
+## 0.83 — Sistemas seleccionables por equipo
+
+Selectores azul/rojo: 4-3-3, 4-2-3-1, 4-4-2 y 3-5-2. Cada sistema define referencias longitudinales/laterales y funciones por dorsal; actualiza roles, referencias de arquitectura y funciones dependientes del rol, no solo una etiqueta. Conserva posiciones y velocidades al cambiar, apoyos locales y seguridad de 0.82. Sistema por jugador incluido en instantáneas y guardados; recuperar una instantánea antigua sin sistema vuelve a 4-3-3. Reiniciar conserva la selección actual. No redefine aún posiciones de saque inicial ni un bloque defensivo específico por sistema: son arquitecturas con balón, no cuatro modelos de juego completos. No añade redistribución automática tras expulsión. Parámetros de diseño sin calibración de partido real/Safari. Siete bloques abiertos, 0.53.1 excluida; publicar main/Pages.
+
 ## 0.82 — Arquitectura base con balón
 
 Petición del usuario: mantener estructura y red de receptores. Primera base 4-3-3: referencias por puesto relativas al balón, dos destinos de seguridad escalonados, reconstrucción gradual desde posiciones de recuperación. Apoyos, receptor y órdenes conservan prioridad. Ver docs/ARQUITECTURA_POSESION_082.md para parámetros, evidencia histórica Metrica leída y límites: no entrenado/validado contra un partido, no selector de múltiples sistemas ni garantía de apoyos instantáneos. Siete bloques abiertos; 0.53.1 excluida. Publicar main/Pages.

@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.85 — Continuidad del perfil al recibir
+
+prepareReception conserva el ángulo corporal actual en pase raso si balón de origen y avance quedan dentro de ±90° y el espacio percibido supera 5. Observa rivales desde el perfil actual; desconocimiento no equivale a espacio libre. En presión/perfil cerrado conserva giro hacia origen. Mantiene controlError y demora angular existentes, prioridad de control, exclusión de portero/aéreos y cuatro sistemas. No añade control orientado direccional elegido ni visión de cabeza. Parámetros provisionales, siete bloques abiertos; fallo preexistente decision_storage pendiente.
+
 ## 0.84 — Perfilación y relación de fase
 
 El apoyo de campo a menos de 6 unidades de su destino abre el cuerpo entre balón y avance; receptor de pase a menos de 15 del balón también anticipa ese perfil. En oposición exacta abre hacia el centro. Defensa cerca de su destino (<3) mira al balón. Carrera larga, portero, reinicios, control y escaneo conservan sus prioridades. Giros limitados por capacidad individual; sin teletransporte ni nueva información sobre rivales ocultos. La conexión de apoyo mutuo añade demora angular cuando el balón llega por detrás del plano lateral: max(0,error−π/2)/turnRate. Puede reclasificar apoyo a cooperación; receptor ya designado conserva vínculo. Parámetros heurísticos, no validación real ni cabeza independiente. Conserva cuatro sistemas de 0.83. Incidencia previa de retry en decision_storage pendiente; siete bloques abiertos.

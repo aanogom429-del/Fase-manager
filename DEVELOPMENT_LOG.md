@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.85 — Continuidad del perfil al recibir
+
+PASS: open_reception, reception, moving_reception, anticipation_first_touch, body_profile, formation_selection y simulation_entry. git diff --check limpio. No se afirma batería completa superada.
+
+Corregida pérdida de perfil abierto en prepareReception: fijaba siempre controlAngle hacia el origen. Ahora conserva ángulo actual cuando recibe dentro del plano frontal/lateral, también puede mirar al avance y perceivedSpace >5. Mantiene coste y plazo de control, sin teletransporte ni conocimiento de rivales ocultos. Ver tests/open_reception.cjs: ambos sentidos, presión, incertidumbre, perfil cerrado, exclusión aérea y orientación gradual. Las pruebas se ejecutan en Node/DOM simulado; no validación real/Safari. Incidencia previa decision_storage sigue pendiente. Publicación a comprobar tras commit.
+
 ## 0.84 — Perfilación y espacios de fase
 
 Causa observada en código: orientBody igualaba rumbo corporal a destino de desplazamiento, incluso en reajustes cortos del apoyo; phaseRelations no añadía coste de orientación a la conexión ofensiva. Ahora los apoyos cercanos y receptores próximos abren balón/avance, defensores próximos orientan al balón, y la conexión suma demora por recepción de espaldas. No se modifica el sistema de control posterior al contacto ni se añade visión independiente de cabeza. Sin nueva consulta a posiciones ocultas de rivales.

@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.85 — Continuidad del perfil al recibir
+
+Conservar perfil abierto ya adquirido al controlar raso con espacio percibido; mantener preparación conservadora con presión, incertidumbre o perfil cerrado. No cierra el modelo de recepción ni los siete bloques del motor. Próximos aspectos: elección de salida tras control y validación contextual.
+
 ## 0.84 — Perfilación y relación de fase
 
 Separar orientación de carrera y perfil de apoyo cercano, abrir balón/avance y anticipar al recibir. Integrar demora de perfilación en conexión de apoyo mutuo. No completa percepción de cabeza, compenetración ni validación de partido; siete bloques siguen abiertos. Mantener los cuatro sistemas seleccionables de 0.83.

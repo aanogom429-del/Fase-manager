@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Prioridad tras contraste de otro partido
+
+Game 3: 203 ventanas de circulación/conducción analizadas, métricas reales derivadas y fuente verificable en docs/ESTRUCTURA_PARTIDO_3.md. Pendiente comparar trayectorias del motor y probar centro de bloque amortiguado + funciones persistentes, sin congelar jugadores. No declarar motor entrenado ni cerrar bloques. Versión jugable sigue 0.85.
+
 ## 0.85 — Continuidad del perfil al recibir
 
 Conservar perfil abierto ya adquirido al controlar raso con espacio percibido; mantener preparación conservadora con presión, incertidumbre o perfil cerrado. No cierra el modelo de recepción ni los siete bloques del motor. Próximos aspectos: elección de salida tras control y validación contextual.

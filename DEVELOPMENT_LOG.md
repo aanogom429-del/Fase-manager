@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 2026-10-27 — Otra referencia real: estructura del Game 3
+
+Descarga completa de tres archivos Metrica, blobs coinciden con API; 69.661 fotogramas de primera parte procesados. 203 ventanas de cinco segundos, ninguna descartada por coordenadas incompletas. Alineación de 574 pases comprobada. Métricas y cautelas en docs/ESTRUCTURA_PARTIDO_3.md; resultados reproducibles en data/game3-structure.json. Dos pruebas Python superadas, diff --check limpio. No cambios en index.html: no se anuncia 0.86 ni aprendizaje entrenado. Hipótesis para siguiente ajuste: ganancia longitudinal 1 de destinos estructurales vs 0,26–0,31 de desplazamiento colectivo observado; requiere evaluación simulada antes/después. Fallo previo decision_storage sigue pendiente.
+
 ## 0.85 — Continuidad del perfil al recibir
 
 PASS: open_reception, reception, moving_reception, anticipation_first_touch, body_profile, formation_selection y simulation_entry. git diff --check limpio. No se afirma batería completa superada.

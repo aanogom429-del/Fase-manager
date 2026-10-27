@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Contraste estructural — Sample Game 3 (motor sigue en 0.85)
+
+Petición: aprender de otro partido por desorden posicional. Descargados tracking/eventos/XML de Game 3; integridad blobs verificada. Analizada primera parte completa para seleccionar 203 ventanas PASS/CARRY de 5 s (150 desarrollo/53 contraste temporal). Ver docs/ESTRUCTURA_PARTIDO_3.md, data/game3-structure.json y script reproducible. Ganancia longitudinal centroide/ball 0,259/0,307 frente a objetivo estructural longitudinal de ganancia 1 en possessionShape tras mezcla completa: hipótesis de sobrerreacción, no validación simulada. Próximo paso: amortiguación del centro de bloque y persistencia de funciones con comparación antes/después. No entrenamiento ML, ni partido completo analizado, ni orientación inferida del tracking. Mantener 0.85 hasta implementar/verificar ajuste. Contraste ya inspeccionado, no reutilizar como holdout ciego.
+
 ## 0.85 — Continuidad del perfil al recibir
 
 prepareReception conserva el ángulo corporal actual en pase raso si balón de origen y avance quedan dentro de ±90° y el espacio percibido supera 5. Observa rivales desde el perfil actual; desconocimiento no equivale a espacio libre. En presión/perfil cerrado conserva giro hacia origen. Mantiene controlError y demora angular existentes, prioridad de control, exclusión de portero/aéreos y cuatro sistemas. No añade control orientado direccional elegido ni visión de cabeza. Parámetros provisionales, siete bloques abiertos; fallo preexistente decision_storage pendiente.

@@ -1,0 +1,309 @@
+{
+  "source": "SkillCorner Open Data",
+  "selection": "First three chronological matches in catalogue; two development, third uninspected holdout",
+  "development": [
+    1874553,
+    1886347
+  ],
+  "holdout": 1899585,
+  "files": [
+    {
+      "match": 1874553,
+      "file": "1874553_match.json",
+      "bytes": 33730,
+      "sha256": "e6974e402779d8be44e75bf88ef2a3acfd4d025b87b3fc57f518fa826a645ad8",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1874553/1874553_match.json"
+    },
+    {
+      "match": 1874553,
+      "file": "1874553_tracking_extrapolated.jsonl",
+      "bytes": 90729279,
+      "sha256": "ea97f58f8eaad925feaeacc6395ec24860dd80027af8a89450276adebd29d265",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1874553/1874553_tracking_extrapolated.jsonl"
+    },
+    {
+      "match": 1874553,
+      "file": "1874553_dynamic_events.csv",
+      "bytes": 4738858,
+      "sha256": "92507490abbbeec7697227581c864cfb0a96c29b214dd63dcaa48929bb6c6408",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1874553/1874553_dynamic_events.csv"
+    },
+    {
+      "match": 1874553,
+      "file": "1874553_phases_of_play.csv",
+      "bytes": 115978,
+      "sha256": "e70054b64202a3f318b7208edec9a329da1f4cfcafeeb72ae197176c4a043a8c",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1874553/1874553_phases_of_play.csv"
+    },
+    {
+      "match": 1886347,
+      "file": "1886347_match.json",
+      "bytes": 27541,
+      "sha256": "30c608e78663e9f490b3545479a3ce67b171f418c5133d5609cb249a2466abb2",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1886347/1886347_match.json"
+    },
+    {
+      "match": 1886347,
+      "file": "1886347_tracking_extrapolated.jsonl",
+      "bytes": 89280839,
+      "sha256": "3577e2803da95390f8b2f85d47829eb55fbbfee6211c94adc65db0dc78e46b41",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1886347/1886347_tracking_extrapolated.jsonl"
+    },
+    {
+      "match": 1886347,
+      "file": "1886347_dynamic_events.csv",
+      "bytes": 4918599,
+      "sha256": "b21368b9b94eb8f83032fe14a2a8da88ab7eda048b4f8078c06d0e6955d12bfb",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1886347/1886347_dynamic_events.csv"
+    },
+    {
+      "match": 1886347,
+      "file": "1886347_phases_of_play.csv",
+      "bytes": 121864,
+      "sha256": "d1c3066f7ed0598069d0d1b317bb30261eca3d7786fd9d540985f395e4c8aea9",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1886347/1886347_phases_of_play.csv"
+    },
+    {
+      "match": 1899585,
+      "file": "1899585_match.json",
+      "bytes": 27810,
+      "sha256": "41de8cb74a0512fcf0cbaaa5c615ae3e7dcaaf6745b9c78a050b59b906b1cb06",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1899585/1899585_match.json"
+    },
+    {
+      "match": 1899585,
+      "file": "1899585_tracking_extrapolated.jsonl",
+      "bytes": 85550410,
+      "sha256": "90b6289ec2181192d1793ec6240fbbe8225ff0219c7956710c6278c31a661100",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1899585/1899585_tracking_extrapolated.jsonl"
+    },
+    {
+      "match": 1899585,
+      "file": "1899585_dynamic_events.csv",
+      "bytes": 4375032,
+      "sha256": "14c62ffc99aa5fd62998c238036873509a9d82ced44354697a1db4251424d557",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1899585/1899585_dynamic_events.csv"
+    },
+    {
+      "match": 1899585,
+      "file": "1899585_phases_of_play.csv",
+      "bytes": 119735,
+      "sha256": "e40562010c1b7c4aa6e0dbc17425dd236a1d82ce538ec03e77367a74e3f96b7e",
+      "source": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1899585/1899585_phases_of_play.csv"
+    }
+  ],
+  "audits": {
+    "1874553": {
+      "frames": 60301,
+      "periods": [
+        1,
+        2
+      ],
+      "playerObservations": 973368,
+      "detectedObservations": 564001,
+      "detectedFraction": 0.5794,
+      "possessionFrameCounts": {
+        "None": 27400,
+        "home team": 13040,
+        "away team": 19861
+      }
+    },
+    "1886347": {
+      "frames": 59061,
+      "periods": [
+        1,
+        2
+      ],
+      "playerObservations": 956076,
+      "detectedObservations": 566778,
+      "detectedFraction": 0.5928,
+      "possessionFrameCounts": {
+        "None": 26961,
+        "away team": 13659,
+        "home team": 18441
+      }
+    }
+  },
+  "providerPhaseMetrics": {
+    "1874553": {
+      "create": {
+        "count": 140,
+        "width": {
+          "n": 131,
+          "median": 47.61
+        },
+        "length": {
+          "n": 131,
+          "median": 50.52
+        }
+      },
+      "finish": {
+        "count": 82,
+        "width": {
+          "n": 82,
+          "median": 47.285
+        },
+        "length": {
+          "n": 82,
+          "median": 60.935
+        }
+      },
+      "chaotic": {
+        "count": 87,
+        "width": {
+          "n": 84,
+          "median": 34.24
+        },
+        "length": {
+          "n": 84,
+          "median": 54.14
+        }
+      },
+      "build_up": {
+        "count": 55,
+        "width": {
+          "n": 52,
+          "median": 45.705
+        },
+        "length": {
+          "n": 52,
+          "median": 47.695
+        }
+      },
+      "direct": {
+        "count": 32,
+        "width": {
+          "n": 29,
+          "median": 55.41
+        },
+        "length": {
+          "n": 29,
+          "median": 49.49
+        }
+      },
+      "quick_break": {
+        "count": 5,
+        "width": {
+          "n": 5,
+          "median": 38.59
+        },
+        "length": {
+          "n": 5,
+          "median": 58.25
+        }
+      },
+      "transition": {
+        "count": 7,
+        "width": {
+          "n": 7,
+          "median": 35.03
+        },
+        "length": {
+          "n": 7,
+          "median": 41.94
+        }
+      },
+      "set_play": {
+        "count": 15,
+        "width": {
+          "n": 15,
+          "median": 38.89
+        },
+        "length": {
+          "n": 15,
+          "median": 70.07
+        }
+      }
+    },
+    "1886347": {
+      "create": {
+        "count": 156,
+        "width": {
+          "n": 151,
+          "median": 45.47
+        },
+        "length": {
+          "n": 151,
+          "median": 52.49
+        }
+      },
+      "direct": {
+        "count": 25,
+        "width": {
+          "n": 25,
+          "median": 54.86
+        },
+        "length": {
+          "n": 25,
+          "median": 50.14
+        }
+      },
+      "build_up": {
+        "count": 66,
+        "width": {
+          "n": 63,
+          "median": 43.96
+        },
+        "length": {
+          "n": 63,
+          "median": 49.06
+        }
+      },
+      "chaotic": {
+        "count": 82,
+        "width": {
+          "n": 77,
+          "median": 33.6
+        },
+        "length": {
+          "n": 77,
+          "median": 49.89
+        }
+      },
+      "finish": {
+        "count": 94,
+        "width": {
+          "n": 94,
+          "median": 42.63
+        },
+        "length": {
+          "n": 94,
+          "median": 60.535
+        }
+      },
+      "set_play": {
+        "count": 21,
+        "width": {
+          "n": 20,
+          "median": 42.305
+        },
+        "length": {
+          "n": 20,
+          "median": 66.095
+        }
+      },
+      "transition": {
+        "count": 1,
+        "width": {
+          "n": 1,
+          "median": 31.72
+        },
+        "length": {
+          "n": 1,
+          "median": 59.78
+        }
+      },
+      "quick_break": {
+        "count": 4,
+        "width": {
+          "n": 4,
+          "median": 38.61
+        },
+        "length": {
+          "n": 4,
+          "median": 62.88
+        }
+      }
+    }
+  }
+}

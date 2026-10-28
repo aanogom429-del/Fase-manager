@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Contraste colectivo controlado de 0.90
+
+Completada prueba line_collective de salidas simultáneas con desplazamiento físico y liberación, ocho escenarios de 30 s. Pendiente integración con acciones autónomas, pérdidas y oposición reactiva, y medida de huecos efectivos. No confundir asignaciones únicas con ocupación garantizada. Motor sigue en 0.90.
+
 ## 0.90 — Continuidad de compensaciones
 
 Una salida establecida (más de 8 unidades durante 1 segundo) mantiene su condición hasta volver a 5 unidades de su referencia. Evita apagar la cadena por oscilaciones en el umbral de activación. Perder la función de avance sigue liberando inmediatamente; prioridades y elegibilidad de sustitutos no cambian. Al liberarse, una nueva salida debe superar otra vez 8 unidades y esperar 1 segundo. Parámetros heurísticos, no calibrados con tracking. line_chain añade casos espejo para los cuatro sistemas: persistencia a 7, liberación a 5, no reactivación a 7 y nueva espera. No demuestra estabilidad colectiva en partido real ni cierra bloques pendientes.

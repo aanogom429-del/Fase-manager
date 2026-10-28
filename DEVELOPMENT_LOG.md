@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## Contraste colectivo de 0.90
+
+Añadida y ejecutada line_collective: PASS en ocho escenarios de 30 s, 7200 muestras, 4560 con cobertura y máximo tres enlaces simultáneos. Invariantes de asignación, identidad, movimiento continuo y liberación. Ver docs/VALIDACION_COLECTIVA_090.md para alcance y límites. Sin modificación de motor ni incremento de versión; pendiente oposición y acciones autónomas.
+
 ## 0.90 — Continuidad de compensaciones
 
 Una salida establecida (más de 8 unidades durante 1 segundo) mantiene su condición hasta volver a 5 unidades de su referencia. Evita apagar la cadena por oscilaciones en el umbral de activación. Perder la función de avance sigue liberando inmediatamente; prioridades y elegibilidad de sustitutos no cambian. Al liberarse, una nueva salida debe superar otra vez 8 unidades y esperar 1 segundo. Parámetros heurísticos, no calibrados con tracking. line_chain añade casos espejo para los cuatro sistemas: persistencia a 7, liberación a 5, no reactivación a 7 y nueva espera. No demuestra estabilidad colectiva en partido real ni cierra bloques pendientes.

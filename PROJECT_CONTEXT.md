@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Prioridad vigente tras auditoría 28-10-2026
+
+Ver docs/AUDITORIA_MOTOR_090.md: secuencia de cierre actual por encima de prioridades históricas. Diagnóstico COVER_DIAG PASS: 2679 consultas sin candidato, exclusiones solapadas dominadas por distancia (5726), apoyo (1395) y foco (840). No ampliar radio a ciegas. Próxima implementación: cobertura por llegada/continuidad, medir hueco físico y preservar seguridad. Siete bloques A1–A7 abiertos; no siete versiones. Motor permanece 0.90. Reintento corregido en 0.89, no pendiente actual.
+
 ## Contraste autónomo 0.90
 
 line_autonomous PASS: ocho escenarios de 20 s con ambos equipos activos, selección real de sistemas y acciones autónomas. 906/9600 pasos con relevo, 2183 observaciones jugador-paso de salida sin sustituto, 36 cambios de equipo propietario/vuelo. Métricas no equivalen a ocupación física ni recuperaciones. Ver docs/CONTRASTE_AUTONOMO_090.md. Próximo paso: diagnosticar exclusiones de candidatos y auditar liberación en pérdidas. Motor sigue 0.90; no declarar resuelto el orden colectivo.

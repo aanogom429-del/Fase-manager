@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.92 — Ocupación racional ofensiva
+
+Coordinación final de destinos para evitar espacio compartido, reservas de recepción/poseedor/órdenes/pared, prioridad seguridad→compensaciones→apoyos, separación lateral acotada sin alterar profundidad. Ver docs/OCUPACION_092.md. attack_space: 4→0 parejas próximas en ocho fixtures integrados; no equivale a separación física garantizada. Contraste autónomo mixto, especialmente 3-5-2. Pendiente proximidad sostenida, estabilidad de carril y red de pases. No cierre de bloques ni calibración real.
+
 ## 0.91 — Relevos por llegada
 
 arrivalTime ordena candidatos, conserva sustituto si está a <=0,6 s del mejor. Radio 24 y prioridades intactos. Cinco pruebas PASS; comparación autónoma con contracaso documentada en docs/RELEVOS_091.md. No demuestra mejora general ni ocupación física: siguiente paso medir tiempo real de hueco/llegada y seguridad tras pérdida antes de ampliar candidatos. Siete bloques abiertos.

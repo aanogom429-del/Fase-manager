@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.93 — Bloque defensivo coordinado
+
+defensiveBlockTargets en movement: un presionante/una cobertura, resto en tres alturas compartidas y carriles del sistema, basculación lateral conjunta. Ajustes individuales acotados y prioridades explícitas conservadas. Ver docs/BLOQUE_DEFENSIVO_093.md para pruebas/límites. Pendiente defensa de área, compensación del puesto del presionante y aglomeración física sostenida; no garantiza orden instantáneo ni cierra bloques.
+
 ## 0.92 — Ocupación racional ofensiva
 
 Coordinación final de destinos para evitar espacio compartido, reservas de recepción/poseedor/órdenes/pared, prioridad seguridad→compensaciones→apoyos, separación lateral acotada sin alterar profundidad. Ver docs/OCUPACION_092.md. attack_space: 4→0 parejas próximas en ocho fixtures integrados; no equivale a separación física garantizada. Contraste autónomo mixto, especialmente 3-5-2. Pendiente proximidad sostenida, estabilidad de carril y red de pases. No cierre de bloques ni calibración real.

@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.89 — Fiabilidad de comparaciones
+
+Corregida restauración parcial de campos opcionales al repetir una jugada. Regresión ampliada a igualdad del estado completo guardado e identidad de nodos SVG. Pendientes estructurales de 0.88 continúan: vacante final, coordinación defensiva y contraste colectivo. No es un nuevo comportamiento táctico ni calibración con tracking.
+
 ## 0.88 — Cadena de relevos con balón
 
 Compensación secundaria de la referencia del primer sustituto, con prioridad a vacantes originales y sin ciclos. Pendientes evaluación de la vacante final en ataque, coordinación defensiva y contraste colectivo. No cerrar el motor ni afirmar aprendizaje de tracking.

@@ -1,5 +1,11 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.89 — Corrección de reintento
+
+Validación: PASS en decision_storage (con ampliación), decision_storage_edges, decision_portable, decision_comparison, continuity, simulation_entry, formation_selection, line_structure y line_chain. Nueve entradas seleccionadas, no batería completa ni navegador real. git diff --check sin incidencias. El fallo histórico de reintento queda corregido en estos casos; siete bloques tácticos siguen abiertos.
+
+Reproducido el fallo de decision_storage en 0.88. La comparación de snapshots identifica campos opcionales residuales: widthStarted, driveX y driveY. restorePosition ahora conserva solo el nodo el antes de copiar los campos guardados, manteniendo identidad de jugador y SVG. Regresión ampliada: estado serializado completo, campo residual artificial e identidad de nodos, además de las seis trayectorias originales. No cambia formato de guardado ni añade funciones de almacenamiento. Ver docs/RESTAURACION_089.md.
+
 ## 0.88 — Cadena de compensaciones
 
 Implementada cola de vacantes sin alterar prioridades ni crear nuevos campos de estado. Prueba line_chain para cuatro sistemas y dos sentidos: dos enlaces, referencias únicas, ausencia de ciclos, prioridades, límite espacial y liberación. Documentación de límites en docs/CADENAS_088.md. Estudio SkillCorner permanece separado; no se usaron sus umbrales para calibrar este cambio. Fallo previo decision_storage pendiente.

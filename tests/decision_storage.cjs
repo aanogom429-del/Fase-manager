@@ -21,7 +21,12 @@ for(const team of [0,1])for(const choice of ['support','progress','width']){
  assert.equal(restored.t.get().running,false);assert.equal(restored.t.get().stage,'choose');
  original.t.playChoice(choice);restored.t.playChoice(choice);resolve(original);resolve(restored);
  assert.equal(signature(restored),signature(original),'same chosen action must reproduce the same trajectory/outcome');
- restored.t.restorePosition();restored.t.playChoice(choice);resolve(restored);
+ const liveNodes=restored.t.get().players.map(p=>p.el);
+ restored.t.get().players[2].staleRetryField=456;
+ restored.t.restorePosition();
+ assert.equal(JSON.stringify(restored.t.savePosition()),saved,'retry restores all fields and removes state absent from checkpoint');
+ restored.t.get().players.forEach((p,i)=>assert.equal(p.el,liveNodes[i],'retry preserves live SVG nodes'));
+ restored.t.playChoice(choice);resolve(restored);
  assert.equal(signature(restored),signature(original),'retry remains deterministic');
 }
 const e=create();e.nodes['saved-slot'].value='1';assert(e.nodes['save-decision'].onclick());

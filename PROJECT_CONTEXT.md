@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.89 — Restauración completa de jugadores
+
+restorePosition elimina todas las propiedades propias salvo el nodo SVG antes de aplicar el checkpoint. Evita arrastrar widthStarted/driveX/driveY y futuros campos opcionales ausentes. No añade guardado ni cambia el formato; conserva compensaciones 0.88. Ver docs/RESTAURACION_089.md. No cierra los siete bloques del motor.
+
 ## 0.88 — Compensaciones secundarias
 
 Cola de vacantes en lineCoverAssignments: primero salidas originales, luego referencias abandonadas por sustitutos. Encadena defensa←medio←ataque; termina en ataque, no garantiza cubrir vacante final. Mismas prioridades y distancia de 0.87, sin estado nuevo. Ver docs/CADENAS_088.md. No calibrado con SkillCorner; siete bloques abiertos, decision_storage pendiente.

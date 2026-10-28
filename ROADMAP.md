@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Contraste autónomo 0.90
+
+line_autonomous PASS: ocho escenarios de 20 s con ambos equipos activos, selección real de sistemas y acciones autónomas. 906/9600 pasos con relevo, 2183 observaciones jugador-paso de salida sin sustituto, 36 cambios de equipo propietario/vuelo. Métricas no equivalen a ocupación física ni recuperaciones. Ver docs/CONTRASTE_AUTONOMO_090.md. Próximo paso: diagnosticar exclusiones de candidatos y auditar liberación en pérdidas. Motor sigue 0.90; no declarar resuelto el orden colectivo.
+
 ## Contraste colectivo controlado de 0.90
 
 Completada prueba line_collective de salidas simultáneas con desplazamiento físico y liberación, ocho escenarios de 30 s. Pendiente integración con acciones autónomas, pérdidas y oposición reactiva, y medida de huecos efectivos. No confundir asignaciones únicas con ocupación garantizada. Motor sigue en 0.90.

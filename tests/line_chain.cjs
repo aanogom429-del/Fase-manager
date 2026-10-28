@@ -14,6 +14,15 @@ for(const t of [0,1])for(const formation of ['4-3-3','4-2-3-1','4-4-2','3-5-2'])
  assert.equal(new Set(map.values()).size,map.size,'one replacement per reference');
  for(const [p,q] of map)assert.equal(h.line(p),h.line(q)+1,'strict line order prevents cycles');
  assert.equal(map.size,2,'chain stops at attacking line');
+ defender.x=backRef.x+dir*7;
+ assert.equal(h.covers(mates,ball,defender,[],[]).size,2,'established chain survives oscillation below activation threshold');
+ defender.x=backRef.x+dir*5;
+ assert.equal(h.covers(mates,ball,defender,[],[]).size,0,'return threshold releases chain');
+ defender.x=backRef.x+dir*7;
+ assert.equal(h.covers(mates,ball,defender,[],[]).size,0,'released chain cannot reactivate inside hysteresis band');
+ defender.x=backRef.x+dir*12;
+ h.set(defender,23);assert.equal(h.covers(mates,ball,defender,[],[]).size,0,'new departure must wait again');
+ h.set(defender,25);assert.equal(h.covers(mates,ball,defender,[],[]).size,2);
  assert.equal(h.covers(mates,ball,defender,[front],[]).get(front),undefined,'local support has priority over secondary cover');
  assert.equal(h.covers(mates,ball,defender,[],[front]).get(front),undefined,'safety has priority');
  front.x=t?1:99;assert.equal(h.covers(mates,ball,defender,[],[]).get(front),undefined,'no distant forced cover');

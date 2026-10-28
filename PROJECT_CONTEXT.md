@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.90 — Continuidad de compensaciones
+
+Una salida establecida (más de 8 unidades durante 1 segundo) mantiene su condición hasta volver a 5 unidades de su referencia. Evita apagar la cadena por oscilaciones en el umbral de activación. Perder la función de avance sigue liberando inmediatamente; prioridades y elegibilidad de sustitutos no cambian. Al liberarse, una nueva salida debe superar otra vez 8 unidades y esperar 1 segundo. Parámetros heurísticos, no calibrados con tracking. line_chain añade casos espejo para los cuatro sistemas: persistencia a 7, liberación a 5, no reactivación a 7 y nueva espera. No demuestra estabilidad colectiva en partido real ni cierra bloques pendientes.
+
 ## 0.89 — Restauración completa de jugadores
 
 restorePosition elimina todas las propiedades propias salvo el nodo SVG antes de aplicar el checkpoint. Evita arrastrar widthStarted/driveX/driveY y futuros campos opcionales ausentes. No añade guardado ni cambia el formato; conserva compensaciones 0.88. Ver docs/RESTAURACION_089.md. No cierra los siete bloques del motor.

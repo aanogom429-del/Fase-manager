@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.91 — Relevos por llegada
+
+arrivalTime ordena candidatos, conserva sustituto si está a <=0,6 s del mejor. Radio 24 y prioridades intactos. Cinco pruebas PASS; comparación autónoma con contracaso documentada en docs/RELEVOS_091.md. No demuestra mejora general ni ocupación física: siguiente paso medir tiempo real de hueco/llegada y seguridad tras pérdida antes de ampliar candidatos. Siete bloques abiertos.
+
 ## Prioridad vigente tras auditoría 28-10-2026
 
 Ver docs/AUDITORIA_MOTOR_090.md: secuencia de cierre actual por encima de prioridades históricas. Diagnóstico COVER_DIAG PASS: 2679 consultas sin candidato, exclusiones solapadas dominadas por distancia (5726), apoyo (1395) y foco (840). No ampliar radio a ciegas. Próxima implementación: cobertura por llegada/continuidad, medir hueco físico y preservar seguridad. Siete bloques A1–A7 abiertos; no siete versiones. Motor permanece 0.90. Reintento corregido en 0.89, no pendiente actual.

@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),{env}=require('./continuity.cjs');
 const fs=require('node:fs'),path=require('node:path');
 const diagnostic=process.env.COVER_DIAG==='1',reasons={},summary={uncoveredVacancies:0};
 const source=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
-const marker='candidates.sort((a,b)=>d(a,ref)-d(b,ref)||a.id-b.id);';
+const marker='const travel=new Map(candidates.map(p=>[p,arrivalTime(p,ref)]));';
 assert(source.includes(marker));
 const instrumented=source.replace(marker,`if(!candidates.length){coverageDiagnostic(mates.filter(p=>!isKeeper(p)&&positionalLine(p)===positionalLine(outgoing)+1).map(p=>({focus:p===focus,support:ranked.includes(p),safety:balance.includes(p),order:ordered(p),used:used.has(p),departing:exits.includes(p),distance:d(p,ref)>24})));}\n${marker}`);
 function coverageDiagnostic(candidates){summary.uncoveredVacancies++;if(!candidates.length)reasons.noNextLine=(reasons.noNextLine||0)+1;for(const flags of candidates)for(const [reason,excluded] of Object.entries(flags))if(excluded)reasons[reason]=(reasons[reason]||0)+1;}

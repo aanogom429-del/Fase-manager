@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.94 — Última línea cerca de portería
+
+Menor anchura y menor arrastre hacia la banda, graduales en últimos 30→15 de profundidad propia; referencia longitudinal última línea limitada al lado propio del balón con margen interior. Otras líneas/presión/cobertura conservadas. Ver docs/AREA_094.md. Pendiente exposición real a centros/pase atrás y compensación del defensor saliente; no mejora general ni cierre de bloques demostrados.
+
 ## 0.93 — Bloque defensivo coordinado
 
 defensiveBlockTargets en movement: un presionante/una cobertura, resto en tres alturas compartidas y carriles del sistema, basculación lateral conjunta. Ajustes individuales acotados y prioridades explícitas conservadas. Ver docs/BLOQUE_DEFENSIVO_093.md para pruebas/límites. Pendiente defensa de área, compensación del puesto del presionante y aglomeración física sostenida; no garantiza orden instantáneo ni cierra bloques.

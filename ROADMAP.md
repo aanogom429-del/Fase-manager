@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Contraste físico 0.96 — cobertura aún no validada
+
+defensive_arrival ejecutado: ocho escenarios autónomos de 20 s, semillas 301/302. Solo dos episodios, 14/17 pasos, sin llegada a <=3 unidades observada. Ver docs/LLEGADA_DEFENSIVA_096.md. PASS técnico, no eficacia táctica. Próximo diagnóstico: causa de liberación y duración frente a llegada estimada antes de modificar persistencia. Sin cambio de motor/versión.
+
 ## 0.96 — Cadena defensiva
 
 El jugador avanzado puede cubrir la referencia del medio que releva al defensor. Máximo dos enlaces adyacentes y únicos, mismas prioridades/radio/llegada y campo defSlotFor. Ver docs/CADENA_DEFENSIVA_096.md. No cubre la vacante final ni garantiza ocupación física; pendientes centros/pase atrás y llegada con oposición. No cierre de bloques.

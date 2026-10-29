@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.96 — Cadena defensiva
+
+El jugador avanzado puede cubrir la referencia del medio que releva al defensor. Máximo dos enlaces adyacentes y únicos, mismas prioridades/radio/llegada y campo defSlotFor. Ver docs/CADENA_DEFENSIVA_096.md. No cubre la vacante final ni garantiza ocupación física; pendientes centros/pase atrás y llegada con oposición. No cierre de bloques.
+
 ## 0.95 — Relevo defensivo
 
 Medio elegible cubre referencia abandonada por presionante de última línea, sin retirar cobertura inmediata ni órdenes. Selección por llegada y continuidad, no segunda persecución al balón. defSlotFor restaurable/limpiado con estado defensivo. Ver docs/RELEVO_DEFENSIVO_095.md. Pendiente vacante secundaria del medio, ocupación física y exposición a centros/pase atrás; no cierre de bloques.

@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.95 — Relevo defensivo
+
+Medio elegible cubre referencia abandonada por presionante de última línea, sin retirar cobertura inmediata ni órdenes. Selección por llegada y continuidad, no segunda persecución al balón. defSlotFor restaurable/limpiado con estado defensivo. Ver docs/RELEVO_DEFENSIVO_095.md. Pendiente vacante secundaria del medio, ocupación física y exposición a centros/pase atrás; no cierre de bloques.
+
 ## 0.94 — Última línea cerca de portería
 
 Menor anchura y menor arrastre hacia la banda, graduales en últimos 30→15 de profundidad propia; referencia longitudinal última línea limitada al lado propio del balón con margen interior. Otras líneas/presión/cobertura conservadas. Ver docs/AREA_094.md. Pendiente exposición real a centros/pase atrás y compensación del defensor saliente; no mejora general ni cierre de bloques demostrados.

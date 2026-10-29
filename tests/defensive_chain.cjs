@@ -18,5 +18,9 @@ for(const t of [0,1])for(const formation of ['4-3-3','4-2-3-1','4-4-2','3-5-2'])
  front.x=x(95);h.block(t,order,ball);assert.equal(front.defSlotFor,undefined,'no forced distant secondary replacement');front.x=x(36);
  h.block(t,order,ball);assert.equal(front.defSlotFor,mid.id);
  const changed=[front,cover,...ps.filter(p=>p!==front&&p!==cover)];h.block(t,changed,ball);assert(ps.every(p=>p.defSlotFor===undefined),'whole chain releases');
+ h.block(t,order,ball);assert.equal(front.defSlotFor,mid.id);
+ e.t.capture(mid,'recuperación de prueba');
+ assert.equal(e.t.get().owner,mid);
+ assert(e.t.get().players.every(p=>p.defSlotFor===undefined),'real possession recovery clears all defensive relays');
 }
 console.log('PASS: four systems × both directions, two unique acyclic relays, secondary exclusions, no teleport and full release');

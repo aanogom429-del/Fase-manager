@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Diagnóstico de cierres finalizado — 0.97
+
+El cierre externo pendiente era recuperación de posesión del equipo defensor (rojo), no fallo de persistencia. El otro episodio cambia de presionante. Ver docs/CIERRES_RELEVO_097.md. Añadida regresión capture→limpieza de toda la cadena. Sin cambios de motor. No seguir ampliando radio/tiempo con estos dos casos; próximo paso: centro/pase atrás prescritos y comparación con/sin cadena. Cobertura efectiva todavía no validada.
+
 ## 0.97 — Continuidad acotada de relevo
 
 Diagnóstico: un episodio termina por cambio de presionante y otro por distancia. Radio de entrada 18 conservado, continuidad del mismo relevo hasta 22. Ver docs/CONTINUIDAD_DEFENSIVA_097.md: episodio 17→30 pasos sin llegada observada; no mejora de cobertura demostrada. Pendiente cierres externos y utilidad por tiempo disponible, no ampliar radios indefinidamente. Siete bloques abiertos.

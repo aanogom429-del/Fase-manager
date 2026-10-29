@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.97 — Continuidad acotada de relevo
+
+Diagnóstico: un episodio termina por cambio de presionante y otro por distancia. Radio de entrada 18 conservado, continuidad del mismo relevo hasta 22. Ver docs/CONTINUIDAD_DEFENSIVA_097.md: episodio 17→30 pasos sin llegada observada; no mejora de cobertura demostrada. Pendiente cierres externos y utilidad por tiempo disponible, no ampliar radios indefinidamente. Siete bloques abiertos.
+
 ## Contraste físico 0.96 — cobertura aún no validada
 
 defensive_arrival ejecutado: ocho escenarios autónomos de 20 s, semillas 301/302. Solo dos episodios, 14/17 pasos, sin llegada a <=3 unidades observada. Ver docs/LLEGADA_DEFENSIVA_096.md. PASS técnico, no eficacia táctica. Próximo diagnóstico: causa de liberación y duración frente a llegada estimada antes de modificar persistencia. Sin cambio de motor/versión.

@@ -12,6 +12,10 @@ for(const t of [0,1])for(const formation of ['4-3-3','4-2-3-1','4-4-2','3-5-2'])
  assert(targets.get(mid).x*(t?-1:1)<ball.x*(t?-1:1)-10,'replacement goes behind press, not to ball');
  assert.equal(ps.filter(p=>p.defSlotFor!==undefined).length,1);
  const position={x:mid.x,y:mid.y};assert.deepEqual(position,{x:x(30),y:32},'no teleport');
+ const ref=targets.get(mid);mid.x=ref.x+(t?-1:1)*18.2;mid.y=ref.y;
+ h.block(t,order,ball);assert.equal(mid.defSlotFor,press.id,'established relay survives slight distance threshold crossing');
+ delete mid.defSlotFor;h.block(t,order,ball);assert.equal(mid.defSlotFor,undefined,'new relay still needs original radius');
+ mid.x=x(30);mid.y=32;h.block(t,order,ball);
  h.orders([{i:mid.id,until:20}]);h.block(t,order,ball);assert.equal(mid.defSlotFor,undefined,'coach order excludes candidate');h.orders([]);
  const withMidCover=[press,mid,...ps.filter(p=>p!==press&&p!==mid)];h.block(t,withMidCover,ball);assert.equal(mid.defSlotFor,undefined,'immediate cover never reassigned');
  mid.x=x(95);h.block(t,order,ball);assert.equal(mid.defSlotFor,undefined,'ineligible distance releases relay');

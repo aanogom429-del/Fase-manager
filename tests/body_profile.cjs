@@ -13,9 +13,9 @@ for(const team of [0,1]){
  for(let i=0;i<120;i++)e.t.orientBody(p,p.x,p.y,1/60);
  assert(e.t.perceives(p,{x:s.bx,y:s.by}),'open profile sees ball');
  assert(e.t.perceives(p,{x:p.x+dir*10,y:p.y}),'open profile sees forward');
- // Far travel keeps locomotion heading, rather than forcing a permanent sideways run.
+ // Far travel also preserves a ball-facing profile, rather than blindly facing the run.
  e.t.orientBody(p,p.x+dir*20,p.y,2);
- assert(Math.abs(delta(p.bodyAngle,team?Math.PI:0))<1e-8);
+ assert(e.t.perceives(p,{x:s.bx,y:s.by}));
  // Same geometry, different orientation: a closed receiver needs extra preparation.
  o.x=50;o.y=32;p.x=50+dir*29;p.y=32;
  p.bodyAngle=team?0:Math.PI;

@@ -26,6 +26,6 @@ for(const seed of [1,17,73,109,305,20000]){const defended=cross(0,seed),defender
  else{missedJumps++;assert.equal(s.flight,defended.f);assert.equal(s.turnovers,0,'missed jump is not a touch');}
 }
 assert(headedClearances>0&&missedJumps>0);
-const guided=env();guided.t.scenario({time:1,team:0,seed:73});guided.t.get().owner.x=75;guided.t.get().owner.y=12;guided.t.prepareDecision();guided.t.select('finish');guided.t.playChoice('crossHeader');assert(guided.t.get().flight.cross&&guided.t.get().flight.headerIntent,'guided centre-to-header option executes');
+const guided=env();guided.t.scenario({time:1,team:0,seed:73});guided.t.get().owner.x=75;guided.t.get().owner.y=12;guided.t.prepareDecision();guided.t.select('finish');guided.t.playChoice('crossHeader');for(let i=0;i<240&&guided.t.get().owner?.kickPreparation;i++)guided.t.update(1/120);assert(guided.t.get().flight.cross&&guided.t.get().flight.headerIntent,'guided centre-to-header option executes');
 const keeperChoice=env(),kp=keeperChoice.t.get().players.find(p=>p.t===0&&p.n===1);keeperChoice.t.capture(kp,'controla');keeperChoice.t.prepareDecision();keeperChoice.t.select('finish');keeperChoice.t.playChoice('keeperLong');assert(keeperChoice.t.get().flight.keeperLong);assert(!keeperChoice.t.get().offsidePhase.exempt,'open-play long kick has normal offside rules');
 console.log('PASS: real-flight mirrored headers, aerial height limits, header offside, clearances, long goalkeeper distribution and mixed goal kicks');

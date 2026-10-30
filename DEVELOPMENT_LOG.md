@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.99 — Perfil de carrera y giro antes del golpeo
+
+Corrección prioritaria solicitada por el usuario: repliegue con referencia corporal al balón; pases/tiros con el pie fuera del cono frontal esperan giro real, sin tacones automáticos. Preparación cancelable por pérdida, atributos de centros/saques preservados y pausa/continuación protegidas. Ver docs/PERFIL_GOLPEO_099.md. Parámetros heurísticos; cabeceo y estimación completa de llegada pendientes. Siete bloques abiertos, no cierre del motor.
+
 ## 0.98 — Receptor de pase atrás
 
 Cobertura contextual de receptor central percibido recientemente, alcanzable desde banda cerca de portería; alternativa a líneas prioritarias y continuidad en vuelo raso. Ver docs/PASE_ATRAS_098.md. Ocho pruebas PASS; ocho parejas de ablación sin mejora en exposición/tiros/goles. Nueva conducta acotada, no eficacia general demostrada. Pendiente percepción/preparación previa al pase y causas de inelegibilidad; siete bloques abiertos.

@@ -19,7 +19,7 @@ for(const t of [0,1]){
  const lane=setup(t);lane.rivals[0].x=lane.x(16);lane.rivals[0].y=36;
  lane.e.t.chooseAction(lane.p);assert(lane.e.t.get().flight.keeperLong,'blocked lane prevents short pass');
  const far=setup(t);far.a.x=far.x(40);far.e.t.chooseAction(far.p);assert(far.e.t.get().flight.keeperLong,'no short-range outlet');
- const hidden=setup(t);hidden.p.bodyAngle=t?0:Math.PI;hidden.e.t.chooseAction(hidden.p);assert(hidden.e.t.get().flight.keeperLong,'unseen outlet not treated as available');
+ const hidden=setup(t);hidden.p.bodyAngle=t?0:Math.PI;hidden.e.t.chooseAction(hidden.p);assert.equal(hidden.e.t.get().flight,null);assert(hidden.p.kickPreparation.meta.keeperLong,'unseen outlet requires turning before long distribution');
  const memory=setup(t);memory.e.t.observeTeammates(memory.p);for(const m of memory.p.visualMemory)m.seenAt=.5;
  memory.a.x=memory.x(2);memory.a.y=32;memory.e.t.chooseAction(memory.p);
  assert(memory.e.t.get().flight.keeperLong,'old remembered outlet is not certified for short distribution');

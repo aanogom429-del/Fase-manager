@@ -1,9 +1,9 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.98</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.98 · Protección del pase atrás</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section id="decision-panel" class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. Los dos bracitos indican la orientación corporal; sus extremos se inclinan hacia el frente del jugador. En juego automático, debe girar para detectar opciones que quedan a su espalda. Consulta la guía visual de interacción, apoyo mutuo y cooperación junto al campo.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label><label id="relay-label">Destino del pase al primer toque<select id="relay-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><section id="comparison-panel" hidden aria-labelledby="comparison-title"><h3 id="comparison-title">Comparación de esta situación</h3><p><small>Últimos 8 intentos desde el mismo punto de partida. Avance positivo: hacia la portería roja. Tiros: total de ambos equipos. Goles: azul / rojo. Cada intento puede durar distinto tiempo; estos resultados no puntúan la calidad táctica. El registro se limpia al continuar, cargar una decisión, reiniciar o cambiar de modo; no se guarda ni se exporta.</small></p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th scope="col">Decisión y órdenes</th><th scope="col">Tiempo</th><th scope="col">Posesión final</th><th scope="col">Avance</th><th scope="col">Tiros totales</th><th scope="col">Goles</th></tr></thead><tbody id="comparison-rows"></tbody></table></div></section><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática: el poseedor valora conducir, pasar, centrar o tirar; sus compañeros ofrecen continuidad y llegada. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><details class="decision-panel" aria-labelledby="saved-title"><summary id="saved-title">Herramientas opcionales · guardar situaciones</summary><div class="bar"><label>Espacio <select id="saved-slot"><option value="1">Situación 1</option><option value="2">Situación 2</option><option value="3">Situación 3</option></select></label><button id="save-decision">Guardar decisión</button><button id="load-decision">Recuperar decisión</button></div><div class="bar"><button id="export-decision">Exportar decisión actual</button><label>Cargar archivo en el espacio elegido <input id="import-decision" type="file" accept=".json,application/json"></label></div><p id="saved-status" role="status" aria-live="polite">Guarda cuando el modo guiado esté esperando tu decisión.</p><small>Tres situaciones en este navegador. Guardar sustituye el espacio elegido; recuperar sustituye la situación en pantalla y la deja pausada. Para trasladarlas, exporta un archivo y cárgalo en otro dispositivo; después pulsa Recuperar decisión. Cargar archivo sustituye el espacio elegido, sin cambiar la jugada en pantalla. Borrar los datos del navegador elimina los guardados.</small></details><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.99</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.99 · Protección del pase atrás</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section id="decision-panel" class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. Los dos bracitos indican la orientación corporal; sus extremos se inclinan hacia el frente del jugador. En juego automático, debe girar para detectar opciones que quedan a su espalda. Consulta la guía visual de interacción, apoyo mutuo y cooperación junto al campo.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label><label id="relay-label">Destino del pase al primer toque<select id="relay-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><section id="comparison-panel" hidden aria-labelledby="comparison-title"><h3 id="comparison-title">Comparación de esta situación</h3><p><small>Últimos 8 intentos desde el mismo punto de partida. Avance positivo: hacia la portería roja. Tiros: total de ambos equipos. Goles: azul / rojo. Cada intento puede durar distinto tiempo; estos resultados no puntúan la calidad táctica. El registro se limpia al continuar, cargar una decisión, reiniciar o cambiar de modo; no se guarda ni se exporta.</small></p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th scope="col">Decisión y órdenes</th><th scope="col">Tiempo</th><th scope="col">Posesión final</th><th scope="col">Avance</th><th scope="col">Tiros totales</th><th scope="col">Goles</th></tr></thead><tbody id="comparison-rows"></tbody></table></div></section><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática: el poseedor valora conducir, pasar, centrar o tirar; sus compañeros ofrecen continuidad y llegada. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><details class="decision-panel" aria-labelledby="saved-title"><summary id="saved-title">Herramientas opcionales · guardar situaciones</summary><div class="bar"><label>Espacio <select id="saved-slot"><option value="1">Situación 1</option><option value="2">Situación 2</option><option value="3">Situación 3</option></select></label><button id="save-decision">Guardar decisión</button><button id="load-decision">Recuperar decisión</button></div><div class="bar"><button id="export-decision">Exportar decisión actual</button><label>Cargar archivo en el espacio elegido <input id="import-decision" type="file" accept=".json,application/json"></label></div><p id="saved-status" role="status" aria-live="polite">Guarda cuando el modo guiado esté esperando tu decisión.</p><small>Tres situaciones en este navegador. Guardar sustituye el espacio elegido; recuperar sustituye la situación en pantalla y la deja pausada. Para trasladarlas, exporta un archivo y cárgalo en otro dispositivo; después pulsa Recuperar decisión. Cargar archivo sustituye el espacio elegido, sin cambiar la jugada en pantalla. Borrar los datos del navegador elimina los guardados.</small></details><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
 <rect width="1000" height="650" fill="#153c2a"/><rect x="45" y="34" width="91" height="582.4" fill="#236b40"/><rect x="136" y="34" width="91" height="582.4" fill="#267447"/><rect x="227" y="34" width="91" height="582.4" fill="#236b40"/><rect x="318" y="34" width="91" height="582.4" fill="#267447"/><rect x="409" y="34" width="91" height="582.4" fill="#236b40"/><rect x="500" y="34" width="91" height="582.4" fill="#267447"/><rect x="591" y="34" width="91" height="582.4" fill="#236b40"/><rect x="682" y="34" width="91" height="582.4" fill="#267447"/><rect x="773" y="34" width="91" height="582.4" fill="#236b40"/><rect x="864" y="34" width="91" height="582.4" fill="#267447"/>
 <g fill="none" stroke="#f5fff7" stroke-width="2.5"><rect x="45" y="34" width="910" height="582.4"/><path d="M500 34V616.4"/><circle cx="500" cy="325.2" r="83.3"/><rect x="45" y="143.2" width="150.2" height="364"/><rect x="804.8" y="143.2" width="150.2" height="364"/><rect x="45" y="241.5" width="50" height="167.4"/><rect x="905" y="241.5" width="50" height="167.4"/><path d="M45 291H29V359H45 M955 291H971V359H955"/></g>
 <g fill="white"><circle cx="500" cy="325.2" r="3.5"/><circle cx="145" cy="325.2" r="3.5"/><circle cx="855" cy="325.2" r="3.5"/></g>
 <g id="players"><g class="player" id="p0-1" transform="translate(99.6 325.2)"><path id="facing-0-1" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">1</text></g><g class="player" id="p0-2" transform="translate(236.1 125.0)"><path id="facing-0-2" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">2</text></g><g class="player" id="p0-3" transform="translate(236.1 252.4)"><path id="facing-0-3" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">3</text></g><g class="player" id="p0-4" transform="translate(236.1 398.0)"><path id="facing-0-4" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">4</text></g><g class="player" id="p0-5" transform="translate(236.1 525.4)"><path id="facing-0-5" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">5</text></g><g class="player" id="p0-6" transform="translate(409.0 179.6)"><path id="facing-0-6" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">6</text></g><g class="player" id="p0-7" transform="translate(390.8 325.2)"><path id="facing-0-7" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">7</text></g><g class="player" id="p0-8" transform="translate(409.0 470.8)"><path id="facing-0-8" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">8</text></g><g class="player" id="p0-9" transform="translate(618.3 143.2)"><path id="facing-0-9" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">9</text></g><g class="player" id="p0-10" transform="translate(618.3 325.2)"><path id="facing-0-10" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">10</text></g><g class="player" id="p0-11" transform="translate(618.3 507.2)"><path id="facing-0-11" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#177bd1" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">11</text></g><g class="player" id="p1-1" transform="translate(900.4 325.2)"><path id="facing-1-1" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">1</text></g><g class="player" id="p1-2" transform="translate(763.9 525.4)"><path id="facing-1-2" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">2</text></g><g class="player" id="p1-3" transform="translate(763.9 398.0)"><path id="facing-1-3" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">3</text></g><g class="player" id="p1-4" transform="translate(763.9 252.4)"><path id="facing-1-4" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">4</text></g><g class="player" id="p1-5" transform="translate(763.9 125.0)"><path id="facing-1-5" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">5</text></g><g class="player" id="p1-6" transform="translate(591.0 470.8)"><path id="facing-1-6" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">6</text></g><g class="player" id="p1-7" transform="translate(609.2 325.2)"><path id="facing-1-7" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">7</text></g><g class="player" id="p1-8" transform="translate(591.0 179.6)"><path id="facing-1-8" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">8</text></g><g class="player" id="p1-9" transform="translate(381.7 507.2)"><path id="facing-1-9" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">9</text></g><g class="player" id="p1-10" transform="translate(381.7 325.2)"><path id="facing-1-10" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">10</text></g><g class="player" id="p1-11" transform="translate(381.7 143.2)"><path id="facing-1-11" d="M5 -10 L14 -15 M5 10 L14 15" fill="none" stroke="#ffd7ad" stroke-width="3" stroke-linecap="round"/><circle r="12" fill="#e74c50" stroke="white" stroke-width="2.3"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="white">11</text></g></g><circle id="ball" cx="500" cy="325" r="6.5" fill="white" stroke="#17202a" stroke-width="2"/>
-</svg><small id="control-status"></small><p id="status">Jugadores visibles. Iniciando simulación…</p><small>Versión experimental 0.98: apoyos, pases, conducciones, presión, interceptaciones y tiros. Tú decides las intenciones del azul en modo guiado. La respuesta rival y la ejecución se simulan mediante reglas. El balón parte controlado en el suelo; Incluye cabeceos tras centro y despejes; voleas y controles aéreos específicos siguen pendientes.</small></main><script>
+</svg><small id="control-status"></small><p id="status">Jugadores visibles. Iniciando simulación…</p><small>Versión experimental 0.99: apoyos, pases, conducciones, presión, interceptaciones y tiros. Tú decides las intenciones del azul en modo guiado. La respuesta rival y la ejecución se simulan mediante reglas. El balón parte controlado en el suelo; Incluye cabeceos tras centro y despejes; voleas y controles aéreos específicos siguen pendientes.</small></main><script>
 (()=>{
 'use strict';
 const $=id=>document.getElementById(id), ball=$('ball'), status=$('status'),clockEl=$('clock'),scoreEl=$('score');
@@ -115,14 +115,19 @@ function receptionTurnDelay(p,pos){
 }
 function orientBody(p,tx,ty,dt){
  let target=p.bodyAngle;
- if(p===owner&&p.controlUntil>elapsed)target=p.controlAngle;
+ if(p===owner&&p.kickPreparation)target=Math.atan2(p.kickPreparation.y-p.y,p.kickPreparation.x-p.x);
+ else if(p===owner&&p.controlUntil>elapsed)target=p.controlAngle;
  else if(p===owner&&p.scanUntil>elapsed)target=p.scanAngle;
  else if(p!==owner&&!isKeeper(p)&&!restart&&
    ((owner&&owner.t===p.t&&Math.hypot(tx-p.x,ty-p.y)<6)||
     (flight&&flight.t===p.t&&flight.target===p&&d(p,{x:bx,y:by})<15)))
   target=openBodyAngle(p,{x:bx,y:by});
- else if(p!==owner&&owner&&owner.t!==p.t&&Math.hypot(tx-p.x,ty-p.y)<3)
-  target=Math.atan2(by-p.y,bx-p.x);
+ else if(p!==owner&&(p.t===0||p.t===1)&&!restart&&(owner||flight)){
+  const ballAngle=Math.atan2(by-p.y,bx-p.x),heading=Math.atan2(ty-p.y,tx-p.x);
+  // Desplazamiento y perfil no son lo mismo: correr de costado en el repliegue.
+  // Mantener el balón en el hemisferio frontal, sin giros instantáneos.
+  target=angleDelta(ballAngle+clamp(angleDelta(heading,ballAngle),-Math.PI/3,Math.PI/3),0);
+ }
  else if(Math.hypot(tx-p.x,ty-p.y)>.08)target=Math.atan2(ty-p.y,tx-p.x);
  else if(p!==owner&&Math.hypot(bx-p.x,by-p.y)>.08)target=Math.atan2(by-p.y,bx-p.x);
  p.bodyAngle=angleDelta(p.bodyAngle+clamp(angleDelta(target,p.bodyAngle),-(p.turnRate||perceptionModel.turnRate)*dt,(p.turnRate||perceptionModel.turnRate)*dt),0);
@@ -573,7 +578,7 @@ function boundaryCrossing(a,b){
  return hits.sort((a,b)=>a.u-b.u)[0]||null;
 }
 function beginRestart(kind,t,x,y,reason){
- for(const p of players){p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];}
+ for(const p of players){delete p.kickPreparation;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];}
  destinationTrace.clear();destinationIntentTrace.clear();
  if(matchStopped)return;
  offBallPlans=[];offBallOrders=[];
@@ -593,7 +598,7 @@ function beginRestart(kind,t,x,y,reason){
  bx=x;by=y;
  const taker=kind==='goalKick'?team(t).find(p=>isKeeper(p)):nearest({x,y},team(t).filter(p=>!isKeeper(p)));
  restart={kind,t,x,y,taker:players.indexOf(taker),age:0};
- for(const p of players){delete p.driveX;delete p.driveY;delete p.intentAt;delete p.attackOrigin;delete p.attackSupport;delete p.attackBalance;delete p.lineCoverFor;delete p.lineExitAt;delete p.defOrigin;delete p.defDuty;delete p.defSlotFor;}
+ for(const p of players){delete p.driveX;delete p.driveY;delete p.kickPreparation;delete p.intentAt;delete p.attackOrigin;delete p.attackSupport;delete p.attackBalance;delete p.lineCoverFor;delete p.lineExitAt;delete p.defOrigin;delete p.defDuty;delete p.defSlotFor;}
  lastRuling=(reason?reason+' · ':'')+restartName(kind)+' '+(t?'rojo':'azul');report(lastRuling);
 }
 function adjudicateExit(hit){
@@ -659,7 +664,7 @@ function advanceRestart(dt){
  const shortBlocked=opp(r.t).some(q=>d(q,target)<7);
  if(r.kind==='goalKick'&&(shortBlocked||random()<.6))goalkeeperLong(p,r.kind);
  else kickTo(p,target.x,target.y,'pass',target,r.kind);
- if(r.kind==='throw')flight.loft=2;
+ if(r.kind==='throw')kickState(p).loft=2;
  restartGuard={kind:r.kind,t:r.t,taker:r.taker};
  lastRuling=restartName(r.kind)+' ejecutado · no puede volver a tocar el ejecutor antes de otro jugador';
 }
@@ -669,7 +674,7 @@ function syncControls(){syncSavedControls();if(matchStopped){$('pause').disabled
 // Versioned separately from the experimental defensive branches.
 const decisionStorageVersion='stable-053-decisions-1';
 const decisionStorageKey=()=> 'fase-manager:'+decisionStorageVersion+':'+(['1','2','3'].includes($('saved-slot').value)?$('saved-slot').value:'1');
-function canSaveDecision(){return guided&&stage==='choose'&&!!owner&&!flight&&!restart&&!techAction&&!matchStopped;}
+function canSaveDecision(){return guided&&stage==='choose'&&!!owner&&!owner.kickPreparation&&!flight&&!restart&&!techAction&&!matchStopped;}
 function syncSavedControls(){$('save-decision').disabled=!canSaveDecision();$('export-decision').disabled=!canSaveDecision();}
 function decisionChecksum(text){let n=2166136261;for(let i=0;i<text.length;i++)n=Math.imul(n^text.charCodeAt(i),16777619);return (n>>>0).toString(16);}
 function encodeDecision(){
@@ -770,7 +775,7 @@ function startSituation(){resetComparison();destinationTrace.clear();destination
  measurement=null;lastExecution=null;lossTrace=null;offsidePhase=null;lastOffside=null;offsideCalls=[0,0];foulCalls=[0,0];lastFoul=null;advantage=null;lastAdvantage=null;restart=null;restartGuard=null;lastRuling='Juego abierto · aplicación parcial de las Reglas 2026/27';
  guided=true;running=false;flight=null;techAction=null;loose=false;ballHeight=0;technique='pass';targetNumber=null;relayNumber=null;trialSeed=73;turnNumber=1;history=[];
  elapsed=0;score=[0,0];passes=shots=turnovers=0;decision=.35;last=0;
- for(const p of players){p.x=p.hx;p.y=p.hy;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];p.bodyAngle=p.t?Math.PI:0;p.scanAngle=0;p.scanUntil=0;p.controlUntil=0;p.controlAngle=0;p.controlError=0;p.controlDuration=0;p.cool=0;p.yellow=0;p.sentOff=false;delete p.intentAt;delete p.intentX;delete p.intentY;delete p.attackOrigin;delete p.attackSupport;delete p.attackBalance;delete p.lineCoverFor;delete p.lineExitAt;delete p.defOrigin;delete p.defDuty;delete p.defSlotFor;p.driveX=p.x;p.driveY=p.y;}
+ for(const p of players){p.x=p.hx;p.y=p.hy;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];p.bodyAngle=p.t?Math.PI:0;p.scanAngle=0;p.scanUntil=0;delete p.kickPreparation;p.controlUntil=0;p.controlAngle=0;p.controlError=0;p.controlDuration=0;p.cool=0;p.yellow=0;p.sentOff=false;delete p.intentAt;delete p.intentX;delete p.intentY;delete p.attackOrigin;delete p.attackSupport;delete p.attackBalance;delete p.lineCoverFor;delete p.lineExitAt;delete p.defOrigin;delete p.defDuty;delete p.defSlotFor;p.driveX=p.x;p.driveY=p.y;}
  const positions={'0-6':[34,20],'0-7':[44,32],'0-10':[62,32],'0-11':[52,55],'1-7':[50,29],'1-8':[57,33],'1-6':[62,44],'1-9':[31,52],'1-10':[32,36],'1-11':[31,11]};
  for(const p of players){const pos=positions[p.t+'-'+(p.id%11+1)];if(pos){[p.x,p.y]=pos;p.driveX=p.x;p.driveY=p.y;}}
  lastTouchTeam=0;owner=team(0).find(p=>p.id===6);bx=owner.x;by=owner.y;
@@ -820,12 +825,12 @@ function enterDecisionMode(){if(matchStopped)return;resetComparison();
  guided=true;running=false;last=0;accumulator=0;techAction=null;selected=null;resolution=null;
  turnNumber=1;history=[];trialTime=0;trialSeed=73;checkpoint=null;technique='pass';targetNumber=null;relayNumber=null;
  $('mode').textContent='Ver simulación libre';$('guided-content').hidden=false;$('free-description').hidden=true;
- if(owner){prepareDecision();return;}
+ if(owner&&!owner.kickPreparation){prepareDecision();return;}
  stage='settle';options={};$('choices').replaceChildren();$('action-tools').hidden=true;$('action-context').hidden=true;
  $('feedback').hidden=true;$('history').textContent='';
- $('decision-title').textContent='Acción en curso · Balón sin controlar';
+ $('decision-title').textContent=owner?.kickPreparation?'Acción en curso · Preparando el golpeo':'Acción en curso · Balón sin controlar';
  $('observation').textContent='Se conserva exactamente la posición en la que has detenido el partido, incluido el balón.';
- $('decision-prompt').textContent=restart?lastRuling+'. Reanuda para ejecutar el saque y llegar al siguiente control.':flight?'El balón está en vuelo. Reanuda hasta que un jugador lo controle para tomar la siguiente decisión.':'El balón está suelto. Reanuda la disputa hasta el control para tomar la siguiente decisión.';
+ $('decision-prompt').textContent=owner?.kickPreparation?'El poseedor está girando antes del golpeo. Reanuda para completar la acción y llegar a la siguiente decisión.':restart?lastRuling+'. Reanuda para ejecutar el saque y llegar al siguiente control.':flight?'El balón está en vuelo. Reanuda hasta que un jugador lo controle para tomar la siguiente decisión.':'El balón está suelto. Reanuda la disputa hasta el control para tomar la siguiente decisión.';
  syncControls();render();
 }
 function enterFreeMode(){if(matchStopped)return;resetComparison();guided=false;techAction=null;stage='free';resolution=null;selected=null;running=true;last=0;accumulator=0;for(const p of players){delete p.driveX;delete p.driveY;}status.style.color='';$('mode').textContent='Tomar decisiones';$('guided-content').hidden=true;$('free-description').hidden=false;$('decision-title').textContent='Simulación libre';syncControls();render();}
@@ -898,12 +903,12 @@ function executeTechnique(o){
   let x=target.x,y=target.y;
   if(kind==='through'){const destination=leadPassTarget(p,target);x=destination.x;y=destination.y;}
   if(kind==='wall'||kind==='relay'||kind==='repeat')techAction={kind:'wall',relay:kind==='relay',repeat:kind==='repeat',actor:p,target,nextTarget:kind==='relay'?nextTarget:p,firstTouch:o.firstTouch===true,phase:0,runX:clamp(p.x+9,3,97),runY:p.y};
-  kickTo(p,x,y,'pass',target);if(kind==='loft')flight.loft=5;
+  kickTo(p,x,y,'pass',target);if(kind==='loft')kickState(p).loft=5;
  }else if(kind==='shot'){
   const error=(random()-.5)*(4+(100-p.x)*.25);kickTo(p,102,32+error,'shot');
  }else if(kind==='cross'){
   const q=team(0).filter(q=>q!==p&&!isKeeper(q)).sort((a,b)=>(Math.abs(a.x-88)+Math.abs(a.y-32))-(Math.abs(b.x-88)+Math.abs(b.y-32)))[0];
-  kickTo(p,clamp(Math.max(80,q.x),3,97),clamp(q.y,22,42),'pass',q);flight.loft=5;flight.cross=true;flight.headerIntent=!!o.headerIntent;
+  kickTo(p,clamp(Math.max(80,q.x),3,97),clamp(q.y,22,42),'pass',q);kickState(p).loft=5;kickState(p).cross=true;kickState(p).headerIntent=!!o.headerIntent;
  }else if(kind==='keeperLong'){
   goalkeeperLong(p);
  }else if(kind==='clearance'){
@@ -926,6 +931,7 @@ function advanceTechnique(dt){
  p.driveX=clamp(a.startX+dx,2,98);p.driveY=clamp(a.startY+dy,2,62);
 }
 function decisionComplete(){
+ if(owner?.kickPreparation)return false;
  if(advantage)return false;
  if(techAction&&techAction.kind==='receiveWait')return owner!==techAction.actor;
  if(selected.defense)return owner.t===0||trialTime>=2||score.some((v,i)=>v!==selected.initialScore[i]);
@@ -936,7 +942,7 @@ function decisionComplete(){
 
 function report(msg){action=msg;status.textContent=msg+' · Pases '+passes+' · Tiros '+shots+' · Cambios de posesión '+turnovers;}
 function resetKickoff(t){
- for(const p of activePlayers()){p.x=p.t===0?Math.min(p.hx,49):Math.max(p.hx,51);p.y=p.hy;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];p.bodyAngle=p.t?Math.PI:0;p.scanAngle=0;p.scanUntil=0;p.controlUntil=0;p.controlAngle=0;p.controlError=0;p.controlDuration=0;p.cool=0;}
+ for(const p of activePlayers()){p.x=p.t===0?Math.min(p.hx,49):Math.max(p.hx,51);p.y=p.hy;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];p.bodyAngle=p.t?Math.PI:0;p.scanAngle=0;p.scanUntil=0;delete p.kickPreparation;p.controlUntil=0;p.controlAngle=0;p.controlError=0;p.controlDuration=0;p.cool=0;}
  beginRestart('kickoff',t,50,32,'');
 }
 function passLane(a,b,rivals){let risk=0;for(const r of rivals){const vx=b.x-a.x,vy=b.y-a.y,len2=vx*vx+vy*vy||1;const t=clamp(((r.x-a.x)*vx+(r.y-a.y)*vy)/len2,0,1);if(t<.08||t>.95)continue;const px=a.x+vx*t,py=a.y+vy*t;const gap=Math.hypot(r.x-px,r.y-py);if(gap<7)risk+= (7-gap)*(1.0+0.5*(1-t));}return risk;}
@@ -950,10 +956,34 @@ function passExecution(p,x,y){
  const tx=x+Math.cos(angle)*amount,ty=y+Math.sin(angle)*amount;
  return {tx,ty,intendedX:x,intendedY:y,error:Math.hypot(tx-x,ty-y),pressure,length};
 }
-function kickTo(p,x,y,kind,target=null,origin=null){if(matchStopped||p.sentOff||target&&target.sentOff)return;if(advantage&&p.t===advantage.t&&kind==='shot'&&(p.t===0?100-p.x:p.x)<=25&&Math.abs(p.y-32)<=18&&opp(p.t).every(q=>d(q,p)>2))confirmAdvantage('ocasión de tiro sin presión inmediata');markOffside(p,origin);let execution=null;if(kind==='pass'){execution=passExecution(p,x,y);x=execution.tx;y=execution.ty;lastExecution={...execution,t:p.t,n:p.n,time:elapsed};}const length=Math.hypot(x-p.x,y-p.y)||1;const duration=length/(kind==='shot'?48:kind==='pass'?35:29);flight={from:p,t:p.t,x:p.x,y:p.y,tx:x,ty:y,age:0,duration,kind,target,execution,prevX:p.x,prevY:p.y};lastTouchTeam=p.t;owner=null;loose=false;ballHeight=0;decision=.55;p.cool=.55;p.scanUntil=0;if(kind==='pass'){passes++;report((p.t?'Rojo':'Azul')+' #'+p.n+' pasa'+(target?' a #'+target.n:''));}else{shots++;report((p.t?'Rojo':'Azul')+' #'+p.n+' remata');}}
+function releaseKick(p,x,y,kind,target=null,origin=null){if(matchStopped||p.sentOff||target&&target.sentOff)return;if(advantage&&p.t===advantage.t&&kind==='shot'&&(p.t===0?100-p.x:p.x)<=25&&Math.abs(p.y-32)<=18&&opp(p.t).every(q=>d(q,p)>2))confirmAdvantage('ocasión de tiro sin presión inmediata');markOffside(p,origin);let execution=null;if(kind==='pass'){execution=passExecution(p,x,y);x=execution.tx;y=execution.ty;lastExecution={...execution,t:p.t,n:p.n,time:elapsed};}const length=Math.hypot(x-p.x,y-p.y)||1;const duration=length/(kind==='shot'?48:kind==='pass'?35:29);flight={from:p,t:p.t,x:p.x,y:p.y,tx:x,ty:y,age:0,duration,kind,target,execution,prevX:p.x,prevY:p.y};lastTouchTeam=p.t;owner=null;loose=false;ballHeight=0;decision=.55;p.cool=.55;p.scanUntil=0;if(kind==='pass'){passes++;report((p.t?'Rojo':'Azul')+' #'+p.n+' pasa'+(target?' a #'+target.n:''));}else{shots++;report((p.t?'Rojo':'Azul')+' #'+p.n+' remata');}}
+// Un golpeo normal requiere el destino dentro de un cono frontal de 60 grados.
+// No se inventan tacones: también el pase corto hacia atrás necesita perfilarse.
+function kickState(p){return p.kickPreparation?p.kickPreparation.meta:flight;}
+function kickTo(p,x,y,kind,target=null,origin=null){
+ if(matchStopped||p.sentOff||target?.sentOff)return;
+ const angle=Math.atan2(y-p.y,x-p.x);
+ if(Math.abs(angleDelta(angle,p.bodyAngle))>Math.PI/3){
+  p.kickPreparation={x,y,kind,targetId:target?.id??null,origin,meta:{}};
+  owner=p;flight=null;loose=false;p.driveX=p.x;p.driveY=p.y;p.scanUntil=0;
+  decision=.1;report((p.t?'Rojo':'Azul')+' #'+p.n+' se perfila antes del golpeo');
+  return;
+ }
+ delete p.kickPreparation;releaseKick(p,x,y,kind,target,origin);
+}
+function advanceKickPreparation(){
+ for(const p of players)if(p!==owner||p.sentOff)delete p.kickPreparation;
+ const p=owner,k=p?.kickPreparation;if(!k)return;
+ const target=k.targetId===null?null:players.find(q=>q.id===k.targetId);
+ if(target?.sentOff){delete p.kickPreparation;decision=0;return;}
+ if(elapsed<p.controlUntil||Math.abs(angleDelta(Math.atan2(k.y-p.y,k.x-p.x),p.bodyAngle))>Math.PI/3)return;
+ delete p.kickPreparation;
+ releaseKick(p,k.x,k.y,k.kind,target,k.origin);
+ if(flight)Object.assign(flight,k.meta);
+}
 function clearBall(p,height=0){
- kickTo(p,clamp(p.x+direction(p.t)*(32+random()*16),2,98),clamp(p.y+(random()-.5)*30,2,62),'pass');
- flight.loft=6;flight.startHeight=height;ballHeight=height;flight.clearance=true;
+ (height>0?releaseKick:kickTo)(p,clamp(p.x+direction(p.t)*(32+random()*16),2,98),clamp(p.y+(random()-.5)*30,2,62),'pass');
+ kickState(p).loft=6;kickState(p).startHeight=height;ballHeight=height;kickState(p).clearance=true;
  p.controlUntil=elapsed;p.controlDuration=0;
  report((p.t?'Rojo':'Azul')+' #'+p.n+(height>0?' despeja de cabeza':' despeja en largo'));
 }
@@ -968,7 +998,7 @@ function goalkeeperLong(p,origin=null){
  const target=eligible.sort((a,b)=>value(b)-value(a)||a.id-b.id)[0];
  const x=target?target.x:clamp(p.x+dir*42,3,97);
  kickTo(p,x,target?target.y:32,'pass',target?(target.actual||target):null,origin);
- flight.loft=7;flight.keeperLong=true;
+ kickState(p).loft=7;kickState(p).keeperLong=true;
  report((p.t?'Rojo':'Azul')+' · portero envía en largo aéreo'+(target?' hacia #'+target.n:' al espacio, sin receptor identificado'));
 }
 function aerialEligible(p,f,z){
@@ -985,7 +1015,7 @@ function aerialContact(p,f,z){
  if(p.t!==f.t){clearBall(p,z);return true;}
  p.controlUntil=elapsed;p.controlDuration=0;
  const error=(random()-.5)*(5+pressure*3+(p.t?p.x:100-p.x)*.12);
- kickTo(p,p.t?-2:102,32+error,'shot');
+ releaseKick(p,p.t?-2:102,32+error,'shot');
  flight.startHeight=z;ballHeight=z;flight.endHeight=.3+random()*3;flight.header=true;
  report((p.t?'Rojo':'Azul')+' #'+p.n+' remata de cabeza a portería');
  return true;
@@ -1006,7 +1036,7 @@ function gamePhase(c){
  return {name:'Disposición posicional',principle:'Conservar, ordenar apoyos y preparar la superación',organize:true};
 }
 function chooseAction(p){
- if(elapsed<p.controlUntil)return;
+ if(elapsed<p.controlUntil||p.kickPreparation)return;
  observeTeammates(p);observeRivals(p);
  const view=perceivedOpposition(p),mates=knownTeammates(p),dir=direction(p.t);
  const pressure=perceivedSpace(p,view),goalDist=p.t?p.x:100-p.x,lateral=Math.abs(p.y-32);
@@ -1043,7 +1073,7 @@ function chooseAction(p){
  const boxTargets=mates.filter(q=>q.memoryAge<.5&&!isKeeper(q)&&!perceivedOffside(p,q,view)&&perceivedSpace(q,view)>2.5&&(q.t?q.x:100-q.x)<23&&Math.abs(q.y-32)<14);
  if(goalDist<29&&lateral>17&&boxTargets.length&&random()<.6){
   const target=boxTargets.sort((a,b)=>perceivedSpace(a,view)-perceivedSpace(b,view)).pop();
-  kickTo(p,target.x,target.y,'pass',target.actual);flight.loft=5;flight.cross=true;report((p.t?'Rojo':'Azul')+' #'+p.n+' centra hacia #'+target.n);return;
+  kickTo(p,target.x,target.y,'pass',target.actual);kickState(p).loft=5;kickState(p).cross=true;report((p.t?'Rojo':'Azul')+' #'+p.n+' centra hacia #'+target.n);return;
  }
  let best=null,bestScore=-Infinity,bestRisk=0,safety=null,safetyScore=-Infinity,progress=null,progressScore=-Infinity;
  for(const observed of mates){
@@ -1649,7 +1679,7 @@ function movement(dt){if(matchStopped)return;pruneOffBall();
  for(const p of activePlayers()){
   if(attacking===p.t){delete p.defOrigin;delete p.defDuty;delete p.defSlotFor;}else if(attacking!==null){delete p.attackOrigin;delete p.attackSupport;delete p.attackBalance;delete p.lineCoverFor;delete p.lineExitAt;if(!p.defOrigin)p.defOrigin={x:p.x,y:p.y,bx,by};}
   p.cool=Math.max(0,p.cool-dt);let tx=p.hx,ty=p.hy;const dir=direction(p.t);
-  if(p===owner){tx=elapsed<p.controlUntil?p.x:(p.driveX??p.x);ty=elapsed<p.controlUntil?p.y:(p.driveY??p.y);}
+  if(p===owner){tx=elapsed<p.controlUntil||p.kickPreparation?p.x:(p.driveX??p.x);ty=elapsed<p.controlUntil||p.kickPreparation?p.y:(p.driveY??p.y);}
   else if(isKeeper(p)){tx=p.hx;ty=clamp(by,23,41);}
   else if(attacking===p.t){const q=targets.get(p);tx=q.x;ty=q.y;}
   else{const q=blocks[p.t]?.get(p)||defendingTarget(p,chasers[p.t].indexOf(p),ballPos);tx=q.x;ty=q.y;}
@@ -1688,6 +1718,7 @@ function movement(dt){if(matchStopped)return;pruneOffBall();
 }
 function capture(p,why){
  if(matchStopped||p.sentOff)return;
+ for(const q of players)delete q.kickPreparation;
  if(advantage&&(p.t!==advantage.t||offsidePhase&&offsidePhase.candidates.some(c=>players[c.i]===p))){recallAdvantage(p.t!==advantage.t?'recuperación rival':'recepción en fuera de juego');return;}
  if(penalizeOffside(p))return;
  // Registra el contacto y comprueba reglas antes de controlar o devolver de primeras.
@@ -1710,6 +1741,7 @@ function update(dt){if(matchStopped){running=false;syncControls();return;}elapse
  if(restart)return;
  advanceTechnique(dt);
  movement(dt);
+ advanceKickPreparation();
  if(owner){bx=owner.x;by=owner.y;}
  if(flight){
  const f=flight;f.age+=dt;const a=clamp(f.age/f.duration,0,1),old={x:bx,y:by,z:ballHeight};
@@ -1735,7 +1767,7 @@ function render(){syncSystemSelectors();$('control-status').textContent=owner&&e
 function frame(now){
  if(!last)last=now;
  const dt=Math.min(.05,(now-last)/1000);last=now;
- try { if(running){accumulator+=dt*speed*(guided?.4:1);const step=1/120;while(accumulator>=step&&running){accumulator-=step;update(step);if(guided&&stage==='settle'&&owner&&!flight&&!advantage)prepareDecision();else if(guided&&stage==='resolve'&&owner&&!flight&&decisionComplete())finishSituation();}} render(); }
+ try { if(running){accumulator+=dt*speed*(guided?.4:1);const step=1/120;while(accumulator>=step&&running){accumulator-=step;update(step);if(guided&&stage==='settle'&&owner&&!owner.kickPreparation&&!flight&&!advantage)prepareDecision();else if(guided&&stage==='resolve'&&owner&&!flight&&decisionComplete())finishSituation();}} render(); }
  catch(err){ running=false; $('pause').textContent='▶ Continuar'; status.textContent='⚠️ ERROR DEL MOTOR: '+(err&&err.message?err.message:String(err))+' · Revisa esta frase y envíame una captura.'; status.style.color='#ffb0a9'; console.error('FASE MANAGER',err); }
  requestAnimationFrame(frame);
 }

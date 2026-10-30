@@ -42,14 +42,14 @@ async function main(){
  const defense=env();for(const t of [0,1]){const p=defense.t.get().players.find(p=>p.t===t&&p.n===6),dir=t===0?1:-1;for(const rank of [0,1,2,6]){const q=defense.t.defendingTarget(p,rank,{x:50,y:32});assert((q.x-50)*dir<0,"defender protects own-goal side");}}
  const measured=env(), unchanged=signature(measured);measured.t.beginMeasurement();assert.equal(signature(measured),unchanged);assert.equal(measured.t.measurementValues().seconds,0);assert.equal(measured.t.measurementValues().block,0);measured.t.restorePosition();assert.equal(measured.t.get().measurement,null);
  const air=env();air.t.enterFreeMode();air.t.scenario({time:110,team:0});
- const s=air.t.get(),target=s.players.find(p=>p.t===0&&p.n===8);air.t.kickTo(s.owner,target.x,target.y,'pass',target);
+ const s=air.t.get(),target=s.players.find(p=>p.t===0&&p.n===8);s.owner.bodyAngle=Math.atan2(target.y-s.owner.y,target.x-s.owner.x);air.t.kickTo(s.owner,target.x,target.y,'pass',target);
  air.t.get().flight.loft=5;air.t.update(.08);air.nodes.pause.onclick();
  const frozen=signature(air);air.t.enterDecisionMode();assert.equal(signature(air),frozen);assert.equal(air.t.get().stage,'settle');
  for(let i=0;i<10;i++)air.tick();assert.equal(signature(air),frozen);
  air.nodes['resume-ball'].onclick();air.nodes.pause.onclick();assert.equal(air.t.get().running,false);
  air.nodes['resume-ball'].onclick();resolve(air);assert.equal(air.t.get().stage,'choose');assert(air.t.get().elapsed>=110);
  const without=env();without.t.enterFreeMode();without.t.scenario({time:120,team:0});
- without.t.kickTo(without.t.get().owner,1,1,'pass');const flight=without.t.get().flight;flight.age=flight.duration;
+ const wp=without.t.get().owner;wp.bodyAngle=Math.atan2(1-wp.y,1-wp.x);without.t.kickTo(wp,1,1,'pass');const flight=without.t.get().flight;flight.age=flight.duration;
  without.t.update(.01);if(!without.t.get().owner){const before=signature(without);without.t.enterDecisionMode();assert.equal(signature(without),before);without.nodes['resume-ball'].onclick();resolve(without);}
  const e=env();e.t.enterFreeMode();e.t.scenario({time:85,team:0});const before=signature(e);
  e.nodes['real-reference'].open=true;await e.nodes['real-reference'].ontoggle();assert.equal(signature(e),before);assert.equal(e.t.get().running,false);

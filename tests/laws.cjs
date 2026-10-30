@@ -26,7 +26,9 @@ for(const kind of ['throw','corner','goalKick','kickoff','indirect']){
  assert.equal(JSON.stringify(q.t.get().restart),frozen);assert.equal(q.t.get().stage,'settle');
  for(let i=0;i<10;i++)q.tick();assert.equal(JSON.stringify(q.t.get().restart),frozen,'pause freezes restart');
  for(let i=0;i<3000&&q.t.get().restart;i++)q.t.update(1/120);
- assert(!q.t.get().restart,kind+' must resume');assert(q.t.get().flight);assert.equal(q.t.get().restartGuard.kind,kind);
+ assert(!q.t.get().restart,kind+' must resume');
+ for(let i=0;i<240&&q.t.get().owner?.kickPreparation;i++)q.t.update(1/120);
+ assert(q.t.get().flight);assert.equal(q.t.get().restartGuard.kind,kind);
  const s=q.t.get(),taker=s.players[s.restartGuard.taker];
  q.t.capture(taker,'toca de nuevo');assert.equal(q.t.get().restart.kind,'indirect');assert.equal(q.t.get().restart.t,1);
 }
@@ -40,7 +42,7 @@ for(const kind of ['throw','indirect','corner','goalKick','kickoff'])for(const s
 for(const kind of ['throw','corner','goalKick','kickoff']){
  const q=env();q.t.beginRestart(kind,0,kind==='corner'?100:0,0,'Distancias');
  for(let i=0;i<4000&&q.t.get().restart;i++)q.t.advanceRestart(1/120);
- const s=q.t.get(),from=s.flight.from;
+ const s=q.t.get(),from=s.flight?s.flight.from:s.owner;
  for(const p of s.players.filter(p=>p.t===1)){
   if(kind==='goalKick')assert(p.x>=16.5||Math.abs(p.y-32)>=20.16);
   else assert(Math.hypot(p.x-from.x,p.y-from.y)>=(kind==='throw'?2:9.15)-.04);

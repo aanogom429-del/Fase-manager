@@ -15,7 +15,7 @@ for(const t of [0,1]){
  assert(p.scanUntil>1,'search explicitly scheduled');
  for(let i=0;i<5;i++){e.t.scenario({time:1+i*.1,team:t});const before=p.bodyAngle;e.t.movement(.1);assert(Math.abs(delta(p.bodyAngle,before))<=Math.PI*.1+1e-10,'bounded angular speed');}
  assert(e.t.perceives(p,ahead),'turn reveals previously unseen option');
- e.t.chooseAction(p);assert(e.t.get().flight||abs(p.driveX)>50,'can act once option is detected');
+ e.t.chooseAction(p);assert(e.t.get().flight||p.kickPreparation||abs(p.driveX)>50,'can act or prepare a kick once option is detected');
  const frozen=setup(t);frozen.p.scanAngle=.4;frozen.p.scanUntil=3;frozen.e.t.prepareDecision();
  const expected=JSON.stringify(frozen.s.players.map(p=>[p.bodyAngle,p.scanAngle,p.scanUntil]));
  frozen.e.t.enterFreeMode();frozen.e.t.enterDecisionMode();assert.equal(JSON.stringify(frozen.s.players.map(p=>[p.bodyAngle,p.scanAngle,p.scanUntil])),expected);

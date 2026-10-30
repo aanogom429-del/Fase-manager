@@ -1,0 +1,9 @@
+# 0.98 — Protección perceptiva del pase atrás
+
+Nueva cutbackProtection para la cobertura, no para todo el bloque. Balón/origen de pase en últimos 25 de profundidad propia y banda (desvío central >=15); rival observado hace <=0,5 s, incertidumbre <=1,5, central (±16), profundidad propia <=35, situado >3 por detrás del origen atacante y a <=32 del mismo. Destino dos unidades del lado de su portería respecto al receptor. Radio del defensor <=18 y llegada estimada <=tiempo de pase +0,6. Parámetros heurísticos.
+
+Con poseedor, solo alternativa si la política previa de líneas de pase no devuelve protección. La protección de tiro mantiene prioridad en contextualDefense. En vuelo raso hacia atrás permite continuar usando origen/trayectoria conocidos y referencias rivales percibidas; no usa la identidad real del receptor del vuelo como conocimiento mágico. Excluye centros aéreos, tiros, órdenes comprometidas, recuerdos antiguos y candidatos inalcanzables. No introduce estado persistente ni modifica arbitraje.
+
+PASS en cutback_protection (casos espejo y destino integrado), contextual_defense, finishing_protection, pressure_exposure, cross_cutback_relays, continuity, simulation_entry y defensive_chain. Ocho entradas seleccionadas. cross_cutback_relays ejecutado también con CUTBACK_ABLATION=1, que desactiva solo la nueva conducta en la copia de comparación. Las ocho parejas mantienen exposición, tiros y goles; el gol adverso rojo/pase atrás/401 continúa. La nueva política es comprobable en fixtures elegibles, pero no demuestra utilidad general ni resuelve el contraste previo. No hay batería completa ni navegador real.
+
+Próximo paso: medir qué defensores perciben a tiempo la amenaza y qué condiciones de llegada/prioridad bloquean una respuesta en esos escenarios, incluyendo nuevos casos con preparación antes del pase. No aflojar condiciones solo para mejorar ocho resultados. Las cadenas y bloque de 0.97 permanecen; siete bloques abiertos.

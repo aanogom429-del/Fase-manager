@@ -1,10 +1,12 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{env}=require('./continuity.cjs');
 const source=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
+const cutbackAblation=process.env.CUTBACK_ABLATION==='1';
 const gate='if(press&&ref&&positionalLine(press)===1';assert(source.includes(gate));
 const marker='return targets;\n}\nfunction movement(dt)';assert(source.includes(marker));
 function run(t,kind,seed,enabled){
  let links=0,arrived=0;
- const input=(enabled?source:source.replace(gate,'if(false&&press&&ref&&positionalLine(press)===1')).replace(marker,'probeRelay([...relays].map(([p])=>d(p,targets.get(p))));\n'+marker);
+ const baseline=cutbackAblation?source.replace('function cutbackProtection(p,ballPos){','function cutbackProtection(p,ballPos){return null;'):source.replace(gate,'if(false&&press&&ref&&positionalLine(press)===1');
+ const input=(enabled?source:baseline).replace(marker,'probeRelay([...relays].map(([p])=>d(p,targets.get(p))));\n'+marker);
  const e=env(input,seed,{probeRelay:gaps=>{links+=gaps.length;arrived+=gaps.filter(d=>d<=3).length;}}),api=e.t;
  api.enterFreeMode();api.scenario({time:0,team:1-t,seed});
  const ps=api.get().players,flip=(x,y)=>({x:t?100-x:x,y:t?64-y:y});
@@ -36,7 +38,7 @@ function run(t,kind,seed,enabled){
 let totalLinks=0;
 for(const t of [0,1])for(const kind of ['cross','cutback'])for(const seed of [401,402]){
  const without=run(t,kind,seed,false),withChain=run(t,kind,seed,true);totalLinks+=withChain.links;
- assert.equal(without.links,0);console.log(JSON.stringify({defendingTeam:t,kind,seed,without,withChain}));
+ if(!cutbackAblation)assert.equal(without.links,0);console.log(JSON.stringify({ablation:cutbackAblation?'cutback':'chain',defendingTeam:t,kind,seed,without,withChain}));
 }
 assert(totalLinks>0,'paired scenarios must exercise relays');
 console.log('PASS: eight paired real flights with reactive movement, finite state and exercised chain; outcome deltas are not asserted improvements');

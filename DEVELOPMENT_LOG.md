@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.98 — Receptor de pase atrás
+
+Cobertura contextual de receptor central percibido recientemente, alcanzable desde banda cerca de portería; alternativa a líneas prioritarias y continuidad en vuelo raso. Ver docs/PASE_ATRAS_098.md. Ocho pruebas PASS; ocho parejas de ablación sin mejora en exposición/tiros/goles. Nueva conducta acotada, no eficacia general demostrada. Pendiente percepción/preparación previa al pase y causas de inelegibilidad; siete bloques abiertos.
+
 ## Contraste centros/pase atrás — 0.97
 
 cross_cutback_relays PASS técnico: ocho parejas de 4 s con/sin cadena, dos equipos/acciones/semillas. 534 observaciones de enlace, 19 cerca de referencia en dos casos de pase atrás; mismos tiros/goles/exposición receptor por pareja. Gol adverso conservado. Ver docs/CENTROS_PASE_ATRAS_097.md. Próxima mejora: amenaza percibida del receptor del pase atrás y tiempos de acceso, no más persistencia por sí sola. Motor sin cambios; no eficacia general demostrada.

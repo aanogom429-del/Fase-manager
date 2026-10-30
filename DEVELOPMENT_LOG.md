@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## Contraste centros/pase atrás — 0.97
+
+cross_cutback_relays PASS técnico: ocho parejas de 4 s con/sin cadena, dos equipos/acciones/semillas. 534 observaciones de enlace, 19 cerca de referencia en dos casos de pase atrás; mismos tiros/goles/exposición receptor por pareja. Gol adverso conservado. Ver docs/CENTROS_PASE_ATRAS_097.md. Próxima mejora: amenaza percibida del receptor del pase atrás y tiempos de acceso, no más persistencia por sí sola. Motor sin cambios; no eficacia general demostrada.
+
 ## Diagnóstico de cierres finalizado — 0.97
 
 El cierre externo pendiente era recuperación de posesión del equipo defensor (rojo), no fallo de persistencia. El otro episodio cambia de presionante. Ver docs/CIERRES_RELEVO_097.md. Añadida regresión capture→limpieza de toda la cadena. Sin cambios de motor. No seguir ampliando radio/tiempo con estos dos casos; próximo paso: centro/pase atrás prescritos y comparación con/sin cadena. Cobertura efectiva todavía no validada.

@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.102 — Descarga tras recuperación y prioridad al pase
+
+En decisiones automáticas, una recuperación de jugador de campo abre 1,5 s de búsqueda prioritaria de descarga: receptor observado actualmente, a 5–25 unidades, lateral/atrasado (avance máximo 3), habilitado, línea poco expuesta y espacio. Sin salida segura frena y escanea; agotada la ventana recupera decisión contextual normal, evitando bloqueo. En posesión ordinaria, progresión corta segura o apoyo de seguridad preceden a conducción. Conserva finalización contextual, órdenes guiadas y giro previo al golpeo. Prueba nueva recovery_outlet en ambos equipos: descarga, receptor marcado, no arrancada, prioridad ordinaria y reinicio. Parámetros heurísticos; sin validación visual ni eficacia general demostrada. Siete bloques abiertos.
+
 ## 0.101 — Circulación en iniciación
 
 Primera integración: ante presión percibida en banda y sin progresión segura elegida, buscar un apoyo fresco hacia el interior/lado contrario, con línea de pase poco expuesta. En campo propio, preparar apoyos respecto al destino del pase raso; adelantar la organización de seguridad escalonada, amplitud y profundidad sin esperar el peso gradual de estructura. No obliga a completar un cambio de orientación ni consulta rivales ocultos. El giro de 0.99 sigue siendo obligatorio: no se ha acelerado artificialmente el golpeo. Cinco pruebas: buildup_circulation, organizing_progression (adaptada al giro diferido), attack_space, kick_orientation, simulation_entry. Umbrales heurísticos; falta validar secuencias completas, ritmo y disponibilidad real de toda la red. Siete bloques abiertos.

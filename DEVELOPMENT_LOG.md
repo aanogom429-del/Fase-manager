@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.100 — Relevo zonal ante conductor
+
+El presionante superado por más de dos unidades entrega la presión a un defensor disponible, con visión del balón, situado por delante del conductor (lado de portería propia), a un máximo de 12 unidades y 8 lateralmente. Mantiene un solo presionante; el superado no ocupa la cobertura inmediata en ese relevo y recupera su referencia en el bloque. Sin candidato local continúa persiguiendo. Umbrales heurísticos, no defensa zonal completa ni validación de eficacia en partidos. Prueba zonal_handoff: ambos equipos, estabilidad y exclusiones por distancia, orden, visión y defensor no superado. Siete bloques abiertos.
+
 ## 0.99 — Perfil de carrera y giro antes del golpeo
 
 Corrección prioritaria solicitada por el usuario: repliegue con referencia corporal al balón; pases/tiros con el pie fuera del cono frontal esperan giro real, sin tacones automáticos. Preparación cancelable por pérdida, atributos de centros/saques preservados y pausa/continuación protegidas. Ver docs/PERFIL_GOLPEO_099.md. Parámetros heurísticos; cabeceo y estimación completa de llegada pendientes. Siete bloques abiertos, no cierre del motor.

@@ -4,11 +4,11 @@ const source=html.slice(html.indexOf('function gamePhase('),html.indexOf('functi
 const phase=vm.runInNewContext(source+';gamePhase');
 const base={depth:50,finish:false,progress:false,progressRisk:6,pressure:5,safety:true};
 for(const [change,name,organize] of [
- [{depth:20},'Iniciación del juego',true],
- [{pressure:9},'Confort',true],
+ [{allAhead:true},'Iniciación del juego',true],
+ [{allAhead:true,retreating:true},'Confort',true],
  [{},'Disposición posicional',true],
- [{progress:true,progressRisk:1},'Superación',false],
- [{finish:true},'Finalización',false],
+ [{lastLineOnly:true},'Superación',false],
+ [{lastLineOnly:true,afterSuperation:true},'Finalización',false],
  [{depth:80},'Disposición posicional',true],
  [{progress:true,progressRisk:7},'Disposición posicional',true]
 ]){const q=phase({...base,...change});assert.equal(q.name,name);assert.equal(q.organize,organize);assert(q.principle);}

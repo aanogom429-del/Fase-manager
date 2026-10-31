@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.101 — Circulación en iniciación
+
+Primera integración: ante presión percibida en banda y sin progresión segura elegida, buscar un apoyo fresco hacia el interior/lado contrario, con línea de pase poco expuesta. En campo propio, preparar apoyos respecto al destino del pase raso; adelantar la organización de seguridad escalonada, amplitud y profundidad sin esperar el peso gradual de estructura. No obliga a completar un cambio de orientación ni consulta rivales ocultos. El giro de 0.99 sigue siendo obligatorio: no se ha acelerado artificialmente el golpeo. Cinco pruebas: buildup_circulation, organizing_progression (adaptada al giro diferido), attack_space, kick_orientation, simulation_entry. Umbrales heurísticos; falta validar secuencias completas, ritmo y disponibilidad real de toda la red. Siete bloques abiertos.
+
 ## 0.100 — Relevo zonal ante conductor
 
 El presionante superado por más de dos unidades entrega la presión a un defensor disponible, con visión del balón, situado por delante del conductor (lado de portería propia), a un máximo de 12 unidades y 8 lateralmente. Mantiene un solo presionante; el superado no ocupa la cobertura inmediata en ese relevo y recupera su referencia en el bloque. Sin candidato local continúa persiguiendo. Umbrales heurísticos, no defensa zonal completa ni validación de eficacia en partidos. Prueba zonal_handoff: ambos equipos, estabilidad y exclusiones por distancia, orden, visión y defensor no superado. Siete bloques abiertos.

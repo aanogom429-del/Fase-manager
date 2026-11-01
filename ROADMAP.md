@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.106 — Funciones según espacio de relación
+
+Panel y movimiento comparten clasificador con riesgo de pase percibido. Interacción: primera decisión automática más rápida tras controlar y menor demora de lectura sin balón, sin eliminar control/giro. Apoyo mutuo ofensivo: elegibilidad exclusiva para dos apoyos cortos; búsqueda de líneas desde otras alturas sin usurpar equilibrio/relevos. Cooperación: mayor peso inmediato a estructura y funciones de amplitud/profundidad. En defensa, presionante/cobertura únicos; otros cercanos disuaden dentro de su zona ante receptor observado, sin romper altura; cooperación bascula en bloque. No hay garantía de atraer/fijar un rival ni de que un pase esté disponible al recibir. Prueba específica de cambio de espacio y contraste de destino zonal en ambos sentidos.
+
 ## 0.105 — Red de apoyos según el bloque rival
 
 La seguridad escalonada, amplitud y profundidad de iniciación se activan con el bloque rival por delante, sin umbral territorial. Durante el pase raso, el destino de recepción puede ser la referencia aunque esté avanzado. No se fuerza ocupación de remate solo por entrar en último tercio cuando persiste esa estructura. Prueba en ambos sentidos y tres alturas, exclusión tras superar presión, referencia de vuelo y ausencia de recolocaciones instantáneas. Son destinos, no garantía de línea de pase abierta ni de llegada física a tiempo.

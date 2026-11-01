@@ -17,7 +17,7 @@ for(const team of [0,1]){
  e.t.orientBody(p,p.x+dir*20,p.y,2);
  assert(e.t.perceives(p,{x:s.bx,y:s.by}));
  // Same geometry, different orientation: a closed receiver needs extra preparation.
- o.x=50;o.y=32;p.x=50+dir*29;p.y=32;
+ o.x=50;o.y=32;p.x=50+dir*27;p.y=32; // include the cost of an unobserved lane
  p.bodyAngle=team?0:Math.PI;
  const open=e.t.phaseRelations([o,p],o,o).get(p);
  p.bodyAngle=team?Math.PI:0;

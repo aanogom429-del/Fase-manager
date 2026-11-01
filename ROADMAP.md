@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.108 — Separación de recorridos ofensivos
+
+Tras demoras y órdenes, proyecta recorridos de compañeros hasta 0,7 s. Si dos trayectorias compiten por espacio, el jugador de menor prioridad puede desviarse lateralmente sin cambiar el destino táctico guardado ni recolocar su cuerpo. Respeta poseedor, receptor, portero, pared y órdenes activas. Sin oposición oculta. run_spacing compara 45 pasos físicos con intenciones fijadas y tres compañeros inicialmente agrupados: 224→144 observaciones pareja-paso a distancia <4 en cada sentido, entre esos tres y el poseedor. No son episodios independientes ni resultados de partido; no garantiza que nunca coincidan, especialmente con órdenes simultáneas protegidas. Seis pruebas dirigidas incluyendo continuidad.
+
 ## 0.107 — Conservar tras descarga y reorganizar el bloque
 
 Tras robo, cuatro segundos de objetivos de seguridad, amplitud y profundidad que persisten después del pase y se cancelan al perder o reiniciar. El recuperador conserva la búsqueda inmediata de descarga. El nuevo poseedor, con espacio percibido y lejos del remate, reevalúa cada 0,15 s si aún falta una salida segura o progresiva. Margen máximo de 1,4 s desde recepción durante reorganización, 0,75 s fuera de ella; no espera impuesta bajo presión ni duración mínima para todos los controles. Umbrales de diseño. Pruebas espejo de descarga, conservación condicionada, presión, caducidad y reinicio. No se ha demostrado una mejora global de duración de las posesiones.

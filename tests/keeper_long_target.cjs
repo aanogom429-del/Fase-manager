@@ -18,7 +18,7 @@ for(const t of [0,1]){
  off.e.t.goalkeeperLong(off.p);assert.equal(off.e.t.get().flight.target,null,'exclude perceived offside receiver in open play');
  const restart=setup(t);restart.a.x=restart.x(60);for(const r of restart.ps.filter(q=>q.t!==t))r.x=restart.x(55);
  restart.e.t.goalkeeperLong(restart.p,'goalKick');assert.equal(restart.e.t.get().flight.target,restart.a);assert(restart.e.t.get().offsidePhase.exempt,'goal kick keeps exemption');
- function remembered(hiddenX){const m=setup(t);m.a.x=m.x(50);m.a.y=40;m.e.t.observeTeammates(m.p);m.e.t.observeRivals(m.p);m.p.bodyAngle=t?0:Math.PI;m.a.x=m.x(hiddenX);m.e.t.goalkeeperLong(m.p);return m.e.t.get().flight.execution.intendedX;}
+ function remembered(hiddenX){const m=setup(t);m.a.x=m.x(50);m.a.y=40;m.e.t.observeTeammates(m.p);m.e.t.observeRivals(m.p);m.p.bodyAngle=t?0:Math.PI;m.a.x=m.x(hiddenX);m.e.t.goalkeeperLong(m.p);return m.e.t.get().flight?.execution.intendedX??m.p.kickPreparation.x;}
  assert.equal(remembered(65),c.x(50));assert.equal(remembered(70),c.x(50),'hidden movement does not change remembered target');
 }
 console.log('PASS: mirrored long destination consistency, pressure choice, range, offside/exemption and remembered target');

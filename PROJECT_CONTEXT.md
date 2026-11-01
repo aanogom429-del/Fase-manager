@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.111 — El portero prepara la iniciación o activa ataque directo
+
+Tras controlar un tiro rival en su área distingue blocaje de pase recibido con los pies. En automático, observa y reevalúa mientras los defensas buscan salidas a distintas bandas y el punta no asignado al apoyo corto da profundidad. Tras una pausa inicial de 0,65 s, puede lanzar en largo a un atacante observado y habilitado a 32–55 unidades cuando falta amplitud corta o la referencia tiene ventaja de espacio; con salidas cortas seguras separadas lateralmente puede iniciar en corto. Deja de esperar estructura a los 3,5 s del blocaje (1,5 s tras pase sin presión); recepción con pies bajo presión conserva respuesta inmediata. Tiempos heurísticos, no regla arbitral. Conserva giro antes del golpeo y saques de meta anteriores. keeper_catch en ambos equipos, más distribución, objetivo largo, juego aéreo, simulación y continuidad. Sin validación de eficacia en partidos completos.
+
 ## 0.110 — Apoyos desde el receptor previsto (experimental, opcional)
 
 Casilla sobre el campo, inicialmente desactivada. En pase raso dirigido visible con llegada estimada viable en el próximo segundo, los desvíos laterales pueden evaluarse desde el destino, con el perfil y las memorias del receptor. No controla el balón antes de tiempo. FLIGHT_TEST=1 node tests/spacing_possession.cjs compara opción apagada/encendida. Recepciones con dos salidas / recepciones observadas: azul 401 4/7→1/4; 402 2/5→0/3; 501 3/7→9/13; 502 1/3→1/3; rojo 401 0/2→0/2; 402 0/1→6/10; 501 0/2→0/3; 502 0/2→0/2. Solo se cuentan pases en vuelo al comienzo del paso; jugadas truncadas a 12 s. Muestra pequeña y resultados mixtos; no activar por defecto ni afirmar eficacia general. Próximo contraste: separar efecto del perfil corporal previo y del cambio de poseedor en los casos adversos.

@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.110 — Apoyos desde el receptor previsto (experimental, opcional)
+
+Casilla sobre el campo, inicialmente desactivada. En pase raso dirigido visible con llegada estimada viable en el próximo segundo, los desvíos laterales pueden evaluarse desde el destino, con el perfil y las memorias del receptor. No controla el balón antes de tiempo. FLIGHT_TEST=1 node tests/spacing_possession.cjs compara opción apagada/encendida. Recepciones con dos salidas / recepciones observadas: azul 401 4/7→1/4; 402 2/5→0/3; 501 3/7→9/13; 502 1/3→1/3; rojo 401 0/2→0/2; 402 0/1→6/10; 501 0/2→0/3; 502 0/2→0/2. Solo se cuentan pases en vuelo al comienzo del paso; jugadas truncadas a 12 s. Muestra pequeña y resultados mixtos; no activar por defecto ni afirmar eficacia general. Próximo contraste: separar efecto del perfil corporal previo y del cambio de poseedor en los casos adversos.
+
 ## 0.109 — Separar sin perder una salida
 
 Si hay conflicto físico, el desvío lateral no puede reducir la calidad de pase percibida respecto a la posición actual o el recorrido previsto. Prioriza un segundo ángulo de ≥30° entre opciones seguras, pero solo si baja el conflicto físico. Sin poseedor se conserva la separación física. En ocho contrastes con/sin valoración (GRADE_TEST=1 node tests/spacing_possession.cjs), proporción con dos salidas mejora en cuatro, empeora en uno y empata en tres. Pasos con dos salidas / pasos con poseedor, antes→después: azul 401: 22/177→79/178; 402: 9/137→23/165; nuevos desde banda 501: 9/123→24/176; 502: 9/85→9/232. Rojo 401 y 402: 0/66 y 0/55 sin cambios; 501: 15/100→15/62 (posesión más corta); 502: 15/66 sin cambios. Sin eficacia general demostrada.

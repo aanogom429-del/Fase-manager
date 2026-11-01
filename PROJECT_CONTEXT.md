@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.107 — Conservar tras descarga y reorganizar el bloque
+
+Tras robo, cuatro segundos de objetivos de seguridad, amplitud y profundidad que persisten después del pase y se cancelan al perder o reiniciar. El recuperador conserva la búsqueda inmediata de descarga. El nuevo poseedor, con espacio percibido y lejos del remate, reevalúa cada 0,15 s si aún falta una salida segura o progresiva. Margen máximo de 1,4 s desde recepción durante reorganización, 0,75 s fuera de ella; no espera impuesta bajo presión ni duración mínima para todos los controles. Umbrales de diseño. Pruebas espejo de descarga, conservación condicionada, presión, caducidad y reinicio. No se ha demostrado una mejora global de duración de las posesiones.
+
 ## 0.106 — Funciones según espacio de relación
 
 Panel y movimiento comparten clasificador con riesgo de pase percibido. Interacción: primera decisión automática más rápida tras controlar y menor demora de lectura sin balón, sin eliminar control/giro. Apoyo mutuo ofensivo: elegibilidad exclusiva para dos apoyos cortos; búsqueda de líneas desde otras alturas sin usurpar equilibrio/relevos. Cooperación: mayor peso inmediato a estructura y funciones de amplitud/profundidad. En defensa, presionante/cobertura únicos; otros cercanos disuaden dentro de su zona ante receptor observado, sin romper altura; cooperación bascula en bloque. No hay garantía de atraer/fijar un rival ni de que un pase esté disponible al recibir. Prueba específica de cambio de espacio y contraste de destino zonal en ambos sentidos.

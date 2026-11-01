@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.105 — Red de apoyos según el bloque rival
+
+La seguridad escalonada, amplitud y profundidad de iniciación se activan con el bloque rival por delante, sin umbral territorial. Durante el pase raso, el destino de recepción puede ser la referencia aunque esté avanzado. No se fuerza ocupación de remate solo por entrar en último tercio cuando persiste esa estructura. Prueba en ambos sentidos y tres alturas, exclusión tras superar presión, referencia de vuelo y ausencia de recolocaciones instantáneas. Son destinos, no garantía de línea de pase abierta ni de llegada física a tiempo.
+
 ## 0.104 — Continuidad tras superación sin temporizador
 
 Sustituye 0,6 s por eventos posteriores a entrada en superación: pase/remate ejecutado, recepción por nuevo poseedor o avance controlado de al menos 3 unidades. Mantiene finalización mientras no se reorganicen líneas rivales por delante; limpia en pérdida/reanudación. No equivale a interpretación táctica completa: también un pase lateral puede activar continuidad. La circulación de iniciación usa ahora bloque por delante, sin límite de 35 unidades; prueba ambas direcciones en campo propio y más adelantado. El detector sigue siendo global y las demás rutinas territoriales de apoyos aún requieren adaptación. Pruebas block_phase, buildup_circulation, game_phases, recovery_outlet, continuity, simulation_entry. Siete bloques abiertos.

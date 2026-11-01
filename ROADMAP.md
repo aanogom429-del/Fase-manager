@@ -1,5 +1,9 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Contraste de conectividad — 0.108
+
+Cuatro comparaciones con/sin separación de recorridos: dos casos pierden disponibilidad de una segunda línea útil y dos quedan iguales. Ver docs/LINEAS_TRAS_SEPARACION_108.md. Próximo paso: condicionar el desvío por accesibilidad y ángulo de pase; validar con casos nuevos antes de publicar cambios de motor.
+
 ## 0.108 — Separación de recorridos ofensivos
 
 Tras demoras y órdenes, proyecta recorridos de compañeros hasta 0,7 s. Si dos trayectorias compiten por espacio, el jugador de menor prioridad puede desviarse lateralmente sin cambiar el destino táctico guardado ni recolocar su cuerpo. Respeta poseedor, receptor, portero, pared y órdenes activas. Sin oposición oculta. run_spacing compara 45 pasos físicos con intenciones fijadas y tres compañeros inicialmente agrupados: 224→144 observaciones pareja-paso a distancia <4 en cada sentido, entre esos tres y el poseedor. No son episodios independientes ni resultados de partido; no garantiza que nunca coincidan, especialmente con órdenes simultáneas protegidas. Seis pruebas dirigidas incluyendo continuidad.

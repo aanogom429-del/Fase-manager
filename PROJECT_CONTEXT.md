@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.109 — Separar sin perder una salida
+
+Si hay conflicto físico, el desvío lateral no puede reducir la calidad de pase percibida respecto a la posición actual o el recorrido previsto. Prioriza un segundo ángulo de ≥30° entre opciones seguras, pero solo si baja el conflicto físico. Sin poseedor se conserva la separación física. En ocho contrastes con/sin valoración (GRADE_TEST=1 node tests/spacing_possession.cjs), proporción con dos salidas mejora en cuatro, empeora en uno y empata en tres. Pasos con dos salidas / pasos con poseedor, antes→después: azul 401: 22/177→79/178; 402: 9/137→23/165; nuevos desde banda 501: 9/123→24/176; 502: 9/85→9/232. Rojo 401 y 402: 0/66 y 0/55 sin cambios; 501: 15/100→15/62 (posesión más corta); 502: 15/66 sin cambios. Sin eficacia general demostrada.
+
 ## 0.108 — Separación de recorridos ofensivos
 
 Tras demoras y órdenes, proyecta recorridos de compañeros hasta 0,7 s. Si dos trayectorias compiten por espacio, el jugador de menor prioridad puede desviarse lateralmente sin cambiar el destino táctico guardado ni recolocar su cuerpo. Respeta poseedor, receptor, portero, pared y órdenes activas. Sin oposición oculta. run_spacing compara 45 pasos físicos con intenciones fijadas y tres compañeros inicialmente agrupados: 224→144 observaciones pareja-paso a distancia <4 en cada sentido, entre esos tres y el poseedor. No son episodios independientes ni resultados de partido; no garantiza que nunca coincidan, especialmente con órdenes simultáneas protegidas. Seis pruebas dirigidas incluyendo continuidad.

@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.116 — Recuperar amplitud desde un bloque agrupado
+
+En iniciación/reorganización se reserva un candidato libre por banda vacía antes de asignar nuevas compensaciones. Si las posiciones previstas siguen dejando una banda libre, se corrige la coordenada lateral de un compañero disponible sin retirar los apoyos cortos, equilibrio, relevo vigente ni ocupante de la otra banda. possession_shape comprueba los destinos finales y la posición de seguridad respecto al balón. En una secuencia autónoma de tres segundos por equipo (semilla 73, bloque inicialmente en y=32), anchura física 0.115→0.116: azul 26,9→29,7; rojo 26,7→30,7 unidades. No demuestra eficacia general. Pasan possession_shape, structural_supports, attack_space, simulation_entry, line_chain, line_collective y recovery_reorder. line_structure sigue fallando; siguiente prioridad. No se repitió la batería completa.
+
 ## 0.115 — Auditoría global, diagonales y reanudación durante el giro
 
 docs/AUDITORIA_MOTOR_115.md: 113 programas sobre 0.114, 85 aprobados, 24 fallos, 4 límites; 5 fallos resueltos en reevaluaciones dirigidas. Quedan 19 fallos por investigar y cuatro programas largos no concluidos. Reanudaciones: se mantienen posiciones hasta el golpeo, no solo hasta la decisión. Diagonales: basculación anticipada ensayada, no integrada; 8/8 recepciones en ambas variantes, distancia al receptor mejora solo en cuatro. Prioridad: anchura, compensación y disponibilidad efectiva de líneas de pase.

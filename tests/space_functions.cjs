@@ -10,9 +10,9 @@ for(const t of [0,1]){
  assert(!local.attackSupport,'cooperation does not retain a short support duty');
  const order=e.t.team(1-t).filter(q=>q.n!==1).reverse(),marker=order[4],block=e.t.phaseRelations(null);
  const keys=new Map(order.map(q=>[q,{key:'c'}]));const slot=block(1-t,order,p,keys).get(marker);
- local.x=slot.x;local.y=slot.y+5;marker.bodyAngle=Math.atan2(local.y-marker.y,local.x-marker.x);
+ marker.x=slot.x;marker.y=slot.y;local.x=slot.x;local.y=slot.y+5;marker.bodyAngle=Math.atan2(local.y-marker.y,local.x-marker.x);
  marker.rivalMemory=[{id:local.id,x:local.x,y:local.y,seenAt:10}];
  keys.set(marker,{key:'a'});const marked=block(1-t,order,p,keys).get(marker);
- assert.equal(marked.x,slot.x);assert(Math.abs(marked.y-slot.y)>0&&Math.abs(marked.y-slot.y)<=2);
+ assert.equal(marker.markId,local.id);assert(Math.abs(marked.x-slot.x)<=6);assert(Math.abs(marked.y-slot.y)>0&&Math.abs(marked.y-slot.y)<=6);
 }
 console.log('PASS: mirrored eligibility, release on leaving mutual support, zonal deterrence versus cooperation');

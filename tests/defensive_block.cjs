@@ -4,6 +4,8 @@ for(const t of [0,1])for(const system of ['4-3-3','4-2-3-1','4-4-2','3-5-2']){
  const e=env(html),h=e.t.phaseRelations(null);e.t.enterFreeMode();e.t.scenario({time:10,team:1-t});
  const id=t?'system-red':'system-blue';e.nodes[id].value=system;e.nodes[id].onchange();
  const mates=e.t.team(t).filter(p=>p.n>1),order=[...mates].sort((a,b)=>b.n-a.n),ball={x:50,y:32};
+ // Measure the unoccupied zonal references, without a man-marking trigger.
+ for(const r of e.t.team(1-t)){r.x=t?2:98;r.y=2;}
  const before=JSON.stringify(mates.map(p=>[p.x,p.y]));
  const center=h.block(t,order,ball),wide=h.block(t,order,{x:50,y:52});
  for(const p of order.slice(2)){

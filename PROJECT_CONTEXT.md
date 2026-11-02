@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.112 — Organización real durante el blocaje
+
+El portero no libera automáticamente a los 3,5 s. En control con manos modelado tras detener un tiro, valora apoyos cortos realmente separados y perfilados o referencia larga; reserva tiempo de giro para soltar antes de 8 s. Muestra segundos restantes al reevaluar una espera en los últimos cinco. Si supera ocho con balón aún en manos, córner rival del lado correspondiente; una cesión con pies no activa sanción. Durante la espera: centrales y laterales abren salida, medio de base no asignado al apoyo corto ofrece otra altura, jugadores de banda y punta dan continuidad/profundidad. Pruebas controladas en ambos sentidos: movimiento real de defensores durante un segundo, espera más allá de 3,5, salidas tempranas, plazo y córner, pies bajo presión, continuidad. No se modelan todos los posibles controles legales con las manos ni se ha validado la frecuencia de salidas en partidos completos.
+
 ## 0.111 — El portero prepara la iniciación o activa ataque directo
 
 Tras controlar un tiro rival en su área distingue blocaje de pase recibido con los pies. En automático, observa y reevalúa mientras los defensas buscan salidas a distintas bandas y el punta no asignado al apoyo corto da profundidad. Tras una pausa inicial de 0,65 s, puede lanzar en largo a un atacante observado y habilitado a 32–55 unidades cuando falta amplitud corta o la referencia tiene ventaja de espacio; con salidas cortas seguras separadas lateralmente puede iniciar en corto. Deja de esperar estructura a los 3,5 s del blocaje (1,5 s tras pase sin presión); recepción con pies bajo presión conserva respuesta inmediata. Tiempos heurísticos, no regla arbitral. Conserva giro antes del golpeo y saques de meta anteriores. keeper_catch en ambos equipos, más distribución, objetivo largo, juego aéreo, simulación y continuidad. Sin validación de eficacia en partidos completos.

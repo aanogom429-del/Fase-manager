@@ -8,11 +8,11 @@ for(const t of [0,1])for(const mode of ['short','direct','expiry']){
  assert.equal(g.keeperReceipt,'blocaje');
  const near=s.players.find(q=>q.t===t&&q.n===3),wide=s.players.find(q=>q.t===t&&q.n===4),far=s.players.find(q=>q.t===t&&q.n===10);
  near.x=x(21);near.y=23;
- if(mode==='short'){wide.x=x(22);wide.y=42;}
+ if(mode==='short'){wide.x=x(22);wide.y=42;for(const q of [near,wide])q.bodyAngle=Math.atan2(g.y-q.y,g.x-q.x);}
  if(mode==='direct'){far.x=x(49);far.y=32;}
  e.t.chooseAction(g);assert.equal(e.t.get().owner,g);assert.equal(e.t.get().flight,null,'initial catch settles');
  g.receivedAt-=1;e.t.chooseAction(g);
- if(mode==='expiry'){assert.equal(e.t.get().flight,null,'single short outlet is not an organized block');g.receivedAt-=3;e.t.chooseAction(g);}
+ if(mode==='expiry'){assert.equal(e.t.get().flight,null,'single short outlet is not an organized block');g.receivedAt-=3;e.t.chooseAction(g);assert.equal(e.t.get().owner,g,'can organize beyond 3.5 seconds');g.receivedAt-=3.5;e.t.chooseAction(g);}
  const f=e.t.get().flight;assert(f,'eventual distribution');
  if(mode==='direct'){assert(f.keeperLong);assert.equal(f.target,far,'attack long even with short pass available');}
  else{assert(!f.loft);assert([near,wide].includes(f.target));}

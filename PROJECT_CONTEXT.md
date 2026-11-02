@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.114 — Altura del bloque y protección del carril interior
+
+Contraste con la guía de AFOPRO: docs/AFOPRO_DEFENSA_ZONAL_114.md. Selector de altura bajo/medio/alto por equipo independiente de la actitud; veto al seguimiento individual si abre un pase interior percibido sin cobertura efectiva. Tests zonal_centre en ambos sentidos y regresiones de bloque, área, cadena, marcajes, relevo, simulación y continuidad. Pendiente validar basculación física ante diagonales y trampas colectivas de presión.
+
 ## 0.113 — Defensa mixta zonal y al hombre
 
 Zonas móviles según balón, sistema y línea. Jugadores sin otra prioridad pueden hacerse responsables de un rival observado dentro de su zona; un solo marcador explícito por rival, retención acotada, entrega/salida al alejarse o perder la observación. El destino se desplaza de forma limitada para cerrar línea de pase o proteger lado de portería; los relevos, órdenes, presionante y cobertura conservan prioridad. Si el marcado recibe y es accesible, su defensor tiene preferencia moderada para convertirse en presionante. Panel de defensa muestra actitud y dorsales emparejados. Selectores por equipo: equilibrada, buscar recuperación y priorizar repliegue. Con una línea restante prioriza protección, con dos contención, con tres presiona según intención, pérdida reciente o señales observadas (pase atrás, perfil, recepción que requiere giro, balón en vuelo bajo). El repliegue también puede activarse con ventaja a partir del minuto 75 simulado. Número de líneas por mediana longitudinal de cada línea nominal, con tolerancia; preíndices y umbrales heurísticos, no lectura biomecánica validada de mal control o bote. hybrid_defense en ambos sentidos; contrastes de espacio, bloque, área, relevo, cadena, protección, simulación y continuidad. No se demuestra reducción general de goles/pases concedidos.

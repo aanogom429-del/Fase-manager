@@ -11,7 +11,7 @@ for(const t of [0,1]){
  p.bodyAngle=Math.PI/2;e.t.observeRivals(p);assert(f(p,ball));
  assert.equal(f(p,{x:x(18),y:32}),null,'central origin not cutback');
  p.x=x(60);assert.equal(f(p,ball),null,'unreachable receiver not pursued');p.x=x(23);
- e.t.kickTo(carrier,r.x,r.y,'pass',r);assert(f(p,ball),'coverage can continue during low backward pass');
+ carrier.bodyAngle=Math.atan2(r.y-carrier.y,r.x-carrier.x);e.t.kickTo(carrier,r.x,r.y,'pass',r);assert(f(p,ball),'coverage can continue during low backward pass');
  s.flight=e.t.get().flight;s.flight.loft=5;assert.equal(f(p,ball),null,'aerial cross uses existing policies');
 }
 console.log('PASS: mirrored perceived cutback receiver, goal-side protection, unknown/unreachable exclusions and low-flight continuation');

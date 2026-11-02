@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{env}=require('./continuity.cjs');
 const source=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
-const marker='return targets;\n}\nfunction movement(dt)';assert(source.includes(marker));
+const marker='assignZoneMarks(t,order,slots,targets,relays,ballPos,attitude);';assert(source.includes(marker));
 const cleanup='for(const p of team(t)){if(relays.has(p))p.defSlotFor=relays.get(p).id;else delete p.defSlotFor;}';assert(source.includes(cleanup));
 const html=source.replace(cleanup,`for(const p of team(t))if(p.defSlotFor!==undefined&&relays.get(p)?.id!==p.defSlotFor){
  const old=players.find(q=>q.id===p.defSlotFor),slot=slots.get(old);

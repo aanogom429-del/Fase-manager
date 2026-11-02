@@ -4,6 +4,10 @@
 
 Cuatro comparaciones con/sin separación de recorridos: dos casos pierden disponibilidad de una segunda línea útil y dos quedan iguales. Ver docs/LINEAS_TRAS_SEPARACION_108.md. Próximo paso: condicionar el desvío por accesibilidad y ángulo de pase; validar con casos nuevos antes de publicar cambios de motor.
 
+## 0.115 — Auditoría global, diagonales y reanudación durante el giro
+
+docs/AUDITORIA_MOTOR_115.md: 113 programas sobre 0.114, 85 aprobados, 24 fallos, 4 límites; 5 fallos resueltos en reevaluaciones dirigidas. Quedan 19 fallos por investigar y cuatro programas largos no concluidos. Reanudaciones: se mantienen posiciones hasta el golpeo, no solo hasta la decisión. Diagonales: basculación anticipada ensayada, no integrada; 8/8 recepciones en ambas variantes, distancia al receptor mejora solo en cuatro. Prioridad: anchura, compensación y disponibilidad efectiva de líneas de pase.
+
 ## 0.114 — Altura del bloque y protección del carril interior
 
 Contraste con la guía de AFOPRO: docs/AFOPRO_DEFENSA_ZONAL_114.md. Selector de altura bajo/medio/alto por equipo independiente de la actitud; veto al seguimiento individual si abre un pase interior percibido sin cobertura efectiva. Tests zonal_centre en ambos sentidos y regresiones de bloque, área, cadena, marcajes, relevo, simulación y continuidad. Pendiente validar basculación física ante diagonales y trampas colectivas de presión.

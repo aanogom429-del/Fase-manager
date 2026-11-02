@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const source=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
 const cutbackAblation=process.env.CUTBACK_ABLATION==='1';
 const gate='if(press&&ref&&positionalLine(press)===1';assert(source.includes(gate));
-const marker='return targets;\n}\nfunction movement(dt)';assert(source.includes(marker));
+const marker='assignZoneMarks(t,order,slots,targets,relays,ballPos,attitude);';assert(source.includes(marker));
 function run(t,kind,seed,enabled){
  let links=0,arrived=0;
  const baseline=cutbackAblation?source.replace('function cutbackProtection(p,ballPos){','function cutbackProtection(p,ballPos){return null;'):source.replace(gate,'if(false&&press&&ref&&positionalLine(press)===1');
@@ -19,6 +19,7 @@ function run(t,kind,seed,enabled){
  Object.assign(ps.find(p=>p.t===t&&p.n===2),flip(20,11));
  Object.assign(ps.find(p=>p.t===t&&p.n===7),flip(8,18));
  api.capture(carrier,'inicio centro/pase atrás');
+ carrier.bodyAngle=Math.atan2(receiver.y-carrier.y,receiver.x-carrier.x);
  // Actual pass flight; same seed and state in the paired ablation.
  api.kickTo(carrier,receiver.x,receiver.y,'pass',receiver);
  assert(api.get().flight);if(kind==='cross'){api.get().flight.loft=5;api.get().flight.cross=true;}

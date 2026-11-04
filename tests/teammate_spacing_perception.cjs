@@ -18,7 +18,7 @@ for(const t of [0,1]){
  const visible=setup(t,true),q=visible.target();assert.notEqual(q.y,24,'avoid an observed teammate');
  assert.equal(visible.p.y,24,'no teleport when choosing');
  for(let i=0;i<60;i++)visible.e.t.advancePlayer(visible.p,q.x,q.y,1/60);
- assert(visible.p.y<24,'physical movement toward the separated destination');
+ assert(Math.abs(q.y-visible.p.y)<Math.abs(q.y-24),'physical movement toward the separated destination');
  const memory=setup(t,true);memory.target();memory.p.bodyAngle=t?Math.PI:0;memory.m.x=memory.x(20);
  assert.notEqual(memory.target().y,24,'remember last seen teammate, not hidden position');
  assert.equal(memory.p.visualMemory.find(m=>m.id===memory.m.id).x,memory.x(29));
@@ -26,7 +26,8 @@ for(const t of [0,1]){
  const expired=setup(t,true);expired.target();expired.p.bodyAngle=t?Math.PI:0;
  expired.e.t.scenario({time:4,team:t,seed:73});assert.equal(expired.target().y,24,'expired unseen teammate no longer repels');
  const unavailable=setup(t,true);unavailable.target();unavailable.m.sentOff=true;
- assert.equal(unavailable.target().y,24,'expelled teammate no longer occupies a destination');
+ const absent=setup(t,true,20);absent.m.sentOff=true;
+ assert.equal(unavailable.target().y,absent.target().y,'expelled teammate no longer occupies a destination');
  const saved=setup(t,true);saved.target();saved.e.t.prepareDecision();const before=saved.target();
  for(let i=0;i<10;i++)saved.e.tick();assert.equal(saved.e.t.get().elapsed,1,'pause does not expire memory');
  saved.p.y=40;saved.e.t.restorePosition();assert.equal(saved.target().y,before.y,'retry preserves spacing choice');

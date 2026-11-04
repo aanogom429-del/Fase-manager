@@ -26,8 +26,11 @@ for(const t of [0,1])for(const formation of ['4-3-3','4-2-3-1','4-4-2','3-5-2'])
  assert.equal(cover.lineCoverFor,undefined);assert.equal(cover.lineExitAt,undefined);
 }
 // Isolate the integration with attack targets: no local support assignments in this fixture.
+const selector='const ranked=selectAttackSupports(mates,focus,p=>readings.get(p).value,relations);';
+assert(html.includes(selector),'support selector must exist to isolate line compensation');
+const isolated=html.replace(selector,'const ranked=[];');
 for(const t of [0,1]){
- const e=env(html.replace('const ranked=selectAttackSupports(mates,focus,p=>readings.get(p).value);','const ranked=[];'));
+ const e=env(isolated);
  const h=e.t.phaseRelations(null),dir=t?-1:1,mates=e.t.team(t),outgoing=mates.find(p=>p.n===2),cover=mates.find(p=>p.n===6);
  for(const p of mates){p.x=t?1:99;p.y=60;p.attackOrigin={bx:50,by:32,x:p.x,y:p.y};p.widthStarted=0;}
  outgoing.x=50;outgoing.y=t?55:9;cover.x=50-dir*12;cover.y=outgoing.y;

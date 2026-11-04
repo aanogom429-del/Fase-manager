@@ -1,4 +1,9 @@
 const assert=require('node:assert/strict'),{env}=require('./continuity.cjs');
+function choose(c){
+ c.e.t.chooseAction(c.p);
+ for(let frame=0;frame<120&&c.p.kickPreparation&&!c.e.t.get().flight;frame++)c.e.t.update(1/60);
+ assert(!c.p.kickPreparation,'selected action completes its preparation');
+}
 function setup(t,deep=false,seed=73){
  const e=env();e.t.scenario({time:1,team:t,seed});const s=e.t.get(),p=s.owner,x=v=>t?100-v:v,base=deep?25:50;
  p.x=x(base);p.y=32;p.bodyAngle=Math.PI/2;p.controlUntil=0;
@@ -9,9 +14,9 @@ function setup(t,deep=false,seed=73){
  return {e,s,p,x,a,b,rs};
 }
 for(const t of [0,1])for(const deep of [false,true])for(let seed=1;seed<=16;seed++){
- const c=setup(t,deep,seed);c.e.t.chooseAction(c.p);assert.equal(c.e.t.get().flight?.target,c.b,'circulate calmly or escape pressure in initiation');
- const marked=setup(t,deep,seed);marked.rs[2].x=marked.b.x;marked.rs[2].y=marked.b.y;marked.e.t.chooseAction(marked.p);assert.notEqual(marked.e.t.get().flight?.target,marked.b,'reject marked conservation');
- const open=setup(t,deep,seed);for(const r of open.rs){r.x=open.x(90);r.y=50;}open.e.t.chooseAction(open.p);assert.equal(open.e.t.get().flight?.target,open.a,'retain clear progression');
- const hidden=setup(t,deep,seed);hidden.p.bodyAngle=t?Math.PI:0;hidden.e.t.chooseAction(hidden.p);assert.notEqual(hidden.e.t.get().flight?.target,hidden.b,'do not invent a hidden outlet');
+ const c=setup(t,deep,seed);choose(c);assert.equal(c.e.t.get().flight?.target,c.b,'circulate calmly or escape pressure in initiation');
+ const marked=setup(t,deep,seed);marked.rs[2].x=marked.b.x;marked.rs[2].y=marked.b.y;choose(marked);assert.notEqual(marked.e.t.get().flight?.target,marked.b,'reject marked conservation');
+ const open=setup(t,deep,seed);for(const r of open.rs){r.x=open.x(90);r.y=50;}choose(open);assert.equal(open.e.t.get().flight?.target,open.a,'retain clear progression');
+ const hidden=setup(t,deep,seed);hidden.p.bodyAngle=t?Math.PI:0;choose(hidden);assert.notEqual(hidden.e.t.get().flight?.target,hidden.b,'do not invent a hidden outlet');
 }
 console.log('PASS: 64 direction/zone/seed groups, each checking conservation, marked/unseen outlets and clear progression');

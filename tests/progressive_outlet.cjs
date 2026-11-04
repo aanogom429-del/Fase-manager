@@ -7,10 +7,17 @@ function setup(t){
  a.x=x(74);a.y=32;b.x=x(54);b.y=50;rs[0].x=x(48);rs[0].y=32;rs[1].x=x(60);rs[1].y=32;
  return {e,p,a,b,rs,x};
 }
+function chosenReceiver(c){
+ c.e.t.chooseAction(c.p);
+ // A selected pass may require a body turn before the ball leaves the foot.
+ for(let frame=0;frame<120&&c.p.kickPreparation&&!c.e.t.get().flight;frame++)c.e.t.update(1/60);
+ assert(!c.p.kickPreparation,'selected action finishes its preparation');
+ return c.e.t.get().flight?.target;
+}
 for(const t of [0,1]){
- const c=setup(t);c.e.t.chooseAction(c.p);assert.equal(c.e.t.get().flight.target,c.b,'prefer open progressive outlet to blocked larger advance');
- const open=setup(t);open.rs[1].y=60;open.e.t.chooseAction(open.p);assert.equal(open.e.t.get().flight.target,open.a,'retain deeper open pass');
- const marked=setup(t);marked.rs[2].x=marked.b.x;marked.rs[2].y=marked.b.y;marked.e.t.chooseAction(marked.p);assert.notEqual(marked.e.t.get().flight?.target,marked.b,'marked outlet is not preferred');
- const hidden=setup(t);hidden.p.bodyAngle=-Math.PI/2;hidden.e.t.chooseAction(hidden.p);assert.notEqual(hidden.e.t.get().flight?.target,hidden.b,'unseen progressive outlet is not invented');
+ const c=setup(t);assert.equal(chosenReceiver(c),c.b,'prefer open progressive outlet to blocked larger advance');
+ const open=setup(t);open.rs[1].y=60;assert.equal(chosenReceiver(open),open.a,'retain deeper open pass');
+ const marked=setup(t);marked.rs[2].x=marked.b.x;marked.rs[2].y=marked.b.y;assert.notEqual(chosenReceiver(marked),marked.b,'marked outlet is not preferred');
+ const hidden=setup(t);hidden.p.bodyAngle=-Math.PI/2;assert.notEqual(chosenReceiver(hidden),hidden.b,'unseen progressive outlet is not invented');
 }
 console.log('PASS: mirrored progressive outlet, open deeper pass and marked-receiver countercase');

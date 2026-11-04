@@ -1,5 +1,12 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Estado verificado 0.119 — 4 de noviembre de 2026
+
+Motor publicado 0.119. Auditoría acumulada de 114 programas: 105 aprobados, nueve fallidos y cero límites. Se corrigieron las pruebas de centros, conservación y tiro para observar el golpeo tras el giro, y la identidad del jugador sintético en block_stability. player_roles pasa en el barrido global. Quedan abiertos los siete bloques de la etapa A con criterios de cierre actualizados en docs/AUDITORIA_CIERRE_119.md y docs/CIERRE_MOTOR_TACTICO.md. Siguiente prioridad: memoria reciente y selección de receptor, seguida de continuidad de apoyos y llegada efectiva de coberturas. La comprobación visual en Safari/iPhone está pendiente.
+
+Las entradas siguientes son historial y deben interpretarse con la auditoría vigente.
+
+
 ## 0.116 — Recuperar amplitud desde un bloque agrupado
 
 En iniciación/reorganización se reserva un candidato libre por banda vacía antes de asignar nuevas compensaciones. Si las posiciones previstas siguen dejando una banda libre, se corrige la coordenada lateral de un compañero disponible sin retirar los apoyos cortos, equilibrio, relevo vigente ni ocupante de la otra banda. possession_shape comprueba los destinos finales y la posición de seguridad respecto al balón. En una secuencia autónoma de tres segundos por equipo (semilla 73, bloque inicialmente en y=32), anchura física 0.115→0.116: azul 26,9→29,7; rojo 26,7→30,7 unidades. No demuestra eficacia general. Pasan possession_shape, structural_supports, attack_space, simulation_entry, line_chain, line_collective y recovery_reorder. line_structure sigue fallando; siguiente prioridad. No se repitió la batería completa.

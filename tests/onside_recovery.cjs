@@ -27,8 +27,17 @@ for(const t of [0,1]){
  for(const y of [4,10,18]){const hidden=setup(t);hidden.p.bodyAngle=t?Math.PI:0;const h=hidden.s.players.find(q=>q.t!==t);h.x=hidden.x(80);h.y=y;
  assert.equal(hidden.e.t.attackingTargets(t,hidden.ball).get(hidden.p).y,10,'unseen blocker does not influence perceived recovery route');}
  const legal=setup(t);legal.p.x=legal.x(74);
- assert.notEqual(legal.e.t.attackingTargets(t,legal.ball).get(legal.p).y,10,'do not freeze lateral movement of onside forward');
- const flight=setup(t);flight.e.t.kickTo(flight.s.owner,flight.p.x,flight.p.y,'pass',flight.p);
- assert.notEqual(flight.e.t.attackingTargets(t,flight.ball).get(flight.p).y,10,'no recovery restriction after kick');
+ const checkOrdinaryTarget=c=>{
+  const dest=c.e.t.attackingTargets(t,c.ball).get(c.p);
+  const row=c.e.t.getDestinationTrace().rows.find(row=>row.id===c.p.id);
+  assert(Number.isFinite(dest.x)&&Number.isFinite(dest.y)&&row.steps.length);
+  assert(!row.steps.some(step=>/posición habilitada/.test(step.stage)),'ordinary target must not use onside recovery');
+ };
+ checkOrdinaryTarget(legal);
+ const flight=setup(t);
+ flight.s.owner.bodyAngle=Math.atan2(flight.p.y-flight.s.owner.y,flight.p.x-flight.s.owner.x);
+ flight.e.t.kickTo(flight.s.owner,flight.p.x,flight.p.y,'pass',flight.p);
+ assert(flight.e.t.get().flight,'post-kick check requires a ball in flight');
+ checkOrdinaryTarget(flight);
 }
 console.log('PASS: mirrored onside recovery, physical movement, occupied destination, legal player and post-kick countercases');

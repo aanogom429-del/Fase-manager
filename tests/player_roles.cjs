@@ -13,6 +13,15 @@ for(const t of [0,1]){
   assert.equal(a.t.get().restart.taker.id,b.t.get().restart.taker.id,'keeper and taker independent of jersey');
  }
 }
+for(const t of [0,1])for(const system of ['4-3-3','4-2-3-1','4-4-2','3-5-2']){
+ const a=env(),b=env();renumber(b);
+ for(const e of [a,b]){
+  const selector=e.nodes[t?'system-red':'system-blue'];
+  selector.value=system;selector.onchange();
+ }
+ assert.deepEqual(Array.from(a.t.team(t),p=>p.role),Array.from(b.t.team(t),p=>p.role),'formation assigns roles by position');
+ assert.equal(targets(a,t,{x:50,y:32}),targets(b,t,{x:50,y:32}),'formation preserves targets after renumbering');
+}
 const a=env(),b=env();renumber(b);
 for(const e of [a,b]){const p=e.t.get().players[9];assert(e.t.queueOffBall(9,'depth'));e.t.commitOffBall();assert(e.t.get().offBallOrders.length);e.t.prepareDecision();}
 assert.equal(JSON.stringify(a.t.get().offBallOrders),JSON.stringify(b.t.get().offBallOrders),'order reaction does not depend on jersey');

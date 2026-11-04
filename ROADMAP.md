@@ -1,5 +1,12 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## Estado verificado 0.119 — 4 de noviembre de 2026
+
+Motor publicado 0.119. Auditoría acumulada de 114 programas: 105 aprobados, nueve fallidos y cero límites. Se corrigieron las pruebas de centros, conservación y tiro para observar el golpeo tras el giro, y la identidad del jugador sintético en block_stability. player_roles pasa en el barrido global. Quedan abiertos los siete bloques de la etapa A con criterios de cierre actualizados en docs/AUDITORIA_CIERRE_119.md y docs/CIERRE_MOTOR_TACTICO.md. Siguiente prioridad: memoria reciente y selección de receptor, seguida de continuidad de apoyos y llegada efectiva de coberturas. La comprobación visual en Safari/iPhone está pendiente.
+
+Las entradas siguientes son historial y deben interpretarse con la auditoría vigente.
+
+
 ## Contraste de conectividad — 0.108
 
 Cuatro comparaciones con/sin separación de recorridos: dos casos pierden disponibilidad de una segunda línea útil y dos quedan iguales. Ver docs/LINEAS_TRAS_SEPARACION_108.md. Próximo paso: condicionar el desvío por accesibilidad y ángulo de pase; validar con casos nuevos antes de publicar cambios de motor.

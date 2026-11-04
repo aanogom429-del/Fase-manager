@@ -4,7 +4,7 @@ const html=fs.readFileSync(require('node:path').join(__dirname,'../index.html'),
 function helpers(source){return env(source.replace('function phaseRelations(list,pos,holder=null,travel=null){','function phaseRelations(list,pos,holder=null,travel=null){if(list===null)return {shape:possessionShape,balance:typeof selectBalancePlayers==="function"?selectBalancePlayers:null};'));}
 for(const t of [0,1])for(const formation of ['4-3-3','4-2-3-1','4-4-2','3-5-2']){
  const e=helpers(html),h=e.t.phaseRelations(null),dir=t?-1:1;
- const p={t,n:7,formation,attackOrigin:{bx:50}};
+ const p={id:t*11+6,t,n:7,formation,attackOrigin:{bx:50}};
  const a=h.shape(p,{x:50,y:32}),z=h.shape(p,{x:50+dir*10,y:32});
  // Without an anchor the fallback is the 0.85 formula (ball depth + slot offset).
  const unanchored={...p,attackOrigin:undefined};

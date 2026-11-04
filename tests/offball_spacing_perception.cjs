@@ -19,7 +19,10 @@ for(const t of [0,1]){
  assert.notEqual(observed.y,24,'observed marker changes destination');
  assert.equal(visible.p.x,visible.x(30),'selection never teleports');
  for(let i=0;i<60;i++)visible.e.t.advancePlayer(visible.p,observed.x,observed.y,1/60);
- assert(visible.p.y<24,'destination produces actual lateral movement');
+ const remaining=Math.abs(observed.y-visible.p.y);
+ assert(remaining<Math.abs(observed.y-24),'player closes lateral distance to the selected destination');
+ assert((visible.p.y-24)*(observed.y-24)>0,'physical movement follows the selected side');
+ assert(Math.hypot(visible.p.x-visible.r.x,visible.p.y-visible.r.y)>1,'movement increases separation from the observed marker');
  const memory=setup(t,true);memory.target();memory.p.bodyAngle=t?Math.PI:0;
  memory.r.x=memory.x(20);const remembered=memory.target();
  assert.notEqual(remembered.y,24,'recently lost marker still influences spacing');

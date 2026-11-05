@@ -1,4 +1,9 @@
 const assert=require('node:assert/strict'),{env}=require('./continuity.cjs');
+function choose(c){
+ c.e.t.chooseAction(c.p);
+ for(let frame=0;frame<120&&c.p.kickPreparation&&!c.e.t.get().flight;frame++)c.e.t.update(1/60);
+ assert(!c.p.kickPreparation,'selected kick finishes preparation');
+}
 function setup(t){
  const e=env(),x=v=>t?100-v:v;e.t.scenario({time:1,team:t});
  const s=e.t.get(),p=s.owner;p.x=x(55);p.y=32;p.bodyAngle=t?Math.PI:0;p.controlUntil=0;
@@ -8,20 +13,20 @@ function setup(t){
  return {e,s,p,a,b,r,x};
 }
 for(const t of [0,1]){
- const {e,p,a,b}=setup(t);e.t.chooseAction(p);
+ const c=setup(t),{e,p,a,b}=c;choose(c);
  assert.equal(e.t.get().flight.target,b,'prefer legal outlet over attractive offside advance');
  assert.notEqual(e.t.get().flight.target,a);
- const legal=setup(t);legal.a.x=legal.x(60);legal.e.t.chooseAction(legal.p);
+ const legal=setup(t);legal.a.x=legal.x(60);choose(legal);
  assert.equal(legal.e.t.get().flight.target,legal.a,'level with second-last opponent remains available');
  const noOutlet=setup(t);
  for(const q of noOutlet.s.players.filter(q=>q.t===t&&q!==noOutlet.p)){q.x=noOutlet.x(75);q.y=32;}
- noOutlet.e.t.chooseAction(noOutlet.p);assert.equal(noOutlet.e.t.get().flight,null,'do not force a pass when all observed outlets are offside');
+ choose(noOutlet);assert.equal(noOutlet.e.t.get().flight,null,'do not force a pass when all observed outlets are offside');
  assert(Number.isFinite(noOutlet.p.scanUntil));
  // A winger sees an attractive central striker beyond the defensive line.
  for(let seed=1;seed<=12;seed++){
   const c=setup(t);c.e.t.scenario({time:1,team:t,seed});c.p.x=c.x(80);c.p.y=10;c.a.x=c.x(94);c.a.y=32;c.b.x=c.x(82);c.b.y=25;
   for(const r of c.s.players.filter(q=>q.t!==t)){r.x=c.x(88);r.y=55;}
-  c.e.t.chooseAction(c.p);const f=c.e.t.get().flight;
+  choose(c);const f=c.e.t.get().flight;
   assert(!f||f.target!==c.a,'automatic crosses and passes exclude perceived offside receiver');
  }
 }

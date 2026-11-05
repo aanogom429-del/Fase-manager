@@ -1,5 +1,9 @@
 # Fase Manager — Registro de desarrollo y recuperación
 
+## 0.120 — Progresión con observación reciente
+
+Motor cc684be, publicado con autorización el 5 de noviembre de 2026. El mejor pase adelantado de bajo riesgo hacia un receptor visto hace menos de medio segundo puede preceder al apoyo de seguridad cuando falta progresión corta. Ocho pruebas dirigidas superadas sobre el candidato. Ver docs/PROGRESION_MEMORIA_120.md. Batería global de 0.120 y comprobación visual Safari/iPhone pendientes. Los siete hitos de cierre siguen abiertos según docs/AUDITORIA_CIERRE_119.md.
+
 ## 0.116 — Recuperar amplitud desde un bloque agrupado
 
 En iniciación/reorganización se reserva un candidato libre por banda vacía antes de asignar nuevas compensaciones. Si las posiciones previstas siguen dejando una banda libre, se corrige la coordenada lateral de un compañero disponible sin retirar los apoyos cortos, equilibrio, relevo vigente ni ocupante de la otra banda. possession_shape comprueba los destinos finales y la posición de seguridad respecto al balón. En una secuencia autónoma de tres segundos por equipo (semilla 73, bloque inicialmente en y=32), anchura física 0.115→0.116: azul 26,9→29,7; rojo 26,7→30,7 unidades. No demuestra eficacia general. Pasan possession_shape, structural_supports, attack_space, simulation_entry, line_chain, line_collective y recovery_reorder. line_structure sigue fallando; siguiente prioridad. No se repitió la batería completa.

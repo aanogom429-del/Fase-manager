@@ -23,7 +23,9 @@ for(const t of [0,1]){
 const g=received(0,false);g.e.t.prepareDecision();const until=g.p.controlUntil,angle=g.p.bodyAngle;
 g.e.t.playChoice('support');const a=g.e.t.get().techAction;assert.equal(a.kind,'receiveWait');const target=a.option.n;
 const before=g.e.t.get().passes;g.e.t.advanceTechnique(.01);assert.equal(g.e.t.get().passes,before);
-g.e.t.scenario({time:until+.001,team:0});g.e.t.advanceTechnique(.01);assert.equal(g.e.t.get().passes,before+1);assert.equal(g.e.t.get().flight.target.n,target);
+g.e.t.scenario({time:until+.001,team:0});g.e.t.advanceTechnique(.01);
+for(let frame=0;frame<120&&g.p.kickPreparation;frame++)g.e.t.update(1/60);
+assert.equal(g.e.t.get().passes,before+1);assert.equal(g.e.t.get().flight.target.n,target);
 g.e.t.advanceTechnique(.01);assert.equal(g.e.t.get().passes,before+1);
 g.e.t.restorePosition();assert.equal(g.p.controlUntil,until);assert.equal(g.p.bodyAngle,angle);assert.equal(g.e.t.get().elapsed,1);
 g.e.t.playChoice('support');assert.equal(g.e.t.get().techAction.kind,'receiveWait','retry retains delay');
@@ -35,6 +37,9 @@ const restart=received(0,false);restart.e.t.prepareDecision();restart.e.t.playCh
 restart.e.t.startSituation();assert(restart.e.t.get().players.every(p=>p.controlUntil===0));
 // A wall return must wait for the target's control, then release once.
 const wall=received(0);wall.p.controlUntil=0;const targetP=wall.e.t.get().players.find(p=>p.t===0&&p.n===8);targetP.x=60;targetP.y=32;
-wall.e.t.executeTechnique({kind:'wall',n:8,title:'Pared'});wall.e.t.capture(targetP,'recibe');const start=wall.e.t.get().passes;wall.e.t.update(.01);assert.equal(wall.e.t.get().passes,start);assert.equal(wall.e.t.get().techAction.phase,0);
+wall.e.t.executeTechnique({kind:'wall',n:8,title:'Pared'});
+for(let frame=0;frame<120&&wall.p.kickPreparation;frame++)wall.e.t.update(1/60);
+assert.equal(wall.e.t.get().flight?.target,targetP,'wall starts with the selected pass in flight');
+wall.e.t.capture(targetP,'recibe');const start=wall.e.t.get().passes;wall.e.t.update(.01);assert.equal(wall.e.t.get().passes,start);assert.equal(wall.e.t.get().techAction.phase,0);
 for(let i=0;i<80&&wall.e.t.get().passes===start;i++)wall.e.t.update(.01);assert.equal(wall.e.t.get().passes,start+1,'wall returns after preparation');
 console.log('PASS: mirrored reception cost, waiting actions, movement/turning, pause, retry, cancellation, wall return and aerial exclusion');

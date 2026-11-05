@@ -1,5 +1,9 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.120 — Progresión con observación reciente
+
+Motor cc684be, publicado con autorización el 5 de noviembre de 2026. El mejor pase adelantado de bajo riesgo hacia un receptor visto hace menos de medio segundo puede preceder al apoyo de seguridad cuando falta progresión corta. Ocho pruebas dirigidas superadas sobre el candidato. Ver docs/PROGRESION_MEMORIA_120.md. Batería global de 0.120 y comprobación visual Safari/iPhone pendientes. Los siete hitos de cierre siguen abiertos según docs/AUDITORIA_CIERRE_119.md.
+
 ## Estado verificado 0.119 — 4 de noviembre de 2026
 
 Motor publicado 0.119. Auditoría acumulada de 114 programas: 105 aprobados, nueve fallidos y cero límites. Se corrigieron las pruebas de centros, conservación y tiro para observar el golpeo tras el giro, y la identidad del jugador sintético en block_stability. player_roles pasa en el barrido global. Quedan abiertos los siete bloques de la etapa A con criterios de cierre actualizados en docs/AUDITORIA_CIERRE_119.md y docs/CIERRE_MOTOR_TACTICO.md. Siguiente prioridad: memoria reciente y selección de receptor, seguida de continuidad de apoyos y llegada efectiva de coberturas. La comprobación visual en Safari/iPhone está pendiente.

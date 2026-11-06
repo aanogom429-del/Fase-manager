@@ -27,3 +27,13 @@ Los tres casos (progresión corta, profundidad libre y reciclaje con apoyo marca
 Validación dirigida: 7/7 programas aprobados: organizing_progression, block_phase, organizing_possession, organizing_memory, buildup_circulation, progressive_outlet y recovery_outlet. block_phase conserva los contraejemplos de iniciación adelantada, confort, disposición posicional, superación y finalización por desarrollo de la jugada, en ambos sentidos.
 
 Resultado acumulado: 110/114 aprobados, cuatro pendientes: attacking_heights, automatic_lead_pass, offball y safe_outlet. No es un nuevo barrido completo ni evidencia de cierre de los siete hitos. La versión continúa en 0.120. Próximo paso: diagnosticar safe_outlet (salida segura bajo presión), conservando los casos de apoyo marcado, no observado y memoria antigua.
+
+## Salida segura — 6 de noviembre de 2026
+
+Resuelto safe_outlet en d8c18d77961441e6d15042ecfc7a78b06ee789cb, sin modificar el motor (blob index.html d3b8bbb818f66a2374a987b105448949a7c88e11). El primer fallo exigía el mensaje «busca conservar», pero la decisión correcta ya se ejecutaba mediante la prioridad de continuidad. Al superar ese punto apareció una lectura prematura de flight en el caso de progresión libre, antes de terminar el giro.
+
+La prueba espera ahora la preparación y comprueba receptores en lugar de mensajes. Los seis casos se repiten para ambos equipos y 16 semillas: 192 decisiones. Conserva con el apoyo libre bajo presión; rechaza el marcado y el no observado; progresa si la profundidad está libre; comprueba que el apoyo recordado tiene edad positiva y no recibe prioridad de salida fresca en ese escenario; permite circulación segura sin presión inmediata, coherente con la organización vigente. Esto no prohíbe todos los pases hacia compañeros recordados ni exige reciclar siempre sin presión.
+
+Validación dirigida: 8/8 programas aprobados: safe_outlet, organizing_progression, organizing_possession, organizing_memory, buildup_circulation, progressive_outlet, recovery_outlet y perceptual_memory.
+
+Resultado acumulado: 111/114 aprobados; pendientes attacking_heights, automatic_lead_pass y offball. No se ha repetido el barrido completo. Versión 0.120, siete hitos todavía abiertos, sin nueva validación visual en Safari/iPhone. Próximo paso: automatic_lead_pass, verificando destino anticipado, movimiento del receptor y ejecución del pase al espacio.

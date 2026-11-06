@@ -17,3 +17,13 @@ Resuelto perceptual_memory sin cambiar el motor. El ensayo consultaba flight ant
 Validación dirigida: 8/8 programas aprobados: perceptual_memory, organizing_memory, opponent_perception, support_perception, support_assignment_perception, teammate_spacing_perception, offball_spacing_perception y containment_perception. Cambio de prueba publicado en 866d150eeaa6a077bbbb260791b67f9f0b487197.
 
 Resultado acumulado: 109/114 aprobados y cinco fallos pendientes (attacking_heights, automatic_lead_pass, offball, organizing_progression y safe_outlet). No es un nuevo barrido completo. Motor sin modificaciones, versión 0.120. Próximo diagnóstico: organizing_progression, distinguiendo selección de pase, giro previo y reconocimiento de fase. Los siete hitos y la validación Safari/iPhone continúan pendientes.
+
+## Progresión organizada — 6 de noviembre de 2026
+
+Resuelto organizing_progression en a4a6cc2c452f844da43cf9016501de48bdfb6fbd, sin modificar el motor. El primer fallo era la expectativa de fase: la prueba exigía Superación por disponer de un pase corto progresivo, aunque el bloque rival permanecía por delante. El modelo estructural vigente identifica ese escenario como Iniciación del juego. Se mantiene la exigencia de elegir el apoyo corto libre frente al pase profundo expuesto; no se ha eliminado la comprobación de fase, sino actualizado su significado.
+
+Los tres casos (progresión corta, profundidad libre y reciclaje con apoyo marcado) esperan ahora el giro previo y exigen un pase ejecutado, sin aceptar solo una preparación. Pasan los 32 grupos (dos sentidos por 16 semillas), con 96 decisiones. Se captura la fase al elegir, antes de que los pasos de ejecución muevan el bloque.
+
+Validación dirigida: 7/7 programas aprobados: organizing_progression, block_phase, organizing_possession, organizing_memory, buildup_circulation, progressive_outlet y recovery_outlet. block_phase conserva los contraejemplos de iniciación adelantada, confort, disposición posicional, superación y finalización por desarrollo de la jugada, en ambos sentidos.
+
+Resultado acumulado: 110/114 aprobados, cuatro pendientes: attacking_heights, automatic_lead_pass, offball y safe_outlet. No es un nuevo barrido completo ni evidencia de cierre de los siete hitos. La versión continúa en 0.120. Próximo paso: diagnosticar safe_outlet (salida segura bajo presión), conservando los casos de apoyo marcado, no observado y memoria antigua.

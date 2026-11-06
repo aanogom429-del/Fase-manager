@@ -13,6 +13,14 @@ for(const t of [0,1]){
  assert(Math.abs(Math.abs(c.p.x-initial)-expected)<1e-8,'receive with analytical braking displacement');
  assert(Math.abs(Math.abs(c.p.vx)-(6-c.p.braking*.05))<1e-8);
  assert.equal(c.p.controlUntil,deadline);c.e.t.chooseAction(c.p);assert.equal(c.e.t.get().flight,null,'cannot release early');
+ const open=setup(t);open.p.bodyAngle=t?Math.PI:0;open.p.vx=t?-6:6;open.p.rivalMemory=[];for(const r of open.s.players.filter(r=>r.t!==t)){r.x=open.x(90);r.y=55;}const start=open.p.x,angle=open.p.bodyAngle+Math.PI*5/12;
+ open.e.t.prepareReception(open.p,{kind:'pass',x:open.p.x+10*Math.cos(angle),y:open.p.y+10*Math.sin(angle)});
+ open.e.t.advancePlayer(open.p,open.p.x,open.p.y,.05);
+ assert.notEqual(open.p.x,start,'open oblique reception preserves braking movement');
+ const behind=setup(t),behindAngle=behind.p.bodyAngle+Math.PI*5/9;
+ behind.e.t.prepareReception(behind.p,{kind:'pass',x:behind.p.x+10*Math.cos(behindAngle),y:behind.p.y+10*Math.sin(behindAngle)});
+ behind.e.t.advancePlayer(behind.p,behind.p.x,behind.p.y,.05);
+ assert.equal(behind.p.x,behind.x(50),'incoming ball behind body still requires static control');
  const pressure=setup(t),r=pressure.s.players.find(q=>q.t!==t);r.x=pressure.x(47);r.y=32;
  pressure.e.t.advancePlayer(pressure.p,pressure.p.x,32,.05);assert.equal(pressure.p.x,pressure.x(50));assert.equal(pressure.p.vx,0,'static control under observed pressure');
  const bad=setup(t);bad.p.controlError=Math.PI;bad.e.t.advancePlayer(bad.p,bad.p.x,32,.05);assert.equal(bad.p.x,bad.x(50),'bad reception angle remains static');

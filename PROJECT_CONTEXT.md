@@ -1,5 +1,11 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.121 — Pases a apoyos en movimiento · 6 de noviembre de 2026
+
+Motor 1bf3d0ccb8a468921cd499ee177fdfb6f548bb42. La selección automática anticipa también carreras laterales visibles sin retroceso, manteniendo límites de alcance, riesgo de línea, presión y fuera de juego. 64 pares nuevos con apoyo libre/bloqueado y contracasos de velocidad oculta. Barrido completo: 112/114 programas aprobados, dos fallos heredados (attacking_heights y offball), cero límites. Ver [informe 0.121](docs/PASE_LATERAL_121.md). Los siete hitos y la comprobación visual Safari/iPhone siguen abiertos.
+
+Se retoma la entrega de mejoras funcionales con pruebas asociadas. Siguiente foco: continuidad del apoyo tras el pase y recepción en movimiento, comprobando llegada efectiva; incorporar el diagnóstico de los dos fallos pendientes sin posponer indefinidamente los incrementos del motor. Las entradas inferiores son históricas.
+
 ## 0.120 — Progresión con observación reciente
 
 Motor cc684be, publicado con autorización el 5 de noviembre de 2026. El mejor pase adelantado de bajo riesgo hacia un receptor visto hace menos de medio segundo puede preceder al apoyo de seguridad cuando falta progresión corta. Ocho pruebas dirigidas superadas sobre el candidato. Ver docs/PROGRESION_MEMORIA_120.md. Batería global de 0.120 y comprobación visual Safari/iPhone pendientes. Los siete hitos de cierre siguen abiertos según docs/AUDITORIA_CIERRE_119.md.

@@ -1,5 +1,11 @@
 # Fase Manager — Hoja de ruta de continuidad
 
+## 0.121 — Pases a apoyos en movimiento · 6 de noviembre de 2026
+
+Motor 1bf3d0ccb8a468921cd499ee177fdfb6f548bb42. La selección automática anticipa también carreras laterales visibles sin retroceso, manteniendo límites de alcance, riesgo de línea, presión y fuera de juego. 64 pares nuevos con apoyo libre/bloqueado y contracasos de velocidad oculta. Barrido completo: 112/114 programas aprobados, dos fallos heredados (attacking_heights y offball), cero límites. Ver [informe 0.121](docs/PASE_LATERAL_121.md). Los siete hitos y la comprobación visual Safari/iPhone siguen abiertos.
+
+Se retoma la entrega de mejoras funcionales con pruebas asociadas. Siguiente foco: continuidad del apoyo tras el pase y recepción en movimiento, comprobando llegada efectiva; incorporar el diagnóstico de los dos fallos pendientes sin posponer indefinidamente los incrementos del motor. Las entradas inferiores son históricas.
+
 ## Estado verificado 0.119 — 4 de noviembre de 2026
 
 Motor publicado 0.119. Auditoría acumulada de 114 programas: 105 aprobados, nueve fallidos y cero límites. Se corrigieron las pruebas de centros, conservación y tiro para observar el golpeo tras el giro, y la identidad del jugador sintético en block_stability. player_roles pasa en el barrido global. Quedan abiertos los siete bloques de la etapa A con criterios de cierre actualizados en docs/AUDITORIA_CIERRE_119.md y docs/CIERRE_MOTOR_TACTICO.md. Siguiente prioridad: memoria reciente y selección de receptor, seguida de continuidad de apoyos y llegada efectiva de coberturas. La comprobación visual en Safari/iPhone está pendiente.

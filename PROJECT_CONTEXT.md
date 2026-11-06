@@ -1,5 +1,13 @@
 # Fase Manager — Contexto permanente del proyecto
 
+
+## 0.122 — Recepción oblicua en movimiento
+
+6 de noviembre de 2026. Motor b134cd7bc72f2306358381a55545a81d5a7dcdb9. El receptor puede absorber un pase oblicuo de hasta 90 grados frenando progresivamente cuando conserva su perfil abierto (controlAngle coincide con bodyAngle), velocidad alineada, espacio percibido y trayectoria libre. Conserva el plazo de control y las restricciones anteriores; un balón desde atrás sigue exigiendo control estático. El límite angular es una aproximación provisional, no una calibración científica.
+
+La prueba de recepción oblicua a 75 grados fallaba antes y pasa ahora en ambos sentidos; añadido contracaso a 100 grados. Una variante inicial amplia alteraba la pared y se descartó. Candidato final: nueve programas aprobados (moving_reception, open_reception, reception, kick_orientation, automatic_lead_pass, lead_pass, anticipation_first_touch, continuity, opponent_perception). No se repitió el barrido global de 114; sus dos fallos heredados y los siete hitos siguen pendientes. Sin comprobación visual Safari/iPhone. Próximo foco: continuidad del apoyo tras pasar y llegada efectiva a la siguiente opción.
+
+
 ## 0.121 — Pases a apoyos en movimiento · 6 de noviembre de 2026
 
 Motor 1bf3d0ccb8a468921cd499ee177fdfb6f548bb42. La selección automática anticipa también carreras laterales visibles sin retroceso, manteniendo límites de alcance, riesgo de línea, presión y fuera de juego. 64 pares nuevos con apoyo libre/bloqueado y contracasos de velocidad oculta. Barrido completo: 112/114 programas aprobados, dos fallos heredados (attacking_heights y offball), cero límites. Ver [informe 0.121](docs/PASE_LATERAL_121.md). Los siete hitos y la comprobación visual Safari/iPhone siguen abiertos.

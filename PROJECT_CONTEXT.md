@@ -1,6 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## 0.123 — Continuidad tras pase corto · 7 de noviembre de 2026
+
+Al completarse un pase raso de hasta 25 unidades, el pasador obtiene durante 1.2 s una bonificación de utilidad de 1 para la selección de apoyos. Mantiene los filtros de elegibilidad/relaciones y el margen de sustitución de apoyos existentes (2). Se cancela en pérdida, reanudación, reinicio y cambio de formación. No fuerza una devolución ni garantiza recepción; es una preferencia provisional de continuidad, pendiente de contraste dinámico de utilidad. Las velocidades o posiciones ocultas no se añaden a la lectura.
+
+Diez programas dirigidos aprobados: support_persistence, support_assignment_perception, support_perception, structural_supports, organizing_possession, reception, moving_reception, continuity, decision_storage, automatic_lead_pass. Nuevos casos espejo comprueban activación al completar el pase, preferencia entre opciones próximas, caducidad y cancelación por pérdida. Sin barrido global nuevo: los dos fallos heredados y los siete hitos siguen abiertos. Próximo foco: medir llegada efectiva del pasador y utilidad de la segunda línea de pase con oposición; no dar por demostrada una mejora general por la selección del apoyo.
+
+
+
 ## 0.122 — Recepción oblicua en movimiento
 
 6 de noviembre de 2026. Motor b134cd7bc72f2306358381a55545a81d5a7dcdb9. El receptor puede absorber un pase oblicuo de hasta 90 grados frenando progresivamente cuando conserva su perfil abierto (controlAngle coincide con bodyAngle), velocidad alineada, espacio percibido y trayectoria libre. Conserva el plazo de control y las restricciones anteriores; un balón desde atrás sigue exigiendo control estático. El límite angular es una aproximación provisional, no una calibración científica.

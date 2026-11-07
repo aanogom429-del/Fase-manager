@@ -1,6 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## 0.124 — Disponibilidad del apoyo de retorno · 7 de noviembre de 2026
+
+Se condiciona la preferencia de la 0.123: el pasador reciente solo recibe su bonificación si está a 25 unidades o menos, la línea tiene riesgo percibido <=3 y su espacio percibido >=5. Se reutilizan criterios provisionales de salida segura; no se consulta oposición oculta. Mantiene caducidad y margen de sustitución. No es un veto general a ese jugador como apoyo: su utilidad normal sigue compitiendo.
+
+Los contracasos nuevos de línea bloqueada, pasador marcado y oposición desconocida fallan en 0.123 y pasan en 0.124, en ambos sentidos. Once programas dirigidos aprobados: support_persistence, support_escape, support_assignment_perception, support_perception, structural_supports, organizing_possession, reception, moving_reception, continuity, decision_storage y automatic_lead_pass. support_escape confirma movimiento físico hacia una salida de menor riesgo; no es una comparación dinámica nueva del beneficio de retorno. Sigue pendiente medir secuencias completas pasador-receptor-devolución con oposición reactiva. No se repitió el barrido global; permanecen los dos fallos heredados, los siete hitos y la revisión visual Safari/iPhone.
+
+
+
 ## 0.123 — Continuidad tras pase corto · 7 de noviembre de 2026
 
 Al completarse un pase raso de hasta 25 unidades, el pasador obtiene durante 1.2 s una bonificación de utilidad de 1 para la selección de apoyos. Mantiene los filtros de elegibilidad/relaciones y el margen de sustitución de apoyos existentes (2). Se cancela en pérdida, reanudación, reinicio y cambio de formación. No fuerza una devolución ni garantiza recepción; es una preferencia provisional de continuidad, pendiente de contraste dinámico de utilidad. Las velocidades o posiciones ocultas no se añaden a la lectura.

@@ -1,17 +1,21 @@
-# Continuidad del pasador — evaluación dinámica 0.124
+# Continuidad del pasador — evaluación corregida 0.124
 
-7 de noviembre de 2026. Motor 250efd8fe1c10ef4c45a3cecf591cd52bcf44957, blob 9db905edae2b972a8affdbc0293b4239ffe566c8. Despliegue público verificado en esta sesión.
+7 de noviembre de 2026. Motor 250efd8fe1c10ef4c45a3cecf591cd52bcf44957. Este informe sustituye el ensayo anterior: se había mantenido el modo guiado, que restringe las decisiones automáticas. Sus cifras no permitían concluir nada sobre la elección libre del segundo pase.
 
-Ensayo reproducible: node tests/return_support_dynamic.cjs. 16 parejas: ambos equipos, cuatro semillas (11,37,73,101), con/sin rival inicialmente próximo al corredor. Cada pareja activa/desactiva únicamente la bonificación del pasador. Tres segundos a 120 pasos por segundo, jugadores y oposición reactivos, primer pase ordenado mediante kickTo, capturas posteriores resueltas por update sin forzarlas. Datos en data/return-support-124.json.
+## Método corregido
 
-| Medida agregada | Sin bonificación | Con bonificación |
+node tests/return_support_dynamic.cjs activa enterFreeMode antes del escenario y exige que chooseAction se ejecute. Son 16 parejas con/sin la bonificación de apoyo: dos equipos, cuatro semillas, con/sin rival inicialmente cercano, tres segundos por simulación a 120 pasos/s. Primer pase ordenado, contactos y decisiones posteriores resueltos por el motor. Se registra además vuelo directo del primer receptor al pasador, separado de cualquier recuperación posterior de posesión. Datos corregidos en data/return-support-124.json; el historial Git conserva los anteriores.
+
+| Medida | Sin bonificación | Con bonificación |
 |---|---:|---:|
 | Primer receptor controla | 16/16 | 16/16 |
-| Pasador recupera posesión tras recepción | 0/16 | 0/16 |
-| Pasos con compañero en posesión tras recepción | 4744 | 4744 |
-| Pasos anteriores con pasador asignado como apoyo | 4585 | 4585 |
-| Pasos anteriores con retorno corto, espacio y línea percibidos disponibles | 3488 | 3488 |
+| Recuperación del balón por el pasador | 0/16 | 0/16 |
+| Devolución directa ejecutada por el receptor | 0/16 | 0/16 |
+| Llamadas a decisión autónoma | 304 | 304 |
+| Pasos con compañero poseedor tras recepción | 4364 | 4364 |
+| Pasos anteriores con pasador como apoyo | 4264 | 4264 |
+| Pasos anteriores con retorno percibido disponible | 3284 | 3284 |
 
-Cero parejas difieren en estas medidas. Los pasos son muestras temporales correlacionadas, no casos independientes. La medida de retorno cuenta recuperar posesión, no demuestra por sí sola que proceda de una devolución directa. La disponibilidad se mide desde la percepción del pasador, no desde la del poseedor: no implica que el receptor esté viéndolo ni vaya a elegirlo.
+Cero parejas difieren en estas medidas. Son muestras temporales correlacionadas, no miles de casos independientes. La disponibilidad se lee desde el pasador; no acredita conocimiento del poseedor. Las llamadas a chooseAction pueden terminar esperando control/golpeo y no equivalen a 304 pases.
 
-Conclusión acotada: no se demuestra beneficio dinámico de la bonificación en esta muestra. No se modifica ni se aumenta por ello. La preferencia de 0.124 continúa integrada, con sus pruebas funcionales y límites documentados. No hay nueva versión de motor en esta entrega. El siguiente diagnóstico debe comparar percepción/orientación del poseedor, destinos y selección del segundo pase; no asumir que no devolver sea siempre un error, pues puede existir progresión mejor. Ampliar después a secuencias y duraciones distintas. Sin barrido global nuevo ni cierre de hitos.
+Una traza exploratoria del azul con rival y semilla 73 termina con el #10 dando continuidad al #3 (contador de dos pases); acredita continuidad hacia otro compañero, no superioridad táctica de esa elección. No hay fundamento para forzar una devolución ni aumentar la bonificación. Esta muestra tampoco demuestra beneficio dinámico de la preferencia. Motor sin cambios, 0.124. Próximo trabajo: comparar el valor percibido de cada alternativa en la decisión del primer receptor y probar la devolución cuando sea la única salida segura, frente al contracaso de progresión mejor. Sin barrido global nuevo ni cierre de hitos.

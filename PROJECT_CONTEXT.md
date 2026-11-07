@@ -1,6 +1,12 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## Corrección del ensayo de retorno — 7 de noviembre de 2026
+
+El ensayo previo estaba en modo guiado y queda sustituido. Ahora activa simulación libre, exige decisiones autónomas y registra devoluciones directas. En 16 parejas: 304 llamadas a decisión por variante, primeras recepciones 16/16, devoluciones directas 0/16, sin diferencias en medidas agregadas. La traza exploratoria muestra continuidad hacia otros compañeros. No se justifica forzar retornos ni afirmar mejora general. Ver docs/RETORNO_DINAMICO_124.md y datos corregidos. Motor permanece 0.124; siguiente paso: alternativas percibidas por el primer receptor y contracaso de única salida segura frente a progresión mejor. Las cifras de la entrada anterior son históricas y están sustituidas.
+
+
+
 ## Evaluación dinámica 0.124 — 7 de noviembre de 2026
 
 Despliegue público 0.124 verificado. Comparación de 16 parejas con/sin bonificación del pasador: primer pase recibido 16/16, retorno 0/16 en ambas variantes, sin cambios en asignación/disponibilidad agregadas. Ver docs/RETORNO_DINAMICO_124.md y data/return-support-124.json. No acredita beneficio dinámico ni justifica aumentar la bonificación. Próximo paso: percepción del poseedor y elección del segundo pase frente a otras opciones, con contracasos de progresión superior. Motor permanece 0.124; sin barrido global nuevo.

@@ -1,6 +1,12 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## Evaluación dinámica 0.124 — 7 de noviembre de 2026
+
+Despliegue público 0.124 verificado. Comparación de 16 parejas con/sin bonificación del pasador: primer pase recibido 16/16, retorno 0/16 en ambas variantes, sin cambios en asignación/disponibilidad agregadas. Ver docs/RETORNO_DINAMICO_124.md y data/return-support-124.json. No acredita beneficio dinámico ni justifica aumentar la bonificación. Próximo paso: percepción del poseedor y elección del segundo pase frente a otras opciones, con contracasos de progresión superior. Motor permanece 0.124; sin barrido global nuevo.
+
+
+
 ## 0.124 — Disponibilidad del apoyo de retorno · 7 de noviembre de 2026
 
 Se condiciona la preferencia de la 0.123: el pasador reciente solo recibe su bonificación si está a 25 unidades o menos, la línea tiene riesgo percibido <=3 y su espacio percibido >=5. Se reutilizan criterios provisionales de salida segura; no se consulta oposición oculta. Mantiene caducidad y margen de sustitución. No es un veto general a ese jugador como apoyo: su utilidad normal sigue compitiendo.

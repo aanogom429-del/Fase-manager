@@ -17,3 +17,14 @@ for(const t of [0,1]){
  e.t.startSituation();assert(e.t.get().players.every(p=>p.attackSupport===undefined));
 }
 console.log('PASS: support persistence, strict utility margin, replacement, invalid participants, mode continuity, retry, loss and restart');
+for(const t of [0,1]){
+ const e=env();e.t.scenario({time:10,team:t});const ps=e.t.get().players,p=e.t.get().owner,q=ps.find(q=>q.t===t&&q.n===8),a=ps.find(q=>q.t===t&&q.n===10);
+ p.x=50;p.y=32;q.x=t?40:60;q.y=32;p.bodyAngle=t?Math.PI:0;
+ e.t.kickTo(p,q.x,q.y,'pass',q);e.t.capture(q,'recibe');
+ assert.equal(p.supportReturnUntil,11.2,'completed short ground pass enables return support');
+ const pick=()=>{p.attackSupport=0;a.attackSupport=0;return e.t.selectAttackSupports([p,a],q,x=>x===p?9.5:10)[0];};
+ assert.equal(pick(),p,'recent passer wins near-equal vacancy');
+ e.t.scenario({time:11.21,team:t});assert.equal(pick(),a,'preference expires');
+ p.supportReturnUntil=20;e.t.capture(ps.find(x=>x.t!==t),'intercepta');assert.equal(p.supportReturnUntil,undefined,'loss clears return support');
+}
+console.log('PASS: mirrored completed-pass preference, expiry and possession-loss reset');

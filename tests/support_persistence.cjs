@@ -23,7 +23,17 @@ for(const t of [0,1]){
  e.t.kickTo(p,q.x,q.y,'pass',q);e.t.capture(q,'recibe');
  assert.equal(p.supportReturnUntil,11.2,'completed short ground pass enables return support');
  const pick=()=>{p.attackSupport=0;a.attackSupport=0;return e.t.selectAttackSupports([p,a],q,x=>x===p?9.5:10)[0];};
+ const rivals=ps.filter(r=>r.t!==t);
+ p.rivalMemory=rivals.map(r=>({id:r.id,x:95,y:60,seenAt:10}));
  assert.equal(pick(),p,'recent passer wins near-equal vacancy');
+ const clear=p.rivalMemory.map(m=>({...m}));
+ p.rivalMemory[0].x=(p.x+q.x)/2;p.rivalMemory[0].y=32;
+ assert.equal(pick(),a,'blocked return lane removes recent-passer bonus');
+ p.rivalMemory=clear.map(m=>({...m}));p.rivalMemory[0].x=p.x;p.rivalMemory[0].y=p.y;
+ assert.equal(pick(),a,'marked passer has no return bonus');
+ p.rivalMemory=[];assert.equal(pick(),a,'unknown opposition cannot certify a safe return');
+ p.rivalMemory=clear;
+
  e.t.scenario({time:11.21,team:t});assert.equal(pick(),a,'preference expires');
  p.supportReturnUntil=20;e.t.capture(ps.find(x=>x.t!==t),'intercepta');assert.equal(p.supportReturnUntil,undefined,'loss clears return support');
 }

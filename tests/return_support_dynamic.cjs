@@ -2,18 +2,20 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),{env}=require('
 const html=fs.readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8');
 const results=[];
 for(const t of [0,1])for(const marked of [false,true])for(const seed of [11,37,73,101])for(const enabled of [false,true]){
- const source=enabled?html:html.replace('return baseValue(p)+(available?1:0);','return baseValue(p);');
- const e=env(source);e.t.scenario({time:10,team:t,seed});const s=e.t.get(),p=s.owner,dir=t?-1:1;
+ let source=enabled?html:html.replace('return baseValue(p)+(available?1:0);','return baseValue(p);');
+ const probe={calls:0};source=source.replace('function chooseAction(p){','function chooseAction(p){probe.calls++;');
+ const e=env(source,101,{probe});e.t.enterFreeMode();e.t.scenario({time:10,team:t,seed});const s=e.t.get(),p=s.owner,dir=t?-1:1;
  for(const r of s.players){r.x=t?5:95;r.y=55;}
  p.x=50;p.y=32;p.bodyAngle=t?Math.PI:0;p.vx=0;p.vy=0;
  const q=s.players.find(r=>r.t===t&&r.n===8);q.x=50+dir*12;q.y=32;q.bodyAngle=t?0:Math.PI;
  const a=s.players.find(r=>r.t===t&&r.n===10);a.x=50+dir*5;a.y=44;
  if(marked){const r=s.players.find(r=>r.t!==t&&r.n===6);r.x=50+dir*3;r.y=35;}
  e.t.kickTo(p,q.x,q.y,'pass',q);
- let received=false,returned=false,useful=0,frames=0,selected=0;
+ let received=false,returned=false,useful=0,frames=0,selected=0,directReturn=false;
  for(let i=0;i<360;i++){
   e.t.update(1/120);const live=e.t.get();
   if(live.owner===q)received=true;
+  if(received&&live.flight?.from===q&&live.flight.target===p)directReturn=true;
   if(received&&live.owner===p)returned=true;
   if(received&&live.owner?.t===t&&live.owner!==p){
    frames++;if(p.attackSupport)selected++;
@@ -22,6 +24,7 @@ for(const t of [0,1])for(const marked of [false,true])for(const seed of [11,37,7
   }
   assert(Number.isFinite(p.x)&&Number.isFinite(p.y));
  }
- results.push({t,marked,seed,enabled,received,returned,frames,selected,useful});
+ assert(probe.calls>0,'autonomous decisions must run after the initial pass');
+ results.push({decisions:probe.calls,directReturn,t,marked,seed,enabled,received,returned,frames,selected,useful});
 }
 console.log(JSON.stringify(results,null,2));

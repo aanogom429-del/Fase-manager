@@ -1,6 +1,16 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## 0.127 — Profundidad accesible durante exploración · 8 de noviembre de 2026
+
+Corrección del diagnóstico previo: reception_scan colocaba los rivales detrás del balón, dejando al receptor adelantado en fuera de juego. El retroceso no acreditaba un defecto. Se conserva ese caso y se añade onside-depth con línea rival adelantada y memoria rival inicial explícita.
+
+Mientras el poseedor explora, un apoyo seleccionado que no cubre equilibrio ni relevo puede conservar su profundidad actual si está entre 8 y 20 unidades por delante, a <=25 del balón, y su destino lateral tiene riesgo percibido <=3 y espacio >=5. Se aplica antes del límite táctico de fuera de juego y de los ajustes de separación. No usa posiciones ocultas ni fuerza el pase. Umbrales provisionales.
+
+Comparación 0.126→0.127 en ocho casos habilitados: ambas variantes ejecutan pase al receptor 8/8. Profundidad relativa al golpeo 11.4721→14 unidades; tiempo hasta golpeo 0.6333→0.5417 s. Cuatro semillas producen igual geometría por sentido: evidencia acotada, no ocho trayectorias independientes ni mejora general de rendimiento. Diez programas dirigidos aprobados: onside-depth, reception_scan, support_escape, support_perception, onside_recovery, onside_decisions, support_persistence, structural_supports, continuity, recovery_reorder. No hay barrido global nuevo. Permanecen siete hitos y fallos heredados; siguiente contraste: recepciones efectivas y destino seguro ante oposición que cierre durante el giro.
+
+
+
 ## Seguimiento 0.126 — 8 de noviembre de 2026
 
 Despliegue público verificado. Ocho trazas de exploración descubren al compañero y terminan en conducción: avance del poseedor 3.08625 unidades, profundidad relativa del receptor 14→2.08746, separación lateral 5.48028. Cuatro semillas dan igual trayectoria por sentido. Ver docs/ELECCION_TRAS_EXPLORAR_126.md. No se ha demostrado causalidad ni conveniencia de forzar pase. Próximo incremento: conservación de profundidad accesible durante exploración, con contracasos de marcaje/fuera de juego y medición de alternativas al decidir. Motor permanece 0.126.

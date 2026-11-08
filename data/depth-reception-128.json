@@ -1,0 +1,162 @@
+[
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 11,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 37,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 73,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 101,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 11,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 37,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 73,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 101,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 11,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 37,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 73,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 101,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 11,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 37,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 73,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 101,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "lost": true,
+    "passes": 2
+  }
+]

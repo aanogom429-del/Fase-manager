@@ -1,6 +1,12 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## Recepción efectiva 0.127 — 8 de noviembre de 2026
+
+Despliegue público verificado. Dieciséis escenarios dinámicos: recepción del apoyo 8/8 con línea libre y 0/8 con rival cercano; posesión rival posterior 0/8 y 8/8 respectivamente. Traza azul adversa: decide conducir y pierde por entrada legal antes de pasar. Ver docs/RECEPCION_EFECTIVA_127.md y data/depth-reception-127.json. No es comparación entre versiones ni demuestra defecto causal todavía. Próximo foco: elección de conducción ante aproximación rival y alternativas percibidas. Motor sigue 0.127; sin barrido global nuevo.
+
+
+
 ## 0.127 — Profundidad accesible durante exploración · 8 de noviembre de 2026
 
 Corrección del diagnóstico previo: reception_scan colocaba los rivales detrás del balón, dejando al receptor adelantado en fuera de juego. El retroceso no acreditaba un defecto. Se conserva ese caso y se añade onside-depth con línea rival adelantada y memoria rival inicial explícita.

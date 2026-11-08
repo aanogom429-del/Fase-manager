@@ -11,6 +11,7 @@ for(const t of [0,1])for(const seed of [11,37,73,101]){
  assert.equal(e.t.get().owner,p,'scan does not force a pass');
  let seen=false;for(let i=0;i<180&&!e.t.get().flight;i++){e.t.update(1/120);if(e.t.knownTeammates(p).some(m=>m.id===front.id))seen=true;}
 
+ console.log(JSON.stringify({team:t,seed,seen,elapsed:e.t.get().elapsed,carrierX:p.x,carrierY:p.y,receiverX:front.x,receiverY:front.y,forwardGap:(front.x-p.x)*dir,lateralGap:Math.abs(front.y-p.y),carrierAdvance:(p.x-50)*dir,passes:e.t.get().passes,status:e.nodes.status.textContent}));
  assert(seen,'exploration discovers forward teammate before a premature return');
  assert(e.t.get().elapsed<11.51,'exploration remains bounded');
 }

@@ -1,6 +1,16 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## 0.128 — Conducción ante presión móvil · 8 de noviembre de 2026
+
+Cada ruta de conducción compara su separación percibida actual con la de una proyección de 0.5 s de los rivales visibles observados en el instante actual; utiliza el mínimo. Rivales ocultos o recordados conservan su posición estimada e incertidumbre, sin leer velocidades ocultas. No cambia la prioridad de pase ni el control físico. Horizonte constante provisional, no predicción calibrada de aceleraciones.
+
+closing_carry distingue aproximación, alejamiento, rival estático y velocidad oculta en ambos sentidos. Falla en 0.127 y pasa en 0.128. Once programas dirigidos aprobados: closing_carry, short_carry, lateral_carry, safe_outlet, organizing_possession, opponent_perception, perceptual_memory, continuity, reception_scan, onside-depth, recovery_outlet. Repetición de depth_reception: línea libre mantiene 8/8 recepciones y cero posesiones rivales; rival cercano pasa de 0/8 a 8/8 recepciones del apoyo, pero sigue con 8/8 posesiones rivales posteriores. Por tanto mejora la continuidad inicial en esta muestra, no la conservación final. Datos en data/depth-reception-128.json, comparables a data/depth-reception-127.json. Semillas no implican contextos independientes.
+
+Sin barrido global nuevo. Permanecen los fallos heredados y siete hitos. Próximo foco: pérdida posterior al control del apoyo bajo oposición; separar error de recepción, elección posterior y llegada rival antes de proponer otro cambio.
+
+
+
 ## Recepción efectiva 0.127 — 8 de noviembre de 2026
 
 Despliegue público verificado. Dieciséis escenarios dinámicos: recepción del apoyo 8/8 con línea libre y 0/8 con rival cercano; posesión rival posterior 0/8 y 8/8 respectivamente. Traza azul adversa: decide conducir y pierde por entrada legal antes de pasar. Ver docs/RECEPCION_EFECTIVA_127.md y data/depth-reception-127.json. No es comparación entre versiones ni demuestra defecto causal todavía. Próximo foco: elección de conducción ante aproximación rival y alternativas percibidas. Motor sigue 0.127; sin barrido global nuevo.

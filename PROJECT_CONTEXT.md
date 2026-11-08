@@ -1,6 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## 0.125 — Exploración tras recibir · 8 de noviembre de 2026
+
+Durante la espera organizativa tras recepción, si existe salida segura observada pero el sentido de ataque queda fuera del campo perceptivo y no hay exploración activa, se inicia un giro hacia delante durante 0.35 s. Reutiliza la orientación corporal limitada: no añade conocimiento oculto, no gira instantáneamente y no fuerza devolver ni pasar. Conserva el veto a esperar con presión inmediata, proximidad a remate y las condiciones de reorganización. Evita que disponer de una salida a la espalda impida explorar durante la espera.
+
+La prueba nueva reception_scan falla con 0.124 y pasa con 0.125 en ocho casos (dos sentidos, cuatro semillas): inicio del escaneo, dirección, balón conservado y giro progresivo. Once programas dirigidos aprobados incluyendo reception_scan, recovery_reorder, recovery_outlet, reception, open_reception, moving_reception, organizing_possession, organizing_memory, safe_outlet, continuity y kick_orientation. Sin barrido global ni comparación dinámica de rendimiento de la 0.125. No se afirma que el giro produzca más devoluciones o mejores resultados de partido. Los fallos heredados y siete hitos siguen abiertos. Próximo foco: comprobar opciones que aparecen durante la exploración y elección posterior con oposición reactiva.
+
+
+
 ## Corrección del ensayo de retorno — 7 de noviembre de 2026
 
 El ensayo previo estaba en modo guiado y queda sustituido. Ahora activa simulación libre, exige decisiones autónomas y registra devoluciones directas. En 16 parejas: 304 llamadas a decisión por variante, primeras recepciones 16/16, devoluciones directas 0/16, sin diferencias en medidas agregadas. La traza exploratoria muestra continuidad hacia otros compañeros. No se justifica forzar retornos ni afirmar mejora general. Ver docs/RETORNO_DINAMICO_124.md y datos corregidos. Motor permanece 0.124; siguiente paso: alternativas percibidas por el primer receptor y contracaso de única salida segura frente a progresión mejor. Las cifras de la entrada anterior son históricas y están sustituidas.

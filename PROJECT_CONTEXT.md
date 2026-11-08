@@ -1,6 +1,12 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## Seguimiento 0.126 — 8 de noviembre de 2026
+
+Despliegue público verificado. Ocho trazas de exploración descubren al compañero y terminan en conducción: avance del poseedor 3.08625 unidades, profundidad relativa del receptor 14→2.08746, separación lateral 5.48028. Cuatro semillas dan igual trayectoria por sentido. Ver docs/ELECCION_TRAS_EXPLORAR_126.md. No se ha demostrado causalidad ni conveniencia de forzar pase. Próximo incremento: conservación de profundidad accesible durante exploración, con contracasos de marcaje/fuera de juego y medición de alternativas al decidir. Motor permanece 0.126.
+
+
+
 ## 0.126 — Duración de exploración tras recepción · 8 de noviembre de 2026
 
 La exploración hacia delante calcula su duración a partir del ángulo pendiente y la velocidad individual de giro, limitada a 0.9 s. La espera organizativa respeta una exploración activa mientras no haya apoyos complementarios; siguen aplicándose el límite general de 1.4 s desde recepción, distancia a portería y presión mínima para esperar. No fuerza pase ni devolución y no modifica la velocidad corporal.

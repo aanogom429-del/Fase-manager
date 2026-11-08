@@ -1,6 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
 
+## 0.126 — Duración de exploración tras recepción · 8 de noviembre de 2026
+
+La exploración hacia delante calcula su duración a partir del ángulo pendiente y la velocidad individual de giro, limitada a 0.9 s. La espera organizativa respeta una exploración activa mientras no haya apoyos complementarios; siguen aplicándose el límite general de 1.4 s desde recepción, distancia a portería y presión mínima para esperar. No fuerza pase ni devolución y no modifica la velocidad corporal.
+
+Prueba dinámica en simulación libre, ambos equipos y cuatro semillas: se añade un compañero adelantado inicialmente no observado. En 0.125 el primer caso devuelve al apoyo trasero sin descubrirlo; el candidato descubre al compañero en los ocho casos dentro de 1.5 s. La traza elige conducir posteriormente: se acredita percepción adquirida, no ocho pases ni mejora general. Once programas dirigidos aprobados: reception_scan, recovery_reorder, recovery_outlet, reception, open_reception, moving_reception, organizing_possession, organizing_memory, safe_outlet, continuity y kick_orientation. Sin barrido global nuevo; permanecen fallos heredados y siete hitos. Próximo foco: contrastar elección y ejecución después de descubrir las opciones, sin confundir descubrir con pasar.
+
+
+
 ## 0.125 — Exploración tras recibir · 8 de noviembre de 2026
 
 Durante la espera organizativa tras recepción, si existe salida segura observada pero el sentido de ataque queda fuera del campo perceptivo y no hay exploración activa, se inicia un giro hacia delante durante 0.35 s. Reutiliza la orientación corporal limitada: no añade conocimiento oculto, no gira instantáneamente y no fuerza devolver ni pasar. Conserva el veto a esperar con presión inmediata, proximidad a remate y las condiciones de reorganización. Evita que disponer de una salida a la espalda impida explorar durante la espera.

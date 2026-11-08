@@ -4,10 +4,14 @@ for(const t of [0,1])for(const seed of [11,37,73,101]){
  for(const r of s.players){r.x=50-dir*40;r.y=55;}
  p.x=50;p.y=32;p.bodyAngle=t?0:Math.PI;p.receivedAt=9.7;p.controlUntil=0;p.visualMemory=[];p.rivalMemory=[];p.scanUntil=0;
  const back=s.players.find(r=>r.t===t&&r.n===8);back.x=50-dir*12;back.y=32;
+ const front=s.players.find(r=>r.t===t&&r.n===10);front.x=50+dir*14;front.y=32;
  e.t.chooseAction(p);
  assert(p.scanUntil>10,'receiver with only a rear outlet scans forward while waiting');
  assert(Math.abs(Math.cos(p.scanAngle)-dir)<1e-9,'scan follows attacking direction');
  assert.equal(e.t.get().owner,p,'scan does not force a pass');
- const a=p.bodyAngle;e.t.orientBody(p,p.x,p.y,.05);assert.notEqual(p.bodyAngle,a,'body turns progressively');
+ let seen=false;for(let i=0;i<180&&!e.t.get().flight;i++){e.t.update(1/120);if(e.t.knownTeammates(p).some(m=>m.id===front.id))seen=true;}
+
+ assert(seen,'exploration discovers forward teammate before a premature return');
+ assert(e.t.get().elapsed<11.51,'exploration remains bounded');
 }
 console.log('PASS: mirrored active scanning with rear safety outlet, bounded turn and retained ball');

@@ -1,0 +1,274 @@
+[
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 11,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 0,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 37,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 0,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 73,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 0,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 0,
+    "seed": 101,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 0,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 11,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 1,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 37,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 1,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 73,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 1,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": false,
+    "team": 1,
+    "seed": 101,
+    "seen": true,
+    "target": 10,
+    "received": true,
+    "firstCompleted": true,
+    "everControlled": true,
+    "firstOutcome": {
+      "time": 10.87499999999995,
+      "team": 1,
+      "player": 10
+    },
+    "lost": false,
+    "passes": 2
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 11,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 0,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 37,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 0,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 73,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 0,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 0,
+    "seed": 101,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 0,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 11,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 1,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 37,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 1,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 73,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 1,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  },
+  {
+    "closing": true,
+    "team": 1,
+    "seed": 101,
+    "seen": false,
+    "target": 8,
+    "received": false,
+    "firstCompleted": true,
+    "everControlled": false,
+    "firstOutcome": {
+      "time": 10.558333333333302,
+      "team": 1,
+      "player": 8
+    },
+    "lost": true,
+    "passes": 3
+  }
+]

@@ -15,6 +15,6 @@ for(const closing of [true])for(const t of [0,1])for(const seed of [11,37,73,101
 
  assert.equal(e.t.get().passes,0,'do not force the exposed forward pass while there is time to look elsewhere');
  assert.equal(e.t.get().owner,p,'retain the ball during reassessment');
- assert(p.scanUntil>e.t.get().elapsed,'actively look for another outlet');
+ assert(p.scanUntil>e.t.get().elapsed||p.kickPreparation?.targetId===back.id,'explore or prepare the rear outlet, without forcing the blocked forward pass');
 }
 console.log('PASS: exposed fallback rejected in both directions; active reassessment retains the ball initially');

@@ -1,5 +1,18 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.131 — Recepción ante presión móvil · 11 de noviembre de 2026
+
+La espera organizativa tras recibir exige ahora espacio percibido >=5 tanto actual como proyectado a 0.5 s. Comparte projectedOpposition con la evaluación de conducción: solo proyecta velocidad de rivales visibles observados en el instante actual; los demás mantienen posición recordada e incertidumbre. Si la aproximación cierra ese margen, continúa la valoración normal de pase, conducción y otras acciones. No fuerza un pase, no acorta el control físico ni modifica sus prioridades. Horizonte y umbrales siguen siendo heurísticos.
+
+Traza 0.130: #8 recibe a 11.4667 s, espera a 11.6583 s, gira a 12.1333 s y pierde por entrada legal (azul 12.4167 s; rojo 12.4 s). La nueva regla también afecta a la recepción inicial del #6: en el ensayo adverso sale antes hacia #8, que recibe a 10.5583 s. No se atribuye toda la diferencia al comportamiento del segundo receptor.
+
+Diecisiete programas dirigidos aprobados: closing_reception, remembered_outlet, blocked_fallback, safe_outlet, organizing_possession, organizing_memory, reception_scan, onside-depth, closing_carry, short_carry, lateral_carry, opponent_perception, perceptual_memory, continuity, recovery_outlet, kick_orientation y depth_reception. closing_reception falla en 0.130 y pasa en 0.131; incluye ambos sentidos, aproximación, rival quieto, alejamiento, velocidad oculta y control sin terminar. Dos pruebas previas dependían de 94 fotogramas de jugada para construir el caso: ahora usan posiciones y memorias guardadas de 0.130 (data/remembered-outlet-fixture.json), preservando la decisión examinada sin exigir que las jugadas anteriores sean idénticas.
+
+Datos: data/depth-reception-131.json. Línea libre 8/8 primeros pases completados, sin posesión rival. Oposición cercana 8/8 primeras recepciones al #8, pero posesión rival posterior en 8/8. Se verifica decisión anticipada, no mejora demostrada de conservación final. Las semillas repiten geometría y las ventanas posteriores comienzan al primer vuelo, por lo que no equivalen a un horizonte fijo entre versiones.
+
+Motor 0.131. Sin barrido global nuevo ni validación visual en Safari/iPhone. Continúan los siete hitos y fallos heredados. Próximo foco: evaluación a horizonte fijo desde la misma recepción del #8, con oposición y apoyos variados, para distinguir beneficio de la anticipación de la pérdida posterior.
+
+
 ## 0.130 — Salida hacia apoyos recordados · 11 de noviembre de 2026
 
 Tras agotar las prioridades existentes y rechazar el pase final expuesto, el poseedor puede preparar un pase a un apoyo recordado hace como máximo 0.5 s, situado entre 5 y 25 unidades, con avance <=3, riesgo percibido <=3, espacio >=5 y sin fuera de juego percibido. Ordena por recuerdo más reciente y distancia. Usa la posición recordada, sin consultar la ubicación oculta actual. Mantiene el giro físico previo al golpeo y la cancelación por pérdida o indisponibilidad. No modifica la protección corporal ni los apoyos colectivos. Umbrales provisionales.

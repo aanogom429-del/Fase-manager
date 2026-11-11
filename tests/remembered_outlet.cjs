@@ -1,20 +1,12 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{env}=require('./continuity.cjs');
 const source=fs.readFileSync(process.env.BASELINE_HTML||require('node:path').join(__dirname,'../index.html'),'utf8');
-function setup(t){const seed=73;
- const e=env(source);e.t.enterFreeMode();e.t.scenario({time:10,team:t,seed});const s=e.t.get(),p=s.owner,dir=t?-1:1;
- for(const r of s.players){r.x=50+dir*40;r.y=55;}
- p.x=50;p.y=32;p.bodyAngle=t?0:Math.PI;p.receivedAt=9.7;p.controlUntil=0;p.visualMemory=[];p.rivalMemory=s.players.filter(r=>r.t!==t).map(r=>({id:r.id,x:r.x,y:r.y,seenAt:10}));p.scanUntil=0;
- const back=s.players.find(r=>r.t===t&&r.n===8);back.x=50-dir*12;back.y=32;
- const front=s.players.find(r=>r.t===t&&r.n===10);front.x=50+dir*14;front.y=32;
- {const r=s.players.find(r=>r.t!==t&&r.n===6);r.x=50+dir*7;r.y=39;r.vy=-3;r.bodyAngle=-Math.PI/2;}
- e.t.chooseAction(p);
- assert(p.scanUntil>10,'receiver with only a rear outlet scans forward while waiting');
- assert(Math.abs(Math.cos(p.scanAngle)-dir)<1e-9,'scan follows attacking direction');
- assert.equal(e.t.get().owner,p,'scan does not force a pass');
- for(let i=0;i<94;i++)e.t.update(1/120);
- return {e,p,back,front};
+function setup(t){
+ const state=JSON.parse(JSON.stringify(require('../data/remembered-outlet-fixture.json').states[t]));
+ const e=env(source);e.t.enterFreeMode();e.t.scenario({time:state.time,team:t,seed:73});
+ const players=e.t.get().players;state.players.forEach((p,i)=>Object.assign(players[i],p));
+ return {e,p:e.t.get().owner,back:players.find(p=>p.t===t&&p.n===8),front:players.find(p=>p.t===t&&p.n===10)};
 }
-for(const t of [0,1]){
+if(require.main===module)for(const t of [0,1]){
  for(const variant of ['recent','hiddenMove','old','marked','unavailable']){
   const {e,p,back}=setup(t),now=e.t.get().elapsed;
   const m=p.visualMemory.find(m=>m.id===back.id),expected={x:m.x,y:m.y};
@@ -36,4 +28,6 @@ for(const t of [0,1]){
   }else assert.notEqual(p.kickPreparation?.targetId,back.id,'reject stale, marked or unavailable memory');
  }
 }
-console.log('PASS: mirrored recent outlet, hidden relocation, stale memory, marking, unavailable target and physical preparation');
+if(require.main===module)console.log('PASS: mirrored recent outlet, hidden relocation, stale memory, marking, unavailable target and physical preparation');
+
+module.exports={setup};

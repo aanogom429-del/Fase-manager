@@ -1,5 +1,16 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.129 — Reevaluación ante líneas cerradas · 11 de noviembre de 2026
+
+La salida final de chooseAction deja de forzar el mejor pase puntuado cuando su riesgo atribuible a rivales percibidos supera 3 y el espacio percibido del poseedor es al menos 4. Se resta del riesgo la aportación global de incertidumbre (4 * view.uncertainty), para no prohibir por sí solos los pases basados en memoria. Con presión inmediata (<4) sigue disponible la salida previa; prioridades de remate, pase útil y conducción se mantienen. Cuando rechaza la salida recurre al giro de exploración ya existente, con reevaluación a 0.45 s. Umbrales heurísticos, no calibración con partido real.
+
+Prueba blocked_fallback: ocho casos (ambos sentidos y cuatro semillas de geometría repetida) conservan inicialmente el balón y exploran sin ejecutar el pase expuesto. Falla en 0.128 y pasa en 0.129. Trece programas dirigidos aprobados: blocked_fallback, safe_outlet, short_carry, lateral_carry, closing_carry, organizing_possession, opponent_perception, perceptual_memory, continuity, reception_scan, onside-depth, recovery_outlet y depth_reception.
+
+Seguimiento dinámico en data/depth-reception-129.json: línea libre 8/8 recepciones directas, sin posesión rival; oposición cercana 0/8 recepciones del #10 y posesión rival en los ocho casos. En cuatro casos no hay vuelo durante la ventana inicial de 1.5 s; en los otros cuatro el primer pase va al #3. No demuestra mejora de conservación final, ni ocho escenarios independientes. Se acredita rechazo inicial de una línea percibida como expuesta, no solución completa de la salida bajo oposición.
+
+Motor actualizado a 0.129. Sin barrido global nuevo ni validación visual en Safari/iPhone. Permanecen abiertos los siete hitos y los fallos heredados. Próximo foco: capacidad de proteger y ofrecer apoyos durante la reevaluación, trazando la pérdida posterior antes de atribuirle una causa.
+
+
 
 ## 0.128 — Conducción ante presión móvil · 8 de noviembre de 2026
 

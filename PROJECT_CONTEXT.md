@@ -1,5 +1,18 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.130 — Salida hacia apoyos recordados · 11 de noviembre de 2026
+
+Tras agotar las prioridades existentes y rechazar el pase final expuesto, el poseedor puede preparar un pase a un apoyo recordado hace como máximo 0.5 s, situado entre 5 y 25 unidades, con avance <=3, riesgo percibido <=3, espacio >=5 y sin fuera de juego percibido. Ordena por recuerdo más reciente y distancia. Usa la posición recordada, sin consultar la ubicación oculta actual. Mantiene el giro físico previo al golpeo y la cancelación por pérdida o indisponibilidad. No modifica la protección corporal ni los apoyos colectivos. Umbrales provisionales.
+
+Traza de 0.129: a 10.7917 s existía apoyo #8 recordado hacía 0.2333 s con riesgo 0, pero se iniciaba otro barrido. Azul preparaba después su pase y perdía por entrada a 11.3417 s; rojo elegía otra salida y sufría interceptación a 11.2917 s. El nuevo comportamiento inicia antes la preparación hacia el apoyo reciente.
+
+Trece programas dirigidos aprobados: remembered_outlet, blocked_fallback, safe_outlet, short_carry, lateral_carry, closing_carry, organizing_possession, opponent_perception, perceptual_memory, continuity, recovery_outlet, kick_orientation y depth_reception. remembered_outlet falla en 0.129 y pasa en 0.130; cubre ambos sentidos, recuerdo reciente, desplazamiento real oculto, recuerdo antiguo, marcaje recordado, jugador no disponible y giro sin golpeo instantáneo. blocked_fallback conserva el rechazo del pase adelantado y admite explorar o preparar la salida trasera.
+
+Datos en data/depth-reception-130.json: línea libre 8/8 primeros pases completados al #10, sin posesión rival; con oposición 8/8 primeros pases completados al #8 (captura a 11.4667 s), pero posesión rival posterior en los ocho casos. firstCompleted distingue llegada al destinatario del primer vuelo; received conserva su significado histórico específico de recepción del #10. Se acredita primera salida completada, no mejora de conservación final. Semillas repiten geometría por sentido; ventanas posteriores empiezan al detectar el primer vuelo y no son un horizonte idéntico entre versiones.
+
+Motor 0.130. Sin barrido global nuevo ni validación visual en Safari/iPhone. Siete hitos y fallos heredados abiertos. Próximo foco: trazar la pérdida tras recibir el apoyo #8 y contrastar control, orientación y continuidad antes de modificar ese comportamiento.
+
+
 ## 0.129 — Reevaluación ante líneas cerradas · 11 de noviembre de 2026
 
 La salida final de chooseAction deja de forzar el mejor pase puntuado cuando su riesgo atribuible a rivales percibidos supera 3 y el espacio percibido del poseedor es al menos 4. Se resta del riesgo la aportación global de incertidumbre (4 * view.uncertainty), para no prohibir por sí solos los pases basados en memoria. Con presión inmediata (<4) sigue disponible la salida previa; prioridades de remate, pase útil y conducción se mantienen. Cuando rechaza la salida recurre al giro de exploración ya existente, con reevaluación a 0.45 s. Umbrales heurísticos, no calibración con partido real.

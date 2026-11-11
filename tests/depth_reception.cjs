@@ -14,13 +14,16 @@ for(const closing of [false,true])for(const t of [0,1])for(const seed of [11,37,
  let seen=false;for(let i=0;i<180&&!e.t.get().flight;i++){e.t.update(1/120);if(e.t.knownTeammates(p).some(m=>m.id===front.id))seen=true;}
 
  const first=e.t.get().flight;const target=first?.target?.n??null;
- let received=false,lost=false;
+ // Resolve this flight once: a later tackle must never turn an interception into a reception.
+ let received=false,lost=false,firstResolved=!first,everControlled=false,firstOutcome=null;
  for(let i=0;i<240;i++){
   e.t.update(1/120);const state=e.t.get();
-  if(state.owner===front)received=true;
+  if(!firstResolved&&state.flight!==first){firstResolved=true;received=first.target===front&&state.owner===front;firstOutcome={time:state.elapsed,team:state.owner?.t??null,player:state.owner?.n??null};}
+  if(state.owner===front)everControlled=true;
   if(state.owner&&state.owner.t!==t)lost=true;
  }
- results.push({closing,team:t,seed,seen,target,received,lost,passes:e.t.get().passes});
+ if(first){assert(firstResolved,'first flight must resolve within observation window');assert(firstOutcome);}
+ results.push({closing,team:t,seed,seen,target,received,everControlled,firstOutcome,lost,passes:e.t.get().passes});
  if(!closing){assert.equal(target,10);assert(received,'clear pass must actually reach receiver');}
 }
 console.log(JSON.stringify(results,null,2));

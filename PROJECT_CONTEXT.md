@@ -1,5 +1,10 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Verificación visual 0.134 · 12 de noviembre de 2026
+
+Confirmada web pública 0.134 en Chrome. Opciones iniciales: seguridad #6, continuidad #11, superar línea deshabilitada. Observados siete pases sin error del motor en la muestra breve; no equivale a partido completo ni Safari. Captura detectó controles superpuestos: main>.bar asignaba todas las barras inyectadas a grid-row:2. Corregido flujo principal a columna flexible, retirando límite de altura del panel/campo. Commit 452791a385dffc254542c0f827c586e2889ed471, mantiene versión 0.134. Distribución táctica sigue requiriendo observación prolongada; la captura no valida ausencia general de agrupamiento.
+
+
 ## 0.134 — Separación cerca del balón · 12 de noviembre de 2026
 
 La estructura se recupera desde el primer destino para compañeros a menos de 16 unidades del balón que no sean apoyos seleccionados ni foco. Fuera de esa zona se conserva la transición previa y la percepción local. distributeAttackSpace penaliza solapamiento de destinos a menos de 10 unidades (antes 6); es objetivo blando, no distancia mínima garantizada. No modifica posiciones directamente, órdenes explícitas ni arbitraje.

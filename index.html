@@ -276,12 +276,12 @@ const phaseStyle=document.createElement('style');
 const layoutStyle=document.createElement('style');
 layoutStyle.textContent=`
 *{box-sizing:border-box}
-main{max-width:1600px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,400px);gap:14px 18px;align-items:start}
+main{max-width:1600px;padding:16px;display:flex;flex-direction:column;gap:14px;align-items:stretch}
 main>*{grid-column:1/-1;min-width:0}
 main>h1{grid-row:1;margin:0;font-size:21px}
 main>.bar{grid-row:2;margin:0}
 main>#pitch{grid-column:1;grid-row:3;position:static}
-main>#decision-panel{grid-column:2;grid-row:3;margin:0;padding:14px;max-height:calc(100dvh - 128px);overflow-y:auto;scrollbar-gutter:stable}
+main>#decision-panel{grid-column:2;grid-row:3;margin:0;padding:14px;max-height:none;overflow:visible}
 main>.phase-panel{grid-row:4;margin:0}
 main>#decision-panel .bar{gap:8px;margin:0 0 10px}
 main>#decision-panel h2{font-size:17px;margin:0}
@@ -292,7 +292,7 @@ main>#decision-panel button,main>#decision-panel select{font-size:14px;padding:8
 .action-tools select{width:100%;min-width:0}
 .choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 .choices small{font-size:12px}
-@media(min-width:1000px){main>#pitch{max-height:calc(100dvh - 128px)}}
+@media(min-width:1000px){main>#pitch{max-height:none}}
 @media(max-width:999px){
  main{grid-template-columns:minmax(0,1fr);padding:10px;gap:10px}
  main>#pitch{grid-column:1;grid-row:3;position:static}

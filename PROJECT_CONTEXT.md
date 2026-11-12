@@ -1,5 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.133 — Opciones de pase · 12 de noviembre de 2026
+
+Modo guiado: opción independiente Pase de seguridad para receptor retrasado; continuidad para conexiones sin retroceso ni línea superada; superar línea para avance que cruza dos rivales con altura longitudinal separada <=6 unidades. Esta detección es una aproximación geométrica, no una interpretación táctica validada. Las tres opciones excluyen fuera de juego y riesgo de trayectoria >3; si faltan receptores la opción se deshabilita. No modifica decisiones automáticas.
+
+Pruebas aprobadas: pass_purpose (ambos sentidos), continuity, null_support_focus, offball_spacing_perception, teammate_spacing_perception. La corrección nula 0.132 permanece.
+
+Distribución NO resuelta: candidato con structureWeight=1, reservas de amplitud en todas las fases y distancia objetivo 10 en distributeAttackSpace falló offball_spacing_perception y teammate_spacing_perception. Se retiraron esos tres cambios de main; ambas pruebas vuelven a pasar. Debe rediseñarse preservando reacción a oposición y compañeros observados. Sigue pendiente captura y verificación visual de los cambios, además del agrupamiento señalado por el usuario. No declarar terminada la petición completa.
+
+
 ## 0.132 — Corrección urgente de referencia nula · 12 de noviembre de 2026
 
 Reproducido el error Cannot read properties of null (reading 'x') en selectAttackSupports: la bonificación temporal al pasador llamaba perceivedSupportReading con focus nulo, posible durante tiros sin receptor. Ahora omite únicamente esa bonificación si no existe foco, conservando la valoración base. Se sustituye el mensaje que pedía enviar captura por una indicación de simulación detenida y reinicio.

@@ -1,5 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.134 — Separación cerca del balón · 12 de noviembre de 2026
+
+La estructura se recupera desde el primer destino para compañeros a menos de 16 unidades del balón que no sean apoyos seleccionados ni foco. Fuera de esa zona se conserva la transición previa y la percepción local. distributeAttackSpace penaliza solapamiento de destinos a menos de 10 unidades (antes 6); es objetivo blando, no distancia mínima garantizada. No modifica posiciones directamente, órdenes explícitas ni arbitraje.
+
+Diez pruebas aprobadas: crowded_shape, continuity, offball_spacing_perception, teammate_spacing_perception, support_perception, structural_supports, run_spacing, onside_recovery, null_support_focus y pass_purpose. Caso agrupado reflejado: siete destinos de campo a >=16 del balón frente a cinco en 0.133; anchura de destinos 50 en ambas versiones. Se comprueba desplazamiento físico en dos segundos. El criterio >=6 destinos se fijó tras observar la comparación; es regresión de diseño, no validación independiente. No atribuir aumento de anchura a este ensayo. No hay barrido global ni demostración de ausencia de agrupamientos en partido.
+
+Pendiente verificar visualmente el partido y entregar captura al usuario. No afirmar resuelta toda la distribución táctica solo con estos escenarios. Se conservan correcciones 0.132 y clasificación 0.133.
+
+
 ## 0.133 — Opciones de pase · 12 de noviembre de 2026
 
 Modo guiado: opción independiente Pase de seguridad para receptor retrasado; continuidad para conexiones sin retroceso ni línea superada; superar línea para avance que cruza dos rivales con altura longitudinal separada <=6 unidades. Esta detección es una aproximación geométrica, no una interpretación táctica validada. Las tres opciones excluyen fuera de juego y riesgo de trayectoria >3; si faltan receptores la opción se deshabilita. No modifica decisiones automáticas.

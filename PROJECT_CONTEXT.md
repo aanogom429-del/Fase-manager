@@ -1,5 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.132 — Corrección urgente de referencia nula · 12 de noviembre de 2026
+
+Reproducido el error Cannot read properties of null (reading 'x') en selectAttackSupports: la bonificación temporal al pasador llamaba perceivedSupportReading con focus nulo, posible durante tiros sin receptor. Ahora omite únicamente esa bonificación si no existe foco, conservando la valoración base. Se sustituye el mensaje que pedía enviar captura por una indicación de simulación detenida y reinicio.
+
+Prueba nueva null_support_focus falla en 0.131 y pasa en 0.132; cubre ambos equipos y movimiento durante tiro sin destinatario. También pasan continuity, remembered_outlet y closing_reception. No equivale a validación visual ni prueba específica de Safari.
+
+Pendiente de la petición expresa del usuario: distinguir seguridad retrasada, continuidad sin superar líneas y progresión; corregir agrupamiento y amplitud de compañeros, probar en navegador y entregar captura. Los cambios locales exploratorios de la sesión anterior no sobrevivieron y no se publicaron. Esta versión SOLO corrige el bloqueo; no declarar resueltas las cuestiones tácticas.
+
+
 ## 0.131 — Recepción ante presión móvil · 11 de noviembre de 2026
 
 La espera organizativa tras recibir exige ahora espacio percibido >=5 tanto actual como proyectado a 0.5 s. Comparte projectedOpposition con la evaluación de conducción: solo proyecta velocidad de rivales visibles observados en el instante actual; los demás mantienen posición recordada e incertidumbre. Si la aproximación cierra ese margen, continúa la valoración normal de pase, conducción y otras acciones. No fuerza un pase, no acorta el control físico ni modifica sus prioridades. Horizonte y umbrales siguen siendo heurísticos.

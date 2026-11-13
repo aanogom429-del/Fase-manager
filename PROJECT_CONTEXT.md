@@ -1,5 +1,12 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Contraste de líneas de pase · 13 de noviembre de 2026
+
+Confirmado despliegue 0.135 blob c18cea38263139e2e4f88e2a3512f70fa75717a8. Se probó impedir en distributeAttackSpace desplazamientos que empeorasen outletGrade de un destino conectado y compañero recién observado. Diez pruebas dirigidas pasaron, pero la auditoría dinámica empeoró: agrupadas/muestras 3/38,11/50,13/46,10/42, total 37/176 (21.0%) frente a 26/167 (15.6%) en 0.135. El caso inicial rojo/73 mantiene 13 muestras agrupadas, no se resuelve. Cambios de posesión 6/5/7/5 frente a 8/4/2/6. No se ha demostrado que perder líneas de pase fuera la causa del caso adverso.
+
+Candidato RECHAZADO; motor publicado sigue 0.135. Datos data/spacing-outlet-experiment-135.json y parche no aplicado docs/experiments/spacing-outlet-rejected.patch. Próximo trabajo: traza de asignaciones y recorridos durante el caso rojo/73 para localizar concentración persistente antes de imponer otra restricción. No declarar una versión 0.136 ni dar por terminado el problema del usuario.
+
+
 ## 0.135 — Espacio de apoyos cercanos · 13 de noviembre de 2026
 
 En distributeAttackSpace, destinos de compañeros no asignados como apoyos reciben penalización si quedan a menos de 14 unidades del poseedor. Se conservan dos apoyos seleccionados, destinos bloqueados y ponderaciones de oposición/separación; es preferencia blanda, no una distancia garantizada ni recolocación. Nueva prueba local_support_space falla en 0.134 y pasa en 0.135 (ambos sentidos, preservar apoyo, sin teletransporte).

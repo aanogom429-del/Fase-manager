@@ -1,5 +1,11 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Traza de recorridos y experimentos descartados · 13 de noviembre de 2026
+
+Motor continúa en 0.135, sin modificación de index.html. Nueva prueba diagnóstica tests/run_spacing_trace.cjs: 30 s, inicial rojo/73, 1174 correcciones de recorrido, 236 con producto escalar negativo respecto al destino previo. No son incidentes independientes ni causa demostrada de concentración. Primera inversión rojo #8 a 11.633 s. La prueba verifica igualdad exacta del estado final con y sin instrumentación.
+
+Tres variantes rechazadas: bloquear inversión 34/165 muestras agrupadas; perpendicular siempre 42/169; perpendicular solo ante inversión 32/172; publicada 26/167. Todas reducen el caso rojo/73 a 9 muestras agrupadas, pero empeoran el conjunto. No publicar 0.136 basándose en este resultado. Datos, parches y límites en docs/RECORRIDOS_0135.md, data/run-spacing-trace-135.json y data/run-spacing-experiments-135.json. Próximo foco: medir estabilidad de asignaciones de apoyo/equilibrio y destinos durante la posesión, sin asumir que las inversiones sean la causa. Concentración y hitos A1–A7 siguen abiertos.
+
 ## Contraste de líneas de pase · 13 de noviembre de 2026
 
 Confirmado despliegue 0.135 blob c18cea38263139e2e4f88e2a3512f70fa75717a8. Se probó impedir en distributeAttackSpace desplazamientos que empeorasen outletGrade de un destino conectado y compañero recién observado. Diez pruebas dirigidas pasaron, pero la auditoría dinámica empeoró: agrupadas/muestras 3/38,11/50,13/46,10/42, total 37/176 (21.0%) frente a 26/167 (15.6%) en 0.135. El caso inicial rojo/73 mantiene 13 muestras agrupadas, no se resuelve. Cambios de posesión 6/5/7/5 frente a 8/4/2/6. No se ha demostrado que perder líneas de pase fuera la causa del caso adverso.

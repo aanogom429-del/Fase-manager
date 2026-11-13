@@ -1,5 +1,13 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.136 — Coherencia de la narración de pases · 13 de noviembre de 2026
+
+Se corrigen dos ramas de chooseAction que denominaban continuidad a pases de seguridad o progresión. passIntentReport reutiliza passPurpose, ya usado por las opciones guiadas: hacia atrás = seguridad; conservar sin romper línea = continuidad; cruzar línea geométrica = intención de superación. La narración dice «busca», no garantiza éxito. No modifica selección, movimiento, trayectorias ni azar. La identificación de línea sigue siendo heurística.
+
+Antes se probó mantener un apoyo al girar si conservaba distancia y línea percibida. En escenarios habituales: agrupadas 26/167→19/161; cambios de posesión totales 20→30. En semillas adicionales 211 y 307: agrupadas 25/168→30/165. RECHAZADO por falta de generalización; parche y datos en data/support-turning-rejected-135.json. El motor 0.136 NO incorpora esta persistencia. La secuencia rojo/73 mostró 88 cambios individuales de función en 599 fotogramas con el mismo poseedor; no demuestra causalidad del agrupamiento.
+
+La concentración de compañeros sigue abierta. No presentar 0.136 como mejora de separación ni cierre de A1–A7. Próximo trabajo debe examinar la ocupación asignada al finalizar cada pase y la coordinación entre dos apoyos y jugadores de equilibrio, con validación separada de los escenarios usados para diseñar cambios.
+
 ## Traza de recorridos y experimentos descartados · 13 de noviembre de 2026
 
 Motor continúa en 0.135, sin modificación de index.html. Nueva prueba diagnóstica tests/run_spacing_trace.cjs: 30 s, inicial rojo/73, 1174 correcciones de recorrido, 236 con producto escalar negativo respecto al destino previo. No son incidentes independientes ni causa demostrada de concentración. Primera inversión rojo #8 a 11.633 s. La prueba verifica igualdad exacta del estado final con y sin instrumentación.

@@ -1,0 +1,940 @@
+{
+  "base": "0.135",
+  "baseBlob": "c18cea38263139e2e4f88e2a3512f70fa75717a8",
+  "note": "All candidates rejected. Exploratory reuse of four seeds/scenarios, not held-out validation. Engine title remains base version in candidate results.",
+  "variants": [
+    {
+      "name": "reject-reverse",
+      "status": "rejected",
+      "patch": "--- a/index.html\n+++ b/index.html\n@@ -1974,6 +1974,8 @@\n    const conflict=score;let bestGrade=baseline;\n    for(const shift of [-5,5,-9,9]){\n     const aim={x:base.x,y:clamp(base.y+shift,4,60)},q=project(aim.x,aim.y),value=cost(q)+.12*d(q,base);\n+    // Ceder espacio sin invertir el recorrido hacia el destino t\u00e1ctico.\n+    if((q.x-p.x)*(m.tx-p.x)+(q.y-p.y)*(m.ty-p.y)<0)continue;\n     const grade=outletGrade(holder,p,q,view,known);\n     if(grade<bestGrade||value>=conflict-.05)continue;\n     if(grade>bestGrade||value<score-.05){next=aim;end=q;score=value;bestGrade=grade;}\n",
+      "audit": {
+        "engine": "0.135",
+        "note": "Synthetic four-run audit; half-second possession samples, fixed 30-second horizon. Thresholds are diagnostic, not validated tactical standards.",
+        "results": [
+          {
+            "team": 0,
+            "seed": 73,
+            "seconds": 30,
+            "samples": 38,
+            "closePairs": 82,
+            "crowdedFrames": 8,
+            "narrowFrames": 0,
+            "maxNearBall": 6,
+            "worst": {
+              "time": 26.03333333333381,
+              "pairs": 6,
+              "near": 3,
+              "width": 49.14050313860109,
+              "owner": [
+                0,
+                6
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 33.386769362599296,
+                  "y": 41.94264013000036
+                },
+                {
+                  "n": 3,
+                  "x": 42.13094760400247,
+                  "y": 41.08970006603199
+                },
+                {
+                  "n": 4,
+                  "x": 37.52075473912679,
+                  "y": 43.91012499442722
+                },
+                {
+                  "n": 5,
+                  "x": 39.563776395049445,
+                  "y": 36.01997862135089
+                },
+                {
+                  "n": 6,
+                  "x": 44.10317976707862,
+                  "y": 32.64508751141344
+                },
+                {
+                  "n": 7,
+                  "x": 46.79147578092145,
+                  "y": 28.611834830324334
+                },
+                {
+                  "n": 8,
+                  "x": 38.78517341926178,
+                  "y": 47.115619138895106
+                },
+                {
+                  "n": 9,
+                  "x": 65.22026628980943,
+                  "y": 6.9999989762853945
+                },
+                {
+                  "n": 10,
+                  "x": 68.42834794143495,
+                  "y": 27.71981752753319
+                },
+                {
+                  "n": 11,
+                  "x": 65.76353864920479,
+                  "y": 56.14050211488649
+                }
+              ]
+            },
+            "passes": 30,
+            "turnovers": 4,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 0,
+            "seed": 101,
+            "seconds": 30,
+            "samples": 44,
+            "closePairs": 89,
+            "crowdedFrames": 12,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 29.03333333333396,
+              "pairs": 6,
+              "near": 5,
+              "width": 53.49114519929251,
+              "owner": [
+                1,
+                5
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 80.47774546133726,
+                  "y": 25.35200993392887
+                },
+                {
+                  "n": 3,
+                  "x": 77.48564265857637,
+                  "y": 26.428129511903943
+                },
+                {
+                  "n": 4,
+                  "x": 71.88533992816754,
+                  "y": 27.355200302994284
+                },
+                {
+                  "n": 5,
+                  "x": 76.879470916068,
+                  "y": 36.54563362991622
+                },
+                {
+                  "n": 6,
+                  "x": 66.69486679430813,
+                  "y": 51.53838314132465
+                },
+                {
+                  "n": 7,
+                  "x": 73.24269717219788,
+                  "y": 38.78760615251582
+                },
+                {
+                  "n": 8,
+                  "x": 74.65349969868765,
+                  "y": 31.417298627657008
+                },
+                {
+                  "n": 9,
+                  "x": 55.0388484555523,
+                  "y": 59.739044830520925
+                },
+                {
+                  "n": 10,
+                  "x": 51.10496247631851,
+                  "y": 35.13728090735631
+                },
+                {
+                  "n": 11,
+                  "x": 53.80877380424335,
+                  "y": 6.247899631228416
+                }
+              ]
+            },
+            "passes": 36,
+            "turnovers": 9,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 1,
+            "seed": 73,
+            "seconds": 30,
+            "samples": 39,
+            "closePairs": 68,
+            "crowdedFrames": 9,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 22.033333333333612,
+              "pairs": 4,
+              "near": 1,
+              "width": 50.160663267515034,
+              "owner": [
+                1,
+                8
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 63.018607979223596,
+                  "y": 34.98582468958985
+                },
+                {
+                  "n": 3,
+                  "x": 67.64538481563889,
+                  "y": 39.9168669243669
+                },
+                {
+                  "n": 4,
+                  "x": 63.76336782683762,
+                  "y": 28.409567352722753
+                },
+                {
+                  "n": 5,
+                  "x": 53.30603229063385,
+                  "y": 16.620479940736185
+                },
+                {
+                  "n": 6,
+                  "x": 65.2259613896681,
+                  "y": 29.38423552335714
+                },
+                {
+                  "n": 7,
+                  "x": 64.78911932642788,
+                  "y": 34.0006402941675
+                },
+                {
+                  "n": 8,
+                  "x": 54.90928758858787,
+                  "y": 7.64618331432826
+                },
+                {
+                  "n": 9,
+                  "x": 34.73925606515818,
+                  "y": 57.806846581843295
+                },
+                {
+                  "n": 10,
+                  "x": 32.29065396116591,
+                  "y": 30.33032676803156
+                },
+                {
+                  "n": 11,
+                  "x": 42.56992676192506,
+                  "y": 9.65227194287799
+                }
+              ]
+            },
+            "passes": 34,
+            "turnovers": 10,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 1,
+            "seed": 101,
+            "seconds": 30,
+            "samples": 44,
+            "closePairs": 108,
+            "crowdedFrames": 5,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 27.533333333333886,
+              "pairs": 6,
+              "near": 5,
+              "width": 49.999991308628,
+              "owner": [
+                0,
+                2
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 19.562718932451702,
+                  "y": 29.29510183202484
+                },
+                {
+                  "n": 3,
+                  "x": 17.602285189108983,
+                  "y": 35.505038517941195
+                },
+                {
+                  "n": 4,
+                  "x": 20.173890796188942,
+                  "y": 39.70651999727385
+                },
+                {
+                  "n": 5,
+                  "x": 17.368901899661036,
+                  "y": 40.526647695483504
+                },
+                {
+                  "n": 6,
+                  "x": 29.142573554203903,
+                  "y": 24.284727269176887
+                },
+                {
+                  "n": 7,
+                  "x": 30.643542503877203,
+                  "y": 27.88622603258666
+                },
+                {
+                  "n": 8,
+                  "x": 18.952058024594187,
+                  "y": 42.910793484236045
+                },
+                {
+                  "n": 9,
+                  "x": 46.688906446773785,
+                  "y": 7.0000001115116675
+                },
+                {
+                  "n": 10,
+                  "x": 35.96345266461291,
+                  "y": 40.18633572254198
+                },
+                {
+                  "n": 11,
+                  "x": 47.92098448445852,
+                  "y": 56.999991420139665
+                }
+              ]
+            },
+            "passes": 29,
+            "turnovers": 6,
+            "finalTime": 40.00000000000032
+          }
+        ]
+      }
+    },
+    {
+      "name": "perpendicular",
+      "status": "rejected",
+      "patch": "--- a/index.html\n+++ b/index.html\n@@ -1973,7 +1973,10 @@\n    const baseline=Math.max(outletGrade(holder,p,p,view,known),outletGrade(holder,p,base,view,known));\n    const conflict=score;let bestGrade=baseline;\n    for(const shift of [-5,5,-9,9]){\n-    const aim={x:base.x,y:clamp(base.y+shift,4,60)},q=project(aim.x,aim.y),value=cost(q)+.12*d(q,base);\n+    const length=d(p,base)||1;\n+    const aim={x:clamp(base.x-(base.y-p.y)/length*shift,2,98),y:clamp(base.y+(base.x-p.x)/length*shift,4,60)},q=project(aim.x,aim.y),value=cost(q)+.12*d(q,base);\n+    // Ceder espacio sin invertir el recorrido hacia el destino t\u00e1ctico.\n+    if((q.x-p.x)*(m.tx-p.x)+(q.y-p.y)*(m.ty-p.y)<0)continue;\n     const grade=outletGrade(holder,p,q,view,known);\n     if(grade<bestGrade||value>=conflict-.05)continue;\n     if(grade>bestGrade||value<score-.05){next=aim;end=q;score=value;bestGrade=grade;}\n",
+      "audit": {
+        "engine": "0.135",
+        "note": "Synthetic four-run audit; half-second possession samples, fixed 30-second horizon. Thresholds are diagnostic, not validated tactical standards.",
+        "results": [
+          {
+            "team": 0,
+            "seed": 73,
+            "seconds": 30,
+            "samples": 44,
+            "closePairs": 121,
+            "crowdedFrames": 11,
+            "narrowFrames": 0,
+            "maxNearBall": 6,
+            "worst": {
+              "time": 25.03333333333376,
+              "pairs": 9,
+              "near": 4,
+              "width": 49.95174911663334,
+              "owner": [
+                0,
+                6
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 35.78619072741455,
+                  "y": 23.462425031956847
+                },
+                {
+                  "n": 3,
+                  "x": 37.70496152535007,
+                  "y": 36.137610269221476
+                },
+                {
+                  "n": 4,
+                  "x": 40.79541465288846,
+                  "y": 30.899107356186015
+                },
+                {
+                  "n": 5,
+                  "x": 35.57210932979245,
+                  "y": 38.27788496410097
+                },
+                {
+                  "n": 6,
+                  "x": 40.52574510018044,
+                  "y": 25.080795520841185
+                },
+                {
+                  "n": 7,
+                  "x": 40.06757920614674,
+                  "y": 35.486165612767316
+                },
+                {
+                  "n": 8,
+                  "x": 39.73679280433186,
+                  "y": 41.25011687681222
+                },
+                {
+                  "n": 9,
+                  "x": 59.1054585701951,
+                  "y": 7.0482509076019735
+                },
+                {
+                  "n": 10,
+                  "x": 59.3956291133231,
+                  "y": 32.55589765455285
+                },
+                {
+                  "n": 11,
+                  "x": 58.73836347481794,
+                  "y": 57.00000002423531
+                }
+              ]
+            },
+            "passes": 30,
+            "turnovers": 4,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 0,
+            "seed": 101,
+            "seconds": 30,
+            "samples": 45,
+            "closePairs": 68,
+            "crowdedFrames": 13,
+            "narrowFrames": 1,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 14.033333333333319,
+              "pairs": 5,
+              "near": 4,
+              "width": 34.92235033684862,
+              "owner": [
+                1,
+                3
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 82.94486717471543,
+                  "y": 49.62753239387036
+                },
+                {
+                  "n": 3,
+                  "x": 69.81018923451589,
+                  "y": 38.45268968162056
+                },
+                {
+                  "n": 4,
+                  "x": 81.30298426691314,
+                  "y": 26.80472326621798
+                },
+                {
+                  "n": 5,
+                  "x": 82.17313765317624,
+                  "y": 14.705182057021737
+                },
+                {
+                  "n": 6,
+                  "x": 67.27943804376063,
+                  "y": 38.20975801018595
+                },
+                {
+                  "n": 7,
+                  "x": 65.17071966826705,
+                  "y": 31.423440227912543
+                },
+                {
+                  "n": 8,
+                  "x": 69.45374101849157,
+                  "y": 33.66383171307226
+                },
+                {
+                  "n": 9,
+                  "x": 59.7661146800147,
+                  "y": 49.182427941588635
+                },
+                {
+                  "n": 10,
+                  "x": 61.855493599988414,
+                  "y": 31.412164450215585
+                },
+                {
+                  "n": 11,
+                  "x": 60.78455010947088,
+                  "y": 15.833111203376333
+                }
+              ]
+            },
+            "passes": 35,
+            "turnovers": 7,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 1,
+            "seed": 73,
+            "seconds": 30,
+            "samples": 45,
+            "closePairs": 88,
+            "crowdedFrames": 9,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 23.033333333333662,
+              "pairs": 5,
+              "near": 5,
+              "width": 48.35761265534233,
+              "owner": [
+                1,
+                8
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 65.83566305835737,
+                  "y": 30.35533302579824
+                },
+                {
+                  "n": 3,
+                  "x": 59.15394409642162,
+                  "y": 36.19002357951043
+                },
+                {
+                  "n": 4,
+                  "x": 64.6649555678261,
+                  "y": 25.13226575463651
+                },
+                {
+                  "n": 5,
+                  "x": 67.60228529774331,
+                  "y": 21.58762578337523
+                },
+                {
+                  "n": 6,
+                  "x": 63.26795651817308,
+                  "y": 37.21362092424458
+                },
+                {
+                  "n": 7,
+                  "x": 61.86360346358811,
+                  "y": 44.52657503541943
+                },
+                {
+                  "n": 8,
+                  "x": 60.49695559782304,
+                  "y": 27.855894876322456
+                },
+                {
+                  "n": 9,
+                  "x": 43.16865886421285,
+                  "y": 57.14458070349643
+                },
+                {
+                  "n": 10,
+                  "x": 37.42951394552046,
+                  "y": 24.886001270962208
+                },
+                {
+                  "n": 11,
+                  "x": 47.00735787722639,
+                  "y": 8.786968048154101
+                }
+              ]
+            },
+            "passes": 35,
+            "turnovers": 6,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 1,
+            "seed": 101,
+            "seconds": 30,
+            "samples": 35,
+            "closePairs": 71,
+            "crowdedFrames": 9,
+            "narrowFrames": 0,
+            "maxNearBall": 6,
+            "worst": {
+              "time": 22.033333333333612,
+              "pairs": 4,
+              "near": 1,
+              "width": 50.63017284472036,
+              "owner": [
+                1,
+                6
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 57.741189262549234,
+                  "y": 44.165159225734975
+                },
+                {
+                  "n": 3,
+                  "x": 60.90239544612927,
+                  "y": 37.6564373144125
+                },
+                {
+                  "n": 4,
+                  "x": 57.36451439753792,
+                  "y": 35.81570924764664
+                },
+                {
+                  "n": 5,
+                  "x": 56.31222085798213,
+                  "y": 33.61912123868035
+                },
+                {
+                  "n": 6,
+                  "x": 53.1254046250897,
+                  "y": 49.59653219141004
+                },
+                {
+                  "n": 7,
+                  "x": 51.71151992385053,
+                  "y": 35.26391759246508
+                },
+                {
+                  "n": 8,
+                  "x": 61.56645643945629,
+                  "y": 28.13042062826747
+                },
+                {
+                  "n": 9,
+                  "x": 37.93511814257248,
+                  "y": 57.630009527781716
+                },
+                {
+                  "n": 10,
+                  "x": 33.69772763345881,
+                  "y": 34.38490022092956
+                },
+                {
+                  "n": 11,
+                  "x": 37.15490499902362,
+                  "y": 6.999836683061352
+                }
+              ]
+            },
+            "passes": 37,
+            "turnovers": 2,
+            "finalTime": 40.00000000000032
+          }
+        ]
+      }
+    },
+    {
+      "name": "conditional-perpendicular",
+      "status": "rejected",
+      "patch": "--- a/index.html\n+++ b/index.html\n@@ -1973,7 +1973,15 @@\n    const baseline=Math.max(outletGrade(holder,p,p,view,known),outletGrade(holder,p,base,view,known));\n    const conflict=score;let bestGrade=baseline;\n    for(const shift of [-5,5,-9,9]){\n-    const aim={x:base.x,y:clamp(base.y+shift,4,60)},q=project(aim.x,aim.y),value=cost(q)+.12*d(q,base);\n+    let aim={x:base.x,y:clamp(base.y+shift,4,60)},q=project(aim.x,aim.y);\n+    // Si la esquiva invierte la carrera, ceder perpendicularmente al recorrido.\n+    if((q.x-p.x)*(m.tx-p.x)+(q.y-p.y)*(m.ty-p.y)<0){\n+     const length=d(p,base)||1;\n+     aim={x:clamp(base.x-(base.y-p.y)/length*shift,2,98),y:clamp(base.y+(base.x-p.x)/length*shift,4,60)};\n+     q=project(aim.x,aim.y);\n+     if((q.x-p.x)*(m.tx-p.x)+(q.y-p.y)*(m.ty-p.y)<0)continue;\n+    }\n+    const value=cost(q)+.12*d(q,base);\n     const grade=outletGrade(holder,p,q,view,known);\n     if(grade<bestGrade||value>=conflict-.05)continue;\n     if(grade>bestGrade||value<score-.05){next=aim;end=q;score=value;bestGrade=grade;}\n",
+      "audit": {
+        "engine": "0.135",
+        "note": "Synthetic four-run audit; half-second possession samples, fixed 30-second horizon. Thresholds are diagnostic, not validated tactical standards.",
+        "results": [
+          {
+            "team": 0,
+            "seed": 73,
+            "seconds": 30,
+            "samples": 40,
+            "closePairs": 76,
+            "crowdedFrames": 3,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 27.03333333333386,
+              "pairs": 5,
+              "near": 0,
+              "width": 46.958187959791275,
+              "owner": [
+                0,
+                9
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 47.15358017315813,
+                  "y": 27.188968892942803
+                },
+                {
+                  "n": 3,
+                  "x": 50.306546606421826,
+                  "y": 38.36562434177806
+                },
+                {
+                  "n": 4,
+                  "x": 50.095682859098524,
+                  "y": 33.20236881581953
+                },
+                {
+                  "n": 5,
+                  "x": 47.44693885318365,
+                  "y": 32.76772146956464
+                },
+                {
+                  "n": 6,
+                  "x": 52.176294537177995,
+                  "y": 28.786922461892566
+                },
+                {
+                  "n": 7,
+                  "x": 57.46275301996469,
+                  "y": 18.776830669301955
+                },
+                {
+                  "n": 8,
+                  "x": 51.46775121579781,
+                  "y": 48.29484682133927
+                },
+                {
+                  "n": 9,
+                  "x": 72.57548815809402,
+                  "y": 9.938343719068651
+                },
+                {
+                  "n": 10,
+                  "x": 74.52448497881838,
+                  "y": 30.570385253455342
+                },
+                {
+                  "n": 11,
+                  "x": 81.68345381779987,
+                  "y": 56.89653167885992
+                }
+              ]
+            },
+            "passes": 30,
+            "turnovers": 7,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 0,
+            "seed": 101,
+            "seconds": 30,
+            "samples": 44,
+            "closePairs": 82,
+            "crowdedFrames": 8,
+            "narrowFrames": 0,
+            "maxNearBall": 4,
+            "worst": {
+              "time": 14.033333333333319,
+              "pairs": 5,
+              "near": 4,
+              "width": 34.9223571227732,
+              "owner": [
+                1,
+                3
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 82.9449838929235,
+                  "y": 49.62753917979494
+                },
+                {
+                  "n": 3,
+                  "x": 70.04205417258797,
+                  "y": 38.35348702258604
+                },
+                {
+                  "n": 4,
+                  "x": 81.3030435191825,
+                  "y": 26.80460960030456
+                },
+                {
+                  "n": 5,
+                  "x": 82.17313765317624,
+                  "y": 14.705182057021737
+                },
+                {
+                  "n": 6,
+                  "x": 67.28052878383937,
+                  "y": 38.207039453486956
+                },
+                {
+                  "n": 7,
+                  "x": 65.15304926064258,
+                  "y": 31.398655290315304
+                },
+                {
+                  "n": 8,
+                  "x": 69.45377879865678,
+                  "y": 33.66417013958185
+                },
+                {
+                  "n": 9,
+                  "x": 59.786019444415324,
+                  "y": 49.020225632087964
+                },
+                {
+                  "n": 10,
+                  "x": 61.82537709167616,
+                  "y": 31.461329912145583
+                },
+                {
+                  "n": 11,
+                  "x": 60.78455010947088,
+                  "y": 15.833111203376333
+                }
+              ]
+            },
+            "passes": 34,
+            "turnovers": 6,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 1,
+            "seed": 73,
+            "seconds": 30,
+            "samples": 39,
+            "closePairs": 77,
+            "crowdedFrames": 9,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 21.033333333333562,
+              "pairs": 6,
+              "near": 0,
+              "width": 45.32307513255309,
+              "owner": [
+                1,
+                9
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 57.199041175819254,
+                  "y": 48.218285215607686
+                },
+                {
+                  "n": 3,
+                  "x": 53.47264393974339,
+                  "y": 24.83098651176084
+                },
+                {
+                  "n": 4,
+                  "x": 53.299241968934155,
+                  "y": 37.15547936678294
+                },
+                {
+                  "n": 5,
+                  "x": 58.76970461660443,
+                  "y": 35.15229925999805
+                },
+                {
+                  "n": 6,
+                  "x": 57.10581779199805,
+                  "y": 43.87106723868895
+                },
+                {
+                  "n": 7,
+                  "x": 54.9927796479265,
+                  "y": 30.396444481062602
+                },
+                {
+                  "n": 8,
+                  "x": 54.84974230755105,
+                  "y": 32.98003642894642
+                },
+                {
+                  "n": 9,
+                  "x": 41.70615321234527,
+                  "y": 54.298131932946035
+                },
+                {
+                  "n": 10,
+                  "x": 35.222907816795946,
+                  "y": 33.46027253971639
+                },
+                {
+                  "n": 11,
+                  "x": 36.424891155555976,
+                  "y": 8.975056800392942
+                }
+              ]
+            },
+            "passes": 33,
+            "turnovers": 7,
+            "finalTime": 40.00000000000032
+          },
+          {
+            "team": 1,
+            "seed": 101,
+            "seconds": 30,
+            "samples": 49,
+            "closePairs": 114,
+            "crowdedFrames": 12,
+            "narrowFrames": 0,
+            "maxNearBall": 5,
+            "worst": {
+              "time": 24.03333333333371,
+              "pairs": 5,
+              "near": 3,
+              "width": 50.51612864111378,
+              "owner": [
+                0,
+                8
+              ],
+              "positions": [
+                {
+                  "n": 2,
+                  "x": 16.529586660479534,
+                  "y": 36.12642748314899
+                },
+                {
+                  "n": 3,
+                  "x": 25.486745927577253,
+                  "y": 33.836359783298455
+                },
+                {
+                  "n": 4,
+                  "x": 20.84090976573867,
+                  "y": 41.30813661027505
+                },
+                {
+                  "n": 5,
+                  "x": 22.775960887986695,
+                  "y": 52.47600837328007
+                },
+                {
+                  "n": 6,
+                  "x": 22.166334517360003,
+                  "y": 46.099489786458236
+                },
+                {
+                  "n": 7,
+                  "x": 21.29969945528788,
+                  "y": 34.784206871103116
+                },
+                {
+                  "n": 8,
+                  "x": 20.46976546397585,
+                  "y": 48.145823148951486
+                },
+                {
+                  "n": 9,
+                  "x": 43.550564479457634,
+                  "y": 6.999689756073693
+                },
+                {
+                  "n": 10,
+                  "x": 46.345423712225085,
+                  "y": 34.724318213015806
+                },
+                {
+                  "n": 11,
+                  "x": 42.88947246651311,
+                  "y": 57.51581839718747
+                }
+              ]
+            },
+            "passes": 36,
+            "turnovers": 9,
+            "finalTime": 40.00000000000032
+          }
+        ]
+      }
+    }
+  ]
+}

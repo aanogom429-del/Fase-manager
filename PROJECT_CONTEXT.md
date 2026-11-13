@@ -1,5 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## 0.135 — Espacio de apoyos cercanos · 13 de noviembre de 2026
+
+En distributeAttackSpace, destinos de compañeros no asignados como apoyos reciben penalización si quedan a menos de 14 unidades del poseedor. Se conservan dos apoyos seleccionados, destinos bloqueados y ponderaciones de oposición/separación; es preferencia blanda, no una distancia garantizada ni recolocación. Nueva prueba local_support_space falla en 0.134 y pasa en 0.135 (ambos sentidos, preservar apoyo, sin teletransporte).
+
+Once programas ejecutados con éxito: local_support_space, crowded_shape, offball_spacing_perception, teammate_spacing_perception, support_perception, structural_supports, run_spacing, onside_recovery, null_support_focus, continuity y spacing_match_audit. Datos: data/spacing-match-135.json frente a spacing-match-134.json. Cuatro ejecuciones de 30 s: agrupadas/muestras 18/46→2/41; 9/46→6/42; 11/40→13/40; 8/41→5/44. Total 46/173 (26.6%)→26/167 (15.6%). Un caso empeora. Los denominadores cambian porque se muestrea solo con dueño y sin reanudación. Cambios de posesión 6/5/6/6→8/4/2/6: no demuestra mejora universal de conservación. Semillas y posiciones sintéticas, sin validación de partido real ni comparación estadística independiente.
+
+Mantener abierto el problema de concentración local. Próximo foco: caso equipo inicial rojo/semilla73 y conservación de líneas de pase, sin asumir que separar más siempre mejora. Sin barrido global nuevo ni comprobación visual de esta versión.
+
+
 ## Auditoría dinámica de separación · 13 de noviembre de 2026
 
 Motor 0.134 blob 84fdb4eca636fe5c319fb40fe3463c786b5fbbd8. Nuevo tests/spacing_match_audit.cjs y data/spacing-match-134.json: cuatro ejecuciones de 30 s en modo libre (dos poseedores iniciales, semillas 73 y 101), coordenadas finitas y sin excepciones. No son partidos completos ni escenarios reflejados equivalentes. Muestreo cada 0.5 s, excluyendo vuelo sin dueño y reanudaciones.

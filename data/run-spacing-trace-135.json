@@ -1,0 +1,251 @@
+{
+  "engine": "0.135",
+  "initialTeam": 1,
+  "seed": 73,
+  "seconds": 30,
+  "corrections": 1174,
+  "reversed": 236,
+  "examples": [
+    {
+      "time": 11.633333333333328,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 54.603758929198406,
+        "y": 33.32296782477128
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.9307528998938,
+        "y": 23.21329683862353
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 52.03459636977215,
+        "y": 37.74455065906408
+      },
+      "dot": -30.12587300281006
+    },
+    {
+      "time": 11.66666666666666,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 54.439779651683814,
+        "y": 33.36822443001408
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.9307528998938,
+        "y": 23.21329683862353
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 51.936327966234096,
+        "y": 37.75354896378474
+      },
+      "dot": -30.74107079823323
+    },
+    {
+      "time": 11.699999999999994,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 54.28395857240341,
+        "y": 33.44119159385166
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.9307528998938,
+        "y": 23.21329683862353
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 51.84944328847433,
+        "y": 37.789779406965216
+      },
+      "dot": -31.444437458652622
+    },
+    {
+      "time": 11.733333333333327,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 54.13617385543199,
+        "y": 33.538413774604024
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.9307528998938,
+        "y": 23.21329683862353
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 51.77274663396358,
+        "y": 37.85048120588868
+      },
+      "dot": -32.219966878325984
+    },
+    {
+      "time": 11.76666666666666,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 53.997548989908545,
+        "y": 33.65948529801545
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.9307528998938,
+        "y": 23.21329683862353
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 51.70638911928567,
+        "y": 37.935812315341124
+      },
+      "dot": -33.06247806290265
+    },
+    {
+      "time": 11.799999999999994,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 53.869381379432895,
+        "y": 33.80386879683709
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.9307528998938,
+        "y": 23.21329683862353
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 51.65057510551008,
+        "y": 38.04578108024329
+      },
+      "dot": -33.9664174228681
+    },
+    {
+      "time": 11.833333333333327,
+      "team": 1,
+      "jersey": 8,
+      "position": {
+        "x": 53.75255986104504,
+        "y": 33.97114741114412
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 48.569303853778926,
+        "y": 23.40332184332941
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 51.44067389263188,
+        "y": 38.257583656504295
+      },
+      "dot": -33.31521371463314
+    },
+    {
+      "time": 12.89999999999999,
+      "team": 0,
+      "jersey": 6,
+      "position": {
+        "x": 28.929489259522306,
+        "y": 34.46294539332087
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 26.672972223434478,
+        "y": 36.215995585741126
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 26.672972223434478,
+        "y": 31.215995585741126
+      },
+      "dot": -0.600196850801983
+    },
+    {
+      "time": 12.933333333333323,
+      "team": 0,
+      "jersey": 6,
+      "position": {
+        "x": 28.74443240570322,
+        "y": 34.550236056884934
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 26.672972223434478,
+        "y": 36.215995585741126
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 26.672972223434478,
+        "y": 31.215995585741126
+      },
+      "dot": -1.263095549580914
+    },
+    {
+      "time": 13.233333333333322,
+      "team": 0,
+      "jersey": 8,
+      "position": {
+        "x": 32.85425733524747,
+        "y": 41.777759324553514
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 27.62934738688073,
+        "y": 17.799840302726693
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 31.736485372741548,
+        "y": 45.64813108852747
+      },
+      "dot": -86.96320289402998
+    },
+    {
+      "time": 13.266666666666655,
+      "team": 0,
+      "jersey": 8,
+      "position": {
+        "x": 32.78321407891428,
+        "y": 41.79318142999617
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 27.62934738688073,
+        "y": 17.799840302726693
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 31.680642761377428,
+        "y": 45.6602644727734
+      },
+      "dot": -87.10173702378862
+    },
+    {
+      "time": 13.299999999999988,
+      "team": 0,
+      "jersey": 7,
+      "position": {
+        "x": 35.209958150317064,
+        "y": 34.78362475199739
+      },
+      "before": {
+        "stage": "Aplicado · lectura almacenada",
+        "x": 33.858526813409064,
+        "y": 29.246085960805704
+      },
+      "after": {
+        "stage": "Aplicado · Abrir intervalo entre compañeros",
+        "x": 33.858526813409064,
+        "y": 38.2460859608057
+      },
+      "dot": -17.34714659839554
+    }
+  ],
+  "note": "Per-frame commands, not independent events. Negative dot product identifies an avoidance command opposite to the tactical destination. This does not establish that reversal causes crowding. Instrumented and uninstrumented final states match."
+}

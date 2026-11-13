@@ -1,0 +1,17 @@
+--- a/index.html
++++ b/index.html
+@@ -1474,9 +1474,14 @@
+  const ordered=[...targets.keys()].filter(p=>!isKeeper(p)&&!locked.has(p)).sort((a,b)=>(priority.get(a)??3)-(priority.get(b)??3)||a.id-b.id);
+  for(const p of ordered){
+   const anchor=targets.get(p),view=perceivedOpposition(p);
++  const holder=owner?.t===p.t?owner:null,holderView=holder?perceivedOpposition(holder):null;
++  const seen=holder?knownTeammates(holder).filter(m=>m.memoryAge===0):[];
++  const outlets=holder?seen.filter(m=>outletGrade(holder,m,m,holderView,[])>0):[];
++  const baseline=seen.some(m=>m.id===p.id)?outletGrade(holder,p,anchor,holderView,outlets):0;
+   let best=anchor,bestCost=Infinity;
+   for(const offset of [0,-6,6,-12,12]){
+    const q={x:anchor.x,y:clamp(anchor.y+offset,4,60)};
++   if(baseline>0&&outletGrade(holder,p,q,holderView,outlets)<baseline)continue;
+    const overlap=reserved.reduce((sum,r)=>sum+Math.max(0,10-d(q,r))**2,0);
+    const local=owner&&owner.t===p.t&&!p.attackSupport?Math.max(0,14-d(q,owner))**2:0;
+    const cost=(overlap+local)*4+Math.abs(q.y-anchor.y)*.25+Math.max(0,perceivedSpace(anchor,view)-perceivedSpace(q,view));

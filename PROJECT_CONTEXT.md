@@ -1,5 +1,14 @@
 # Fase Manager — Contexto permanente del proyecto
 
+## Auditoría dinámica de separación · 13 de noviembre de 2026
+
+Motor 0.134 blob 84fdb4eca636fe5c319fb40fe3463c786b5fbbd8. Nuevo tests/spacing_match_audit.cjs y data/spacing-match-134.json: cuatro ejecuciones de 30 s en modo libre (dos poseedores iniciales, semillas 73 y 101), coordenadas finitas y sin excepciones. No son partidos completos ni escenarios reflejados equivalentes. Muestreo cada 0.5 s, excluyendo vuelo sin dueño y reanudaciones.
+
+173 muestras con posesión: 46 con más de tres compañeros de campo a menos de 12 unidades del dueño; máximo seis. Cero muestras con anchura del equipo poseedor menor de 30 unidades. Persisten parejas próximas (<6 unidades). Por ejecución: muestras 46/46/40/41, agrupadas 18/9/11/8; pases 37/34/34/35; cambios de posesión 6/5/6/6. Umbrales diagnósticos, no estándares tácticos validados; no comparar estas cifras con ensayos anteriores de distinto horizonte.
+
+Conclusión: la amplitud global no basta para evitar concentración local. No se declara corregida la petición de separación del usuario. Próximo cambio debe trabajar ocupación local y recorridos tras pérdida/recuperación, preservando dos apoyos útiles y la percepción. No aumentar indiscriminadamente la anchura ni publicar otra versión basándose solo en destinos estáticos. Motor permanece 0.134; en este paso se publica auditoría reproducible, no un cambio de comportamiento.
+
+
 ## Verificación visual 0.134 · 12 de noviembre de 2026
 
 Confirmada web pública 0.134 en Chrome. Opciones iniciales: seguridad #6, continuidad #11, superar línea deshabilitada. Observados siete pases sin error del motor en la muestra breve; no equivale a partido completo ni Safari. Captura detectó controles superpuestos: main>.bar asignaba todas las barras inyectadas a grid-row:2. Corregido flujo principal a columna flexible, retirando límite de altura del panel/campo. Commit 452791a385dffc254542c0f827c586e2889ed471, mantiene versión 0.134. Distribución táctica sigue requiriendo observación prolongada; la captura no valida ausencia general de agrupamiento.

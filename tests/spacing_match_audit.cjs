@@ -16,4 +16,4 @@ for(const team of [0,1])for(const seed of [73,101]){
  }
  const end=e.t.get();stats.passes=end.passes;stats.turnovers=end.turnovers;stats.finalTime=end.elapsed;assert(stats.samples>0);results.push(stats);
 }
-console.log(JSON.stringify({engine:'0.134',note:'Synthetic four-run audit; half-second possession samples, fixed 30-second horizon. Thresholds are diagnostic, not validated tactical standards.',results},null,2));
+console.log(JSON.stringify({engine:require('node:fs').readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8').match(/<title>FASE MANAGER · ([^<]+)/)[1],note:'Synthetic four-run audit; half-second possession samples, fixed 30-second horizon. Thresholds are diagnostic, not validated tactical standards.',results},null,2));

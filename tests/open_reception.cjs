@@ -10,9 +10,10 @@ for(const t of [0,1]){
  p.rivalMemory=s.players.filter(q=>q.t!==t).map(q=>({id:q.id,x:50+dir*40,y:4,seenAt:10}));
  for(const q of s.players.filter(q=>q.t!==t)){q.x=50+dir*40;q.y=4;}
  e.t.prepareReception(p,incoming);
- assert(Math.abs(delta(p.controlAngle,angle))<1e-9,'open body is retained');
+ assert(Math.abs(delta(p.controlAngle,t?Math.PI:0))<1e-9,'free forward corridor guides oriented reception');
  const deadline=p.controlUntil;assert(deadline>10,'control still costs time');
- e.t.orientBody(p,p.x,p.y,.05);assert(Math.abs(delta(p.bodyAngle,angle))<1e-9);
+ e.t.orientBody(p,p.x,p.y,.05);assert(Math.abs(delta(p.bodyAngle,angle))<=p.turnRate*1.5*.05+1e-9);
+ p.bodyAngle=angle;
  p.rivalMemory=[];
  for(const q of s.players.filter(q=>q.t!==t)){q.x=p.x-Math.cos(angle)*40;q.y=p.y-Math.sin(angle)*30;}
  e.t.prepareReception(p,incoming);

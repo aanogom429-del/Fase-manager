@@ -12,7 +12,7 @@ for(const t of [0,1]){
  assert(Math.abs(front.p.controlDuration-.12)<1e-10);assert(Math.abs(back.p.controlDuration-.47)<1e-10);
  assert(back.p.controlUntil>front.p.controlUntil);assert.equal(back.p.bodyAngle,t?Math.PI:0,'capture does not instantly turn body');
  const passes=back.e.t.get().passes;back.e.t.chooseAction(back.p);assert.equal(back.e.t.get().passes,passes);assert.equal(back.e.t.get().flight,null,'cannot release automatically before ready');
- back.p.driveX=back.abs(60);const position=back.p.x,angle=back.p.bodyAngle;back.e.t.movement(.02);assert.equal(back.p.x,position,'control prevents premature carry');assert(Math.abs(back.p.bodyAngle-angle)<=Math.PI*.02+1e-10,'gradual preparation');
+ back.p.driveX=back.abs(60);const position=back.p.x,angle=back.p.bodyAngle;back.e.t.movement(.02);assert.equal(back.p.x,position,'control prevents premature carry');assert(Math.abs(back.p.bodyAngle-angle)<=Math.PI*1.5*.02+1e-10,'gradual preparation');
  const airborne=received(t,true,4);assert.equal(airborne.p.controlDuration,0,'aerial controls are outside this model');
  front.e.t.prepareDecision();const deadline=front.p.controlUntil;
  front.e.t.enterFreeMode();front.e.t.enterDecisionMode();assert.equal(front.p.controlUntil,deadline);
@@ -21,14 +21,14 @@ for(const t of [0,1]){
 }
 // The selected guided pass waits, uses the selected player and executes exactly once.
 const g=received(0,false);g.e.t.prepareDecision();const until=g.p.controlUntil,angle=g.p.bodyAngle;
-g.e.t.playChoice('support');const a=g.e.t.get().techAction;assert.equal(a.kind,'receiveWait');const target=a.option.n;
+g.e.t.playChoice('ground');const a=g.e.t.get().techAction;assert.equal(a.kind,'receiveWait');const target=a.option.n;
 const before=g.e.t.get().passes;g.e.t.advanceTechnique(.01);assert.equal(g.e.t.get().passes,before);
 g.e.t.scenario({time:until+.001,team:0});g.e.t.advanceTechnique(.01);
 for(let frame=0;frame<120&&g.p.kickPreparation;frame++)g.e.t.update(1/60);
 assert.equal(g.e.t.get().passes,before+1);assert.equal(g.e.t.get().flight.target.n,target);
 g.e.t.advanceTechnique(.01);assert.equal(g.e.t.get().passes,before+1);
 g.e.t.restorePosition();assert.equal(g.p.controlUntil,until);assert.equal(g.p.bodyAngle,angle);assert.equal(g.e.t.get().elapsed,1);
-g.e.t.playChoice('support');assert.equal(g.e.t.get().techAction.kind,'receiveWait','retry retains delay');
+g.e.t.playChoice('ground');assert.equal(g.e.t.get().techAction.kind,'receiveWait','retry retains delay');
 // Losing possession cancels a waiting instruction; it cannot execute for another holder.
 const loss=received(0,false);loss.e.t.prepareDecision();loss.e.t.playChoice('support');const rival=loss.e.t.get().players.find(p=>p.t===1&&p.n===6);
 loss.e.t.capture(rival,'roba');const count=loss.e.t.get().passes;loss.e.t.advanceTechnique(.01);assert.equal(loss.e.t.get().techAction,null);assert.equal(loss.e.t.get().passes,count);

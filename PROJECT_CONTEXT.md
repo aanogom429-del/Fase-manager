@@ -1,3 +1,11 @@
+# 0.138 · Desplazamientos dibujados y recepción orientada
+
+Modo guiado: tocar compañero azul de campo sin balón y después destino crea orden move con flecha. Se pueden preparar varios y borrar con controles existentes. Destino exacto limitado al campo, sin ajuste automático de fuera de juego (se sigue sancionando), ejecución física con demora y duración 6 s; recepciones/disputa tienen prioridad. No arrastre continuo: interacción por dos toques, compatible con ratón/táctil. Validación de coordenadas en cola e importación.
+
+contextualTurnRate multiplica giro base hasta 1.5 según espacio percibido entre 5 y 8 unidades. Presión cercana y desconocimiento no aceleran. strideDistance usa la misma velocidad angular. Recepción rasa ya abierta orienta hacia delante si corredor visible tiene espacio >5 y riesgo <=3; conserva controles conservadores si no. No cubre todos los controles ni garantiza protección total.
+
+Pasan drawn_runs, space_turning, orientation (tres simulaciones libres de 60 s), reception, open_reception, moving_reception, kick_orientation, opponent_perception, continuity y null_support_focus. Límites angulares de tests adaptados al máximo nuevo; recepción guiada usa ground porque support puede estar deshabilitado legítimamente desde 0.133. Test offball antiguo tiene expectativa obsoleta de pase support a #6. Concentración y hoja de ruta siguen abiertas; esta versión no afirma resolverlas.
+
 # Actualización 0.137 · 14 de noviembre de 2026
 
 Integrada búsqueda lateral de destinos hasta 24 unidades (antes 12), con costes, prioridades, profundidad y movimiento físico conservados. Auditoría docs/ESPACIOS_0137.md y data/space-search-137.json. Agrupación total 51/335→38/331 en ocho simulaciones sintéticas; cambios de posesión 39→51. Mejora espacial parcial, no solución completa ni mejora global demostrada. Caso azul/73 empeora. Nuevas alternativas de vuelo descartadas. Próximo trabajo: salidas útiles al abrir corredores y concentración tras recepción. Diez pruebas dirigidas pasan; no barrido global ni comprobación Safari. Motor pasa a 0.137.

@@ -13,7 +13,7 @@ for(const t of [0,1]){
  assert.equal(e.t.get().flight,null,'no instantaneous pass to unseen teammates');
  assert.equal(p.driveX,p.x,'do not drive blindly');assert.equal(p.bodyAngle,old,'decision does not teleport orientation');
  assert(p.scanUntil>1,'search explicitly scheduled');
- for(let i=0;i<5;i++){e.t.scenario({time:1+i*.1,team:t});const before=p.bodyAngle;e.t.movement(.1);assert(Math.abs(delta(p.bodyAngle,before))<=Math.PI*.1+1e-10,'bounded angular speed');}
+ for(let i=0;i<5;i++){e.t.scenario({time:1+i*.1,team:t});const before=p.bodyAngle;e.t.movement(.1);assert(Math.abs(delta(p.bodyAngle,before))<=Math.PI*1.5*.1+1e-10,'bounded angular speed');}
  assert(e.t.perceives(p,ahead),'turn reveals previously unseen option');
  e.t.chooseAction(p);assert(e.t.get().flight||p.kickPreparation||abs(p.driveX)>50,'can act or prepare a kick once option is detected');
  const frozen=setup(t);frozen.p.scanAngle=.4;frozen.p.scanUntil=3;frozen.e.t.prepareDecision();

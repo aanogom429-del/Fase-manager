@@ -1,3 +1,7 @@
+# Actualización 0.137 · 14 de noviembre de 2026
+
+Integrada búsqueda lateral de destinos hasta 24 unidades (antes 12), con costes, prioridades, profundidad y movimiento físico conservados. Auditoría docs/ESPACIOS_0137.md y data/space-search-137.json. Agrupación total 51/335→38/331 en ocho simulaciones sintéticas; cambios de posesión 39→51. Mejora espacial parcial, no solución completa ni mejora global demostrada. Caso azul/73 empeora. Nuevas alternativas de vuelo descartadas. Próximo trabajo: salidas útiles al abrir corredores y concentración tras recepción. Diez pruebas dirigidas pasan; no barrido global ni comprobación Safari. Motor pasa a 0.137.
+
 # Fase Manager — Contexto permanente del proyecto
 
 ## 0.136 — Coherencia de la narración de pases · 13 de noviembre de 2026

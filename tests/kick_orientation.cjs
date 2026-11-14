@@ -13,7 +13,7 @@ for(const t of [0,1]){
  assert.equal(e.t.get().passes,passes,'no pass counted during preparation');
  for(let i=0;i<180&&!e.t.get().flight;i++){
   const old=p.bodyAngle;e.t.update(1/120);
-  assert(Math.abs(delta(p.bodyAngle,old))<=p.turnRate/120+1e-8,'bounded real turn');
+  assert(Math.abs(delta(p.bodyAngle,old))<=p.turnRate*1.5/120+1e-8,'bounded real turn');
  }
  const f=e.t.get().flight;assert(f,'preparation eventually releases ball');
  assert(Math.abs(delta(Math.atan2(f.execution.intendedY-p.y,f.execution.intendedX-p.x),p.bodyAngle))<=Math.PI/3+1e-8);

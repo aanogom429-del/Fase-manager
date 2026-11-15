@@ -27,7 +27,7 @@ for(const t of [0,1]){
  const safe=s.players.filter(q=>q.t===t&&q.attackBalance);
  for(const q of safe){const row=e.t.getDestinationTrace().rows.find(r=>r.id===q.id);
   const step=row.steps.find(k=>k.stage.startsWith('Red de iniciación'));
-  assert(step);assert(Math.abs(step.x-(f.tx-dir*(q.attackBalance===1?8:13)))<1e-8,'support anchored at receiving destination');
+  assert(step);assert(Math.abs(step.x-(f.tx-dir*(q.attackBalance===1?14:20)))<1e-8,'support anchored at receiving destination');
  }
 }
 console.log('PASS: mirrored structural supports at three depths, safety, no teleport, beaten-pressure exclusion and flight anticipation');

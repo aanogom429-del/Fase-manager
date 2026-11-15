@@ -1,0 +1,23 @@
+--- index.html
++++ index.html
+@@ -1499,6 +1499,20 @@
+    const cost=(overlap+local)*4+Math.abs(q.y-anchor.y)*.25+Math.max(0,perceivedSpace(anchor,view)-perceivedSpace(q,view));
+    if(cost<bestCost){bestCost=cost;best=q;}
+   }
++  // Si toda la franja lateral está ocupada, buscar otro escalón cercano.
++  // Apoyos y órdenes conservan su altura; el equilibrio sigue detrás del balón.
++  if(!p.attackSupport&&reserved.some(r=>d(best,r)<8)){
++   const dir=direction(p.t),line=owner?.t===p.t?offsideLine(p.t,owner.x):null;
++   for(const depth of [-6,6])for(const offset of [0,-6,6,-12,12,-18,18,-24,24]){
++    const q={x:clamp(anchor.x+dir*depth,4,96),y:clamp(anchor.y+offset,4,60)};
++    if(line!==null&&(q.x-line)*dir>-.7)continue;
++    if(p.attackBalance&&owner?.t===p.t&&(q.x-owner.x)*dir>-8)continue;
++    const overlap=reserved.reduce((sum,r)=>sum+Math.max(0,10-d(q,r))**2,0);
++    const local=owner&&owner.t===p.t?Math.max(0,14-d(q,owner))**2:0;
++    const cost=(overlap+local)*4+Math.abs(q.y-anchor.y)*.25+Math.abs(q.x-anchor.x)*2+Math.max(0,perceivedSpace(anchor,view)-perceivedSpace(q,view));
++    if(cost<bestCost){bestCost=cost;best=q;}
++   }
++  }
+   targets.set(p,best);reserved.push(best);
+   if(d(best,anchor)>.01)traceDestination(p,'Ocupación racional · espacio propio',best.x,best.y);
+  }

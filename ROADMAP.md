@@ -1,3 +1,7 @@
+# Actualización 0.140 · 15 de noviembre de 2026
+
+Integrado equilibrio a mayor profundidad para diferenciarlo de los apoyos cortos. Mejora espacial media parcial: consultar docs/EQUILIBRIO_0140.md para datos, costes y casos adversos. La amplitud global empeora en ocho muestras y no está demostrada una mejora de conservación. Prioridad siguiente: sostener amplitud al ganar profundidad y comprobar conectividad tras recepción en rojo/73. Hitos A1–A7 y Safari/iPhone pendientes. Las entradas inferiores son históricas.
+
 # Fase Manager — Hoja de ruta de continuidad
 
 ## 0.121 — Pases a apoyos en movimiento · 6 de noviembre de 2026

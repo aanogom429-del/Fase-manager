@@ -1,0 +1,349 @@
+{
+  "baseline": "0.139",
+  "candidate": "0.140",
+  "secondsPerRun": 30,
+  "sampling": "Every 0.5 seconds with owner and no restart",
+  "limitations": "Synthetic deterministic scenarios, not real-match validation. Thresholds <6 for pairs and >3 teammates within 12 of owner are diagnostic. Seeds 509/617 were additional checks after design; not an independent study.",
+  "baselineRuns": [
+    {
+      "team": 0,
+      "seed": 73,
+      "samples": 36,
+      "closePairs": 60,
+      "crowdedFrames": 3,
+      "narrowFrames": 0,
+      "passes": 32,
+      "turnovers": 2
+    },
+    {
+      "team": 0,
+      "seed": 101,
+      "samples": 42,
+      "closePairs": 71,
+      "crowdedFrames": 1,
+      "narrowFrames": 0,
+      "passes": 24,
+      "turnovers": 3
+    },
+    {
+      "team": 1,
+      "seed": 73,
+      "samples": 42,
+      "closePairs": 56,
+      "crowdedFrames": 0,
+      "narrowFrames": 0,
+      "passes": 27,
+      "turnovers": 8
+    },
+    {
+      "team": 1,
+      "seed": 101,
+      "samples": 38,
+      "closePairs": 74,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 30,
+      "turnovers": 11
+    },
+    {
+      "team": 0,
+      "seed": 211,
+      "samples": 42,
+      "closePairs": 77,
+      "crowdedFrames": 10,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 2
+    },
+    {
+      "team": 0,
+      "seed": 307,
+      "samples": 40,
+      "closePairs": 57,
+      "crowdedFrames": 3,
+      "narrowFrames": 0,
+      "passes": 32,
+      "turnovers": 3
+    },
+    {
+      "team": 1,
+      "seed": 211,
+      "samples": 38,
+      "closePairs": 65,
+      "crowdedFrames": 10,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 4
+    },
+    {
+      "team": 1,
+      "seed": 307,
+      "samples": 39,
+      "closePairs": 57,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 36,
+      "turnovers": 3
+    },
+    {
+      "team": 0,
+      "seed": 509,
+      "samples": 44,
+      "closePairs": 73,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 30,
+      "turnovers": 6
+    },
+    {
+      "team": 0,
+      "seed": 617,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 7,
+      "narrowFrames": 0,
+      "passes": 35,
+      "turnovers": 7
+    },
+    {
+      "team": 1,
+      "seed": 509,
+      "samples": 43,
+      "closePairs": 74,
+      "crowdedFrames": 5,
+      "narrowFrames": 0,
+      "passes": 33,
+      "turnovers": 5
+    },
+    {
+      "team": 1,
+      "seed": 617,
+      "samples": 41,
+      "closePairs": 56,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 32,
+      "turnovers": 9
+    }
+  ],
+  "candidateRuns": [
+    {
+      "team": 0,
+      "seed": 73,
+      "samples": 42,
+      "closePairs": 46,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 2
+    },
+    {
+      "team": 0,
+      "seed": 101,
+      "samples": 37,
+      "closePairs": 50,
+      "crowdedFrames": 1,
+      "narrowFrames": 0,
+      "passes": 28,
+      "turnovers": 2
+    },
+    {
+      "team": 1,
+      "seed": 73,
+      "samples": 47,
+      "closePairs": 53,
+      "crowdedFrames": 9,
+      "narrowFrames": 1,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "team": 1,
+      "seed": 101,
+      "samples": 48,
+      "closePairs": 55,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 33,
+      "turnovers": 5
+    },
+    {
+      "team": 0,
+      "seed": 211,
+      "samples": 47,
+      "closePairs": 87,
+      "crowdedFrames": 6,
+      "narrowFrames": 2,
+      "passes": 34,
+      "turnovers": 5
+    },
+    {
+      "team": 0,
+      "seed": 307,
+      "samples": 39,
+      "closePairs": 71,
+      "crowdedFrames": 1,
+      "narrowFrames": 4,
+      "passes": 30,
+      "turnovers": 7
+    },
+    {
+      "team": 1,
+      "seed": 211,
+      "samples": 42,
+      "closePairs": 76,
+      "crowdedFrames": 2,
+      "narrowFrames": 0,
+      "passes": 23,
+      "turnovers": 5
+    },
+    {
+      "team": 1,
+      "seed": 307,
+      "samples": 46,
+      "closePairs": 59,
+      "crowdedFrames": 3,
+      "narrowFrames": 0,
+      "passes": 30,
+      "turnovers": 12
+    },
+    {
+      "team": 0,
+      "seed": 509,
+      "samples": 41,
+      "closePairs": 51,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 33,
+      "turnovers": 7
+    },
+    {
+      "team": 0,
+      "seed": 617,
+      "samples": 43,
+      "closePairs": 43,
+      "crowdedFrames": 2,
+      "narrowFrames": 1,
+      "passes": 33,
+      "turnovers": 10
+    },
+    {
+      "team": 1,
+      "seed": 509,
+      "samples": 38,
+      "closePairs": 64,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 26,
+      "turnovers": 2
+    },
+    {
+      "team": 1,
+      "seed": 617,
+      "samples": 40,
+      "closePairs": 46,
+      "crowdedFrames": 8,
+      "narrowFrames": 0,
+      "passes": 33,
+      "turnovers": 6
+    }
+  ],
+  "rejectedDepthSearch": [
+    {
+      "team": 0,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 60,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 4
+    },
+    {
+      "team": 0,
+      "seed": 101,
+      "samples": 39,
+      "closePairs": 49,
+      "crowdedFrames": 5,
+      "narrowFrames": 0,
+      "passes": 30,
+      "turnovers": 5
+    },
+    {
+      "team": 1,
+      "seed": 73,
+      "samples": 42,
+      "closePairs": 82,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 29,
+      "turnovers": 4
+    },
+    {
+      "team": 1,
+      "seed": 101,
+      "samples": 43,
+      "closePairs": 68,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 30,
+      "turnovers": 4
+    },
+    {
+      "team": 0,
+      "seed": 211,
+      "samples": 36,
+      "closePairs": 35,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 7
+    },
+    {
+      "team": 0,
+      "seed": 307,
+      "samples": 38,
+      "closePairs": 61,
+      "crowdedFrames": 7,
+      "narrowFrames": 0,
+      "passes": 35,
+      "turnovers": 4
+    },
+    {
+      "team": 1,
+      "seed": 211,
+      "samples": 39,
+      "closePairs": 59,
+      "crowdedFrames": 3,
+      "narrowFrames": 0,
+      "passes": 30,
+      "turnovers": 3
+    },
+    {
+      "team": 1,
+      "seed": 307,
+      "samples": 39,
+      "closePairs": 76,
+      "crowdedFrames": 11,
+      "narrowFrames": 0,
+      "passes": 35,
+      "turnovers": 4
+    }
+  ],
+  "baselineRunsTotals": {
+    "samples": 488,
+    "crowdedFrames": 59,
+    "closePairs": 791,
+    "narrowFrames": 0,
+    "passes": 376,
+    "turnovers": 63
+  },
+  "candidateRunsTotals": {
+    "samples": 510,
+    "crowdedFrames": 50,
+    "closePairs": 701,
+    "narrowFrames": 8,
+    "passes": 365,
+    "turnovers": 68
+  }
+}

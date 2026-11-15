@@ -1,3 +1,7 @@
+# 0.141 · Primera integración de la matriz posicional del usuario
+
+Referencia y límites: docs/MATRIZ_POSICIONAL.md. Añadido 3-4-3 (tres centrales, dos carrileros, dos medios, dos atacantes interiores y punta); amplitud automática reservada a carrileros en ese sistema, referencias interiores 22/42, sectores C1-C5/Z1-Z6 relativos al jugador visibles en inspector. No implementación total de AO/DO/TO/TD ni 6600 casos, ni mejora estadística demostrada. No se integra el ensayo anterior de protección de amplitud; cambia la prioridad a la matriz aportada. Próximo: complementariedad lateral/extremo y carrilero/interior según ocupación percibida y condiciones de cancelación; seguir con pivotes/puntas y defensa/transiciones. Mantener abiertos concentración y A1-A7.
+
 # 0.140 · Equilibrio separado de los apoyos · 15 de noviembre de 2026
 
 Equilibrio en iniciación: 8/13→14/20 unidades detrás del balón; estructura estable: 12/18→18/24. Sin cambios a apoyos, órdenes explícitas, percepción, reglas ni movimiento físico. Informe docs/EQUILIBRIO_0140.md; data/equilibrium-spacing-140.json. Doce simulaciones de 30 s por variante frente a 0.139: agrupadas 59/488→50/510 (12,1→9,8 %); parejas próximas 791→701 (1,62→1,37 por muestra); anchura <30 aumenta 0→8 muestras; cambios de posesión 63→68. Mejora espacial parcial con costes y casos adversos; no solución completa. Contraste adicional 509/617 mantiene mejora agregada, pero rojo/617 empeora. Rojo/73 empeora notablemente. No presentar como mejora universal de conservación ni como validación real.

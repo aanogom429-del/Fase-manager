@@ -1,3 +1,9 @@
+# 0.143 · Conexión percibida para complementariedad
+
+Antes de sugerir otro carril a lateral/carrilero, flankComplement exige poseedor propio conocido hace <=0,25 s y riesgo de línea <=3 desde su posición observada al destino. Sin poseedor conocido o en vuelo sin dueño se descarta. Inspector registra motivo de cancelación. No lee posiciones ocultas, no congela jugador ni garantiza éxito; se conserva el reparto previo al descartar. Informe docs/CONEXION_0143.md.
+
+Seis tests pasan; nueva flank_connection falla en 0.142 y pasa en 0.143 (destino libre pero conexión bloqueada, cuatro reflejos, memoria/ausencia y posiciones ocultas). Cuatro simulaciones de 30 s: concentración20/174, parejas204, estrechas1 y cambios14 en ambas; pases122→123. No mejora general demostrada ni Safari. Datos data/flank-connection-143.json. Próximo: estabilidad temporal y recepción efectiva tras cambios de orientación. Matriz completa, concentración y A1–A7 abiertos.
+
 # 0.142 · Complementariedad local de carriles
 
 Regla flankComplement en 4-3-3, 4-2-3-1 y 3-4-3: lateral/carrilero interpreta atacante observado recientemente del mismo lado y altura próxima. Atacante abierto → preferencia interior; interiorizado → preferencia exterior. Espacio visible/perceptivamente disponible y sin compañero próximo; cancela por memoria antigua, ocupación o presión. Preferencia blanda, no movimiento obligatorio. Excluye apoyo, equilibrio, relevo y destinos bloqueados. Inspector muestra motivo. Docs/COMPLEMENTARIEDAD_0142.md (ruta real: docs/COMPLEMENTARIEDAD_0142.md).

@@ -1,3 +1,9 @@
+# 0.139 · Seguimiento visible de órdenes · 15 de noviembre de 2026
+
+Las flechas permanecen durante la ejecución: discontinuas para planes, continuas para órdenes en curso, origen actualizado con el jugador. Una nueva orden del mismo jugador sustituye su flecha anterior; la flecha desaparece al terminar/podar la orden. No cambia movimiento ni percepción.
+
+Verificación Chrome de 0.138 publicada: seleccionar azul #8, destino sobre campo, flecha preparada, ejecutar pase de seguridad, orden en curso y movimiento físico observado; jugada termina con posesión azul #6. Nueva regresión offball_arrow_lifecycle comprueba preparación, ejecución visible, acercamiento físico durante pase, actualización del origen, sustitución y caducidad. No prueba llegada a todos los destinos, ni Safari. Concentración local sigue pendiente.
+
 # 0.138 · Desplazamientos dibujados y recepción orientada
 
 Modo guiado: tocar compañero azul de campo sin balón y después destino crea orden move con flecha. Se pueden preparar varios y borrar con controles existentes. Destino exacto limitado al campo, sin ajuste automático de fuera de juego (se sigue sancionando), ejecución física con demora y duración 6 s; recepciones/disputa tienen prioridad. No arrastre continuo: interacción por dos toques, compatible con ratón/táctil. Validación de coordenadas en cola e importación.

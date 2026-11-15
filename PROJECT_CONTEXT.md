@@ -1,3 +1,9 @@
+# 0.142 · Complementariedad local de carriles
+
+Regla flankComplement en 4-3-3, 4-2-3-1 y 3-4-3: lateral/carrilero interpreta atacante observado recientemente del mismo lado y altura próxima. Atacante abierto → preferencia interior; interiorizado → preferencia exterior. Espacio visible/perceptivamente disponible y sin compañero próximo; cancela por memoria antigua, ocupación o presión. Preferencia blanda, no movimiento obligatorio. Excluye apoyo, equilibrio, relevo y destinos bloqueados. Inspector muestra motivo. Docs/COMPLEMENTARIEDAD_0142.md (ruta real: docs/COMPLEMENTARIEDAD_0142.md).
+
+Diez tests dirigidos pasan. Cuatro simulaciones 4-3-3 de 30 s por variante sin mejora agregada de concentración: ambas20/174, parejas204, estrechas1, cambios14; pases123→122. Datos data/flank-complement-142.json. No afirmar resuelto agrupamiento, ni completa matriz/defensa/transiciones. Siguiente: estabilidad de funciones ante cambios de orientación y utilidad real de líneas de pase. Mantener A1–A7 y Safari abiertos.
+
 # 0.141 · Primera integración de la matriz posicional del usuario
 
 Referencia y límites: docs/MATRIZ_POSICIONAL.md. Añadido 3-4-3 (tres centrales, dos carrileros, dos medios, dos atacantes interiores y punta); amplitud automática reservada a carrileros en ese sistema, referencias interiores 22/42, sectores C1-C5/Z1-Z6 relativos al jugador visibles en inspector. No implementación total de AO/DO/TO/TD ni 6600 casos, ni mejora estadística demostrada. No se integra el ensayo anterior de protección de amplitud; cambia la prioridad a la matriz aportada. Próximo: complementariedad lateral/extremo y carrilero/interior según ocupación percibida y condiciones de cancelación; seguir con pivotes/puntas y defensa/transiciones. Mantener abiertos concentración y A1-A7.

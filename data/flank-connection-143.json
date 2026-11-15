@@ -1,0 +1,89 @@
+{
+  "baseline": "0.142",
+  "candidate": "0.143",
+  "note": "Four synthetic default 4-3-3 runs per variant, 30 s each, seeds 73/101 and initial teams 0/1. No broad tactical validation.",
+  "baselineRuns": [
+    {
+      "team": 0,
+      "seed": 73,
+      "samples": 42,
+      "closePairs": 46,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 2
+    },
+    {
+      "team": 0,
+      "seed": 101,
+      "samples": 37,
+      "closePairs": 50,
+      "crowdedFrames": 1,
+      "narrowFrames": 0,
+      "passes": 27,
+      "turnovers": 2
+    },
+    {
+      "team": 1,
+      "seed": 73,
+      "samples": 47,
+      "closePairs": 53,
+      "crowdedFrames": 9,
+      "narrowFrames": 1,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "team": 1,
+      "seed": 101,
+      "samples": 48,
+      "closePairs": 55,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 33,
+      "turnovers": 5
+    }
+  ],
+  "candidateRuns": [
+    {
+      "team": 0,
+      "seed": 73,
+      "samples": 42,
+      "closePairs": 46,
+      "crowdedFrames": 4,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 2
+    },
+    {
+      "team": 0,
+      "seed": 101,
+      "samples": 37,
+      "closePairs": 50,
+      "crowdedFrames": 1,
+      "narrowFrames": 0,
+      "passes": 28,
+      "turnovers": 2
+    },
+    {
+      "team": 1,
+      "seed": 73,
+      "samples": 47,
+      "closePairs": 53,
+      "crowdedFrames": 9,
+      "narrowFrames": 1,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "team": 1,
+      "seed": 101,
+      "samples": 48,
+      "closePairs": 55,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 33,
+      "turnovers": 5
+    }
+  ]
+}

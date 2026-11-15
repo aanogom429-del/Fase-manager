@@ -1,3 +1,56 @@
+# Hoja de ruta vigente · matriz posicional integral · 0.143
+
+Actualizada el 15 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.
+
+## Tarea activa y siguiente entrega
+
+MP2: completar la complementariedad lateral/extremo y carrilero/atacante interior. Ya existen preferencias condicionadas por ocupación observada (0.142) y conexión de pase percibida (0.143). Siguiente paso: estabilidad de la función ante cambios de orientación, cancelación/reasignación y recepción efectiva. Incluir contracasos con espacio ocupado, presión, observación desactualizada y órdenes manuales. No cerrar MP2 hasta verificar movimiento físico y utilidad de la conexión en secuencias, no solo destinos calculados.
+
+## Alcance, orden y estado
+
+| Bloque | Desarrollo comprometido | Estado en 0.143 | Criterio de cierre |
+|---|---|---|---|
+| MP1 · Referencias | Cinco sistemas, 11 posiciones, 30 sectores; distinguir roles nominales y momentáneos | Parcial: cinco sistemas y sectores; distinción carrilero/atacante interior en 3-4-3 | Roles detallados de los 55 puestos y convenciones simétricas verificadas, sin convertir zonas en puestos fijos |
+| MP2 · Complementariedad exterior | Lateral-interior-extremo, lateral-extremo-mediapunta, carrilero-atacante; incluir medio exterior de 4-4-2 y carrilero-interior de 3-5-2 | En curso: primera regla en 4-3-3, 4-2-3-1 y 3-4-3 | Alternativas activables/cancelables, estabilidad temporal, ocupación compatible y recepción efectiva |
+| MP3 · Conexiones interiores | Pivote-interiores, doble pivote escalonado, pareja de medios, mediapunta-delantero | Pendiente de adaptación a la matriz | Unos ofrecen conexión y otros equilibrio; evitar dos respuestas redundantes al mismo estímulo |
+| MP4 · Apoyo y profundidad | Punta que desciende, ruptura de interior/extremo, alternancia de dos delanteros, fijación sin movimiento obligatorio | Pendiente | Ocupación del espacio liberado sin carreras automáticas ni pérdida injustificada de equilibrio |
+| MP5 · Progresión y compensación | Conducción del central exterior/central, avance o interiorización del lateral/carrilero, pivote entre centrales, cadena de compensaciones | Existen mecanismos previos; adaptación pendiente | Soluciones a distintas alturas, protección de espacio liberado y respeto a órdenes explícitas |
+| MP6 · AO por zona y carril | Tablas ofensivas Z1–Z6 de cada sistema; relaciones C1–C5, amplitud alejada y reorganización tras cambio de orientación | Parcial; falta correspondencia completa | Reglas por rol/contexto trazables y alternativas según oposición; sin trasladar todo el bloque hacia el balón |
+| MP7 · DO por sistema | Primera presión, distancias de líneas, intervalos, coberturas, mediapunta junto a punta, línea de cinco contextual con carrileros | Motor defensivo previo disponible; matriz pendiente | Presión/cobertura/repliegue coherentes con bloque, balón, orientación y protección; convenciones de zonas explícitas |
+| MP8 · TO | Recuperaciones Z1–Z6: conservar/progresar, primer apoyo, profundidad, acompañamiento, finalización con ventaja y equilibrio | Mecanismos previos parciales; matriz pendiente | Selección contextual y coordinación entre próximos, intermedios y alejados, sin ataque rápido obligatorio |
+| MP9 · TD | Pérdidas Z1–Z6: presionar/temporizar/replegar, cerrar centro, proteger profundidad y contraataque | Mecanismos previos parciales; matriz pendiente | Decidir según distancia, orientación, coberturas y ventaja; no hacer que todos persigan al poseedor |
+| MP10 · Decisión explicable | D_i=f(S,P_i,B,C,A,M): rol, objetivo, sector, desplazamiento, relación, activación, cancelación y alternativa | Inspector parcial | Salida completa y verificable por jugador, con percepción limitada, prioridades y revisión temporal |
+| MP11 · Validación integrada | Calidad espacial, temporal, coordinación, adaptación, eficacia y equilibrio | Pruebas sintéticas parciales | Secuencias en ambos sentidos y cinco sistemas, contracasos, muestras adicionales, contraste real y verificación Safari/iPhone |
+
+## Trazabilidad de las catorce secciones aportadas
+
+I (estructura, sectores, momentos y códigos) → MP1/MP10.
+II–VI (cinco matrices de posiciones y reglas R1–R6) → MP1–MP9: cubrir cada regla por sistema, no solo una regla genérica compartida.
+VII (carriles) → MP2/MP6.
+VIII (defensa por zona) → MP7.
+IX (transiciones) → MP8/MP9.
+X (relaciones por sistema) → MP2–MP5.
+XI (condiciones de movilidad) → MP2–MP10.
+XII (1320/6600 contextos) → cobertura combinatoria de MP11, sin afirmar que sean 6600 movimientos o fichas ya verificadas.
+XIII (función y salida de decisión) → MP10.
+XIV (calidad táctica) → MP11, aplicada también a cada incremento.
+
+DL/DT/DD son descripciones geométricas; AP/AL/RP/CP expresan funciones de movilidad; FI puede ser estática y CB/BA son relaciones funcionales. No imponer una trayectoria única por etiqueta.
+
+Z1 propia/Z6 rival siempre respecto al equipo analizado. La tabla defensiva aportada se interpreta desde el equipo atacante: documentar esa conversión antes de usarla en decisiones del defensor. C1–C5 se leen mirando hacia la portería rival.
+
+## Reglas de entrega y límites
+
+Implementar toda la matriz por bloques funcionales, con prioridades, alternativas y condiciones; no codificar posiciones obligatorias ni 6600 guiones rígidos. Cada entrega debe indicar qué reglas pasan a ejecución real, sus pruebas, resultados y límites. Conservar órdenes dibujadas, recepción, disputa, percepción, movimiento físico y reglas arbitrales.
+
+El cierre de un bloque requiere evidencia de su comportamiento; la presencia de código o una prueba aislada no basta. Mantener registro por sistema, momento, zona/carril y regla implementada. Las mejoras de distribución deben contrastarse también con conexión, conservación, amplitud y protección tras pérdida.
+
+No se promete una fecha ni un número fijo de versiones para finalizar. Los hitos A1–A7 del motor siguen abiertos y esta ruta los complementa; no los sustituye ni los da por completados. La concentración general no está resuelta y la 0.143 no demuestra reducción agregada del agrupamiento.
+
+---
+
+## Historial de la hoja de ruta
+
 # Actualización 0.140 · 15 de noviembre de 2026
 
 Integrado equilibrio a mayor profundidad para diferenciarlo de los apoyos cortos. Mejora espacial media parcial: consultar docs/EQUILIBRIO_0140.md para datos, costes y casos adversos. La amplitud global empeora en ocho muestras y no está demostrada una mejora de conservación. Prioridad siguiente: sostener amplitud al ganar profundidad y comprobar conectividad tras recepción en rojo/73. Hitos A1–A7 y Safari/iPhone pendientes. Las entradas inferiores son históricas.

@@ -1,3 +1,9 @@
+# 0.140 · Equilibrio separado de los apoyos · 15 de noviembre de 2026
+
+Equilibrio en iniciación: 8/13→14/20 unidades detrás del balón; estructura estable: 12/18→18/24. Sin cambios a apoyos, órdenes explícitas, percepción, reglas ni movimiento físico. Informe docs/EQUILIBRIO_0140.md; data/equilibrium-spacing-140.json. Doce simulaciones de 30 s por variante frente a 0.139: agrupadas 59/488→50/510 (12,1→9,8 %); parejas próximas 791→701 (1,62→1,37 por muestra); anchura <30 aumenta 0→8 muestras; cambios de posesión 63→68. Mejora espacial parcial con costes y casos adversos; no solución completa. Contraste adicional 509/617 mantiene mejora agregada, pero rojo/617 empeora. Rojo/73 empeora notablemente. No presentar como mejora universal de conservación ni como validación real.
+
+13 pruebas dirigidas pasan; no barrido global ni comprobación Safari. Nuevo balance_distance cubre dos equipos y cuatro sistemas, iniciación/estructura estable y órdenes dibujadas. Alternativa de búsqueda longitudinal ±6 descartada por mayor concentración; parche y datos conservados. Siguiente foco: amplitud de jugadores alejados y salidas útiles tras recepción rojo/73. A1–A7 siguen abiertos.
+
 # 0.139 · Seguimiento visible de órdenes · 15 de noviembre de 2026
 
 Las flechas permanecen durante la ejecución: discontinuas para planes, continuas para órdenes en curso, origen actualizado con el jugador. Una nueva orden del mismo jugador sustituye su flecha anterior; la flecha desaparece al terminar/podar la orden. No cambia movimiento ni percepción.

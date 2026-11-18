@@ -1,3 +1,9 @@
+# 0.145 · Continuidad de preferencias exteriores · 18 de noviembre de 2026
+
+MP2: retención máxima de 0,6 s en la franja intermedia entre ocupación exterior/interior, con el mismo compañero/sistema/lado/poseedor. Revalidación perceptiva y espacial en cada consulta; evidencia clara reasigna inmediatamente. Prioridades, órdenes, reinicio, cambio de sistema y pérdida cancelan el estado. Preferencia blanda, no destino obligatorio. Campos escalares compatibles con instantáneas.
+
+Diez pruebas dirigidas pasan; flank_stability cubre 20 contextos y falla en 0.144. Cuatro simulaciones de 30 s por variante: agrupadas 30/171 → 27/169, parejas 262 → 256, estrechas 2 → 2, pases 119 → 116, cambios 14 → 13. Solo cambia 4-4-2 rojo; no demuestra mejora general. Informe docs/ESTABILIDAD_0145.md, datos data/flank-stability-145.json. Próximo: recepción efectiva tras cambio de orientación y contracaso con cierre; después MP3. MP2 y matriz integral permanecen abiertos, sin validación Safari ni partidos reales.
+
 # 0.144 · MP2 extendido a cinco sistemas · 18 de noviembre de 2026
 
 La hoja de ruta integral MP1–MP11 está publicada en ROADMAP.md (commit inicial562371d30619be01035c31c7c1f7a772fc4285b0); esta actualización sincroniza el contexto que quedó pendiente por límite de uso. Tarea activa MP2, sin dar por completada la matriz ni A1–A7.

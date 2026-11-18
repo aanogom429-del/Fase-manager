@@ -1,0 +1,96 @@
+{
+  "baseline": "0.144",
+  "candidate": "0.145",
+  "baselineResults": [
+    {
+      "formation": "4-4-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 41,
+      "closePairs": 57,
+      "crowdedFrames": 8,
+      "narrowFrames": 2,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "formation": "4-4-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 44,
+      "closePairs": 63,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 4
+    },
+    {
+      "formation": "3-5-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 7,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 1
+    },
+    {
+      "formation": "3-5-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 9,
+      "narrowFrames": 0,
+      "passes": 26,
+      "turnovers": 4
+    }
+  ],
+  "candidateResults": [
+    {
+      "formation": "4-4-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 41,
+      "closePairs": 57,
+      "crowdedFrames": 8,
+      "narrowFrames": 2,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "formation": "4-4-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 42,
+      "closePairs": 57,
+      "crowdedFrames": 3,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 3
+    },
+    {
+      "formation": "3-5-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 7,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 1
+    },
+    {
+      "formation": "3-5-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 9,
+      "narrowFrames": 0,
+      "passes": 26,
+      "turnovers": 4
+    }
+  ]
+}

@@ -1,3 +1,11 @@
+# 0.144 · MP2 extendido a cinco sistemas · 18 de noviembre de 2026
+
+La hoja de ruta integral MP1–MP11 está publicada en ROADMAP.md (commit inicial562371d30619be01035c31c7c1f7a772fc4285b0); esta actualización sincroniza el contexto que quedó pendiente por límite de uso. Tarea activa MP2, sin dar por completada la matriz ni A1–A7.
+
+Complementariedad ahora incluye lateral–medio exterior en4-4-2 y carrilero–interior en3-5-2. Distingue pareja central/pivote por función del sistema; ubicación observada determina lado, ocupación y proximidad. Conserva percepción, conexión, apoyos/equilibrio/relevos y órdenes. No modifica defensa/transiciones. Nueve tests pasan; nueva flank_systems falla en0.143 y pasa en0.144, incluyendo aproximación física controlada (no recepción real).
+
+Cuatro simulaciones de30s por variante, sistemas4-4-2/3-5-2 y ambos poseedores iniciales, semilla73: agrupadas29/169→30/171, parejas271→262, estrechas3→2, cambios19→14, pases113→119.4-4-2 sin cambio de indicadores;3-5-2 azul mejora agrupadas11→7 y rojo empeora4→9. Sin mejora agregada de concentración demostrada. Informe docs/COMPLEMENTARIEDAD_0144.md y datos data/flank-systems-144.json. Próximo: estabilidad/cancelación/reasignación en secuencias y recepción efectiva; luego MP3–MP11. No barrido global ni Safari.
+
 # 0.143 · Conexión percibida para complementariedad
 
 Antes de sugerir otro carril a lateral/carrilero, flankComplement exige poseedor propio conocido hace <=0,25 s y riesgo de línea <=3 desde su posición observada al destino. Sin poseedor conocido o en vuelo sin dueño se descarta. Inspector registra motivo de cancelación. No lee posiciones ocultas, no congela jugador ni garantiza éxito; se conserva el reparto previo al descartar. Informe docs/CONEXION_0143.md.

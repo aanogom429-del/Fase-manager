@@ -1,0 +1,97 @@
+{
+  "baseline": "0.143",
+  "candidate": "0.144",
+  "note": "Four synthetic 30-second runs per variant, one seed per system/team. Not independent real-match validation.",
+  "baselineRuns": [
+    {
+      "formation": "4-4-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 41,
+      "closePairs": 57,
+      "crowdedFrames": 8,
+      "narrowFrames": 2,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "formation": "4-4-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 44,
+      "closePairs": 63,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 4
+    },
+    {
+      "formation": "3-5-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 87,
+      "crowdedFrames": 11,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 5
+    },
+    {
+      "formation": "3-5-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 41,
+      "closePairs": 64,
+      "crowdedFrames": 4,
+      "narrowFrames": 1,
+      "passes": 20,
+      "turnovers": 5
+    }
+  ],
+  "candidateRuns": [
+    {
+      "formation": "4-4-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 41,
+      "closePairs": 57,
+      "crowdedFrames": 8,
+      "narrowFrames": 2,
+      "passes": 28,
+      "turnovers": 5
+    },
+    {
+      "formation": "4-4-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 44,
+      "closePairs": 63,
+      "crowdedFrames": 6,
+      "narrowFrames": 0,
+      "passes": 34,
+      "turnovers": 4
+    },
+    {
+      "formation": "3-5-2",
+      "team": 0,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 7,
+      "narrowFrames": 0,
+      "passes": 31,
+      "turnovers": 1
+    },
+    {
+      "formation": "3-5-2",
+      "team": 1,
+      "seed": 73,
+      "samples": 43,
+      "closePairs": 71,
+      "crowdedFrames": 9,
+      "narrowFrames": 0,
+      "passes": 26,
+      "turnovers": 4
+    }
+  ]
+}

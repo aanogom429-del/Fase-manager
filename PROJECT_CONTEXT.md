@@ -1,3 +1,9 @@
+# Verificación de recepción exterior sobre 0.145 · 18 de noviembre de 2026
+
+Añadidos tests/flank_reception.cjs, data/flank-reception-145.json y docs/RECEPCION_EXTERIOR_0145.md. 40 casos controlados pasan: 20 conexiones abiertas con recepción real por update y 20 intentos cerrados interceptados, cinco sistemas/dos equipos/dos lados. Desplazamiento previo con advancePlayer, reloj progresivo; pase ordenado por ensayo; no capture impuesto. También pasan open_reception, moving_reception y flank_stability. Motor y versión sin cambios.
+
+No es una secuencia autónoma de elección de pase. Hallazgo pendiente: al aproximarse, el destino exterior puede quedar fuera de visión y cancelar la preferencia incluso con línea despejada; estudiar continuidad perceptiva sin omnisciencia. MP2 no cerrado. Próximo incremento funcional MP3 (doble pivote escalonado y conexiones interiores), manteniendo este pendiente en MP2. No afirmar matriz completa ni concentración resuelta.
+
 # 0.145 · Continuidad de preferencias exteriores · 18 de noviembre de 2026
 
 MP2: retención máxima de 0,6 s en la franja intermedia entre ocupación exterior/interior, con el mismo compañero/sistema/lado/poseedor. Revalidación perceptiva y espacial en cada consulta; evidencia clara reasigna inmediatamente. Prioridades, órdenes, reinicio, cambio de sistema y pérdida cancelan el estado. Preferencia blanda, no destino obligatorio. Campos escalares compatibles con instantáneas.

@@ -1,17 +1,17 @@
-# Hoja de ruta vigente · matriz posicional integral · 0.144
+# Hoja de ruta vigente · matriz posicional integral · 0.145
 
 Actualizada el 18 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.
 
 ## Tarea activa y siguiente entrega
 
-MP2: completar la complementariedad exterior en los cinco sistemas. En 0.144 se incorpora lateral–medio exterior (4-4-2) y carrilero–interior (3-5-2), con distinción de mediocentros/pivote y pruebas de aproximación física. Ya existen preferencias condicionadas por ocupación observada (0.142) y conexión de pase percibida (0.143). Siguiente paso: estabilidad de la función ante cambios de orientación, cancelación/reasignación y recepción efectiva. Incluir contracasos con espacio ocupado, presión, observación desactualizada y órdenes manuales. No cerrar MP2 hasta verificar movimiento físico y utilidad de la conexión en secuencias, no solo destinos calculados.
+MP2: completar la complementariedad exterior en los cinco sistemas. En 0.144 se incorpora lateral–medio exterior (4-4-2) y carrilero–interior (3-5-2), con distinción de mediocentros/pivote y pruebas de aproximación física. Ya existen preferencias condicionadas por ocupación observada (0.142) y conexión de pase percibida (0.143). En 0.145 se añade retención limitada de la preferencia ante ocupación intermedia, con cancelación y reasignación verificadas en 20 contextos. Siguiente paso: recepción efectiva tras cambio de orientación y contracaso con cierre de la conexión; después MP3. Incluir contracasos con espacio ocupado, presión, observación desactualizada y órdenes manuales. No cerrar MP2 hasta verificar movimiento físico y utilidad de la conexión en secuencias, no solo destinos calculados.
 
 ## Alcance, orden y estado
 
-| Bloque | Desarrollo comprometido | Estado en 0.144 | Criterio de cierre |
+| Bloque | Desarrollo comprometido | Estado en 0.145 | Criterio de cierre |
 |---|---|---|---|
 | MP1 · Referencias | Cinco sistemas, 11 posiciones, 30 sectores; distinguir roles nominales y momentáneos | Parcial: cinco sistemas y sectores; distinción carrilero/atacante interior en 3-4-3 | Roles detallados de los 55 puestos y convenciones simétricas verificadas, sin convertir zonas en puestos fijos |
-| MP2 · Complementariedad exterior | Lateral-interior-extremo, lateral-extremo-mediapunta, carrilero-atacante; incluir medio exterior de 4-4-2 y carrilero-interior de 3-5-2 | En curso: primera regla extendida a los cinco sistemas; nuevos casos lateral–medio exterior y carrilero–interior en 0.144 | Alternativas activables/cancelables, estabilidad temporal, ocupación compatible y recepción efectiva |
+| MP2 · Complementariedad exterior | Lateral-interior-extremo, lateral-extremo-mediapunta, carrilero-atacante; incluir medio exterior de 4-4-2 y carrilero-interior de 3-5-2 | En curso: primera regla extendida a los cinco sistemas; casos lateral–medio exterior y carrilero–interior en 0.144; continuidad acotada de preferencia en 0.145 | Alternativas activables/cancelables, estabilidad temporal, ocupación compatible y recepción efectiva |
 | MP3 · Conexiones interiores | Pivote-interiores, doble pivote escalonado, pareja de medios, mediapunta-delantero | Pendiente de adaptación a la matriz | Unos ofrecen conexión y otros equilibrio; evitar dos respuestas redundantes al mismo estímulo |
 | MP4 · Apoyo y profundidad | Punta que desciende, ruptura de interior/extremo, alternancia de dos delanteros, fijación sin movimiento obligatorio | Pendiente | Ocupación del espacio liberado sin carreras automáticas ni pérdida injustificada de equilibrio |
 | MP5 · Progresión y compensación | Conducción del central exterior/central, avance o interiorización del lateral/carrilero, pivote entre centrales, cadena de compensaciones | Existen mecanismos previos; adaptación pendiente | Soluciones a distintas alturas, protección de espacio liberado y respeto a órdenes explícitas |

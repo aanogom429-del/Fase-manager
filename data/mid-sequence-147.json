@@ -1,0 +1,63 @@
+[
+  {
+    "team": 0,
+    "pivotSlot": 5,
+    "seconds": 8,
+    "outcomes": [],
+    "activations": 15,
+    "passesToMid": 1,
+    "receptions": 0,
+    "afterReceptionActions": 0,
+    "passes": 9,
+    "turnovers": 0
+  },
+  {
+    "team": 0,
+    "pivotSlot": 6,
+    "seconds": 8,
+    "outcomes": [],
+    "activations": 15,
+    "passesToMid": 0,
+    "receptions": 0,
+    "afterReceptionActions": 0,
+    "passes": 7,
+    "turnovers": 0
+  },
+  {
+    "team": 1,
+    "pivotSlot": 5,
+    "seconds": 8,
+    "outcomes": [
+      {
+        "at": 12.85833333333317,
+        "receiver": 8,
+        "team": 1,
+        "intended": true
+      },
+      {
+        "at": 17.124999999999595,
+        "receiver": 8,
+        "team": 1,
+        "intended": true
+      }
+    ],
+    "activations": 19,
+    "passesToMid": 2,
+    "receptions": 2,
+    "afterReceptionActions": 1,
+    "passes": 6,
+    "turnovers": 0
+  },
+  {
+    "team": 1,
+    "pivotSlot": 6,
+    "seconds": 8,
+    "outcomes": [],
+    "activations": 19,
+    "passesToMid": 0,
+    "receptions": 0,
+    "afterReceptionActions": 0,
+    "passes": 11,
+    "turnovers": 0
+  }
+]

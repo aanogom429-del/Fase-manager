@@ -1,20 +1,20 @@
-# Hoja de ruta vigente · matriz posicional integral · 0.145
+# Hoja de ruta vigente · matriz posicional integral · 0.146
 
-Actualizada el 18 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.
+Actualizada el 19 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.
 
 ## Tarea activa y siguiente entrega
 
-Siguiente incremento funcional: **MP3**, coordinación de doble pivote y conexiones interiores. Prioridad: si un pivote se aproxima a la primera línea, el otro conserva una referencia a distinta altura; evitar dos aproximaciones redundantes sin imponer posiciones fijas ni anular órdenes explícitas.
+En curso: **MP3**, coordinación de doble pivote y conexiones interiores. 0.146 incorpora una primera regla condicionada en 4-2-3-1 (docs/DOBLE_PIVOTE_0146.md). Próximo: conexión con mediapunta y alternativas bajo presión. Prioridad: si un pivote se aproxima a la primera línea, el otro conserva una referencia a distinta altura; evitar dos aproximaciones redundantes sin imponer posiciones fijas ni anular órdenes explícitas.
 
 MP2 continúa abierto. En 0.144 se extendió la complementariedad a los cinco sistemas y en 0.145 se añadió continuidad acotada. La verificación posterior cubre 40 casos controlados de aproximación y recepción/intercepción tras pase transversal (docs/RECEPCION_EXTERIOR_0145.md): 20 abiertos con recepción efectiva y 20 cerrados interceptados. El pase lo ordena el ensayo, no la selección autónoma. Pendientes: selección oportuna de la conexión en secuencia colectiva, continuidad perceptiva del destino al cambiar de orientación corporal, recepción en situaciones más variadas y validación de partido. No cerrar MP2 ni declarar completa la matriz por estas pruebas.
 
 ## Alcance, orden y estado
 
-| Bloque | Desarrollo comprometido | Estado en 0.145 | Criterio de cierre |
+| Bloque | Desarrollo comprometido | Estado en 0.146 | Criterio de cierre |
 |---|---|---|---|
 | MP1 · Referencias | Cinco sistemas, 11 posiciones, 30 sectores; distinguir roles nominales y momentáneos | Parcial: cinco sistemas y sectores; distinción carrilero/atacante interior en 3-4-3 | Roles detallados de los 55 puestos y convenciones simétricas verificadas, sin convertir zonas en puestos fijos |
 | MP2 · Complementariedad exterior | Lateral-interior-extremo, lateral-extremo-mediapunta, carrilero-atacante; incluir medio exterior de 4-4-2 y carrilero-interior de 3-5-2 | En curso: primera regla extendida a los cinco sistemas; casos lateral–medio exterior y carrilero–interior en 0.144; continuidad acotada en 0.145 y recepción/intercepción verificadas en 40 casos controlados | Alternativas activables/cancelables, estabilidad temporal, ocupación compatible y recepción efectiva |
-| MP3 · Conexiones interiores | Pivote-interiores, doble pivote escalonado, pareja de medios, mediapunta-delantero | Siguiente incremento funcional: doble pivote escalonado | Unos ofrecen conexión y otros equilibrio; evitar dos respuestas redundantes al mismo estímulo |
+| MP3 · Conexiones interiores | Pivote-interiores, doble pivote escalonado, pareja de medios, mediapunta-delantero | Parcial: primera regla de doble pivote escalonado en 0.146 | Unos ofrecen conexión y otros equilibrio; evitar dos respuestas redundantes al mismo estímulo |
 | MP4 · Apoyo y profundidad | Punta que desciende, ruptura de interior/extremo, alternancia de dos delanteros, fijación sin movimiento obligatorio | Pendiente | Ocupación del espacio liberado sin carreras automáticas ni pérdida injustificada de equilibrio |
 | MP5 · Progresión y compensación | Conducción del central exterior/central, avance o interiorización del lateral/carrilero, pivote entre centrales, cadena de compensaciones | Existen mecanismos previos; adaptación pendiente | Soluciones a distintas alturas, protección de espacio liberado y respeto a órdenes explícitas |
 | MP6 · AO por zona y carril | Tablas ofensivas Z1–Z6 de cada sistema; relaciones C1–C5, amplitud alejada y reorganización tras cambio de orientación | Parcial; falta correspondencia completa | Reglas por rol/contexto trazables y alternativas según oposición; sin trasladar todo el bloque hacia el balón |

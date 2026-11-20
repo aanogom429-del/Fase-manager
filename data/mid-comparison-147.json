@@ -1,0 +1,136 @@
+[
+  {
+    "enabled": false,
+    "team": 0,
+    "pivotSlot": 5,
+    "seconds": 8,
+    "followupSeconds": 0.21666666666666667,
+    "activations": 0,
+    "outcomes": [
+      {
+        "kickAt": 13.033333333333161,
+        "from": 10,
+        "receiver": 7,
+        "receivedAt": 13.616666666666461,
+        "result": "intended"
+      }
+    ],
+    "continuations": 1
+  },
+  {
+    "enabled": false,
+    "team": 0,
+    "pivotSlot": 6,
+    "seconds": 8,
+    "followupSeconds": 0,
+    "activations": 0,
+    "outcomes": [
+      {
+        "kickAt": 16.533333333332962,
+        "from": 6,
+        "receiver": 7,
+        "receivedAt": 16.841666666666278,
+        "result": "intended"
+      }
+    ],
+    "continuations": 1
+  },
+  {
+    "enabled": false,
+    "team": 1,
+    "pivotSlot": 5,
+    "seconds": 8,
+    "followupSeconds": 0,
+    "activations": 0,
+    "outcomes": [
+      {
+        "kickAt": 12.3333333333332,
+        "from": 16,
+        "receiver": 18,
+        "receivedAt": 12.85833333333317,
+        "result": "intended"
+      },
+      {
+        "kickAt": 16.666666666666288,
+        "from": 13,
+        "receiver": 18,
+        "receivedAt": 17.124999999999595,
+        "result": "intended"
+      }
+    ],
+    "continuations": 1
+  },
+  {
+    "enabled": false,
+    "team": 1,
+    "pivotSlot": 6,
+    "seconds": 8,
+    "followupSeconds": 0,
+    "activations": 0,
+    "outcomes": [],
+    "continuations": 0
+  },
+  {
+    "enabled": true,
+    "team": 0,
+    "pivotSlot": 5,
+    "seconds": 8,
+    "followupSeconds": 0.38333333333333336,
+    "activations": 15,
+    "outcomes": [
+      {
+        "kickAt": 17.883333333332885,
+        "from": 5,
+        "receiver": 7,
+        "receivedAt": 18.383333333332857,
+        "result": "intended"
+      }
+    ],
+    "continuations": 0
+  },
+  {
+    "enabled": true,
+    "team": 0,
+    "pivotSlot": 6,
+    "seconds": 8,
+    "followupSeconds": 0.03333333333333333,
+    "activations": 15,
+    "outcomes": [],
+    "continuations": 0
+  },
+  {
+    "enabled": true,
+    "team": 1,
+    "pivotSlot": 5,
+    "seconds": 8,
+    "followupSeconds": 0,
+    "activations": 19,
+    "outcomes": [
+      {
+        "kickAt": 12.3333333333332,
+        "from": 16,
+        "receiver": 18,
+        "receivedAt": 12.85833333333317,
+        "result": "intended"
+      },
+      {
+        "kickAt": 16.666666666666288,
+        "from": 13,
+        "receiver": 18,
+        "receivedAt": 17.124999999999595,
+        "result": "intended"
+      }
+    ],
+    "continuations": 1
+  },
+  {
+    "enabled": true,
+    "team": 1,
+    "pivotSlot": 6,
+    "seconds": 8,
+    "followupSeconds": 0,
+    "activations": 19,
+    "outcomes": [],
+    "continuations": 0
+  }
+]

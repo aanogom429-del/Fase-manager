@@ -1,3 +1,13 @@
+# 22/11/2026 — Paso siguiente: PR de revisión y disparadores de CI
+
+PR en borrador [#2](https://github.com/aanogom429-del/Fase-manager/pull/2) frente a `main`, sin integración. Se añadió activación del workflow MP3 para `pull_request` hacia `main` además de los eventos push de la rama. HEAD de esa actualización: `e90a1b1b72264eb361d818128041a8c0af5a59f7`.
+
+Verificación remota por `compare_commits`: rama nueve commits por delante de main, cero por detrás; siete archivos, **sin cambios en `index.html`**. Intentos de obtener ejecuciones PR y estados del commit devolvieron listas vacías; **no se ejecutó ni aprobó la batería** mediante herramienta. Intento de acceso Git al repositorio desde el contenedor local: DNS de github.com no resolvió, por lo que tampoco se ejecutó desde checkout local.
+
+Criterio de decisión: no integrar, no inventar resultados y no cambiar reglas del juego por un ensayo sin datos. Revisar restricciones de GitHub Actions (workflow no aceptado/ejecución no habilitada o falta de eventos) y analizar el primer log disponible antes de extender MP3 a nuevos sistemas. La PR permanece en borrador.
+
+---
+
 # Entrega experimental MP3 · 22/11/2026 · CI y verificabilidad
 
 **Base**: `main@14ed39dbc48018946b731b0ee74f5306b207eecc` (0.148); rama `codex/fase-manager-mp3-temporal-audit`. Sin cambios en motor `index.html` ni integración en `main`.

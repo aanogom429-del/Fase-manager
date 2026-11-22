@@ -1,3 +1,11 @@
+# 22/11/2026 — Resultado real del paso MP3 de horizonte equivalente
+
+GitHub Actions `45068520178` (job `137350001968`) **SUCCESS**: temporal, secuencias autónomas, nueva `mid_fixed_horizon.cjs`, verificaciones de salida y cinco regresiones. El análisis con regla desactivada/activada arrojó 4/3 pases dirigidos al mediapunta, 4/3 recepciones, 4/2 recepciones con 2 s de seguimiento completo, 0/1 recepción censurada y 4/2 pases posteriores desde ventanas elegibles. Registro completo e interpretación en `docs/VENTANAS_INTERIORES_MP3.md`. No se atribuye causalidad ni se confunden diferencias de elegibilidad con eficacia.
+
+El código del motor `index.html` permanece idéntico a `main`; no hay nueva versión jugable, ni cierre del bloque MP3. Próxima hipótesis: analizar caso azul/pivote 6 y distinguir línea disponible, orientación del poseedor, decisión de pase, tiempo de desmarque y ocupación de alternativas antes de ensayar una mejora táctica.
+
+---
+
 # 22/11/2026 — Paso siguiente MP3: comparación temporal corregida
 
 Confirmada la ejecución exitosa de `45067492930`: cuatro pases y cuatro recepciones al mediapunta sin regla frente a tres pases y tres recepciones con regla; las continuaciones registradas fueron 3 frente a 1. Sin vuelos sin resolver, pero con **horizonte posterior desigual** que impide interpretar justamente esa última medida.

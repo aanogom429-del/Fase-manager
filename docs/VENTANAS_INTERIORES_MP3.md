@@ -1,3 +1,20 @@
+# Paso posterior · horizonte equivalente y censura explícita · 22/11/2026
+
+**Evidencia nueva recuperada:** GitHub Actions `45067492930` completó con éxito el ensayo de secuencias autónomas y las regresiones dirigidas. Comparación de cuatro escenarios por variante en `tests/mid_sequence_comparison.cjs`:
+
+| Variante | Pases al mediapunta | Recepciones completas | Continuaciones registradas | Sin desenlace |
+|---|---:|---:|---:|---:|
+| Sin regla | 4 | 4 | 3 | 0 |
+| Con regla | 3 | 3 | 1 | 0 |
+
+**Limitación detectada**: el ensayo anterior prolongaba opcionalmente el último vuelo de cada variante y contaba continuaciones sin garantizar tiempo posterior uniforme. Es un resultado adverso descriptivo, no una estimación causal de eficacia.
+
+**Corrección incorporada**: `tests/mid_fixed_horizon.cjs` conserva la fase inicial de 8 s y prolonga **exactamente 2 s en cada escenario**, con mismo corte de pases elegibles a 18 s del reloj simulado. Una recepción solo entra al cálculo de continuación a dos segundos si ocurrió antes de 18 s; de lo contrario se marca como censurada y no se cuenta como fracaso. Las acciones posteriores tienen límite de dos segundos desde esa recepción. `.github/workflows/mp3-temporal-audit.yml` ejecuta ahora el nuevo ensayo y publica sus resultados, sin fijar como aserción que una variante tenga que ganar.
+
+**Estado al publicar este paso:** código del ensayo y CI incorporados, nueva ejecución aún no verificada. No se ha modificado `index.html`; MP3 continúa parcial. No integrar en main hasta revisar las ocho trazas y efectos adversos.
+
+---
+
 # Resultados verificados en CI — 22/11/2026
 
 GitHub Actions, ejecución `45067084840`, trabajo `137345539098`: **SUCCESS**. Pasaron el ensayo `mid_temporal_audit`, la comprobación de estructura JSON y cinco regresiones dirigidas: `mid_persistence`, `mid_connection`, `pivot_stagger`, `flank_stability` y `formation_selection`.

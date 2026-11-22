@@ -31,6 +31,28 @@ jobs:
           }
           console.log(JSON.stringify(data.results.map(({enabled,team,pivotSlot,perceivedOpportunityShare,longestPerceivedOpportunitySeconds,activations})=>({enabled,team,pivotSlot,perceivedOpportunityShare,longestPerceivedOpportunitySeconds,activations}))));
           NODE
+      - name: Compare autonomous pass and receipt sequences
+        run: node tests/mid_sequence_comparison.cjs > /tmp/mp3-sequence-result.json
+      - name: Summarize paired receipts without assuming tactical benefit
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const cases=JSON.parse(fs.readFileSync('/tmp/mp3-sequence-result.json','utf8'));
+          assert.equal(cases.length,8);
+          const summary={};
+          for(const v of cases){
+            assert([0,1].includes(v.team)&&[5,6].includes(v.pivotSlot));
+            assert(Array.isArray(v.outcomes));
+            const key=v.enabled?'on':'off';
+            const s=summary[key]??={scenarios:0,kicks:0,received:0,unresolved:0,continuations:0};
+            s.scenarios++;s.kicks+=v.outcomes.length;
+            s.received+=v.outcomes.filter(o=>o.result==='intended').length;
+            s.unresolved+=v.outcomes.filter(o=>o.result==='unresolved').length;
+            s.continuations+=v.continuations;
+          }
+          assert.equal(summary.on.scenarios,4);assert.equal(summary.off.scenarios,4);
+          console.log('MP3_SEQUENCE_COMPARISON '+JSON.stringify(summary));
+          NODE
       - name: Focused regressions
         run: |
           node tests/mid_persistence.cjs
@@ -42,5 +64,7 @@ jobs:
         if: always()
         with:
           name: mp3-temporal-results
-          path: /tmp/mp3-temporal-result.json
+          path: |
+            /tmp/mp3-temporal-result.json
+            /tmp/mp3-sequence-result.json
           if-no-files-found: ignore

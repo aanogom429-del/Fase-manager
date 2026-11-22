@@ -1,3 +1,16 @@
+# Entrega experimental MP3 · 22/11/2026 · CI y verificabilidad
+
+**Base**: `main@14ed39dbc48018946b731b0ee74f5306b207eecc` (0.148); rama `codex/fase-manager-mp3-temporal-audit`. Sin cambios en motor `index.html` ni integración en `main`.
+
+- El ensayo `tests/mid_temporal_audit.cjs` tiene dos medidas separadas: (a) activaciones de destino con regla activada y (b) muestras de oportunidad perceptiva proxy tomadas cada 0,1 s tanto con regla activada como desactivada. La segunda es simétrica, pero no incorpora todas las reservas colectivas de destinos ni constituye una recepción o línea de pase ejecutada.
+- Se añadió `.github/workflows/mp3-temporal-audit.yml` para ejecutar el ensayo, verificar la estructura JSON y lanzar `mid_persistence`, `mid_connection`, `pivot_stagger`, `flank_stability` y `formation_selection` en Node.js 22. Se conserva un artefacto JSON si se ejecuta.
+- **Resultado disponible**: archivo de workflow creado en GitHub, commit `782d1f57e6c8ef34a577985a8f1a50220c58065c`. La consulta de estados del commit devolvió lista vacía, y la consulta de ejecuciones ligada a PR tampoco mostró ejecuciones (esta última no cubre push). Ninguna prueba ha sido confirmada como ejecutada. No se atribuye PASS ni fallo al motor, no se da por validada la hipótesis.
+- El contenedor local de la sesión dispone de Node.js, pero no pudo resolver `github.com` para descargar el repositorio; por ello no se ha ejecutado el ensayo completo en el entorno local. Esta limitación no es un defecto demostrado del videojuego.
+- Próxima acción verificable: comprobar en GitHub Actions que la ejecución existe y revisar su resultado, o disponer de checkout local para ejecutar las pruebas. Corregir el ensayo si arroja error antes de intervenir en `index.html`. Tras obtener muestras, añadir medidas de pases realizados y recepciones comparables para decidir una regla funcional.
+- Referencia de requisitos transversales: `docs/AUDITORIA_CONTINUIDAD_2026-11-22.md`; preservar las catorce secciones de especificación original como fuente, sin equipararlas a su resumen.
+
+---
+
 # Fase Manager — Registro de desarrollo y recuperación
 
 ## 0.120 — Progresión con observación reciente

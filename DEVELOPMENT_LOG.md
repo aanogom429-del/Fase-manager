@@ -1,3 +1,11 @@
+# 22/11/2026 — Verificación CI MP3 confirmada y ampliación de eficacia
+
+**Resultado de la ejecución original:** GitHub Actions `45067084840` terminó `success`. El ensayo temporal, estructura JSON y cinco regresiones (`mid_persistence`, `mid_connection`, `pivot_stagger`, `flank_stability`, `formation_selection`) pasaron. Valores y contracaso azul/pivote 6 en `docs/VENTANAS_INTERIORES_MP3.md`. Esto confirma ejecución del ensayo, no mejora del comportamiento táctico.
+
+**Siguiente incremento realmente incorporado:** el workflow ejecuta ahora `tests/mid_sequence_comparison.cjs` en ocho escenarios autónomos y resume por variante pases al mediapunta, recepciones efectivas, vuelos sin desenlace y continuaciones. Cambio en `db03f184`, sin tocar `index.html`, con PR #2 en borrador. La ejecución nueva `45067456194` figura `in_progress` en la consulta. No declarar resultado todavía. El trabajo no integra ningún cambio en main.
+
+---
+
 # 22/11/2026 — Paso siguiente: PR de revisión y disparadores de CI
 
 PR en borrador [#2](https://github.com/aanogom429-del/Fase-manager/pull/2) frente a `main`, sin integración. Se añadió activación del workflow MP3 para `pull_request` hacia `main` además de los eventos push de la rama. HEAD de esa actualización: `e90a1b1b72264eb361d818128041a8c0af5a59f7`.

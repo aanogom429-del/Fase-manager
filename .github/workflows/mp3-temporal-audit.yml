@@ -1,0 +1,44 @@
+name: MP3 temporal audit
+on:
+  push:
+    branches: [codex/fase-manager-mp3-temporal-audit]
+  workflow_dispatch:
+jobs:
+  temporal-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check MP3 instrumentation
+        run: node tests/mid_temporal_audit.cjs > /tmp/mp3-temporal-result.json
+      - name: Check output structure and side-by-side comparison
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),assert=require('assert/strict');
+          const data=JSON.parse(fs.readFileSync('/tmp/mp3-temporal-result.json','utf8'));
+          assert.equal(data.results.length,8);
+          for(const r of data.results){
+            assert.equal(r.sampledSeconds,8);
+            assert(r.perceivedOpportunityShare>=0&&r.perceivedOpportunityShare<=1);
+            assert(Number.isFinite(r.longestPerceivedOpportunitySeconds));
+          }
+          console.log(JSON.stringify(data.results.map(({enabled,team,pivotSlot,perceivedOpportunityShare,longestPerceivedOpportunitySeconds,activations})=>({enabled,team,pivotSlot,perceivedOpportunityShare,longestPerceivedOpportunitySeconds,activations}))));
+          NODE
+      - name: Focused regressions
+        run: |
+          node tests/mid_persistence.cjs
+          node tests/mid_connection.cjs
+          node tests/pivot_stagger.cjs
+          node tests/flank_stability.cjs
+          node tests/formation_selection.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mp3-temporal-results
+          path: /tmp/mp3-temporal-result.json
+          if-no-files-found: ignore

@@ -1,3 +1,21 @@
+# Verificación de horizonte equivalente — GitHub Actions 45068520178
+
+**Resultado confirmado:** workflow `success`, incluyendo `tests/mid_fixed_horizon.cjs`, estructura y cinco regresiones. Las ventanas se simulan durante diez segundos en ambos brazos: ocho iniciales + dos comunes; se registran pases al mediapunta originados en el periodo inicial.
+
+| Resultado | Regla desactivada | Regla activada |
+|---|---:|---:|
+| Pases al mediapunta | 4 | 3 |
+| Recepciones completas | 4 | 3 |
+| Recepciones con 2 s completos disponibles | 4 | 2 |
+| Recepciones censuradas para continuidad | 0 | 1 |
+| Pases posteriores del mediapunta en ventanas elegibles | 4 | 2 |
+
+La nueva regla registra tres recepciones, pero **una de ellas es demasiado tardía** para observar dos segundos posteriores, de modo que queda censurada para la métrica de continuación. No se debe interpretar 4 frente a 2 como cuatro oportunidades equivalentes frente a dos: hay diferentes tamaños de muestra elegible, y la regla tampoco mejora el recuento total de recepciones (4→3). No hay evidencia de ventaja causal ni de perjuicio general con cuatro escenarios por brazo.
+
+**Siguiente acción de comportamiento:** investigar qué condición bloquea la selección de pase al mediapunta en el caso perdido (azul/pivote 6), y contrastar una alternativa limitada sin forzar pases ni eliminar salvaguardas perceptivas. La prueba permite comparar, pero por sí sola no justifica modificar la toma de decisiones ni dar por cerrado MP3.
+
+---
+
 # Paso posterior · horizonte equivalente y censura explícita · 22/11/2026
 
 **Evidencia nueva recuperada:** GitHub Actions `45067492930` completó con éxito el ensayo de secuencias autónomas y las regresiones dirigidas. Comparación de cuatro escenarios por variante en `tests/mid_sequence_comparison.cjs`:

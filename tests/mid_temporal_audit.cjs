@@ -42,15 +42,36 @@ for(const enabled of [false,true])for(const t of [0,1])for(const slot of [5,6]){
   holder.x=x(30);holder.y=32;mid.x=x(50);mid.y=32;
   const rival=e.t.opp(t)[6];rival.x=x(45);rival.y=32;
   e.t.capture(holder,'fixture');
+  // Medición simétrica: se observa la misma posibilidad geométrica/perceptiva en ambas variantes.
+  // Es una aproximación local al receptor, no reconstruye `reserved` ni la decisión del pasador.
+  const samples=[];
   for(let i=0;i<960;i++){
     e.t.update(1/120);
     assert(e.t.get().players.every(q=>Number.isFinite(q.x)&&Number.isFinite(q.y)),'Posición no finita');
+    if(i%12!==0)continue; // Cada 0,1 s, ventana idéntica en ambos brazos.
+    const state=e.t.get(),current=state.owner;
+    const mates=e.t.knownTeammates(mid),view=e.t.perceivedOpposition(mid);
+    const observedHolder=current?.t===t?mates.find(m=>m.id===current.id&&m.memoryAge<=.25&&m.id===holder.id):null;
+    // No inferir visibilidad si el compañero no está en la memoria.
+    const h=observedHolder&&current.id===holder.id?observedHolder:null;
+    const candidates=[{x:mid.x,y:mid.y},{x:mid.x,y:mid.y-8},{x:mid.x,y:mid.y+8}];
+    const available=!!h&&candidates.some(q=>q.y>=16&&q.y<=48&&q.x>=4&&q.x<=96&&
+      (q.x-h.x)*(t?-1:1)>=6&&(q.x-h.x)*(t?-1:1)<=28&&
+      e.t.perceives(mid,q)&&e.t.perceivedSpace(q,view)>=5&&
+      e.t.perceivedLane(h,q,view).risk<=3&&
+      mates.every(m=>m.id===h.id||Math.hypot(m.x-q.x,m.y-q.y)>=6));
+    samples.push({at:state.elapsed,available});
   }
   const events=enabled?e.t.phaseRelations(null).audit():[];
   // El registro indica destino planificado, NO pase accesible, recepción ni ventaja causal.
   const windows=summarize(events);
   output.push({enabled,team:t,pivotSlot:slot,seconds:8,activations:events.length,windows,
     totalWindowSeconds:Number(windows.reduce((s,w)=>s+w.duration,0).toFixed(3)),
-    longestWindowSeconds:Number(Math.max(0,...windows.map(w=>w.duration)).toFixed(3))});
+    longestWindowSeconds:Number(Math.max(0,...windows.map(w=>w.duration)).toFixed(3)),
+    sampledSeconds:Number((samples.length*.1).toFixed(2)),
+    perceivedOpportunitySamples:samples.filter(s=>s.available).length,
+    perceivedOpportunityShare:Number((samples.filter(s=>s.available).length/samples.length).toFixed(3)),
+    longestPerceivedOpportunitySeconds:Number((samples.reduce((acc,s)=>{acc.run=s.available?acc.run+1:0;acc.max=Math.max(acc.max,acc.run);return acc;},{run:0,max:0}).max*.1).toFixed(2))
+  });
 }
-console.log(JSON.stringify({base:'0.148',kind:'destination-availability-not-pass-success',results:output},null,2));
+console.log(JSON.stringify({base:'0.148',kind:'symmetric-perceived-proxy-and-activation-not-pass-success',results:output},null,2));

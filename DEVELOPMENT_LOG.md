@@ -1,3 +1,13 @@
+# 22/11/2026 — Paso siguiente MP3: comparación temporal corregida
+
+Confirmada la ejecución exitosa de `45067492930`: cuatro pases y cuatro recepciones al mediapunta sin regla frente a tres pases y tres recepciones con regla; las continuaciones registradas fueron 3 frente a 1. Sin vuelos sin resolver, pero con **horizonte posterior desigual** que impide interpretar justamente esa última medida.
+
+Incorporado `tests/mid_fixed_horizon.cjs` (`056c109`): ocho escenarios emparejados, ocho segundos de simulación inicial más dos de extensión idéntica, pases seleccionados hasta t=18 s, recepción y seguimiento evaluados hasta t=20 s; continuación dentro de los dos segundos posteriores a la recepción solo si tiene horizonte completo, con censura explícita en los demás casos. Workflow extendido en `b8004d8` y documentación en `docs/VENTANAS_INTERIORES_MP3.md`. En el momento de esta anotación, ejecución `45068520178` estaba `in_progress`.
+
+No se modifica `index.html` ni se publica `main`. Los resultados adversos y dudas de sincronización requieren evaluación antes de cambiar la política de conexiones interiores. Mantener PR #2 como borrador.
+
+---
+
 # 22/11/2026 — Verificación CI MP3 confirmada y ampliación de eficacia
 
 **Resultado de la ejecución original:** GitHub Actions `45067084840` terminó `success`. El ensayo temporal, estructura JSON y cinco regresiones (`mid_persistence`, `mid_connection`, `pivot_stagger`, `flank_stability`, `formation_selection`) pasaron. Valores y contracaso azul/pivote 6 en `docs/VENTANAS_INTERIORES_MP3.md`. Esto confirma ejecución del ensayo, no mejora del comportamiento táctico.

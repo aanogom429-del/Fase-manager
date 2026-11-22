@@ -53,6 +53,27 @@ jobs:
           assert.equal(summary.on.scenarios,4);assert.equal(summary.off.scenarios,4);
           console.log('MP3_SEQUENCE_COMPARISON '+JSON.stringify(summary));
           NODE
+      - name: Compare equal-horizon autonomous sequences
+        run: node tests/mid_fixed_horizon.cjs > /tmp/mp3-fixed-horizon-result.json
+      - name: Audit two-second post-reception follow-up with censoring
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const cases=JSON.parse(fs.readFileSync('/tmp/mp3-fixed-horizon-result.json','utf8'));
+          assert.equal(cases.length,8);
+          const out={off:{attempts:0,receipts:0,eligible:0,censored:0,continuations:0},on:{attempts:0,receipts:0,eligible:0,censored:0,continuations:0}};
+          for(const s of cases){
+            const v=out[s.enabled?'on':'off'];
+            assert.equal(s.observationSeconds,10);assert.equal(s.kickCutoff,18);
+            assert(s.eligibleForFullContinuation+s.censoredForContinuation===s.received);
+            assert(s.postReceipts.every(x=>x.receivedAt<=18.000001));
+            v.attempts+=s.outcomes.length;v.receipts+=s.received;
+            v.eligible+=s.eligibleForFullContinuation;
+            v.censored+=s.censoredForContinuation;
+            v.continuations+=s.continuations;
+          }
+          console.log('MP3_EQUAL_HORIZON '+JSON.stringify(out));
+          NODE
       - name: Focused regressions
         run: |
           node tests/mid_persistence.cjs
@@ -67,4 +88,5 @@ jobs:
           path: |
             /tmp/mp3-temporal-result.json
             /tmp/mp3-sequence-result.json
+            /tmp/mp3-fixed-horizon-result.json
           if-no-files-found: ignore

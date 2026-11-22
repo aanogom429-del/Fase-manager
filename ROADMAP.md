@@ -1,3 +1,9 @@
+# Auditoría de continuidad · 22/11/2026 · rama de trabajo (sin integrar)
+
+Sobre 0.148 se añade análisis temporal MP3 comparativo sin cambiar el motor (`tests/mid_temporal_audit.cjs`) y auditoría de requisitos/procesos (`docs/AUDITORIA_CONTINUIDAD_2026-11-22.md`). Próximo paso: ejecutar la instrumentación, separar calidad de oportunidad de activaciones y decidir extensión interior por sistema tras contrastes. **Estado: código de ensayo publicado, pruebas nuevas no ejecutadas; sin nueva versión estable ni evidencia de mejora táctica.** Mantener todos los requisitos y pendientes MP1–MP11 de las entradas inferiores.
+
+---
+
 # Hoja de ruta vigente · matriz posicional integral · 0.148
 
 Actualizada el 19 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.

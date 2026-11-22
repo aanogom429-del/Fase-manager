@@ -3,6 +3,8 @@ on:
   push:
     branches: [codex/fase-manager-mp3-temporal-audit]
   workflow_dispatch:
+  pull_request:
+    branches: [main]
 jobs:
   temporal-audit:
     runs-on: ubuntu-latest

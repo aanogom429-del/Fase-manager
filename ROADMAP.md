@@ -1,3 +1,9 @@
+# 23/11/2026 · MP3 · Evaluación contra defensa próxima, verificada
+
+Ensayo `tests/mid_pass_opposition_0149.cjs` con defensor de campo, CI `45261378767` **SUCCESS**: 48 parejas (tres tipos defensivos ×16), con/sin preferencia +2. **Cero cambios de elección atribuibles al bonus en estos casos defensivos**; con defensor sobre receptor hay 8 primeros contactos rivales por brazo y con defensor en línea de pase otros 8, y 8 pases sin primer contacto dentro de ventana por brazo. La ejecución bajo oposición sirve de prueba de riesgo, pero **no muestra mejora ofensiva**, ni deja cerrado MP3/MP11. El estudio autónomo 0.148–0.149 también sigue sin cambios. Próximo: diseñar presión intermedia y múltiples distancias donde exista efecto de decisión, comparar control y progresión, y evaluar protección del equilibrio ante pérdida. Ver `docs/OPOSICION_INTERIOR_0149.md`. PR #3 borrador, main 0.148.
+
+---
+
 # 23/11/2026 · MP3: paso de oposición cercana (experimental)
 
 Se añade ensayo de 48 pares en tres geometrías defensivas (defensor sobre mediapunta, trayectoria o alternativa), midiendo intención, ejecución, primer contacto y posesión final. CI extendida en `.github/workflows/mid-pass-0149.yml`, informe `docs/OPOSICION_INTERIOR_0149.md`. Pendiente de evaluación de resultados de CI y de contracasos adversos antes de ajustar el bonus +2 o aprobar 0.149. No cerrar MP3/MP11; no integrar en main.

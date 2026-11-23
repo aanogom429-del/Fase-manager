@@ -1,3 +1,9 @@
+# 23/11/2026 — CI 0.150 completada y evaluada
+
+GitHub Actions run `45263579215` job `138004465556`: **SUCCESS**. `mid_pass_preference.cjs` adaptado superó las condiciones de +2/+1/0. Ablación 160 pares: 44 decisiones alteradas, todas hacia mediapunta; 32 pares físicos: 16 decisiones distintas, 32 pases y contactos al destinatario en cada brazo con oposición alejada; 48 escenas con adversario próximo: 0 decisiones distintas, 16 primeros contactos rivales por brazo. Cinco regresiones PASS. Comparador autónomo de 0.149 y 0.150: igual número de pases/recepciones en ambos (sin apertura 4/4, con apertura 3/3). La política gradúa la seguridad pero la muestra no confirma ventaja colectiva: **no aprobar integración**. PR #4 borrador, main 0.148. Documento `docs/SEGURIDAD_PASE_INTERIOR_0150.md`. Pasar siguiente desarrollo táctico a MP4, no seguir gastando incrementos exclusivamente en MP3.
+
+---
+
 # 23/11/2026 — Implementación real 0.150, bonus según riesgo
 
 Rama nueva derivada de 0.149 `522c9f0`. Implementación `4ab3620`: `midfielderPassPreference` devuelve 0 si riesgo>2 o espacio<6; +1 si riesgo (1,2], +2 si riesgo<=1, conservando los demás filtros de 0.149. Actualizados test unitario, ablación, recepción física y oposición con el nuevo hook y workflow frente a 0.149, PR #4 en borrador. `main` no ha sido modificado. La CI y eficacia táctica requieren evaluación expresa; este registro no declara PASS hasta obtener evidencia de la ejecución. Informe `docs/SEGURIDAD_PASE_INTERIOR_0150.md`.

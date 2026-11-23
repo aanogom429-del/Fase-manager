@@ -1,3 +1,60 @@
+# 23/11/2026 — Diagnóstico ejecutado de pivote 6
+
+Workflow 45108837889 y prueba `tests/mid_decision_diagnostic.cjs`: **SUCCESS**, además de ensayos anteriores y cinco regresiones. Resultado azul/6: 11 vs 10 evaluaciones de `chooseAction`; mediapunta observado 11 vs 10; dos oportunidades proxy en ambas variantes; 1 vs 0 pases/recepciones al mediapunta (regla desactivada/activada). No evidencia de que la percepción ausente cause la diferencia. El informe `docs/DIAGNOSTICO_PIVOTE_6_MP3.md` contiene los ocho escenarios, hipótesis descartadas y las abiertas. Se registran como evidencia de diagnóstico y no como validación de nueva política.
+
+Motor `index.html` no modificado, PR #2 sigue en borrador, main permanece 0.148. Próxima prueba: identificar opción mejor puntuada y acción elegida por el pivote en la ventana relevante.
+
+---
+
+# 22/11/2026 — Resultado real del paso MP3 de horizonte equivalente
+
+GitHub Actions `45068520178` (job `137350001968`) **SUCCESS**: temporal, secuencias autónomas, nueva `mid_fixed_horizon.cjs`, verificaciones de salida y cinco regresiones. El análisis con regla desactivada/activada arrojó 4/3 pases dirigidos al mediapunta, 4/3 recepciones, 4/2 recepciones con 2 s de seguimiento completo, 0/1 recepción censurada y 4/2 pases posteriores desde ventanas elegibles. Registro completo e interpretación en `docs/VENTANAS_INTERIORES_MP3.md`. No se atribuye causalidad ni se confunden diferencias de elegibilidad con eficacia.
+
+El código del motor `index.html` permanece idéntico a `main`; no hay nueva versión jugable, ni cierre del bloque MP3. Próxima hipótesis: analizar caso azul/pivote 6 y distinguir línea disponible, orientación del poseedor, decisión de pase, tiempo de desmarque y ocupación de alternativas antes de ensayar una mejora táctica.
+
+---
+
+# 22/11/2026 — Paso siguiente MP3: comparación temporal corregida
+
+Confirmada la ejecución exitosa de `45067492930`: cuatro pases y cuatro recepciones al mediapunta sin regla frente a tres pases y tres recepciones con regla; las continuaciones registradas fueron 3 frente a 1. Sin vuelos sin resolver, pero con **horizonte posterior desigual** que impide interpretar justamente esa última medida.
+
+Incorporado `tests/mid_fixed_horizon.cjs` (`056c109`): ocho escenarios emparejados, ocho segundos de simulación inicial más dos de extensión idéntica, pases seleccionados hasta t=18 s, recepción y seguimiento evaluados hasta t=20 s; continuación dentro de los dos segundos posteriores a la recepción solo si tiene horizonte completo, con censura explícita en los demás casos. Workflow extendido en `b8004d8` y documentación en `docs/VENTANAS_INTERIORES_MP3.md`. En el momento de esta anotación, ejecución `45068520178` estaba `in_progress`.
+
+No se modifica `index.html` ni se publica `main`. Los resultados adversos y dudas de sincronización requieren evaluación antes de cambiar la política de conexiones interiores. Mantener PR #2 como borrador.
+
+---
+
+# 22/11/2026 — Verificación CI MP3 confirmada y ampliación de eficacia
+
+**Resultado de la ejecución original:** GitHub Actions `45067084840` terminó `success`. El ensayo temporal, estructura JSON y cinco regresiones (`mid_persistence`, `mid_connection`, `pivot_stagger`, `flank_stability`, `formation_selection`) pasaron. Valores y contracaso azul/pivote 6 en `docs/VENTANAS_INTERIORES_MP3.md`. Esto confirma ejecución del ensayo, no mejora del comportamiento táctico.
+
+**Siguiente incremento realmente incorporado:** el workflow ejecuta ahora `tests/mid_sequence_comparison.cjs` en ocho escenarios autónomos y resume por variante pases al mediapunta, recepciones efectivas, vuelos sin desenlace y continuaciones. Cambio en `db03f184`, sin tocar `index.html`, con PR #2 en borrador. La ejecución nueva `45067456194` figura `in_progress` en la consulta. No declarar resultado todavía. El trabajo no integra ningún cambio en main.
+
+---
+
+# 22/11/2026 — Paso siguiente: PR de revisión y disparadores de CI
+
+PR en borrador [#2](https://github.com/aanogom429-del/Fase-manager/pull/2) frente a `main`, sin integración. Se añadió activación del workflow MP3 para `pull_request` hacia `main` además de los eventos push de la rama. HEAD de esa actualización: `e90a1b1b72264eb361d818128041a8c0af5a59f7`.
+
+Verificación remota por `compare_commits`: rama nueve commits por delante de main, cero por detrás; siete archivos, **sin cambios en `index.html`**. Intentos de obtener ejecuciones PR y estados del commit devolvieron listas vacías; **no se ejecutó ni aprobó la batería** mediante herramienta. Intento de acceso Git al repositorio desde el contenedor local: DNS de github.com no resolvió, por lo que tampoco se ejecutó desde checkout local.
+
+Criterio de decisión: no integrar, no inventar resultados y no cambiar reglas del juego por un ensayo sin datos. Revisar restricciones de GitHub Actions (workflow no aceptado/ejecución no habilitada o falta de eventos) y analizar el primer log disponible antes de extender MP3 a nuevos sistemas. La PR permanece en borrador.
+
+---
+
+# Entrega experimental MP3 · 22/11/2026 · CI y verificabilidad
+
+**Base**: `main@14ed39dbc48018946b731b0ee74f5306b207eecc` (0.148); rama `codex/fase-manager-mp3-temporal-audit`. Sin cambios en motor `index.html` ni integración en `main`.
+
+- El ensayo `tests/mid_temporal_audit.cjs` tiene dos medidas separadas: (a) activaciones de destino con regla activada y (b) muestras de oportunidad perceptiva proxy tomadas cada 0,1 s tanto con regla activada como desactivada. La segunda es simétrica, pero no incorpora todas las reservas colectivas de destinos ni constituye una recepción o línea de pase ejecutada.
+- Se añadió `.github/workflows/mp3-temporal-audit.yml` para ejecutar el ensayo, verificar la estructura JSON y lanzar `mid_persistence`, `mid_connection`, `pivot_stagger`, `flank_stability` y `formation_selection` en Node.js 22. Se conserva un artefacto JSON si se ejecuta.
+- **Resultado disponible**: archivo de workflow creado en GitHub, commit `782d1f57e6c8ef34a577985a8f1a50220c58065c`. La consulta de estados del commit devolvió lista vacía, y la consulta de ejecuciones ligada a PR tampoco mostró ejecuciones (esta última no cubre push). Ninguna prueba ha sido confirmada como ejecutada. No se atribuye PASS ni fallo al motor, no se da por validada la hipótesis.
+- El contenedor local de la sesión dispone de Node.js, pero no pudo resolver `github.com` para descargar el repositorio; por ello no se ha ejecutado el ensayo completo en el entorno local. Esta limitación no es un defecto demostrado del videojuego.
+- Próxima acción verificable: comprobar en GitHub Actions que la ejecución existe y revisar su resultado, o disponer de checkout local para ejecutar las pruebas. Corregir el ensayo si arroja error antes de intervenir en `index.html`. Tras obtener muestras, añadir medidas de pases realizados y recepciones comparables para decidir una regla funcional.
+- Referencia de requisitos transversales: `docs/AUDITORIA_CONTINUIDAD_2026-11-22.md`; preservar las catorce secciones de especificación original como fuente, sin equipararlas a su resumen.
+
+---
+
 # Fase Manager — Registro de desarrollo y recuperación
 
 ## 0.120 — Progresión con observación reciente

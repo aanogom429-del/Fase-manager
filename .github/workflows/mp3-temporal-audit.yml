@@ -1,0 +1,112 @@
+name: MP3 temporal audit
+on:
+  push:
+    branches: [codex/fase-manager-mp3-temporal-audit]
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+jobs:
+  temporal-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check MP3 instrumentation
+        run: node tests/mid_temporal_audit.cjs > /tmp/mp3-temporal-result.json
+      - name: Check output structure and side-by-side comparison
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),assert=require('assert/strict');
+          const data=JSON.parse(fs.readFileSync('/tmp/mp3-temporal-result.json','utf8'));
+          assert.equal(data.results.length,8);
+          for(const r of data.results){
+            assert.equal(r.sampledSeconds,8);
+            assert(r.perceivedOpportunityShare>=0&&r.perceivedOpportunityShare<=1);
+            assert(Number.isFinite(r.longestPerceivedOpportunitySeconds));
+          }
+          console.log(JSON.stringify(data.results.map(({enabled,team,pivotSlot,perceivedOpportunityShare,longestPerceivedOpportunitySeconds,activations})=>({enabled,team,pivotSlot,perceivedOpportunityShare,longestPerceivedOpportunitySeconds,activations}))));
+          NODE
+      - name: Compare autonomous pass and receipt sequences
+        run: node tests/mid_sequence_comparison.cjs > /tmp/mp3-sequence-result.json
+      - name: Summarize paired receipts without assuming tactical benefit
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const cases=JSON.parse(fs.readFileSync('/tmp/mp3-sequence-result.json','utf8'));
+          assert.equal(cases.length,8);
+          const summary={};
+          for(const v of cases){
+            assert([0,1].includes(v.team)&&[5,6].includes(v.pivotSlot));
+            assert(Array.isArray(v.outcomes));
+            const key=v.enabled?'on':'off';
+            const s=summary[key]??={scenarios:0,kicks:0,received:0,unresolved:0,continuations:0};
+            s.scenarios++;s.kicks+=v.outcomes.length;
+            s.received+=v.outcomes.filter(o=>o.result==='intended').length;
+            s.unresolved+=v.outcomes.filter(o=>o.result==='unresolved').length;
+            s.continuations+=v.continuations;
+          }
+          assert.equal(summary.on.scenarios,4);assert.equal(summary.off.scenarios,4);
+          console.log('MP3_SEQUENCE_COMPARISON '+JSON.stringify(summary));
+          NODE
+      - name: Compare equal-horizon autonomous sequences
+        run: node tests/mid_fixed_horizon.cjs > /tmp/mp3-fixed-horizon-result.json
+      - name: Audit two-second post-reception follow-up with censoring
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const cases=JSON.parse(fs.readFileSync('/tmp/mp3-fixed-horizon-result.json','utf8'));
+          assert.equal(cases.length,8);
+          const out={off:{attempts:0,receipts:0,eligible:0,censored:0,continuations:0},on:{attempts:0,receipts:0,eligible:0,censored:0,continuations:0}};
+          for(const s of cases){
+            const v=out[s.enabled?'on':'off'];
+            assert.equal(s.observationSeconds,10);assert.equal(s.kickCutoff,18);
+            assert(s.eligibleForFullContinuation+s.censoredForContinuation===s.received);
+            assert(s.postReceipts.every(x=>x.receivedAt<=18.000001));
+            v.attempts+=s.outcomes.length;v.receipts+=s.received;
+            v.eligible+=s.eligibleForFullContinuation;
+            v.censored+=s.censoredForContinuation;
+            v.continuations+=s.continuations;
+          }
+          console.log('MP3_EQUAL_HORIZON '+JSON.stringify(out));
+          NODE
+      - name: Diagnose pivot decisions and perceived mid connection
+        run: node tests/mid_decision_diagnostic.cjs > /tmp/mp3-decision-diagnostic.json
+      - name: Compare diagnostic samples without imposing a preferred pass
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const cases=JSON.parse(fs.readFileSync('/tmp/mp3-decision-diagnostic.json','utf8'));
+          assert.equal(cases.length,8);
+          for(const s of cases){
+            const d=s.diagnostic;
+            assert(d.decisionCalls>=0);
+            for(const k of ['midSeen','recent','open','blocked','pressured','offside'])assert(Number.isInteger(d[k])&&d[k]>=0);
+            assert(d.midSeen<=d.decisionCalls);
+          }
+          console.log('MP3_PIVOT_DIAGNOSTIC '+JSON.stringify(cases.map(s=>({
+            enabled:s.enabled,team:s.team,pivotSlot:s.pivotSlot,attempts:s.outcomes.length,
+            received:s.received,diagnostic:{...s.diagnostic,snapshots:undefined}
+          }))));
+          NODE
+      - name: Focused regressions
+        run: |
+          node tests/mid_persistence.cjs
+          node tests/mid_connection.cjs
+          node tests/pivot_stagger.cjs
+          node tests/flank_stability.cjs
+          node tests/formation_selection.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mp3-temporal-results
+          path: |
+            /tmp/mp3-temporal-result.json
+            /tmp/mp3-sequence-result.json
+            /tmp/mp3-fixed-horizon-result.json
+            /tmp/mp3-decision-diagnostic.json
+          if-no-files-found: ignore

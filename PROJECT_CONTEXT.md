@@ -1,3 +1,15 @@
+# 23/11/2026 · Diagnóstico MP3 en rama (sin nueva versión de motor)
+
+Se incorpora `tests/mid_decision_diagnostic.cjs` y se ejecuta en GitHub Actions 45108837889 (success) para ambos equipos y pivotes. El caso azul/pivote 6 pierde una recepción pese a dos ventanas proxy disponibles en ambas variantes; ver `docs/DIAGNOSTICO_PIVOTE_6_MP3.md`. La selección de alternativas y la sincronización no han sido aún atribuidas causalmente. Ningún ajuste de prioridad ni de movimiento en `index.html` y ninguna integración en main. 
+
+---
+
+# Continuidad de investigación · 22/11/2026 · no integrada en main
+
+Rama `codex/fase-manager-mp3-temporal-audit`, base `main@14ed39d` (0.148). Instrumentación de oportunidades interiores con comparación simétrica, más auditoría documental transversal: `docs/AUDITORIA_CONTINUIDAD_2026-11-22.md`. No se altera la simulación en `index.html`; prueba no ejecutada aquí. Todos los avances de las secciones siguientes conservan su carácter acotado. La síntesis de `docs/MATRIZ_POSICIONAL.md` no equivale a conservar las catorce secciones originales en detalle.
+
+---
+
 # 0.148 · Continuidad del destino interior · 20 de noviembre de 2026
 
 El mediapunta conserva hasta 0,8 s el destino elegido cuando la referencia colectiva cambia ligeramente y la conexión original continúa bloqueada. Revalida poseedor observado, visibilidad, espacio, compañeros y destinos reservados. Desvío máximo respecto a nueva referencia: diez unidades y tres longitudinales. Si la conexión original se abre, termina la necesidad de desvío. Al caducar reevalúa; puede seleccionar de nuevo una alternativa válida.

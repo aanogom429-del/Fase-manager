@@ -1,3 +1,9 @@
+# 23/11/2026 — Corrección del defensor del fixture MP3
+
+Auditoría de `tests/mid_pass_opposition_0149.cjs`: el primer rival de la plantilla podía ser el **portero**, de modo que el fixture inicial no representaba la oposición de un jugador de campo. Se corrigió en `f8fb4af` usando un `midfielder` rival activo y una aserción de integridad. La ejecución inicial `45260999265` queda descartada como prueba de fútbol válida aunque técnicamente completara. La verificación relevante se vincula a la ejecución corregida `45261378767`. Mantener la versión 0.149 como candidata, sin integración en main, hasta conocer resultados de la batería corregida.
+
+---
+
 # 23/11/2026 — Ensayo de oposición MP3 incluido en candidata 0.149
 
 Archivos incorporados: `tests/mid_pass_opposition_0149.cjs` y `docs/OPOSICION_INTERIOR_0149.md`. Workflow actualizado: `.github/workflows/mid-pass-0149.yml`. La prueba usa 48 pares en tres contextos defensivos con oposición reactiva y compara con/sin bonus +2 con misma geometría/semilla. Distingue primer contacto de posesión final, pero no verifica eficacia táctica completa. CI iniciada con ID `45260999265`; en esta anotación no se había confirmado resultado completo. `index.html` no cambia en este paso; `main` sigue 0.148 y PR #3 continúa como borrador.

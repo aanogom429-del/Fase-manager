@@ -48,6 +48,25 @@ jobs:
           }
           console.log('MP3_PASS_OUTCOMES '+JSON.stringify({pairs:v.pairs,changed:v.changed,all:v.all,changedOnly:v.changedOnly}));
           NODE
+      - name: Evaluate three defensive contexts with physical outcomes
+        run: node tests/mid_pass_opposition_0149.cjs > /tmp/mp3-opposition.json
+      - name: Summarize pressure, interceptions and final possession
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const v=JSON.parse(fs.readFileSync('/tmp/mp3-opposition.json','utf8'));
+          assert.equal(v.pairs,48);assert.equal(v.cases.length,48);
+          assert(v.changed>=0&&v.changed<=v.pairs);
+          for(const [name,z] of Object.entries(v.byDefense)){
+            assert(['receiver','lane','alternative'].includes(name));assert.equal(z.pairs,16);
+            for(const a of [z.off,z.on]){
+              assert(a.intendedReceipts<=a.actualPasses);
+              assert(a.opposingFirstTouches<=a.actualPasses);
+              assert(a.stillOwnBall<=z.pairs);
+            }
+          }
+          console.log('MP3_DEFENSIVE_CONTEXTS '+JSON.stringify({pairs:v.pairs,changed:v.changed,byDefense:v.byDefense}));
+          NODE
       - name: Focused regressions
         run: |
           node tests/mid_connection.cjs
@@ -89,4 +108,5 @@ jobs:
             /tmp/mp3-candidate.json
             /tmp/mp3-choice-ablation.json
             /tmp/mp3-pass-outcomes.json
+            /tmp/mp3-opposition.json
           if-no-files-found: ignore

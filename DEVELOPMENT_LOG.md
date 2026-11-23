@@ -1,3 +1,9 @@
+# 23/11/2026 — Paso siguiente ejecutado: intenciones → golpeo → primer contacto
+
+Nueva prueba `tests/mid_pass_outcome_0149.cjs`, CI GitHub Actions 45238420236 **SUCCESS**. En 32 pares, la bonificación +2 cambia 16 destinatarios; la nueva preferencia suma 24 intenciones hacia el mediapunta frente a 8 sin ella. **32/32 pases liberados y 32/32 primeros contactos con receptor pretendido** en cada brazo, 0 primeras intercepciones rivales (oposición situada lejos). El ensayo acredita funcionamiento físico limitado, no ventaja o tasa real de éxito. Pasaron además las cinco regresiones, la ablación 160 pares y comparador autónomo; este último sigue sin cambio entre 0.148 y 0.149. Documento `docs/RESULTADO_PASE_INTERIOR_0149.md`. Motor sin cambios en este paso, PR #3 borrador y main sin modificar.
+
+---
+
 # 23/11/2026 — Ensayo causal de decisiones 0.149 verificado
 
 GitHub Actions `45110210742`, trabajo completo **SUCCESS**. `tests/mid_choice_ablation.cjs`: 160 pares idénticos en estado/semilla excepto la bonificación contextual; 44 decisiones de pase cambian de receptor alternativo al mediapunta, cero cambios inversos, cero sin opción instrumentada. Esto demuestra efecto de la nueva regla sobre la selección de intención, NO pases completados ni mayor rendimiento. Cinco regresiones y comparación 0.148/0.149 PASS. Recuentos autónomos idénticos entre versiones: sin apertura 4 pases/4 recepciones; con apertura 3 pases/3 recepciones en ambas. Informe `docs/ABLACION_DECISION_0149.md`. El próximo incremento evaluará resultado físico de esos pases bajo oposición y seguridad. PR #3 borrador; main 0.148 inalterado.

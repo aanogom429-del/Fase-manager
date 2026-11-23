@@ -74,6 +74,25 @@ jobs:
           }
           console.log('MP3_EQUAL_HORIZON '+JSON.stringify(out));
           NODE
+      - name: Diagnose pivot decisions and perceived mid connection
+        run: node tests/mid_decision_diagnostic.cjs > /tmp/mp3-decision-diagnostic.json
+      - name: Compare diagnostic samples without imposing a preferred pass
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const cases=JSON.parse(fs.readFileSync('/tmp/mp3-decision-diagnostic.json','utf8'));
+          assert.equal(cases.length,8);
+          for(const s of cases){
+            const d=s.diagnostic;
+            assert(d.decisionCalls>=0);
+            for(const k of ['midSeen','recent','open','blocked','pressured','offside'])assert(Number.isInteger(d[k])&&d[k]>=0);
+            assert(d.midSeen<=d.decisionCalls);
+          }
+          console.log('MP3_PIVOT_DIAGNOSTIC '+JSON.stringify(cases.map(s=>({
+            enabled:s.enabled,team:s.team,pivotSlot:s.pivotSlot,attempts:s.outcomes.length,
+            received:s.received,diagnostic:{...s.diagnostic,snapshots:undefined}
+          }))));
+          NODE
       - name: Focused regressions
         run: |
           node tests/mid_persistence.cjs
@@ -89,4 +108,5 @@ jobs:
             /tmp/mp3-temporal-result.json
             /tmp/mp3-sequence-result.json
             /tmp/mp3-fixed-horizon-result.json
+            /tmp/mp3-decision-diagnostic.json
           if-no-files-found: ignore

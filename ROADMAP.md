@@ -1,3 +1,9 @@
+# 23/11/2026 · MP3: paso de oposición cercana (experimental)
+
+Se añade ensayo de 48 pares en tres geometrías defensivas (defensor sobre mediapunta, trayectoria o alternativa), midiendo intención, ejecución, primer contacto y posesión final. CI extendida en `.github/workflows/mid-pass-0149.yml`, informe `docs/OPOSICION_INTERIOR_0149.md`. Pendiente de evaluación de resultados de CI y de contracasos adversos antes de ajustar el bonus +2 o aprobar 0.149. No cerrar MP3/MP11; no integrar en main.
+
+---
+
 # MP3 · Paso verificado sobre 0.149 — 23/11/2026
 
 En GitHub Actions 45238420236 pasan nuevas pruebas físicas de pase sobre 32 pares: 16 diferencias de destinatario, 32/32 golpes y primeros contactos al objetivo en cada variante, sin oposición próxima. **No implica mejora**, porque el fixture facilita la recepción, y el comparador autónomo no mostró diferencias 0.148→0.149. Prioridad siguiente: oposición reactiva cercana, control efectivo posterior a contacto, pérdidas y comparación de alternativas; después extender MP3 por sistemas. PR #3 en borrador; main 0.148 intacto. Informe `docs/RESULTADO_PASE_INTERIOR_0149.md`.

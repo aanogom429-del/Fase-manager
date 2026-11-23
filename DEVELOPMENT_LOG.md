@@ -1,3 +1,45 @@
+# 23/11/2026 — Verificación final de oposición cercana 0.149
+
+GitHub Actions `45261378767` / job `137996717943`: **SUCCESS** después de corregir el fixture para usar un centrocampista rival, no el portero. `tests/mid_pass_opposition_0149.cjs`: 48 pares, 16 por receptor/línea/alternativa; con/sin bonus +2, **cero elecciones distintas** en los 48. Con defensor sobre receptor: 8 contactos del destinatario y 8 rivales por brazo; en trayectoria: 0 del destinatario, 8 rivales y 8 sin contacto observado; con defensor sobre alternativa: 16 del destinatario y 0 rivales. Total 16 primeros contactos rivales en cada variante, sin evidencia de beneficio o perjuicio atribuible al bonus. Las cinco regresiones y el contraste autónomo 0.148/0.149 superaron la batería; la comparación autónoma mantiene recuentos idénticos. Documento `docs/OPOSICION_INTERIOR_0149.md`. Próxima hipótesis: oposición intermedia/reactiva que genere diferencias reales y evaluación de progresión/compensación tras pérdida. No integración, main 0.148.
+
+---
+
+# 23/11/2026 — Corrección del defensor del fixture MP3
+
+Auditoría de `tests/mid_pass_opposition_0149.cjs`: el primer rival de la plantilla podía ser el **portero**, de modo que el fixture inicial no representaba la oposición de un jugador de campo. Se corrigió en `f8fb4af` usando un `midfielder` rival activo y una aserción de integridad. La ejecución inicial `45260999265` queda descartada como prueba de fútbol válida aunque técnicamente completara. La verificación relevante se vincula a la ejecución corregida `45261378767`. Mantener la versión 0.149 como candidata, sin integración en main, hasta conocer resultados de la batería corregida.
+
+---
+
+# 23/11/2026 — Ensayo de oposición MP3 incluido en candidata 0.149
+
+Archivos incorporados: `tests/mid_pass_opposition_0149.cjs` y `docs/OPOSICION_INTERIOR_0149.md`. Workflow actualizado: `.github/workflows/mid-pass-0149.yml`. La prueba usa 48 pares en tres contextos defensivos con oposición reactiva y compara con/sin bonus +2 con misma geometría/semilla. Distingue primer contacto de posesión final, pero no verifica eficacia táctica completa. CI iniciada con ID `45260999265`; en esta anotación no se había confirmado resultado completo. `index.html` no cambia en este paso; `main` sigue 0.148 y PR #3 continúa como borrador.
+
+---
+
+# 23/11/2026 — Paso siguiente ejecutado: intenciones → golpeo → primer contacto
+
+Nueva prueba `tests/mid_pass_outcome_0149.cjs`, CI GitHub Actions 45238420236 **SUCCESS**. En 32 pares, la bonificación +2 cambia 16 destinatarios; la nueva preferencia suma 24 intenciones hacia el mediapunta frente a 8 sin ella. **32/32 pases liberados y 32/32 primeros contactos con receptor pretendido** en cada brazo, 0 primeras intercepciones rivales (oposición situada lejos). El ensayo acredita funcionamiento físico limitado, no ventaja o tasa real de éxito. Pasaron además las cinco regresiones, la ablación 160 pares y comparador autónomo; este último sigue sin cambio entre 0.148 y 0.149. Documento `docs/RESULTADO_PASE_INTERIOR_0149.md`. Motor sin cambios en este paso, PR #3 borrador y main sin modificar.
+
+---
+
+# 23/11/2026 — Ensayo causal de decisiones 0.149 verificado
+
+GitHub Actions `45110210742`, trabajo completo **SUCCESS**. `tests/mid_choice_ablation.cjs`: 160 pares idénticos en estado/semilla excepto la bonificación contextual; 44 decisiones de pase cambian de receptor alternativo al mediapunta, cero cambios inversos, cero sin opción instrumentada. Esto demuestra efecto de la nueva regla sobre la selección de intención, NO pases completados ni mayor rendimiento. Cinco regresiones y comparación 0.148/0.149 PASS. Recuentos autónomos idénticos entre versiones: sin apertura 4 pases/4 recepciones; con apertura 3 pases/3 recepciones en ambas. Informe `docs/ABLACION_DECISION_0149.md`. El próximo incremento evaluará resultado físico de esos pases bajo oposición y seguridad. PR #3 borrador; main 0.148 inalterado.
+
+---
+
+# 23/11/2026 — 0.149: CI de la nueva regla del motor completado
+
+GitHub Actions `45109546029` terminó **success**. La prueba `mid_pass_preference.cjs` (dos equipos × dos pivotes y contracasos), cinco regresiones dirigidas y el comparador `mid_fixed_horizon.cjs` aplicado tanto a 0.148 como a 0.149 finalizaron sin fallos. Los recuentos autónomos permanecieron **idénticos** entre las dos versiones (sin apertura: 4 pases/4 recepciones; con apertura: 3 pases/3 recepciones; 1 recepción censurada para continuidad y 2 elegibles). El cambio sí altera la puntuación contextual del candidato, pero no ha cambiado las elecciones de los ocho escenarios; no se concluye eficacia superior. Se conserva 0.148 en main y PR #3 en borrador, sin publicación de 0.149 estable. Ver informe `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
+# 23/11/2026 — 0.149 candidata: cambio de motor implementado
+
+Base `main@14ed39d`; rama `codex/fase-manager-0.149-mid-pass-preference`. Commit de implementación `04f63db`: helper `midfielderPassPreference` añade +2 a la puntuación normal solo para pase observado y seguro pivote→mediapunta (4-2-3-1), sin forzar acciones. Se añadieron pruebas positivas/negativas, comparación autónoma contra 0.148 y pipeline CI. PR #3 en borrador. **Ejecución no certificada al registrar esta entrada**: pendiente de examinar log, recepciones, regresiones y posibles efectos adversos. No se declara validación general ni se integra main. Documentación de alcance: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
 # Fase Manager — Registro de desarrollo y recuperación
 
 ## 0.120 — Progresión con observación reciente

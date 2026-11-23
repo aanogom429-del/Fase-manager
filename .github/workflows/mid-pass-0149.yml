@@ -1,0 +1,112 @@
+name: Candidate 0.149 - midfielder pass preference
+on:
+  push:
+    branches: [codex/fase-manager-0.149-mid-pass-preference]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exercise rule and negative cases
+        run: node tests/mid_pass_preference.cjs
+      - name: Causal decision ablation on mirrored near-tie alternatives
+        run: node tests/mid_choice_ablation.cjs > /tmp/mp3-choice-ablation.json
+      - name: Summarize causal choice changes
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const x=JSON.parse(fs.readFileSync('/tmp/mp3-choice-ablation.json','utf8'));
+          assert.equal(x.cases,160);
+          assert(x.changed>=0&&x.changed<=x.cases);
+          assert(x.gain>=0&&x.loss>=0);
+          console.log('MP3_CHOICE_ABLATION '+JSON.stringify({cases:x.cases,changed:x.changed,gain:x.gain,loss:x.loss,nullChoices:x.nullChoices,changedCases:x.changedCases.slice(0,8)}));
+          NODE
+      - name: Follow first-touch outcomes of divergent choices
+        run: node tests/mid_pass_outcome_0149.cjs > /tmp/mp3-pass-outcomes.json
+      - name: Check outcome accounting
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const v=JSON.parse(fs.readFileSync('/tmp/mp3-pass-outcomes.json','utf8'));
+          assert.equal(v.pairs,32);
+          assert.equal(v.cases.length,32);
+          assert(v.changed>=0&&v.changed<=32);
+          for(const s of v.cases)for(const a of [s.off,s.on]){
+            assert(!a.receivedByIntended||a.hadRelease);
+            assert(!a.turnover||a.firstReceiver!==null);
+          }
+          console.log('MP3_PASS_OUTCOMES '+JSON.stringify({pairs:v.pairs,changed:v.changed,all:v.all,changedOnly:v.changedOnly}));
+          NODE
+      - name: Evaluate three defensive contexts with physical outcomes
+        run: node tests/mid_pass_opposition_0149.cjs > /tmp/mp3-opposition.json
+      - name: Summarize pressure, interceptions and final possession
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const v=JSON.parse(fs.readFileSync('/tmp/mp3-opposition.json','utf8'));
+          assert.equal(v.pairs,48);assert.equal(v.cases.length,48);
+          assert(v.changed>=0&&v.changed<=v.pairs);
+          for(const [name,z] of Object.entries(v.byDefense)){
+            assert(['receiver','lane','alternative'].includes(name));assert.equal(z.pairs,16);
+            for(const a of [z.off,z.on]){
+              assert(a.intendedReceipts<=a.actualPasses);
+              assert(a.opposingFirstTouches<=a.actualPasses);
+              assert(a.stillOwnBall<=z.pairs);
+            }
+          }
+          console.log('MP3_DEFENSIVE_CONTEXTS '+JSON.stringify({pairs:v.pairs,changed:v.changed,byDefense:v.byDefense}));
+          NODE
+      - name: Focused regressions
+        run: |
+          node tests/mid_connection.cjs
+          node tests/pivot_stagger.cjs
+          node tests/formation_selection.cjs
+          node tests/organizing_progression.cjs
+          node tests/continuity.cjs
+      - name: Simulate 0.148 baseline and candidate with identical tests
+        run: |
+          git show 14ed39dbc48018946b731b0ee74f5306b207eecc:index.html > /tmp/fase-manager-0148.html
+          node tests/mid_fixed_horizon.cjs /tmp/fase-manager-0148.html > /tmp/mp3-base.json
+          node tests/mid_fixed_horizon.cjs > /tmp/mp3-candidate.json
+      - name: Summarize paired outcomes and censoring
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const b=JSON.parse(fs.readFileSync('/tmp/mp3-base.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('/tmp/mp3-candidate.json','utf8'));
+          const summarize=cases=>{
+            assert.equal(cases.length,8);
+            const out={off:{attempts:0,received:0,eligible:0,censored:0,continuations:0},on:{attempts:0,received:0,eligible:0,censored:0,continuations:0}};
+            for(const s of cases){
+              assert(s.eligibleForFullContinuation+s.censoredForContinuation===s.received);
+              const v=out[s.enabled?'on':'off'];
+              v.attempts+=s.outcomes.length;v.received+=s.received;
+              v.eligible+=s.eligibleForFullContinuation;v.censored+=s.censoredForContinuation;v.continuations+=s.continuations;
+            }
+            return out;
+          };
+          console.log('MP3_0148 '+JSON.stringify(summarize(b)));
+          console.log('MP3_0149 '+JSON.stringify(summarize(c)));
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mp3-0149-comparison
+          path: |
+            /tmp/mp3-base.json
+            /tmp/mp3-candidate.json
+            /tmp/mp3-choice-ablation.json
+            /tmp/mp3-pass-outcomes.json
+            /tmp/mp3-opposition.json
+          if-no-files-found: ignore

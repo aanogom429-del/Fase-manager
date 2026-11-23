@@ -1,3 +1,39 @@
+# 23/11/2026 · Resultado de oposición en candidata 0.149
+
+El ensayo con rival centrocampista de campo cercano fue ejecutado en GitHub Actions `45261378767` (success). 48 pares, tres colocaciones defensivas, **0 cambios de destinatario entre bonus neutralizado y +2**. Se observan primeros contactos rivales (16 en cada brazo), de modo que la simulación no fuerza recepciones ante oposición; ocho pases por brazo no tuvieron primer contacto identificado antes de 2,5 s. La prueba no acredita mayor ventaja ofensiva ni mejora colectiva. Informe `docs/OPOSICION_INTERIOR_0149.md`. La edición inicial del fixture usaba accidentalmente un portero, corregido en `f8fb4af`; invalidar el contraste inicial. Main sigue 0.148 y PR #3 no fusionada.
+
+---
+
+# 23/11/2026 · 0.149: oposición cercana incorporada a la evaluación (PR #3)
+
+La rama 0.149 incorpora `tests/mid_pass_opposition_0149.cjs`, que contrasta con/sin bonificación +2 en 48 pares de escenas y tres contextos con defensor próximo: receptor, trayectoria de pase o alternativa. Registra intención, pase ejecutado, primer contacto y posesión al acabar 2,5 s. No cambia `index.html`, no se ha integrado en `main`. Informe de alcance `docs/OPOSICION_INTERIOR_0149.md`. La aceptación depende del resultado de CI; no equivale a validación real.
+
+---
+
+# 23/11/2026 · 0.149: ejecución de pases emparejados verificada (rama)
+
+Se añadió `tests/mid_pass_outcome_0149.cjs` y el workflow completó GitHub Actions 45238420236: **SUCCESS**. En 32 pares de geometría idéntica con/sin +2, 16 cambian el destinatario (8→24 intenciones al mediapunta). En los 32 de cada brazo el pase se ejecuta y el primer contacto es del destinatario previsto, **con rivales alejados**. No se acredita mantenimiento de posesión prolongada, ventaja táctica ni utilidad en presión. El ensayo autónomo 0.148/0.149 sigue idéntico; no fusionar PR #3. Detalle: `docs/RESULTADO_PASE_INTERIOR_0149.md`.
+
+---
+
+# 23/11/2026 — 0.149: prueba causal de intención completada (rama de evaluación)
+
+CI 45110210742 superó 160 pares espejo con y sin bonificación +2 manteniendo la misma aleatoriedad y geometría. **44 decisiones cambian hacia un pase al mediapunta, 0 en sentido contrario**, en escenarios artificiales próximos al empate; confirma que el motor sí aplica la regla a decisiones reales. No demuestra ejecución exitosa del pase ni eficacia colectiva: las ocho secuencias autónomas de contraste mantienen recuentos idénticos a 0.148. `docs/ABLACION_DECISION_0149.md` recoge resultados y limitaciones; PR #3 queda en borrador, main 0.148 intacto.
+
+---
+
+# Candidato 0.149 · Resultado CI confirmado · 23/11/2026
+
+La preferencia de pase del pivote hacia el mediapunta (+2 acotado) está incorporada al motor de la rama y GitHub Actions 45109546029 terminó SUCCESS, con tests unitarios espejo, cinco regresiones y evaluación de trayectorias autónomas comparadas con 0.148. Los resultados colectivos **no variaron** en la pequeña muestra (4/3 recepciones sin/con apertura, tanto en 0.148 como en 0.149). No hay mejora causal demostrada; PR #3 sigue en borrador y `main` permanece 0.148. Ver `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
+# 0.149 experimental · 23/11/2026 · Primera preferencia táctica del pasador
+
+La rama independiente `codex/fase-manager-0.149-mid-pass-preference` parte de 0.148 estable. Implementa en el motor una preferencia moderada por el mediapunta en 4-2-3-1 cuando el pivote observa una conexión segura, sin imponerla. Tiene prueba unitaria espejo y comparador de recepciones contra base 0.148; ver `docs/PREFERENCIA_PASE_INTERIOR_0149.md`. PR #3 permanece en borrador; no implica fusión ni validación de mejora. `main` y PR experimental #2 permanecen separados.
+
+---
+
 # 0.148 · Continuidad del destino interior · 20 de noviembre de 2026
 
 El mediapunta conserva hasta 0,8 s el destino elegido cuando la referencia colectiva cambia ligeramente y la conexión original continúa bloqueada. Revalida poseedor observado, visibilidad, espacio, compañeros y destinos reservados. Desvío máximo respecto a nueva referencia: diez unidades y tres longitudinales. Si la conexión original se abre, termina la necesidad de desvío. Al caducar reevalúa; puede seleccionar de nuevo una alternativa válida.

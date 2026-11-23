@@ -1,3 +1,39 @@
+# 23/11/2026 · MP3 · Evaluación contra defensa próxima, verificada
+
+Ensayo `tests/mid_pass_opposition_0149.cjs` con defensor de campo, CI `45261378767` **SUCCESS**: 48 parejas (tres tipos defensivos ×16), con/sin preferencia +2. **Cero cambios de elección atribuibles al bonus en estos casos defensivos**; con defensor sobre receptor hay 8 primeros contactos rivales por brazo y con defensor en línea de pase otros 8, y 8 pases sin primer contacto dentro de ventana por brazo. La ejecución bajo oposición sirve de prueba de riesgo, pero **no muestra mejora ofensiva**, ni deja cerrado MP3/MP11. El estudio autónomo 0.148–0.149 también sigue sin cambios. Próximo: diseñar presión intermedia y múltiples distancias donde exista efecto de decisión, comparar control y progresión, y evaluar protección del equilibrio ante pérdida. Ver `docs/OPOSICION_INTERIOR_0149.md`. PR #3 borrador, main 0.148.
+
+---
+
+# 23/11/2026 · MP3: paso de oposición cercana (experimental)
+
+Se añade ensayo de 48 pares en tres geometrías defensivas (defensor sobre mediapunta, trayectoria o alternativa), midiendo intención, ejecución, primer contacto y posesión final. CI extendida en `.github/workflows/mid-pass-0149.yml`, informe `docs/OPOSICION_INTERIOR_0149.md`. Pendiente de evaluación de resultados de CI y de contracasos adversos antes de ajustar el bonus +2 o aprobar 0.149. No cerrar MP3/MP11; no integrar en main.
+
+---
+
+# MP3 · Paso verificado sobre 0.149 — 23/11/2026
+
+En GitHub Actions 45238420236 pasan nuevas pruebas físicas de pase sobre 32 pares: 16 diferencias de destinatario, 32/32 golpes y primeros contactos al objetivo en cada variante, sin oposición próxima. **No implica mejora**, porque el fixture facilita la recepción, y el comparador autónomo no mostró diferencias 0.148→0.149. Prioridad siguiente: oposición reactiva cercana, control efectivo posterior a contacto, pérdidas y comparación de alternativas; después extender MP3 por sistemas. PR #3 en borrador; main 0.148 intacto. Informe `docs/RESULTADO_PASE_INTERIOR_0149.md`.
+
+---
+
+# 23/11/2026 · 0.149: causalidad de la elección confirmada, no eficacia final
+
+Nueva prueba `tests/mid_choice_ablation.cjs` ejecutada en GitHub Actions 45110210742 (SUCCESS): de 160 situaciones emparejadas con rivales alejados y dos opciones próximas en puntuación, 44 alteran la intención de pase hacia el mediapunta al activar el bonus de 0.149. Regresiones y contraste autónomo siguen PASS; las recepciones autónomas de muestra no mejoran. Siguiente puerta de MP3/MP11: seguimiento de los pases realmente ejecutados y las recepciones/intercepciones y pérdidas con oposición. No dar por validado rendimiento, no integrar PR #3 todavía. Ver `docs/ABLACION_DECISION_0149.md`.
+
+---
+
+# 0.149 · Estado de aprobación tras CI (23/11/2026)
+
+Implementación funcional de preferencia contextual de pase en rama con prueba unitaria y regresiones **PASS** (GitHub Actions 45109546029). En ocho situaciones autónomas comparadas con el mismo 0.148, **ningún recuento de pases/recepciones cambió**; no se autoriza afirmar mejora de conexiones, ni cerrar MP3. PR #3 en borrador y main sin modificación. Próxima etapa: ampliar variabilidad de geometrías y competencia entre candidatos, contrastar decisiones ejecutadas y pérdidas/continuidad antes de una posible integración. Registro: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
+# 0.149 candidata · 23/11/2026 · MP3 (sin integrar en main)
+
+Se implementa en `index.html` una preferencia leve (+2 sobre puntuación existente) para conexión pivote–mediapunta en 4-2-3-1 únicamente con receptor visto, espacio y línea de pase seguros, y rangos limitados. No se obliga el pase, no se altera otra formación ni se anulan las condiciones de fuera de juego o ejecución. Pruebas unitarias, simulación comparada con 0.148 y regresiones disponibles en `tests/mid_pass_preference.cjs`, `tests/mid_fixed_horizon.cjs` y workflow `mid-pass-0149.yml`. PR #3 en borrador. Evidencia y límites: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`. No dar por cerrados MP3 ni MP11; conservar investigación MP3 anterior independiente.
+
+---
+
 # Hoja de ruta vigente · matriz posicional integral · 0.148
 
 Actualizada el 19 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.

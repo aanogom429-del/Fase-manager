@@ -3,7 +3,7 @@ on:
   push:
     branches: [codex/fase-manager-0.150-contextual-mid-safety]
   pull_request:
-    branches: [main]
+    branches: [codex/fase-manager-0.149-mid-pass-preference]
   workflow_dispatch:
 jobs:
   candidate:

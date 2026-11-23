@@ -1,3 +1,9 @@
+# MP3 · Paso verificado sobre 0.149 — 23/11/2026
+
+En GitHub Actions 45238420236 pasan nuevas pruebas físicas de pase sobre 32 pares: 16 diferencias de destinatario, 32/32 golpes y primeros contactos al objetivo en cada variante, sin oposición próxima. **No implica mejora**, porque el fixture facilita la recepción, y el comparador autónomo no mostró diferencias 0.148→0.149. Prioridad siguiente: oposición reactiva cercana, control efectivo posterior a contacto, pérdidas y comparación de alternativas; después extender MP3 por sistemas. PR #3 en borrador; main 0.148 intacto. Informe `docs/RESULTADO_PASE_INTERIOR_0149.md`.
+
+---
+
 # 23/11/2026 · 0.149: causalidad de la elección confirmada, no eficacia final
 
 Nueva prueba `tests/mid_choice_ablation.cjs` ejecutada en GitHub Actions 45110210742 (SUCCESS): de 160 situaciones emparejadas con rivales alejados y dos opciones próximas en puntuación, 44 alteran la intención de pase hacia el mediapunta al activar el bonus de 0.149. Regresiones y contraste autónomo siguen PASS; las recepciones autónomas de muestra no mejoran. Siguiente puerta de MP3/MP11: seguimiento de los pases realmente ejecutados y las recepciones/intercepciones y pérdidas con oposición. No dar por validado rendimiento, no integrar PR #3 todavía. Ver `docs/ABLACION_DECISION_0149.md`.

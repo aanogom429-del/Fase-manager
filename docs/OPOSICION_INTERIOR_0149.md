@@ -1,3 +1,22 @@
+# Resultados de oposición cercana corregida · 23/11/2026
+
+**Ejecución verificable**: GitHub Actions `45261378767`, trabajo `137996717943`, resultado **SUCCESS** (código con marcador de campo, no portero). La prueba de 48 pares, sus comprobaciones contables, cinco regresiones y la comparación 0.148/0.149 completaron sin fallos. No usar la ejecución anterior con portero desplazado como referencia deportiva.
+
+| Contexto, 16 parejas cada uno | Cambios por bonus +2 | Pase al mediapunta sin/con bonus | Primer contacto del destinatario sin/con bonus | Primer contacto rival sin/con bonus | Sin primer contacto identificado sin/con bonus | Posesión del equipo al final sin/con bonus |
+|---|---:|---:|---:|---:|---:|---:|
+| Marcador cerca del mediapunta | 0 | 0 / 0 | 8 / 8 | 8 / 8 | 0 / 0 | 4 / 4 |
+| Marcador sobre línea de pase | 0 | 0 / 0 | 0 / 0 | 8 / 8 | 8 / 8 | 4 / 4 |
+| Marcador cerca de la alternativa | 0 | 16 / 16 | 16 / 16 | 0 / 0 | 0 / 0 | 7 / 7 |
+| **Total** | **0 / 48** | **16 / 16** | **24 / 24** | **16 / 16** | **8 / 8** | **15 / 15** |
+
+La última columna mide exclusivamente quién figura como poseedor al acabar el horizonte de 2,5 s; no identifica siempre el desenlace final de una jugada. Un primer contacto no significa conservar el balón; en línea bloqueada hubo ocho casos sin contacto identificado al terminar la ventana, **no ocho pérdidas confirmadas**.
+
+**Diagnóstico**: en estos tres escenarios con rival de campo cerca, la preferencia 0.149 **no cambió ninguna decisión respecto a su ablación**. Parece quedar restringida por los filtros de riesgo, espacio y alternativas; por tanto no hay evidencia de empeoramiento causado por la bonificación en estas 48 parejas, pero **tampoco beneficio**. La oposición sí afecta a los desenlaces: se detectan 16 primeras intervenciones rivales por brazo entre las 48 escenas. Estos casos ayudan a controlar que la física no garantiza recepción al destinatario.
+
+La ablación favorable de 160 casos con rivales alejados sigue mostrando 44 cambios hacia el mediapunta; el contraste autónomo 0.148–0.149 sigue con idénticas recepciones en las ocho escenas previas. Aún falta situar defensas intermedias en las que la preferencia cambie una decisión y el pase sea físicamente disputado, así como medir ventajas y consecuencias defensivas. **La actualización 0.149 permanece experimental**; no fusionar PR #3 automáticamente ni cerrar MP3/MP11.
+
+---
+
 ## Corrección de fixture antes de aceptación
 
 La primera edición del escenario seleccionaba equivocadamente el primer oponente activo, que podía ser el portero. **Se corrigió** en el commit `f8fb4af`: el defensor próximo debe ser un centrocampista rival de campo y la prueba exige explícitamente ese rol. Cualquier resultado de la ejecución anterior `45260999265` es exploratorio y **no puede utilizarse como validación** del comportamiento de campo. La verificación que cuenta es la ejecución asociada al commit corregido. Este hallazgo refuerza la auditoría de coherencia de roles y escenarios antes de atribuir eficacia deportiva.

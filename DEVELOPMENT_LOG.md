@@ -1,3 +1,9 @@
+# 23/11/2026 — Implementación real 0.150, bonus según riesgo
+
+Rama nueva derivada de 0.149 `522c9f0`. Implementación `4ab3620`: `midfielderPassPreference` devuelve 0 si riesgo>2 o espacio<6; +1 si riesgo (1,2], +2 si riesgo<=1, conservando los demás filtros de 0.149. Actualizados test unitario, ablación, recepción física y oposición con el nuevo hook y workflow frente a 0.149, PR #4 en borrador. `main` no ha sido modificado. La CI y eficacia táctica requieren evaluación expresa; este registro no declara PASS hasta obtener evidencia de la ejecución. Informe `docs/SEGURIDAD_PASE_INTERIOR_0150.md`.
+
+---
+
 # 23/11/2026 — Verificación final de oposición cercana 0.149
 
 GitHub Actions `45261378767` / job `137996717943`: **SUCCESS** después de corregir el fixture para usar un centrocampista rival, no el portero. `tests/mid_pass_opposition_0149.cjs`: 48 pares, 16 por receptor/línea/alternativa; con/sin bonus +2, **cero elecciones distintas** en los 48. Con defensor sobre receptor: 8 contactos del destinatario y 8 rivales por brazo; en trayectoria: 0 del destinatario, 8 rivales y 8 sin contacto observado; con defensor sobre alternativa: 16 del destinatario y 0 rivales. Total 16 primeros contactos rivales en cada variante, sin evidencia de beneficio o perjuicio atribuible al bonus. Las cinco regresiones y el contraste autónomo 0.148/0.149 superaron la batería; la comparación autónoma mantiene recuentos idénticos. Documento `docs/OPOSICION_INTERIOR_0149.md`. Próxima hipótesis: oposición intermedia/reactiva que genere diferencias reales y evaluación de progresión/compensación tras pérdida. No integración, main 0.148.

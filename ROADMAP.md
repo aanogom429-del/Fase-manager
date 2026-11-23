@@ -1,3 +1,9 @@
+# 0.149 · Estado de aprobación tras CI (23/11/2026)
+
+Implementación funcional de preferencia contextual de pase en rama con prueba unitaria y regresiones **PASS** (GitHub Actions 45109546029). En ocho situaciones autónomas comparadas con el mismo 0.148, **ningún recuento de pases/recepciones cambió**; no se autoriza afirmar mejora de conexiones, ni cerrar MP3. PR #3 en borrador y main sin modificación. Próxima etapa: ampliar variabilidad de geometrías y competencia entre candidatos, contrastar decisiones ejecutadas y pérdidas/continuidad antes de una posible integración. Registro: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
 # 0.149 candidata · 23/11/2026 · MP3 (sin integrar en main)
 
 Se implementa en `index.html` una preferencia leve (+2 sobre puntuación existente) para conexión pivote–mediapunta en 4-2-3-1 únicamente con receptor visto, espacio y línea de pase seguros, y rangos limitados. No se obliga el pase, no se altera otra formación ni se anulan las condiciones de fuera de juego o ejecución. Pruebas unitarias, simulación comparada con 0.148 y regresiones disponibles en `tests/mid_pass_preference.cjs`, `tests/mid_fixed_horizon.cjs` y workflow `mid-pass-0149.yml`. PR #3 en borrador. Evidencia y límites: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`. No dar por cerrados MP3 ni MP11; conservar investigación MP3 anterior independiente.

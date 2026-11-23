@@ -1,3 +1,9 @@
+# 23/11/2026 · Resultado de oposición en candidata 0.149
+
+El ensayo con rival centrocampista de campo cercano fue ejecutado en GitHub Actions `45261378767` (success). 48 pares, tres colocaciones defensivas, **0 cambios de destinatario entre bonus neutralizado y +2**. Se observan primeros contactos rivales (16 en cada brazo), de modo que la simulación no fuerza recepciones ante oposición; ocho pases por brazo no tuvieron primer contacto identificado antes de 2,5 s. La prueba no acredita mayor ventaja ofensiva ni mejora colectiva. Informe `docs/OPOSICION_INTERIOR_0149.md`. La edición inicial del fixture usaba accidentalmente un portero, corregido en `f8fb4af`; invalidar el contraste inicial. Main sigue 0.148 y PR #3 no fusionada.
+
+---
+
 # 23/11/2026 · 0.149: oposición cercana incorporada a la evaluación (PR #3)
 
 La rama 0.149 incorpora `tests/mid_pass_opposition_0149.cjs`, que contrasta con/sin bonificación +2 en 48 pares de escenas y tres contextos con defensor próximo: receptor, trayectoria de pase o alternativa. Registra intención, pase ejecutado, primer contacto y posesión al acabar 2,5 s. No cambia `index.html`, no se ha integrado en `main`. Informe de alcance `docs/OPOSICION_INTERIOR_0149.md`. La aceptación depende del resultado de CI; no equivale a validación real.

@@ -1,3 +1,9 @@
+# 23/11/2026 · MP3: diagnóstico real de selección de pase (rama, no main)
+
+La comparación con horizonte equivalente mostró 4 recepciones sin regla frente a 3 con ella. Se incorporó y ejecutó `tests/mid_decision_diagnostic.cjs` (GitHub Actions 45108837889: **success**). En el caso azul/pivote 6, el pivote percibe al mediapunta en 11/11 decisiones sin regla y 10/10 con regla; hay dos evaluaciones con conexión proxy disponible en cada variante, pero 1 pase recibido frente a 0. Así que no basta afirmar que el receptor quedó oculto: el siguiente trabajo debe atribuir qué alternativa pasa a priorizarse, cómo se produce el desplazamiento y qué acción ejecuta el poseedor. Ver `docs/DIAGNOSTICO_PIVOTE_6_MP3.md`. No modificar prioridades a ciegas; MP3, MP2 y MP11 siguen abiertos. Motor estable 0.148 intacto.
+
+---
+
 # Auditoría de continuidad · 22/11/2026 · rama de trabajo (sin integrar)
 
 Sobre 0.148 se añade análisis temporal MP3 comparativo sin cambiar el motor (`tests/mid_temporal_audit.cjs`) y auditoría de requisitos/procesos (`docs/AUDITORIA_CONTINUIDAD_2026-11-22.md`). Próximo paso: ejecutar la instrumentación, separar calidad de oportunidad de activaciones y decidir extensión interior por sistema tras contrastes. **Estado: código de ensayo publicado, pruebas nuevas no ejecutadas; sin nueva versión estable ni evidencia de mejora táctica.** Mantener todos los requisitos y pendientes MP1–MP11 de las entradas inferiores.

@@ -1,0 +1,62 @@
+name: Candidate 0.149 - midfielder pass preference
+on:
+  push:
+    branches: [codex/fase-manager-0.149-mid-pass-preference]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exercise rule and negative cases
+        run: node tests/mid_pass_preference.cjs
+      - name: Focused regressions
+        run: |
+          node tests/mid_connection.cjs
+          node tests/pivot_stagger.cjs
+          node tests/formation_selection.cjs
+          node tests/organizing_progression.cjs
+          node tests/continuity.cjs
+      - name: Simulate 0.148 baseline and candidate with identical tests
+        run: |
+          git show 14ed39dbc48018946b731b0ee74f5306b207eecc:index.html > /tmp/fase-manager-0148.html
+          node tests/mid_fixed_horizon.cjs /tmp/fase-manager-0148.html > /tmp/mp3-base.json
+          node tests/mid_fixed_horizon.cjs > /tmp/mp3-candidate.json
+      - name: Summarize paired outcomes and censoring
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const b=JSON.parse(fs.readFileSync('/tmp/mp3-base.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('/tmp/mp3-candidate.json','utf8'));
+          const summarize=cases=>{
+            assert.equal(cases.length,8);
+            const out={off:{attempts:0,received:0,eligible:0,censored:0,continuations:0},on:{attempts:0,received:0,eligible:0,censored:0,continuations:0}};
+            for(const s of cases){
+              assert(s.eligibleForFullContinuation+s.censoredForContinuation===s.received);
+              const v=out[s.enabled?'on':'off'];
+              v.attempts+=s.outcomes.length;v.received+=s.received;
+              v.eligible+=s.eligibleForFullContinuation;v.censored+=s.censoredForContinuation;v.continuations+=s.continuations;
+            }
+            return out;
+          };
+          console.log('MP3_0148 '+JSON.stringify(summarize(b)));
+          console.log('MP3_0149 '+JSON.stringify(summarize(c)));
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mp3-0149-comparison
+          path: |
+            /tmp/mp3-base.json
+            /tmp/mp3-candidate.json
+          if-no-files-found: ignore

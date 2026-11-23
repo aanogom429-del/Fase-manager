@@ -32,6 +32,22 @@ jobs:
           assert(x.gain>=0&&x.loss>=0);
           console.log('MP3_CHOICE_ABLATION '+JSON.stringify({cases:x.cases,changed:x.changed,gain:x.gain,loss:x.loss,nullChoices:x.nullChoices,changedCases:x.changedCases.slice(0,8)}));
           NODE
+      - name: Follow first-touch outcomes of divergent choices
+        run: node tests/mid_pass_outcome_0149.cjs > /tmp/mp3-pass-outcomes.json
+      - name: Check outcome accounting
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const v=JSON.parse(fs.readFileSync('/tmp/mp3-pass-outcomes.json','utf8'));
+          assert.equal(v.pairs,32);
+          assert.equal(v.cases.length,32);
+          assert(v.changed>=0&&v.changed<=32);
+          for(const s of v.cases)for(const a of [s.off,s.on]){
+            assert(!a.receivedByIntended||a.hadRelease);
+            assert(!a.turnover||a.firstReceiver!==null);
+          }
+          console.log('MP3_PASS_OUTCOMES '+JSON.stringify({pairs:v.pairs,changed:v.changed,all:v.all,changedOnly:v.changedOnly}));
+          NODE
       - name: Focused regressions
         run: |
           node tests/mid_connection.cjs
@@ -72,4 +88,5 @@ jobs:
             /tmp/mp3-base.json
             /tmp/mp3-candidate.json
             /tmp/mp3-choice-ablation.json
+            /tmp/mp3-pass-outcomes.json
           if-no-files-found: ignore

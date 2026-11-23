@@ -1,3 +1,9 @@
+# 23/11/2026 · 0.149: oposición cercana incorporada a la evaluación (PR #3)
+
+La rama 0.149 incorpora `tests/mid_pass_opposition_0149.cjs`, que contrasta con/sin bonificación +2 en 48 pares de escenas y tres contextos con defensor próximo: receptor, trayectoria de pase o alternativa. Registra intención, pase ejecutado, primer contacto y posesión al acabar 2,5 s. No cambia `index.html`, no se ha integrado en `main`. Informe de alcance `docs/OPOSICION_INTERIOR_0149.md`. La aceptación depende del resultado de CI; no equivale a validación real.
+
+---
+
 # 23/11/2026 · 0.149: ejecución de pases emparejados verificada (rama)
 
 Se añadió `tests/mid_pass_outcome_0149.cjs` y el workflow completó GitHub Actions 45238420236: **SUCCESS**. En 32 pares de geometría idéntica con/sin +2, 16 cambian el destinatario (8→24 intenciones al mediapunta). En los 32 de cada brazo el pase se ejecuta y el primer contacto es del destinatario previsto, **con rivales alejados**. No se acredita mantenimiento de posesión prolongada, ventaja táctica ni utilidad en presión. El ensayo autónomo 0.148/0.149 sigue idéntico; no fusionar PR #3. Detalle: `docs/RESULTADO_PASE_INTERIOR_0149.md`.

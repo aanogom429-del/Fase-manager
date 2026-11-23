@@ -1,3 +1,11 @@
+# 23/11/2026 — Diagnóstico ejecutado de pivote 6
+
+Workflow 45108837889 y prueba `tests/mid_decision_diagnostic.cjs`: **SUCCESS**, además de ensayos anteriores y cinco regresiones. Resultado azul/6: 11 vs 10 evaluaciones de `chooseAction`; mediapunta observado 11 vs 10; dos oportunidades proxy en ambas variantes; 1 vs 0 pases/recepciones al mediapunta (regla desactivada/activada). No evidencia de que la percepción ausente cause la diferencia. El informe `docs/DIAGNOSTICO_PIVOTE_6_MP3.md` contiene los ocho escenarios, hipótesis descartadas y las abiertas. Se registran como evidencia de diagnóstico y no como validación de nueva política.
+
+Motor `index.html` no modificado, PR #2 sigue en borrador, main permanece 0.148. Próxima prueba: identificar opción mejor puntuada y acción elegida por el pivote en la ventana relevante.
+
+---
+
 # 22/11/2026 — Resultado real del paso MP3 de horizonte equivalente
 
 GitHub Actions `45068520178` (job `137350001968`) **SUCCESS**: temporal, secuencias autónomas, nueva `mid_fixed_horizon.cjs`, verificaciones de salida y cinco regresiones. El análisis con regla desactivada/activada arrojó 4/3 pases dirigidos al mediapunta, 4/3 recepciones, 4/2 recepciones con 2 s de seguimiento completo, 0/1 recepción censurada y 4/2 pases posteriores desde ventanas elegibles. Registro completo e interpretación en `docs/VENTANAS_INTERIORES_MP3.md`. No se atribuye causalidad ni se confunden diferencias de elegibilidad con eficacia.

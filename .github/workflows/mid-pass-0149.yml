@@ -1,7 +1,7 @@
-name: Candidate 0.149 - midfielder pass preference
+name: Candidate 0.150 - risk-modulated midfielder passing
 on:
   push:
-    branches: [codex/fase-manager-0.149-mid-pass-preference]
+    branches: [codex/fase-manager-0.150-contextual-mid-safety]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -74,10 +74,10 @@ jobs:
           node tests/formation_selection.cjs
           node tests/organizing_progression.cjs
           node tests/continuity.cjs
-      - name: Simulate 0.148 baseline and candidate with identical tests
+      - name: Simulate 0.149 baseline and 0.150 candidate with identical tests
         run: |
-          git show 14ed39dbc48018946b731b0ee74f5306b207eecc:index.html > /tmp/fase-manager-0148.html
-          node tests/mid_fixed_horizon.cjs /tmp/fase-manager-0148.html > /tmp/mp3-base.json
+          git show 522c9f00921acc7fce84a6fcf684a3e8e1effe79:index.html > /tmp/fase-manager-0149.html
+          node tests/mid_fixed_horizon.cjs /tmp/fase-manager-0149.html > /tmp/mp3-base.json
           node tests/mid_fixed_horizon.cjs > /tmp/mp3-candidate.json
       - name: Summarize paired outcomes and censoring
         run: |
@@ -96,13 +96,13 @@ jobs:
             }
             return out;
           };
-          console.log('MP3_0148 '+JSON.stringify(summarize(b)));
-          console.log('MP3_0149 '+JSON.stringify(summarize(c)));
+          console.log('MP3_0149_BASE '+JSON.stringify(summarize(b)));
+          console.log('MP3_0150 '+JSON.stringify(summarize(c)));
           NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: mp3-0149-comparison
+          name: mp3-0150-comparison
           path: |
             /tmp/mp3-base.json
             /tmp/mp3-candidate.json

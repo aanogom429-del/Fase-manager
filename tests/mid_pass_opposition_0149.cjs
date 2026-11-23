@@ -29,7 +29,8 @@ for(const t of [0,1])for(const slot of [5,6])
   for(const q of e.t.opp(t)){q.x=t?10:90;q.y=56;}
   p.x=t?70:30;p.y=32;p.bodyAngle=t?Math.PI:0;
   mid.x=p.x+dir*18;mid.y=32;alternative.x=p.x+dir*(18+offset);alternative.y=32+lateral;
-  const marker=e.t.opp(t).find(q=>!q.sentOff);
+  const marker=e.t.opp(t).find(q=>q.role==='midfielder'&&!q.sentOff);
+  assert(marker,'The defensive marker must be an outfield midfielder');
   // Oposición observable en tres contracasos: próximo al receptor, entre líneas,
   // o sobre la alternativa. La física y las decisiones de ambos equipos permanecen activas.
   if(defense==='receiver'){marker.x=mid.x-dir*2;marker.y=mid.y+4;}

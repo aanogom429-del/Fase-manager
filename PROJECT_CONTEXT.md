@@ -1,3 +1,9 @@
+# 0.149 experimental · 23/11/2026 · Primera preferencia táctica del pasador
+
+La rama independiente `codex/fase-manager-0.149-mid-pass-preference` parte de 0.148 estable. Implementa en el motor una preferencia moderada por el mediapunta en 4-2-3-1 cuando el pivote observa una conexión segura, sin imponerla. Tiene prueba unitaria espejo y comparador de recepciones contra base 0.148; ver `docs/PREFERENCIA_PASE_INTERIOR_0149.md`. PR #3 permanece en borrador; no implica fusión ni validación de mejora. `main` y PR experimental #2 permanecen separados.
+
+---
+
 # 0.148 · Continuidad del destino interior · 20 de noviembre de 2026
 
 El mediapunta conserva hasta 0,8 s el destino elegido cuando la referencia colectiva cambia ligeramente y la conexión original continúa bloqueada. Revalida poseedor observado, visibilidad, espacio, compañeros y destinos reservados. Desvío máximo respecto a nueva referencia: diez unidades y tres longitudinales. Si la conexión original se abre, termina la necesidad de desvío. Al caducar reevalúa; puede seleccionar de nuevo una alternativa válida.

@@ -1,3 +1,9 @@
+# 23/11/2026 — 0.149: CI de la nueva regla del motor completado
+
+GitHub Actions `45109546029` terminó **success**. La prueba `mid_pass_preference.cjs` (dos equipos × dos pivotes y contracasos), cinco regresiones dirigidas y el comparador `mid_fixed_horizon.cjs` aplicado tanto a 0.148 como a 0.149 finalizaron sin fallos. Los recuentos autónomos permanecieron **idénticos** entre las dos versiones (sin apertura: 4 pases/4 recepciones; con apertura: 3 pases/3 recepciones; 1 recepción censurada para continuidad y 2 elegibles). El cambio sí altera la puntuación contextual del candidato, pero no ha cambiado las elecciones de los ocho escenarios; no se concluye eficacia superior. Se conserva 0.148 en main y PR #3 en borrador, sin publicación de 0.149 estable. Ver informe `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
 # 23/11/2026 — 0.149 candidata: cambio de motor implementado
 
 Base `main@14ed39d`; rama `codex/fase-manager-0.149-mid-pass-preference`. Commit de implementación `04f63db`: helper `midfielderPassPreference` añade +2 a la puntuación normal solo para pase observado y seguro pivote→mediapunta (4-2-3-1), sin forzar acciones. Se añadieron pruebas positivas/negativas, comparación autónoma contra 0.148 y pipeline CI. PR #3 en borrador. **Ejecución no certificada al registrar esta entrada**: pendiente de examinar log, recepciones, regresiones y posibles efectos adversos. No se declara validación general ni se integra main. Documentación de alcance: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.

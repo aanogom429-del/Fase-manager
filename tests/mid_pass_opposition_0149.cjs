@@ -3,7 +3,7 @@
 const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path');
 const {env}=require('./continuity.cjs');
 const src=fs.readFileSync(process.argv[2]||path.join(__dirname,'../index.html'),'utf8');
-const bonus='return 2; // Margen pequeño frente a otras soluciones; conserva evaluación de riesgo.';
+const bonus='return risk<=1?2:1;';
 const kick='function kickTo(p,x,y,kind,target=null,origin=null){';
 const capture='function capture(p,why){';
 const release='function releaseKick(p,x,y,kind,target=null,origin=null){';

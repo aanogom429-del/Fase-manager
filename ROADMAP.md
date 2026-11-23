@@ -1,3 +1,15 @@
+# 0.150 · resultado de la puerta técnica, 23/11/2026
+
+Implementada preferencia pivote→mediapunta de +2/+1/0 según seguridad perceptiva; batería de GitHub Actions `45263579215` **SUCCESS**, 44 cambios de intención en 160 pares sin oposición cercana, 16 en 32 pares físicos, 0 en 48 pares con defensor próximo. Comparación autónoma 0.149–0.150 **sin mejora en recepciones** (4/3 por variante), de modo que queda candidata y **no fusionada**. No repetir indefinidamente MP3: siguiente desarrollo estructural prioritario **MP4 (apoyo/profundidad en 4-3-3 y 3-5-2)** con criterios tácticos de usuario, y evaluación específica de riesgo medio de 0.150 en una batería pequeña separada. Informe `docs/SEGURIDAD_PASE_INTERIOR_0150.md`.
+
+---
+
+# 23/11/2026 · MP3, candidata 0.150 implementada
+
+Se modifica el motor para que el bonus contextual al pase pivote→mediapunta sea +2 si la línea está muy limpia, +1 si tiene riesgo intermedio y 0 con riesgo límite o receptor con poco espacio. Se conserva la percepción y alternativas, sin obligar al pase. Test unitario espejo ampliado, ablación 160 pares y pruebas físicas con oposición incluidas en CI comparado con 0.149. PR #4 borrador sobre PR #3; main 0.148 sin cambios. Tras cerrar su validación, **priorizar MP4 y ampliar coberturas a otros sistemas** en lugar de repetir indefinidamente experimentos reducidos sobre el 4-2-3-1. Ver `docs/SEGURIDAD_PASE_INTERIOR_0150.md`.
+
+---
+
 # 23/11/2026 · MP3 · Evaluación contra defensa próxima, verificada
 
 Ensayo `tests/mid_pass_opposition_0149.cjs` con defensor de campo, CI `45261378767` **SUCCESS**: 48 parejas (tres tipos defensivos ×16), con/sin preferencia +2. **Cero cambios de elección atribuibles al bonus en estos casos defensivos**; con defensor sobre receptor hay 8 primeros contactos rivales por brazo y con defensor en línea de pase otros 8, y 8 pases sin primer contacto dentro de ventana por brazo. La ejecución bajo oposición sirve de prueba de riesgo, pero **no muestra mejora ofensiva**, ni deja cerrado MP3/MP11. El estudio autónomo 0.148–0.149 también sigue sin cambios. Próximo: diseñar presión intermedia y múltiples distancias donde exista efecto de decisión, comparar control y progresión, y evaluar protección del equilibrio ante pérdida. Ver `docs/OPOSICION_INTERIOR_0149.md`. PR #3 borrador, main 0.148.

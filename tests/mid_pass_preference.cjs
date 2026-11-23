@@ -12,12 +12,16 @@ for(const t of [0,1])for(const slot of [5,6]){
  mid.x=p.x+forward*18;mid.y=32;
  const fn=e.t.phaseRelations(null).midfielderPassPreference;
  const ref={actual:mid,memoryAge:0,anticipated:false,x:mid.x,y:mid.y};
- assert.equal(fn(p,ref,18,18,2,8,8),2,'fresh safe connection should get small preference');
+ assert.equal(fn(p,ref,18,18,.8,8,8),2,'very safe line keeps full preference');
+ assert.equal(fn(p,ref,18,18,1.8,8,8),1,'intermediate risk gets smaller preference');
+ assert.equal(fn(p,ref,18,18,2.5,8,8),0,'borderline line gets no bonus');
  for(const [label,m,args] of [
   ['stale',{...ref,memoryAge:.2},[18,18,2,8,8]],
   ['anticipated',{...ref,anticipated:true},[18,18,2,8,8]],
   ['other-player',{...ref,actual:other},[18,18,2,8,8]],
   ['blocked',ref,[18,18,4,8,8]],
+  ['borderline',ref,[18,18,2.5,8,8]],
+  ['tight-receiver',ref,[18,18,.8,5.5,8]],
   ['pressured-receiver',ref,[18,18,2,4,8]],
   ['pressured-holder',ref,[18,18,2,8,3]],
   ['too-close',ref,[4,9,2,8,8]],
@@ -29,4 +33,4 @@ for(const t of [0,1])for(const slot of [5,6]){
  p.formation=previous;p.bodyAngle=t?0:Math.PI;
  assert.equal(fn(p,ref,18,18,2,8,8),0,'unseen receiver excluded');
 }
-console.log('PASS: 0.149 small conditional pass preference and negative guards in both teams/pivots');
+console.log('PASS: 0.150 perceptually risk-modulated pass preference and negative guards in both teams/pivots');

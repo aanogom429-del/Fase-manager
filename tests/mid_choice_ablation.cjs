@@ -3,7 +3,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {env}=require('./continuity.cjs');
 const src=fs.readFileSync(process.argv[2]||path.join(__dirname,'../index.html'),'utf8');
-const bonus='return 2; // Margen pequeño frente a otras soluciones; conserva evaluación de riesgo.';
+const bonus='return risk<=1?2:1;';
 const kick='function kickTo(p,x,y,kind,target=null,origin=null){';
 const probe='function phaseRelations(list,pos,holder=null,travel=null){';
 assert(src.includes(bonus)&&src.includes(kick)&&src.includes(probe),'0.149 instrument anchors missing');

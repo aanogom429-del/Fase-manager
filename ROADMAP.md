@@ -1,3 +1,9 @@
+# 0.149 candidata · 23/11/2026 · MP3 (sin integrar en main)
+
+Se implementa en `index.html` una preferencia leve (+2 sobre puntuación existente) para conexión pivote–mediapunta en 4-2-3-1 únicamente con receptor visto, espacio y línea de pase seguros, y rangos limitados. No se obliga el pase, no se altera otra formación ni se anulan las condiciones de fuera de juego o ejecución. Pruebas unitarias, simulación comparada con 0.148 y regresiones disponibles en `tests/mid_pass_preference.cjs`, `tests/mid_fixed_horizon.cjs` y workflow `mid-pass-0149.yml`. PR #3 en borrador. Evidencia y límites: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`. No dar por cerrados MP3 ni MP11; conservar investigación MP3 anterior independiente.
+
+---
+
 # Hoja de ruta vigente · matriz posicional integral · 0.148
 
 Actualizada el 19 de noviembre de 2026. Esta sección sustituye las prioridades de las entradas históricas inferiores. La matriz aportada por el usuario es el alcance funcional del desarrollo; docs/MATRIZ_POSICIONAL.md conserva su síntesis y convenciones. No se considera implementada por estar documentada ni por ofrecer cinco sistemas en el selector.

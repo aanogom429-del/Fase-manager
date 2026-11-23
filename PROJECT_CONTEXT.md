@@ -1,3 +1,9 @@
+# Candidato 0.149 · Resultado CI confirmado · 23/11/2026
+
+La preferencia de pase del pivote hacia el mediapunta (+2 acotado) está incorporada al motor de la rama y GitHub Actions 45109546029 terminó SUCCESS, con tests unitarios espejo, cinco regresiones y evaluación de trayectorias autónomas comparadas con 0.148. Los resultados colectivos **no variaron** en la pequeña muestra (4/3 recepciones sin/con apertura, tanto en 0.148 como en 0.149). No hay mejora causal demostrada; PR #3 sigue en borrador y `main` permanece 0.148. Ver `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
 # 0.149 experimental · 23/11/2026 · Primera preferencia táctica del pasador
 
 La rama independiente `codex/fase-manager-0.149-mid-pass-preference` parte de 0.148 estable. Implementa en el motor una preferencia moderada por el mediapunta en 4-2-3-1 cuando el pivote observa una conexión segura, sin imponerla. Tiene prueba unitaria espejo y comparador de recepciones contra base 0.148; ver `docs/PREFERENCIA_PASE_INTERIOR_0149.md`. PR #3 permanece en borrador; no implica fusión ni validación de mejora. `main` y PR experimental #2 permanecen separados.

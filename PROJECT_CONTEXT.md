@@ -1,3 +1,9 @@
+# 23/11/2026 · 0.149: ejecución de pases emparejados verificada (rama)
+
+Se añadió `tests/mid_pass_outcome_0149.cjs` y el workflow completó GitHub Actions 45238420236: **SUCCESS**. En 32 pares de geometría idéntica con/sin +2, 16 cambian el destinatario (8→24 intenciones al mediapunta). En los 32 de cada brazo el pase se ejecuta y el primer contacto es del destinatario previsto, **con rivales alejados**. No se acredita mantenimiento de posesión prolongada, ventaja táctica ni utilidad en presión. El ensayo autónomo 0.148/0.149 sigue idéntico; no fusionar PR #3. Detalle: `docs/RESULTADO_PASE_INTERIOR_0149.md`.
+
+---
+
 # 23/11/2026 — 0.149: prueba causal de intención completada (rama de evaluación)
 
 CI 45110210742 superó 160 pares espejo con y sin bonificación +2 manteniendo la misma aleatoriedad y geometría. **44 decisiones cambian hacia un pase al mediapunta, 0 en sentido contrario**, en escenarios artificiales próximos al empate; confirma que el motor sí aplica la regla a decisiones reales. No demuestra ejecución exitosa del pase ni eficacia colectiva: las ocho secuencias autónomas de contraste mantienen recuentos idénticos a 0.148. `docs/ABLACION_DECISION_0149.md` recoge resultados y limitaciones; PR #3 queda en borrador, main 0.148 intacto.

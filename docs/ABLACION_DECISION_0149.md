@@ -1,3 +1,23 @@
+# Resultado ejecutado y verificado · 23/11/2026
+
+GitHub Actions **45110210742**: `success`; prueba `mid_choice_ablation.cjs` y cinco regresiones, junto al contraste autónomo con 0.148, superadas. El test compara **160 pares de decisiones**, sin modificar aleatoriedad, orientación inicial ni geometría entre los dos brazos del par; el único factor intervenido es el bonus +2.
+
+| Indicador de elección inmediata | Recuento |
+|---|---:|
+| Pares evaluados | 160 |
+| Pares con acción/destinatario distinto | **44** |
+| Cambios hacia el mediapunta | **44** |
+| Cambios desde el mediapunta a otra acción | **0** |
+| Decisiones sin acción instrumentada | 0 |
+
+En los 44 casos alterados, la variante sin bonus seleccionaba otro receptor; la variante con bonus seleccionó al mediapunta. El resultado demuestra **impacto causal en la selección de intención de pase** dentro de los escenarios artificiales; **NO** prueba recepción exitosa ni mayor rendimiento general. El ensayo emplea compañeros candidatos próximos a empate, rivales alejados, cuatro semillas y posiciones diseñadas. No confundir 44/160 con una frecuencia representativa de partido.
+
+La batería autónoma anterior de ocho escenas sigue sin diferencias entre 0.148 y 0.149: sin apertura, 4 pases/recepciones en ambas; con apertura, 3 en ambas. Por tanto hay efecto en decisiones próximas al empate pero todavía **no se ha observado un beneficio colectivo** en las escenas autónomas disponibles.
+
+**Próximo criterio**: seguir la ejecución física de los 44 cambios de intención (giro corporal, pase completado/interceptado, tiempo hasta receptor, pérdida y línea de progresión), con variantes de oposición cercana y alternativa libre, comparando con/sin bonus bajo condiciones iniciales equivalentes. Mantener 0.149 en PR #3 borrador hasta demostrar seguridad y utilidad en juego más amplio.
+
+---
+
 # Verificación causal de selección de pase · 0.149 · 23/11/2026
 
 ## Problema observado

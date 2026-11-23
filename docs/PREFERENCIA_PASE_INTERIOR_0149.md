@@ -1,3 +1,19 @@
+# Resultados verificados de CI — 23/11/2026
+
+La ejecución de GitHub Actions **45109546029** terminó **success**. Se verificaron: prueba de preferencia para ambos equipos/pivotes y casos contrarios; `mid_connection`, `pivot_stagger`, `formation_selection`, `organizing_progression` y `continuity`. El comparador autónomo empleó exactamente el mismo archivo de prueba, ocho situaciones y semilla 73 sobre `main@14ed39d` y el candidato 0.149.
+
+| MP3 · cuatro escenarios por variante | 0.148 sin regla de apertura | 0.148 con apertura | 0.149 sin apertura | 0.149 con apertura |
+|---|---:|---:|---:|---:|
+| Pases al mediapunta | 4 | 3 | 4 | 3 |
+| Recepciones | 4 | 3 | 4 | 3 |
+| Recepciones elegibles para continuidad completa | 4 | 2 | 4 | 2 |
+| Recepciones censuradas | 0 | 1 | 0 | 1 |
+| Continuaciones en ventana comparable | 4 | 2 | 4 | 2 |
+
+**Interpretación:** la regla está implementada y supera casos unitarios/regresiones, pero **NO modifica los recuentos autónomos observados**. Por ello no hay demostración empírica de mayor número de conexiones ni de mejora colectiva. No presentar 0.149 como una mejora validada de rendimiento y **no fusionar automáticamente en `main`**. Queda pendiente ensayar geometrías con puntuaciones cercanas y validar efecto causal de la nueva preferencia sin forzar la posesión ni sacrificar conservación/otras opciones.
+
+---
+
 # 0.149 — Preferencia contextual pivote → mediapunta (candidata, 23/11/2026)
 
 ## Motivación y evidencia

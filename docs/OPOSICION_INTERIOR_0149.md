@@ -1,3 +1,9 @@
+## Corrección de fixture antes de aceptación
+
+La primera edición del escenario seleccionaba equivocadamente el primer oponente activo, que podía ser el portero. **Se corrigió** en el commit `f8fb4af`: el defensor próximo debe ser un centrocampista rival de campo y la prueba exige explícitamente ese rol. Cualquier resultado de la ejecución anterior `45260999265` es exploratorio y **no puede utilizarse como validación** del comportamiento de campo. La verificación que cuenta es la ejecución asociada al commit corregido. Este hallazgo refuerza la auditoría de coherencia de roles y escenarios antes de atribuir eficacia deportiva.
+
+---
+
 # 0.149 — Comparación con oposición cercana · 23/11/2026
 
 ## Antecedentes

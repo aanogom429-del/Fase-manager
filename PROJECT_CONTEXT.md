@@ -1,3 +1,9 @@
+# Candidata 0.150 · Resultado verificado 23/11/2026
+
+El motor de la rama incorpora bonus contextual pivote→mediapunta graduado por riesgo y espacio del receptor. GitHub Actions `45263579215`: **SUCCESS** en pruebas unitarias, ablación de 160 escenas (44 decisiones alteradas hacia mediapunta), 32 pares físicos (16 cambios), 48 pares con oposición (0 decisiones cambiadas) y regresiones. **No mejoró los recuentos autónomos respecto de 0.149**: 4/3 recepciones sin/con regla de apertura en ambas versiones. La función es real y técnicamente verificada, pero el beneficio colectivo no está demostrado. PR #4 borrador sobre PR #3; main sigue 0.148. Ver `docs/SEGURIDAD_PASE_INTERIOR_0150.md`.
+
+---
+
 # 23/11/2026 · Candidata 0.150: seguridad contextual del pase interior
 
 Nueva rama `codex/fase-manager-0.150-contextual-mid-safety` derivada del candidato 0.149, sin tocar `main` (0.148). El motor ahora gradúa entre +2/+1/0 la preferencia del pivote por el mediapunta según riesgo percibido de línea y espacio del receptor; sin imposición de pase y solo en 4-2-3-1. Pruebas de contracasos y comparativas adaptadas; PR #4 en borrador contra la rama 0.149. Ver `docs/SEGURIDAD_PASE_INTERIOR_0150.md`. No se presume mejora colectiva; debe verificarse con CI.

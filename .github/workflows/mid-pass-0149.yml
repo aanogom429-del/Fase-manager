@@ -20,6 +20,18 @@ jobs:
           node-version: '22'
       - name: Exercise rule and negative cases
         run: node tests/mid_pass_preference.cjs
+      - name: Causal decision ablation on mirrored near-tie alternatives
+        run: node tests/mid_choice_ablation.cjs > /tmp/mp3-choice-ablation.json
+      - name: Summarize causal choice changes
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const x=JSON.parse(fs.readFileSync('/tmp/mp3-choice-ablation.json','utf8'));
+          assert.equal(x.cases,160);
+          assert(x.changed>=0&&x.changed<=x.cases);
+          assert(x.gain>=0&&x.loss>=0);
+          console.log('MP3_CHOICE_ABLATION '+JSON.stringify({cases:x.cases,changed:x.changed,gain:x.gain,loss:x.loss,nullChoices:x.nullChoices,changedCases:x.changedCases.slice(0,8)}));
+          NODE
       - name: Focused regressions
         run: |
           node tests/mid_connection.cjs
@@ -59,4 +71,5 @@ jobs:
           path: |
             /tmp/mp3-base.json
             /tmp/mp3-candidate.json
+            /tmp/mp3-choice-ablation.json
           if-no-files-found: ignore

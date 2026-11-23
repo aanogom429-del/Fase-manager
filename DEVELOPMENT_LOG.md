@@ -1,3 +1,9 @@
+# 23/11/2026 — 0.149 candidata: cambio de motor implementado
+
+Base `main@14ed39d`; rama `codex/fase-manager-0.149-mid-pass-preference`. Commit de implementación `04f63db`: helper `midfielderPassPreference` añade +2 a la puntuación normal solo para pase observado y seguro pivote→mediapunta (4-2-3-1), sin forzar acciones. Se añadieron pruebas positivas/negativas, comparación autónoma contra 0.148 y pipeline CI. PR #3 en borrador. **Ejecución no certificada al registrar esta entrada**: pendiente de examinar log, recepciones, regresiones y posibles efectos adversos. No se declara validación general ni se integra main. Documentación de alcance: `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.
+
+---
+
 # Fase Manager — Registro de desarrollo y recuperación
 
 ## 0.120 — Progresión con observación reciente

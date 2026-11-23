@@ -1,3 +1,9 @@
+# 23/11/2026 — 0.149: prueba causal de intención completada (rama de evaluación)
+
+CI 45110210742 superó 160 pares espejo con y sin bonificación +2 manteniendo la misma aleatoriedad y geometría. **44 decisiones cambian hacia un pase al mediapunta, 0 en sentido contrario**, en escenarios artificiales próximos al empate; confirma que el motor sí aplica la regla a decisiones reales. No demuestra ejecución exitosa del pase ni eficacia colectiva: las ocho secuencias autónomas de contraste mantienen recuentos idénticos a 0.148. `docs/ABLACION_DECISION_0149.md` recoge resultados y limitaciones; PR #3 queda en borrador, main 0.148 intacto.
+
+---
+
 # Candidato 0.149 · Resultado CI confirmado · 23/11/2026
 
 La preferencia de pase del pivote hacia el mediapunta (+2 acotado) está incorporada al motor de la rama y GitHub Actions 45109546029 terminó SUCCESS, con tests unitarios espejo, cinco regresiones y evaluación de trayectorias autónomas comparadas con 0.148. Los resultados colectivos **no variaron** en la pequeña muestra (4/3 recepciones sin/con apertura, tanto en 0.148 como en 0.149). No hay mejora causal demostrada; PR #3 sigue en borrador y `main` permanece 0.148. Ver `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.

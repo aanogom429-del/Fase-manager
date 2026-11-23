@@ -1,3 +1,9 @@
+# 23/11/2026 — Ensayo causal de decisiones 0.149 verificado
+
+GitHub Actions `45110210742`, trabajo completo **SUCCESS**. `tests/mid_choice_ablation.cjs`: 160 pares idénticos en estado/semilla excepto la bonificación contextual; 44 decisiones de pase cambian de receptor alternativo al mediapunta, cero cambios inversos, cero sin opción instrumentada. Esto demuestra efecto de la nueva regla sobre la selección de intención, NO pases completados ni mayor rendimiento. Cinco regresiones y comparación 0.148/0.149 PASS. Recuentos autónomos idénticos entre versiones: sin apertura 4 pases/4 recepciones; con apertura 3 pases/3 recepciones en ambas. Informe `docs/ABLACION_DECISION_0149.md`. El próximo incremento evaluará resultado físico de esos pases bajo oposición y seguridad. PR #3 borrador; main 0.148 inalterado.
+
+---
+
 # 23/11/2026 — 0.149: CI de la nueva regla del motor completado
 
 GitHub Actions `45109546029` terminó **success**. La prueba `mid_pass_preference.cjs` (dos equipos × dos pivotes y contracasos), cinco regresiones dirigidas y el comparador `mid_fixed_horizon.cjs` aplicado tanto a 0.148 como a 0.149 finalizaron sin fallos. Los recuentos autónomos permanecieron **idénticos** entre las dos versiones (sin apertura: 4 pases/4 recepciones; con apertura: 3 pases/3 recepciones; 1 recepción censurada para continuidad y 2 elegibles). El cambio sí altera la puntuación contextual del candidato, pero no ha cambiado las elecciones de los ocho escenarios; no se concluye eficacia superior. Se conserva 0.148 en main y PR #3 en borrador, sin publicación de 0.149 estable. Ver informe `docs/PREFERENCIA_PASE_INTERIOR_0149.md`.

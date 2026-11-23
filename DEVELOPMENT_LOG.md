@@ -1,3 +1,9 @@
+# 23/11/2026 — Ensayo de oposición MP3 incluido en candidata 0.149
+
+Archivos incorporados: `tests/mid_pass_opposition_0149.cjs` y `docs/OPOSICION_INTERIOR_0149.md`. Workflow actualizado: `.github/workflows/mid-pass-0149.yml`. La prueba usa 48 pares en tres contextos defensivos con oposición reactiva y compara con/sin bonus +2 con misma geometría/semilla. Distingue primer contacto de posesión final, pero no verifica eficacia táctica completa. CI iniciada con ID `45260999265`; en esta anotación no se había confirmado resultado completo. `index.html` no cambia en este paso; `main` sigue 0.148 y PR #3 continúa como borrador.
+
+---
+
 # 23/11/2026 — Paso siguiente ejecutado: intenciones → golpeo → primer contacto
 
 Nueva prueba `tests/mid_pass_outcome_0149.cjs`, CI GitHub Actions 45238420236 **SUCCESS**. En 32 pares, la bonificación +2 cambia 16 destinatarios; la nueva preferencia suma 24 intenciones hacia el mediapunta frente a 8 sin ella. **32/32 pases liberados y 32/32 primeros contactos con receptor pretendido** en cada brazo, 0 primeras intercepciones rivales (oposición situada lejos). El ensayo acredita funcionamiento físico limitado, no ventaja o tasa real de éxito. Pasaron además las cinco regresiones, la ablación 160 pares y comparador autónomo; este último sigue sin cambio entre 0.148 y 0.149. Documento `docs/RESULTADO_PASE_INTERIOR_0149.md`. Motor sin cambios en este paso, PR #3 borrador y main sin modificar.

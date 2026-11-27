@@ -1,0 +1,9 @@
+# Tracking 1.37–1.38 experimental
+
+Main unchanged. Optional new button: **Prueba perfiles por puesto**. Resets the situation, enters free mode, applies role-relative caps derived from DFL nominal starter-role P99s, scaled relative to the global calibration. Caps are engineering choices, not athlete limits. Formation selection reapplies role caps. Restart or return to original restores initial profiles. Collective coordination prototype is present but disabled: zero natural opportunities in three short tests. Ridge stays observational.
+
+Reference: 7 DFL matches profiled, 4 training matches used to derive role ratios. 84 player-match starter pairs and 968,562 valid velocity observations in training; mapping covers 1,689,103 of 1,902,580 eligible velocity observations across 7 matches. Excludes ambiguous/missing position codes and substitutes. Starting positions are nominal, not ongoing functional roles. The actual formations represented are not identical to all five Manager systems; no system-specific calibrated profiles asserted.
+
+New scenarios: 3 seeds × 15 seconds × 4 configurations. Kinematic loss original/global/role: 1.563975 / 0.576891 / 0.576174. Spatial loss: 0.121353 / 0.062944 / 0.059437. Role test passes provisional non-degradation gate, not scientific validation. Collective 0 opportunities, blocked. Regression: exact engine traces with inactive hybrid and shadow on/off in 4 scenarios. Role lifecycle test: {"role_caps":true,"formation_role_update":true,"restore_original":true,"collective_disabled":true}.
+
+Run tests/tracking-roles-coordination.mjs, tests/tracking-role-lifecycle.mjs and tests/tracking-shadow.mjs from the repository root. Tests use a mocked DOM. Real browser/mobile smoke, longer scenarios and independent expert/DFL validation remain required. No automatic merge or publication.

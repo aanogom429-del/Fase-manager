@@ -587,7 +587,7 @@ function boundaryCrossing(a,b){
  }
  return hits.sort((a,b)=>a.u-b.u)[0]||null;
 }
-function beginRestart(kind,t,x,y,reason){
+function beginRestart(kind,t,x,y,reason){ftReset("Interrupción",false);
  for(const p of players){delete p.kickPreparation;delete p.markId;delete p.backpassUntil;delete p.lossPressUntil;delete p.receivedAt;delete p.supportReturnUntil;delete p.keeperReceipt;delete p.reorderUntil;delete p.recoveryUntil;delete p.phaseEntry;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];}
  destinationTrace.clear();destinationIntentTrace.clear();
  if(matchStopped)return;
@@ -763,7 +763,7 @@ $('export-decision').onclick=exportDecisionFile;
 $('import-decision').onchange=importDecisionFile;
 
 function savePosition(){return {players:players.map(({el,...p})=>({...p,visualMemory:(p.visualMemory||[]).map(m=>({...m})),rivalMemory:(p.rivalMemory||[]).map(m=>({...m}))})),owner:players.indexOf(owner),bx,by,elapsed,decision,score:[...score],passes,shots,turnovers,trialSeed,turnNumber,history:[...history],technique,targetNumber,relayNumber,lastTouchTeam,lastExecution,restartGuard:restartGuard?{...restartGuard}:null,lastRuling,offsidePhase,lastOffside,offsideCalls:[...offsideCalls],foulCalls:[...foulCalls],lastFoul,advantage,lastAdvantage,cardLog:[...cardLog],matchStopped,offBallPlans:[...offBallPlans],offBallOrders:[...offBallOrders],offBallPlayer};}
-function restorePosition(){if(!checkpoint)return;destinationTrace.clear();destinationIntentTrace.clear();measurement=null;lossTrace=null;const c=checkpoint;lastExecution=c.lastExecution;restart=null;restartGuard=c.restartGuard?{...c.restartGuard}:null;lastRuling=c.lastRuling;offsidePhase=c.offsidePhase;lastOffside=c.lastOffside;offsideCalls=[...c.offsideCalls];foulCalls=[...c.foulCalls];lastFoul=c.lastFoul;advantage=c.advantage;lastAdvantage=c.lastAdvantage;cardLog=[...c.cardLog];matchStopped=c.matchStopped;offBallPlans=[...c.offBallPlans];offBallOrders=[...c.offBallOrders];offBallPlayer=c.offBallPlayer;players.forEach((p,i)=>{for(const key of Object.keys(p))if(key!=='el')delete p[key];Object.assign(p,c.players[i]);p.visualMemory=(c.players[i].visualMemory||[]).map(m=>({...m}));p.rivalMemory=(c.players[i].rivalMemory||[]).map(m=>({...m}));});owner=players[c.owner];bx=c.bx;by=c.by;elapsed=c.elapsed;decision=c.decision;score=[...c.score];passes=c.passes;shots=c.shots;turnovers=c.turnovers;trialSeed=c.trialSeed;turnNumber=c.turnNumber;history=[...c.history];flight=null;techAction=null;loose=false;ballHeight=0;technique=c.technique;targetNumber=c.targetNumber;relayNumber=c.relayNumber??null;lastTouchTeam=c.lastTouchTeam;prepareDecision();}
+function restorePosition(){if(!checkpoint)return;ftReset("Restauración",true);destinationTrace.clear();destinationIntentTrace.clear();measurement=null;lossTrace=null;const c=checkpoint;lastExecution=c.lastExecution;restart=null;restartGuard=c.restartGuard?{...c.restartGuard}:null;lastRuling=c.lastRuling;offsidePhase=c.offsidePhase;lastOffside=c.lastOffside;offsideCalls=[...c.offsideCalls];foulCalls=[...c.foulCalls];lastFoul=c.lastFoul;advantage=c.advantage;lastAdvantage=c.lastAdvantage;cardLog=[...c.cardLog];matchStopped=c.matchStopped;offBallPlans=[...c.offBallPlans];offBallOrders=[...c.offBallOrders];offBallPlayer=c.offBallPlayer;players.forEach((p,i)=>{for(const key of Object.keys(p))if(key!=='el')delete p[key];Object.assign(p,c.players[i]);p.visualMemory=(c.players[i].visualMemory||[]).map(m=>({...m}));p.rivalMemory=(c.players[i].rivalMemory||[]).map(m=>({...m}));});owner=players[c.owner];bx=c.bx;by=c.by;elapsed=c.elapsed;decision=c.decision;score=[...c.score];passes=c.passes;shots=c.shots;turnovers=c.turnovers;trialSeed=c.trialSeed;turnNumber=c.turnNumber;history=[...c.history];flight=null;techAction=null;loose=false;ballHeight=0;technique=c.technique;targetNumber=c.targetNumber;relayNumber=c.relayNumber??null;lastTouchTeam=c.lastTouchTeam;prepareDecision();}
 function prepareDecision(){
  stage='choose';running=false;resolution=null;selected=null;techAction=null;loose=false;ballHeight=0;trialTime=0;last=0;accumulator=0;
  for(const p of players){p.sx=p.x;p.sy=p.y;}
@@ -786,7 +786,7 @@ function prepareDecision(){
  $('history').textContent=history.length?'Decisiones completadas: '+history.slice(-4).join(' · '):'Primera decisión de la secuencia.';
  checkpoint=savePosition();report('Decisión '+turnNumber+' pendiente · Balón '+(owner.t===0?'azul':'rojo'));syncControls();render();
 }
-function startSituation(){resetComparison();destinationTrace.clear();destinationIntentTrace.clear();offBallPlans=[];offBallOrders=[];offBallPlayer=null;cardLog=[];matchStopped=false;
+function startSituation(){ftReset("Nueva situación",true);resetComparison();destinationTrace.clear();destinationIntentTrace.clear();offBallPlans=[];offBallOrders=[];offBallPlayer=null;cardLog=[];matchStopped=false;
  measurement=null;lastExecution=null;lossTrace=null;offsidePhase=null;lastOffside=null;offsideCalls=[0,0];foulCalls=[0,0];lastFoul=null;advantage=null;lastAdvantage=null;restart=null;restartGuard=null;lastRuling='Juego abierto · aplicación parcial de las Reglas 2026/27';
  guided=true;running=false;flight=null;techAction=null;loose=false;ballHeight=0;technique='pass';targetNumber=null;relayNumber=null;trialSeed=73;turnNumber=1;history=[];
  elapsed=0;score=[0,0];passes=shots=turnovers=0;decision=.35;last=0;
@@ -836,7 +836,7 @@ function finishSituation(){
  $('feedback').hidden=false;$('decision-prompt').textContent='Continúa desde esta posición o compara otra decisión desde el punto anterior.';syncControls();
 }
 function nextDecision(){if(!guided||stage!=='review'||!owner||flight)return;resetComparison();history.push(turnNumber+'. '+selected.title+' ('+(owner.t===0?'balón azul':'balón rojo')+')');turnNumber++;prepareDecision();}
-function enterDecisionMode(){if(matchStopped)return;resetComparison();
+function enterDecisionMode(){if(matchStopped)return;ftReset("Modo guiado",true);resetComparison();
  guided=true;running=false;last=0;accumulator=0;techAction=null;selected=null;resolution=null;
  turnNumber=1;history=[];trialTime=0;trialSeed=73;checkpoint=null;technique='pass';targetNumber=null;relayNumber=null;
  $('mode').textContent='Ver simulación libre';$('guided-content').hidden=false;$('free-description').hidden=true;
@@ -848,7 +848,7 @@ function enterDecisionMode(){if(matchStopped)return;resetComparison();
  $('decision-prompt').textContent=owner?.kickPreparation?'El poseedor está girando antes del golpeo. Reanuda para completar la acción y llegar a la siguiente decisión.':restart?lastRuling+'. Reanuda para ejecutar el saque y llegar al siguiente control.':flight?'El balón está en vuelo. Reanuda hasta que un jugador lo controle para tomar la siguiente decisión.':'El balón está suelto. Reanuda la disputa hasta el control para tomar la siguiente decisión.';
  syncControls();render();
 }
-function enterFreeMode(){if(matchStopped)return;resetComparison();guided=false;techAction=null;stage='free';resolution=null;selected=null;running=true;last=0;accumulator=0;for(const p of players){delete p.driveX;delete p.driveY;}status.style.color='';$('mode').textContent='Tomar decisiones';$('guided-content').hidden=true;$('free-description').hidden=false;$('decision-title').textContent='Simulación libre';syncControls();render();}
+function enterFreeMode(){if(matchStopped)return;ftReset("Modo libre",true);resetComparison();guided=false;techAction=null;stage='free';resolution=null;selected=null;running=true;last=0;accumulator=0;for(const p of players){delete p.driveX;delete p.driveY;}status.style.color='';$('mode').textContent='Tomar decisiones';$('guided-content').hidden=true;$('free-description').hidden=false;$('decision-title').textContent='Simulación libre';syncControls();render();}
 
 function renderChoices(){renderOffBallChoices();
  const attack=owner&&owner.t===0;
@@ -968,7 +968,7 @@ function decisionComplete(){
 }
 
 function report(msg){action=msg;status.textContent=msg+' · Pases '+passes+' · Tiros '+shots+' · Cambios de posesión '+turnovers;}
-function resetKickoff(t){
+function resetKickoff(t){ftReset("Saque inicial",false);
  for(const p of activePlayers()){p.x=p.t===0?Math.min(p.hx,49):Math.max(p.hx,51);p.y=p.hy;p.vx=0;p.vy=0;p.visualMemory=[];p.rivalMemory=[];p.bodyAngle=p.t?Math.PI:0;p.scanAngle=0;p.scanUntil=0;delete p.kickPreparation;delete p.markId;delete p.backpassUntil;delete p.lossPressUntil;delete p.receivedAt;delete p.supportReturnUntil;delete p.keeperReceipt;delete p.reorderUntil;delete p.recoveryUntil;delete p.phaseEntry;p.controlUntil=0;p.controlAngle=0;p.controlError=0;p.controlDuration=0;p.cool=0;}
  beginRestart('kickoff',t,50,32,'');
 }
@@ -2202,12 +2202,12 @@ function render(){syncSystemSelectors();$('control-status').textContent=owner&&e
 function frame(now){
  if(!last)last=now;
  const dt=Math.min(.05,(now-last)/1000);last=now;
- try { if(running){accumulator+=dt*speed*(guided?.4:1);const step=1/120;while(accumulator>=step&&running){accumulator-=step;update(step);if(guided&&stage==='settle'&&owner&&!owner.kickPreparation&&!flight&&!advantage)prepareDecision();else if(guided&&stage==='resolve'&&owner&&!flight&&decisionComplete())finishSituation();}} render(); }
+ try { if(running){accumulator+=dt*speed*(guided?.4:1);const step=1/120;while(accumulator>=step&&running){accumulator-=step;update(step);ftObserve();if(guided&&stage==='settle'&&owner&&!owner.kickPreparation&&!flight&&!advantage)prepareDecision();else if(guided&&stage==='resolve'&&owner&&!flight&&decisionComplete())finishSituation();}} render(); ftRender(); }
  catch(err){ running=false; $('pause').textContent='▶ Continuar'; status.textContent='⚠️ ERROR DEL MOTOR: '+(err&&err.message?err.message:String(err))+' · Simulación detenida. Pulsa Reiniciar para volver a empezar.'; status.style.color='#ffb0a9'; console.error('FASE MANAGER',err); }
  requestAnimationFrame(frame);
 }
 $('pause').onclick=()=>{if(matchStopped)return;if(guided&&['choose','review'].includes(stage)){enterFreeMode();return;}running=!running;syncControls();};
-$('restart').onclick=()=>{measurement=null;lastExecution=null;lossTrace=null;offsidePhase=null;lastOffside=null;offsideCalls=[0,0];foulCalls=[0,0];lastFoul=null;advantage=null;lastAdvantage=null;cardLog=[];matchStopped=false;offBallPlans=[];offBallOrders=[];offBallPlayer=null;for(const p of players){p.yellow=0;p.sentOff=false;}if(guided){startSituation();return;}elapsed=0;score=[0,0];passes=shots=turnovers=0;for(const p of players){delete p.driveX;delete p.driveY;}resetKickoff(0);syncControls();render();};
+$('restart').onclick=()=>{ftReset("Reinicio",true);measurement=null;lastExecution=null;lossTrace=null;offsidePhase=null;lastOffside=null;offsideCalls=[0,0];foulCalls=[0,0];lastFoul=null;advantage=null;lastAdvantage=null;cardLog=[];matchStopped=false;offBallPlans=[];offBallOrders=[];offBallPlayer=null;for(const p of players){p.yellow=0;p.sentOff=false;}if(guided){startSituation();return;}elapsed=0;score=[0,0];passes=shots=turnovers=0;for(const p of players){delete p.driveX;delete p.driveY;}resetKickoff(0);syncControls();render();};
 $('speed').onchange=e=>speed=Number(e.target.value);
 $('mode').onclick=()=>guided?enterFreeMode():enterDecisionMode();$('retry').onclick=restorePosition;$('next').onclick=nextDecision;$('technique').onchange=e=>{technique=e.target.value;renderChoices();syncControls();};$('target-player').onchange=e=>{targetNumber=Number(e.target.value);renderChoices();syncControls();};$('relay-player').onchange=e=>{relayNumber=Number(e.target.value);renderChoices();syncControls();};
 // Indicadores descriptivos compartidos por tracking y simulación. No alteran el motor.
@@ -2513,6 +2513,199 @@ const capabilitiesPanel=document.createElement('details');
 capabilitiesPanel.className='decision-panel';
 capabilitiesPanel.innerHTML='<summary>Capacidades individuales del prototipo</summary><p>Perfiles ilustrativos iguales en ambos equipos. No son mediciones de futbolistas ni resultados de entrenamiento. Velocidad en unidades del campo/s; aceleración y frenada en unidades/s².</p><div style="overflow-x:auto"><table><thead><tr><th>Dorsal</th><th>Velocidad</th><th>Aceleración</th><th>Frenada</th><th>Giro °/s</th><th>Memoria s</th></tr></thead><tbody>'+players.filter(p=>p.t===0).map(p=>'<tr><td>#'+p.n+'</td><td>'+p.speed.toFixed(2)+'</td><td>'+p.acceleration+'</td><td>'+p.braking+'</td><td>'+Math.round(p.turnRate*180/Math.PI)+'</td><td>'+p.memoryDuration.toFixed(1)+'</td></tr>').join('')+'</tbody></table></div>';
 $('status').insertAdjacentElement('afterend',capabilitiesPanel);
+
+const ftShadow=(()=>{
+const M = {"mean":[-0.11254890555883725,-0.001710455594078743,0.0018915898686275633,0.000603753823614153,0.11254890555884371,0.0017104555940786973,0.3792622765333406,0.5,0.9994908350305499,1.0,-0.11250092794483495,-0.0016938302316290023,0.001833114508437331,0.0005828019091368018,0.11250092794484196,0.0016938302316290023,0.38086529757881205,0.5,1.0,1.0,-0.11245290553449415,-0.0016774281756042108,0.001786766875776232,0.0005097810517382817,0.1124529055344966,0.0016774281756042272,0.3806938787057633,0.5,1.0,1.0,-0.11241116215828867,-0.0016619070937882834,0.0016483169183807676,0.000537612394461574,0.11241116215829183,0.0016619070937882736,0.38018895677770204,0.5,1.0,1.0,-0.11236309121358623,-0.0016475975976700057,0.0014972278629461014,0.0005122388885616123,0.11236309121358841,0.00164759759766998,0.37771978954527285,0.5,1.0,1.0,-0.11232839966159504,-0.001633301304537277,0.0013101248750501298,0.00047677930860700896,0.1123283996616016,0.001633301304537242,0.3746441502604342,0.5,1.0,1.0],"scale":[0.4164329144279862,0.29203670765877715,0.31510577472137385,0.25994528330649264,0.4248353627888752,0.35313910353069067,0.8061457328086467,0.5,0.022558938815512738,1.0,0.41664323193472,0.29183391351331267,0.31608646614737085,0.26053434361440436,0.42425218084603505,0.3530701095706443,0.8081214281425517,0.5,1.0,1.0,0.41686250918845424,0.2916314369416568,0.31703161754083475,0.26099905872443924,0.42395132561301163,0.35321963548400287,0.8105976411533664,0.5,1.0,1.0,0.41708924882218246,0.2914366251429052,0.3179390745905035,0.26141584062635553,0.4238478069433093,0.3535318987157471,0.8131313082476626,0.5,1.0,1.0,0.4173309477168639,0.2912473399899747,0.318742253533007,0.26184708262258394,0.4237692492844147,0.3540128207608924,0.8135411942189764,0.5,1.0,1.0,0.41758018051024204,0.2910669446529777,0.3193434363562677,0.26223774447148135,0.42374708097669367,0.3545455911759129,0.812204212238276,0.5,1.0,1.0],"coef":[[-4.180635942579116,-0.9896588076027494,-0.4904540619292972,0.01786555499969433,-0.11124457990664577,-0.011101103345888324,0.004812220969264063,-0.01783207765314105,0.0036815586149174123,4.592963899584504e-12,5.446626974012631,1.3718155374236087,0.2766680102329947,-0.08774090954951844,0.5152043660845375,0.10139220408124246,-0.008691798708451985,-0.004381499692659243,-1.0309525594881013e-12,8.709964365587772e-13,-9.32468410129988,0.1626028024045157,1.439209477630793,0.08782778137888685,-0.409997842587492,-0.2584446210841932,0.010428356293966377,-0.005567933989856268,-1.7736295152158016e-13,5.343648717972037e-13,-3.8144998134236596,-0.8337064929513383,-1.5553385769766088,-0.05697102970112229,0.22677687368156177,0.17042662788252302,-0.01722823429045574,0.009438593053930017,-1.9403093539368945e-12,2.038772417751255e-13,29.444709766370945,1.3579847545573063,-4.092204177265846,0.06025005853151266,-2.565203535523302,0.1530677142924966,0.010372808854776724,-0.0341484695912609,-1.6260714116068184e-12,1.6418297515547178e-13,-17.614954364424907,-1.071783311573627,4.133819062660093,-0.009328406571664763,2.3584661959626434,-0.16002402020968282,0.0018306908660130974,0.1114487313464824,-7.650324394404811e-14,-3.122077214649927e-14],[0.5724854434911588,0.09365685735190164,0.028607563754086407,-0.3348043872501584,0.1384263978792841,-0.21397743094378224,-0.00010208354854182454,-0.0032288421464064204,0.0004100697497750582,7.697253643716931e-13,1.636243860285604,2.873559278877764,-0.11365716116632059,-0.03958931767469252,-0.21002893593585414,0.1703595064472812,0.0016934809153708718,0.02352876992191065,3.4655521861903784e-13,-5.539826618895315e-13,-2.2473385985003422,-11.423297157577517,0.22868889825066865,1.4018081667273583,0.019230565466082233,0.09232295699490206,-0.010060536023430697,-0.02746313866605489,-5.39487452405415e-13,6.228106021931955e-13,0.10647813608666616,1.8757577956383638,-0.11809123741670709,-0.9718894286335342,0.08207332085324463,0.16661691451528549,0.0083361984146426,0.015799204998073073,7.135660614240486e-13,-1.0555863664996251e-12,1.554510011377268,19.168298690100478,0.020848278227479335,-3.3620283245467713,-0.07521802844309591,-2.3675401553498614,0.01025326654019513,-0.004952390165907507,-4.544546432447612e-14,1.0686272334120339e-13,-1.6225689427413679,-12.630545686766212,0.044041425134009694,3.1370962722305267,0.04606726631190659,2.1712054048215905,-0.010739566217309777,-0.008589417384215673,6.263317808855993e-13,1.598115869366022e-13]],"intercept":[-0.0025706686412277583,-0.00021916662129980446]};
+// Fase Tracking 1.25: pure, read-only diagnostic predictor, no tactical commands.
+const finite = x => typeof x === 'number' && Number.isFinite(x);
+const vec = (x,n) => Array.isArray(x) && x.length===n && x.every(finite);
+const fail = reason => ({version:'1.25',mode:'shadow',status:'unavailable',reason,predictions:[]});
+function predictTracking(input) {
+  if (!input || input.enabled!==true) return fail('disabled');
+  if (input.pitch?.length!==105 || input.pitch?.width!==68 || input.format!=='11v11') return fail('unsupported_pitch_or_format');
+  const H=input.history;
+  if (!Array.isArray(H)||H.length!==6) return fail('history_length');
+  const signs=input.attackSign;
+  if (!Array.isArray(signs)||signs.length!==2||![-1,1].includes(signs[0])||signs[1]!==-signs[0]) return fail('attack_sign');
+  if (H.some(f=>!f||!finite(f.tMs)||typeof f.period!=='string'||!f.period.length||!Array.isArray(f.players)||!vec(f.ball,3))) return fail('invalid_frame');
+  if (H.some((f,i)=>f.period!==H[0].period||(i>0&&Math.abs(f.tMs-H[i-1].tMs-200)>0.001))) return fail('discontinuous_history');
+  if(H.some(f=>f.live!==true||![0,1].includes(f.owner))) return fail('not_live_or_unknown_owner');
+  const maps=[];
+  for(const f of H){
+    const map=new Map(); const counts=[0,0];
+    for(const p of f.players){
+      if(!p||typeof p.id!=='string'||!p.id.length||map.has(p.id)||![0,1].includes(p.team)) return fail('invalid_or_duplicate_id');
+      map.set(p.id,p); counts[p.team]++;
+    }
+    if(counts.some(n=>n>11||n<7)) return fail('unsupported_player_count');
+    maps.push(map);
+  }
+  const predictions=[];
+  for(const p of H[5].players){
+    const history=maps.map(m=>m.get(p.id));
+    if(history.some(q=>!q||q.team!==p.team||!vec(q.xy,2)||typeof q.velocityValid!=='boolean'||(q.velocityValid&&!vec(q.v,2)))||!p.velocityValid){predictions.push({id:p.id,status:'unavailable',reason:'invalid_or_incomplete_player_history'});continue;}
+    const sign=signs[p.team]; const features=[];
+    for(let k=0;k<6;k++){
+      const q=history[k], b=H[k].ball;
+      const v=q.velocityValid?q.v:[0,0];
+      const speed=Math.hypot(...v), factor=speed>7?7/speed:1;
+      features.push(q.xy[0]*sign/52.5,q.xy[1]*sign/52.5,v[0]*factor*sign/7,v[1]*factor*sign/7,(b[0]-q.xy[0])*sign/52.5,(b[1]-q.xy[1])*sign/52.5,b[2]/3,H[k].owner===p.team?1:0,q.velocityValid?1:0,1);
+    }
+    const speed=Math.hypot(...p.v), factor=speed>7?7/speed:1;
+    const displacement=[0,1].map(j=>{
+      let residual=M.intercept[j];
+      for(let k=0;k<60;k++) residual+=(features[k]-M.mean[k])/M.scale[k]*M.coef[j][k];
+      return p.v[j]*factor+sign*residual;
+    });
+    const xy=p.xy.map((x,j)=>x+displacement[j]);
+    if(!vec(xy,2)){predictions.push({id:p.id,status:'unavailable',reason:'nonfinite_prediction'});continue;}
+    predictions.push({id:p.id,status:'ok',displacement,xy,outsidePitch:Math.abs(xy[0])>52.5||Math.abs(xy[1])>34});
+  }
+  return {version:'1.25',model:'ridge_temporal_1.21',mode:'shadow',status:predictions.some(p=>p.status==='ok')?'ok':'unavailable',tMs:H[5].tMs,horizonMs:1000,predictions};
+}
+
+const ballModel={"features":["vx","vy","vz","ax","ay","az","height","speed_xy"],"mean":[0.01279702458847004,0.017686307596942192,-0.004327088642468478,0.025686169846408,-0.0029271988428955006,-0.11302431296921274,1.1338812934774474,7.545444216691136],"std":[6.861612768834715,6.301037486317057,2.515858570911616,14.911826878186869,13.933479339372008,9.866948268416683,2.4249273352122325,5.46365732230067],"weights":[[[0.0035024795096081436,0.0029556098904883897,-0.003895068530888098],[1.212603064613334,0.0036197257644646204,-0.0003604972053441479],[-0.00662348517496471,1.1051355692217613,-0.0001871075592195306],[-0.004539564992832615,0.0007059754700613685,0.3365839871074278],[0.09463598685497988,0.009395280802933725,-0.0026453688879163077],[0.003677780917252668,0.10600652752309155,-0.000587832469867132],[0.0030863519295790546,0.0031808903617053124,0.04329121703537394],[-0.0006864698228397796,-0.0012203186500296332,-0.08259655526205606],[0.002288648848784027,-0.0009199888082958752,0.01049243212552663]],[[0.00803137268406908,0.0055373992699223815,-0.009928197534258519],[2.2583357900842067,0.008815590794780052,0.0005661260057870353],[-0.019226641801157122,2.043453157683242,-0.00012533689711968988],[-0.01439066104028454,0.00021058335812502353,0.5352130419500596],[0.1927655373360897,0.018170248084134293,-0.006366741255786198],[0.003538680354377997,0.22013687797577194,-0.0026373348519123717],[0.009805814163163704,0.005968476743157286,0.06314613301566692],[0.00035824666656539777,-0.004884092421475647,-0.23093808982670858],[0.0019346513806202282,-0.0016070516302758942,0.031003307426482458]],[[0.026655589227907162,0.012808044631173496,-0.0337552517390776],[4.55755452688357,0.027811380856538476,0.011223140947092525],[-0.07366348693516046,4.015817600148443,0.007895540712976283],[-0.06596695675463628,-0.016190217436311077,0.6882785520736904],[0.4500227421602305,0.0440959509348998,-0.011230965215470208],[0.0009688671206530086,0.5368919048585024,-0.011508241505849743],[0.02969506873347613,0.023474700465878476,0.07129684542527749],[0.01974183350096157,-0.019132115572319808,-0.7984535099644203],[-0.01492259674961271,-0.005404495764223934,0.06602638684643326]],[[0.07369309181072557,0.02644810248639768,-0.07263533989940135],[6.588565601763221,0.06815027684308132,0.034795944175023165],[-0.20309724495326403,5.628185467365486,0.007819546001041592],[-0.12662280679484786,-0.0300005390044997,0.3998112307795742],[0.6770067904822898,0.06230529114206283,-0.008088811944409753],[0.043128414195750274,0.7256780484684887,-0.002165825566269707],[0.04658813358049956,0.020378832163319184,0.07579247981118911],[0.11119050659011728,-0.03331984737471209,-1.5459776824015015],[-0.0773174081297254,-0.024022230968115947,-0.011025240696044976]]],"selected":["ridge","ridge","ridge","ridge"],"horizons_s":[0.2,0.4,1,2]};
+const SX=1.05,SY=68/64, HZ=120, SAMPLE=24;
+const isnum=Number.isFinite;
+const capV=v=>{const k=Math.min(1,7/Math.max(1e-8,Math.hypot(...v)));return v.map(x=>x*k);};
+const gap=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]);
+const finiteVec=(v,n)=>Array.isArray(v)&&v.length===n&&v.every(isnum);
+const xy=(x,y)=>[(x-50)*SX,(y-32)*SY];
+function ballForecast(h){
+  const p=h.at(-1).ball,q=h.at(-2).ball,r=h.at(-3).ball;
+  const v=p.map((x,i)=>(x-q[i])/.2),old=q.map((x,i)=>(x-r[i])/.2);
+  const X=[...v,...v.map((x,i)=>(x-old[i])/.2),p[2],Math.hypot(v[0],v[1])];
+  const z=[1,...X.map((x,i)=>(x-ballModel.mean[i])/ballModel.std[i])];
+  return ballModel.horizons_s.map((t,j)=>{
+    const b=p.map((x,k)=>x+z.reduce((a,v,i)=>a+v*ballModel.weights[j][i][k],0));
+    b[2]=Math.max(0,b[2]);return {t,b};
+  });
+}
+function reach(p,b,t){
+  if(!p.velocityValid||b[2]>1.5||Math.abs(b[0])>52.5||Math.abs(b[1])>34)return false;
+  const d=[b[0]-p.xy[0],b[1]-p.xy[1]],r=Math.hypot(...d);
+  const u=Math.max(-7,Math.min(7,(p.v[0]*d[0]+p.v[1]*d[1])/Math.max(r,1e-8)));
+  const a=Math.min(t,(7-u)/3),travel=Math.max(0,u*a+1.5*a*a+7*(t-a));
+  return r<=travel+.7;
+}
+function eta(p,q){
+  const d=[q[0]-p.xy[0],q[1]-p.xy[1]],r=Math.hypot(...d),dist=Math.max(r-.7,0);
+  if(!dist)return 0;
+  const u=Math.max(-7,Math.min(7,(p.v[0]*d[0]+p.v[1]*d[1])/Math.max(r,1e-8)));
+  const a=(7-u)/3,da=u*a+1.5*a*a;
+  return dist<=da?(-u+Math.sqrt(u*u+6*dist))/3:a+(dist-da)/7;
+}
+function tactical(h,carrier){
+  const f=h.at(-1),forecast=ballForecast(h);
+  if(forecast.some(o=>!finiteVec(o.b,3)))return null;
+  const players=f.players.filter(p=>p.velocityValid), arrival=players.map(p=>{
+    const first=forecast.find(o=>reach(p,o.b,o.t));
+    return {id:p.id,team:p.team,first:first?.t??null};
+  });
+  const opp=Math.min(Infinity,...arrival.filter(p=>p.team!==f.owner&&p.first!==null).map(p=>p.first));
+  const receivers=arrival.filter(p=>p.team===f.owner&&p.id!==carrier&&p.first!==null&&p.first<=opp)
+    .sort((a,b)=>a.first-b.first||gap(players.find(q=>q.id===a.id).xy,f.ball)-gap(players.find(q=>q.id===b.id).xy,f.ball));
+  const control=[0,0,0,0];
+  const teams=[players.filter(p=>p.team===0),players.filter(p=>p.team===1)];
+  for(let j=0;j<10;j++)for(let i=0;i<15;i++){
+    const q=[-49+i*7,-30.6+j*6.8];
+    if(!teams[0].length||!teams[1].length){control[3]++;continue;}
+    const delta=Math.min(...teams[1].map(p=>eta(p,q)))-Math.min(...teams[0].map(p=>eta(p,q)));
+    control[delta>.2?0:delta<-.2?1:2]++;
+  }
+  return {forecast,arrival,receivers,control};
+}
+function makeObserver(){
+  let enabled=false,h=[],lastTick=null,lastSample=null,key=null,pending=null,latest=null,reason='Desactivado',s=null;
+  const fresh=()=>({ticks:0,samples:0,validWindows:0,anchors:0,evaluated:0,discarded:0,players:0,sumRidge:0,sumVelocity:0,sumStatic:0,outside:0,errors:0});
+  s=fresh();
+  function reset(why='Discontinuidad',clear=false){
+    if(pending)s.discarded++;
+    h=[];lastTick=null;lastSample=null;key=null;pending=null;latest=null;reason=why;
+    if(clear)s=fresh();
+  }
+  function setEnabled(v){enabled=v===true;reset(enabled?'Esperando historial continuo':'Desactivado',true);}
+  function tick(raw){
+    if(!enabled)return;
+    try{
+      s.ticks++;
+      if(!raw||!isnum(raw.elapsed)||raw.live!==true||![0,1].includes(raw.owner)||!finiteVec(raw.ball,3)||Math.abs(raw.ball[2])>1e-6){
+        reset('Sin posesión explícita en suelo / interrupción');return;
+      }
+      const tick=Math.round(raw.elapsed*HZ);
+      const ids=raw.players.map(p=>String(p.id));
+      const signature=raw.context+'|'+[...ids].sort().join(',');
+      if(key!==null&&(signature!==key||tick!==lastTick+1))reset('Cambio de contexto o salto temporal');
+      key=signature;lastTick=tick;
+      if(lastSample!==null&&tick-lastSample<SAMPLE)return;
+      lastSample=tick;s.samples++;
+      const prior=h.at(-1);
+      const frame={tMs:tick*1000/HZ,period:raw.context,live:true,owner:raw.owner,ball:[...xy(raw.ball[0],raw.ball[1]),0],
+        players:raw.players.map(p=>{
+          const id=String(p.id),pos=xy(p.x,p.y),prev=prior?.players.find(q=>q.id===id&&q.team===p.team);
+          const velocityValid=!!prev&&finiteVec(pos,2)&&finiteVec(prev.xy,2);
+          return {id,team:p.team,xy:pos,v:velocityValid?capV(pos.map((x,i)=>(x-prev.xy[i])/.2)):null,velocityValid};
+        })};
+      if(frame.players.some(p=>!finiteVec(p.xy,2))){reset('Coordenadas inválidas');return;}
+      h.push(frame);if(h.length>6)h.shift();
+      if(pending&&tick===pending.tick+HZ){
+        let n=0;
+        for(const p of pending.players){
+          const q=frame.players.find(x=>x.id===p.id&&x.team===p.team);
+          if(!q)continue;
+          s.sumRidge+=gap(p.pred,q.xy);s.sumVelocity+=gap(p.cv,q.xy);s.sumStatic+=gap(p.start,q.xy);n++;
+        }
+        s.players+=n;s.evaluated++;pending=null;
+      }
+      if(h.length<6){reason='Historial '+h.length+'/6';return;}
+      const result=predictTracking({enabled:true,format:'11v11',pitch:{length:105,width:68},attackSign:[1,-1],history:h});
+      if(result.status!=='ok'){reason=result.reason||'Sin predicciones válidas';return;}
+      s.validWindows++;reason='Predicción disponible';
+      if(!pending){
+        const predictions=result.predictions.filter(p=>p.status==='ok');
+        const items=predictions.map(p=>{const q=frame.players.find(x=>x.id===p.id);return {id:p.id,team:q.team,start:[...q.xy],cv:q.xy.map((x,i)=>x+q.v[i]),pred:p.xy};});
+        if(items.length){
+          pending={tick,players:items};s.anchors++;s.outside+=predictions.filter(p=>p.outsidePitch).length;
+          latest={predictionCount:items.length,tick,diagnostics:tactical(h,String(raw.carrier))};
+        }
+      }
+    }catch(e){s.errors++;reset('Observador aislado: '+String(e?.message||e));}
+  }
+  function report(){
+    return {enabled,reason,latest,stats:{...s,maeRidge:s.players?s.sumRidge/s.players:null,maeVelocity:s.players?s.sumVelocity/s.players:null,maeStatic:s.players?s.sumStatic/s.players:null}};
+  }
+  return {setEnabled,reset,tick,report};
+}
+
+return makeObserver();
+})();
+function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);}catch(_){}}
+function ftObserve(){
+  if(!$('ft-enabled')?.checked)return;
+  try{
+    ftShadow.tick({elapsed,live:!restart&&!matchStopped&&!!owner&&!flight,owner:owner?.t??null,carrier:owner?.id??null,
+      context:(guided?'guided':'free')+'|'+players[0].formation+'|'+players[11].formation,
+      ball:[bx,by,ballHeight],players:activePlayers().map(p=>({id:p.id,team:p.t,x:p.x,y:p.y}))});
+  }catch(_){ftReset('Captura no disponible');}
+}
+function ftRender(){
+  try{
+    if(!$('ft-enabled')?.checked)return;
+    const r=ftShadow.report(),s=r.stats,l=r.latest,d=l?.diagnostics;
+    const f=v=>v===null?'—':v.toFixed(3)+' m';
+    const q=d?d.control.map(n=>(100*n/150).toFixed(1)+' %').join(' / '):'—';
+    $('ft-state').textContent=r.reason+' · Ventanas '+s.validWindows+' · predicciones actuales '+(l?.predictionCount??0);
+    $('ft-errors').textContent='Comparación +1 s en simulación: '+s.players+' jugadores evaluados · Ridge '+f(s.maeRidge)+' · velocidad '+f(s.maeVelocity)+' · inmóvil '+f(s.maeStatic)+' · ventanas descartadas '+s.discarded+' · errores aislados '+s.errors;
+    $('ft-extra').textContent=d?'Accesibilidad teórica: '+d.arrival.filter(p=>p.first!==null).length+' jugadores · posibles receptores: '+(d.receivers.map(p=>{const q=players.find(x=>String(x.id)===p.id);return q?'#'+q.n+' '+p.first+' s':p.id;}).join(', ')||'ninguno')+' · control de 150 celdas azul/rojo/disputa/no disponible: '+q:'Accesibilidad y control: no disponibles';
+  }catch(_){}
+}
+const ftPanel=document.createElement('details');
+ftPanel.className='decision-panel';
+ftPanel.innerHTML='<summary><strong>Fase Tracking 1.26–1.29 · observación experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
+$('status').insertAdjacentElement('afterend',ftPanel);
+$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';ftRender();};
+$('ft-reset').onclick=()=>{ftReset('Medición reiniciada',true);ftRender();};
+
 startSituation();requestAnimationFrame(frame);
 })();
 </script></body></html>

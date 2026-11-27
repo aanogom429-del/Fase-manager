@@ -1,0 +1,38 @@
+{
+  "base": "474c0f28d14d19d6bcf9b26b287142b0543fe769",
+  "rc": "0ba63a2b64e14ba2978a5b50a0f2d360a978f710",
+  "checks": {
+    "free433": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "reset": true,
+      "pause": true,
+      "errors": 0
+    },
+    "free4231": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "reset": true,
+      "pause": true,
+      "errors": 0
+    },
+    "free343": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "reset": true,
+      "pause": true,
+      "errors": 0
+    },
+    "guided": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "reset": true,
+      "pause": true,
+      "errors": 0
+    }
+  }
+}

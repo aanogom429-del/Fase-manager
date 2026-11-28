@@ -1112,6 +1112,7 @@ function chooseAction(p){
  observeTeammates(p);observeRivals(p);
  const view=perceivedOpposition(p),mates=knownTeammates(p),dir=direction(p.t);
  const pressure=perceivedSpace(p,view),goalDist=p.t?p.x:100-p.x,lateral=Math.abs(p.y-32);
+ ftAttackRecord(goalDist,lateral);
  if(!isKeeper(p)&&elapsed<p.recoveryUntil){
   const outlet=mates.filter(m=>m.memoryAge===0&&d(p,m)>=5&&d(p,m)<=25&&
    (m.x-p.x)*dir<=3&&!perceivedOffside(p,m,view)&&
@@ -1188,7 +1189,11 @@ function chooseAction(p){
   if(perceives(p,q)&&clearance>1.65&&(!shotGoal||clearance>shotGoal.clearance))shotGoal={...q,clearance};
   if(shotGoal&&y===32)break;
  }
- if(shotGoal&&goalDist<25&&lateral<17&&random()<(pressure>4?.65:.38)){
+ const ftGood=ftQualityShot(p,shotGoal,goalDist,lateral,pressure,view);
+ if($('ft-enabled')?.checked&&!guided&&shotGoal&&goalDist<25&&lateral<17){ftAttackStats.windows++;if(ftGood)ftAttackStats.quality++;}
+ const normalShot=shotGoal&&goalDist<25&&lateral<17&&random()<(pressure>4?.65:.38);
+ const extraShot=!normalShot&&ftAttackMode===2&&ftAttackActive()&&ftGood;
+ if(normalShot||extraShot){if(extraShot)ftAttackStats.extraShots++;
   const aimY=p.y+(shotGoal.y-p.y)*(goalDist+2)/Math.max(goalDist,.01);
   kickTo(p,p.t?-2:102,aimY+(random()-.5)*(5+goalDist*.3),'shot');return;
  }
@@ -1265,6 +1270,7 @@ function chooseAction(p){
  const go=carry&&pressure>4&&carry.clearance>3.2;
  const recentProgression=best&&best.memoryAge<.5&&bestRisk<=3&&(best.x-p.x)*dir>3&&perceivedSpace(best,view)>=5;
  const usefulPass=progress||(recentProgression?best:safety);
+ if(usefulPass&&ftTryCarry(p,carry,usefulPass,view,carryView,pressure))return;
  if(usefulPass){const pick=ftPool?ftPredictivePass(p,usefulPass,ftPool,view,mates):usefulPass;kickTo(p,pick.x,pick.y,'pass',pick.actual);
   report(passIntentReport(p,pick));return;}
  if(go&&(!best||bestScore<carryScore+3)){
@@ -2535,7 +2541,7 @@ const ftRef={speedCap:8.5,accelerationCap:4,brakingCap:5,scale:68/64,
 function ftEndHybrid(){
  if(!ftHybrid)return;
  for(const p of players){const q=ftOriginalProfiles.get(p.id);if(q)Object.assign(p,q);}
- ftHybrid=false;ftSupportExperiment=false;ftSupportCount=0;ftPolicyMode=false;ftPolicyReset(true);ftSpaceMode=false;ftSpaceChoices={opportunities:0,adjustments:0,gain:0};ftRoleMode=false;ftCollectiveMode=false;ftCollectiveStats={opportunities:0,adjustments:0};
+ ftHybrid=false;ftSupportExperiment=false;ftSupportCount=0;ftPolicyMode=false;ftPolicyReset(true);ftAttackMode=0;ftAttackReset(true);ftSpaceMode=false;ftSpaceChoices={opportunities:0,adjustments:0,gain:0};ftRoleMode=false;ftCollectiveMode=false;ftCollectiveStats={opportunities:0,adjustments:0};
  ftPhaseAudit={frames:0,table:[[0,0,0],[0,0,0],[0,0,0]]};
 }
 function ftApplyProfile(p){
@@ -2545,10 +2551,10 @@ function ftApplyProfile(p){
  p.acceleration=Math.min(q.acceleration,c[1]/ftRef.scale);
  p.braking=Math.min(q.braking,c[2]/ftRef.scale);
 }
-function ftStartHybrid(withSupport=false,withRoles=false,withCollective=false,withSpace=false,withPolicy=false){
+function ftStartHybrid(withSupport=false,withRoles=false,withCollective=false,withSpace=false,withPolicy=false,attackMode=0){
  startSituation();enterFreeMode();
  ftHybrid=true;ftSupportExperiment=withSupport===true;ftSupportCount=0;
- ftRoleMode=withRoles===true;ftCollectiveMode=withCollective===true;ftSpaceMode=withSpace===true;ftPolicyMode=withPolicy===true;ftPolicyReset(true);ftSpaceChoices={opportunities:0,adjustments:0,gain:0};
+ ftRoleMode=withRoles===true;ftCollectiveMode=withCollective===true;ftSpaceMode=withSpace===true;ftPolicyMode=withPolicy===true;ftPolicyReset(true);ftAttackMode=[1,2].includes(attackMode)?attackMode:0;ftAttackReset(true);ftSpaceChoices={opportunities:0,adjustments:0,gain:0};
  ftCollectiveStats={opportunities:0,adjustments:0};
  for(const p of players)ftApplyProfile(p);
  ftPhaseAudit={frames:0,table:[[0,0,0],[0,0,0],[0,0,0]]};
@@ -3064,6 +3070,40 @@ const ftSpace=makeSpaceMonitor();
 // 1.45: bounded predictive arbitration within the existing useful-pass branch.
 // No global maps, hidden opposition, future simulator state or new random draws.
 let ftPolicyMode=false;
+
+let ftAttackMode=0;
+const ftAttackFresh=()=>({decisions:0,third:0,box:0,windows:0,quality:0,extraShots:0,checks:0,applied:0,resolved:0,advanced:0,lost:0,censored:0,gain:0,errors:0});
+let ftAttackStats=ftAttackFresh(),ftCarryTrial=null;
+function ftAttackReset(clear=false){if(ftCarryTrial)ftAttackStats.censored++;ftCarryTrial=null;if(clear)ftAttackStats=ftAttackFresh();}
+function ftAttackActive(){return ftAttackMode>0&&ftHybrid&&!guided&&!restart&&!flight&&!techAction&&!matchStopped;}
+function ftAttackRecord(goalDist,lateral){if(!$('ft-enabled')?.checked||guided||restart)return;ftAttackStats.decisions++;if(goalDist<=100/3)ftAttackStats.third++;if(goalDist<=16&&lateral<=20)ftAttackStats.box++;}
+function ftQualityShot(p,q,gd,lateral,pressure,view){return !!q&&view.rivals.length>0&&view.uncertainty<=.55&&gd>=3&&gd<=18&&lateral<=10&&pressure>=4.5&&q.clearance>=3&&Math.abs(angleDelta(Math.atan2(q.y-p.y,q.x-p.x),p.bodyAngle))<=Math.PI/3;}
+function ftCarryCandidate(p,carry,pass,view,carryView,pressure){
+ if(!pass||(pass.x-p.x)*direction(p.t)>3||pressure<5.5||!view.rivals.length||view.uncertainty>.65||!carry||carry.advance<3||carry.clearance<4.5)return null;
+ const advance=(carry.x-p.x)*direction(p.t);if(advance<3)return null;
+ const f=Math.min(1,3.5/advance),q={x:p.x+(carry.x-p.x)*f,y:p.y+(carry.y-p.y)*f};
+ if(q.x<3||q.x>97||q.y<4||q.y>60||!perceives(p,q)||Math.abs(q.y-p.y)>3)return null;
+ let margin=Infinity;
+ for(const u of [.5,1]){const point={x:p.x+(q.x-p.x)*u,y:p.y+(q.y-p.y)*u};
+ const self=arrivalTime(p,point,.25),rival=Math.min(...view.rivals.map(r=>Math.max(0,d(r,point)-r.radius-1.65)/8.5));
+ if(Math.min(perceivedLane(p,point,view).clearance,perceivedLane(p,point,carryView).clearance)<4.5)return null;
+ margin=Math.min(margin,rival-self);}
+ return Number.isFinite(margin)&&margin>=.08?{q,margin}:null;
+}
+function ftTryCarry(p,carry,pass,view,carryView,pressure){
+ if(!ftAttackActive()||owner!==p||isKeeper(p)||ftCarryTrial)return false;
+ try{ftAttackStats.checks++;const a=ftCarryCandidate(p,carry,pass,view,carryView,pressure);if(!a)return false;
+ ftAttackStats.applied++;ftCarryTrial={id:p.id,t:p.t,x:p.x,until:elapsed+.65};
+ p.scanUntil=0;p.driveX=a.q.x;p.driveY=a.q.y;decision=.65;report('Progresión en conducción experimental');return true;
+ }catch(_){ftAttackStats.errors++;return false;}
+}
+function ftAttackTick(){
+ if(!ftCarryTrial)return;const a=ftCarryTrial;
+ if(restart||matchStopped){ftAttackStats.censored++;ftCarryTrial=null;}
+ else if(owner?.id!==a.id||flight){ftAttackStats.resolved++;ftAttackStats.lost++;ftCarryTrial=null;}
+ else if(elapsed>=a.until){const gain=(owner.x-a.x)*direction(a.t);ftAttackStats.resolved++;ftAttackStats.gain+=gain;if(gain>=2)ftAttackStats.advanced++;ftCarryTrial=null;}
+}
+
 const ftPolicyFresh=()=>({opportunities:0,alternatives:0,changes:0,marginGain:0,errors:0,launches:0,contacts:0,intended:0,other:0,rival:0,censored:0});
 let ftPolicyStats=ftPolicyFresh(),ftPolicyRequest=null,ftPolicyFlight=null;
 function ftPolicyReset(clear=false){
@@ -3169,9 +3209,10 @@ function ftSpatialSupport(p,tx,ty,order){
 
 
 
-function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftAccess.reset(clear);ftReceiver.reset(clear);ftSpace.reset(clear);ftPolicyReset(clear);ftFlightIdentity=null;}catch(_){}}
+function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftAccess.reset(clear);ftReceiver.reset(clear);ftSpace.reset(clear);ftPolicyReset(clear);ftAttackReset(clear);ftFlightIdentity=null;}catch(_){}}
 function ftObserve(){
   if(ftPolicyMode)ftPolicyTick();
+  ftAttackTick();
   if(!$('ft-enabled')?.checked)return;
   try{
     if(flight!==ftFlightIdentity){ftFlightIdentity=flight;ftFlightSerial++;}
@@ -3193,6 +3234,7 @@ function ftRender(){
     const ballReport=ftBall.report(),br=ballReport.rows.ground_pass;
     const access=ftAccess.report(),as=access.stats,ac=access.latest,rate=v=>v===null?'—':(100*v).toFixed(0)+' %';
     const rr=ftReceiver.report(),rs=rr.stats,rl=rr.latest;
+    $('ft-attack-state').textContent='Ataque: '+ftAttackStats.third+'/'+ftAttackStats.decisions+' decisiones en último tercio · ventanas de tiro '+ftAttackStats.windows+' · conducciones experimentales '+ftAttackStats.applied;
     $('ft-policy-state').textContent='Decisión predictiva '+(ftPolicyMode?'activa':'desactivada')+' · alternativas '+ftPolicyStats.alternatives+' · cambios '+ftPolicyStats.changes+'/'+ftPolicyStats.opportunities+' · contactos del destinatario '+ftPolicyStats.intended+'/'+ftPolicyStats.contacts+' · errores '+ftPolicyStats.errors;
     const sp=ftSpace.report();$('ft-space-state').textContent='Control dinámico · '+sp.stats.frames+' mapas · '+(sp.latest?sp.latest.zones.map((z,i)=>'Z'+(i+1)+': '+z.slice(0,3).join('/')).join(' · '):'sin mapa')+' (azul/rojo/disputa) · ajuste local '+ftSpaceChoices.adjustments+'/'+ftSpaceChoices.opportunities+' · errores '+sp.stats.errors;
     $('ft-receiver-state').textContent='Receptores · '+rs.contacts+' contactos evaluados · destinatario previsto '+rate(rs.contacts?rs.intended/rs.contacts:null)+' · último ranking: '+(rl?rl.ranked.map(q=>'#'+q.n+' '+({security:'seguridad',continuity:'continuidad',progression:'progresión'}[q.intent])+' ('+q.enhanced.toFixed(1)+')').join(' / '):'—')+' · errores '+rs.errors;
@@ -3207,9 +3249,9 @@ function ftRender(){
 }
 const ftPanel=document.createElement('details');
 ftPanel.className='decision-panel';
-ftPanel.innerHTML='<summary><strong>Fase Tracking 1.45 · integración experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-space-exp" type="button" disabled>Control espacial activo: en evaluación</button> <button id="ft-policy" type="button" disabled>Decisión predictiva: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><p id="ft-access-state" aria-live="off"></p><p id="ft-receiver-state" aria-live="off"></p><p id="ft-space-state" aria-live="off"></p><p id="ft-policy-state" aria-live="off"></p><small>Decisión 1.45: desempate restringido entre receptores visibles de la misma categoría de pase; no usa el mapa global ni altera las prioridades del motor. Experimental.</small><br><small>Control dinámico 1.44: 48 celdas, seis zonas desde portería azul hacia roja; para rojo se invierte la numeración relativa. El mapa global es diagnóstico. El ajuste local opcional usa únicamente percepción propia; no es una probabilidad de dominio.</small><br><small>Ranking 1.43: receptores visibles, riesgo de pase, espacio, perfil corporal y margen temporal estimado. Seguridad/continuidad/progresión son etiquetas geométricas provisionales, no intención táctica validada. No altera las elecciones del motor.</small><br><small>Accesibilidad 1.42: estimación experimental desde posiciones visibles, orientación, velocidad inicial y tiempo de llegada. No son probabilidades ni órdenes de intervención.</small><br><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
+ftPanel.innerHTML='<summary><strong>Fase Tracking 1.46 · integración experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-space-exp" type="button" disabled>Control espacial activo: en evaluación</button> <button id="ft-policy" type="button" disabled>Decisión predictiva: en evaluación</button> <button id="ft-attack" type="button" disabled>Progresión activa: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><p id="ft-access-state" aria-live="off"></p><p id="ft-receiver-state" aria-live="off"></p><p id="ft-space-state" aria-live="off"></p><p id="ft-policy-state" aria-live="off"></p><p id="ft-attack-state" aria-live="off"></p><small>1.46: diagnóstico de progresión y remate; ensayo activo bloqueado hasta validar.</small><br><small>Decisión 1.45: desempate restringido entre receptores visibles de la misma categoría de pase; no usa el mapa global ni altera las prioridades del motor. Experimental.</small><br><small>Control dinámico 1.44: 48 celdas, seis zonas desde portería azul hacia roja; para rojo se invierte la numeración relativa. El mapa global es diagnóstico. El ajuste local opcional usa únicamente percepción propia; no es una probabilidad de dominio.</small><br><small>Ranking 1.43: receptores visibles, riesgo de pase, espacio, perfil corporal y margen temporal estimado. Seguridad/continuidad/progresión son etiquetas geométricas provisionales, no intención táctica validada. No altera las elecciones del motor.</small><br><small>Accesibilidad 1.42: estimación experimental desde posiciones visibles, orientación, velocidad inicial y tiempo de llegada. No son probabilidades ni órdenes de intervención.</small><br><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
 $('status').insertAdjacentElement('afterend',ftPanel);
-$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);ftBall.setEnabled($('ft-enabled').checked);ftAccess.setEnabled($('ft-enabled').checked);ftReceiver.setEnabled($('ft-enabled').checked);ftSpace.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';$('ft-ball-state').textContent='';$('ft-access-state').textContent='';$('ft-receiver-state').textContent='';$('ft-space-state').textContent='';$('ft-policy-state').textContent='';ftRender();};
+$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);ftBall.setEnabled($('ft-enabled').checked);ftAccess.setEnabled($('ft-enabled').checked);ftReceiver.setEnabled($('ft-enabled').checked);ftSpace.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';$('ft-ball-state').textContent='';$('ft-access-state').textContent='';$('ft-receiver-state').textContent='';$('ft-space-state').textContent='';$('ft-policy-state').textContent='';$('ft-attack-state').textContent='';ftRender();};
 $('ft-reset').onclick=()=>{ftReset('Medición reiniciada',true);ftRender();};
 $('ft-calibrate').onclick=()=>{ftStartHybrid(false);ftRender();};
 $('ft-support-exp').onclick=()=>{ftStartHybrid(true);ftRender();};

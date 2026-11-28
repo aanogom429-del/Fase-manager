@@ -2192,7 +2192,7 @@ function update(dt){if(matchStopped){running=false;syncControls();return;}elapse
   const vx=bx-old.x,vy=by-old.y,ll=vx*vx+vy*vy||1,u=clamp(((p.x-old.x)*vx+(p.y-old.y)*vy)/ll,0,1);
   return {p,u,gap:Math.hypot(p.x-old.x-u*vx,p.y-old.y-u*vy),z:old.z+(ballHeight-old.z)*u};
  }).filter(c=>(c.z<=1.4||aerialEligible(c.p,f,c.z)||isKeeper(c.p)&&inPenaltyArea(c.p.t,c.p.x,c.p.y)&&c.z<=2.8)&&c.gap<(c.p.t===f.t?2.2:1.65)).sort((a,b)=>a.u-b.u||a.gap-b.gap);
- if(touches.length){const {p,z}=touches[0];if(!aerialContact(p,f,z))capture(p,isKeeper(p)&&f.kind==='shot'?'detiene el remate':p.t===f.t?'recibe':'intercepta');}
+ if(touches.length){const {p,z}=touches[0];ftAccess.contact(f,p,elapsed);if(!aerialContact(p,f,z))capture(p,isKeeper(p)&&f.kind==='shot'?'detiene el remate':p.t===f.t?'recibe':'intercepta');}
  if(flight===f&&hit){adjudicateExit(hit);return;}
  if(flight===f&&a>=1){flight=null;loose=true;ballHeight=0;report('Balón suelto: disputa por la recepción');}
  }
@@ -2549,7 +2549,7 @@ function ftStartHybrid(withSupport=false,withRoles=false,withCollective=false){
  ftCollectiveStats={opportunities:0,adjustments:0};
  for(const p of players)ftApplyProfile(p);
  ftPhaseAudit={frames:0,table:[[0,0,0],[0,0,0],[0,0,0]]};
- $('ft-enabled').checked=true;ftShadow.setEnabled(true);ftBall.setEnabled(true);
+ $('ft-enabled').checked=true;ftShadow.setEnabled(true);ftBall.setEnabled(true);ftAccess.setEnabled(true);
 }
 function ftRecordPhase(relations,ballPos){
  if(!ftHybrid||!owner||flight||restart||Math.round(elapsed*120)%24!==0)return;
@@ -2836,13 +2836,110 @@ return {observer:makeObserver(),ball:makeBallMonitor()};
 })();
 const ftShadow=ftTracking.observer,ftBall=ftTracking.ball;
 let ftFlightIdentity=null,ftFlightSerial=0;
-function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftFlightIdentity=null;}catch(_){}}
+
+// Tracking 1.42. Candidate search is causal: only positions actually visible
+// to a player, with two successive 50 ms intervals, and its own locomotion state.
+// The original engine's known flight endpoint is used ONLY as a diagnostic comparator.
+function ftSearchIntercept(p,pos,velocity,team,horizon=.8,pointAt=null){
+ if(![pos.x,pos.y,velocity.x,velocity.y].every(Number.isFinite)||Math.hypot(velocity.x,velocity.y)>65)return null;
+ for(let i=1;i<=Math.floor((horizon+1e-8)/.05);i++){
+  const t=i*.05,q=pointAt?pointAt(t):{x:pos.x+velocity.x*t,y:pos.y+velocity.y*t};
+  if(!q||q.x<0||q.x>100||q.y<0||q.y>64)break;
+  if((p.cool||0)>t)continue;
+  const eta=arrivalTime(p,q,p.t===team?2.2:1.65);
+  if(Number.isFinite(eta)&&eta<=t)return {id:p.id,team:p.t,x:q.x,y:q.y,t,eta,margin:t-eta};
+ }
+ return null;
+}
+function makeAccessMonitor(){
+ let enabled=false,segment=null,seen=new Map(),latest=null,lastSample=null,anchor=null,finishedFlight=null;
+ const fresh=()=>({passes:0,anchors:0,contacts:0,noContact:0,censored:0,unanchored:0,errors:0,
+   candidates:0,visible:0,actualVisible:0,actualDefense:0,phaseVisible:0,
+   methods:Object.fromEntries(['causal','oracle','nearest'].map(k=>[k,{predicted:0,top1:0,top3:0,team:0,contactPredicted:0,contactMissed:0,noContactPredicted:0,noContactCorrect:0,timeAbs:0,timeN:0,defensiveTop1:0}]))});
+ let stats=fresh();
+ function finish(kind,actual=null,at=null){
+  if(!segment)return;
+  finishedFlight=segment.f;
+  if(!anchor){stats.unanchored++;segment=null;seen.clear();lastSample=null;latest=null;return;}
+  if(kind==='censored'){stats.censored++;}
+  else if(kind==='contact'){
+   stats.contacts++;if(anchor.visible.includes(actual.id))stats.actualVisible++;
+   if(actual.t!==segment.team)stats.actualDefense++;
+   for(const k of Object.keys(stats.methods)){
+    const s=stats.methods[k],rank=anchor.ranks[k],first=rank[0];
+    if(!first){s.contactMissed++;continue;}
+    s.contactPredicted++;
+    if(first.id===actual.id){s.top1++;if(actual.t!==segment.team)s.defensiveTop1++;if(Number.isFinite(first.t)){s.timeAbs+=Math.abs(first.t-(at-anchor.elapsed));s.timeN++;}}
+    if(rank.slice(0,3).some(q=>q.id===actual.id))s.top3++;
+    if(first.team===actual.t)s.team++;
+   }
+  }else{
+   stats.noContact++;
+   for(const k of Object.keys(stats.methods)){const s=stats.methods[k];if(anchor.ranks[k].length)s.noContactPredicted++;else s.noContactCorrect++;}
+  }
+  segment=null;seen.clear();lastSample=null;anchor=null;latest=null;
+ }
+ function reset(clear=false){finish('censored');seen.clear();lastSample=null;anchor=null;latest=null;finishedFlight=null;if(clear)stats=fresh();}
+ function setEnabled(v){enabled=v===true;reset(true);}
+ function contact(f,p,t){if(enabled&&segment&&segment.f===f)finish(anchor&&t-anchor.elapsed>.800001?'noContact':'contact',p,t);}
+ function tick(f,pos,t,list,valid){
+  if(!enabled)return;
+  try{
+   if(!valid||!f){finish('censored');return;}
+   if(f===finishedFlight)return;
+   if(segment&&segment.f!==f)finish('censored');
+   if(!segment){segment={f,team:f.t};stats.passes++;seen.clear();lastSample=null;}
+   if(anchor){if(t-anchor.elapsed>=.8-1e-8)finish('noContact');return;}
+   const tick=Math.round(t*120);
+   if(lastSample!==null&&tick-lastSample<6)return;
+   if(lastSample!==null&&tick-lastSample!==6)seen.clear();
+   lastSample=tick;
+   const eligible=list.filter(p=>p!==f.from&&!p.sentOff);
+   const visible=[];
+   for(const p of eligible){
+    if(!perceives(p,pos)){seen.delete(p.id);continue;}
+    const h=seen.get(p.id)||[];
+    h.push({x:pos.x,y:pos.y,t});if(h.length>3)h.shift();seen.set(p.id,h);
+    if(h.length===3&&h[2].t-h[0].t>.09999)visible.push(p);
+   }
+   if(!visible.length)return;
+   const causal=[],oracle=[],nearest=[];
+   for(const p of visible){
+    const h=seen.get(p.id),dt=h[2].t-h[0].t,v={x:(h[2].x-h[0].x)/dt,y:(h[2].y-h[0].y)/dt};
+    const q=ftSearchIntercept(p,pos,v,f.t);if(q)causal.push(q);
+   }
+   // Comparator has access to the programmed ball path and endpoint. Not a player feature.
+   for(const p of eligible){
+    const horizon=Math.min(.8,f.duration-f.age);
+    if(horizon>0&&Number.isFinite(horizon)){
+     const q=ftSearchIntercept(p,pos,{x:0,y:0},f.t,horizon,u=>{const a=(f.age+u)/f.duration;return {x:f.x+(f.tx-f.x)*a,y:f.y+(f.ty-f.y)*a};});
+     if(q)oracle.push(q);
+    }
+    nearest.push({id:p.id,team:p.t,dist:d(p,pos),t:null});
+   }
+   const rank=(a,b)=>a.t-b.t||b.margin-a.margin||a.id-b.id;
+   causal.sort(rank);oracle.sort(rank);nearest.sort((a,b)=>a.dist-b.dist||a.id-b.id);
+   anchor={elapsed:t,visible:visible.map(p=>p.id),ranks:{causal,oracle,nearest}};
+   stats.anchors++;stats.visible+=visible.length;stats.candidates+=causal.length;
+   for(const k of Object.keys(stats.methods))if(anchor.ranks[k].length)stats.methods[k].predicted++;
+   latest={elapsed:t,visible:visible.length,first:causal[0]||null,causal:causal.slice(0,3),oracle:oracle.slice(0,3),advantage:null};
+   const blue=causal.find(q=>q.team===0),red=causal.find(q=>q.team===1);
+   if(blue&&red)latest.advantage=red.t-blue.t;
+  }catch(_){stats.errors++;finish('censored');}
+ }
+ function report(){return {enabled,latest,stats:{...stats,methods:Object.fromEntries(Object.entries(stats.methods).map(([k,s])=>[k,{...s,top1Rate:stats.contacts?s.top1/stats.contacts:null,top3Rate:stats.contacts?s.top3/stats.contacts:null,timeMAE:s.timeN?s.timeAbs/s.timeN:null}]))},pending:!!anchor};}
+ return {tick,contact,reset,setEnabled,report};
+}
+const ftAccess=makeAccessMonitor();
+
+function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftAccess.reset(clear);ftFlightIdentity=null;}catch(_){}}
 function ftObserve(){
   if(!$('ft-enabled')?.checked)return;
   try{
     if(flight!==ftFlightIdentity){ftFlightIdentity=flight;ftFlightSerial++;}
     const state=!restart&&!matchStopped?(owner&&!flight?'controlled':!owner&&flight?.kind==='pass'&&!flight.loft&&Math.abs(ballHeight)<1e-6?'ground_pass':null):null;
     ftBall.tick({elapsed,state,context:state==='controlled'?'owner:'+owner.id:'pass:'+ftFlightSerial,ball:[bx,by,ballHeight]});
+    ftAccess.tick(flight,{x:bx,y:by},elapsed,activePlayers(),state==='ground_pass');
     ftShadow.tick({elapsed,live:!restart&&!matchStopped&&!!owner&&!flight,owner:owner?.t??null,carrier:owner?.id??null,
       context:(guided?'guided':'free')+'|'+players[0].formation+'|'+players[11].formation,
       ball:[bx,by,ballHeight],players:activePlayers().map(p=>({id:p.id,team:p.t,x:p.x,y:p.y}))});
@@ -2854,6 +2951,8 @@ function ftRender(){
     if(!$('ft-enabled')?.checked)return;
     const r=ftShadow.report(),s=r.stats,l=r.latest,d=l?.diagnostics;
     const ballReport=ftBall.report(),br=ballReport.rows.ground_pass;
+    const access=ftAccess.report(),as=access.stats,ac=access.latest,rate=v=>v===null?'—':(100*v).toFixed(0)+' %';
+    $('ft-access-state').textContent='Intercepción observada · '+as.anchors+' pases con estimación · '+as.contacts+' contactos evaluados · acierto primer candidato '+rate(as.methods.causal.top1Rate)+' · primeros tres '+rate(as.methods.causal.top3Rate)+(ac?.first?' · candidato actual '+(ac.first.team?'Rojo':'Azul')+' #'+(players.find(p=>p.id===ac.first.id)?.n??'?')+' en '+ac.first.t.toFixed(2)+' s':' · sin candidato actual')+' · errores '+as.errors;
     $('ft-ball-state').textContent='Balón raso · '+(ballReport.latest?ballReport.latest.state==='ground_pass'?'pase observado':'control observado':'historial insuficiente')+' · '+br.map(q=>q.horizon+' s: '+q.n+' evaluadas, '+q.censored+' interrumpidas'+(q.n?' (Ridge '+q.ridge.toFixed(2)+' m; velocidad '+q.cv.toFixed(2)+' m)':'')).join(' · ')+' · errores '+ballReport.errors;
     const f=v=>v===null?'—':v.toFixed(3)+' m';
     const q=d?d.control.map(n=>(100*n/150).toFixed(1)+' %').join(' / '):'—';
@@ -2864,9 +2963,9 @@ function ftRender(){
 }
 const ftPanel=document.createElement('details');
 ftPanel.className='decision-panel';
-ftPanel.innerHTML='<summary><strong>Fase Tracking 1.41 · integración experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
+ftPanel.innerHTML='<summary><strong>Fase Tracking 1.42 · integración experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><p id="ft-access-state" aria-live="off"></p><small>Accesibilidad 1.42: estimación experimental desde posiciones visibles, orientación, velocidad inicial y tiempo de llegada. No son probabilidades ni órdenes de intervención.</small><br><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
 $('status').insertAdjacentElement('afterend',ftPanel);
-$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);ftBall.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';$('ft-ball-state').textContent='';ftRender();};
+$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);ftBall.setEnabled($('ft-enabled').checked);ftAccess.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';$('ft-ball-state').textContent='';$('ft-access-state').textContent='';ftRender();};
 $('ft-reset').onclick=()=>{ftReset('Medición reiniciada',true);ftRender();};
 $('ft-calibrate').onclick=()=>{ftStartHybrid(false);ftRender();};
 $('ft-support-exp').onclick=()=>{ftStartHybrid(true);ftRender();};

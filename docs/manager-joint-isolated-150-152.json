@@ -1,0 +1,986 @@
+[
+  {
+    "version": 150,
+    "seed": 3901,
+    "joint": {
+      "150": {
+        "checks": 69,
+        "changes": 0,
+        "rejects": 69,
+        "errors": 0
+      },
+      "151": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "152": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "153": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "154": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "155": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "156": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "157": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "158": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "159": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      }
+    },
+    "width": {
+      "checks": 0,
+      "changes": 0,
+      "guarded": 0,
+      "active": false
+    },
+    "attack": {
+      "decisions": 33,
+      "third": 4,
+      "box": 0,
+      "windows": 0,
+      "quality": 0,
+      "extraShots": 0,
+      "checks": 0,
+      "applied": 0,
+      "resolved": 0,
+      "advanced": 0,
+      "lost": 0,
+      "censored": 0,
+      "gain": 0,
+      "errors": 0
+    },
+    "policy": {
+      "opportunities": 0,
+      "alternatives": 0,
+      "changes": 0,
+      "marginGain": 0,
+      "errors": 0,
+      "launches": 0,
+      "contacts": 0,
+      "intended": 0,
+      "other": 0,
+      "rival": 0,
+      "censored": 0,
+      "active": false
+    },
+    "receiver": {
+      "decisions": 7,
+      "candidates": 47,
+      "passes": 7,
+      "unranked": 0,
+      "excluded": 0,
+      "contacts": 6,
+      "intended": 4,
+      "teammateOther": 0,
+      "rival": 2,
+      "censored": 1,
+      "errors": 0,
+      "groups": {
+        "security": {
+          "n": 2,
+          "success": 1
+        },
+        "continuity": {
+          "n": 0,
+          "success": 0
+        },
+        "progression": {
+          "n": 4,
+          "success": 3
+        }
+      },
+      "models": {
+        "nearest": {
+          "n": 6,
+          "top1": 1,
+          "top3": 3
+        },
+        "base": {
+          "n": 6,
+          "top1": 4,
+          "top3": 5
+        },
+        "enhanced": {
+          "n": 6,
+          "top1": 4,
+          "top3": 5
+        }
+      },
+      "margins": {
+        "negative": {
+          "n": 3,
+          "success": 1
+        },
+        "nonnegative": {
+          "n": 3,
+          "success": 3
+        }
+      },
+      "lead": 4
+    },
+    "space": {
+      "frames": 29,
+      "cells": 1392,
+      "disagree": 282,
+      "evaluated": 411,
+      "dynamicCorrect": 358,
+      "nearestCorrect": 373,
+      "dynamicDecisive": 384,
+      "nearestDecisive": 388,
+      "dynamicCoveredCorrect": 358,
+      "nearestCoveredCorrect": 373,
+      "censored": 9,
+      "errors": 0,
+      "zones": [
+        [
+          232,
+          0,
+          0,
+          0
+        ],
+        [
+          222,
+          5,
+          5,
+          0
+        ],
+        [
+          166,
+          42,
+          24,
+          0
+        ],
+        [
+          151,
+          55,
+          26,
+          0
+        ],
+        [
+          100,
+          94,
+          38,
+          0
+        ],
+        [
+          16,
+          201,
+          15,
+          0
+        ]
+      ]
+    },
+    "choices": {
+      "opportunities": 0,
+      "adjustments": 0,
+      "gain": 0
+    },
+    "hybrid": {
+      "active": true,
+      "support": 0,
+      "phase": {
+        "frames": 61,
+        "table": [
+          [
+            78,
+            1,
+            0
+          ],
+          [
+            25,
+            211,
+            100
+          ],
+          [
+            1,
+            172,
+            754
+          ]
+        ]
+      },
+      "roles": false,
+      "collective": false,
+      "coord": {
+        "opportunities": 0,
+        "adjustments": 0
+      }
+    },
+    "restored": true,
+    "summary": {
+      "speed": {
+        "n": 1232,
+        "p50": 4.017238098590825,
+        "p90": 7.635622247688923,
+        "p95": 8.303076104702965,
+        "p99": 8.425031085871307
+      },
+      "acceleration": {
+        "n": 1144,
+        "p50": 3.9505190496900635,
+        "p90": 4.943975535605363,
+        "p95": 4.969493367854105,
+        "p99": 4.999393084796686
+      },
+      "speed_gain": {
+        "n": 512,
+        "p50": 2.238419664931813,
+        "p90": 3.921545176462452,
+        "p95": 3.9534247263576736,
+        "p99": 3.9878881966987554
+      },
+      "braking": {
+        "n": 543,
+        "p50": 2.055463460661678,
+        "p90": 4.711304460222586,
+        "p95": 4.89402511223587,
+        "p99": 5.000000000000071
+      },
+      "width_possession": {
+        "n": 61,
+        "p50": 47.08221887896568,
+        "p90": 48.90613632275894,
+        "p95": 49.153875753084996,
+        "p99": 51.81517637766474
+      },
+      "depth_possession": {
+        "n": 61,
+        "p50": 58.95670451835214,
+        "p90": 73.08699736970365,
+        "p95": 81.7614658988255,
+        "p99": 82.75756377303131
+      },
+      "width_defense": {
+        "n": 61,
+        "p50": 41.22713427196594,
+        "p90": 50.071498256616835,
+        "p95": 52.18542111040787,
+        "p99": 53.47869086476089
+      },
+      "depth_defense": {
+        "n": 61,
+        "p50": 59.90479012702168,
+        "p90": 83.18898103930549,
+        "p95": 84.30832577981231,
+        "p99": 84.91093634510453
+      },
+      "dist_ball": {
+        "n": 1342,
+        "p50": 24.622571460355466,
+        "p90": 43.83686283333846,
+        "p95": 52.5249473097146,
+        "p99": 86.85094573158578
+      }
+    },
+    "total": 75,
+    "valid": 61,
+    "score": [
+      0,
+      0
+    ],
+    "passes": 7,
+    "shots": 0,
+    "turnovers": 4,
+    "shadow": {
+      "n": 154,
+      "ridge": 1.3496738449977517,
+      "velocity": 1.5517221737514557,
+      "errors": 0
+    },
+    "finite": true,
+    "kin": 0.5635684359326224,
+    "spatial": 0.12361481437919128
+  },
+  {
+    "version": 151,
+    "seed": 4007,
+    "joint": {
+      "150": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "151": {
+        "checks": 1240,
+        "changes": 118,
+        "rejects": 1122,
+        "errors": 0
+      },
+      "152": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "153": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "154": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "155": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "156": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "157": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "158": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "159": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      }
+    },
+    "width": {
+      "checks": 0,
+      "changes": 0,
+      "guarded": 0,
+      "active": false
+    },
+    "attack": {
+      "decisions": 30,
+      "third": 3,
+      "box": 0,
+      "windows": 0,
+      "quality": 0,
+      "extraShots": 0,
+      "checks": 0,
+      "applied": 0,
+      "resolved": 0,
+      "advanced": 0,
+      "lost": 0,
+      "censored": 0,
+      "gain": 0,
+      "errors": 0
+    },
+    "policy": {
+      "opportunities": 0,
+      "alternatives": 0,
+      "changes": 0,
+      "marginGain": 0,
+      "errors": 0,
+      "launches": 0,
+      "contacts": 0,
+      "intended": 0,
+      "other": 0,
+      "rival": 0,
+      "censored": 0,
+      "active": false
+    },
+    "receiver": {
+      "decisions": 7,
+      "candidates": 46,
+      "passes": 7,
+      "unranked": 0,
+      "excluded": 0,
+      "contacts": 7,
+      "intended": 4,
+      "teammateOther": 1,
+      "rival": 2,
+      "censored": 0,
+      "errors": 0,
+      "groups": {
+        "security": {
+          "n": 4,
+          "success": 2
+        },
+        "continuity": {
+          "n": 1,
+          "success": 0
+        },
+        "progression": {
+          "n": 2,
+          "success": 2
+        }
+      },
+      "models": {
+        "nearest": {
+          "n": 7,
+          "top1": 5,
+          "top3": 7
+        },
+        "base": {
+          "n": 7,
+          "top1": 4,
+          "top3": 6
+        },
+        "enhanced": {
+          "n": 7,
+          "top1": 4,
+          "top3": 6
+        }
+      },
+      "margins": {
+        "negative": {
+          "n": 1,
+          "success": 0
+        },
+        "nonnegative": {
+          "n": 6,
+          "success": 4
+        }
+      },
+      "lead": 6
+    },
+    "space": {
+      "frames": 30,
+      "cells": 1440,
+      "disagree": 185,
+      "evaluated": 320,
+      "dynamicCorrect": 305,
+      "nearestCorrect": 289,
+      "dynamicDecisive": 309,
+      "nearestDecisive": 308,
+      "dynamicCoveredCorrect": 305,
+      "nearestCoveredCorrect": 289,
+      "censored": 10,
+      "errors": 0,
+      "zones": [
+        [
+          240,
+          0,
+          0,
+          0
+        ],
+        [
+          240,
+          0,
+          0,
+          0
+        ],
+        [
+          211,
+          17,
+          12,
+          0
+        ],
+        [
+          183,
+          38,
+          19,
+          0
+        ],
+        [
+          66,
+          134,
+          40,
+          0
+        ],
+        [
+          1,
+          236,
+          3,
+          0
+        ]
+      ]
+    },
+    "choices": {
+      "opportunities": 0,
+      "adjustments": 0,
+      "gain": 0
+    },
+    "hybrid": {
+      "active": true,
+      "support": 0,
+      "phase": {
+        "frames": 58,
+        "table": [
+          [
+            83,
+            0,
+            0
+          ],
+          [
+            26,
+            128,
+            197
+          ],
+          [
+            1,
+            151,
+            690
+          ]
+        ]
+      },
+      "roles": false,
+      "collective": false,
+      "coord": {
+        "opportunities": 0,
+        "adjustments": 0
+      }
+    },
+    "restored": true,
+    "summary": {
+      "speed": {
+        "n": 1122,
+        "p50": 4.046724194124515,
+        "p90": 7.84733879528029,
+        "p95": 8.348336303716778,
+        "p99": 8.480118973542748
+      },
+      "acceleration": {
+        "n": 1034,
+        "p50": 3.9436615964563697,
+        "p90": 4.933475724464841,
+        "p95": 4.966087726447556,
+        "p99": 4.999747243289294
+      },
+      "speed_gain": {
+        "n": 513,
+        "p50": 2.884255221390215,
+        "p90": 3.9298098375207364,
+        "p95": 3.9553929119180804,
+        "p99": 3.990427740710362
+      },
+      "braking": {
+        "n": 437,
+        "p50": 1.907156799543932,
+        "p90": 4.814300927240941,
+        "p95": 4.954510537627144,
+        "p99": 4.999999999999893
+      },
+      "width_possession": {
+        "n": 57,
+        "p50": 40.88750811305661,
+        "p90": 47.65633110840733,
+        "p95": 47.7090450505772,
+        "p99": 47.810328341235866
+      },
+      "depth_possession": {
+        "n": 57,
+        "p50": 59.61621876404293,
+        "p90": 70.61547343581924,
+        "p95": 72.72692828566433,
+        "p99": 75.71239586068904
+      },
+      "width_defense": {
+        "n": 57,
+        "p50": 38.21870646363254,
+        "p90": 41.497668033795286,
+        "p95": 42.101755328509824,
+        "p99": 44.69915148223246
+      },
+      "depth_defense": {
+        "n": 57,
+        "p50": 57.61966597303292,
+        "p90": 75.49497018379584,
+        "p95": 75.9691797972859,
+        "p99": 76.2588580692201
+      },
+      "dist_ball": {
+        "n": 1254,
+        "p50": 26.304306680024837,
+        "p90": 44.192792196760415,
+        "p95": 51.287954529743864,
+        "p99": 73.28336223070116
+      }
+    },
+    "total": 75,
+    "valid": 57,
+    "score": [
+      0,
+      0
+    ],
+    "passes": 8,
+    "shots": 0,
+    "turnovers": 5,
+    "shadow": {
+      "n": 154,
+      "ridge": 1.1584799000319141,
+      "velocity": 1.5394229719092987,
+      "errors": 0
+    },
+    "finite": true,
+    "kin": 0.5791406950708181,
+    "spatial": 0.11244121142082845
+  },
+  {
+    "version": 152,
+    "seed": 4111,
+    "joint": {
+      "150": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "151": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "152": {
+        "checks": 299,
+        "changes": 55,
+        "rejects": 244,
+        "errors": 0
+      },
+      "153": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "154": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "155": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "156": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "157": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "158": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      },
+      "159": {
+        "checks": 0,
+        "changes": 0,
+        "rejects": 0,
+        "errors": 0
+      }
+    },
+    "width": {
+      "checks": 0,
+      "changes": 0,
+      "guarded": 0,
+      "active": false
+    },
+    "attack": {
+      "decisions": 33,
+      "third": 2,
+      "box": 0,
+      "windows": 0,
+      "quality": 0,
+      "extraShots": 0,
+      "checks": 0,
+      "applied": 0,
+      "resolved": 0,
+      "advanced": 0,
+      "lost": 0,
+      "censored": 0,
+      "gain": 0,
+      "errors": 0
+    },
+    "policy": {
+      "opportunities": 0,
+      "alternatives": 0,
+      "changes": 0,
+      "marginGain": 0,
+      "errors": 0,
+      "launches": 0,
+      "contacts": 0,
+      "intended": 0,
+      "other": 0,
+      "rival": 0,
+      "censored": 0,
+      "active": false
+    },
+    "receiver": {
+      "decisions": 8,
+      "candidates": 49,
+      "passes": 7,
+      "unranked": 0,
+      "excluded": 1,
+      "contacts": 7,
+      "intended": 7,
+      "teammateOther": 0,
+      "rival": 0,
+      "censored": 0,
+      "errors": 0,
+      "groups": {
+        "security": {
+          "n": 2,
+          "success": 2
+        },
+        "continuity": {
+          "n": 1,
+          "success": 1
+        },
+        "progression": {
+          "n": 4,
+          "success": 4
+        }
+      },
+      "models": {
+        "nearest": {
+          "n": 7,
+          "top1": 2,
+          "top3": 5
+        },
+        "base": {
+          "n": 7,
+          "top1": 6,
+          "top3": 6
+        },
+        "enhanced": {
+          "n": 7,
+          "top1": 6,
+          "top3": 6
+        }
+      },
+      "margins": {
+        "negative": {
+          "n": 1,
+          "success": 1
+        },
+        "nonnegative": {
+          "n": 6,
+          "success": 6
+        }
+      },
+      "lead": 7
+    },
+    "space": {
+      "frames": 27,
+      "cells": 1296,
+      "disagree": 217,
+      "evaluated": 363,
+      "dynamicCorrect": 334,
+      "nearestCorrect": 338,
+      "dynamicDecisive": 340,
+      "nearestDecisive": 351,
+      "dynamicCoveredCorrect": 334,
+      "nearestCoveredCorrect": 338,
+      "censored": 8,
+      "errors": 0,
+      "zones": [
+        [
+          216,
+          0,
+          0,
+          0
+        ],
+        [
+          214,
+          0,
+          2,
+          0
+        ],
+        [
+          186,
+          22,
+          8,
+          0
+        ],
+        [
+          129,
+          62,
+          25,
+          0
+        ],
+        [
+          36,
+          141,
+          39,
+          0
+        ],
+        [
+          2,
+          201,
+          13,
+          0
+        ]
+      ]
+    },
+    "choices": {
+      "opportunities": 0,
+      "adjustments": 0,
+      "gain": 0
+    },
+    "hybrid": {
+      "active": true,
+      "support": 0,
+      "phase": {
+        "frames": 59,
+        "table": [
+          [
+            78,
+            0,
+            0
+          ],
+          [
+            8,
+            152,
+            133
+          ],
+          [
+            0,
+            131,
+            796
+          ]
+        ]
+      },
+      "roles": false,
+      "collective": false,
+      "coord": {
+        "opportunities": 0,
+        "adjustments": 0
+      }
+    },
+    "restored": true,
+    "summary": {
+      "speed": {
+        "n": 1056,
+        "p50": 4.180631384299073,
+        "p90": 7.421721742652381,
+        "p95": 8.15967600574676,
+        "p99": 8.464504452642734
+      },
+      "acceleration": {
+        "n": 946,
+        "p50": 3.9590975650060303,
+        "p90": 4.9129724444058445,
+        "p95": 4.963022215302196,
+        "p99": 4.999862234450313
+      },
+      "speed_gain": {
+        "n": 546,
+        "p50": 2.5924290340296223,
+        "p90": 3.943073378711359,
+        "p95": 3.964227545987601,
+        "p99": 3.9981801245559723
+      },
+      "braking": {
+        "n": 340,
+        "p50": 2.1552238179604375,
+        "p90": 4.835841609569564,
+        "p95": 4.946333843108661,
+        "p99": 5.000000000000071
+      },
+      "width_possession": {
+        "n": 57,
+        "p50": 47.836638748621354,
+        "p90": 53.249320959385926,
+        "p95": 53.93751976740121,
+        "p99": 54.19021867257248
+      },
+      "depth_possession": {
+        "n": 57,
+        "p50": 60.95451157349939,
+        "p90": 75.00303249500575,
+        "p95": 76.46682584401289,
+        "p99": 77.15630515989635
+      },
+      "width_defense": {
+        "n": 57,
+        "p50": 38.42157745649009,
+        "p90": 43.12160308737484,
+        "p95": 44.20024145540481,
+        "p99": 47.821081227835265
+      },
+      "depth_defense": {
+        "n": 57,
+        "p50": 46.17620866524018,
+        "p90": 77.99920952573615,
+        "p95": 79.59732659884833,
+        "p99": 80.19386596107783
+      },
+      "dist_ball": {
+        "n": 1254,
+        "p50": 27.356909409802313,
+        "p90": 47.52746299185025,
+        "p95": 54.93021827503742,
+        "p99": 74.45275463540312
+      }
+    },
+    "total": 75,
+    "valid": 57,
+    "score": [
+      0,
+      0
+    ],
+    "passes": 8,
+    "shots": 0,
+    "turnovers": 1,
+    "shadow": {
+      "n": 110,
+      "ridge": 1.2993261114051506,
+      "velocity": 1.734539102196265,
+      "errors": 0
+    },
+    "finite": true,
+    "kin": 0.5773520391999317,
+    "spatial": 0.09369655361156594
+  }
+]

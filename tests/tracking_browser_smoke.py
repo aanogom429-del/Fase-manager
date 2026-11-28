@@ -1,5 +1,6 @@
 """Browser smoke test for the 1.40 RC. Run: python tests/tracking_browser_smoke.py."""
 import functools
+import json
 import http.server
 import threading
 from pathlib import Path
@@ -25,7 +26,7 @@ try:
             page.goto(url, wait_until="domcontentloaded")
             expect(page.locator("#pitch")).to_be_visible()
             expect(page.locator("#players > g.player")).to_have_count(22)
-            page.get_by_text("Fase Tracking 1.45", exact=False).first.click()
+            page.get_by_text("Fase Tracking 1.50 RC", exact=False).first.click()
             expect(page.locator("#ft-enabled")).not_to_be_checked()
             expect(page.locator("#ft-hybrid-state")).to_contain_text("Motor original")
             expect(page.locator("#ft-collective")).to_be_disabled()
@@ -33,6 +34,17 @@ try:
             expect(page.locator("#ft-enabled")).to_be_checked()
             expect(page.locator("#ft-hybrid-state")).to_contain_text("Prueba libre calibrada")
             expect(page.locator("#ft-state")).to_contain_text("Ventanas")
+            expect(page.locator("#ft-attack")).to_be_disabled()
+            expect(page.locator("#ft-policy")).to_be_disabled()
+            model = {"schema":"fase-tracking-1.49-neural-v1","model":"no_possession_s42","weights":{
+                "feature_mask":[0 if i in (7,12,21) else 1 for i in range(28)],
+                "enc.0.weight":[[0]*28 for _ in range(32)],"enc.0.bias":[0]*32,
+                "head.0.weight":[[0]*192 for _ in range(64)],"head.0.bias":[0]*64,
+                "head.2.weight":[[0]*64 for _ in range(2)],"head.2.bias":[0]*2}}
+            page.locator("#ft-neural-file").set_input_files({"name":"fixture.json","mimeType":"application/json","buffer":json.dumps(model).encode()})
+            expect(page.locator("#ft-neural-state")).to_contain_text("Modelo 1.23 cargado")
+            page.locator("#ft-neural-unload").click()
+            expect(page.locator("#ft-neural-state")).to_contain_text("Modelo no cargado")
             page.locator("#speed").select_option("2")
             page.wait_for_function("document.getElementById('clock').textContent !== '00:00'", timeout=15000)
             page.locator("#pause").click()

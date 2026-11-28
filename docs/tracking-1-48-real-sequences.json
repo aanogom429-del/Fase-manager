@@ -1,0 +1,208 @@
+{
+  "version": "1.48",
+  "method": "Actual graph_1_20 trajectories in 37 fixed non-overlapping 5s clips (25 samples at 5Hz), same registered possession team, 22 unchanged active players, live, ball height 0–0.15m; deterministic selection up to 3 per half. Four train, one validation, two previously inspected exploratory matches; no independent confirmation. Simulated 3 ×20s in 1.47; controlled possession (exact zero height), no flight, same team/roster/formation transition filter. Not paired by initial context, differing ball-state criteria, only comparable radial distance bands <=5m, 5–20m, >20m. Actual functional spaces cannot be labelled from positions alone.",
+  "real": {
+    "all": {
+      "clips": 37,
+      "frames": 925,
+      "radial": [
+        1201,
+        5223,
+        13926
+      ],
+      "transitions": [
+        [
+          1075,
+          68,
+          0
+        ],
+        [
+          78,
+          4806,
+          133
+        ],
+        [
+          0,
+          141,
+          13235
+        ]
+      ]
+    },
+    "train": {
+      "clips": 24,
+      "frames": 600,
+      "radial": [
+        761,
+        3530,
+        8909
+      ],
+      "transitions": [
+        [
+          675,
+          45,
+          0
+        ],
+        [
+          58,
+          3252,
+          89
+        ],
+        [
+          0,
+          90,
+          8463
+        ]
+      ]
+    },
+    "validation": {
+      "clips": 6,
+      "frames": 150,
+      "radial": [
+        216,
+        711,
+        2373
+      ],
+      "transitions": [
+        [
+          198,
+          14,
+          0
+        ],
+        [
+          7,
+          648,
+          20
+        ],
+        [
+          0,
+          21,
+          2260
+        ]
+      ]
+    },
+    "test_exploratory": {
+      "clips": 7,
+      "frames": 175,
+      "radial": [
+        224,
+        982,
+        2644
+      ],
+      "transitions": [
+        [
+          202,
+          9,
+          0
+        ],
+        [
+          13,
+          906,
+          24
+        ],
+        [
+          0,
+          30,
+          2512
+        ]
+      ]
+    }
+  },
+  "sim": {
+    "frames": 227,
+    "radial": [
+      388,
+      1527,
+      3079
+    ],
+    "transitions": [
+      [
+        300,
+        7,
+        0
+      ],
+      [
+        13,
+        1155,
+        18
+      ],
+      [
+        0,
+        42,
+        2469
+      ]
+    ],
+    "functional": [
+      305,
+      1470,
+      3219
+    ],
+    "functionalTransitions": [
+      [
+        241,
+        0,
+        1
+      ],
+      [
+        4,
+        1090,
+        50
+      ],
+      [
+        0,
+        60,
+        2558
+      ]
+    ],
+    "cross": [
+      [
+        305,
+        0,
+        0
+      ],
+      [
+        68,
+        813,
+        589
+      ],
+      [
+        15,
+        714,
+        2490
+      ]
+    ],
+    "pairs": 212,
+    "complementary": 73,
+    "crowded": 9
+  },
+  "metrics": {
+    "sim": {
+      "distribution": [
+        0.0776932318782539,
+        0.30576692030436525,
+        0.6165398478173808
+      ],
+      "transitionRate": 0.01998001998001997,
+      "transitionN": 4004
+    },
+    "real_all": {
+      "distribution": [
+        0.05901719901719902,
+        0.25665847665847663,
+        0.6843243243243243
+      ],
+      "transitionRate": 0.02149877149877155,
+      "transitionN": 19536
+    },
+    "real_test_exploratory": {
+      "distribution": [
+        0.05818181818181818,
+        0.25506493506493505,
+        0.6867532467532468
+      ],
+      "transitionRate": 0.02056277056277056,
+      "transitionN": 3696
+    },
+    "distributionL1": 0.1404267978717319
+  },
+  "gate": "No claim of equivalence or expert validation. Keep collective steering disabled."
+}

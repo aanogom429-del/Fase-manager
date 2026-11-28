@@ -88,4 +88,7 @@ function jointRun(script,i,group='all'){
  return [[],modes].map(joint=>{const row=evaluate(script,{...cases[i],active:false,joint},null,15);const {metrics,...r}=row;return {mode:joint.length?group:'baseline',seed:cases[i].seed,...r,kin:loss(r.summary,['speed','acceleration','speed_gain','braking']),spatial:loss(r.summary,['width_possession','depth_possession','width_defense','depth_defense','dist_ball'])};});
 }
 
-const script=readFileSync('index.html','utf8').match(/<script>([\s\S]*?)<\/script>/)[1];console.log(JSON.stringify({unit:jointUnit(script),runs:jointRun(script,Number(process.argv[2]||0),process.argv[3]||'all')},null,2));
+function isolated(script,versions){
+ return versions.map(v=>{const i=(v-150)%3;const row=evaluate(script,{...cases[i],active:false,joint:[v]},null,15);const {metrics,...r}=row;return {version:v,seed:cases[i].seed,...r,kin:loss(r.summary,['speed','acceleration','speed_gain','braking']),spatial:loss(r.summary,['width_possession','depth_possession','width_defense','depth_defense','dist_ball'])};});
+}
+const script=readFileSync('index.html','utf8').match(/<script>([\s\S]*?)<\/script>/)[1];console.log(JSON.stringify({unit:jointUnit(script),runs:process.argv[2]==='isolated'?isolated(script,process.argv.slice(3).map(Number)):jointRun(script,Number(process.argv[2]||0),process.argv[3]||'all')},null,2));

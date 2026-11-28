@@ -26,7 +26,7 @@ try:
             page.goto(url, wait_until="domcontentloaded")
             expect(page.locator("#pitch")).to_be_visible()
             expect(page.locator("#players > g.player")).to_have_count(22)
-            page.get_by_text("Fase Tracking 1.50 RC", exact=False).first.click()
+            page.get_by_text("Fase Tracking 1.51", exact=False).first.click()
             expect(page.locator("#ft-enabled")).not_to_be_checked()
             expect(page.locator("#ft-hybrid-state")).to_contain_text("Motor original")
             expect(page.locator("#ft-collective")).to_be_disabled()
@@ -35,6 +35,7 @@ try:
             expect(page.locator("#ft-hybrid-state")).to_contain_text("Prueba libre calibrada")
             expect(page.locator("#ft-state")).to_contain_text("Ventanas")
             expect(page.locator("#ft-attack")).to_be_disabled()
+            expect(page.locator("#ft-width")).to_be_disabled()
             expect(page.locator("#ft-policy")).to_be_disabled()
             model = {"schema":"fase-tracking-1.49-neural-v1","model":"no_possession_s42","weights":{
                 "feature_mask":[0 if i in (7,12,21) else 1 for i in range(28)],

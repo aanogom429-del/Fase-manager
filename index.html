@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.149 experimental</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.149 experimental · Amplitud funcional</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section id="decision-panel" class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. Los dos bracitos indican la orientación corporal; sus extremos se inclinan hacia el frente del jugador. En juego automático, debe girar para detectar opciones que quedan a su espalda. Consulta la guía visual de interacción, apoyo mutuo y cooperación junto al campo.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label><label id="relay-label">Destino del pase al primer toque<select id="relay-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><section id="comparison-panel" hidden aria-labelledby="comparison-title"><h3 id="comparison-title">Comparación de esta situación</h3><p><small>Últimos 8 intentos desde el mismo punto de partida. Avance positivo: hacia la portería roja. Tiros: total de ambos equipos. Goles: azul / rojo. Cada intento puede durar distinto tiempo; estos resultados no puntúan la calidad táctica. El registro se limpia al continuar, cargar una decisión, reiniciar o cambiar de modo; no se guarda ni se exporta.</small></p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th scope="col">Decisión y órdenes</th><th scope="col">Tiempo</th><th scope="col">Posesión final</th><th scope="col">Avance</th><th scope="col">Tiros totales</th><th scope="col">Goles</th></tr></thead><tbody id="comparison-rows"></tbody></table></div></section><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática: el poseedor valora conducir, pasar, centrar o tirar; sus compañeros ofrecen continuidad y llegada. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><details class="decision-panel" aria-labelledby="saved-title"><summary id="saved-title">Herramientas opcionales · guardar situaciones</summary><div class="bar"><label>Espacio <select id="saved-slot"><option value="1">Situación 1</option><option value="2">Situación 2</option><option value="3">Situación 3</option></select></label><button id="save-decision">Guardar decisión</button><button id="load-decision">Recuperar decisión</button></div><div class="bar"><button id="export-decision">Exportar decisión actual</button><label>Cargar archivo en el espacio elegido <input id="import-decision" type="file" accept=".json,application/json"></label></div><p id="saved-status" role="status" aria-live="polite">Guarda cuando el modo guiado esté esperando tu decisión.</p><small>Tres situaciones en este navegador. Guardar sustituye el espacio elegido; recuperar sustituye la situación en pantalla y la deja pausada. Para trasladarlas, exporta un archivo y cárgalo en otro dispositivo; después pulsa Recuperar decisión. Cargar archivo sustituye el espacio elegido, sin cambiar la jugada en pantalla. Borrar los datos del navegador elimina los guardados.</small></details><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FASE MANAGER · 0.156 experimental</title><style>body{margin:0;background:#111c29;color:#fff;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:14px}h1{font-size:22px}#pitch{width:100%;height:auto;display:block;border-radius:12px;border:2px solid #486171}.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}button,select{background:#253c56;color:white;border:1px solid #6b8ca5;border-radius:8px;padding:10px;font-size:16px}.pill{background:#26394b;padding:10px 14px;border-radius:8px}small{color:#c8d5df}.decision-panel{background:#192d40;border:1px solid #486171;border-radius:12px;padding:16px;margin:14px 0}.decision-panel h2{font-size:19px;margin:0 0 10px}.decision-panel p{line-height:1.5;margin:10px 0}.action-tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.action-tools label{display:flex;flex-direction:column;gap:6px}.action-tools select{max-width:100%}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choices button{text-align:left;line-height:1.4;cursor:pointer}.choices strong,.choices small{display:block}.choices button:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.decision-owner circle{stroke:#ffd166;stroke-width:4}.decision-target circle{stroke:#9ce7ef;stroke-width:3}#feedback{border-left:3px solid #ffd166;padding-left:12px}[hidden]{display:none!important}@media(max-width:600px){.choices{grid-template-columns:1fr}.decision-panel{padding:12px}}</style></head><body><main><h1>⚽ FASE MANAGER <small>Prototipo 0.156 experimental · Laboratorio táctico</small></h1><div class="bar"><strong class="pill">AZUL <span id="score">0 - 0</span> ROJO</strong><span class="pill" id="clock">00:00</span><button id="pause">⏸ Pausar</button><button id="restart">↻ Reiniciar</button><label>Velocidad <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div><section id="decision-panel" class="decision-panel" aria-labelledby="decision-title"><div class="bar"><h2 id="decision-title">Situación 1 · Progresar ante presión</h2><button id="mode">Ver simulación libre</button></div><div id="guided-content"><p id="observation">Azul ataca hacia la derecha. El #7 tiene el balón y un rival se aproxima. Observa los apoyos y la posición de los defensores antes de decidir.</p><p><small><strong>Observa antes de actuar:</strong> posición del balón, compañeros, rivales y trayectorias disponibles. Los dos bracitos indican la orientación corporal; sus extremos se inclinan hacia el frente del jugador. En juego automático, debe girar para detectar opciones que quedan a su espalda. Consulta la guía visual de interacción, apoyo mutuo y cooperación junto al campo.</small></p><p id="decision-prompt">Juego detenido. ¿Qué intención quieres ejecutar?</p><div id="action-tools" class="action-tools"><label>Acción técnica<select id="technique"><option value="pass">Pases</option><option value="carry">Conducción</option><option value="duel">Regate y finta</option><option value="retain">Protección y giro</option><option value="finish">Tiro y centro</option></select></label><label id="target-label">Compañero para pase específico<select id="target-player"></select></label><label id="relay-label">Destino del pase al primer toque<select id="relay-player"></select></label></div><p id="action-context"><small>Elige una acción técnica para ejecutar tu intención. Las opciones dependen de la posición y la presión; ninguna garantiza el éxito.</small></p><div id="choices" class="choices"></div><p id="feedback" role="status" aria-live="polite" hidden></p><div class="bar"><button id="next" hidden>Continuar desde aquí →</button><button id="retry" hidden>↻ Comparar otra decisión</button><small>Controlas al azul: elige una intención, observa sus consecuencias y continúa desde la nueva situación. Puedes comparar alternativas sin perder el punto de partida. Los compañeros reajustan sus apoyos, amplitud y profundidad durante la jugada. Las jugadas se muestran a cámara lenta para facilitar la observación.</small></div><section id="comparison-panel" hidden aria-labelledby="comparison-title"><h3 id="comparison-title">Comparación de esta situación</h3><p><small>Últimos 8 intentos desde el mismo punto de partida. Avance positivo: hacia la portería roja. Tiros: total de ambos equipos. Goles: azul / rojo. Cada intento puede durar distinto tiempo; estos resultados no puntúan la calidad táctica. El registro se limpia al continuar, cargar una decisión, reiniciar o cambiar de modo; no se guarda ni se exporta.</small></p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr><th scope="col">Decisión y órdenes</th><th scope="col">Tiempo</th><th scope="col">Posesión final</th><th scope="col">Avance</th><th scope="col">Tiros totales</th><th scope="col">Goles</th></tr></thead><tbody id="comparison-rows"></tbody></table></div></section><p id="history" aria-live="polite"></p></div><p id="free-description" hidden>Simulación automática: el poseedor valora conducir, pasar, centrar o tirar; sus compañeros ofrecen continuidad y llegada. Pulsa «Tomar decisiones» para volver a la situación guiada.</p></section><details class="decision-panel" aria-labelledby="saved-title"><summary id="saved-title">Herramientas opcionales · guardar situaciones</summary><div class="bar"><label>Espacio <select id="saved-slot"><option value="1">Situación 1</option><option value="2">Situación 2</option><option value="3">Situación 3</option></select></label><button id="save-decision">Guardar decisión</button><button id="load-decision">Recuperar decisión</button></div><div class="bar"><button id="export-decision">Exportar decisión actual</button><label>Cargar archivo en el espacio elegido <input id="import-decision" type="file" accept=".json,application/json"></label></div><p id="saved-status" role="status" aria-live="polite">Guarda cuando el modo guiado esté esperando tu decisión.</p><small>Tres situaciones en este navegador. Guardar sustituye el espacio elegido; recuperar sustituye la situación en pantalla y la deja pausada. Para trasladarlas, exporta un archivo y cárgalo en otro dispositivo; después pulsa Recuperar decisión. Cargar archivo sustituye el espacio elegido, sin cambiar la jugada en pantalla. Borrar los datos del navegador elimina los guardados.</small></details><svg id="pitch" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Campo de fútbol con 22 jugadores y balón">
 <rect width="1000" height="650" fill="#153c2a"/><rect x="45" y="34" width="91" height="582.4" fill="#236b40"/><rect x="136" y="34" width="91" height="582.4" fill="#267447"/><rect x="227" y="34" width="91" height="582.4" fill="#236b40"/><rect x="318" y="34" width="91" height="582.4" fill="#267447"/><rect x="409" y="34" width="91" height="582.4" fill="#236b40"/><rect x="500" y="34" width="91" height="582.4" fill="#267447"/><rect x="591" y="34" width="91" height="582.4" fill="#236b40"/><rect x="682" y="34" width="91" height="582.4" fill="#267447"/><rect x="773" y="34" width="91" height="582.4" fill="#236b40"/><rect x="864" y="34" width="91" height="582.4" fill="#267447"/>
 <g fill="none" stroke="#f5fff7" stroke-width="2.5"><rect x="45" y="34" width="910" height="582.4"/><path d="M500 34V616.4"/><circle cx="500" cy="325.2" r="83.3"/><rect x="45" y="143.2" width="150.2" height="364"/><rect x="804.8" y="143.2" width="150.2" height="364"/><rect x="45" y="241.5" width="50" height="167.4"/><rect x="905" y="241.5" width="50" height="167.4"/><path d="M45 291H29V359H45 M955 291H971V359H955"/></g>
 <g fill="white"><circle cx="500" cy="325.2" r="3.5"/><circle cx="145" cy="325.2" r="3.5"/><circle cx="855" cy="325.2" r="3.5"/></g>
@@ -1203,7 +1203,7 @@ function chooseAction(p){
   const target=boxTargets.sort((a,b)=>perceivedSpace(a,view)-perceivedSpace(b,view)).pop();
   kickTo(p,target.x,target.y,'pass',target.actual);kickState(p).loft=5;kickState(p).cross=true;report((p.t?'Rojo':'Azul')+' #'+p.n+' centra hacia #'+target.n);return;
  }
- const ftPool=ftPolicyMode?[]:null;
+ const ftPool=ftPolicyMode||jmOn(154)?[]:null;
  let best=null,bestScore=-Infinity,bestRisk=0,safety=null,safetyScore=-Infinity,progress=null,progressScore=-Infinity;
  for(const observed of mates){
   let m=observed;
@@ -1271,7 +1271,7 @@ function chooseAction(p){
  const recentProgression=best&&best.memoryAge<.5&&bestRisk<=3&&(best.x-p.x)*dir>3&&perceivedSpace(best,view)>=5;
  const usefulPass=progress||(recentProgression?best:safety);
  if(usefulPass&&ftTryCarry(p,carry,usefulPass,view,carryView,pressure))return;
- if(usefulPass){const pick=ftPool?ftPredictivePass(p,usefulPass,ftPool,view,mates):usefulPass;kickTo(p,pick.x,pick.y,'pass',pick.actual);
+ if(usefulPass){const first=ftPool?ftPredictivePass(p,usefulPass,ftPool,view,mates):usefulPass;const pick=jmProgressPass(p,first,ftPool,view,mates);kickTo(p,pick.x,pick.y,'pass',pick.actual);
   report(passIntentReport(p,pick));return;}
  if(go&&(!best||bestScore<carryScore+3)){
   p.scanUntil=0;p.driveX=carry.x;p.driveY=carry.y;decision=.8;
@@ -1764,7 +1764,8 @@ function attackingTargets(t,ballPos,relations=phaseRelations(activePlayers(),bal
     out.set(p,q);locked.set(p,q);traceDestination(p,'Dar amplitud en banda libre',q.x,q.y);break;}
   }
  }
- return distributeAttackSpace(out,locked,priority);
+ const distributed=distributeAttackSpace(out,locked,priority);
+ return jmAttackTargets(distributed,locked,priority,t,ballPos);
 }
 // Cobertura siempre entre el balón y la portería propia, en ambas direcciones.
 function defenseCommitted(p){return offBallOrders.some(o=>o.i===players.indexOf(p)&&elapsed<o.until);}
@@ -2545,7 +2546,7 @@ const ftRef={speedCap:8.5,accelerationCap:4,brakingCap:5,scale:68/64,
 function ftEndHybrid(){
  if(!ftHybrid)return;
  for(const p of players){const q=ftOriginalProfiles.get(p.id);if(q)Object.assign(p,q);}
- ftHybrid=false;ftSupportExperiment=false;ftSupportCount=0;ftPolicyMode=false;ftPolicyReset(true);ftAttackMode=0;ftAttackReset(true);ftWidthMode=false;ftWidthReset();ftSpaceMode=false;ftSpaceChoices={opportunities:0,adjustments:0,gain:0};ftRoleMode=false;ftCollectiveMode=false;ftCollectiveStats={opportunities:0,adjustments:0};
+ ftHybrid=false;ftSupportExperiment=false;ftSupportCount=0;ftPolicyMode=false;ftPolicyReset(true);ftAttackMode=0;ftAttackReset(true);ftWidthMode=false;ftWidthReset();jmModes.clear();jmReset();ftSpaceMode=false;ftSpaceChoices={opportunities:0,adjustments:0,gain:0};ftRoleMode=false;ftCollectiveMode=false;ftCollectiveStats={opportunities:0,adjustments:0};
  ftPhaseAudit={frames:0,table:[[0,0,0],[0,0,0],[0,0,0]]};
 }
 function ftApplyProfile(p){
@@ -2555,10 +2556,10 @@ function ftApplyProfile(p){
  p.acceleration=Math.min(q.acceleration,c[1]/ftRef.scale);
  p.braking=Math.min(q.braking,c[2]/ftRef.scale);
 }
-function ftStartHybrid(withSupport=false,withRoles=false,withCollective=false,withSpace=false,withPolicy=false,attackMode=0,widthMode=false){
+function ftStartHybrid(withSupport=false,withRoles=false,withCollective=false,withSpace=false,withPolicy=false,attackMode=0,widthMode=false,jointModes=[]){
  startSituation();enterFreeMode();
  ftHybrid=true;ftSupportExperiment=withSupport===true;ftSupportCount=0;
- ftRoleMode=withRoles===true;ftCollectiveMode=withCollective===true;ftSpaceMode=withSpace===true;ftPolicyMode=withPolicy===true;ftPolicyReset(true);ftAttackMode=[1,2].includes(attackMode)?attackMode:0;ftAttackReset(true);ftWidthMode=widthMode===true;ftWidthReset();ftTemporalReset(true);ftSpaceChoices={opportunities:0,adjustments:0,gain:0};
+ ftRoleMode=withRoles===true;ftCollectiveMode=withCollective===true;ftSpaceMode=withSpace===true;ftPolicyMode=withPolicy===true;ftPolicyReset(true);ftAttackMode=[1,2].includes(attackMode)?attackMode:0;ftAttackReset(true);ftWidthMode=widthMode===true;ftWidthReset();jmModes=new Set(jointModes.filter(v=>Number.isInteger(v)&&v>=150&&v<=159));jmReset();ftTemporalReset(true);ftSpaceChoices={opportunities:0,adjustments:0,gain:0};
  ftCollectiveStats={opportunities:0,adjustments:0};
  for(const p of players)ftApplyProfile(p);
  ftPhaseAudit={frames:0,table:[[0,0,0],[0,0,0],[0,0,0]]};
@@ -3120,6 +3121,136 @@ const ftSpace=makeSpaceMonitor();
 // No global maps, hidden opposition, future simulator state or new random draws.
 let ftPolicyMode=false;
 
+// Joint tactical lab 0.150–0.156. Independently switchable internal experiments.
+// Global teammate target reservations are existing collective coordination, never
+// new private opponent data. All opponent checks use the player's own view.
+let jmModes=new Set(),jmStats=jmFresh();
+function jmFresh(){return Object.fromEntries(Array.from({length:10},(_,i)=>[150+i,{checks:0,changes:0,rejects:0,errors:0}]));}
+function jmReset(clear=true){if(clear)jmStats=jmFresh();}
+function jmOn(v){return ftHybrid&&!guided&&!restart&&!matchStopped&&jmModes.has(v);}
+function jmLive(t){return !!owner&&owner.t===t&&!flight&&!techAction;}
+function jmDepth(t,p,b){return (p.x-b.x)*direction(t);}
+function jmEligible(p,locked,priority){return !locked.has(p)&&!isKeeper(p)&&!defenseCommitted(p)&&priority.get(p)===3&&!p.attackSupport&&!p.attackBalance&&p.lineCoverFor==null;}
+function jmOpen(p,q,base,ball,view,mates,reserved,opts={}){
+ if(!view.rivals.length||view.uncertainty>.75||!Number.isFinite(q.x)||!Number.isFinite(q.y)||q.x<4||q.x>96||q.y<4||q.y>60||!perceives(p,q))return false;
+ const dir=direction(p.t),old=perceivedLane(ball,base,view),next=perceivedLane(ball,q,view);
+ if(perceivedSpace(q,view)<Math.max(3,perceivedSpace(base,view)-.5)||next.risk>old.risk+.01||next.clearance<old.clearance-.01)return false;
+ const gap=(a,rs)=>Math.min(Infinity,...rs.map(r=>d(a,r)));
+ if(gap(q,mates)<Math.min(5,gap(base,mates))-.01||gap(q,reserved)<Math.min(7,gap(base,reserved))-.01)return false;
+ if(opts.line!==undefined&&(q.x-opts.line)*dir>-.69)return false;
+ return true;
+}
+// 0.150: stagger the free interior reference ahead, not the entire block.
+function jmDepthCandidate(p,base,ball,peers){
+ if(p.role!=='midfielder'||Math.abs(base.y-32)>18)return null;
+ const dir=direction(p.t),near=peers.filter(q=>Math.abs(q.y-base.y)<=14&&Math.abs(jmDepth(p.t,q,base))<5);
+ if(!near.length||jmDepth(p.t,base,ball)<3||jmDepth(p.t,base,ball)>20)return null;
+ return {x:base.x+dir*4,y:base.y};
+}
+// 0.151: retain a useful security/continuity pair rather than swapping
+// heights merely on instantaneous rank. Candidate pair tested jointly.
+function jmSupportPair(holder,rows){
+ if(!holder||rows.length!==2)return null;
+ const dir=direction(holder.t),[a,b]=rows,depth=q=>(q.x-holder.x)*dir;
+ if(Math.min(depth(a),depth(b))<=-3&&Math.max(depth(a),depth(b))>=3&&d(a,b)>=6)return null;
+ const rear=depth(a)<=depth(b)?0:1,front=1-rear;
+ const q=rows.map(r=>({...r}));q[rear].x=holder.x-dir*8;q[front].x=holder.x+dir*5;
+ return q.every((r,i)=>Math.abs(r.x-rows[i].x)<=6)&&d(q[0],q[1])>=6?q:null;
+}
+// 0.152: complement an already occupied exterior lane with a nearby interior
+// reference, only if the player was not explicitly allocated exterior width.
+function jmComplementCandidate(p,base,ball,peers){
+ if(p.role!=='midfielder'||Math.abs(base.y-32)>20||Math.abs(base.y-32)<5)return null;
+ const side=base.y<32?-1:1;
+ if(!peers.some(q=>(q.y-32)*side>=18&&Math.abs(q.x-base.x)<12))return null;
+ return {x:base.x,y:base.y-side*3};
+}
+// 0.153: small forward lead for a free central forward with an observed carrier.
+// Third-man outlet counted as a proxy, no scripted passing chain.
+function jmRunCandidate(p,base,ball,view,mates){
+ if(!isForward(p)||isWide(p)||jmDepth(p.t,base,ball)<8||jmDepth(p.t,base,ball)>23)return null;
+ if(!mates.some(m=>m.memoryAge===0&&m.id!==owner?.id&&d(ball,m)>=5&&d(ball,m)<=22&&perceivedLane(ball,m,view).risk<=3&&perceivedLane(m,base,view).risk<=3))return null;
+ return {x:base.x+direction(p.t)*3,y:base.y};
+}
+// 0.155: avoid abandoning a useful occupied lane simply to chase the ball.
+// Rival proximity is only a fixation proxy; never infer intent or causality.
+function jmFixCandidate(p,base,ball,view){
+ if(!isForward(p)||isWide(p)||jmDepth(p.t,p,ball)<8||jmDepth(p.t,p,ball)>25||jmDepth(p.t,base,p)>-2)return null;
+ if(!view.rivals.some(r=>r.radius<=1&&d(r,p)>=2&&d(r,p)<=6))return null;
+ return {x:base.x+direction(p.t)*Math.min(3,Math.abs(p.x-base.x)),y:base.y};
+}
+// 0.156: stagger a second interior attacker around the box instead of putting
+// two attackers on the same finishing lane.
+function jmBoxCandidate(p,base,ball,peers){
+ const gd=p.t?ball.x:100-ball.x;
+ if(gd>30||!isForward(p)||isWide(p)||Math.abs(base.y-32)>14)return null;
+ const peer=peers.find(q=>Math.abs(q.y-base.y)<6&&Math.abs(q.x-base.x)<9);
+ if(!peer)return null;
+ const side=base.y<32?-1:base.y>32?1:(p.id%2?-1:1);
+ return {x:base.x-direction(p.t)*2,y:clamp(base.y+side*5,20,44)};
+}
+function jmAttackTargets(targets,locked,priority,t,ball){
+ if(!jmLive(t)||![150,151,152,153,155,156].some(jmOn))return targets;
+ const line=offsideLine(t,ball.x),ids=[...targets.keys()].sort((a,b)=>a.id-b.id);
+ const legal=(p,q,base,view,mates,reserved)=>jmOpen(p,q,base,ball,view,mates,reserved,{line});
+ const reserves=p=>[...targets].filter(([a])=>a!==p&&!isKeeper(a)).map(([,q])=>q).concat([...locked].filter(([a])=>a!==p).map(([,q])=>q));
+ const visible=p=>knownTeammates(p).filter(m=>m.id!==owner.id&&m.memoryAge<=.4);
+ // Pair proposal is simultaneous. No overwrite of locked duties or current
+ // onside recovery. This trial can be rejected in its entirety.
+ if(jmOn(151)){try{
+  const pair=ids.filter(p=>p.attackSupport>0&&priority.get(p)===2&&!locked.has(p)&&!defenseCommitted(p)&&perceives(p,owner));
+  if(pair.length===2){
+   jmStats[151].checks++;const rows=pair.map(p=>targets.get(p)),q=jmSupportPair(owner,rows);
+   if(q&&pair.every((p,i)=>legal(p,q[i],rows[i],perceivedOpposition(p),visible(p),reserves(p)))){pair.forEach((p,i)=>targets.set(p,q[i]));jmStats[151].changes++;}
+   else jmStats[151].rejects++;
+  }
+ }catch(_){jmStats[151].errors++;}}
+ for(const p of ids){
+  if(!jmEligible(p,locked,priority)||!perceives(p,owner))continue;
+  const view=perceivedOpposition(p),mates=visible(p);
+  for(const v of [150,152,153,155,156]){
+   if(!jmOn(v))continue;
+   try{
+    const base=targets.get(p),peers=reserves(p);let q=null;
+    if(v===150)q=jmDepthCandidate(p,base,ball,peers);
+    if(v===152)q=jmComplementCandidate(p,base,ball,peers);
+    if(v===153)q=jmRunCandidate(p,base,ball,view,mates);
+    if(v===155)q=jmFixCandidate(p,base,ball,view);
+    if(v===156)q=jmBoxCandidate(p,base,ball,peers);
+    if(!q)continue;
+    jmStats[v].checks++;
+    if(legal(p,q,base,view,mates,peers)){targets.set(p,q);jmStats[v].changes++;traceDestination(p,'Ensayo funcional 0.'+v,q.x,q.y);}
+    else jmStats[v].rejects++;
+   }catch(_){jmStats[v].errors++;}
+  }
+ }
+ return targets;
+}
+// 0.154: progressive pass arbitration among existing visible options.
+// Count perceived opponent longitudinal layers passed, not actual line breaks.
+function jmLineCount(p,q,view){
+ const dir=direction(p.t),a=p.x*dir,b=q.x*dir;
+ if(b-a<=3)return 0;
+ const xs=view.rivals.filter(r=>r.radius<=1.5&&r.x*dir>a+2&&r.x*dir<b-2&&Math.abs(r.y-(p.y+((r.x-p.x)/(q.x-p.x))*(q.y-p.y)))<=10).map(r=>r.x*dir).sort((x,y)=>x-y);
+ let count=0,last=-Infinity;for(const x of xs)if(x-last>=5){count++;last=x;}return count;
+}
+function jmProgressPass(p,chosen,pool,view,mates){
+ if(!jmOn(154)||!jmLive(p.t)||!chosen||!pool||isKeeper(p)||view.uncertainty>.65||!view.rivals.length)return chosen;
+ try{
+  const base=ftPolicyFeatures(p,chosen,view,mates);if(!base||base.category!=='progression')return chosen;
+  jmStats[154].checks++;const layers=jmLineCount(p,chosen,view);
+  const initial=pool.find(r=>r.m.id===chosen.id);if(!initial)return chosen;
+  let best=chosen,bestLayers=layers;
+  for(const row of pool){if(row.m.id===chosen.id||row.value<initial.value-3)continue;
+   const q=ftPolicyFeatures(p,row.m,view,mates);if(!q||!q.ready||q.category!==base.category||q.risk>base.risk+.01||q.margin<base.margin-.02||q.outlets<base.outlets||q.advance<base.advance-2)continue;
+   const n=jmLineCount(p,row.m,view);if(n>bestLayers){best=row.m;bestLayers=n;}
+  }
+  if(best!==chosen)jmStats[154].changes++;else jmStats[154].rejects++;
+  return best;
+ }catch(_){jmStats[154].errors++;return chosen;}
+}
+
+
 // Manager 0.149 / Tracking 1.51: preserve the already assigned wide function.
 // Soft penalty inside the existing collective allocation, not a new player perception.
 let ftWidthMode=false,ftWidthStats={checks:0,changes:0,guarded:0};
@@ -3314,7 +3445,7 @@ function ftSpatialSupport(p,tx,ty,order){
 
 
 
-function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftAccess.reset(clear);ftReceiver.reset(clear);ftSpace.reset(clear);ftPolicyReset(clear);ftAttackReset(clear);ftTemporalReset(clear);if(clear){ftWidthReset();ftNeuralGeneration++;ftNeuralStats=ftNeuralFresh();}ftFlightIdentity=null;}catch(_){}}
+function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftAccess.reset(clear);ftReceiver.reset(clear);ftSpace.reset(clear);ftPolicyReset(clear);ftAttackReset(clear);ftTemporalReset(clear);if(clear){jmReset();ftWidthReset();ftNeuralGeneration++;ftNeuralStats=ftNeuralFresh();}ftFlightIdentity=null;}catch(_){}}
 function ftObserve(){
   if(ftPolicyMode)ftPolicyTick();
   ftAttackTick();
@@ -3340,6 +3471,7 @@ function ftRender(){
     const access=ftAccess.report(),as=access.stats,ac=access.latest,rate=v=>v===null?'—':(100*v).toFixed(0)+' %';
     const rr=ftReceiver.report(),rs=rr.stats,rl=rr.latest;
     $('ft-width-state').textContent='Amplitud funcional '+(ftWidthMode?'activa':'desactivada')+' · cambios muestreados '+ftWidthStats.changes+'/'+ftWidthStats.checks;
+    $('jm-state').textContent='Laboratorio táctico · '+[...jmModes].join(',')+' · '+Object.entries(jmStats).map(([v,s])=>v+': '+s.changes+'/'+s.checks).join(' · ');
     const nn=ftNeuralStats,fmt=x=>nn.n?(x/nn.n).toFixed(3)+' m':'—';$('ft-neural-state').textContent=ftNeuralMessage+' · '+nn.n+' jugadores evaluados · neuronal '+fmt(nn.neuralSum)+' · Ridge '+fmt(nn.ridgeSum)+' · velocidad '+fmt(nn.cvSum)+' · errores '+nn.errors;
     $('ft-phase-state').textContent='Espacios de fase · '+ftTemporalPhase.frames+' muestras · I/AM/C '+(ftPhaseLatest?.counts.join('/')??'—')+' · apoyos complementarios '+ftTemporalPhase.complementary+'/'+ftTemporalPhase.pairFrames+' · errores '+ftTemporalPhase.errors;
     $('ft-attack-state').textContent='Ataque: '+ftAttackStats.third+'/'+ftAttackStats.decisions+' decisiones en último tercio · ventanas de tiro '+ftAttackStats.windows+' · conducciones experimentales '+ftAttackStats.applied;
@@ -3357,7 +3489,7 @@ function ftRender(){
 }
 const ftPanel=document.createElement('details');
 ftPanel.className='decision-panel';
-ftPanel.innerHTML='<summary><strong>Fase Tracking 1.51 · desarrollo conjunto experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-space-exp" type="button" disabled>Control espacial activo: en evaluación</button> <button id="ft-policy" type="button" disabled>Decisión predictiva: en evaluación</button> <button id="ft-attack" type="button" disabled>Progresión activa: en evaluación</button> <button id="ft-width" type="button" disabled>Amplitud funcional: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><p id="ft-access-state" aria-live="off"></p><p id="ft-receiver-state" aria-live="off"></p><p id="ft-space-state" aria-live="off"></p><p id="ft-policy-state" aria-live="off"></p><p id="ft-attack-state" aria-live="off"></p><p id="ft-phase-state" aria-live="off"></p><p id="ft-width-state" aria-live="off"></p><small>0.149: protección suave de la amplitud ya asignada; no altera coberturas, apoyos, órdenes ni complementariedad interior/exterior. Ensayo no validado.</small><br><p><label>Modelo neuronal 1.23 (JSON local) <input type="file" id="ft-neural-file" accept=".json,application/json"></label> <button id="ft-neural-unload" type="button">Descargar de memoria</button></p><p id="ft-neural-state" aria-live="off">Modelo no cargado</p><small>1.49: red temporal con mensajes de vecinos, inferencia local opcional, comparación con Ridge y velocidad constante sobre los mismos jugadores. No modifica decisiones. Cargue modelo_neuronal_1_49.json.</small><br><small>1.47: seguimiento de transiciones entre intervención, ayuda mutua y cooperación; complementariedad geométrica de dos apoyos. No sustituye las funciones tácticas.</small><br><small>1.46: diagnóstico de progresión y remate; ensayo activo bloqueado hasta validar.</small><br><small>Decisión 1.45: desempate restringido entre receptores visibles de la misma categoría de pase; no usa el mapa global ni altera las prioridades del motor. Experimental.</small><br><small>Control dinámico 1.44: 48 celdas, seis zonas desde portería azul hacia roja; para rojo se invierte la numeración relativa. El mapa global es diagnóstico. El ajuste local opcional usa únicamente percepción propia; no es una probabilidad de dominio.</small><br><small>Ranking 1.43: receptores visibles, riesgo de pase, espacio, perfil corporal y margen temporal estimado. Seguridad/continuidad/progresión son etiquetas geométricas provisionales, no intención táctica validada. No altera las elecciones del motor.</small><br><small>Accesibilidad 1.42: estimación experimental desde posiciones visibles, orientación, velocidad inicial y tiempo de llegada. No son probabilidades ni órdenes de intervención.</small><br><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
+ftPanel.innerHTML='<summary><strong>Fase Tracking 1.58 · laboratorio conjunto experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-space-exp" type="button" disabled>Control espacial activo: en evaluación</button> <button id="ft-policy" type="button" disabled>Decisión predictiva: en evaluación</button> <button id="ft-attack" type="button" disabled>Progresión activa: en evaluación</button> <button id="ft-width" type="button" disabled>Amplitud funcional: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><p id="ft-access-state" aria-live="off"></p><p id="ft-receiver-state" aria-live="off"></p><p id="ft-space-state" aria-live="off"></p><p id="ft-policy-state" aria-live="off"></p><p id="ft-attack-state" aria-live="off"></p><p id="ft-phase-state" aria-live="off"></p><p id="ft-width-state" aria-live="off"></p><p id="jm-state" aria-live="off"></p><small>Laboratorio 0.150–0.156: ensayos independientes de profundidad, pareja de apoyos, complementariedad, ruptura, pase progresivo, fijación y ocupación de remate. Desactivados en uso normal.</small><br><small>0.149: protección suave de la amplitud ya asignada; no altera coberturas, apoyos, órdenes ni complementariedad interior/exterior. Ensayo no validado.</small><br><p><label>Modelo neuronal 1.23 (JSON local) <input type="file" id="ft-neural-file" accept=".json,application/json"></label> <button id="ft-neural-unload" type="button">Descargar de memoria</button></p><p id="ft-neural-state" aria-live="off">Modelo no cargado</p><small>1.49: red temporal con mensajes de vecinos, inferencia local opcional, comparación con Ridge y velocidad constante sobre los mismos jugadores. No modifica decisiones. Cargue modelo_neuronal_1_49.json.</small><br><small>1.47: seguimiento de transiciones entre intervención, ayuda mutua y cooperación; complementariedad geométrica de dos apoyos. No sustituye las funciones tácticas.</small><br><small>1.46: diagnóstico de progresión y remate; ensayo activo bloqueado hasta validar.</small><br><small>Decisión 1.45: desempate restringido entre receptores visibles de la misma categoría de pase; no usa el mapa global ni altera las prioridades del motor. Experimental.</small><br><small>Control dinámico 1.44: 48 celdas, seis zonas desde portería azul hacia roja; para rojo se invierte la numeración relativa. El mapa global es diagnóstico. El ajuste local opcional usa únicamente percepción propia; no es una probabilidad de dominio.</small><br><small>Ranking 1.43: receptores visibles, riesgo de pase, espacio, perfil corporal y margen temporal estimado. Seguridad/continuidad/progresión son etiquetas geométricas provisionales, no intención táctica validada. No altera las elecciones del motor.</small><br><small>Accesibilidad 1.42: estimación experimental desde posiciones visibles, orientación, velocidad inicial y tiempo de llegada. No son probabilidades ni órdenes de intervención.</small><br><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
 $('status').insertAdjacentElement('afterend',ftPanel);
 $('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);ftBall.setEnabled($('ft-enabled').checked);ftAccess.setEnabled($('ft-enabled').checked);ftReceiver.setEnabled($('ft-enabled').checked);ftSpace.setEnabled($('ft-enabled').checked);ftTemporalReset(true);ftAttackReset(true);ftNeuralGeneration++;ftNeuralStats=ftNeuralFresh();$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';$('ft-ball-state').textContent='';$('ft-access-state').textContent='';$('ft-receiver-state').textContent='';$('ft-space-state').textContent='';$('ft-policy-state').textContent='';$('ft-attack-state').textContent='';$('ft-phase-state').textContent='';$('ft-width-state').textContent='';ftRender();};
 $('ft-reset').onclick=()=>{ftReset('Medición reiniciada',true);ftRender();};

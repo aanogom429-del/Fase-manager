@@ -2,7 +2,7 @@
   "version": "Manager 0.159 / Tracking 1.61",
   "source": "0a6676040dde14e93f9426f8c56d9a05649f577e",
   "main": "474c0f28d14d19d6bcf9b26b287142b0543fe769",
-  "method": "6 paired 15s simulations (3 seeds, five formations, baseline and all ten experimental modes) plus 10 isolated 15s experiments with one previously matched baseline per mode. Total 16 ×15s. Ten synthetic positive/negative fixtures and common guard tests. Evaluation counts mostly at 120Hz per player or pair, repeated proposals, NOT distinct actions or achieved outcomes. 154 counts decisions; 158 only eligible causal interception comparisons. Metrics are means of run losses, not pooled. Mock DOM. No independent real-match validation.",
+  "method": "6 paired 15s simulations (3 seeds, five formations, baseline and all ten experimental modes) plus 10 isolated 15s experiments with one previously matched baseline per mode. Total 16 ×15s. Ten synthetic positive/negative fixtures and common guard tests. Evaluation counts mostly at 120Hz per player or pair, repeated proposals, NOT distinct actions or achieved outcomes. 154 counts decisions; 158 only eligible causal interception comparisons. Metrics are means of run losses, not pooled. Mock DOM. No independent real-match validation. Four additional 15s isolated replications (153 and 159), 20 runs ×15s overall. Same three seeds reused for comparison, not independent external validation.",
   "summary": {
     "baseline": {
       "runs": 3,
@@ -552,6 +552,46 @@
     }
   },
   "gate": false,
-  "reason": "Combined modes increase spatial discrepancy and reduce pass contacts; no shots. Single tests too short and one seed per block. 153 and 159 warrant independent replication; 157 deteriorates intended contacts. Keep all disabled by default and internal test only.",
-  "browser": "0.159 smoke pending"
+  "reason": "Combined modes increase spatial discrepancy and reduce pass contacts; no shots. Single tests too short and one seed per block. 153 and 159 warrant independent replication; 157 deteriorates intended contacts. Keep all disabled by default and internal test only. Replication: 153 improved one seed, unchanged outcomes in two, no shooting improvement. 159 spatial loss worsened in aggregate. Neither passes activation gate.",
+  "browser": "0.159 smoke pending",
+  "replication": {
+    "153": {
+      "runs": 3,
+      "passes": 24,
+      "turnovers": 7,
+      "shots": 0,
+      "third": 8,
+      "intended": 17,
+      "contacts": 21,
+      "kin": 0.5717003750446121,
+      "spatial": 0.10674100193877674,
+      "changes": 132,
+      "safe": true
+    },
+    "159": {
+      "runs": 3,
+      "passes": 21,
+      "turnovers": 5,
+      "shots": 0,
+      "third": 10,
+      "intended": 14,
+      "contacts": 18,
+      "kin": 0.5701050947708266,
+      "spatial": 0.1291617086566271,
+      "changes": 346,
+      "safe": true
+    }
+  },
+  "browserWorkflow": [
+    {
+      "id": 46160860283,
+      "name": "Tracking RC browser smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 41,
+      "jobs_url": "https://api.github.com/repos/aanogom429-del/Fase-manager/actions/runs/46160860283/jobs",
+      "logs_url": "https://api.github.com/repos/aanogom429-del/Fase-manager/actions/runs/46160860283/logs",
+      "workflow_id": 433216999
+    }
+  ]
 }

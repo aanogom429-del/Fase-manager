@@ -2549,7 +2549,7 @@ function ftStartHybrid(withSupport=false,withRoles=false,withCollective=false){
  ftCollectiveStats={opportunities:0,adjustments:0};
  for(const p of players)ftApplyProfile(p);
  ftPhaseAudit={frames:0,table:[[0,0,0],[0,0,0],[0,0,0]]};
- $('ft-enabled').checked=true;ftShadow.setEnabled(true);
+ $('ft-enabled').checked=true;ftShadow.setEnabled(true);ftBall.setEnabled(true);
 }
 function ftRecordPhase(relations,ballPos){
  if(!ftHybrid||!owner||flight||restart||Math.round(elapsed*120)%24!==0)return;
@@ -2616,7 +2616,7 @@ function ftCoordinate(moves,t){
  traceApplied(p,b.tx,b.ty,'Coordinación experimental de apoyos');
 }
 
-const ftShadow=(()=>{
+const ftTracking=(()=>{
 const M = {"mean":[-0.11254890555883725,-0.001710455594078743,0.0018915898686275633,0.000603753823614153,0.11254890555884371,0.0017104555940786973,0.3792622765333406,0.5,0.9994908350305499,1.0,-0.11250092794483495,-0.0016938302316290023,0.001833114508437331,0.0005828019091368018,0.11250092794484196,0.0016938302316290023,0.38086529757881205,0.5,1.0,1.0,-0.11245290553449415,-0.0016774281756042108,0.001786766875776232,0.0005097810517382817,0.1124529055344966,0.0016774281756042272,0.3806938787057633,0.5,1.0,1.0,-0.11241116215828867,-0.0016619070937882834,0.0016483169183807676,0.000537612394461574,0.11241116215829183,0.0016619070937882736,0.38018895677770204,0.5,1.0,1.0,-0.11236309121358623,-0.0016475975976700057,0.0014972278629461014,0.0005122388885616123,0.11236309121358841,0.00164759759766998,0.37771978954527285,0.5,1.0,1.0,-0.11232839966159504,-0.001633301304537277,0.0013101248750501298,0.00047677930860700896,0.1123283996616016,0.001633301304537242,0.3746441502604342,0.5,1.0,1.0],"scale":[0.4164329144279862,0.29203670765877715,0.31510577472137385,0.25994528330649264,0.4248353627888752,0.35313910353069067,0.8061457328086467,0.5,0.022558938815512738,1.0,0.41664323193472,0.29183391351331267,0.31608646614737085,0.26053434361440436,0.42425218084603505,0.3530701095706443,0.8081214281425517,0.5,1.0,1.0,0.41686250918845424,0.2916314369416568,0.31703161754083475,0.26099905872443924,0.42395132561301163,0.35321963548400287,0.8105976411533664,0.5,1.0,1.0,0.41708924882218246,0.2914366251429052,0.3179390745905035,0.26141584062635553,0.4238478069433093,0.3535318987157471,0.8131313082476626,0.5,1.0,1.0,0.4173309477168639,0.2912473399899747,0.318742253533007,0.26184708262258394,0.4237692492844147,0.3540128207608924,0.8135411942189764,0.5,1.0,1.0,0.41758018051024204,0.2910669446529777,0.3193434363562677,0.26223774447148135,0.42374708097669367,0.3545455911759129,0.812204212238276,0.5,1.0,1.0],"coef":[[-4.180635942579116,-0.9896588076027494,-0.4904540619292972,0.01786555499969433,-0.11124457990664577,-0.011101103345888324,0.004812220969264063,-0.01783207765314105,0.0036815586149174123,4.592963899584504e-12,5.446626974012631,1.3718155374236087,0.2766680102329947,-0.08774090954951844,0.5152043660845375,0.10139220408124246,-0.008691798708451985,-0.004381499692659243,-1.0309525594881013e-12,8.709964365587772e-13,-9.32468410129988,0.1626028024045157,1.439209477630793,0.08782778137888685,-0.409997842587492,-0.2584446210841932,0.010428356293966377,-0.005567933989856268,-1.7736295152158016e-13,5.343648717972037e-13,-3.8144998134236596,-0.8337064929513383,-1.5553385769766088,-0.05697102970112229,0.22677687368156177,0.17042662788252302,-0.01722823429045574,0.009438593053930017,-1.9403093539368945e-12,2.038772417751255e-13,29.444709766370945,1.3579847545573063,-4.092204177265846,0.06025005853151266,-2.565203535523302,0.1530677142924966,0.010372808854776724,-0.0341484695912609,-1.6260714116068184e-12,1.6418297515547178e-13,-17.614954364424907,-1.071783311573627,4.133819062660093,-0.009328406571664763,2.3584661959626434,-0.16002402020968282,0.0018306908660130974,0.1114487313464824,-7.650324394404811e-14,-3.122077214649927e-14],[0.5724854434911588,0.09365685735190164,0.028607563754086407,-0.3348043872501584,0.1384263978792841,-0.21397743094378224,-0.00010208354854182454,-0.0032288421464064204,0.0004100697497750582,7.697253643716931e-13,1.636243860285604,2.873559278877764,-0.11365716116632059,-0.03958931767469252,-0.21002893593585414,0.1703595064472812,0.0016934809153708718,0.02352876992191065,3.4655521861903784e-13,-5.539826618895315e-13,-2.2473385985003422,-11.423297157577517,0.22868889825066865,1.4018081667273583,0.019230565466082233,0.09232295699490206,-0.010060536023430697,-0.02746313866605489,-5.39487452405415e-13,6.228106021931955e-13,0.10647813608666616,1.8757577956383638,-0.11809123741670709,-0.9718894286335342,0.08207332085324463,0.16661691451528549,0.0083361984146426,0.015799204998073073,7.135660614240486e-13,-1.0555863664996251e-12,1.554510011377268,19.168298690100478,0.020848278227479335,-3.3620283245467713,-0.07521802844309591,-2.3675401553498614,0.01025326654019513,-0.004952390165907507,-4.544546432447612e-14,1.0686272334120339e-13,-1.6225689427413679,-12.630545686766212,0.044041425134009694,3.1370962722305267,0.04606726631190659,2.1712054048215905,-0.010739566217309777,-0.008589417384215673,6.263317808855993e-13,1.598115869366022e-13]],"intercept":[-0.0025706686412277583,-0.00021916662129980446]};
 // Fase Tracking 1.25: pure, read-only diagnostic predictor, no tactical commands.
 const finite = x => typeof x === 'number' && Number.isFinite(x);
@@ -2779,12 +2779,70 @@ function makeObserver(){
   return {setEnabled,reset,tick,report};
 }
 
-return makeObserver();
+
+// 1.41: ball-only causal monitor. Flight identity is used ONLY to delimit evaluation.
+// No flight destination, duration, future receiver or player intention enters forecasts.
+function makeBallMonitor(){
+ const horizons=[24,48,120,240],states=['ground_pass','controlled'];
+ let history=[],lastTick=null,lastSample=null,context=null,latest=null,enabled=false,pending=[];
+ const fresh=()=>Object.fromEntries(states.map(k=>[k,horizons.map(t=>({horizon:t/120,issued:0,n:0,censored:0,outside:0,ridgeSum:0,cvSum:0,staticSum:0,ridgeSq:0,cvSq:0}))]));
+ let stats=fresh(),errors=0;
+ function clearWindow(){for(const p of pending)for(const q of p.targets)stats[p.state][q.i].censored++;pending=[];history=[];lastTick=null;lastSample=null;context=null;latest=null;}
+ function reset(clear=false){clearWindow();if(clear){stats=fresh();errors=0;}}
+ function setEnabled(v){enabled=v===true;reset(true);}
+ function tick(raw){
+  if(!enabled)return;
+  try{
+   const tick=Math.round(raw.elapsed*120),state=raw.state;
+   if(!Number.isFinite(tick)||!states.includes(state)||!finiteVec(raw.ball,3)||Math.abs(raw.ball[2])>1e-6){clearWindow();return;}
+   // Context identifies a continuous same-carrier or same-pass interval.
+   if(context!==null&&(context!==raw.context||tick!==lastTick+1))clearWindow();
+   context=raw.context;lastTick=tick;
+   if(lastSample!==null&&tick-lastSample<24)return;
+   lastSample=tick;
+   const pos=[...xy(raw.ball[0],raw.ball[1]),0];
+   for(const p of pending){
+    p.targets=p.targets.filter(q=>{
+     if(tick<p.tick+horizons[q.i])return true;
+     const s=stats[p.state][q.i];
+     if(tick!==p.tick+horizons[q.i]){s.censored++;return false;}
+     const e=gap(q.ridge,pos),cv=gap(q.cv,pos),st=gap(p.pos,pos);
+     s.n++;s.ridgeSum+=e;s.cvSum+=cv;s.staticSum+=st;s.ridgeSq+=e*e;s.cvSq+=cv*cv;return false;
+    });
+   }
+   pending=pending.filter(p=>p.targets.length);
+   history.push({ball:pos});if(history.length>3)history.shift();
+   if(history.length!==3)return;
+   const v=pos.map((x,i)=>(x-history[1].ball[i])/.2);
+   const pred=ballForecast(history);
+   if(pred.some(o=>!finiteVec(o.b,3)))throw Error('Invalid ball forecast');
+   const targets=pred.map((o,i)=>{
+    const cv=pos.map((x,j)=>x+v[j]*o.t),s=stats[state][i];
+    s.issued++;if(Math.abs(o.b[0])>52.5||Math.abs(o.b[1])>34)s.outside++;
+    return {i,ridge:o.b,cv};
+   });
+   pending.push({state,tick,pos,targets});
+   latest={state,tick,velocityXY:Math.hypot(v[0],v[1]),points:targets.map(q=>({horizon:horizons[q.i]/120,ridge:q.ridge.slice(0,2),cv:q.cv.slice(0,2)}))};
+  }catch(_){errors++;clearWindow();}
+ }
+ function report(){
+  const rows=Object.fromEntries(states.map(k=>[k,stats[k].map((s,i)=>({...s,pending:pending.filter(p=>p.state===k).reduce((n,p)=>n+p.targets.filter(q=>q.i===i).length,0),ridge:s.n?s.ridgeSum/s.n:null,cv:s.n?s.cvSum/s.n:null,stationary:s.n?s.staticSum/s.n:null}))]));
+  return {enabled,latest,errors,rows};
+ }
+ return {tick,reset,setEnabled,report};
+}
+
+return {observer:makeObserver(),ball:makeBallMonitor()};
 })();
-function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);}catch(_){}}
+const ftShadow=ftTracking.observer,ftBall=ftTracking.ball;
+let ftFlightIdentity=null,ftFlightSerial=0;
+function ftReset(reason,clear=false){try{ftShadow.reset(reason,clear);ftBall.reset(clear);ftFlightIdentity=null;}catch(_){}}
 function ftObserve(){
   if(!$('ft-enabled')?.checked)return;
   try{
+    if(flight!==ftFlightIdentity){ftFlightIdentity=flight;ftFlightSerial++;}
+    const state=!restart&&!matchStopped?(owner&&!flight?'controlled':!owner&&flight?.kind==='pass'&&!flight.loft&&Math.abs(ballHeight)<1e-6?'ground_pass':null):null;
+    ftBall.tick({elapsed,state,context:state==='controlled'?'owner:'+owner.id:'pass:'+ftFlightSerial,ball:[bx,by,ballHeight]});
     ftShadow.tick({elapsed,live:!restart&&!matchStopped&&!!owner&&!flight,owner:owner?.t??null,carrier:owner?.id??null,
       context:(guided?'guided':'free')+'|'+players[0].formation+'|'+players[11].formation,
       ball:[bx,by,ballHeight],players:activePlayers().map(p=>({id:p.id,team:p.t,x:p.x,y:p.y}))});
@@ -2795,6 +2853,8 @@ function ftRender(){
     if($('ft-hybrid-state'))$('ft-hybrid-state').textContent=ftHybrid?'Prueba libre calibrada · ajuste de apoyos '+(ftSupportExperiment?'experimental':'desactivado')+' · perfiles '+(ftRoleMode?'por puesto':'generales')+' · coordinación '+(ftCollectiveMode?'experimental':'desactivada')+' ('+ftCollectiveStats.adjustments+'/'+ftCollectiveStats.opportunities+') · ajustes '+ftSupportCount+' · muestras de comparación de fase '+ftPhaseAudit.frames:'Motor original · integración activa desactivada';
     if(!$('ft-enabled')?.checked)return;
     const r=ftShadow.report(),s=r.stats,l=r.latest,d=l?.diagnostics;
+    const ballReport=ftBall.report(),br=ballReport.rows.ground_pass;
+    $('ft-ball-state').textContent='Balón raso · '+(ballReport.latest?ballReport.latest.state==='ground_pass'?'pase observado':'control observado':'historial insuficiente')+' · '+br.map(q=>q.horizon+' s: '+q.n+' evaluadas, '+q.censored+' interrumpidas'+(q.n?' (Ridge '+q.ridge.toFixed(2)+' m; velocidad '+q.cv.toFixed(2)+' m)':'')).join(' · ')+' · errores '+ballReport.errors;
     const f=v=>v===null?'—':v.toFixed(3)+' m';
     const q=d?d.control.map(n=>(100*n/150).toFixed(1)+' %').join(' / '):'—';
     $('ft-state').textContent=r.reason+' · Ventanas '+s.validWindows+' · predicciones actuales '+(l?.predictionCount??0);
@@ -2804,9 +2864,9 @@ function ftRender(){
 }
 const ftPanel=document.createElement('details');
 ftPanel.className='decision-panel';
-ftPanel.innerHTML='<summary><strong>Fase Tracking 1.40 RC · integración experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
+ftPanel.innerHTML='<summary><strong>Fase Tracking 1.41 · integración experimental</strong></summary><p><label><input type="checkbox" id="ft-enabled"> Activar observador (no modifica el juego)</label> <button id="ft-reset" type="button">Limpiar medición</button></p><p><button id="ft-calibrate" type="button">Iniciar prueba libre calibrada</button> <button id="ft-support-exp" type="button">Prueba calibrada + apoyos (experimental)</button> <button id="ft-role" type="button">Prueba perfiles por puesto (experimental)</button> <button id="ft-collective" type="button" disabled>Coordinación: en evaluación</button> <button id="ft-return" type="button">Volver al motor original</button></p><p id="ft-hybrid-state">Motor original</p><small>Iniciar una prueba reinicia la situación y activa el modo libre. Los límites de velocidad y aceleración se aplican a la ejecución y a las estimaciones del motor, no al modelo neuronal. El ajuste lateral opcional de apoyos es una hipótesis no validada. La coordinación colectiva permanece desactivada. Los parámetros por puesto son referencias nominales, no capacidades máximas medidas. Volver al modo guiado o reiniciar desactiva la calibración.</small><p id="ft-state" role="status">Desactivado</p><p id="ft-errors"></p><p id="ft-extra"></p><p id="ft-ball-state" aria-live="off"></p><small>El predictor del balón observa pases rasos y controles por separado; no modifica los destinos ni las reglas de recepción. Los contactos y las interrupciones cancelan los horizontes pendientes.</small><br><small>Ridge entrenado en DFL. Historial a 5 Hz de tiempo simulado y predicción a +1 s; solo balón controlado en suelo. Comparación con el propio simulador, no con un partido real. Accesibilidad/receptores/control son aproximaciones geométricas en sombra; no órdenes ni intenciones. Conversión de 100×64 unidades a 105×68 m y orientación transversal aún por contrastar.</small>';
 $('status').insertAdjacentElement('afterend',ftPanel);
-$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';ftRender();};
+$('ft-enabled').onchange=()=>{ftShadow.setEnabled($('ft-enabled').checked);ftBall.setEnabled($('ft-enabled').checked);$('ft-state').textContent=$('ft-enabled').checked?'Esperando historial continuo':'Desactivado';$('ft-errors').textContent='';$('ft-extra').textContent='';$('ft-ball-state').textContent='';ftRender();};
 $('ft-reset').onclick=()=>{ftReset('Medición reiniciada',true);ftRender();};
 $('ft-calibrate').onclick=()=>{ftStartHybrid(false);ftRender();};
 $('ft-support-exp').onclick=()=>{ftStartHybrid(true);ftRender();};

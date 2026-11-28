@@ -1,0 +1,20 @@
+{
+  "version": "1.49",
+  "model": "1.23 no_possession_s42",
+  "architecture": "fixed nearest-neighbor mean messages, 28 channels ×6 samples, 32-channel encoder, 192→64→2 residual MLP. Not a recurrent or attention ST-GNN.",
+  "parameters": 13410,
+  "validationMAE": 0.5847026705741882,
+  "testExploratoryMAE": 0.5658741593360901,
+  "ridgeTestExploratoryMAE": 0.5381668,
+  "parity": {
+    "windows": 140,
+    "players": 2685,
+    "maxErrorM": 0.0000025605263011977457,
+    "meanErrorM": 3.2196341234572036e-7,
+    "medianMs": 1.0658710000000156,
+    "p95Ms": 2.016339000000002,
+    "toleranceM": 0.0001,
+    "pass": true
+  },
+  "scope": "Local Python/Node with seven DFL matches, stored graph versus JS reconstructed features. Trained JSON available in downloadable package, not committed to public repo. Browser import is opt-in. Integrated mock DOM verified using zero-weight fixture, not trained model. Neural policy remains disabled."
+}

@@ -25,7 +25,7 @@ try:
             page.goto(url, wait_until="domcontentloaded")
             expect(page.locator("#pitch")).to_be_visible()
             expect(page.locator("#players > g.player")).to_have_count(22)
-            page.get_by_text("Fase Tracking 1.40 RC", exact=False).first.click()
+            page.get_by_text("Fase Tracking 1.41", exact=False).first.click()
             expect(page.locator("#ft-enabled")).not_to_be_checked()
             expect(page.locator("#ft-hybrid-state")).to_contain_text("Motor original")
             expect(page.locator("#ft-collective")).to_be_disabled()

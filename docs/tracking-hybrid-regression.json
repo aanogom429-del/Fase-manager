@@ -1,0 +1,143 @@
+{
+  "base": "474c0f28d14d19d6bcf9b26b287142b0543fe769",
+  "branchBlob": "65be15db75d401a3d634d931e7162110f1b2dcee",
+  "results": {
+    "free433": {
+      "config": {
+        "id": "free433",
+        "mode": "free",
+        "seed": 73,
+        "blue": "4-3-3",
+        "red": "4-3-3",
+        "speed": 1
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 4.7583333333333595,
+      "stage": "free",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 571,
+        "samples": 22,
+        "validWindows": 15,
+        "anchors": 3,
+        "evaluated": 2,
+        "discarded": 0,
+        "players": 44,
+        "sumRidge": 212.4460870414087,
+        "sumVelocity": 135.87439064565797,
+        "sumStatic": 239.74263724112788,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": 4.828320160032016,
+        "maeVelocity": 3.088054332855863,
+        "maeStatic": 5.448696300934724
+      }
+    },
+    "free4231": {
+      "config": {
+        "id": "free4231",
+        "mode": "free",
+        "seed": 91,
+        "blue": "4-2-3-1",
+        "red": "4-4-2",
+        "speed": 2
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 9.516666666666767,
+      "stage": "free",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 1142,
+        "samples": 35,
+        "validWindows": 2,
+        "anchors": 1,
+        "evaluated": 0,
+        "discarded": 1,
+        "players": 0,
+        "sumRidge": 0,
+        "sumVelocity": 0,
+        "sumStatic": 0,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": null,
+        "maeVelocity": null,
+        "maeStatic": null
+      }
+    },
+    "free343": {
+      "config": {
+        "id": "free343",
+        "mode": "free",
+        "seed": 127,
+        "blue": "3-4-3",
+        "red": "3-5-2",
+        "speed": 4
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 19.033333333332894,
+      "stage": "free",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 2284,
+        "samples": 79,
+        "validWindows": 13,
+        "anchors": 5,
+        "evaluated": 1,
+        "discarded": 3,
+        "players": 22,
+        "sumRidge": 107.91578031553942,
+        "sumVelocity": 86.53336055765364,
+        "sumStatic": 131.89763450290036,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": 4.905262741615428,
+        "maeVelocity": 3.933334570802438,
+        "maeStatic": 5.995347022859107
+      }
+    },
+    "guided": {
+      "config": {
+        "id": "guided",
+        "mode": "guided",
+        "seed": 73
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 0.6250000000000002,
+      "stage": "review",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 75,
+        "samples": 2,
+        "validWindows": 0,
+        "anchors": 0,
+        "evaluated": 0,
+        "discarded": 0,
+        "players": 0,
+        "sumRidge": 0,
+        "sumVelocity": 0,
+        "sumStatic": 0,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": null,
+        "maeVelocity": null,
+        "maeStatic": null
+      }
+    }
+  }
+}

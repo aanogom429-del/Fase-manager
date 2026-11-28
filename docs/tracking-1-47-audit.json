@@ -1,0 +1,240 @@
+{
+  "version": "1.47",
+  "method": "3 seeded 20s runs; 5Hz samples while controlled possession, same team/roster/formation for transitions; functional labels from existing phaseRelations and geometric 5/20m reference. Support assignment sampled before next recalculation. Complementarity proxy: >=30 degree separation, >=5 internal units apart and depth categories not both advanced or both deep. No active coordination change.",
+  "rows": [
+    {
+      "seed": 3101,
+      "unit": {
+        "complementary": true,
+        "crowded": true,
+        "missing": true,
+        "reset": true
+      },
+      "phase": {
+        "frames": 63,
+        "relations": [
+          70,
+          372,
+          944
+        ],
+        "radial": [
+          88,
+          405,
+          893
+        ],
+        "table": [
+          [
+            70,
+            0,
+            0
+          ],
+          [
+            17,
+            203,
+            152
+          ],
+          [
+            1,
+            202,
+            741
+          ]
+        ],
+        "transition": [
+          [
+            53,
+            0,
+            1
+          ],
+          [
+            1,
+            270,
+            13
+          ],
+          [
+            0,
+            12,
+            728
+          ]
+        ],
+        "radialTransition": [
+          [
+            66,
+            1,
+            0
+          ],
+          [
+            3,
+            308,
+            1
+          ],
+          [
+            0,
+            10,
+            689
+          ]
+        ],
+        "pairFrames": 58,
+        "missingPair": 5,
+        "complementary": 28,
+        "crowded": 0,
+        "errors": 0
+      }
+    },
+    {
+      "seed": 3203,
+      "unit": {
+        "complementary": true,
+        "crowded": true,
+        "missing": true,
+        "reset": true
+      },
+      "phase": {
+        "frames": 77,
+        "relations": [
+          99,
+          472,
+          1123
+        ],
+        "radial": [
+          125,
+          473,
+          1096
+        ],
+        "table": [
+          [
+            99,
+            0,
+            0
+          ],
+          [
+            22,
+            260,
+            190
+          ],
+          [
+            4,
+            213,
+            906
+          ]
+        ],
+        "transition": [
+          [
+            84,
+            0,
+            0
+          ],
+          [
+            2,
+            356,
+            19
+          ],
+          [
+            0,
+            24,
+            945
+          ]
+        ],
+        "radialTransition": [
+          [
+            103,
+            3,
+            0
+          ],
+          [
+            5,
+            355,
+            8
+          ],
+          [
+            0,
+            22,
+            934
+          ]
+        ],
+        "pairFrames": 68,
+        "missingPair": 9,
+        "complementary": 21,
+        "crowded": 8,
+        "errors": 0
+      }
+    },
+    {
+      "seed": 3309,
+      "unit": {
+        "complementary": true,
+        "crowded": true,
+        "missing": true,
+        "reset": true
+      },
+      "phase": {
+        "frames": 87,
+        "relations": [
+          136,
+          626,
+          1152
+        ],
+        "radial": [
+          175,
+          649,
+          1090
+        ],
+        "table": [
+          [
+            136,
+            0,
+            0
+          ],
+          [
+            29,
+            350,
+            247
+          ],
+          [
+            10,
+            299,
+            843
+          ]
+        ],
+        "transition": [
+          [
+            104,
+            0,
+            0
+          ],
+          [
+            1,
+            464,
+            18
+          ],
+          [
+            0,
+            24,
+            885
+          ]
+        ],
+        "radialTransition": [
+          [
+            131,
+            3,
+            0
+          ],
+          [
+            5,
+            492,
+            9
+          ],
+          [
+            0,
+            10,
+            846
+          ]
+        ],
+        "pairFrames": 86,
+        "missingPair": 1,
+        "complementary": 24,
+        "crowded": 1,
+        "errors": 0
+      }
+    }
+  ]
+}

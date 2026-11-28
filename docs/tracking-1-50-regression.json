@@ -1,0 +1,55 @@
+{
+  "version": "1.50 RC",
+  "base": "474c0f28d14d19d6bcf9b26b287142b0543fe769",
+  "output": "3834e85603d587b42030d5f91a3b1db98bcfb7f3",
+  "neuralIntegration": {
+    "invalid_rejected": true,
+    "zero_equals_cv": true,
+    "integrated_evaluation": {
+      "anchors": 10,
+      "n": 132,
+      "neuralSum": 208.1778761697142,
+      "ridgeSum": 179.86911490327057,
+      "cvSum": 208.1778761697142,
+      "errors": 0,
+      "loaded": true
+    },
+    "unload": true,
+    "reset": true
+  },
+  "regression": {
+    "free433": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    },
+    "free4231": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    },
+    "free343": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    },
+    "guided": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    }
+  },
+  "limitations": "Engine JS with simulated DOM. Actual trained model parity tested separately on local DFL vectors; browser model import fixture pending CI. Main unchanged."
+}

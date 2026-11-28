@@ -1,0 +1,67 @@
+{
+  "version": "Manager 0.149 experimental / Tracking 1.51",
+  "baseStable": "474c0f28d14d19d6bcf9b26b287142b0543fe769",
+  "output": "8fd445d5283976b2f69e92c2033a5687b6a41432",
+  "method": "3 paired seeds ×20s ×2 modes. Existing wide anchor outside y=14/50, priority 3, no support/cover/balance/manual order/interior complement. Soft penalty .65×squared inward intrusion at existing collective allocator. Width/depth means weighted by valid controlled-possession frame counts; near-ball fraction across all active players. Mean run loss not pooled quantile loss. Mock DOM; not independent real football validation.",
+  "summary": {
+    "baseline": {
+      "width": 44.00701772762296,
+      "depth": 53.50858090735499,
+      "nearBall": 0.389241762604208,
+      "n": 229,
+      "checks": 0,
+      "changes": 0,
+      "passes": 51,
+      "shots": 0,
+      "turnovers": 7,
+      "meanRunSpatialLoss": 0.11174024195464072,
+      "meanRunKinematicLoss": 0.5743605943382333,
+      "thirdDecisions": 15,
+      "safe": true
+    },
+    "width": {
+      "width": 43.76484552281345,
+      "depth": 56.778587406476625,
+      "nearBall": 0.37912308930008043,
+      "n": 226,
+      "checks": 220,
+      "changes": 17,
+      "passes": 52,
+      "shots": 0,
+      "turnovers": 6,
+      "meanRunSpatialLoss": 0.11938897145631429,
+      "meanRunKinematicLoss": 0.5701503408281893,
+      "thirdDecisions": 15,
+      "safe": true
+    }
+  },
+  "gate": false,
+  "reason": "Width does not improve in aggregate; do not enable. Test directed initial situations and audit original target stages before further tuning.",
+  "checks": {
+    "free433": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0
+    },
+    "free4231": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0
+    },
+    "free343": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0
+    },
+    "guided": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0
+    }
+  },
+  "browser": "1.50 RC Chromium passed 46158527427; current pending."
+}

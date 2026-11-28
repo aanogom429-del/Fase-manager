@@ -1,0 +1,774 @@
+{
+  "version": "1.43",
+  "base": "d9ca51bb1489d5036397b3b96cb562f21046b33d",
+  "output": "bb537af47a7cb0135550c90afa084d6c8bc15abf",
+  "method": "Prospective ranking at release before execution error; only currently visible teammates and perceived opponent memories. Geometric safety/continuity/progression labels based on longitudinal advance ±3 internal units. Visible receiver lead projection and arrival estimate. Conservative opponent envelope with 8.5 internal units/s, no hidden rival velocities. Excludes guided mode and aerial/clearance/cross; contact labels are first physical contact not completed pass or counterfactual success. Baseline score resembles original but removes randomness and lead-pass targeting. Agreement with selected target is not policy quality. No decision changes. 9 runs × 30s, mock DOM. Prior Chromium 1.42 run 46122839976 success; current pending.",
+  "aggregate": {
+    "passes": 209,
+    "decisions": 206,
+    "candidates": 1327,
+    "rankedGroundPasses": 206,
+    "contacts": 194,
+    "intended": 135,
+    "other": 29,
+    "rival": 30,
+    "unranked": 0,
+    "excluded": 0,
+    "censored": 10,
+    "pending": 2,
+    "errors": 0,
+    "lead": 172,
+    "groups": {
+      "security": {
+        "n": 87,
+        "success": 47
+      },
+      "continuity": {
+        "n": 31,
+        "success": 25
+      },
+      "progression": {
+        "n": 76,
+        "success": 63
+      }
+    },
+    "models": {
+      "nearest": {
+        "n": 194,
+        "top1": 53,
+        "top3": 134
+      },
+      "base": {
+        "n": 194,
+        "top1": 96,
+        "top3": 168
+      },
+      "enhanced": {
+        "n": 194,
+        "top1": 101,
+        "top3": 174
+      }
+    },
+    "margins": {
+      "negative": {
+        "n": 37,
+        "success": 20
+      },
+      "nonnegative": {
+        "n": 157,
+        "success": 115
+      }
+    }
+  },
+  "unit": {
+    "three_geometric_roles": true,
+    "hidden_stale_offside_exclusion": true,
+    "input_immutable": true,
+    "blocked_lane": true,
+    "red_direction": true,
+    "visible_lead": true,
+    "contact": true,
+    "aerial_exclusion": true,
+    "censor": true,
+    "disabled": true
+  },
+  "runs": [
+    {
+      "mode": "original",
+      "seed": 1801,
+      "stats": {
+        "decisions": 24,
+        "candidates": 157,
+        "passes": 24,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 23,
+        "intended": 15,
+        "teammateOther": 2,
+        "rival": 6,
+        "censored": 1,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 12,
+            "success": 6
+          },
+          "continuity": {
+            "n": 3,
+            "success": 3
+          },
+          "progression": {
+            "n": 8,
+            "success": 6
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 23,
+            "top1": 7,
+            "top3": 18
+          },
+          "base": {
+            "n": 23,
+            "top1": 13,
+            "top3": 20
+          },
+          "enhanced": {
+            "n": 23,
+            "top1": 12,
+            "top3": 19
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 1,
+            "success": 0
+          },
+          "nonnegative": {
+            "n": 22,
+            "success": 15
+          }
+        },
+        "lead": 21
+      },
+      "pending": false,
+      "passes": 24,
+      "shots": 0
+    },
+    {
+      "mode": "original",
+      "seed": 1901,
+      "stats": {
+        "decisions": 30,
+        "candidates": 195,
+        "passes": 30,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 30,
+        "intended": 17,
+        "teammateOther": 6,
+        "rival": 7,
+        "censored": 0,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 13,
+            "success": 6
+          },
+          "continuity": {
+            "n": 4,
+            "success": 2
+          },
+          "progression": {
+            "n": 13,
+            "success": 9
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 30,
+            "top1": 8,
+            "top3": 18
+          },
+          "base": {
+            "n": 30,
+            "top1": 18,
+            "top3": 26
+          },
+          "enhanced": {
+            "n": 30,
+            "top1": 19,
+            "top3": 27
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 8,
+            "success": 4
+          },
+          "nonnegative": {
+            "n": 22,
+            "success": 13
+          }
+        },
+        "lead": 27
+      },
+      "pending": false,
+      "passes": 30,
+      "shots": 1
+    },
+    {
+      "mode": "original",
+      "seed": 2003,
+      "stats": {
+        "decisions": 30,
+        "candidates": 186,
+        "passes": 30,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 30,
+        "intended": 19,
+        "teammateOther": 6,
+        "rival": 5,
+        "censored": 0,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 17,
+            "success": 9
+          },
+          "continuity": {
+            "n": 4,
+            "success": 3
+          },
+          "progression": {
+            "n": 9,
+            "success": 7
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 30,
+            "top1": 8,
+            "top3": 20
+          },
+          "base": {
+            "n": 30,
+            "top1": 15,
+            "top3": 24
+          },
+          "enhanced": {
+            "n": 30,
+            "top1": 13,
+            "top3": 24
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 4,
+            "success": 2
+          },
+          "nonnegative": {
+            "n": 26,
+            "success": 17
+          }
+        },
+        "lead": 25
+      },
+      "pending": false,
+      "passes": 30,
+      "shots": 0
+    },
+    {
+      "mode": "calibrated",
+      "seed": 1801,
+      "stats": {
+        "decisions": 26,
+        "candidates": 186,
+        "passes": 26,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 26,
+        "intended": 20,
+        "teammateOther": 4,
+        "rival": 2,
+        "censored": 0,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 11,
+            "success": 8
+          },
+          "continuity": {
+            "n": 7,
+            "success": 5
+          },
+          "progression": {
+            "n": 8,
+            "success": 7
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 26,
+            "top1": 4,
+            "top3": 18
+          },
+          "base": {
+            "n": 26,
+            "top1": 10,
+            "top3": 24
+          },
+          "enhanced": {
+            "n": 26,
+            "top1": 13,
+            "top3": 25
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 6,
+            "success": 3
+          },
+          "nonnegative": {
+            "n": 20,
+            "success": 17
+          }
+        },
+        "lead": 24
+      },
+      "pending": false,
+      "passes": 26,
+      "shots": 0
+    },
+    {
+      "mode": "calibrated",
+      "seed": 1901,
+      "stats": {
+        "decisions": 20,
+        "candidates": 116,
+        "passes": 20,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 17,
+        "intended": 14,
+        "teammateOther": 3,
+        "rival": 0,
+        "censored": 2,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 4,
+            "success": 2
+          },
+          "continuity": {
+            "n": 7,
+            "success": 7
+          },
+          "progression": {
+            "n": 6,
+            "success": 5
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 17,
+            "top1": 9,
+            "top3": 14
+          },
+          "base": {
+            "n": 17,
+            "top1": 7,
+            "top3": 15
+          },
+          "enhanced": {
+            "n": 17,
+            "top1": 7,
+            "top3": 17
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 3,
+            "success": 2
+          },
+          "nonnegative": {
+            "n": 14,
+            "success": 12
+          }
+        },
+        "lead": 16
+      },
+      "pending": true,
+      "passes": 20,
+      "shots": 1
+    },
+    {
+      "mode": "calibrated",
+      "seed": 2003,
+      "stats": {
+        "decisions": 16,
+        "candidates": 103,
+        "passes": 16,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 13,
+        "intended": 10,
+        "teammateOther": 2,
+        "rival": 1,
+        "censored": 2,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 5,
+            "success": 2
+          },
+          "continuity": {
+            "n": 0,
+            "success": 0
+          },
+          "progression": {
+            "n": 8,
+            "success": 8
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 13,
+            "top1": 5,
+            "top3": 9
+          },
+          "base": {
+            "n": 13,
+            "top1": 6,
+            "top3": 11
+          },
+          "enhanced": {
+            "n": 13,
+            "top1": 8,
+            "top3": 12
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 3,
+            "success": 2
+          },
+          "nonnegative": {
+            "n": 10,
+            "success": 8
+          }
+        },
+        "lead": 9
+      },
+      "pending": true,
+      "passes": 17,
+      "shots": 0
+    },
+    {
+      "mode": "roles",
+      "seed": 1801,
+      "stats": {
+        "decisions": 13,
+        "candidates": 89,
+        "passes": 13,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 12,
+        "intended": 11,
+        "teammateOther": 1,
+        "rival": 0,
+        "censored": 1,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 6,
+            "success": 5
+          },
+          "continuity": {
+            "n": 0,
+            "success": 0
+          },
+          "progression": {
+            "n": 6,
+            "success": 6
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 12,
+            "top1": 1,
+            "top3": 6
+          },
+          "base": {
+            "n": 12,
+            "top1": 5,
+            "top3": 10
+          },
+          "enhanced": {
+            "n": 12,
+            "top1": 6,
+            "top3": 10
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 2,
+            "success": 2
+          },
+          "nonnegative": {
+            "n": 10,
+            "success": 9
+          }
+        },
+        "lead": 11
+      },
+      "pending": false,
+      "passes": 14,
+      "shots": 0
+    },
+    {
+      "mode": "roles",
+      "seed": 1901,
+      "stats": {
+        "decisions": 28,
+        "candidates": 179,
+        "passes": 28,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 27,
+        "intended": 19,
+        "teammateOther": 1,
+        "rival": 7,
+        "censored": 1,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 13,
+            "success": 7
+          },
+          "continuity": {
+            "n": 4,
+            "success": 4
+          },
+          "progression": {
+            "n": 10,
+            "success": 8
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 27,
+            "top1": 8,
+            "top3": 19
+          },
+          "base": {
+            "n": 27,
+            "top1": 13,
+            "top3": 24
+          },
+          "enhanced": {
+            "n": 27,
+            "top1": 12,
+            "top3": 25
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 7,
+            "success": 4
+          },
+          "nonnegative": {
+            "n": 20,
+            "success": 15
+          }
+        },
+        "lead": 25
+      },
+      "pending": false,
+      "passes": 28,
+      "shots": 0
+    },
+    {
+      "mode": "roles",
+      "seed": 2003,
+      "stats": {
+        "decisions": 19,
+        "candidates": 116,
+        "passes": 19,
+        "unranked": 0,
+        "excluded": 0,
+        "contacts": 16,
+        "intended": 10,
+        "teammateOther": 4,
+        "rival": 2,
+        "censored": 3,
+        "errors": 0,
+        "groups": {
+          "security": {
+            "n": 6,
+            "success": 2
+          },
+          "continuity": {
+            "n": 2,
+            "success": 1
+          },
+          "progression": {
+            "n": 8,
+            "success": 7
+          }
+        },
+        "models": {
+          "nearest": {
+            "n": 16,
+            "top1": 3,
+            "top3": 12
+          },
+          "base": {
+            "n": 16,
+            "top1": 9,
+            "top3": 14
+          },
+          "enhanced": {
+            "n": 16,
+            "top1": 11,
+            "top3": 15
+          }
+        },
+        "margins": {
+          "negative": {
+            "n": 3,
+            "success": 1
+          },
+          "nonnegative": {
+            "n": 13,
+            "success": 9
+          }
+        },
+        "lead": 14
+      },
+      "pending": false,
+      "passes": 20,
+      "shots": 0
+    }
+  ],
+  "regression": {
+    "free433": {
+      "config": {
+        "id": "free433",
+        "mode": "free",
+        "seed": 73,
+        "blue": "4-3-3",
+        "red": "4-3-3",
+        "speed": 1
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 4.7583333333333595,
+      "stage": "free",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 571,
+        "samples": 22,
+        "validWindows": 15,
+        "anchors": 3,
+        "evaluated": 2,
+        "discarded": 0,
+        "players": 44,
+        "sumRidge": 212.4460870414087,
+        "sumVelocity": 135.87439064565797,
+        "sumStatic": 239.74263724112788,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": 4.828320160032016,
+        "maeVelocity": 3.088054332855863,
+        "maeStatic": 5.448696300934724
+      }
+    },
+    "free4231": {
+      "config": {
+        "id": "free4231",
+        "mode": "free",
+        "seed": 91,
+        "blue": "4-2-3-1",
+        "red": "4-4-2",
+        "speed": 2
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 9.516666666666767,
+      "stage": "free",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 1142,
+        "samples": 35,
+        "validWindows": 2,
+        "anchors": 1,
+        "evaluated": 0,
+        "discarded": 1,
+        "players": 0,
+        "sumRidge": 0,
+        "sumVelocity": 0,
+        "sumStatic": 0,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": null,
+        "maeVelocity": null,
+        "maeStatic": null
+      }
+    },
+    "free343": {
+      "config": {
+        "id": "free343",
+        "mode": "free",
+        "seed": 127,
+        "blue": "3-4-3",
+        "red": "3-5-2",
+        "speed": 4
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 19.033333333332894,
+      "stage": "free",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 2284,
+        "samples": 79,
+        "validWindows": 13,
+        "anchors": 5,
+        "evaluated": 1,
+        "discarded": 3,
+        "players": 22,
+        "sumRidge": 107.91578031553942,
+        "sumVelocity": 86.53336055765364,
+        "sumStatic": 131.89763450290036,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": 4.905262741615428,
+        "maeVelocity": 3.933334570802438,
+        "maeStatic": 5.995347022859107
+      }
+    },
+    "guided": {
+      "config": {
+        "id": "guided",
+        "mode": "guided",
+        "seed": 73
+      },
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "elapsed": 0.6250000000000002,
+      "stage": "review",
+      "pauseCheck": true,
+      "resetCheck": true,
+      "disableCheck": true,
+      "stats": {
+        "ticks": 75,
+        "samples": 2,
+        "validWindows": 0,
+        "anchors": 0,
+        "evaluated": 0,
+        "discarded": 0,
+        "players": 0,
+        "sumRidge": 0,
+        "sumVelocity": 0,
+        "sumStatic": 0,
+        "outside": 0,
+        "errors": 0,
+        "maeRidge": null,
+        "maeVelocity": null,
+        "maeStatic": null
+      }
+    }
+  }
+}

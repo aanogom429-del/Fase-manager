@@ -1,0 +1,53 @@
+{
+  "version": "1.46",
+  "method": "9 runs ×20s, three seeds and three modes, instead of timed-out 45s runs. Eight synthetic checks passed. Prototype only; no changes to open-play behavior in sample.",
+  "summary": {
+    "0": {
+      "runs": 3,
+      "seconds": 60,
+      "passes": 47,
+      "shots": 0,
+      "turnovers": 7,
+      "decisions": 139,
+      "third": 21,
+      "box": 1,
+      "shotWindows": 0,
+      "carryChecks": 0,
+      "applied": 0,
+      "errors": 0,
+      "safe": true
+    },
+    "1": {
+      "runs": 3,
+      "seconds": 60,
+      "passes": 47,
+      "shots": 0,
+      "turnovers": 7,
+      "decisions": 139,
+      "third": 21,
+      "box": 1,
+      "shotWindows": 0,
+      "carryChecks": 26,
+      "applied": 0,
+      "errors": 0,
+      "safe": true
+    },
+    "2": {
+      "runs": 3,
+      "seconds": 60,
+      "passes": 47,
+      "shots": 0,
+      "turnovers": 7,
+      "decisions": 139,
+      "third": 21,
+      "box": 1,
+      "shotWindows": 0,
+      "carryChecks": 26,
+      "applied": 0,
+      "errors": 0,
+      "safe": true
+    }
+  },
+  "gate": false,
+  "reason": "No actual added carry or shot window; scarce finalization contexts. Active UI remains disabled."
+}

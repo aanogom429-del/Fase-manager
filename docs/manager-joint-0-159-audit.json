@@ -1,0 +1,557 @@
+{
+  "version": "Manager 0.159 / Tracking 1.61",
+  "source": "0a6676040dde14e93f9426f8c56d9a05649f577e",
+  "main": "474c0f28d14d19d6bcf9b26b287142b0543fe769",
+  "method": "6 paired 15s simulations (3 seeds, five formations, baseline and all ten experimental modes) plus 10 isolated 15s experiments with one previously matched baseline per mode. Total 16 ×15s. Ten synthetic positive/negative fixtures and common guard tests. Evaluation counts mostly at 120Hz per player or pair, repeated proposals, NOT distinct actions or achieved outcomes. 154 counts decisions; 158 only eligible causal interception comparisons. Metrics are means of run losses, not pooled. Mock DOM. No independent real-match validation.",
+  "summary": {
+    "baseline": {
+      "runs": 3,
+      "seconds": 45,
+      "passes": 23,
+      "shots": 0,
+      "turnovers": 10,
+      "contacts": 20,
+      "intended": 15,
+      "third": 9,
+      "kin": 0.5724055836428213,
+      "spatial": 0.10993138949368435,
+      "safe": true,
+      "joint": {
+        "150": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "151": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "152": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "153": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "154": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "155": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "156": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "157": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "158": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "159": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        }
+      }
+    },
+    "all": {
+      "runs": 3,
+      "seconds": 45,
+      "passes": 20,
+      "shots": 0,
+      "turnovers": 6,
+      "contacts": 15,
+      "intended": 10,
+      "third": 12,
+      "kin": 0.5731806847616167,
+      "spatial": 0.1252610167591358,
+      "safe": true,
+      "joint": {
+        "150": {
+          "checks": 383,
+          "changes": 143,
+          "rejects": 240,
+          "errors": 0
+        },
+        "151": {
+          "checks": 3920,
+          "changes": 104,
+          "rejects": 3816,
+          "errors": 0
+        },
+        "152": {
+          "checks": 1407,
+          "changes": 316,
+          "rejects": 1091,
+          "errors": 0
+        },
+        "153": {
+          "checks": 619,
+          "changes": 42,
+          "rejects": 577,
+          "errors": 0
+        },
+        "154": {
+          "checks": 3,
+          "changes": 0,
+          "rejects": 3,
+          "errors": 0
+        },
+        "155": {
+          "checks": 23,
+          "changes": 0,
+          "rejects": 23,
+          "errors": 0
+        },
+        "156": {
+          "checks": 26,
+          "changes": 0,
+          "rejects": 26,
+          "errors": 0
+        },
+        "157": {
+          "checks": 3516,
+          "changes": 3516,
+          "rejects": 0,
+          "errors": 0
+        },
+        "158": {
+          "checks": 0,
+          "changes": 0,
+          "rejects": 0,
+          "errors": 0
+        },
+        "159": {
+          "checks": 8204,
+          "changes": 103,
+          "rejects": 0,
+          "errors": 0
+        }
+      }
+    }
+  },
+  "single": [
+    {
+      "version": 150,
+      "seed": 3901,
+      "checks": 69,
+      "changes": 0,
+      "errors": 0,
+      "passes": [
+        7,
+        7
+      ],
+      "turnovers": [
+        4,
+        4
+      ],
+      "intended": [
+        4,
+        4
+      ],
+      "contacts": [
+        6,
+        6
+      ],
+      "third": [
+        4,
+        4
+      ],
+      "kin": [
+        0.5635684359326224,
+        0.5635684359326224
+      ],
+      "spatial": [
+        0.12361481437919128,
+        0.12361481437919128
+      ],
+      "safe": true
+    },
+    {
+      "version": 151,
+      "seed": 4007,
+      "checks": 1240,
+      "changes": 118,
+      "errors": 0,
+      "passes": [
+        8,
+        8
+      ],
+      "turnovers": [
+        5,
+        5
+      ],
+      "intended": [
+        4,
+        4
+      ],
+      "contacts": [
+        7,
+        7
+      ],
+      "third": [
+        3,
+        3
+      ],
+      "kin": [
+        0.5786199766739474,
+        0.5791406950708181
+      ],
+      "spatial": [
+        0.11244077486337731,
+        0.11244121142082845
+      ],
+      "safe": true
+    },
+    {
+      "version": 152,
+      "seed": 4111,
+      "checks": 299,
+      "changes": 55,
+      "errors": 0,
+      "passes": [
+        8,
+        8
+      ],
+      "turnovers": [
+        1,
+        1
+      ],
+      "intended": [
+        7,
+        7
+      ],
+      "contacts": [
+        7,
+        7
+      ],
+      "third": [
+        2,
+        2
+      ],
+      "kin": [
+        0.575028338321894,
+        0.5773520391999317
+      ],
+      "spatial": [
+        0.09373857923848442,
+        0.09369655361156594
+      ],
+      "safe": true
+    },
+    {
+      "version": 153,
+      "seed": 3901,
+      "checks": 183,
+      "changes": 44,
+      "errors": 0,
+      "passes": [
+        7,
+        8
+      ],
+      "turnovers": [
+        4,
+        1
+      ],
+      "intended": [
+        4,
+        6
+      ],
+      "contacts": [
+        6,
+        7
+      ],
+      "third": [
+        4,
+        3
+      ],
+      "kin": [
+        0.5635684359326224,
+        0.5614540521026482
+      ],
+      "spatial": [
+        0.12361481437919128,
+        0.11404365171383193
+      ],
+      "safe": true
+    },
+    {
+      "version": 154,
+      "seed": 4007,
+      "checks": 2,
+      "changes": 0,
+      "errors": 0,
+      "passes": [
+        8,
+        8
+      ],
+      "turnovers": [
+        5,
+        5
+      ],
+      "intended": [
+        4,
+        4
+      ],
+      "contacts": [
+        7,
+        7
+      ],
+      "third": [
+        3,
+        3
+      ],
+      "kin": [
+        0.5786199766739474,
+        0.5786199766739474
+      ],
+      "spatial": [
+        0.11244077486337731,
+        0.11244077486337731
+      ],
+      "safe": true
+    },
+    {
+      "version": 155,
+      "seed": 4111,
+      "checks": 146,
+      "changes": 0,
+      "errors": 0,
+      "passes": [
+        8,
+        8
+      ],
+      "turnovers": [
+        1,
+        1
+      ],
+      "intended": [
+        7,
+        7
+      ],
+      "contacts": [
+        7,
+        7
+      ],
+      "third": [
+        2,
+        2
+      ],
+      "kin": [
+        0.575028338321894,
+        0.575028338321894
+      ],
+      "spatial": [
+        0.09373857923848442,
+        0.09373857923848442
+      ],
+      "safe": true
+    },
+    {
+      "version": 156,
+      "seed": 3901,
+      "checks": 0,
+      "changes": 0,
+      "errors": 0,
+      "passes": [
+        7,
+        7
+      ],
+      "turnovers": [
+        4,
+        4
+      ],
+      "intended": [
+        4,
+        4
+      ],
+      "contacts": [
+        6,
+        6
+      ],
+      "third": [
+        4,
+        4
+      ],
+      "kin": [
+        0.5635684359326224,
+        0.5635684359326224
+      ],
+      "spatial": [
+        0.12361481437919128,
+        0.12361481437919128
+      ],
+      "safe": true
+    },
+    {
+      "version": 157,
+      "seed": 4007,
+      "checks": 2527,
+      "changes": 2527,
+      "errors": 0,
+      "passes": [
+        8,
+        7
+      ],
+      "turnovers": [
+        5,
+        5
+      ],
+      "intended": [
+        4,
+        1
+      ],
+      "contacts": [
+        7,
+        5
+      ],
+      "third": [
+        3,
+        3
+      ],
+      "kin": [
+        0.5786199766739474,
+        0.578454265096666
+      ],
+      "spatial": [
+        0.11244077486337731,
+        0.11111235207284882
+      ],
+      "safe": true
+    },
+    {
+      "version": 158,
+      "seed": 4111,
+      "checks": 0,
+      "changes": 0,
+      "errors": 0,
+      "passes": [
+        8,
+        8
+      ],
+      "turnovers": [
+        1,
+        1
+      ],
+      "intended": [
+        7,
+        7
+      ],
+      "contacts": [
+        7,
+        7
+      ],
+      "third": [
+        2,
+        2
+      ],
+      "kin": [
+        0.575028338321894,
+        0.575028338321894
+      ],
+      "spatial": [
+        0.09373857923848442,
+        0.09373857923848442
+      ],
+      "safe": true
+    },
+    {
+      "version": 159,
+      "seed": 3901,
+      "checks": 2142,
+      "changes": 157,
+      "errors": 0,
+      "passes": [
+        7,
+        8
+      ],
+      "turnovers": [
+        4,
+        1
+      ],
+      "intended": [
+        4,
+        4
+      ],
+      "contacts": [
+        6,
+        7
+      ],
+      "third": [
+        4,
+        2
+      ],
+      "kin": [
+        0.5635684359326224,
+        0.5485167108685592
+      ],
+      "spatial": [
+        0.12361481437919128,
+        0.11855697853705241
+      ],
+      "safe": true
+    }
+  ],
+  "checks": {
+    "free433": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    },
+    "free4231": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    },
+    "free343": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    },
+    "guided": {
+      "sameOff": true,
+      "sameOn": true,
+      "checkpoints": 13,
+      "errors": 0,
+      "pause": true,
+      "reset": true
+    }
+  },
+  "gate": false,
+  "reason": "Combined modes increase spatial discrepancy and reduce pass contacts; no shots. Single tests too short and one seed per block. 153 and 159 warrant independent replication; 157 deteriorates intended contacts. Keep all disabled by default and internal test only.",
+  "browser": "0.159 smoke pending"
+}
